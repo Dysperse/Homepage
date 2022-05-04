@@ -45,35 +45,35 @@ function Footer() {
         </Grid>
         <Grid item xs={12} sm={3} sx={{ p: 2 }}>
           <Typography gutterBottom>Apps</Typography>
-          <MuiLink sx={{ display: "block", mb: 1 }}>Smartlist</MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#909090",  }}>Smartlist</MuiLink>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#909090",  }}>
             Smartlist Availability
           </MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#909090",  }}>
             Smartlist Recipe Generator
           </MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>Smartlist Dressing</MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color: "#909090",  }}>Smartlist Dressing</MuiLink>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#909090",  }}>
             Smartlist Collaborate
           </MuiLink>
         </Grid>
         <Grid item xs={12} sm={3} sx={{ p: 2 }}>
           <Typography gutterBottom>Company</Typography>
-          <MuiLink sx={{ display: "block", mb: 1 }}>Join our team</MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>Terms of service</MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>Privacy policy</MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>Our&nbsp;team</MuiLink>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Join our team</MuiLink>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Terms of service</MuiLink>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Privacy policy</MuiLink>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Our&nbsp;team</MuiLink>
 
           <Typography sx={{ mt: 4 }} gutterBottom>
             Links
           </Typography>
-          <MuiLink sx={{ display: "block", mb: 1 }}>Contact us</MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>Knowledge base</MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Contact us</MuiLink>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Knowledge base</MuiLink>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>
             hello@smartlist.tech
           </MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>Official Discord</MuiLink>
-          <MuiLink sx={{ display: "block", mb: 1 }}>GitHub</MuiLink>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Official Discord</MuiLink>
+          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>GitHub</MuiLink>
         </Grid>
         <Grid item xs={12} sm={3} sx={{ p: 2 }}>
           <Typography sx={{ mb: 2 }} gutterBottom>
@@ -264,7 +264,13 @@ export default function Layout(props: any) {
               <Typography
                 variant="h6"
                 component="div"
-                sx={{ mr: 3, fontWeight: "600" }}
+                sx={{
+                  cursor: "pointer",
+                  "&:hover": { textDecoration: "underline" },
+                  "&:active": { opacity: 0.7 },
+                  mr: 3,
+                  fontWeight: "600"
+                }}
               >
                 Smartlist
               </Typography>
@@ -275,6 +281,10 @@ export default function Layout(props: any) {
                 color="inherit"
                 sx={{
                   ...styles.button,
+                  ...(window &&
+                    window.location.pathname === "/our-impact" && {
+                      background: "rgba(0,0,0,0.15)!important"
+                    }),
                   display: { xs: "none", sm: "none", md: "inline-flex" }
                 }}
               >

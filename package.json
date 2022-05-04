@@ -1,5 +1,5 @@
 {
-  "name": "homepage",
+  "name": "company-homepage",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -17,8 +17,10 @@
     "react-dom": "18.1.0"
   },
   "license": "MIT",
-  "keywords": [],
-  "description": "",
+  "keywords": [
+    "smartlist"
+  ],
+  "description": "Company homepage",
   "devDependencies": {
     "@types/node": "^17.0.31",
     "typescript": "^4.6.4"
