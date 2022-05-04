@@ -14,6 +14,7 @@ import Grid from "@mui/material/Grid";
 import Collapse from "@mui/material/Collapse";
 import Box from "@mui/material/Box";
 import MuiLink from "@mui/material/Link";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -26,7 +27,7 @@ function Footer() {
       }}
     >
       <Grid container>
-        <Grid item xs={12} spacing={3} sm={3} sx={{ p: 2 }}>
+        <Grid item xs={12} sm={3} sx={{ p: 2 }}>
           <Typography variant="h5" gutterBottom sx={{ fontWeight: "600" }}>
             Smartlist
           </Typography>
@@ -139,16 +140,16 @@ function ProductsMenu() {
         }}
       >
         Apps
-        <span
+        <Typography
           className="material-symbols-rounded"
-          style={{
+          sx={{
             marginLeft: "5px",
             transform: open && "rotate(180deg)",
             transition: "all .2s"
           }}
         >
           expand_more
-        </span>
+        </Typography>
       </Button>
       <Menu
         anchorOrigin={{
@@ -259,23 +260,27 @@ export default function Layout(props: any) {
           }}
         >
           <Toolbar>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ mr: 3, fontWeight: "600" }}
-            >
-              Smartlist
-            </Typography>
-            <Button
-              size="large"
-              color="inherit"
-              sx={{
-                ...styles.button,
-                display: { xs: "none", sm: "none", md: "inline-flex" }
-              }}
-            >
-              Our&nbsp;impact
-            </Button>
+            <Link href="/">
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{ mr: 3, fontWeight: "600" }}
+              >
+                Smartlist
+              </Typography>
+            </Link>
+            <Link href="/our-impact">
+              <Button
+                size="large"
+                color="inherit"
+                sx={{
+                  ...styles.button,
+                  display: { xs: "none", sm: "none", md: "inline-flex" }
+                }}
+              >
+                Our&nbsp;impact
+              </Button>
+            </Link>
             <Button
               size="large"
               color="inherit"

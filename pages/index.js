@@ -91,6 +91,17 @@ function ResourceSection({ title, heading, subheading, features }) {
 
 function Header() {
   if (typeof window !== "undefined") {
+    let render = false;
+    setInterval(() => {
+      if (!render && document.getElementById("scene")) {
+        const scene = document.getElementById("scene");
+        new Parallax(scene, {
+          pointerEvents: true,
+          relativeInput: true
+        });
+        render = true;
+      }
+    }, 200);
     window.addEventListener("load", () => {
       const scene = document.getElementById("scene");
       new Parallax(scene, {
