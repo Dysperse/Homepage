@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -6,7 +5,6 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { green } from "@mui/material/colors";
-import Chip from "@mui/material/Chip";
 import Parallax from "parallax-js";
 
 function FeatureCard({ title, image }) {
@@ -135,6 +133,7 @@ function Header() {
             variant="h2"
             sx={{
               pt: 4,
+              fontSize: { xs: "50px", sm: "70px" },
               pointerEvents: "unset!important",
               cursor: "unset!important",
               fontFamily: `'DM Serif Display', serif !important`,
@@ -144,9 +143,9 @@ function Header() {
               }
             }}
           >
-            Saving money just got easier — <br />
-            <span className="disableFont" style={{ color: green[800] }}>
-              For free.
+            Make more from what you&nbsp;
+            <span className="disableFont" style={{ color: green[600] }}>
+              earn.
             </span>
           </Typography>
           <Typography sx={{ mb: 3, pt: 4, textAlign: "left" }}>
@@ -268,13 +267,21 @@ function SecurityCard({ icon = "password", title, description }) {
 export default function Render() {
   return (
     <>
-      <Header />
+      <Box
+        sx={{
+          background:
+            "url(https://github.com/tailwindlabs/tailwindcss.com/blob/master/src/img/beams/1-dark@1.5x.png?raw=true)",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <Header />
+      </Box>
       <ResourceSection
         title="Smartlist"
         heading={
           <>
-            Make more from what you{" "}
-            <span style={{ color: green[700] }}>earn.</span>
+            Saving money. <span style={{ color: green[600] }}>Simplified.</span>
           </>
         }
         subheading="Smartlist helps you organize your daily life."
@@ -311,7 +318,7 @@ export default function Render() {
         heading={
           <>
             Your privacy is our{" "}
-            <span style={{ color: green[700] }}>first priority</span>
+            <span style={{ color: green[600] }}>first priority</span>
           </>
         }
         subheading={

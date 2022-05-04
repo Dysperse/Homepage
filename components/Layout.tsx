@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
 import Menu from "@mui/material/Menu";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -20,75 +19,165 @@ function Footer() {
   return (
     <Box
       sx={{
-        background: "#eee",
-        p: 8,
-        borderTopLeftRadius: "28px!important",
-        borderTopRightRadius: "28px!important"
+        background: "#000",
+        color: "#fff",
+        p: 8
       }}
     >
-      <Grid container>
-        <Grid item xs={12} sm={3} sx={{ p: 2 }}>
+      <Grid spacing={8} container>
+        <Grid item xs={12} sm={3}>
           <Typography variant="h5" gutterBottom sx={{ fontWeight: "600" }}>
             Smartlist
           </Typography>
-          <Typography variant="h6" gutterBottom>
-            We release projects to benefit others
+          <Typography sx={{ mb: 2 }} gutterBottom>
+            We're a philanthropic nonprofit striving to help everyone{" "}
+            <span role="img" aria-label="heart emoji">
+              ❤️
+            </span>
           </Typography>
+          <Box
+            sx={{
+              my: 1,
+              mb: 2,
+              background: "rgba(200,200,200,.1)",
+              p: 1,
+              borderRadius: 2
+            }}
+          >
+            <Typography gutterBottom>
+              Proudly made in the USA&nbsp;
+              <span role="img" aria-label="USA flag">
+                🇺🇸
+              </span>
+            </Typography>
+          </Box>
           <img
             style={{
               width: "100%",
-              maxWidth: "200px"
+              maxWidth: "400px"
             }}
             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=321053&theme=dark"
             alt="Featured on ProductHunt"
           />
         </Grid>
-        <Grid item xs={12} sm={3} sx={{ p: 2 }}>
+        <Grid item xs={12} sm={3}>
           <Typography gutterBottom>Apps</Typography>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#909090",  }}>Smartlist</MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#909090",  }}>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
+            Smartlist
+          </MuiLink>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
             Smartlist Availability
           </MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#909090",  }}>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
             Smartlist Recipe Generator
           </MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color: "#909090",  }}>Smartlist Dressing</MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#909090",  }}>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
+            Smartlist Dressing
+          </MuiLink>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
             Smartlist Collaborate
           </MuiLink>
         </Grid>
-        <Grid item xs={12} sm={3} sx={{ p: 2 }}>
+        <Grid item xs={12} sm={3}>
           <Typography gutterBottom>Company</Typography>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Join our team</MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Terms of service</MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Privacy policy</MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Our&nbsp;team</MuiLink>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
+            Join our team
+          </MuiLink>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
+            Terms of service
+          </MuiLink>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
+            Privacy policy
+          </MuiLink>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
+            Our&nbsp;team
+          </MuiLink>
 
           <Typography sx={{ mt: 4 }} gutterBottom>
             Links
           </Typography>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Contact us</MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Knowledge base</MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
+            Contact us
+          </MuiLink>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
+            Knowledge base
+          </MuiLink>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
             hello@smartlist.tech
           </MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>Official Discord</MuiLink>
-          <MuiLink underline="none" sx={{ display: "block", mb: 1, color:"#aaa",  }}>GitHub</MuiLink>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
+            Official Discord
+          </MuiLink>
+          <MuiLink
+            underline="none"
+            sx={{ display: "block", mb: 1, color: "#eee" }}
+          >
+            GitHub
+          </MuiLink>
         </Grid>
-        <Grid item xs={12} sm={3} sx={{ p: 2 }}>
+        <Grid item xs={12} sm={3}>
           <Typography sx={{ mb: 2 }} gutterBottom>
             Sponsors
           </Typography>
-          <a href="https://infinitzhost.com?smartlist">
-            <img
-              src="https://cdn.discordapp.com/attachments/809043558220562463/847422401096056863/ih2.png"
-              alt="InfinitzHost"
-              style={{
-                width: "80%",
-                opacity: 0.4
-              }}
-            />
-          </a>
+          <Box
+            sx={{
+              my: 1,
+              mb: 2,
+              background: "rgba(200,200,200,.2)",
+              p: 1,
+              pb: 0.3,
+              borderRadius: 2
+            }}
+          >
+            <a href="https://infinitzhost.com?smartlist">
+              <img
+                src="https://cdn.discordapp.com/attachments/833204440295014432/846615097186844692/ihlogo.png"
+                alt="InfinitzHost"
+                style={{
+                  width: "80%"
+                }}
+              />
+            </a>
+          </Box>
         </Grid>
       </Grid>
     </Box>
@@ -116,7 +205,7 @@ function App({ name, description, url = "/" }: any) {
 }
 
 const styles = {
-  button: { mr: 1, textTransform: "none", borderRadius: 3 }
+  button: { textTransform: "none", borderRadius: 4, px: 2 }
 };
 function ProductsMenu() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -144,6 +233,7 @@ function ProductsMenu() {
           className="material-symbols-rounded"
           sx={{
             marginLeft: "5px",
+            opacity: 0.8,
             transform: open && "rotate(180deg)",
             transition: "all .2s"
           }}
@@ -170,14 +260,16 @@ function ProductsMenu() {
         BackdropProps={{
           sx: {
             minWidth: "500px",
-            background: "rgba(0,0,0,0.1)",
-            backdropFilter: "blur(15px)"
+            background: "rgba(0,0,0,0.3)",
+            backdropFilter: "blur(25px)"
           }
         }}
         PaperProps={{
           sx: {
             position: "fixed!important",
             left: "0!important",
+            background: "rgba(240,240,240,.9)",
+            backdropFilter: "blur(20px)",
             top: "70px!important",
             right: "0!important",
             p: 2,
@@ -230,6 +322,11 @@ function ProductsMenu() {
                 name="Smartlist recipe generator"
                 description="Smart and easy home inventory and finance management"
               />
+              <App
+                href="https://recipe-generator.smartlist.tech"
+                name="Smartlist dressing"
+                description="Find sizes of clothes compatible with every store."
+              />
             </Grid>
           </Grid>
         </Grid>
@@ -252,8 +349,8 @@ export default function Layout(props: any) {
             top: 0,
             left: 0,
             color: "hsl(240, 11%, 25%)",
-            background: "#fff",
-            boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+            background: "rgba(250,250,250,.9)",
+            backdropFilter: "blur(15px)",
             height: "70px",
             display: "flex",
             justifyContent: "center"
@@ -281,7 +378,7 @@ export default function Layout(props: any) {
                 color="inherit"
                 sx={{
                   ...styles.button,
-                  ...(window &&
+                  ...(typeof window !== "undefined" &&
                     window.location.pathname === "/our-impact" && {
                       background: "rgba(0,0,0,0.15)!important"
                     }),
@@ -368,33 +465,42 @@ export default function Layout(props: any) {
       </>
       <Toolbar sx={{ height: "70px" }} />
       <Collapse in={open}>
-        <Alert
-          action={
-            <IconButton
-              aria-label="close"
-              color="inherit"
-              size="small"
-              onClick={() => {
-                setOpen(false);
-              }}
-            >
-              <span className="material-symbols-rounded">close</span>
-            </IconButton>
-          }
-          severity="info"
-          sx={{
-            background: "linear-gradient(to right, #237A57, #093028)",
-            width: "100vw",
-            boxSizing: "border-box",
-            zIndex: 1,
-            borderRadius: 0
-          }}
-          variant="filled"
-        >
-          Smartlist now supports over 2000+ banks. New features such as goals,
-          lessons, and loans are now here!
-        </Alert>
+        <Box sx={{ p: 1 }}>
+          <Alert
+            action={
+              <IconButton
+                aria-label="close"
+                sx={{
+                  mt: {
+                    sm: "-4px",
+                    xs: 2.2
+                  }
+                }}
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <span className="material-symbols-rounded">close</span>
+              </IconButton>
+            }
+            severity="info"
+            sx={{
+              background: "linear-gradient(to right, #237A57, #093028)",
+              width: "100%",
+              borderRadius: 4,
+              boxSizing: "border-box",
+              zIndex: 1
+            }}
+            variant="filled"
+          >
+            Smartlist now supports over 2000+ banks. New features such as goals,
+            lessons, and loans are now here!
+          </Alert>
+        </Box>
       </Collapse>
+
       {props.children}
       <Footer />
     </>
