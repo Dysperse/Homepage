@@ -230,7 +230,7 @@ function ProductsMenu() {
       >
         Apps
         <Typography
-          className="material-symbols-rounded"
+          className="disableFont material-symbols-rounded"
           sx={{
             marginLeft: "5px",
             opacity: 0.8,
