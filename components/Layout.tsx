@@ -238,7 +238,9 @@ function ProductsMenu() {
             transition: "all .2s"
           }}
         >
-          <span className="material-symbols-rounded">expand_more</span>
+          <span style={{ verticalAlign:"middle" }} className="material-symbols-rounded">
+            expand_more
+          </span>
         </Typography>
       </Button>
       <Menu
