@@ -230,7 +230,7 @@ function ProductsMenu() {
       >
         Apps
         <Typography
-          className="disableFont material-symbols-rounded"
+          className="disableFont"
           sx={{
             marginLeft: "5px",
             opacity: 0.8,
@@ -238,7 +238,7 @@ function ProductsMenu() {
             transition: "all .2s"
           }}
         >
-          expand_more
+          <span className="material-symbols-rounded">expand_more</span>
         </Typography>
       </Button>
       <Menu
