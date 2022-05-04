@@ -97,6 +97,13 @@ function Header() {
         pointerEvents: true,
         relativeInput: true
       });
+      setTimeout(() => {
+        const scene = document.getElementById("scene");
+        new Parallax(scene, {
+          pointerEvents: true,
+          relativeInput: true
+        });
+      }, 1000);
     });
   }
   return (
