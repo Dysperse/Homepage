@@ -44,7 +44,7 @@ function Footer() {
               borderRadius: 2
             }}
           >
-            <Typography gutterBottom>
+            <Typography gutterBottom variant="h6">
               Proudly made in the USA&nbsp;
               <span role="img" aria-label="USA flag">
                 🇺🇸
@@ -61,7 +61,9 @@ function Footer() {
           />
         </Grid>
         <Grid item xs={12} sm={3}>
-          <Typography gutterBottom>Apps</Typography>
+          <Typography gutterBottom variant="h6">
+            Apps
+          </Typography>
           <MuiLink
             underline="none"
             sx={{ display: "block", mb: 1, color: "#eee" }}
@@ -94,7 +96,9 @@ function Footer() {
           </MuiLink>
         </Grid>
         <Grid item xs={12} sm={3}>
-          <Typography gutterBottom>Company</Typography>
+          <Typography gutterBottom variant="h6">
+            Company
+          </Typography>
           <MuiLink
             underline="none"
             sx={{ display: "block", mb: 1, color: "#eee" }}
@@ -155,7 +159,7 @@ function Footer() {
           </MuiLink>
         </Grid>
         <Grid item xs={12} sm={3}>
-          <Typography sx={{ mb: 2 }} gutterBottom>
+          <Typography sx={{ mb: 2 }} variant="h6" gutterBottom>
             Sponsors
           </Typography>
           <Box
@@ -238,7 +242,10 @@ function ProductsMenu() {
             transition: "all .2s"
           }}
         >
-          <span style={{ verticalAlign:"middle" }} className="material-symbols-rounded">
+          <span
+            style={{ verticalAlign: "middle" }}
+            className="material-symbols-rounded"
+          >
             expand_more
           </span>
         </Typography>
