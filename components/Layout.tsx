@@ -397,16 +397,22 @@ export default function Layout(props: any) {
                 Our&nbsp;impact
               </Button>
             </Link>
+            <Link href="/privacy">
             <Button
               size="large"
               color="inherit"
               sx={{
                 ...styles.button,
+                ...(typeof window !== "undefined" &&
+                    window.location.pathname === "/our-impact" && {
+                      background: "rgba(0,0,0,0.15)!important"
+                    }),
                 display: { xs: "none", sm: "inline-flex" }
               }}
             >
               Privacy
             </Button>
+            </Link>
             <Button
               size="large"
               color="inherit"
