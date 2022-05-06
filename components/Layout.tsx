@@ -398,34 +398,41 @@ export default function Layout(props: any) {
               </Button>
             </Link>
             <Link href="/privacy">
-            <Button
-              size="large"
-              color="inherit"
-              sx={{
-                ...styles.button,
-                ...(typeof window !== "undefined" &&
-                    window.location.pathname === "/our-impact" && {
+              <Button
+                size="large"
+                color="inherit"
+                sx={{
+                  ...styles.button,
+                  ...(typeof window !== "undefined" &&
+                    window.location.pathname === "/privacy" && {
                       background: "rgba(0,0,0,0.15)!important"
                     }),
-                display: { xs: "none", sm: "inline-flex" }
-              }}
-            >
-              Privacy
-            </Button>
+                  display: { xs: "none", sm: "inline-flex" }
+                }}
+              >
+                Privacy
+              </Button>
             </Link>
-            <Button
-              size="large"
-              color="inherit"
-              sx={{
-                ...styles.button,
-                display: { xs: "none", sm: "inline-flex" }
-              }}
-            >
-              Developer
-            </Button>
+            <Link href="/developer">
+              <Button
+                size="large"
+                color="inherit"
+                sx={{
+                  ...styles.button,
+                  ...(typeof window !== "undefined" &&
+                    window.location.pathname === "/developer" && {
+                      background: "rgba(0,0,0,0.15)!important"
+                    }),
+                  display: { xs: "none", sm: "inline-flex" }
+                }}
+              >
+                Developer
+              </Button>
+            </Link>
             <ProductsMenu />
             <Button
               size="large"
+              href="/discord"
               color="inherit"
               sx={{
                 ...styles.button,
