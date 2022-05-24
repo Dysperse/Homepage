@@ -429,6 +429,22 @@ export default function Layout(props: any) {
                 Developer
               </Button>
             </Link>
+            <Link href="https://status.smartlist.tech">
+              <Button
+                size="large"
+                color="inherit"
+                sx={{
+                  ...styles.button,
+                  ...(typeof window !== "undefined" &&
+                    window.location.pathname === "/developer" && {
+                      background: "rgba(0,0,0,0.15)!important"
+                    }),
+                  display: { xs: "none", sm: "inline-flex" }
+                }}
+              >
+                Status
+              </Button>
+            </Link>
             <ProductsMenu />
             <Button
               size="large"
