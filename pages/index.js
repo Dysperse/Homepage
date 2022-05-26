@@ -152,7 +152,7 @@ function Header() {
             <span role="img" aria-label="Wave emoji">
               👋
             </span>{" "}
-            Hey! We're Smartlist, a nonprofit, and we provide quality resources
+            Hey! We're Smartlist, and we provide quality resources
             aimed at helping people saving money. Our apps are free-of-cost and
             available to everyone!
           </Typography>
