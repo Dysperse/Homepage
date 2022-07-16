@@ -1,7 +1,10 @@
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 import Head from "next/head";
+import { GoogleAnalytics, usePageViews } from "nextjs-google-analytics";
+
 function MyApp({ Component, pageProps }) {
+  usePageViews();
   return (
     <>
       <Head>
@@ -63,6 +66,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Layout>
+        <GoogleAnalytics />
         <Component {...pageProps} />
       </Layout>
     </>
