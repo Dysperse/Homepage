@@ -69,7 +69,6 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Layout>
-        <GoogleAnalytics />
         <Component {...pageProps} />
       </Layout>
     </>
