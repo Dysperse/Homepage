@@ -1,11 +1,13 @@
-import Layout from "../components/Layout";
-import "../styles/globals.css";
-import Head from "next/head";
+import { Html, Head, Main, NextScript } from "next/document";
+import TagManager from "react-gtm-module";
 
+TagManager.initialize({
+  gtmId: "GTM-PPH4TH4",
+});
 
-function MyApp({ Component, pageProps }) {
+export default function Document() {
   return (
-    <>
+    <Html>
       <Head>
         <title>
           Smartlist - sophisticated home and business inventory management for
@@ -64,10 +66,10 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,0,200"
         />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
   );
 }
-export default MyApp;
