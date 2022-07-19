@@ -1,10 +1,13 @@
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 import Head from "next/head";
-import { GoogleAnalytics, usePageViews } from "nextjs-google-analytics";
+import TagManager from 'react-gtm-module'
+
+TagManager.initialize({
+  gtmId: "GTM-PPH4TH4",
+});
 
 function MyApp({ Component, pageProps }) {
-  usePageViews();
   return (
     <>
       <Head>
