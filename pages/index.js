@@ -152,9 +152,7 @@ function Header() {
             <span role="img" aria-label="Wave emoji">
               👋
             </span>{" "}
-            Hey! We're Smartlist, and we provide quality resources
-            aimed at helping people saving money. Our apps are free-of-cost and
-            available to everyone!
+            Ever found yourself at the grocery store and not knowing what you needed to buy? Smartlist is an app which helps you know what's in your home, remind you for tasks, and help you budget.
           </Typography>
           <Button
             href="https://coming-soon.smartlist.tech/wait/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
@@ -289,27 +287,27 @@ export default function Render() {
           <>
             <FeatureCard
               title="Track what's inside your home"
-              image="https://i.ibb.co/cCbP3v5/abstract-list-is-empty.png"
+              image="https://ouch-cdn2.icons8.com/IsrJQjIDV9U9oCmoJ3iRD77geBzIWa4CpdqAByJWm3w/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODg0/L2I0ZjRiNzQxLTdh/MjEtNDQwZi1iY2Rh/LTZiYzZjMzQ0OTM2/Ni5wbmc.png"
             />
             <FeatureCard
-              title="Plan what you'll cook"
-              image="https://i.ibb.co/6B87qH9/abstract-1398.png"
+              title="Invite members to your home"
+              image="https://ouch-cdn2.icons8.com/lVmAsy797H6bYyTGAciPhSY4sd4bNJpYrKv3qneWApQ/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODcx/LzlhMTEwMjgyLTVh/MTUtNDZjNy05NzA5/LWE5NWM3ZmQwNDA0/OC5wbmc.png"
             />
             <FeatureCard
-              title="Learn finance tips and tricks"
-              image="https://i.ibb.co/HXzHtj2/abstract-mobile-payment.png"
+              title="Set financial goals"
+              image="https://ouch-cdn2.icons8.com/u7Lkm5yK_ab_FzD9GBl8hXGj9Nyz1X74ahjAN3-Ehug/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNDc2/LzQ5N2QzMDI0LTQ3/OTMtNDUxYy04MGM5/LTUxYWQ2NWQ4NmRj/MC5wbmc.png"
             />
             <FeatureCard
               title="Know where your money's going"
-              image="https://i.ibb.co/SQJxH03/abstract-expense-tracking.png"
+              image="https://ouch-cdn2.icons8.com/sXyYBkxQ9w22Qb1w5mOxkta113cSwX4QAPJvgqq1PYA/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMTQz/LzA1MjhhODQxLTgz/NWEtNGVlOC1iMTY4/LWYzZjQ5MzRhOGJm/Ni5wbmc.png"
             />
             <FeatureCard
-              title="Create and edit custom lists"
-              image="https://i.ibb.co/G21GFKG/abstract-done-1.png"
+              title="Create shopping lists, todo-lists, and more"
+              image="https://ouch-cdn2.icons8.com/5MUeT0n2wT_4LTg-ymWS-i6dQ5_k01HXQc9e_WC8sRo/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMjE1/L2M0MThkMmZjLTE3/MzAtNDcwYi1hOGJm/LTQxMzc5OTYyNTUx/NS5wbmc.png"
             />
             <FeatureCard
               title="Get maintenance reminders"
-              image="https://i.ibb.co/YbzHVFM/abstract-coffee-break.png"
+              image="https://ouch-cdn2.icons8.com/Gy2Y5CanfTcEF-3RqQMtCHGFmNZ6ezbqBE7-Tb7FV4o/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjAy/L2M4NDE2Yjg4LTg3/NzMtNGVhZC05YzZj/LWY4MjEyNmE5OTUw/MS5wbmc.png"
             />
           </>
         }
