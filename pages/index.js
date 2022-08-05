@@ -329,22 +329,22 @@ export default function Render() {
         }
         subheading={
           <>
-            With Argon2 hasing, AES-256 bit encryption, your data ain't going
-            anywhere...
+            Your data can't be accessed by anyone else. Not even Smartlist.
           </>
         }
         content={
           <>
             <SecurityCard
               description="Your account details are hashed using the Argon2 algorithm"
-              title="AES-256 end-to-end encryption"
+              title="Argon2 password hashing"
+
             />
             <SecurityCard
               description="Your account's safely stored in our servers with zero-access encryption."
-              title="Argon2 password hashing"
+              title="AES-256 end-to-end encryption"
             />
             <SecurityCard
-              description="Two-factor auth helps keep the bad guys from accessing your account"
+              description="Two-factor auth helps keep anyone else from accessing your account!"
               title="Two-factor authentication"
             />
             <SecurityCard
