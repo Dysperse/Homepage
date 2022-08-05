@@ -190,7 +190,7 @@ function Header() {
               boxShadow: 0
             }}
           >
-            Discover our products
+            Our apps
           </Button>
         </Box>
       </Grid>

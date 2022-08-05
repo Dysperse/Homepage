@@ -387,7 +387,7 @@ export default function Layout(props: any) {
                   display: { xs: "none", sm: "none", md: "inline-flex" },
                 }}
               >
-                Our&nbsp;impact
+                Impact
               </Button>
             </Link>
             <Link href="/privacy">
