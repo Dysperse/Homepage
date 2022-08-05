@@ -21,7 +21,7 @@ function Footer() {
       sx={{
         background: "#000",
         color: "#fff",
-        p: 8
+        p: 8,
       }}
     >
       <Grid spacing={8} container>
@@ -41,7 +41,7 @@ function Footer() {
               mb: 2,
               background: "rgba(200,200,200,.1)",
               p: 1,
-              borderRadius: 2
+              borderRadius: 2,
             }}
           >
             <Typography gutterBottom variant="h6">
@@ -54,7 +54,7 @@ function Footer() {
           <img
             style={{
               width: "100%",
-              maxWidth: "400px"
+              maxWidth: "400px",
             }}
             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=321053&theme=dark"
             alt="Featured on ProductHunt"
@@ -169,15 +169,24 @@ function Footer() {
               background: "rgba(200,200,200,.2)",
               p: 1,
               pb: 0.3,
-              borderRadius: 2
+              borderRadius: 2,
             }}
           >
+            <a href="https://vercel.com/?utm_source=smartlist&utm_campaign=oss">
+              <img
+                src="https://user-images.githubusercontent.com/77016441/183126898-2412e41b-40fe-4981-bf9f-5e8349f77d4e.png"
+                alt="Vercel"
+                style={{
+                  width: "80%",
+                }}
+              />
+            </a>
             <a href="https://infinitzhost.com?smartlist">
               <img
                 src="https://cdn.discordapp.com/attachments/833204440295014432/846615097186844692/ihlogo.png"
                 alt="InfinitzHost"
                 style={{
-                  width: "80%"
+                  width: "80%",
                 }}
               />
             </a>
@@ -209,7 +218,7 @@ function App({ name, description, url = "/" }: any) {
 }
 
 const styles = {
-  button: { textTransform: "none", borderRadius: 4, px: 2 }
+  button: { textTransform: "none", borderRadius: 4, px: 2 },
 };
 function ProductsMenu() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -229,7 +238,7 @@ function ProductsMenu() {
         size="large"
         color="inherit"
         sx={{
-          ...styles.button
+          ...styles.button,
         }}
       >
         Apps
@@ -239,7 +248,7 @@ function ProductsMenu() {
             marginLeft: "5px",
             opacity: 0.8,
             transform: open && "rotate(180deg)",
-            transition: "all .2s"
+            transition: "all .2s",
           }}
         >
           <span
@@ -253,11 +262,11 @@ function ProductsMenu() {
       <Menu
         anchorOrigin={{
           vertical: "top",
-          horizontal: "center"
+          horizontal: "center",
         }}
         transformOrigin={{
           vertical: "top",
-          horizontal: "center"
+          horizontal: "center",
         }}
         id="basic-menu"
         anchorEl={anchorEl}
@@ -270,8 +279,8 @@ function ProductsMenu() {
           sx: {
             minWidth: "500px",
             background: "rgba(0,0,0,0.3)",
-            backdropFilter: "blur(25px)"
-          }
+            backdropFilter: "blur(25px)",
+          },
         }}
         PaperProps={{
           sx: {
@@ -290,15 +299,15 @@ function ProductsMenu() {
             borderTopLeftRadius: 0,
             borderTopRightRadius: 0,
             borderBottomLeftRadius: "28px!important",
-            borderBottomRightRadius: "28px !important"
+            borderBottomRightRadius: "28px !important",
           },
-          elevation: 0
+          elevation: 0,
         }}
         MenuListProps={{
           sx: {
-            width: "100%"
+            width: "100%",
           },
-          "aria-labelledby": "basic-button"
+          "aria-labelledby": "basic-button",
         }}
       >
         <Grid container>
@@ -362,7 +371,7 @@ export default function Layout(props: any) {
             backdropFilter: "blur(15px)",
             height: "70px",
             display: "flex",
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
           <Toolbar>
@@ -375,7 +384,7 @@ export default function Layout(props: any) {
                   "&:hover": { textDecoration: "underline" },
                   "&:active": { opacity: 0.7 },
                   mr: 3,
-                  fontWeight: "600"
+                  fontWeight: "600",
                 }}
               >
                 Smartlist
@@ -389,9 +398,9 @@ export default function Layout(props: any) {
                   ...styles.button,
                   ...(typeof window !== "undefined" &&
                     window.location.pathname === "/our-impact" && {
-                      background: "rgba(0,0,0,0.15)!important"
+                      background: "rgba(0,0,0,0.15)!important",
                     }),
-                  display: { xs: "none", sm: "none", md: "inline-flex" }
+                  display: { xs: "none", sm: "none", md: "inline-flex" },
                 }}
               >
                 Our&nbsp;impact
@@ -405,9 +414,9 @@ export default function Layout(props: any) {
                   ...styles.button,
                   ...(typeof window !== "undefined" &&
                     window.location.pathname === "/privacy" && {
-                      background: "rgba(0,0,0,0.15)!important"
+                      background: "rgba(0,0,0,0.15)!important",
                     }),
-                  display: { xs: "none", sm: "inline-flex" }
+                  display: { xs: "none", sm: "inline-flex" },
                 }}
               >
                 Privacy
@@ -421,9 +430,9 @@ export default function Layout(props: any) {
                   ...styles.button,
                   ...(typeof window !== "undefined" &&
                     window.location.pathname === "/developer" && {
-                      background: "rgba(0,0,0,0.15)!important"
+                      background: "rgba(0,0,0,0.15)!important",
                     }),
-                  display: { xs: "none", sm: "inline-flex" }
+                  display: { xs: "none", sm: "inline-flex" },
                 }}
               >
                 Developer
@@ -437,9 +446,9 @@ export default function Layout(props: any) {
                   ...styles.button,
                   ...(typeof window !== "undefined" &&
                     window.location.pathname === "/developer" && {
-                      background: "rgba(0,0,0,0.15)!important"
+                      background: "rgba(0,0,0,0.15)!important",
                     }),
-                  display: { xs: "none", sm: "inline-flex" }
+                  display: { xs: "none", sm: "inline-flex" },
                 }}
               >
                 Status
@@ -452,7 +461,7 @@ export default function Layout(props: any) {
               color="inherit"
               sx={{
                 ...styles.button,
-                display: { xs: "none", sm: "inline-flex" }
+                display: { xs: "none", sm: "inline-flex" },
               }}
             >
               Community
@@ -464,7 +473,7 @@ export default function Layout(props: any) {
               color="inherit"
               sx={{
                 ...styles.button,
-                display: { xs: "none", md: "inline-flex" }
+                display: { xs: "none", md: "inline-flex" },
               }}
             >
               Our&nbsp;team
@@ -479,8 +488,8 @@ export default function Layout(props: any) {
                 ...styles.button,
                 background: "rgba(0,0,0,.1)",
                 "&:hover": {
-                  background: "rgba(0,0,0,.2)"
-                }
+                  background: "rgba(0,0,0,.2)",
+                },
               }}
             >
               <Box sx={{ display: { xs: "none", sm: "inline-block" } }}>
@@ -492,7 +501,7 @@ export default function Layout(props: any) {
               <span
                 className="material-symbols-rounded"
                 style={{
-                  marginLeft: "10px"
+                  marginLeft: "10px",
                 }}
               >
                 chevron_right
@@ -511,8 +520,8 @@ export default function Layout(props: any) {
                 sx={{
                   mt: {
                     sm: "-4px",
-                    xs: 2.2
-                  }
+                    xs: 2.2,
+                  },
                 }}
                 color="inherit"
                 size="small"
@@ -529,7 +538,7 @@ export default function Layout(props: any) {
               width: "100%",
               borderRadius: 4,
               boxSizing: "border-box",
-              zIndex: 1
+              zIndex: 1,
             }}
             variant="filled"
           >
