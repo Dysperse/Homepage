@@ -429,7 +429,7 @@ export default function Layout(props: any) {
                 sx={{
                   ...styles.button,
                   ...(typeof window !== "undefined" &&
-                    window.location.pathname === "/developer" && {
+                    window.location.pathname === "/status" && {
                       background: "rgba(0,0,0,0.15)!important",
                     }),
                   display: { xs: "none", sm: "inline-flex" },
