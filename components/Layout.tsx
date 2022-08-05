@@ -183,10 +183,11 @@ function Footer() {
             </a>
             <a href="https://infinitzhost.com?smartlist">
               <img
-                src="https://cdn.discordapp.com/attachments/833204440295014432/846615097186844692/ihlogo.png"
+                src="data:image/svg+xml,%3Csvg class='w-10 h-10' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Capa_1' x='0' y='0' version='1.1' viewBox='6 -6 512 512' xml:space='preserve' style='enable-background:new 6 -6 512 512'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%23fff%7D.st1%7Bfill:none;stroke:%23fff;stroke-width:16;stroke-miterlimit:10%7D%3C/style%3E%3Ccircle cx='262' cy='250' r='108' class='st0'/%3E%3Ccircle cx='404.8' cy='104' r='40.3' class='st0'/%3E%3Ccircle cx='60.8' cy='289.5' r='24.9' class='st0'/%3E%3Ccircle cx='262' cy='250' r='204.4' class='st1'/%3E%3C/svg%3E"
                 alt="InfinitzHost"
                 style={{
                   width: "80%",
+                  maxWidth: "150px",
                 }}
               />
             </a>
