@@ -13,13 +13,10 @@ export default function Document() {
       })(window,document,'script','dataLayer','GTM-PPH4TH4');`,
           }}
         />
-        <title>
-          Smartlist - sophisticated home and business inventory management for
-          free.
-        </title>
+        <title>Smartlist - Next-gen home inventory and personal finances</title>
         <meta
           name="title"
-          content="Smartlist - sophisticated home and business inventory management for free."
+          content="Smartlist - Next-gen home inventory and personal finances."
         />
         <meta
           name="description"
@@ -29,7 +26,7 @@ export default function Document() {
         <meta property="og:url" content="https://smartlist.tech/" />
         <meta
           property="og:title"
-          content="Smartlist - sophisticated home and business inventory management for free."
+          content="Smartlist - Next-gen home inventory and personal finances."
         />
         <meta
           property="og:description"
@@ -47,7 +44,7 @@ export default function Document() {
         <meta property="twitter:url" content="https://smartlist.tech/" />
         <meta
           property="twitter:title"
-          content="Smartlist - sophisticated home and business inventory management for free."
+          content="Smartlist - Next-gen home inventory and personal finances."
         />
         <meta
           property="twitter:description"
