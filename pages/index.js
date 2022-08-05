@@ -143,9 +143,9 @@ function Header() {
               }
             }}
           >
-            Make more from what you&nbsp;
+            Next-gen home inventory and personal&nbsp;
             <span className="disableFont" style={{ color: green[600] }}>
-              earn.
+              finances.
             </span>
           </Typography>
           <Typography sx={{ mb: 3, pt: 4, textAlign: "left" }}>

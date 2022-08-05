@@ -526,8 +526,8 @@ export default function Layout(props: any) {
             }}
             variant="filled"
           >
-            Smartlist now supports over 2000+ banks. New features such as goals,
-            lessons, and loans are now here!
+            NEW! Make an impact with Smartlist. We'll send you reminders and
+            tips on how to make your home more eco-friendly
           </Alert>
         </Box>
       </Collapse>
