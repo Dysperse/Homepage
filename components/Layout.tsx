@@ -19,7 +19,7 @@ function Footer() {
   return (
     <Box
       sx={{
-        background: "#000",
+        background: "#101010",
         color: "#fff",
         p: 8,
       }}
@@ -30,7 +30,7 @@ function Footer() {
             Smartlist
           </Typography>
           <Typography sx={{ mb: 2 }} gutterBottom>
-            We're a philanthropic nonprofit striving to help everyone{" "}
+            Made by a high-school student for everyone
             <span role="img" aria-label="heart emoji">
               ❤️
             </span>
@@ -46,9 +46,7 @@ function Footer() {
           >
             <Typography gutterBottom variant="h6">
               Proudly made in the USA&nbsp;
-              <span role="img" aria-label="USA flag">
-                🇺🇸
-              </span>
+              <img src="https://discord.com/assets/d788b9231ed2028dc29245f76cf0a415.svg" />
             </Typography>
           </Box>
           <img
@@ -60,7 +58,7 @@ function Footer() {
             alt="Featured on ProductHunt"
           />
         </Grid>
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={4}>
           <Typography gutterBottom variant="h6">
             Apps
           </Typography>
@@ -96,69 +94,6 @@ function Footer() {
           </MuiLink>
         </Grid>
         <Grid item xs={12} sm={3}>
-          <Typography gutterBottom variant="h6">
-            Company
-          </Typography>
-          <MuiLink
-            underline="none"
-            sx={{ display: "block", mb: 1, color: "#eee" }}
-          >
-            Join our team
-          </MuiLink>
-          <MuiLink
-            underline="none"
-            sx={{ display: "block", mb: 1, color: "#eee" }}
-          >
-            Terms of service
-          </MuiLink>
-          <MuiLink
-            underline="none"
-            sx={{ display: "block", mb: 1, color: "#eee" }}
-          >
-            Privacy policy
-          </MuiLink>
-          <MuiLink
-            underline="none"
-            sx={{ display: "block", mb: 1, color: "#eee" }}
-          >
-            Our&nbsp;team
-          </MuiLink>
-
-          <Typography sx={{ mt: 4 }} gutterBottom>
-            Links
-          </Typography>
-          <MuiLink
-            underline="none"
-            sx={{ display: "block", mb: 1, color: "#eee" }}
-          >
-            Contact us
-          </MuiLink>
-          <MuiLink
-            underline="none"
-            sx={{ display: "block", mb: 1, color: "#eee" }}
-          >
-            Knowledge base
-          </MuiLink>
-          <MuiLink
-            underline="none"
-            sx={{ display: "block", mb: 1, color: "#eee" }}
-          >
-            hello@smartlist.tech
-          </MuiLink>
-          <MuiLink
-            underline="none"
-            sx={{ display: "block", mb: 1, color: "#eee" }}
-          >
-            Official Discord
-          </MuiLink>
-          <MuiLink
-            underline="none"
-            sx={{ display: "block", mb: 1, color: "#eee" }}
-          >
-            GitHub
-          </MuiLink>
-        </Grid>
-        <Grid item xs={12} sm={3}>
           <Typography sx={{ mb: 2 }} variant="h6" gutterBottom>
             Sponsors
           </Typography>
@@ -166,31 +101,64 @@ function Footer() {
             sx={{
               my: 1,
               mb: 2,
-              background: "rgba(200,200,200,.2)",
-              p: 1,
               pb: 0.3,
               borderRadius: 2,
             }}
           >
-            <a href="https://vercel.com/?utm_source=smartlist&utm_campaign=oss">
+            <Box
+              sx={{
+                transition: "all .2s",
+                cursor: "pointer",
+                "&:active": { transform: "scale(.95)", transition: "none" },
+              }}
+              onClick={() => {
+                window.open(
+                  "https://vercel.com/?utm_source=smartlist&utm_campaign=oss"
+                );
+              }}
+            >
               <img
-                src="https://user-images.githubusercontent.com/77016441/183126898-2412e41b-40fe-4981-bf9f-5e8349f77d4e.png"
+                src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
                 alt="Vercel"
                 style={{
                   width: "80%",
                 }}
               />
-            </a>
-            <a href="https://infinitzhost.com?smartlist">
+            </Box>
+            <Box
+              onClick={() => {
+                window.open("https://infinitzhost.com?smartlist");
+              }}
+              sx={{
+                transition: "all .2s",
+                display: "inline-flex",
+                alignItems: "center",
+                background: "#000",
+                borderRadius: 2,
+                userSelect: "none",
+                p: 1,
+                my: 1,
+                gap: "10px",
+                "&:active": {
+                  transform: "scale(.95)",
+                  transition: "none",
+                },
+                pr: 2,
+                cursor: "pointer",
+              }}
+            >
               <img
                 src="data:image/svg+xml,%3Csvg class='w-10 h-10' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Capa_1' x='0' y='0' version='1.1' viewBox='6 -6 512 512' xml:space='preserve' style='enable-background:new 6 -6 512 512'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%23fff%7D.st1%7Bfill:none;stroke:%23fff;stroke-width:16;stroke-miterlimit:10%7D%3C/style%3E%3Ccircle cx='262' cy='250' r='108' class='st0'/%3E%3Ccircle cx='404.8' cy='104' r='40.3' class='st0'/%3E%3Ccircle cx='60.8' cy='289.5' r='24.9' class='st0'/%3E%3Ccircle cx='262' cy='250' r='204.4' class='st1'/%3E%3C/svg%3E"
                 alt="InfinitzHost"
                 style={{
                   width: "80%",
-                  maxWidth: "150px",
+                  maxWidth: "40px",
                 }}
-              />
-            </a>
+              />{" "}
+              <Typography sx={{ fontWeight: "600" }}>
+                InfinitzHost (DB hosting)
+              </Typography>
+            </Box>
           </Box>
         </Grid>
       </Grid>
