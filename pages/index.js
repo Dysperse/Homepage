@@ -9,7 +9,7 @@ import Parallax from "parallax-js";
 
 function FeatureCard({ title, image }) {
   return (
-    <Grid item xs={12} sm={4} style={{ display: "flex" }}>
+    <Grid item xs={12} sm={3} style={{ display: "flex" }}>
       <Card
         sx={{
           display: "flex",
@@ -286,28 +286,36 @@ export default function Render() {
         features={
           <>
             <FeatureCard
-              title="Track what's inside your home"
+              title="Create rooms and track your home inventory"
               image="https://ouch-cdn2.icons8.com/IsrJQjIDV9U9oCmoJ3iRD77geBzIWa4CpdqAByJWm3w/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODg0/L2I0ZjRiNzQxLTdh/MjEtNDQwZi1iY2Rh/LTZiYzZjMzQ0OTM2/Ni5wbmc.png"
             />
             <FeatureCard
-              title="Invite members to your home"
+              title="Invite up to 5 members to your home"
               image="https://ouch-cdn2.icons8.com/lVmAsy797H6bYyTGAciPhSY4sd4bNJpYrKv3qneWApQ/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODcx/LzlhMTEwMjgyLTVh/MTUtNDZjNy05NzA5/LWE5NWM3ZmQwNDA0/OC5wbmc.png"
             />
             <FeatureCard
-              title="Set financial goals"
+              title="Create budgets and set financial goals"
               image="https://ouch-cdn2.icons8.com/u7Lkm5yK_ab_FzD9GBl8hXGj9Nyz1X74ahjAN3-Ehug/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNDc2/LzQ5N2QzMDI0LTQ3/OTMtNDUxYy04MGM5/LTUxYWQ2NWQ4NmRj/MC5wbmc.png"
-            />
-            <FeatureCard
-              title="Know where your money's going"
-              image="https://ouch-cdn2.icons8.com/sXyYBkxQ9w22Qb1w5mOxkta113cSwX4QAPJvgqq1PYA/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMTQz/LzA1MjhhODQxLTgz/NWEtNGVlOC1iMTY4/LWYzZjQ5MzRhOGJm/Ni5wbmc.png"
             />
             <FeatureCard
               title="Create shopping lists, todo-lists, and more"
               image="https://ouch-cdn2.icons8.com/5MUeT0n2wT_4LTg-ymWS-i6dQ5_k01HXQc9e_WC8sRo/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMjE1/L2M0MThkMmZjLTE3/MzAtNDcwYi1hOGJm/LTQxMzc5OTYyNTUx/NS5wbmc.png"
             />
             <FeatureCard
-              title="Get maintenance reminders"
-              image="https://ouch-cdn2.icons8.com/Gy2Y5CanfTcEF-3RqQMtCHGFmNZ6ezbqBE7-Tb7FV4o/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjAy/L2M4NDE2Yjg4LTg3/NzMtNGVhZC05YzZj/LWY4MjEyNmE5OTUw/MS5wbmc.png"
+              title="Know where your money's going"
+              image="https://ouch-cdn2.icons8.com/sXyYBkxQ9w22Qb1w5mOxkta113cSwX4QAPJvgqq1PYA/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMTQz/LzA1MjhhODQxLTgz/NWEtNGVlOC1iMTY4/LWYzZjQ5MzRhOGJm/Ni5wbmc.png"
+            />
+            <FeatureCard
+              title="Secure your account with 2-factor authentication"
+              image="https://ouch-cdn2.icons8.com/QqX_HLrYBlLFs2hRJqgmgcUs19szRGzU6T5FHlv3Jzo/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjA4/L2YzNzllYTI0LTE2/NWEtNGQxMi04Nzc2/LTNmZWU5OWJhZjMx/Mi5wbmc.png"
+            />
+            <FeatureCard
+              title="Access your inventory on any device"
+              image="https://ouch-cdn2.icons8.com/el9fRFXgSnnX2mKvHEJo21StwCFOzVHNCMoqK_0x2SE/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjIy/L2RiZTdiMjBjLTU2/YTgtNGQ0YS04MmFk/LTdkYzNlNTkxNDcw/NS5wbmc.png"
+            />
+            <FeatureCard
+              title="Dorm mode for students, and apartment mode"
+              image="https://ouch-cdn2.icons8.com/n3e5YhPlWTiYMNzv_aK0yRpyYuVgXvWh5YU9Q2MywJ8/rs:fit:512:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMzQ3/L2MyOTgzNWJmLWNm/NjQtNDZhMy1iMDIz/LTM0NzgzZjg1YmQ4/Yi5wbmc.png"
             />
           </>
         }
