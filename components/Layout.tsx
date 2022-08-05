@@ -112,12 +112,6 @@ function Footer() {
           >
             Smartlist Dressing
           </MuiLink>
-          <MuiLink
-            underline="none"
-            sx={{ display: "block", mb: 1, color: "#eee" }}
-          >
-            Smartlist Collaborate
-          </MuiLink>
         </Grid>
         <Grid item xs={12} sm={3}>
           <Typography sx={{ mb: 2 }} variant="h6" gutterBottom>
@@ -323,11 +317,6 @@ function ProductsMenu() {
               <App
                 url="https://availability.smartlist.tech"
                 name="Smartlist Availability"
-                description="Smart and easy home inventory and finance management"
-              />
-              <App
-                url="https://collaborate.smartlist.tech"
-                name="Smartlist Collaborate"
                 description="Smart and easy home inventory and finance management"
               />
               <App
