@@ -157,7 +157,7 @@ function Header() {
             available to everyone!
           </Typography>
           <Button
-            href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
+            href="https://coming-soon.smartlist.tech/wait/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
             target="_blank"
             size="large"
             variant="contained"
@@ -371,7 +371,7 @@ export default function Render() {
             <Box>
               <Button
                 size="large"
-                href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
+                href="https://coming-soon.smartlist.tech/wait/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
                 sx={{
                   background:
                     "linear-gradient(to left, #feac5e, #c779d0, #4bc0c8)",

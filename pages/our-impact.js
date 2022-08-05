@@ -44,10 +44,6 @@ export default function Render() {
         description="Availability helps you find the best time for a group to get together. It's a free survey tool that is quick and easy to use"
       />
       <ImpactSection
-        title="Collaborate"
-        description="Collaborate helps people plan events in real-time. "
-      />
-      <ImpactSection
         title="Dressing"
         description="Dressing helps people find clothes fitting the right size, compatible with every store"
       />

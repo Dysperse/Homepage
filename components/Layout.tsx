@@ -464,7 +464,7 @@ export default function Layout(props: any) {
             </Button>
             <Typography sx={{ flexGrow: 1 }} />
             <Button
-              href="https://login.smartlist.tech"
+              href="https://coming-soon.smartlist.tech/wait"
               target="_blank"
               size="large"
               color="inherit"
