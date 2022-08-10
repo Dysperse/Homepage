@@ -317,29 +317,20 @@ function ProductsMenu() {
               Apps
             </Typography>
             <Typography variant="body2" sx={{ mb: 4 }}>
-              Explore all of our apps - free of cost.
+              Services available with a Smartlist account
             </Typography>
           </Grid>
           <Grid item xs={12} sm={8} sx={{ pr: 2 }}>
             <Grid container spacing={2}>
               <App
-                name="Smartlist"
+                name="Smartlist (Now in beta)"
                 description="Smart and easy home inventory and finance management"
+                url="https://my.smartlist.tech"
               />
               <App
                 url="https://availability.smartlist.tech"
                 name="Smartlist Availability"
-                description="Smart and easy home inventory and finance management"
-              />
-              <App
-                href="https://recipe-generator.smartlist.tech"
-                name="Smartlist recipe generator"
-                description="Smart and easy home inventory and finance management"
-              />
-              <App
-                href="https://recipe-generator.smartlist.tech"
-                name="Smartlist dressing"
-                description="Find sizes of clothes compatible with every store."
+                description="Find the best time for your group to get together"
               />
             </Grid>
           </Grid>
@@ -386,22 +377,6 @@ export default function Layout(props: any) {
                 Smartlist
               </Typography>
             </Link>
-            <Link href="/our-impact">
-              <Button
-                size="large"
-                color="inherit"
-                sx={{
-                  ...styles.button,
-                  ...(typeof window !== "undefined" &&
-                    window.location.pathname === "/our-impact" && {
-                      background: "rgba(0,0,0,0.15)!important",
-                    }),
-                  display: { xs: "none", sm: "none", md: "inline-flex" },
-                }}
-              >
-                Impact
-              </Button>
-            </Link>
             <Link href="/privacy">
               <Button
                 size="large"
@@ -418,38 +393,22 @@ export default function Layout(props: any) {
                 Privacy
               </Button>
             </Link>
-            <Link href="/developer">
-              <Button
-                size="large"
-                color="inherit"
-                sx={{
-                  ...styles.button,
-                  ...(typeof window !== "undefined" &&
-                    window.location.pathname === "/developer" && {
-                      background: "rgba(0,0,0,0.15)!important",
-                    }),
-                  display: { xs: "none", sm: "inline-flex" },
-                }}
-              >
-                Developer
-              </Button>
-            </Link>
-            <Link href="https://status.smartlist.tech">
-              <Button
-                size="large"
-                color="inherit"
-                sx={{
-                  ...styles.button,
-                  ...(typeof window !== "undefined" &&
-                    window.location.pathname === "/status" && {
-                      background: "rgba(0,0,0,0.15)!important",
-                    }),
-                  display: { xs: "none", sm: "inline-flex" },
-                }}
-              >
-                Status
-              </Button>
-            </Link>
+            <Button
+              size="large"
+              href="https://status.smartlist.tech"
+              target="_blank"
+              color="inherit"
+              sx={{
+                ...styles.button,
+                ...(typeof window !== "undefined" &&
+                  window.location.pathname === "/status" && {
+                    background: "rgba(0,0,0,0.15)!important",
+                  }),
+                display: { xs: "none", sm: "inline-flex" },
+              }}
+            >
+              Status
+            </Button>
             <ProductsMenu />
             <Button
               size="large"
@@ -462,21 +421,9 @@ export default function Layout(props: any) {
             >
               Community
             </Button>
-            <Button
-              href="https://team.smartlist.ga"
-              target="_blank"
-              size="large"
-              color="inherit"
-              sx={{
-                ...styles.button,
-                display: { xs: "none", md: "inline-flex" },
-              }}
-            >
-              Our&nbsp;team
-            </Button>
             <Typography sx={{ flexGrow: 1 }} />
             <Button
-              href="https://coming-soon.smartlist.tech/wait"
+              href="https://login.smartlist.tech"
               target="_blank"
               size="large"
               color="inherit"
@@ -528,18 +475,21 @@ export default function Layout(props: any) {
                 <span className="material-symbols-rounded">close</span>
               </IconButton>
             }
-            severity="info"
+            severity="success"
             sx={{
               background: "linear-gradient(to right, #237A57, #093028)",
               width: "100%",
               borderRadius: 4,
               boxSizing: "border-box",
+              mt: 4,
+              maxWidth: "90vw",
+              mx: "auto",
               zIndex: 1,
             }}
             variant="filled"
           >
-            NEW! Make an impact with Smartlist. We'll send you reminders and
-            tips on how to make your home more eco-friendly
+            Smartlist's now in beta, meaning that you might encounter bugs and
+            more features will be added
           </Alert>
         </Box>
       </Collapse>

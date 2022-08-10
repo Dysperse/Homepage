@@ -7,7 +7,7 @@ export default function Render() {
   return (
     <Box sx={{ px: { xs: 5, sm: 17 }, pb: 5 }}>
       <Typography variant="h3" sx={{ textAlign: "center", my: 4, mt: 8 }}>
-        Secure <span style={{ color: green[700] }}>like Fort Knox</span>
+        <span style={{ color: green[700] }}>Security</span>
       </Typography>
       <Typography sx={{ textAlign: "center", mb: 4 }}>
         At Smartlist, we protect your data like it's our own. We're constantuly
@@ -18,17 +18,16 @@ export default function Render() {
           background: "rgba(200,200,200,.3)",
           p: 1,
           borderRadius: 5,
-          mb: 1,
+          mb: 2,
           boxShadow: 0
         }}
       >
         <CardContent>
           <Typography gutterBottom variant="h5">
-            Argon2 flavored password security + MFA
+            Argon2 security algorithm
           </Typography>
           <Typography gutterBottom>
-            Argon2 is the strongest password hashing technique (as of 2022). You
-            can turn on multi factor auth to keep the bad guys out
+            Argon2 is a memory-hard hashing algorithm that is designed to be as fast and secure as possible.
           </Typography>
         </CardContent>
       </Card>
@@ -37,54 +36,16 @@ export default function Render() {
           background: "rgba(200,200,200,.3)",
           p: 1,
           borderRadius: 5,
-          mb: 1,
+          mb: 2,
           boxShadow: 0
         }}
       >
         <CardContent>
           <Typography gutterBottom variant="h5">
-            HTTPS/HSTS
+            2-factor authentication available
           </Typography>
           <Typography gutterBottom>
-            Smartlist uses HSTS to take the site down in case HTTPS is
-            unavailable
-          </Typography>
-        </CardContent>
-      </Card>
-      <Card
-        sx={{
-          background: "rgba(200,200,200,.3)",
-          p: 1,
-          borderRadius: 5,
-          mb: 1,
-          boxShadow: 0
-        }}
-      >
-        <CardContent>
-          <Typography gutterBottom variant="h5">
-            DDoS guard
-          </Typography>
-          <Typography gutterBottom>
-            Smartlist's servers are guarded with a DDoS protection service which
-            will block any malicious IP addresses.
-          </Typography>
-        </CardContent>
-      </Card>
-      <Card
-        sx={{
-          background: "rgba(200,200,200,.3)",
-          p: 1,
-          borderRadius: 5,
-          mb: 1,
-          boxShadow: 0
-        }}
-      >
-        <CardContent>
-          <Typography gutterBottom variant="h5">
-            Captcha verification
-          </Typography>
-          <Typography gutterBottom>
-            Smartlist will require you to enter a captcha on login
+            You can now turn on 2-factor authentication to verify your identity before logging in
           </Typography>
         </CardContent>
       </Card>
