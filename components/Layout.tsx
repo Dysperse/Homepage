@@ -113,15 +113,6 @@ function Footer() {
             underline="none"
             sx={{ display: "block", cursor: "pointer", mb: 1, color: "#eee" }}
           >
-            Smartlist Recipe Generator
-          </MuiLink>
-          <MuiLink
-            onClick={() => {
-              window.location.href = "https://coming-soon.smartlist.tech";
-            }}
-            underline="none"
-            sx={{ display: "block", cursor: "pointer", mb: 1, color: "#eee" }}
-          >
             Smartlist Dressing
           </MuiLink>
         </Grid>
