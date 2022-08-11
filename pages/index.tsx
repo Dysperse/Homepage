@@ -123,10 +123,7 @@ function FeatureList() {
         />
         <Feature icon="cloud" text="Access your inventory from any device" />
         <Feature icon="sticky_note_2" text="Add, edit, star & note items" />
-        <Feature
-          icon="payments"
-          text="Know where your money goes by revieweing your expenses and payments one-by-one"
-        />
+        <Feature icon="payments" text="Review your expenses and payments" />
         <Feature
           icon="eco"
           text="Get eco-friendly suggestions to make a positive impact on the planet"
