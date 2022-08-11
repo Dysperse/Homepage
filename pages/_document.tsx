@@ -55,7 +55,7 @@ export default function Document() {
           content="https://i.ibb.co/1nW9xMJ/banner.png"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <link

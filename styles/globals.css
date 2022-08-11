@@ -4,15 +4,25 @@ html {
 html,
 body {
   color: hsl(240, 11%, 15%);
+  background-color: #000;
   margin: 0;
 }
-*:not(.material-symbols-rounded, h2.MuiTypography-root, .disableFont) {
-  font-family: "Outfit", sans-serif !important;
+*:not(.material-symbols-rounded, .disableFont) {
+  font-family: "Kantumruy Pro", sans-serif !important;
 }
 
 .MuiTouchRipple-rippleVisible {
-  animation-duration: 0.25s !important;
+  animation-duration: 0.2s !important;
 }
 .MuiTouchRipple-child {
   filter: opacity(0.4) !important;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.gradientText {
+  /* background: -webkit-linear-gradient(45deg, #c4b5b5, #a69090); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
 }

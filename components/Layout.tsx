@@ -39,7 +39,7 @@ function Footer() {
             sx={{
               my: 1,
               mb: 2,
-              background: "rgba(200,200,200,.1)",
+              background: "rgba(0,0,0,.1)",
               p: 1,
               borderRadius: 2,
             }}
@@ -194,7 +194,7 @@ function App({ name, description, url = "/" }: any) {
     <Grid item xs={12} sm={6}>
       <Card
         elevation={0}
-        sx={{ background: "rgba(200,200,200,.3)", borderRadius: 5 }}
+        sx={{ background: "rgba(10,10,10,.9)", color: "#fff", borderRadius: 5 }}
       >
         <CardActionArea href={url} target="_blank">
           <CardContent>
@@ -278,9 +278,10 @@ function ProductsMenu() {
           sx: {
             position: "fixed!important",
             left: "0!important",
-            background: "rgba(240,240,240,.9)",
+            background: "rgba(10,10,10,.8)",
             backdropFilter: "blur(20px)",
             top: "70px!important",
+            color: "#fff",
             right: "0!important",
             p: 2,
             width: "calc(100vw - 64px) !important",
@@ -344,15 +345,15 @@ export default function Layout(props: any) {
             position: "fixed",
             top: 0,
             left: 0,
-            color: "hsl(240, 11%, 25%)",
-            background: "rgba(250,250,250,.9)",
+            color: "hsl(240, 11%, 95%)",
+            background: "rgba(0,0,0,0.5)",
             backdropFilter: "blur(15px)",
             height: "70px",
             display: "flex",
             justifyContent: "center",
           }}
         >
-          <Toolbar>
+          <Toolbar sx={{ alignItems: "center" }}>
             <Link href="/">
               <Typography
                 variant="h6"
@@ -368,6 +369,11 @@ export default function Layout(props: any) {
                 Smartlist
               </Typography>
             </Link>
+            <Box
+              sx={{
+                ml: "auto",
+              }}
+            ></Box>
             <Link href="/privacy">
               <Button
                 size="large"
@@ -412,7 +418,6 @@ export default function Layout(props: any) {
             >
               Community
             </Button>
-            <Typography sx={{ flexGrow: 1 }} />
             <Button
               href="https://login.smartlist.tech"
               target="_blank"
@@ -420,18 +425,14 @@ export default function Layout(props: any) {
               color="inherit"
               sx={{
                 ...styles.button,
+                ml: "auto",
                 background: "rgba(0,0,0,.1)",
                 "&:hover": {
                   background: "rgba(0,0,0,.2)",
                 },
               }}
             >
-              <Box sx={{ display: { xs: "none", sm: "inline-block" } }}>
-                Continue&nbsp;to&nbsp;my&nbsp;account
-              </Box>
-              <Box sx={{ display: { xs: "inline-block", sm: "none" } }}>
-                Sign&nbsp;in
-              </Box>
+              My&nbsp;Account
               <span
                 className="material-symbols-rounded"
                 style={{
@@ -445,46 +446,6 @@ export default function Layout(props: any) {
         </AppBar>
       </>
       <Toolbar sx={{ height: "70px" }} />
-      <Collapse in={open}>
-        <Box sx={{ p: 1 }}>
-          <Alert
-            action={
-              <IconButton
-                aria-label="close"
-                sx={{
-                  mt: {
-                    sm: "-4px",
-                    xs: 2.2,
-                  },
-                }}
-                color="inherit"
-                size="small"
-                onClick={() => {
-                  setOpen(false);
-                }}
-              >
-                <span className="material-symbols-rounded">close</span>
-              </IconButton>
-            }
-            severity="success"
-            sx={{
-              background: "linear-gradient(to right, #237A57, #093028)",
-              width: "100%",
-              borderRadius: 4,
-              boxSizing: "border-box",
-              mt: 4,
-              maxWidth: "90vw",
-              mx: "auto",
-              zIndex: 1,
-            }}
-            variant="filled"
-          >
-            Smartlist's now in beta, meaning that you might encounter bugs and
-            more features will be added
-          </Alert>
-        </Box>
-      </Collapse>
-
       {props.children}
       <Footer />
     </>
