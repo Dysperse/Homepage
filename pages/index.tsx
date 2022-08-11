@@ -103,49 +103,36 @@ function Feature({ text, icon }: { text: string; icon: string }) {
 function FeatureList() {
   return (
     <Box sx={{ px: 10, color: "#fff", textAlign: "left" }}>
-      <Grid container sx={{ alignItems: "center" }}>
-        <Grid item xs={12} sm={6} sx={{ p: 2 }}>
-          <Typography variant="h5">Features you&apos;ll love...</Typography>
+      <Typography variant="h4" sx={{ fontWeight: "600" }}>
+        Features you&apos;ll love...
+      </Typography>
 
-          <Masonry columns={2} sx={{ mt: 1 }} spacing={2}>
-            <Feature icon="task_alt" text="To-do, shopping, and custom lists" />
-            <Feature
-              icon="home"
-              text="Compatible with single-family homes, apartments, and student dorms"
-            />
-            <Feature
-              icon="pin_drop"
-              text="Build up your inventory by creating rooms and items"
-            />
-            <Feature
-              icon="productivity"
-              text="Invite up to 5 people to your home"
-            />
-            <Feature
-              icon="cloud"
-              text="Access your inventory from any device"
-            />
-            <Feature icon="sticky_note_2" text="Add, edit, star & note items" />
-            <Feature
-              icon="payments"
-              text="Know where your money goes by revieweing your expenses and payments one-by-one"
-            />
-            <Feature
-              icon="palette"
-              text="Customize your dashboard's appearance"
-            />
-          </Masonry>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <picture>
-            <img
-              src="https://i.ibb.co/xzRHdVJ/image.png"
-              alt="User dashboard"
-              style={{ width: "100%", borderRadius: "20px" }}
-            />
-          </picture>
-        </Grid>
-      </Grid>
+      <Masonry columns={3} sx={{ mt: 3 }} spacing={2}>
+        <Feature icon="task_alt" text="To-do, shopping, and custom lists" />
+        <Feature
+          icon="home"
+          text="Compatible with single-family homes, apartments, and student dorms"
+        />
+        <Feature
+          icon="pin_drop"
+          text="Build up your inventory by creating rooms and items"
+        />
+        <Feature
+          icon="productivity"
+          text="Invite up to 5 people to your home"
+        />
+        <Feature icon="cloud" text="Access your inventory from any device" />
+        <Feature icon="sticky_note_2" text="Add, edit, star & note items" />
+        <Feature
+          icon="payments"
+          text="Know where your money goes by revieweing your expenses and payments one-by-one"
+        />
+        <Feature
+          icon="eco"
+          text="Get eco-friendly suggestions to make a positive impact on the planet"
+        />
+        <Feature icon="palette" text="Customize your dashboard's appearance" />
+      </Masonry>
     </Box>
   );
 }
