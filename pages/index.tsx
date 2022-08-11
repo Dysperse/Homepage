@@ -102,7 +102,7 @@ function Feature({ text, icon }: { text: string; icon: string }) {
 
 function FeatureList() {
   return (
-    <Box sx={{ px: 10, color: "#fff", textAlign: "left" }}>
+    <Box sx={{ px: { xs: 3, sm: 10 }, color: "#fff", textAlign: "left" }}>
       <Typography variant="h4" sx={{ fontWeight: "600" }}>
         Features you&apos;ll love...
       </Typography>
