@@ -107,7 +107,7 @@ function FeatureList() {
         Features you&apos;ll love...
       </Typography>
 
-      <Masonry columns={3} sx={{ mt: 3 }} spacing={2}>
+      <Masonry columns={{ xs: 1, sm: 3 }} sx={{ mt: 3 }} spacing={2}>
         <Feature icon="task_alt" text="To-do, shopping, and custom lists" />
         <Feature
           icon="home"
