@@ -29,24 +29,16 @@ function Footer() {
           <Typography variant="h5" gutterBottom sx={{ fontWeight: "600" }}>
             Smartlist
           </Typography>
-          <Typography sx={{ mb: 2 }} gutterBottom>
-            Made by a high-school student for everyone
-            <span role="img" aria-label="heart emoji">
-              ❤️
-            </span>
-          </Typography>
           <Box
             sx={{
               my: 1,
               mb: 2,
-              background: "rgba(0,0,0,.1)",
-              p: 1,
+              background: "rgba(255,255,255,.1)",
+              p: 2,
               borderRadius: 2,
             }}
           >
             <Typography
-              gutterBottom
-              variant="h6"
               sx={{ display: "flex", alignItems: "center", gap: "10px" }}
             >
               Proudly made in the USA&nbsp;
@@ -194,7 +186,11 @@ function App({ name, description, url = "/" }: any) {
     <Grid item xs={12} sm={6}>
       <Card
         elevation={0}
-        sx={{ background: "rgba(10,10,10,.9)", color: "#fff", borderRadius: 5 }}
+        sx={{
+          background: "rgba(200,200,200,.9)",
+          color: "#000",
+          borderRadius: 5,
+        }}
       >
         <CardActionArea href={url} target="_blank">
           <CardContent>
@@ -222,7 +218,9 @@ function ProductsMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  React.useEffect(() => {
+    document.body.style.overflow = open ? "hidden!important" : "auto";
+  });
   return (
     <>
       <Button
@@ -270,7 +268,7 @@ function ProductsMenu() {
         BackdropProps={{
           sx: {
             minWidth: "500px",
-            background: "rgba(0,0,0,0.3)",
+            background: "rgba(255,255,255,0.3)",
             backdropFilter: "blur(25px)",
           },
         }}
@@ -278,10 +276,10 @@ function ProductsMenu() {
           sx: {
             position: "fixed!important",
             left: "0!important",
-            background: "rgba(10,10,10,.8)",
+            background: "rgba(255,255,255,.5)",
             backdropFilter: "blur(20px)",
             top: "70px!important",
-            color: "#fff",
+            color: "#000",
             right: "0!important",
             p: 2,
             width: "calc(100vw - 64px) !important",
@@ -345,8 +343,8 @@ export default function Layout(props: any) {
             position: "fixed",
             top: 0,
             left: 0,
-            color: "hsl(240, 11%, 95%)",
-            background: "rgba(0,0,0,0.5)",
+            color: "hsl(240, 11%, 15%)",
+            background: "rgba(255,255,255,0.5)",
             backdropFilter: "blur(15px)",
             height: "70px",
             display: "flex",

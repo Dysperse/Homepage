@@ -9,9 +9,9 @@ function Header() {
     <Box
       sx={{
         px: { xs: 3, sm: 10 },
-        color: "#fff",
+        color: "#000",
         textAlign: { sm: "center" },
-        py: 20,
+        py: { xs: 10, sm: 20 },
       }}
     >
       <Typography
@@ -21,7 +21,7 @@ function Header() {
           mb: 8,
           fontWeight: "800",
           fontSize: { xs: "65px", sm: "140px" },
-          color: "#c4b5b5",
+          color: "#6B4B4B",
         }}
       >
         <u>Organize</u>, <u>budget</u> &amp; <u>save</u>.
@@ -36,12 +36,12 @@ function Header() {
         disableElevation
         variant="contained"
         sx={{
-          mt: 2,
+          mt: 1.5,
           textTransform: "none",
           borderRadius: "50px",
-          border: "2px solid #fff!important",
-          backgroundColor: "#fff!important",
-          color: "#000!important",
+          border: "2px solid #000!important",
+          backgroundColor: "#000!important",
+          color: "#fff!important",
           transition: "transform .2s",
           "&:active": {
             transform: "scale(.98)",
@@ -59,12 +59,12 @@ function Header() {
         sx={{
           borderWidth: "2px!important",
           ml: { sm: 1 },
-          mt: 2,
+          mt: 1.5,
           textTransform: "none",
           transition: "transform .2s",
           borderRadius: "50px",
-          borderColor: "#fff!important",
-          color: "#fff!important",
+          borderColor: "#000!important",
+          color: "#000!important",
           "&:hover": {
             background: "rgba(255,255,255,.1)",
           },
@@ -102,7 +102,7 @@ function Feature({ text, icon }: { text: string; icon: string }) {
 
 function FeatureList() {
   return (
-    <Box sx={{ px: { xs: 3, sm: 10 }, color: "#fff", textAlign: "left" }}>
+    <Box sx={{ px: { xs: 3, sm: 10 }, color: "#000", textAlign: "left" }}>
       <Typography variant="h4" sx={{ fontWeight: "600" }}>
         Features you&apos;ll love...
       </Typography>
