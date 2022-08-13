@@ -30,7 +30,7 @@ function Header() {
                 the modern way
               </span>
             </Typography>
-            <Typography sx={{ fontWeight: { sm: "800" } }}>
+            <Typography>
               Ever been stuck at the grocery store wondering what you need to
               get? Smartlist helps you track your home inventory and expenses
               for free
