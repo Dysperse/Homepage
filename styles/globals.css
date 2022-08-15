@@ -1,32 +1,7 @@
-html {
-  overflow-x: hidden;
-}
-html,
-body {
-  color: hsl(240, 11%, 15%);
-  background-color: #fff;
-  background-image: radial-gradient(#eee 3px, transparent 0);
-  background-size: 50px 50px;
-  background-position: -19px -19px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  margin: 0;
-}
-*:not(.material-symbols-rounded, .disableFont) {
-  font-family: "Kantumruy Pro", sans-serif !important;
-}
-
-.MuiTouchRipple-rippleVisible {
-  animation-duration: 0.2s !important;
-}
-.MuiTouchRipple-child {
-  filter: opacity(0.4) !important;
-}
-::-webkit-scrollbar {
-  display: none;
-}
-
-.gradientText {
-  /* background: -webkit-linear-gradient(45deg, #c4b5b5, #a69090); */
-  /* -webkit-background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
+* {
+  font-family: "Inter", sans-serif;
 }
