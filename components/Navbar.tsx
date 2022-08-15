@@ -84,7 +84,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <Popover className="bg-white">
-      <div className="flex justify-between items-center fixed z-10 w-full backdrop-blur-lg top-0 left-0 bg-[rgba(255,255,255,.8)]  py-6 md:justify-start md:space-x-10 px-10">
+      <div className="flex justify-between items-center fixed z-10 w-full backdrop-blur-lg border-b top-0 left-0 bg-[rgba(255,255,255,.8)] py-5 md:justify-start md:space-x-10 px-10">
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <a href="#" className="flex items-center gap-5">
             <img
@@ -94,7 +94,7 @@ export default function Example() {
             />
           </a>
         </div>
-        <Popover.Group as="nav" className="hidden md:flex space-x-10">
+        <Popover.Group as="nav" className="flex space-x-5 md:space-x-10">
           <a
             href="#"
             className="text-base font-medium text-gray-500 hover:text-gray-900"
@@ -135,8 +135,8 @@ export default function Example() {
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
-                    <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                  <Popover.Panel className="absolute z-10 fixed right-0 -mr-10 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                    <div className="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 overflow-hidden">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                         {solutions.map((item) => (
                           <a

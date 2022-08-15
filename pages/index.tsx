@@ -4,9 +4,9 @@ function Header() {
   return (
     <div className="relative bg-white overflow-hidden">
       <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
-            <h1 className="mt-10 md:mt-[100px] text-5xl font text-transparent text-8xl bg-clip-text bg-gradient-to-tl from-green-400 to-green-900 font-[400] tracking-tight sm:tracking-tight sm:text-6xl">
+            <h1 className="mt-[100px] md:mt-[100px] font text-transparent text-6xl bg-clip-text bg-gradient-to-tl from-green-400 to-green-900 font-[900] tracking-tight sm:tracking-tight sm:text-6xl">
               Next-gen home inventory and personal finances
             </h1>
             <p className="mt-4 text-lg text-gray-500">
@@ -28,7 +28,7 @@ function Header() {
             </a>
           </div>
           <div>
-            <div className="mt-10">
+            <div className="mt-[80px] -ml-[150px]">
               {/* Decorative image grid */}
               <div
                 aria-hidden="true"
@@ -44,9 +44,16 @@ function Header() {
                           className="w-full h-full object-center object-cover"
                         />
                       </div>
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
+                      <div className="w-44 h-32 rounded-2xl overflow-hidden">
                         <img
                           src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+                          alt=""
+                          className="w-full h-full object-center object-cover"
+                        />
+                      </div>
+                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
                         />
@@ -67,7 +74,7 @@ function Header() {
                           className="w-full h-full object-center object-cover"
                         />
                       </div>
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
+                      <div className="w-44 h-32 rounded-2xl overflow-hidden">
                         <img
                           src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
                           alt=""
@@ -76,9 +83,16 @@ function Header() {
                       </div>
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
+                      <div className="w-44 h-32 rounded-2xl overflow-hidden">
                         <img
                           src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                          alt=""
+                          className="w-full h-full object-center object-cover"
+                        />
+                      </div>
+                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
                         />
@@ -100,6 +114,13 @@ function Header() {
                         />
                       </div>
                       <div className="w-44 h-64 rounded-2xl overflow-hidden">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                          alt=""
+                          className="w-full h-full object-center object-cover"
+                        />
+                      </div>
+                      <div className="w-44 h-32 rounded-2xl overflow-hidden">
                         <img
                           src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
                           alt=""
@@ -121,6 +142,8 @@ export default function Home() {
   return (
     <>
       <Header />
+      <div className="fade" />
+      Hi!
     </>
   );
 }
