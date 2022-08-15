@@ -113,14 +113,14 @@ export default function Example() {
                 <Popover.Button
                   className={classNames(
                     open ? "text-gray-900" : "text-gray-500",
-                    "group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                    "group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
                   )}
                 >
                   <span>Apps</span>
                   <ChevronDownIcon
                     className={classNames(
-                      open ? "text-gray-600" : "text-gray-400",
-                      "ml-2 h-5 w-5 group-hover:text-gray-500"
+                      open ? "text-gray-900" : "text-gray-400",
+                      "ml-2 h-5 w-5 group-hover:text-gray-900"
                     )}
                     aria-hidden="true"
                   />
@@ -136,7 +136,7 @@ export default function Example() {
                   leaveTo="opacity-0 translate-y-1"
                 >
                   <Popover.Panel className="absolute z-10 fixed right-0 -mr-10 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
-                    <div className="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 overflow-hidden">
+                    <div className="rounded-lg shadow-lg ring-1 ring-gray-200 overflow-hidden">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                         {solutions.map((item) => (
                           <a

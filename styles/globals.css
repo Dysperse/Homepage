@@ -29,3 +29,6 @@
     display: block;
   }
 }
+* {
+  outline: none;
+}
