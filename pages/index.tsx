@@ -28,7 +28,7 @@ function Header() {
             </a>
           </div>
           <div>
-            <div className="mt-[80px] -ml-[150px]">
+            <div className="mt-[80px] -ml-[150px] md:-ml-0">
               {/* Decorative image grid */}
               <div
                 aria-hidden="true"
