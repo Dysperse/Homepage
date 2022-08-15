@@ -83,7 +83,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <Popover className="bg-white">
-      <div className="flex justify-between items-center fixed z-10 w-full backdrop-blur-lg border-b top-0 left-0 bg-[rgba(255,255,255,.8)] py-5 md:justify-start md:space-x-10 px-10 h-20">
+      <div className="flex justify-between items-center fixed z-10 w-full backdrop-blur-lg border-b top-0 left-0 bg-[rgba(255,255,255,.9)] py-5 md:justify-start md:space-x-10 px-10 h-20">
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <a href="#" className="flex items-center gap-5">
             <img
@@ -190,7 +190,7 @@ export default function Example() {
           </a>
           <a
             href="#"
-            className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br from-orange-400 to-orange-900"
+            className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br from-gray-700 to-gray-900"
           >
             Get started
           </a>
