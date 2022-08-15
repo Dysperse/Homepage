@@ -4,7 +4,11 @@ html {
 html,
 body {
   color: hsl(240, 11%, 15%);
-  background-color: #eee;
+  background-color: #fff;
+  background-image: radial-gradient(#eee 3px, transparent 0);
+  background-size: 50px 50px;
+  background-position: -19px -19px;
+
   margin: 0;
 }
 *:not(.material-symbols-rounded, .disableFont) {

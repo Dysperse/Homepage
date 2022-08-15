@@ -30,6 +30,7 @@ function MyApp({ Component, pageProps }) {
           <Button sx={{ ...buttonStyles }}>Privacy</Button>
         </Toolbar>
       </AppBar>
+      <Toolbar />
       <Component {...pageProps} />
     </>
   );
