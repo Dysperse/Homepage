@@ -3,7 +3,7 @@ import { SpeakerphoneIcon, XIcon } from "@heroicons/react/outline";
 
 function Announcement() {
   return (
-    <div className="bg-gray-900 mt-20">
+    <div className="max-w-[100vw] bg-gray-900 mt-20">
       <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between flex-wrap">
           <div className="flex-1 flex items-center">
