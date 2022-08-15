@@ -12,11 +12,10 @@ import {
   ShieldCheckIcon,
   SupportIcon,
   ViewGridIcon,
-  XIcon,
 } from "@heroicons/react/outline";
 import { Twitter, MessageSquare } from "react-feather";
-
 import { ChevronDownIcon } from "@heroicons/react/solid";
+/* This example requires Tailwind CSS v2.0+ */
 
 const solutions = [
   {
@@ -84,7 +83,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <Popover className="bg-white">
-      <div className="flex justify-between items-center fixed z-10 w-full backdrop-blur-lg border-b top-0 left-0 bg-[rgba(255,255,255,.8)] py-5 md:justify-start md:space-x-10 px-10">
+      <div className="flex justify-between items-center fixed z-10 w-full backdrop-blur-lg border-b top-0 left-0 bg-[rgba(255,255,255,.8)] py-5 md:justify-start md:space-x-10 px-10 h-20">
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <a href="#" className="flex items-center gap-5">
             <img
