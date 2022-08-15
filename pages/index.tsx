@@ -14,11 +14,8 @@ function Announcement() {
               />
             </span>
             <p className="ml-3 font-medium text-white truncate">
-              <span className="md:hidden">We announced a new product!</span>
-              <span className="hidden md:inline">
                 Smartlist just got more secure! All user data is now stored
                 securely with AES-256 bit encryption!
-              </span>
             </p>
           </div>
           <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
