@@ -3,17 +3,17 @@ import { SpeakerphoneIcon, XIcon } from "@heroicons/react/outline";
 
 function Announcement() {
   return (
-    <div className="bg-gray-900 mt-[100px] md:mt-20">
+    <div className="bg-gray-900 mt-20">
       <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between flex-wrap">
-          <div className="w-0 flex-1 flex items-center">
+          <div className="flex-1 flex items-center">
             <span className="flex p-2 rounded-lg bg-gray-800">
               <SpeakerphoneIcon
                 className="h-5 w-5 text-white"
                 aria-hidden="true"
               />
             </span>
-            <p className="ml-3 font-medium text-white truncate">
+            <p className="ml-3 font-medium text-white">
                 Smartlist just got more secure! All user data is now stored
                 securely with AES-256 bit encryption!
             </p>
