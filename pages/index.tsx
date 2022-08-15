@@ -13,7 +13,7 @@ function Announcement() {
                 aria-hidden="true"
               />
             </span>
-            <p className="ml-3 overflow-hidden truncate font-medium text-white">
+            <p className="ml-3 max-w-[100%] overflow-hidden truncate font-medium text-white">
                 Smartlist just got more secure! All user data is now stored
                 securely with AES-256 bit encryption!
             </p>
