@@ -1,5 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React, { Fragment } from "react";
+import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import {
   BookmarkAltIcon,
@@ -85,27 +86,27 @@ export default function Example() {
     <Popover className="bg-white">
       <div className="flex justify-between items-center fixed z-[999999] w-full backdrop-blur-lg border-b top-0 left-0 bg-[rgba(255,255,255,.9)] py-5 md:justify-start md:space-x-10 px-10 h-20">
         <div className="flex justify-start lg:w-0 lg:flex-1">
-          <a href="#" className="flex items-center gap-5">
-            <img
-              className="h-8 w-auto sm:h-10"
-              src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
-              alt=""
-            />
-          </a>
+          <Link href="/">
+            <a className="flex items-center gap-5">
+              <img
+                className="h-8 w-auto sm:h-10"
+                src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
+                alt=""
+              />
+            </a>
+          </Link>
         </div>
         <Popover.Group as="nav" className="flex space-x-5 md:space-x-10">
-          <a
-            href="#"
-            className="text-base font-medium text-gray-500 hover:text-gray-900"
-          >
-            Privacy
-          </a>
-          <a
-            href="#"
-            className="text-base font-medium text-gray-500 hover:text-gray-900"
-          >
-            Support
-          </a>
+          <Link href="/privacy">
+            <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Privacy
+            </a>
+          </Link>
+          <Link href="/support">
+            <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Support
+            </a>
+          </Link>
           <Popover className="relative">
             {({ open }) => (
               <>

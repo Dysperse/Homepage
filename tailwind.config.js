@@ -11,6 +11,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require("flowbite/plugin")
   ],
 }

@@ -298,6 +298,13 @@
   dependencies:
     tslib "^2.4.0"
 
+"@tailwindcss/forms@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.5.2.tgz#4ef45f9916dcb37838cbe7fecdcc4ba7a7c2ab59"
+  integrity sha512-pSrFeJB6Bg1Mrg9CdQW3+hqZXAKsBrSG9MAfFLKy1pVA4Mb4W7C0k7mEhlmS2Dfo/otxrQOET7NJiJ9RrS563w==
+  dependencies:
+    mini-svg-data-uri "^1.2.3"
+
 "@tsconfig/node10@^1.0.7":
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@tsconfig/node10/-/node10-1.0.9.tgz#df4907fc07a886922637b15e02d4cebc4c0021b2"
@@ -1987,7 +1994,7 @@ mimic-fn@^2.1.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
-mini-svg-data-uri@^1.4.3:
+mini-svg-data-uri@^1.2.3, mini-svg-data-uri@^1.4.3:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz#8ab0aabcdf8c29ad5693ca595af19dd2ead09939"
   integrity sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
