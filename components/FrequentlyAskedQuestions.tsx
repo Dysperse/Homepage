@@ -1,5 +1,6 @@
 import React from "react";
 import { Accordion } from "flowbite-react";
+import Link from "next/link";
 
 export function FrequentlyAskedQuestions() {
   React.useEffect(() => {
@@ -39,9 +40,9 @@ export function FrequentlyAskedQuestions() {
           <Accordion.Content>
             <p className="mb-2 text-gray-500 dark:text-gray-400">
               At Smartlist, we take your privacy{" "}
-              <a rel="noreferrer" href="/privacy">
+              <Link rel="noreferrer" href="/privacy">
                 very seriously
-              </a>
+              </Link>
               . Your account data is encrypted with AES 256-bit encryption. You
               can enable two-factor authentication to increase your account
               security.
