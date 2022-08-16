@@ -5,11 +5,13 @@ export default function Footer() {
       <div className="max-w-[90vw] mx-auto md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
           <a href="https://flowbite.com/" className="flex items-center">
-            <img
-              src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
-              className="mr-3 h-8"
-              alt="FlowBite Logo"
-            />
+            <picture>
+              <img
+                src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
+                className="mr-3 h-8"
+                alt="Smartlist Logo"
+              />
+            </picture>
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Smartlist
             </span>
@@ -72,7 +74,12 @@ export default function Footer() {
                   href="https://vercel.com/?utm_source=smartlist&utm_campaign=oss"
                   className="hover:underline"
                 >
-                  <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" />
+                  <picture>
+                    <img
+                      src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
+                      alt="Powered by Vercel"
+                    />
+                  </picture>
                 </a>
               </li>
               <li>
@@ -80,10 +87,13 @@ export default function Footer() {
                   href="https://infinitzhost.com"
                   className="select-none items-center hover:underline bg-black block rounded-xl flex"
                 >
-                  <img
-                    className="w-11 h-12 border-r border-gray-600 pl-2 p-[5px]"
-                    src="data:image/svg+xml,%3Csvg class='w-10 h-10' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Capa_1' x='0' y='0' version='1.1' viewBox='6 -6 512 512' xml:space='preserve' style='enable-background:new 6 -6 512 512'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%23fff%7D.st1%7Bfill:none;stroke:%23fff;stroke-width:16;stroke-miterlimit:10%7D%3C/style%3E%3Ccircle cx='262' cy='250' r='108' class='st0'/%3E%3Ccircle cx='404.8' cy='104' r='40.3' class='st0'/%3E%3Ccircle cx='60.8' cy='289.5' r='24.9' class='st0'/%3E%3Ccircle cx='262' cy='250' r='204.4' class='st1'/%3E%3C/svg%3E"
-                  />
+                  <picture>
+                    <img
+                      alt="InfinitzHost logo"
+                      className="w-11 h-12 border-r border-gray-600 pl-2 p-[5px]"
+                      src="data:image/svg+xml,%3Csvg class='w-10 h-10' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Capa_1' x='0' y='0' version='1.1' viewBox='6 -6 512 512' xml:space='preserve' style='enable-background:new 6 -6 512 512'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%23fff%7D.st1%7Bfill:none;stroke:%23fff;stroke-width:16;stroke-miterlimit:10%7D%3C/style%3E%3Ccircle cx='262' cy='250' r='108' class='st0'/%3E%3Ccircle cx='404.8' cy='104' r='40.3' class='st0'/%3E%3Ccircle cx='60.8' cy='289.5' r='24.9' class='st0'/%3E%3Ccircle cx='262' cy='250' r='204.4' class='st1'/%3E%3C/svg%3E"
+                    />
+                  </picture>
                   <span className="text-white ml-4 my-3">InfinitzHost</span>
                 </a>
               </li>

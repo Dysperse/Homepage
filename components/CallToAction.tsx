@@ -13,10 +13,13 @@ export function CallToAction(): JSX.Element {
           </h2>
           <div className="mt-20 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">
-              <img
-                src="https://i.ibb.co/LPjC8Kd/image.png"
-                className="w-full -mb-2 -mr-20 max-w-2xl xl:max-w-3xl rounded-tl-3xl right-0 absolute bottom-0"
-              />
+              <picture>
+                <img
+                  src="https://i.ibb.co/LPjC8Kd/image.png"
+                  className="w-full -mb-2 -mr-20 max-w-2xl xl:max-w-3xl rounded-tl-3xl right-0 absolute bottom-0"
+                  alt="dashboard"
+                />
+              </picture>
             </div>
           </div>
         </div>
