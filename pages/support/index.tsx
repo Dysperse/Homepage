@@ -29,7 +29,7 @@ export default function Home() {
           <>
             {data.map((article, key) => {
               return (
-                <div className="max-w-xl mx-auto my-1">
+                <div className="max-w-2xl mx-auto my-1">
                   <Link
                     href={"/support/articles/" + article.slug}
                     key={key.toString}
