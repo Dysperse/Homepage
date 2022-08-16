@@ -15,6 +15,16 @@
       "slug": "inviting-members-to-your-home"
    },
    {
+      "title": "Terms of serivce",
+      "preview": "This article explains Smartlist's terms and conditions",
+      "slug": "terms-of-service"
+   },
+   {
+      "title": "Privacy policy",
+      "preview": "This article explains Smartlist's privacy policy",
+      "slug": "privacy-policy"
+   },
+   {
       "title": "Two-factor authentication",
       "preview": "This article explains how to protect your account with two-factor authentication (2FA)",
       "slug": "two-factor-authentication"
