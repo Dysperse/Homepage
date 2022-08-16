@@ -39,9 +39,12 @@ export function FrequentlyAskedQuestions() {
           <Accordion.Content>
             <p className="mb-2 text-gray-500 dark:text-gray-400">
               At Smartlist, we take your privacy{" "}
-              <a href="/privacy">very seriously</a>. Your account data is
-              encrypted with AES 256-bit encryption. You can enable two-factor
-              authentication to increase your account security.
+              <a rel="noreferrer" href="/privacy">
+                very seriously
+              </a>
+              . Your account data is encrypted with AES 256-bit encryption. You
+              can enable two-factor authentication to increase your account
+              security.
             </p>
 
             <p className="mb-2 text-gray-500 dark:text-gray-400">
@@ -54,9 +57,9 @@ export function FrequentlyAskedQuestions() {
           <Accordion.Title>What are the limitations?</Accordion.Title>
           <Accordion.Content>
             <p className="mb-2 text-gray-500 dark:text-gray-400">
-              At Smartlist, we believe that you shouldn't pay to organize your
-              home. However, this comes with some limitations, as this is a free
-              service.
+              At Smartlist, we believe that you shouldn&apos;t pay to organize
+              your home. However, this comes with some limitations, as this is a
+              free service.
             </p>
             <p className="mb-2 text-gray-500 dark:text-gray-400">
               Learn more about these limitations:
