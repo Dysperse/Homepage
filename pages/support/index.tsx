@@ -62,7 +62,11 @@ export default function Home() {
         <br />
         &nbsp;
       </h1>{" "}
-      {data ? <Support data={data} /> : "Loading..."}
+      {data ? (
+        <Support data={data} />
+      ) : (
+        <div className="text-center">Loading...</div>
+      )}
       {error && <>An error occured. Please try again later</>}
     </div>
   );
