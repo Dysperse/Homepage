@@ -37,11 +37,8 @@ function Support({ data }: any) {
       )}
       {filteredItems.map((article, key) => {
         return (
-          <div className="max-w-2xl mx-auto my-1">
-            <Link
-              href={"/support/articles/" + article.slug}
-              key={key.toString()}
-            >
+          <div className="max-w-2xl mx-auto my-1" key={key.toString()}>
+            <Link href={"/support/articles/" + article.slug}>
               <a className="px-5 py-3 block rounded-xl focus:bg-gray-200 my-1 hover:bg-gray-100">
                 <h2 className="text-gray-900 text-lg mb-1">{article.title}</h2>
                 <h5 className="text-gray-500">{article.preview}</h5>
