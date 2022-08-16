@@ -130,7 +130,7 @@ function Header() {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setIconList(JSON.stringify(shuffle(JSON.parse(iconList))));
-    }, 1000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
   return (
@@ -160,7 +160,7 @@ function Header() {
             </a>
           </div>
           <div>
-            <div className="mt-[50px] -ml-[150px] md:-ml-0">
+            <div className="mt-[50px] -ml-[170px] md:-ml-0">
               {/* Decorative image grid */}
               <div
                 aria-hidden="true"
@@ -184,7 +184,82 @@ function Header() {
                       <IconItem icon={JSON.parse(iconList)[10]} />
                       <IconItem icon={JSON.parse(iconList)[11]} />
                     </div>
-                    <div className="flex-shrink-0 grid gap-y-6 lg:gap-y-4">
+                    <div className="hide-on-mobile flex flex-shrink-0 grid gap-y-6 lg:gap-y-4">
+                      <div className="w-80 h-52 rounded-[35px] bg-gray-200 items-center flex px-9 overflow-hidden sm:opacity-0 lg:opacity-100 text-gray-900">
+                        <div className="w-full">
+                          <h4 className="text-lg mb-2 text-gray-500">
+                            This month
+                          </h4>
+                          <p className="text-sm text-gray-400">Groceries</p>
+                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-gray-400">
+                            <div className="w-[72%] h-[6px] bg-gray-600 rounded-xl"></div>
+                          </div>
+
+                          <p className="text-sm text-gray-400">Gym</p>
+                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-red-300">
+                            <div className="w-[90%] h-[6px] bg-red-600 rounded-xl"></div>
+                          </div>
+
+                          <p className="text-sm text-gray-400">Taxi</p>
+                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-gray-400">
+                            <div className="w-[12%] h-[6px] bg-gray-600 rounded-xl"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex gap-4">
+                        <IconItem icon={JSON.parse(iconList)[12]} />
+                        <IconItem icon={JSON.parse(iconList)[13]} />
+                        <IconItem icon={JSON.parse(iconList)[14]} />
+                      </div>
+                      <div className="flex gap-4">
+                        <IconItem icon={JSON.parse(iconList)[15]} />
+                        <IconItem icon={JSON.parse(iconList)[16]} />
+                        <IconItem icon={JSON.parse(iconList)[17]} />
+                      </div>
+                      <div className="flex gap-4">
+                        <IconItem icon={JSON.parse(iconList)[18]} />
+                        <IconItem icon={JSON.parse(iconList)[19]} />
+                        <IconItem icon={JSON.parse(iconList)[20]} />
+                      </div>
+                      <div className="flex gap-4">
+                        <IconItem icon={JSON.parse(iconList)[21]} />
+                        <IconItem icon={JSON.parse(iconList)[22]} />
+                        <IconItem icon={JSON.parse(iconList)[23]} />
+                      </div>
+                    </div>
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
+                      <IconItem icon={JSON.parse(iconList)[41]} />
+                      <IconItem icon={JSON.parse(iconList)[42]} />
+                      <IconItem icon={JSON.parse(iconList)[43]} />
+                      <IconItem icon={JSON.parse(iconList)[44]} />
+                      <IconItem icon={JSON.parse(iconList)[45]} />
+                      <IconItem icon={JSON.parse(iconList)[46]} />
+                    </div>
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
+                      <IconItem icon={JSON.parse(iconList)[24]} />
+                      <IconItem icon={JSON.parse(iconList)[25]} />
+                      <IconItem icon={JSON.parse(iconList)[26]} />
+                      <IconItem icon={JSON.parse(iconList)[27]} />
+                      <IconItem icon={JSON.parse(iconList)[28]} />
+                      <IconItem icon={JSON.parse(iconList)[29]} />
+                    </div>
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
+                      <IconItem icon={JSON.parse(iconList)[30]} />
+                      <IconItem icon={JSON.parse(iconList)[31]} />
+                      <IconItem icon={JSON.parse(iconList)[32]} />
+                      <IconItem icon={JSON.parse(iconList)[33]} />
+                      <IconItem icon={JSON.parse(iconList)[34]} />
+                      <IconItem icon={JSON.parse(iconList)[35]} />
+                    </div>
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
+                      <IconItem icon={JSON.parse(iconList)[35]} />
+                      <IconItem icon={JSON.parse(iconList)[36]} />
+                      <IconItem icon={JSON.parse(iconList)[37]} />
+                      <IconItem icon={JSON.parse(iconList)[38]} />
+                      <IconItem icon={JSON.parse(iconList)[39]} />
+                      <IconItem icon={JSON.parse(iconList)[40]} />
+                    </div>
+                    <div className="sm:hidden flex-shrink-0 grid gap-y-6 lg:gap-y-4">
                       <div className="w-80 h-52 rounded-[35px] bg-gray-200 items-center flex px-9 overflow-hidden sm:opacity-0 lg:opacity-100 text-gray-900">
                         <div className="w-full">
                           <h4 className="text-lg mb-2 text-gray-500">
@@ -234,30 +309,6 @@ function Header() {
                       <IconItem icon={JSON.parse(iconList)[27]} />
                       <IconItem icon={JSON.parse(iconList)[28]} />
                       <IconItem icon={JSON.parse(iconList)[29]} />
-                    </div>
-                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
-                      <IconItem icon={JSON.parse(iconList)[30]} />
-                      <IconItem icon={JSON.parse(iconList)[31]} />
-                      <IconItem icon={JSON.parse(iconList)[32]} />
-                      <IconItem icon={JSON.parse(iconList)[33]} />
-                      <IconItem icon={JSON.parse(iconList)[34]} />
-                      <IconItem icon={JSON.parse(iconList)[35]} />
-                    </div>
-                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
-                      <IconItem icon={JSON.parse(iconList)[35]} />
-                      <IconItem icon={JSON.parse(iconList)[36]} />
-                      <IconItem icon={JSON.parse(iconList)[37]} />
-                      <IconItem icon={JSON.parse(iconList)[38]} />
-                      <IconItem icon={JSON.parse(iconList)[39]} />
-                      <IconItem icon={JSON.parse(iconList)[40]} />
-                    </div>
-                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
-                      <IconItem icon={JSON.parse(iconList)[41]} />
-                      <IconItem icon={JSON.parse(iconList)[42]} />
-                      <IconItem icon={JSON.parse(iconList)[43]} />
-                      <IconItem icon={JSON.parse(iconList)[44]} />
-                      <IconItem icon={JSON.parse(iconList)[45]} />
-                      <IconItem icon={JSON.parse(iconList)[46]} />
                     </div>
                   </div>
                 </div>
