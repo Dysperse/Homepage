@@ -20,7 +20,9 @@ export function Announcement() {
           </div>
           <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
             <a
-              href="#"
+              href="https://twitter.com/smartlistapp/status/1559623164971208704"
+              target="_blank"
+              rel="noreferrer"
               className="flex items-center justify-center px-4 py-2 border border-transparent rounded-xl shadow-sm text-sm font-medium text-gray-600 bg-white hover:bg-gray-50 focus:ring-2 ring-offset-2 ring-white ring-offset-gray-900"
             >
               Learn more
