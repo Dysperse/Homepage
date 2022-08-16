@@ -35,7 +35,7 @@ function Support({ data }: any) {
       {filteredItems.length === 0 && (
         <div className="text-center">No articles found</div>
       )}
-      {filteredItems.map((article, key) => {
+      {filteredItems.map((article: any, key: number) => {
         return (
           <div className="max-w-2xl mx-auto my-1" key={key.toString()}>
             <Link href={"/support/articles/" + article.slug}>
