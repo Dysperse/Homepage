@@ -1,8 +1,8 @@
 import React from "react";
 export default function Footer() {
   return (
-    <footer className="p-4 bg-white sm:p-16 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto md:flex md:justify-between">
+    <footer className="mt-10 p-4 bg-white sm:p-16 dark:bg-gray-900">
+      <div className="max-w-[90vw] mx-auto md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
           <a href="https://flowbite.com/" className="flex items-center">
             <img
@@ -91,8 +91,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <hr className="max-w-7xl mx-auto my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <div className="max-w-7xl mx-auto sm:flex sm:items-center sm:justify-between">
+      <hr className="max-w-[90vw] mx-auto my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <div className="max-w-[90vw] mx-auto sm:flex sm:items-center sm:justify-between">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           &copy; {new Date().getFullYear()}{" "}
           <a href="https://flowbite.com/" className="hover:underline">

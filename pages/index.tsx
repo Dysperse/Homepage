@@ -1,5 +1,6 @@
 import React from "react";
 import { SpeakerphoneIcon, XIcon } from "@heroicons/react/outline";
+import { Accordion } from "flowbite-react";
 
 function IconItem({ icon, inline }: { icon: string; inline?: boolean }) {
   return (
@@ -31,7 +32,7 @@ function Announcement() {
           <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
             <a
               href="#"
-              className="flex items-center justify-center px-4 py-2 border border-transparent rounded-xl shadow-sm text-sm font-medium text-gray-600 bg-white hover:bg-gray-50"
+              className="flex items-center justify-center px-4 py-2 border border-transparent rounded-xl shadow-sm text-sm font-medium text-gray-600 bg-white hover:bg-gray-50 focus:ring-2 ring-offset-2 ring-white ring-offset-gray-900"
             >
               Learn more
             </a>
@@ -60,6 +61,95 @@ function shuffle(array) {
 
   return array;
 }
+
+function FrequentlyAskedQuestions() {
+  return (
+    <div className="max-w-7xl mx-auto my-10">
+      <p className="mt-2 text-3xl text-center mb-5 leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
+        Frequently asked questions
+      </p>{" "}
+      <Accordion flush>
+        <Accordion.Panel>
+          <Accordion.Title>Is Smartlist free?</Accordion.Title>
+          <Accordion.Content>
+            <p className="mb-2 text-gray-500 dark:text-gray-400">
+              Smartlist is 100% free, forever. No hidden fees, no ads, or credit
+              card required!
+            </p>
+          </Accordion.Content>
+        </Accordion.Panel>
+        <Accordion.Panel>
+          <Accordion.Title>Is Smartlist secure?</Accordion.Title>
+          <Accordion.Content>
+            <p className="mb-2 text-gray-500 dark:text-gray-400">
+              At Smartlist, we take your privacy{" "}
+              <a href="/privacy">very seriously</a>. Your account data is
+              encrypted with AES 256-bit encryption. You can enable two-factor
+              authentication to increase your account security.
+            </p>
+
+            <p className="mb-2 text-gray-500 dark:text-gray-400">
+              Smartlist is also open source. You can view the source code on
+              GitHub
+            </p>
+          </Accordion.Content>
+        </Accordion.Panel>
+        <Accordion.Panel>
+          <Accordion.Title>What are the limitations?</Accordion.Title>
+          <Accordion.Content>
+            <p className="mb-2 text-gray-500 dark:text-gray-400">
+              At Smartlist, we believe that you shouldn't pay to organize your
+              home. However, this comes with some limitations, as this is a free
+              service.
+            </p>
+            <p className="mb-2 text-gray-500 dark:text-gray-400">
+              Learn more about these limitations:
+            </p>
+            <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
+              <li>
+                <b>500</b> maximum number of items per home
+              </li>
+              <li>
+                <b>150</b> maximum number of items per room
+              </li>
+              <li>
+                <b>5</b> maximum rooms
+              </li>
+              <li>
+                <b>20</b> maximum number of items per list
+              </li>
+              <li>
+                <b>7</b> maximum number of custom lists (excluding shopping and
+                to-do lists)
+              </li>
+            </ul>
+          </Accordion.Content>
+        </Accordion.Panel>
+        <Accordion.Panel>
+          <Accordion.Title>How can I contribute?</Accordion.Title>
+          <Accordion.Content>
+            <p className="mb-2 text-gray-500 dark:text-gray-400">
+              You can apply for a volunteer position at Smartlist by visiting{" "}
+              <a
+                href="/join"
+                className="text-blue-800 focus:ring-2 ring-black"
+                target="_blank"
+              >
+                www.smartlist.tech/join
+              </a>
+            </p>
+
+            <p className="mb-2 text-gray-500 dark:text-gray-400">
+              Smartlist is also open source. You can view the source code on
+              GitHub
+            </p>
+          </Accordion.Content>
+        </Accordion.Panel>
+      </Accordion>
+    </div>
+  );
+}
+
 function Header() {
   const [iconList, setIconList] = React.useState(
     JSON.stringify([
@@ -148,13 +238,14 @@ function Header() {
             </p>
             <a
               href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
-              className="mt-5 inline-block text-center bg-gradient-to-br from-orange-400 to-orange-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-green-700 outline-none mr-4 focus:ring ring-green-500 focus:ring-green-500 teal"
+              target="_blank"
+              className="mt-5 inline-block text-center bg-gradient-to-br from-orange-400 to-orange-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-green-700 outline-none mr-4 focus:ring ring-offset-2 ring-orange-500"
             >
               Get started
             </a>
             <a
               href="#"
-              className="mt-5 inline-block text-center bg-gradient-to-br from-indigo-400 to-indigo-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-indigo-700 outline-none focus:ring ring-indigo-500 focus:ring-indigo-500 teal"
+              className="mt-5 inline-block text-center bg-gradient-to-br from-indigo-400 to-indigo-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-indigo-700 outline-none focus:ring ring-offset-2 ring-indigo-500"
             >
               Tell me more!
             </a>
@@ -196,8 +287,8 @@ function Header() {
                           </div>
 
                           <p className="text-sm text-gray-400">Gym</p>
-                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-red-300">
-                            <div className="w-[90%] h-[6px] bg-red-600 rounded-xl"></div>
+                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-gray-400">
+                            <div className="w-full h-[6px] bg-red-900 rounded-xl"></div>
                           </div>
 
                           <p className="text-sm text-gray-400">Taxi</p>
@@ -429,6 +520,7 @@ export default function Home() {
       <Header />
       <div className="fade" />
       <Features />
+      <FrequentlyAskedQuestions />
       <CallToAction />
     </>
   );
