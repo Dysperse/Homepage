@@ -1,18 +1,46 @@
-html {
-  overflow-x: hidden;
-}
-html,
-body {
-  color: hsl(240, 11%, 15%);
-  margin: 0;
-}
-*:not(.material-symbols-rounded, h2.MuiTypography-root, .disableFont) {
-  font-family: "Outfit", sans-serif !important;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .icon-item {
+    @apply w-24 h-24 rounded-[35px] bg-gray-100 items-center inline-flex justify-center overflow-hidden sm:opacity-0 lg:opacity-100;
+  }
 }
 
-.MuiTouchRipple-rippleVisible {
-  animation-duration: 0.25s !important;
+*:not(.material-symbols-rounded) {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Inter", sans-serif !important;
 }
-.MuiTouchRipple-child {
-  filter: opacity(0.4) !important;
+::-webkit-scrollbar {
+  display: none;
+}
+
+.fade {
+  content: "";
+  display: none;
+  z-index: 111;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 90%
+  );
+  width: 100%;
+  margin-top: -200px;
+  height: 200px;
+  position: absolute;
+}
+@media (max-width: 768px) {
+  .fade {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+* {
+  outline: none;
 }
