@@ -63,14 +63,20 @@ function shuffle(array) {
 }
 
 function FrequentlyAskedQuestions() {
+  React.useEffect(() => {
+    const interval = setTimeout(() => {
+      document.getElementById("panel1")!.click();
+    }, 200);
+    return () => clearTimeout(interval);
+  }, []);
   return (
-    <div className="max-w-7xl mx-auto my-10">
+    <div className="max-w-7xl mx-auto my-20">
       <p className="mt-2 text-3xl text-center mb-5 leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
         Frequently asked questions
       </p>{" "}
-      <Accordion flush>
+      <Accordion flush alwaysOpen={true}>
         <Accordion.Panel>
-          <Accordion.Title>Is Smartlist free?</Accordion.Title>
+          <Accordion.Title id="panel1">Is Smartlist free?</Accordion.Title>
           <Accordion.Content>
             <p className="mb-2 text-gray-500 dark:text-gray-400">
               Smartlist is 100% free, forever. No hidden fees, no ads, or credit
@@ -79,7 +85,18 @@ function FrequentlyAskedQuestions() {
           </Accordion.Content>
         </Accordion.Panel>
         <Accordion.Panel>
-          <Accordion.Title>Is Smartlist secure?</Accordion.Title>
+          <Accordion.Title>
+            Can I use Smartlist for my dorm or apartment?
+          </Accordion.Title>
+          <Accordion.Content>
+            <p className="mb-2 text-gray-500 dark:text-gray-400">
+              Absolutely! Smartlist is compatible with student dormitories and
+              apartments.
+            </p>
+          </Accordion.Content>
+        </Accordion.Panel>
+        <Accordion.Panel>
+          <Accordion.Title>How secure is Smartlist?</Accordion.Title>
           <Accordion.Content>
             <p className="mb-2 text-gray-500 dark:text-gray-400">
               At Smartlist, we take your privacy{" "}
@@ -142,6 +159,17 @@ function FrequentlyAskedQuestions() {
             <p className="mb-2 text-gray-500 dark:text-gray-400">
               Smartlist is also open source. You can view the source code on
               GitHub
+            </p>
+          </Accordion.Content>
+        </Accordion.Panel>
+
+        <Accordion.Panel>
+          <Accordion.Title>
+            Can I use Smartlist to perform transactions?
+          </Accordion.Title>
+          <Accordion.Content>
+            <p className="mb-2 text-gray-500 dark:text-gray-400">
+              No, you cannot perform transactions with Smartlist.
             </p>
           </Accordion.Content>
         </Accordion.Panel>
