@@ -1,7 +1,7 @@
 import React from "react";
 export default function Footer() {
   return (
-    <footer className="mt-10 p-4 bg-white sm:p-16 dark:bg-gray-900">
+    <footer className="border-t mt-10 p-4 bg-white sm:p-16 dark:bg-gray-900">
       <div className="max-w-[90vw] mx-auto md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
           <a href="https://flowbite.com/" className="flex items-center">

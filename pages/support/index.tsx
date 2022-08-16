@@ -12,6 +12,11 @@ export default function Home() {
         <input
           type="text"
           autoFocus={true}
+          onKeyDown={(e: any) => {
+            if (e.key === "Enter") {
+              e.target.blur();
+            }
+          }}
           className="-mt-5 max-w-lg mx-auto block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
           placeholder="What can we help you with?"
         />
