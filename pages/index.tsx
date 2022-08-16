@@ -1,6 +1,16 @@
 import React from "react";
 import { SpeakerphoneIcon, XIcon } from "@heroicons/react/outline";
 
+function IconItem({ icon, inline }: { icon: string; inline?: boolean }) {
+  return (
+    <div className="icon-item">
+      <span className="material-symbols-rounded text-gray-600 select-none">
+        {icon}
+      </span>
+    </div>
+  );
+}
+
 function Announcement() {
   return (
     <div className="max-w-[100vw] text-ellipsis overflow-hidden bg-gray-900 mt-20">
@@ -31,13 +41,104 @@ function Announcement() {
     </div>
   );
 }
+function shuffle(array) {
+  let currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
 function Header() {
+  const [iconList, setIconList] = React.useState(
+    JSON.stringify([
+      "blender",
+      "kitchen",
+      "fireplace",
+      "remote_gen",
+      "tv",
+      "dishwasher_gen",
+      "roller_skating",
+      "phone_iphone",
+      "computer",
+      "router",
+      "chair",
+      "coffee",
+      "home",
+      "shower",
+      "wall_lamp",
+      "tools_pliers_wire_stripper",
+      "sports_soccer",
+      "inventory_2",
+      "shower",
+      "directions_car",
+      "eco",
+      "potted_plant",
+      "liquor",
+      "payments",
+      "icecream",
+      "egg",
+      "local_pizza",
+      "scene",
+      "cable",
+      "sim_card",
+      "local_cafe",
+      "wine_bar",
+      "ramen_dining",
+      "coffee_maker",
+      "brunch_dining",
+      "aod_tablet",
+      "live_tv",
+      "headset_mic",
+      "savings",
+      "directions_bike",
+      "event",
+      "home_speaker",
+      "nest_thermostat_gen_3",
+      "egg_alt",
+      "theaters",
+      "sports_tennis",
+      "piano",
+      "toys",
+      "camping",
+      "kettle",
+      "rowing",
+      "cake",
+      "bed",
+      "mop",
+      "sports_basketball",
+      "highlight",
+      "local_laundry_service",
+      "iron",
+      "umbrella",
+      "floor_lamp",
+      "camping",
+      "speaker",
+    ])
+  );
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setIconList(JSON.stringify(shuffle(JSON.parse(iconList))));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="relative bg-white overflow-hidden">
       <div className="pb-80 sm:pb-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
-            <h1 className="mt-[100px] md:mt-[100px] font text-transparent text-6xl bg-clip-text bg-gradient-to-tl from-green-400 to-green-900 font-[900] tracking-tight sm:tracking-tight sm:text-6xl">
+            <h1 className="mt-[100px] md:mt-[200px] font text-transparent text-6xl bg-clip-text bg-gradient-to-tl from-green-400 to-green-900 font-[900] tracking-tight sm:tracking-tight sm:text-6xl">
               Next-gen home inventory and personal finances
             </h1>
             <p className="mt-4 text-lg text-gray-500">
@@ -59,7 +160,7 @@ function Header() {
             </a>
           </div>
           <div>
-            <div className="mt-[80px] -ml-[150px] md:-ml-0">
+            <div className="mt-[50px] -ml-[150px] md:-ml-0">
               {/* Decorative image grid */}
               <div
                 aria-hidden="true"
@@ -68,96 +169,95 @@ function Header() {
                 <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
                   <div className="flex items-center space-x-6 lg:space-x-4">
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden sm:opacity-0 lg:opacity-100">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
+                      <IconItem icon={JSON.parse(iconList)[0]} />
+                      <IconItem icon={JSON.parse(iconList)[1]} />
+                      <IconItem icon={JSON.parse(iconList)[2]} />
+                      <IconItem icon={JSON.parse(iconList)[3]} />
+                      <IconItem icon={JSON.parse(iconList)[4]} />
+                      <IconItem icon={JSON.parse(iconList)[5]} />
+                    </div>
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
+                      <IconItem icon={JSON.parse(iconList)[6]} />
+                      <IconItem icon={JSON.parse(iconList)[7]} />
+                      <IconItem icon={JSON.parse(iconList)[8]} />
+                      <IconItem icon={JSON.parse(iconList)[9]} />
+                      <IconItem icon={JSON.parse(iconList)[10]} />
+                      <IconItem icon={JSON.parse(iconList)[11]} />
+                    </div>
+                    <div className="flex-shrink-0 grid gap-y-6 lg:gap-y-4">
+                      <div className="w-80 h-52 rounded-[35px] bg-gray-200 items-center flex px-9 overflow-hidden sm:opacity-0 lg:opacity-100 text-gray-900">
+                        <div className="w-full">
+                          <h4 className="text-lg mb-2 text-gray-500">
+                            This month
+                          </h4>
+                          <p className="text-sm text-gray-400">Groceries</p>
+                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-gray-400">
+                            <div className="w-[72%] h-[6px] bg-gray-600 rounded-xl"></div>
+                          </div>
+
+                          <p className="text-sm text-gray-400">Gym</p>
+                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-red-300">
+                            <div className="w-[90%] h-[6px] bg-red-600 rounded-xl"></div>
+                          </div>
+
+                          <p className="text-sm text-gray-400">Taxi</p>
+                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-gray-400">
+                            <div className="w-[12%] h-[6px] bg-gray-600 rounded-xl"></div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="w-44 h-32 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
+                      <div className="flex gap-4">
+                        <IconItem icon={JSON.parse(iconList)[12]} />
+                        <IconItem icon={JSON.parse(iconList)[13]} />
+                        <IconItem icon={JSON.parse(iconList)[14]} />
                       </div>
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
+                      <div className="flex gap-4">
+                        <IconItem icon={JSON.parse(iconList)[15]} />
+                        <IconItem icon={JSON.parse(iconList)[16]} />
+                        <IconItem icon={JSON.parse(iconList)[17]} />
+                      </div>
+                      <div className="flex gap-4">
+                        <IconItem icon={JSON.parse(iconList)[18]} />
+                        <IconItem icon={JSON.parse(iconList)[19]} />
+                        <IconItem icon={JSON.parse(iconList)[20]} />
+                      </div>
+                      <div className="flex gap-4">
+                        <IconItem icon={JSON.parse(iconList)[21]} />
+                        <IconItem icon={JSON.parse(iconList)[22]} />
+                        <IconItem icon={JSON.parse(iconList)[23]} />
                       </div>
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
-                      <div className="w-44 h-32 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
+                      <IconItem icon={JSON.parse(iconList)[24]} />
+                      <IconItem icon={JSON.parse(iconList)[25]} />
+                      <IconItem icon={JSON.parse(iconList)[26]} />
+                      <IconItem icon={JSON.parse(iconList)[27]} />
+                      <IconItem icon={JSON.parse(iconList)[28]} />
+                      <IconItem icon={JSON.parse(iconList)[29]} />
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
-                      <div className="w-44 h-32 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
+                      <IconItem icon={JSON.parse(iconList)[30]} />
+                      <IconItem icon={JSON.parse(iconList)[31]} />
+                      <IconItem icon={JSON.parse(iconList)[32]} />
+                      <IconItem icon={JSON.parse(iconList)[33]} />
+                      <IconItem icon={JSON.parse(iconList)[34]} />
+                      <IconItem icon={JSON.parse(iconList)[35]} />
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
-                      <div className="w-44 h-64 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
-                      <div className="w-44 h-32 rounded-2xl overflow-hidden">
-                        <img
-                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
+                      <IconItem icon={JSON.parse(iconList)[35]} />
+                      <IconItem icon={JSON.parse(iconList)[36]} />
+                      <IconItem icon={JSON.parse(iconList)[37]} />
+                      <IconItem icon={JSON.parse(iconList)[38]} />
+                      <IconItem icon={JSON.parse(iconList)[39]} />
+                      <IconItem icon={JSON.parse(iconList)[40]} />
+                    </div>
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
+                      <IconItem icon={JSON.parse(iconList)[41]} />
+                      <IconItem icon={JSON.parse(iconList)[42]} />
+                      <IconItem icon={JSON.parse(iconList)[43]} />
+                      <IconItem icon={JSON.parse(iconList)[44]} />
+                      <IconItem icon={JSON.parse(iconList)[45]} />
+                      <IconItem icon={JSON.parse(iconList)[46]} />
                     </div>
                   </div>
                 </div>
@@ -179,27 +279,32 @@ import {
 
 const features = [
   {
-    name: "Competitive exchange rates",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    name: "Track & review your expenses",
+    description: "Set financial goals and budgets by tracking your expenses.",
     icon: GlobeAltIcon,
   },
   {
-    name: "No hidden fees",
+    name: "Organize your items",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "Build up your inventory by creating rooms and organizing your items",
     icon: ScaleIcon,
   },
   {
-    name: "Transfers are instant",
+    name: "Search your home",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "Quickly find items in your home by searching for them by name or category",
     icon: LightningBoltIcon,
   },
   {
-    name: "Mobile notifications",
+    name: "Sync your inventory",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "Invite your family to share your inventory and lists with them",
+    icon: AnnotationIcon,
+  },
+  {
+    name: "Access on any device",
+    description:
+      "Access your home from your phone, tablet, computer, or with our web app",
     icon: AnnotationIcon,
   },
 ];
@@ -210,14 +315,10 @@ function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="text-lg text-indigo-600 font-semibold">
-            Transactions
+            In a nutshell
           </h2>
           <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
-            A better way to send money
-          </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
-            voluptatum cupiditate veritatis in accusamus quisquam.
+            Smartlist helps you...
           </p>
         </div>
 
@@ -247,30 +348,22 @@ function Features() {
 
 function CallToAction() {
   return (
-    <div className="bg-gray-50">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
-          <span className="block">Ready to dive in?</span>
-          <span className="block text-indigo-600">
-            Start your free trial today.
-          </span>
-        </h2>
-        <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-          <div className="inline-flex rounded-md shadow">
-            <a
-              href="#"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-            >
-              Get started
-            </a>
-          </div>
-          <div className="ml-3 inline-flex rounded-md shadow">
-            <a
-              href="#"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50"
-            >
-              Learn more
-            </a>
+    <div className="p-5 max-w-[95rem] mx-auto">
+      <div className="relative bg-gray-900 border-4 border-gray-900 rounded-3xl py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-20 lg:px-8 lg:flex lg:items-center lg:justify-between">
+          <h2 className="text-2xl tracking-tight text-gray-100 sm:text-4xl sm:tracking-tight">
+            <span className="block font-bold">Ready to dive in?</span>
+            <span className="block text-green-600 text-2xl mt-2">
+              Create your free account today!
+            </span>
+          </h2>
+          <div className="mt-20 flex lg:mt-0 lg:flex-shrink-0">
+            <div className="inline-flex rounded-md shadow">
+              <img
+                src="https://i.ibb.co/LPjC8Kd/image.png"
+                className="w-full -mb-2 -mr-20 max-w-3xl rounded-tl-3xl right-0 absolute bottom-0"
+              />
+            </div>
           </div>
         </div>
       </div>

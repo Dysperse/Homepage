@@ -1,8 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .icon-item {
+    @apply w-24 h-24 rounded-[35px] bg-gray-100 items-center inline-flex justify-center overflow-hidden sm:opacity-0 lg:opacity-100;
+  }
+}
 
-* {
+*:not(.material-symbols-rounded) {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
   font-family: "Inter", sans-serif !important;
 }
 ::-webkit-scrollbar {
