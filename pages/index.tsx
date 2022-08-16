@@ -148,7 +148,7 @@ function Header() {
             </p>
             <a
               href="#"
-              className="mt-5 inline-block text-center bg-gradient-to-br from-orange-400 to-orange-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-indigo-700 outline-none mr-4 focus:ring ring-indigo-500 focus:ring-indigo-500 teal"
+              className="mt-5 inline-block text-center bg-gradient-to-br from-orange-400 to-orange-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-green-700 outline-none mr-4 focus:ring ring-green-500 focus:ring-green-500 teal"
             >
               Get started
             </a>
@@ -365,7 +365,7 @@ function Features() {
     <div className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-lg text-indigo-600 font-semibold">
+          <h2 className="text-lg text-green-600 font-semibold">
             In a nutshell
           </h2>
           <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
@@ -378,7 +378,7 @@ function Features() {
             {features.map((feature) => (
               <div key={feature.name} className="relative">
                 <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
                     <feature.icon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
@@ -399,7 +399,7 @@ function Features() {
 
 function CallToAction() {
   return (
-    <div className="p-5 max-w-[95rem] mx-auto">
+    <div className="p-5 max-w-[95rem] mx-auto hidden md:block">
       <div className="relative bg-gray-900 border-4 border-gray-900 rounded-3xl py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-20 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <h2 className="text-2xl tracking-tight text-gray-100 sm:text-4xl sm:tracking-tight">
@@ -412,7 +412,7 @@ function CallToAction() {
             <div className="inline-flex rounded-md shadow">
               <img
                 src="https://i.ibb.co/LPjC8Kd/image.png"
-                className="w-full -mb-2 -mr-20 max-w-3xl rounded-tl-3xl right-0 absolute bottom-0"
+                className="w-full -mb-2 -mr-20 max-w-2xl xl:max-w-3xl rounded-tl-3xl right-0 absolute bottom-0"
               />
             </div>
           </div>
