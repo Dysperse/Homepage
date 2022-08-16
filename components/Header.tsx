@@ -89,6 +89,7 @@ export function Header() {
               task, and more.
             </p>
             <a
+              rel="noreferrer"
               href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
               target="_blank"
               className="mt-5 inline-block text-center bg-gradient-to-br from-orange-400 to-orange-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-green-700 outline-none mr-4 focus:ring ring-offset-2 ring-orange-500"
@@ -96,7 +97,7 @@ export function Header() {
               Get started
             </a>
             <a
-              href="#"
+              href="#/features"
               className="mt-5 inline-block text-center bg-gradient-to-br from-indigo-400 to-indigo-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-indigo-700 outline-none focus:ring ring-offset-2 ring-indigo-500"
             >
               Tell me more!

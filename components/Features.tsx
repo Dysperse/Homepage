@@ -45,7 +45,7 @@ const features = [
 ];
 export function Features() {
   return (
-    <div className="py-12 bg-white">
+    <div className="py-12 bg-white" id="/features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="text-lg text-green-600 font-semibold">
