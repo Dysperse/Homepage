@@ -25,7 +25,7 @@ function Render() {
         </h1>{" "}
       </div>
       {data ? (
-        <article className="prose prose-neutral lg:prose-lg -mt-14">
+        <article className="prose lg:prose-lg -mt-14">
           <MarkdownView
             markdown={data}
             options={{ tables: true, emoji: true }}
