@@ -147,7 +147,7 @@ function Header() {
               task, and more.
             </p>
             <a
-              href="#"
+              href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
               className="mt-5 inline-block text-center bg-gradient-to-br from-orange-400 to-orange-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-green-700 outline-none mr-4 focus:ring ring-green-500 focus:ring-green-500 teal"
             >
               Get started
