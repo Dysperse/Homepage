@@ -16,5 +16,5 @@ export async function getData(path: string, host: string) {
 
 export default async function handler(req, res) {
   const txt = await getData(req.query.path, req.headers.host);
-  res.status(200).json(txt);
+  res.status(200).send(txt);
 }

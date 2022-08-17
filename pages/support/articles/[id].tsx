@@ -1,13 +1,22 @@
 import Link from "next/link";
-import MarkdownView from "react-showdown";
+import Head from "next/head";
 import { getData } from "../../api/article";
 
-export default function Home({ id, data }) {
-  const title =
-    id.replaceAll("-", " ").charAt(0).toUpperCase() +
-    id.replaceAll("-", " ").slice(1);
+export default function Home({ title, meta, data }) {
   return (
     <div className="max-w-7xl mx-auto p-5 pb-20">
+      <Head>
+        <meta name="description" content={meta.replace(/(\r\n|\n|\r)/gm, "")} />
+        <meta
+          name="og:description"
+          content={meta.replace(/(\r\n|\n|\r)/gm, "")}
+        />
+        <meta
+          name="twitter:description"
+          content={meta.replace(/(\r\n|\n|\r)/gm, "")}
+        />
+        <title>{title}</title>
+      </Head>
       <div className="text-blue-900 mt-[100px] md:mt-[200px] text-sm">
         <Link href="/support">
           <a>&larr;&nbsp; Back to articles</a>
@@ -29,7 +38,22 @@ export default function Home({ id, data }) {
 export async function getServerSideProps(context) {
   const data = await getData(context.params.id, context.req.headers.host);
 
+  const tmp = data
+    .replace(/<style[^>]*>.*<\/style>/gm, "")
+    .replace(/<script[^>]*>.*<\/script>/gm, "")
+    .replace(/<[^>]+>/gm, "")
+    .replace(/([\r\n]+ +)+/gm, "");
+
+  const title =
+    context.params.id.replaceAll("-", " ").charAt(0).toUpperCase() +
+    context.params.id.replaceAll("-", " ").slice(1);
+
   return {
-    props: { id: context.params.id, data: data },
+    props: {
+      slug: context.params.id,
+      title: title,
+      data: data,
+      meta: tmp,
+    },
   };
 }
