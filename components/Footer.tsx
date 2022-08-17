@@ -60,9 +60,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/support/articles/terms-of-service">
-                  <a href="#" className="hover:underline">
-                    Terms &amp; Conditions
-                  </a>
+                  <a className="hover:underline">Terms &amp; Conditions</a>
                 </Link>
               </li>
             </ul>

@@ -1,6 +1,7 @@
 import React from "react";
 import useSWR from "swr";
 import Link from "next/link";
+import { articles } from "../../components/articles";
 
 function Support({ data }: any) {
   const [filteredItems, setFilteredItems] = React.useState(data);
@@ -51,10 +52,8 @@ function Support({ data }: any) {
     </label>
   );
 }
+
 export default function Home() {
-  const { data, error } = useSWR("/supportArticles/articles.json", () =>
-    fetch("/supportArticles/articles.json").then((r) => r.json())
-  );
   return (
     <div className="max-w-7xl p-5 mx-auto pb-20">
       <h1 className="text-center mt-[100px] md:mt-[200px] font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-green-500 to-green-900 font-[900] tracking-tight sm:tracking-tight sm:text-6xl">
@@ -62,12 +61,7 @@ export default function Home() {
         <br />
         &nbsp;
       </h1>{" "}
-      {data ? (
-        <Support data={data} />
-      ) : (
-        <div className="text-center">Loading...</div>
-      )}
-      {error && <>An error occured. Please try again later</>}
+      <Support data={articles} />
     </div>
   );
 }
