@@ -18,9 +18,10 @@ export default function Home({ id, data }) {
           &nbsp;
         </h1>{" "}
       </div>
-      <article className="prose lg:prose-lg -mt-14">
-        <MarkdownView markdown={data} options={{ tables: true, emoji: true }} />
-      </article>
+      <article
+        className="prose lg:prose-lg -mt-10"
+        dangerouslySetInnerHTML={{ __html: data }}
+      ></article>
     </div>
   );
 }
