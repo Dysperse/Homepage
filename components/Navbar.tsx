@@ -33,15 +33,6 @@ const solutions = [
     icon: CalendarIcon,
   },
 ];
-const callsToAction = [
-  { name: "Help", href: "#", icon: PlayIcon },
-  { name: <>Official&nbsp;twitter</>, href: "#", icon: Twitter },
-  {
-    name: "Discord",
-    href: "https://discord.gg/9EJSxkJhnQ",
-    icon: MessageSquare,
-  },
-];
 const resources = [
   {
     name: "Help Center",
@@ -101,7 +92,11 @@ export default function Example() {
           </Link>
         </div>
         <Popover.Group as="nav" className="flex space-x-5 md:space-x-10">
-          <Link href="https://discord.gg/9EJSxkJhnQ">
+          <Link
+            rel="noreferrer"
+            target="_blank"
+            href="https://discord.gg/9EJSxkJhnQ"
+          >
             <a className="text-base hidden sm:inline-flex font-medium text-gray-500 hover:text-gray-900">
               Community
             </a>
@@ -164,20 +159,13 @@ export default function Example() {
                         ))}
                       </div>
                       <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
-                        {callsToAction.map((item, key) => (
-                          <div key={key.toString()} className="flow-root">
-                            <a
-                              href={item.href}
-                              className="-m-3 p-3 flex items-center rounded-xl text-base font-medium text-gray-900 hover:bg-gray-100"
-                            >
-                              <item.icon
-                                className="flex-shrink-0 h-6 w-6 text-gray-400"
-                                aria-hidden="true"
-                              />
-                              <span className="ml-3">{item.name}</span>
-                            </a>
-                          </div>
-                        ))}
+                        Suggestions? Contact us at:&nbsp;
+                        <a
+                          href="mailto:hello@smartlist.tech"
+                          className="text-blue-900 focus:ring ring-black hover:underline"
+                        >
+                          hello@smartlist.tech
+                        </a>
                       </div>
                     </div>
                   </Popover.Panel>

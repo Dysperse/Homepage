@@ -18,7 +18,7 @@ export function FrequentlyAskedQuestions() {
         <Accordion.Panel>
           <Accordion.Title id="panel1">Is Smartlist free?</Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400">
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               Smartlist is 100% free, forever. No hidden fees, no ads, or credit
               card required!
             </p>
@@ -29,7 +29,7 @@ export function FrequentlyAskedQuestions() {
             Can I use Smartlist for my dorm or apartment?
           </Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400">
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               Absolutely! Smartlist is compatible with student dormitories and
               apartments.
             </p>
@@ -38,7 +38,7 @@ export function FrequentlyAskedQuestions() {
         <Accordion.Panel>
           <Accordion.Title>How secure is Smartlist?</Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400">
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               At Smartlist, we take your privacy{" "}
               <Link rel="noreferrer" href="/privacy">
                 very seriously
@@ -48,7 +48,7 @@ export function FrequentlyAskedQuestions() {
               security.
             </p>
 
-            <p className="mb-2 text-gray-500 dark:text-gray-400">
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               Smartlist is also open source. You can view the source code on
               GitHub
             </p>
@@ -57,12 +57,12 @@ export function FrequentlyAskedQuestions() {
         <Accordion.Panel>
           <Accordion.Title>What are the limitations?</Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400">
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               At Smartlist, we believe that you shouldn&apos;t pay to organize
               your home. However, this comes with some limitations, as this is a
               free service.
             </p>
-            <p className="mb-2 text-gray-500 dark:text-gray-400">
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               Learn more about these limitations:
             </p>
             <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
@@ -88,7 +88,7 @@ export function FrequentlyAskedQuestions() {
         <Accordion.Panel>
           <Accordion.Title>How can I contribute?</Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400">
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               You can apply for a volunteer position at Smartlist by visiting{" "}
               <a
                 href="/join"
@@ -99,7 +99,7 @@ export function FrequentlyAskedQuestions() {
               </a>
             </p>
 
-            <p className="mb-2 text-gray-500 dark:text-gray-400">
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               Smartlist is also open source. You can view the source code on
               GitHub
             </p>
@@ -111,7 +111,7 @@ export function FrequentlyAskedQuestions() {
             Can I use Smartlist to perform transactions?
           </Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400">
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               No, you cannot perform transactions with Smartlist.
             </p>
           </Accordion.Content>
