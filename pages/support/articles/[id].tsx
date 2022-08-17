@@ -1,16 +1,9 @@
-import React from "react";
 import Link from "next/link";
-import useSWR from "swr";
-import { useRouter } from "next/router";
-import MarkdownView from "react-showdown";
 import NoSSR from "react-no-ssr";
+import MarkdownView from "react-showdown";
+import { getData } from "../../api/article";
 
-function Render() {
-  const url =
-    "/supportArticles/" +
-    window.location.pathname.split("/support/articles/")[1] +
-    ".md";
-  const { data, error } = useSWR(url, () => fetch(url).then((r) => r.text()));
+function Render({ data }: any) {
   const title =
     window.location.pathname
       .split("/support/articles/")[1]
@@ -35,25 +28,25 @@ function Render() {
           &nbsp;
         </h1>{" "}
       </div>
-      {data && !error ? (
-        <article className="prose lg:prose-lg -mt-14">
-          <MarkdownView
-            markdown={data}
-            options={{ tables: true, emoji: true }}
-          />
-        </article>
-      ) : (
-        <div className="text-center">Loading...</div>
-      )}
-      {error && <>An error occured while trying to fetch this article</>}
+      <article className="prose lg:prose-lg -mt-14">
+        <MarkdownView markdown={data} options={{ tables: true, emoji: true }} />
+      </article>
     </div>
   );
 }
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <NoSSR>
-      <Render />
+      <Render data={data} />
     </NoSSR>
   );
+}
+
+export async function getServerSideProps(context) {
+  const data = await getData(context.params.id, context.req.headers.host);
+
+  return {
+    props: { id: context.params.id, data: data },
+  };
 }
