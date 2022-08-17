@@ -36,7 +36,11 @@ const solutions = [
 const callsToAction = [
   { name: "Help", href: "#", icon: PlayIcon },
   { name: <>Official&nbsp;twitter</>, href: "#", icon: Twitter },
-  { name: "Discord", href: "#", icon: MessageSquare },
+  {
+    name: "Discord",
+    href: "https://discord.gg/9EJSxkJhnQ",
+    icon: MessageSquare,
+  },
 ];
 const resources = [
   {
@@ -97,13 +101,13 @@ export default function Example() {
           </Link>
         </div>
         <Popover.Group as="nav" className="flex space-x-5 md:space-x-10">
-          <Link href="/privacy">
-            <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-              Privacy
+          <Link href="https://discord.gg/9EJSxkJhnQ">
+            <a className="text-base hidden sm:inline-flex font-medium text-gray-500 hover:text-gray-900">
+              Community
             </a>
           </Link>
           <Link href="/support">
-            <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <a className="hidden sm:inline-flex text-base font-medium text-gray-500 hover:text-gray-900">
               Support
             </a>
           </Link>
@@ -135,7 +139,7 @@ export default function Example() {
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-10 fixed right-0 -mr-10 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                  <Popover.Panel className="absolute z-10 fixed right-0 mt-3 px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                     <div className="rounded-lg shadow-lg ring-1 ring-gray-200 overflow-hidden">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                         {solutions.map((item) => (
@@ -182,12 +186,12 @@ export default function Example() {
             )}
           </Popover>
         </Popover.Group>
-        <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+        <div className="md:flex items-center justify-end md:flex-1 lg:w-0">
           <a
             target="_blank"
             rel="noreferrer"
             href="https://login.smartlist.tech/oauth/eccbc87e4b5ce2fe28308fd9f2a7baf3"
-            className="whitespace-nowrap hover:underline focus:ring-2 ring-black text-base font-medium text-gray-500 hover:text-gray-900"
+            className="hidden md:inline-flex whitespace-nowrap hover:underline focus:ring-2 ring-black text-base font-medium text-gray-500 hover:text-gray-900"
           >
             My account
           </a>
@@ -195,9 +199,17 @@ export default function Example() {
             target="_blank"
             rel="noreferrer"
             href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
-            className="focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-gray-700 to-gray-900"
+            className="hidden sm:flex focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-gray-700 to-gray-900"
           >
             Get started
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
+            className="sm:hidden focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-gray-700 to-gray-900"
+          >
+            Sign up
           </a>
         </div>
       </div>
