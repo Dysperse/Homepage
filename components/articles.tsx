@@ -30,4 +30,10 @@ export const articles = [
       "This article explains how to protect your account with two-factor authentication (2FA)",
     slug: "two-factor-authentication",
   },
+  {
+    title: "Connecting your bank account",
+    preview:
+      "This article explains how connect your bank account to Smartlist to start budgeting",
+    slug: "connecting-your-bank-account",
+  },
 ];
