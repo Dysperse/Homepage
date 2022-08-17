@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="border-t mt-10 p-4 bg-white sm:p-16 dark:bg-gray-900">
@@ -52,14 +54,16 @@ export default function Footer() {
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Privacy Policy
-                </a>
+                <Link href="/support/articles/privacy-policy">
+                  <a className="hover:underline">Privacy Policy</a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
-                  Terms &amp; Conditions
-                </a>
+                <Link href="/support/articles/terms-of-service">
+                  <a href="#" className="hover:underline">
+                    Terms &amp; Conditions
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>
