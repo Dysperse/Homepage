@@ -1,3 +1,5 @@
+> **Smartlist finance is not yet available. Stay tuned for further updates!**
+
 Smartlist provides a simple way to connect your bank account to your Smartlist account to automatically log payments, and help you start saving money. Smartlist uses [Plaid](https://plaid.com/) to connect your bank account to your Smartlist account.
 
 **The Financial Industry Regulatory Authority (FINRA) has certified Plaid online banking for its high-security standards.**
