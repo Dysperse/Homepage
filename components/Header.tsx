@@ -85,8 +85,8 @@ export function Header() {
             </h1>
             <p className="mt-4 text-lg text-gray-500">
               Ever been stuck at the grocery store wondering what you need?
-              Smartlist helps you organize your home&apos;inventory, expenses,
-              task, and more.
+              Smartlist helps you organize your home&apos;s inventory, expenses,
+              tasks, and more.
             </p>
             <a
               rel="noreferrer"
