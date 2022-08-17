@@ -11,7 +11,7 @@ export default function Home({ title, meta, data }) {
           content={
             meta
               .replace(/(\r\n|\n|\r)/gm, "")
-              .substring(0, 200)
+              .substring(0, 150)
               .trim() + "..."
           }
         />
@@ -20,7 +20,7 @@ export default function Home({ title, meta, data }) {
           content={
             meta
               .replace(/(\r\n|\n|\r)/gm, "")
-              .substring(0, 200)
+              .substring(0, 150)
               .trim() + "..."
           }
         />
@@ -29,7 +29,7 @@ export default function Home({ title, meta, data }) {
           content={
             meta
               .replace(/(\r\n|\n|\r)/gm, "")
-              .substring(0, 200)
+              .substring(0, 150)
               .trim() + "..."
           }
         />
