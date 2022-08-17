@@ -15,6 +15,10 @@ export default function Document() {
           rel="stylesheet"
         />
         <link
+          rel="shortcut icon"
+          href="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
+        />
+        <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,200&display=swap"
         />

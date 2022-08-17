@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import React from "react";
 import Head from "next/head";
 import Script from "next/script";
+import { Scrollbars } from "react-custom-scrollbars";
 
 function MyApp({ Component, pageProps }) {
   return (
