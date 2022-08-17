@@ -1,29 +1,55 @@
 <xml version="1.0" encoding="UTF-8">
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
       <url>
          <loc>https://smartlist.tech/</loc>
-         <lastmod>2022-08-17T18:16:48+00:00</lastmod>
+         <lastmod>2022-08-17T18:38:05+00:00</lastmod>
          <priority>1.00</priority>
       </url>
       <url>
          <loc>https://smartlist.tech/support</loc>
-         <lastmod>2022-08-17T18:16:48+00:00</lastmod>
+         <lastmod>2022-08-17T18:38:05+00:00</lastmod>
          <priority>0.80</priority>
       </url>
       <url>
          <loc>https://smartlist.tech/privacy</loc>
-         <lastmod>2022-08-17T18:16:48+00:00</lastmod>
+         <lastmod>2022-08-17T18:38:05+00:00</lastmod>
          <priority>0.80</priority>
       </url>
       <url>
          <loc>https://smartlist.tech/support/articles/privacy-policy</loc>
-         <lastmod>2022-08-17T18:16:48+00:00</lastmod>
+         <lastmod>2022-08-17T18:38:05+00:00</lastmod>
          <priority>0.80</priority>
       </url>
       <url>
          <loc>https://smartlist.tech/support/articles/terms-of-service</loc>
-         <lastmod>2022-08-17T18:16:48+00:00</lastmod>
+         <lastmod>2022-08-17T18:38:05+00:00</lastmod>
          <priority>0.80</priority>
+      </url>
+      <url>
+         <loc>https://smartlist.tech/support/articles/creating-an-item</loc>
+         <lastmod>2022-08-17T18:38:05+00:00</lastmod>
+         <priority>0.64</priority>
+      </url>
+      <url>
+         <loc>https://smartlist.tech/support/articles/creating-a-list</loc>
+         <lastmod>2022-08-17T18:38:05+00:00</lastmod>
+         <priority>0.64</priority>
+      </url>
+      <url>
+         <loc>https://smartlist.tech/support/articles/inviting-members-to-your-home</loc>
+         <lastmod>2022-08-17T18:38:05+00:00</lastmod>
+         <priority>0.64</priority>
+      </url>
+      <url>
+         <loc>https://smartlist.tech/support/articles/two-factor-authentication</loc>
+         <lastmod>2022-08-17T18:38:05+00:00</lastmod>
+         <priority>0.64</priority>
+      </url>
+      <url>
+         <loc>https://smartlist.tech/support/articles/connecting-your-bank-account</loc>
+         <lastmod>2022-08-17T18:38:05+00:00</lastmod>
+         <priority>0.64</priority>
       </url>
    </urlset>
 </xml>
