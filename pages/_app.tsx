@@ -8,6 +8,23 @@ import Script from "next/script";
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <Script type="application/ld+json" strategy="beforeInteractive">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Smartlist",
+            "url": "https://smartlist.tech",
+            "logo": "https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png",
+            "sameAs": [
+              "https://twitter.com/smartlistapp",
+              "https://instagram.com/getsmartlist",
+              "https://github.com/Smartlist-App",
+              "https://smartlist.tech/"
+            ]
+          }
+      `}
+      </Script>
       <Navbar />
       <Component {...pageProps} />
       <Footer />
