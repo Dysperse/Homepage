@@ -2,7 +2,7 @@ import React from "react";
 import useSWR from "swr";
 import Link from "next/link";
 import { articles } from "../../components/articles";
-
+import Head from "next/head";
 function Support({ data }: any) {
   const [filteredItems, setFilteredItems] = React.useState(data);
   const originalItems = data;
@@ -56,6 +56,38 @@ function Support({ data }: any) {
 export default function Home() {
   return (
     <div className="max-w-7xl p-5 mx-auto pb-20">
+      <Head>
+        <title>Support - Smartlist</title>
+        <meta name="title" content="Support - Smartlist" />
+        <meta
+          name="description"
+          content="Welcome to the Smartlist knowledge base"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://smartlist.tech/support" />
+        <meta property="og:title" content="Support - Smartlist" />
+        <meta
+          property="og:description"
+          content="Welcome to the Smartlist knowledge base"
+        />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/8D9qnzV/image.png"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://smartlist.tech/support" />
+        <meta property="twitter:title" content="Support - Smartlist" />
+        <meta
+          property="twitter:description"
+          content="Welcome to the Smartlist knowledge base"
+        />
+        <meta
+          property="twitter:image"
+          content="https://i.ibb.co/8D9qnzV/image.png"
+        />
+      </Head>
       <h1 className="text-center mt-[100px] md:mt-[200px] font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-green-500 to-green-900 font-[900] tracking-tight sm:tracking-tight sm:text-6xl">
         Support
         <br />
