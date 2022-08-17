@@ -1,21 +1,11 @@
 import Link from "next/link";
-import NoSSR from "react-no-ssr";
 import MarkdownView from "react-showdown";
 import { getData } from "../../api/article";
 
-function Render({ data }: any) {
+export default function Home({ id, data }) {
   const title =
-    window.location.pathname
-      .split("/support/articles/")[1]
-      .toString()
-      .replaceAll("-", " ")
-      .charAt(0)
-      .toUpperCase() +
-    window.location.pathname
-      .split("/support/articles/")[1]
-      .toString()
-      .replaceAll("-", " ")
-      .slice(1);
+    id.replaceAll("-", " ").charAt(0).toUpperCase() +
+    id.replaceAll("-", " ").slice(1);
   return (
     <div className="max-w-7xl mx-auto p-5 pb-20">
       <div className="text-blue-900 mt-[100px] md:mt-[200px] text-sm">
@@ -32,14 +22,6 @@ function Render({ data }: any) {
         <MarkdownView markdown={data} options={{ tables: true, emoji: true }} />
       </article>
     </div>
-  );
-}
-
-export default function Home({ data }) {
-  return (
-    <NoSSR>
-      <Render data={data} />
-    </NoSSR>
   );
 }
 
