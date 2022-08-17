@@ -6,14 +6,32 @@ export default function Home({ title, meta, data }) {
   return (
     <div className="max-w-7xl mx-auto p-5 pb-20">
       <Head>
-        <meta name="description" content={meta.replace(/(\r\n|\n|\r)/gm, "")} />
+        <meta
+          name="description"
+          content={
+            meta
+              .replace(/(\r\n|\n|\r)/gm, "")
+              .substring(0, 200)
+              .trim() + "..."
+          }
+        />
         <meta
           name="og:description"
-          content={meta.replace(/(\r\n|\n|\r)/gm, "")}
+          content={
+            meta
+              .replace(/(\r\n|\n|\r)/gm, "")
+              .substring(0, 200)
+              .trim() + "..."
+          }
         />
         <meta
           name="twitter:description"
-          content={meta.replace(/(\r\n|\n|\r)/gm, "")}
+          content={
+            meta
+              .replace(/(\r\n|\n|\r)/gm, "")
+              .substring(0, 200)
+              .trim() + "..."
+          }
         />
         <title>{title}</title>
       </Head>
