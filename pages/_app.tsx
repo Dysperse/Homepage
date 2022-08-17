@@ -8,7 +8,11 @@ import Script from "next/script";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Script type="application/ld+json" strategy="beforeInteractive">
+      <Script
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        id="schema"
+      >
         {`
           {
             "@context": "https://schema.org",
