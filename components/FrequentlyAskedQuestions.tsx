@@ -81,6 +81,7 @@ export function FrequentlyAskedQuestions() {
                 <b>7</b> maximum number of custom lists (excluding shopping and
                 to-do lists)
               </li>
+              </ul>
               </p>
             </ul>
           </Accordion.Content>
