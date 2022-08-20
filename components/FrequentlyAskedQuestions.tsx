@@ -61,8 +61,7 @@ export function FrequentlyAskedQuestions() {
               At Smartlist, we believe that you shouldn&apos;t pay to organize
               your home. However, this comes with some limitations, as this is a
               free service.
-            </p>
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+            <p>
               Learn more about these limitations:
             </p>
             <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
@@ -82,6 +81,7 @@ export function FrequentlyAskedQuestions() {
                 <b>7</b> maximum number of custom lists (excluding shopping and
                 to-do lists)
               </li>
+              </p>
             </ul>
           </Accordion.Content>
         </Accordion.Panel>
