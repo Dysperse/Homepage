@@ -14,6 +14,7 @@ export function Announcement() {
               />
             </span>
             <p className="ml-3 truncate text-ellipsis max-w-[100%] overflow-hidden font-medium text-white max-w-full">
+              {" "}
               Introducing maintenance reminders: Get notified when it's time to
               change your air filter, your smoke detector needs a new battery,
               and more...
