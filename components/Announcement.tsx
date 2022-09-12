@@ -15,9 +15,9 @@ export function Announcement() {
             </span>
             <p className="ml-3 truncate text-ellipsis max-w-[100%] overflow-hidden font-medium text-white max-w-full">
               {" "}
-              Introducing maintenance reminders: Get notified when it's time to
-              change your air filter, your smoke detector needs a new battery,
-              and more...
+              Introducing maintenance reminders: Get notified when it&apos;s
+              time to change your air filter, your smoke detector needs a new
+              battery, and more...
             </p>
           </div>
           <div className="order-3 mt-2 ml-auto flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
