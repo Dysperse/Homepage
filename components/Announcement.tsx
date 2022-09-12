@@ -13,12 +13,13 @@ export function Announcement() {
                 aria-hidden="true"
               />
             </span>
-            <p className="ml-3 truncate text-ellipsis max-w-[100%] overflow-hidden font-medium text-white">
-              Smartlist just got more secure! All user data is now stored
-              securely with AES-256 bit encryption!
+            <p className="ml-3 truncate text-ellipsis max-w-[100%] overflow-hidden font-medium text-white max-w-full">
+              Introducing maintenance reminders: Get notified when it's time to
+              change your air filter, your smoke detector needs a new battery,
+              and more...
             </p>
           </div>
-          <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+          <div className="order-3 mt-2 ml-auto flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
             <a
               href="https://twitter.com/smartlistapp/status/1559623164971208704"
               target="_blank"

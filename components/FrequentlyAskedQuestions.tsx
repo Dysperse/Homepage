@@ -45,12 +45,8 @@ export function FrequentlyAskedQuestions() {
               </Link>
               . Your account data is encrypted with AES 256-bit encryption. You
               can enable two-factor authentication to increase your account
-              security.
-            </p>
-
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
-              Smartlist is also open source. You can view the source code on
-              GitHub
+              security. Smartlist is also open source. You can view the source
+              code on GitHub
             </p>
           </Accordion.Content>
         </Accordion.Panel>
@@ -60,29 +56,26 @@ export function FrequentlyAskedQuestions() {
             <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               At Smartlist, we believe that you shouldn&apos;t pay to organize
               your home. However, this comes with some limitations, as this is a
-              free service.
+              free service. Learn more about these limitations:
+              <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
+                <li>
+                  <b>500</b> maximum number of items per home
+                </li>
+                <li>
+                  <b>150</b> maximum number of items per room
+                </li>
+                <li>
+                  <b>5</b> maximum rooms
+                </li>
+                <li>
+                  <b>20</b> maximum number of items per list
+                </li>
+                <li>
+                  <b>7</b> maximum number of custom lists (excluding shopping
+                  and to-do lists)
+                </li>
+              </ul>
             </p>
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
-              Learn more about these limitations:
-            </p>
-            <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
-              <li>
-                <b>500</b> maximum number of items per home
-              </li>
-              <li>
-                <b>150</b> maximum number of items per room
-              </li>
-              <li>
-                <b>5</b> maximum rooms
-              </li>
-              <li>
-                <b>20</b> maximum number of items per list
-              </li>
-              <li>
-                <b>7</b> maximum number of custom lists (excluding shopping and
-                to-do lists)
-              </li>
-            </ul>
           </Accordion.Content>
         </Accordion.Panel>
         <Accordion.Panel>
@@ -97,9 +90,7 @@ export function FrequentlyAskedQuestions() {
               >
                 www.smartlist.tech/join
               </a>
-            </p>
-
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+              <br />
               Smartlist is also open source. You can view the source code on
               GitHub
             </p>

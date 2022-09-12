@@ -81,12 +81,12 @@ export function Header() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
             <h1 className="mt-[100px] md:mt-[200px] font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-green-500 to-green-900 font-[900] tracking-tight sm:tracking-tight sm:text-6xl">
-              Next-gen home inventory and personal finances
+              Next-gen personal home inventory
             </h1>
             <p className="mt-4 text-lg text-gray-500">
               Ever been stuck at the grocery store wondering what you need?
-              Smartlist helps you organize your home&apos;s inventory, expenses,
-              tasks, and more.
+              Smartlist helps you organize your home&apos;s items, rooms, lists,
+              and more.
             </p>
             <a
               rel="noreferrer"
@@ -128,48 +128,21 @@ export function Header() {
                       <IconItem icon={JSON.parse(iconList)[10]} />
                       <IconItem icon={JSON.parse(iconList)[11]} />
                     </div>
-                    <div className="hide-on-mobile flex flex-shrink-0 grid gap-y-6 lg:gap-y-4">
-                      <div className="w-80 h-52 rounded-[35px] bg-gray-200 items-center flex px-9 overflow-hidden sm:opacity-0 lg:opacity-100 text-gray-900">
-                        <div className="w-full">
-                          <h4 className="text-lg mb-2 text-gray-500">
-                            This month
-                          </h4>
-                          <p className="text-sm text-gray-400">Groceries</p>
-                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-gray-400">
-                            <div className="w-[72%] h-[6px] bg-gray-600 rounded-xl"></div>
-                          </div>
-
-                          <p className="text-sm text-gray-400">Gym</p>
-                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-gray-400">
-                            <div className="w-full h-[6px] bg-red-900 rounded-xl"></div>
-                          </div>
-
-                          <p className="text-sm text-gray-400">Taxi</p>
-                          <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-gray-400">
-                            <div className="w-[12%] h-[6px] bg-gray-600 rounded-xl"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex gap-4">
-                        <IconItem icon={JSON.parse(iconList)[12]} />
-                        <IconItem icon={JSON.parse(iconList)[13]} />
-                        <IconItem icon={JSON.parse(iconList)[14]} />
-                      </div>
-                      <div className="flex gap-4">
-                        <IconItem icon={JSON.parse(iconList)[15]} />
-                        <IconItem icon={JSON.parse(iconList)[16]} />
-                        <IconItem icon={JSON.parse(iconList)[17]} />
-                      </div>
-                      <div className="flex gap-4">
-                        <IconItem icon={JSON.parse(iconList)[18]} />
-                        <IconItem icon={JSON.parse(iconList)[19]} />
-                        <IconItem icon={JSON.parse(iconList)[20]} />
-                      </div>
-                      <div className="flex gap-4">
-                        <IconItem icon={JSON.parse(iconList)[21]} />
-                        <IconItem icon={JSON.parse(iconList)[22]} />
-                        <IconItem icon={JSON.parse(iconList)[23]} />
-                      </div>
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
+                      <IconItem icon={JSON.parse(iconList)[12]} />
+                      <IconItem icon={JSON.parse(iconList)[13]} />
+                      <IconItem icon={JSON.parse(iconList)[14]} />
+                      <IconItem icon={JSON.parse(iconList)[15]} />
+                      <IconItem icon={JSON.parse(iconList)[16]} />
+                      <IconItem icon={JSON.parse(iconList)[17]} />
+                    </div>
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
+                      <IconItem icon={JSON.parse(iconList)[18]} />
+                      <IconItem icon={JSON.parse(iconList)[19]} />
+                      <IconItem icon={JSON.parse(iconList)[20]} />
+                      <IconItem icon={JSON.parse(iconList)[21]} />
+                      <IconItem icon={JSON.parse(iconList)[22]} />
+                      <IconItem icon={JSON.parse(iconList)[23]} />
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-4">
                       <IconItem icon={JSON.parse(iconList)[41]} />
@@ -203,6 +176,7 @@ export function Header() {
                       <IconItem icon={JSON.parse(iconList)[39]} />
                       <IconItem icon={JSON.parse(iconList)[40]} />
                     </div>
+
                     <div className="sm:hidden flex-shrink-0 grid gap-y-6 lg:gap-y-4">
                       <div className="w-80 h-52 rounded-[35px] bg-gray-200 items-center flex px-9 overflow-hidden sm:opacity-0 lg:opacity-100 text-gray-900">
                         <div className="w-full">

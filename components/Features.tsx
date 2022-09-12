@@ -8,14 +8,14 @@ import {
 
 const features = [
   {
-    name: "Track & review your expenses",
-    description: "Set financial goals and budgets by tracking your expenses.",
+    name: "Track and manage your home inventory",
+    description: "Keep track of what you have and need to buy.",
     icon: GlobeAltIcon,
   },
   {
-    name: "Organize your items",
+    name: "Recieve maintenance reminders for your home",
     description:
-      "Build up your inventory by creating rooms and organizing your items",
+      "Store notes and reminders for your home, such as when to change an air filter.",
     icon: ScaleIcon,
   },
   {
@@ -25,9 +25,8 @@ const features = [
     icon: LightningBoltIcon,
   },
   {
-    name: "Sync your inventory",
-    description:
-      "Invite your family to share your inventory and lists with them",
+    name: "Invite others to your home",
+    description: "Sync your home with up to 5 people.",
     icon: AnnotationIcon,
   },
   {
@@ -39,7 +38,7 @@ const features = [
   {
     name: "Make a positive impact",
     description:
-      "We'll occassionally send you updates on how to make your home more eco-friendly",
+      "We'll occassionally send you updates on how to make your home tidier and more eco-friendly",
     icon: AnnotationIcon,
   },
 ];
