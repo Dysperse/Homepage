@@ -22,7 +22,7 @@ const solutions = [
   {
     name: "Smartlist",
     description: "Next-gen home inventory and personal finances",
-    href: "#",
+    href: "//my.smartlist.tech",
     icon: CashIcon,
   },
   {
@@ -178,7 +178,7 @@ export default function Example() {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://login.smartlist.tech/oauth/eccbc87e4b5ce2fe28308fd9f2a7baf3"
+            href="https://my.smartlist.tech"
             className="hidden md:inline-flex whitespace-nowrap hover:underline focus:ring-2 ring-black text-base font-medium text-gray-500 hover:text-gray-900"
           >
             My account
@@ -186,7 +186,7 @@ export default function Example() {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
+            href="https://my.smartlist.tech/signup"
             className="hidden sm:flex focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-gray-700 to-gray-900"
           >
             Get started
@@ -194,7 +194,7 @@ export default function Example() {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
+            href="https://my.smartlist.tech/signup"
             className="sm:hidden focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-gray-700 to-gray-900"
           >
             Sign up

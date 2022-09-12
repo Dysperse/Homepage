@@ -13,7 +13,7 @@ export function CallToAction(): JSX.Element {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
+              href="https://my.smartlist.tech/signup"
               className="focus:ring-2 ring-offset-2 ring-white ring-offset-gray-900 mt-3 whitespace-nowrap inline-flex items-center justify-center px-6 py-3 rounded-2xl shadow-sm text-base font-medium text-black bg-gradient-to-br hover:bg-gradient-to-tl from-gray-200 to-gray-400"
             >
               Get started

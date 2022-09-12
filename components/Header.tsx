@@ -90,7 +90,7 @@ export function Header() {
             </p>
             <a
               rel="noreferrer"
-              href="https://login.smartlist.tech/signup/eccbc87e4b5ce2fe28308fd9f2a7baf3"
+              href="https://my.smartlist.tech/signup"
               target="_blank"
               className="mt-5 inline-block text-center bg-gradient-to-br from-orange-400 to-orange-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-green-700 outline-none mr-4 focus:ring ring-offset-2 ring-orange-500"
             >
