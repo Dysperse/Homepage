@@ -21,7 +21,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 const solutions = [
   {
     name: "Smartlist",
-    description: "Next-gen home inventory and personal finances",
+    description: "Next-gen home personal home inventory",
     href: "//my.smartlist.tech",
     icon: CashIcon,
   },
@@ -29,7 +29,7 @@ const solutions = [
     name: "Smartlist Availability",
     description:
       "The modern way of finding the best time for your group to get together",
-    href: "#",
+    href: "//availability.smartlist.tech",
     icon: CalendarIcon,
   },
 ];
