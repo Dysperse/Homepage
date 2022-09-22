@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-t mt-10 p-4 bg-white sm:p-16 dark:bg-gray-900">
       <div className="max-w-[90vw] mx-auto md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
-          <a href="https://flowbite.com/" className="flex items-center">
+          <a href="https://smartlist.tech/" className="flex items-center">
             <picture>
               <img
                 src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
@@ -107,7 +107,7 @@ export default function Footer() {
       <div className="max-w-[90vw] mx-auto sm:flex sm:items-center sm:justify-between">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           &copy; {new Date().getFullYear()}{" "}
-          <a href="https://flowbite.com/" className="hover:underline">
+          <a href="https://smartlist.tech/" className="hover:underline">
             Smartlist
           </a>
           . All Rights Reserved.
