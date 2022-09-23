@@ -185,17 +185,17 @@ export function Header() {
                           </h4>
                           <p className="text-sm text-gray-400">Groceries</p>
                           <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-gray-400">
-                            <div className="w-[72%] h-[6px] bg-gray-600 rounded-xl"></div>
+                            <div className="w-[72%] h-[6px] bg-gray-600 rounded-xl" />
                           </div>
 
                           <p className="text-sm text-gray-400">Gym</p>
                           <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-red-300">
-                            <div className="w-[90%] h-[6px] bg-red-600 rounded-xl"></div>
+                            <div className="w-[90%] h-[6px] bg-red-600 rounded-xl" />
                           </div>
 
                           <p className="text-sm text-gray-400">Taxi</p>
                           <div className="w-full h-[6px] mt-1 mb-3 rounded-xl bg-gray-400">
-                            <div className="w-[12%] h-[6px] bg-gray-600 rounded-xl"></div>
+                            <div className="w-[12%] h-[6px] bg-gray-600 rounded-xl" />
                           </div>
                         </div>
                       </div>

@@ -48,7 +48,7 @@ export default function Home({ title, meta, data }) {
       <article
         className="prose lg:prose-lg -mt-7 max-w-[100vw] sm:max-w-3xl"
         dangerouslySetInnerHTML={{ __html: data }}
-      ></article>
+       />
     </div>
   );
 }
