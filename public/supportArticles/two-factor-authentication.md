@@ -1,4 +1,4 @@
-Two-factor authentication is a way to add extra security to your account. 2FA is a great way to protect your account from unauthorized access. 
+Two-factor authentication is a way to add extra security to your account. 2FA is a great way to protect your account from unauthorized access.
 
 1. To get started, you will need to install the Google Authenticator app on your phone.
 2. Then, navigate to your account settings by clicking the profile icon in the top right corner of the screen.
