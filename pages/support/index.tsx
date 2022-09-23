@@ -11,7 +11,7 @@ function Support({ data }: any) {
     <label className="block">
       <input
         type="text"
-        autoFocus={true}
+        autoFocus
         onKeyDown={(e: any) => {
           if (e.key === "Enter") {
             e.target.blur();

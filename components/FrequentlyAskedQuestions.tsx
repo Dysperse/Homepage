@@ -14,7 +14,7 @@ export function FrequentlyAskedQuestions() {
       <p className="mt-2 text-3xl text-center mb-5 leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
         Frequently asked questions
       </p>{" "}
-      <Accordion flush alwaysOpen={true}>
+      <Accordion flush alwaysOpen>
         <Accordion.Panel>
           <Accordion.Title id="panel1">Is Smartlist free?</Accordion.Title>
           <Accordion.Content>
