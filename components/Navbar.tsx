@@ -101,6 +101,15 @@ export default function Example() {
               Community
             </a>
           </Link>
+          <Link
+            rel="noreferrer"
+            target="_blank"
+            href="http://github.com/Smartlist-App/Smartlist"
+          >
+            <a className="text-base hidden sm:inline-flex font-medium text-gray-500 hover:text-gray-900">
+              Open source
+            </a>
+          </Link>
           <Link href="/support">
             <a className="hidden sm:inline-flex text-base font-medium text-gray-500 hover:text-gray-900">
               Support
