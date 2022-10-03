@@ -104,7 +104,7 @@ export default function Example() {
           <Link
             rel="noreferrer"
             target="_blank"
-            href="http://github.com/Smartlist-App/Smartlist"
+            href="http://github.com/Smartlist-App"
           >
             <a className="text-base hidden sm:inline-flex font-medium text-gray-500 hover:text-gray-900">
               Open source
