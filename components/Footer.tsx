@@ -84,21 +84,6 @@ export default function Footer() {
                   </picture>
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://infinitzhost.com"
-                  className="select-none items-center hover:underline bg-black block rounded-xl flex"
-                >
-                  <picture>
-                    <img
-                      alt="InfinitzHost logo"
-                      className="w-11 h-12 border-r border-gray-600 pl-2 p-[5px]"
-                      src="data:image/svg+xml,%3Csvg class='w-10 h-10' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Capa_1' x='0' y='0' version='1.1' viewBox='6 -6 512 512' xml:space='preserve' style='enable-background:new 6 -6 512 512'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%23fff%7D.st1%7Bfill:none;stroke:%23fff;stroke-width:16;stroke-miterlimit:10%7D%3C/style%3E%3Ccircle cx='262' cy='250' r='108' class='st0'/%3E%3Ccircle cx='404.8' cy='104' r='40.3' class='st0'/%3E%3Ccircle cx='60.8' cy='289.5' r='24.9' class='st0'/%3E%3Ccircle cx='262' cy='250' r='204.4' class='st1'/%3E%3C/svg%3E"
-                    />
-                  </picture>
-                  <span className="text-white ml-4 my-3">InfinitzHost</span>
-                </a>
-              </li>
             </ul>
           </div>
         </div>
