@@ -23,7 +23,7 @@ export function CallToAction(): JSX.Element {
             <div className="inline-flex rounded-md shadow">
               <picture>
                 <img
-                  src="https://i.ibb.co/1qsQmk7/Screenshot-2022-10-01-5-41-47-PM.png"
+                  src="https://i.ibb.co/VpVkxwN/Screenshot-2022-10-26-4-25-40-PM.png"
                   className="w-full -mb-2 -mr-20 max-w-2xl xl:max-w-3xl rounded-tl-3xl right-0 absolute bottom-0"
                   alt="dashboard"
                 />
