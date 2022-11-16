@@ -15,9 +15,7 @@ export function Announcement() {
             </span>
             <p className="ml-3 truncate text-ellipsis max-w-[100%] overflow-hidden font-medium text-white max-w-full">
               {" "}
-              Introducing maintenance reminders: Get notified when it&apos;s
-              time to change your air filter, your smoke detector needs a new
-              battery, and more...
+              We&apos;ve changed our app&apos;s name to Carbon (formerly Smartlist). Please stay tuned for updates, as we will migrate to a new site soon!
             </p>
           </div>
           <div className="order-3 mt-2 ml-auto flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
