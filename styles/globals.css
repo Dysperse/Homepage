@@ -3,14 +3,19 @@
 @tailwind utilities;
 @layer components {
   .icon-item {
-    @apply w-24 h-24 rounded-[35px] bg-gradient-to-br from-gray-100 to-gray-200 items-center inline-flex justify-center overflow-hidden sm:opacity-0 lg:opacity-100;
+    @apply w-24 h-24 rounded-[35px] bg-gradient-to-br from-neutral-100 to-neutral-200 items-center inline-flex justify-center overflow-hidden sm:opacity-0 lg:opacity-100;
   }
 }
 
-*:not(.material-symbols-rounded, .material-symbols-outlined) {
+*:not(.material-symbols-rounded, .material-symbols-outlined, .dm-serif) {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
-  font-family: "Figtree", sans-serif !important;
+  font-family: "DM Sans", sans-serif !important;
+}
+
+.dm-serif,
+.dm-serif * {
+  font-family: "DM Serif Display", serif !important;
 }
 
 .material-symbols-outlined {
