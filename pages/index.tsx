@@ -31,44 +31,46 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Smartlist: Next-gen home inventory and personal finances</title>
+        <title>
+          Smartlist &bull; The only productivity app you&apos;ll ever need!
+        </title>
         <meta
           name="title"
-          content="Smartlist: Next-gen home inventory and personal finances"
+          content="Smartlist &bull; The only productivity app you'll ever need!"
         />
         <meta
           name="description"
-          content="Ever been stuck at the grocery store wondering what you need? Smartlist helps you organize your home's inventory, expenses, tasks, and more"
+          content="Ever stuck at the grocery store wondering what to buy? Having trouble managing your tasks in a single place? Want to set goals in life but don't know where to start? Carbon is an all-in-one productivity app which will help you manage your life."
         />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://smartlist.tech/" />
         <meta
           property="og:title"
-          content="Smartlist: Next-gen home inventory and personal finances"
+          content="Smartlist &bull; The only productivity app you'll ever need!"
         />
         <meta
           property="og:description"
-          content="Ever been stuck at the grocery store wondering what you need? Smartlist helps you organize your home's inventory, expenses, tasks, and more"
+          content="Ever stuck at the grocery store wondering what to buy? Having trouble managing your tasks in a single place? Want to set goals in life but don't know where to start? Carbon is an all-in-one productivity app which will help you manage your life."
         />
         <meta
           property="og:image"
-          content="https://i.ibb.co/8D9qnzV/image.png"
+          content="https://i.ibb.co/G55rtd3/image.png"
         />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://smartlist.tech/" />
         <meta
           property="twitter:title"
-          content="Smartlist: Next-gen home inventory and personal finances"
+          content="Smartlist &bull; The only productivity app you'll ever need!"
         />
         <meta
           property="twitter:description"
-          content="Ever been stuck at the grocery store wondering what you need? Smartlist helps you organize your home's inventory, expenses, tasks, and more"
+          content="Ever stuck at the grocery store wondering what to buy? Having trouble managing your tasks in a single place? Want to set goals in life but don't know where to start? Carbon is an all-in-one productivity app which will help you manage your life."
         />
         <meta
           property="twitter:image"
-          content="https://i.ibb.co/8D9qnzV/image.png"
+          content="https://i.ibb.co/G55rtd3/image.png"
         />
       </Head>
       <Announcement />

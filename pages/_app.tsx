@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }) {
             "url": "https://smartlist.tech",
             "logo": "https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png",
             "sameAs": [
-              "https://twitter.com/smartlistapp",
+              "https://twitter.com/getsmartlist",
               "https://instagram.com/getsmartlist",
               "https://github.com/Smartlist-App",
               "https://smartlist.tech/"
