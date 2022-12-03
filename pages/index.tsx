@@ -32,11 +32,11 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Smartlist &bull; The only productivity app you&apos;ll ever need!
+          Carbon &bull; The only productivity app you&apos;ll ever need!
         </title>
         <meta
           name="title"
-          content="Smartlist &bull; The only productivity app you'll ever need!"
+          content="Carbon &bull; The only productivity app you'll ever need!"
         />
         <meta
           name="description"
@@ -47,7 +47,7 @@ export default function Home() {
         <meta property="og:url" content="https://smartlist.tech/" />
         <meta
           property="og:title"
-          content="Smartlist &bull; The only productivity app you'll ever need!"
+          content="Carbon &bull; The only productivity app you'll ever need!"
         />
         <meta
           property="og:description"
@@ -62,7 +62,7 @@ export default function Home() {
         <meta property="twitter:url" content="https://smartlist.tech/" />
         <meta
           property="twitter:title"
-          content="Smartlist &bull; The only productivity app you'll ever need!"
+          content="Carbon &bull; The only productivity app you'll ever need!"
         />
         <meta
           property="twitter:description"
