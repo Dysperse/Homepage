@@ -95,10 +95,15 @@ export function FrequentlyAskedQuestions() {
         <Accordion.Panel>
           <Accordion.Title>
             What is the difference between Smartlist and other home inventory
+            apps?
           </Accordion.Title>
           <Accordion.Content>
             <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
-              Smartlist is the one and only home inventory manager that allows you to seamlessly add and organize your items, with features to tidy your home. Smartlist provides a feature-rich and intuitive UI to organize your things. Furthermore, unlike other home inventory managers, Smartlist is free, forever. 
+              Smartlist is the one and only home inventory manager that allows
+              you to seamlessly add and organize your items, with features to
+              tidy your home. Smartlist provides a feature-rich and intuitive UI
+              to organize your things. Furthermore, unlike other home inventory
+              managers, Smartlist is free, forever.
             </p>
           </Accordion.Content>
         </Accordion.Panel>
