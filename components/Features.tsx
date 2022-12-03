@@ -13,9 +13,9 @@ const features = [
     icon: GlobeAltIcon,
   },
   {
-    name: "Recieve maintenance reminders for your home",
+    name: "Set goals, big and small",
     description:
-      "Store notes and reminders for your home, such as when to change an air filter.",
+      "Carbon Coach helps you achieve your goals, whether it's big or small by adding small steps to enrich your daily routine.",
     icon: ScaleIcon,
   },
   {
@@ -47,7 +47,7 @@ export function Features() {
     <div className="py-12 bg-white" id="/features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-lg text-green-600 font-semibold">
+          <h2 className="text-lg text-neutral-600 font-semibold">
             In a nutshell
           </h2>
           <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
@@ -60,7 +60,7 @@ export function Features() {
             {features.map((feature) => (
               <div key={feature.name} className="relative">
                 <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-neutral-800 text-white">
                     <feature.icon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
