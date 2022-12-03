@@ -13,10 +13,12 @@ export function Announcement() {
                 aria-hidden="true"
               />
             </span>
-            <p className="ml-3 truncate text-ellipsis max-w-[100%] overflow-hidden font-medium text-white">
-              We just released Carbon Coach! Carbon Coach helps you achieve your
-              goals, whether it&apos;s big or small by adding small steps to
-              enrich your daily routine.
+            <p className="ml-3 truncate text-ellipsis max-w-[100%] overflow-hidden font-medium text-white max-w-full">
+              {" "}
+              Hey everyone! Today, we&apos;re making the coach feature publicly
+              available. Carbon Coach helps you achieve your goals, whether
+              it&apos;s big or small by adding small steps to enrich your daily
+              routine.
             </p>
           </div>
           <div className="order-3 mt-2 ml-auto flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">

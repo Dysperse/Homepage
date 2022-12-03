@@ -83,11 +83,13 @@ export default function Example() {
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <Link href="/">
             <a className="flex items-center gap-5">
-              <img
-                className="h-8 w-auto sm:h-10"
-                src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
-                alt=""
-              />
+              <picture>
+                <img
+                  className="h-8 w-auto sm:h-10"
+                  src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
+                  alt=""
+                />
+              </picture>
             </a>
           </Link>
         </div>
@@ -97,7 +99,7 @@ export default function Example() {
             target="_blank"
             href="https://discord.gg/9EJSxkJhnQ"
           >
-            <a className="text-base hidden sm:inline-flex font-medium text-gray-500 hover:text-gray-900">
+            <a className="text-base hidden sm:inline-flex font-medium text-neutral-500 hover:text-neutral-900">
               Community
             </a>
           </Link>
@@ -106,12 +108,12 @@ export default function Example() {
             target="_blank"
             href="http://github.com/Smartlist-App"
           >
-            <a className="text-base hidden sm:inline-flex font-medium text-gray-500 hover:text-gray-900">
+            <a className="text-base hidden sm:inline-flex font-medium text-neutral-500 hover:text-neutral-900">
               Open source
             </a>
           </Link>
           <Link href="/support">
-            <a className="hidden sm:inline-flex text-base font-medium text-gray-500 hover:text-gray-900">
+            <a className="hidden sm:inline-flex text-base font-medium text-neutral-500 hover:text-neutral-900">
               Support
             </a>
           </Link>
@@ -120,15 +122,15 @@ export default function Example() {
               <>
                 <Popover.Button
                   className={classNames(
-                    open ? "text-gray-900" : "text-gray-500",
-                    "group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
+                    open ? "text-neutral-900" : "text-neutral-500",
+                    "group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-neutral-900 focus:outline-none"
                   )}
                 >
                   <span>Apps</span>
                   <ChevronDownIcon
                     className={classNames(
-                      open ? "text-gray-900" : "text-gray-400",
-                      "ml-2 h-5 w-5 group-hover:text-gray-900"
+                      open ? "text-neutral-900" : "text-neutral-400",
+                      "ml-2 h-5 w-5 group-hover:text-neutral-900"
                     )}
                     aria-hidden="true"
                   />
@@ -144,30 +146,30 @@ export default function Example() {
                   leaveTo="opacity-0 translate-y-1"
                 >
                   <Popover.Panel className="absolute z-10 fixed right-0 mt-3 px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
-                    <div className="rounded-lg shadow-lg ring-1 ring-gray-200 overflow-hidden">
+                    <div className="rounded-lg shadow-lg ring-1 ring-neutral-200 overflow-hidden">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                         {solutions.map((item) => (
                           <a
                             key={item.name}
                             href={item.href}
-                            className="-m-3 p-3 flex items-start rounded-2xl hover:bg-gray-50"
+                            className="-m-3 p-3 flex items-start rounded-2xl hover:bg-neutral-50"
                           >
                             <item.icon
                               className="flex-shrink-0 h-6 w-6 mt-1 text-teal-600"
                               aria-hidden="true"
                             />
                             <div className="ml-4">
-                              <p className="text-base font-medium text-gray-900">
+                              <p className="text-base font-medium text-neutral-900">
                                 {item.name}
                               </p>
-                              <p className="mt-1 text-sm text-gray-500">
+                              <p className="mt-1 text-sm text-neutral-500">
                                 {item.description}
                               </p>
                             </div>
                           </a>
                         ))}
                       </div>
-                      <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
+                      <div className="px-5 py-5 bg-neutral-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                         Suggestions? Contact us at:&nbsp;
                         <a
                           href="mailto:hello@smartlist.tech"
@@ -188,7 +190,7 @@ export default function Example() {
             target="_blank"
             rel="noreferrer"
             href="https://my.smartlist.tech"
-            className="hidden md:inline-flex whitespace-nowrap hover:underline focus:ring-2 ring-black text-base font-medium text-gray-500 hover:text-gray-900"
+            className="hidden md:inline-flex whitespace-nowrap hover:underline focus:ring-2 ring-black text-base font-medium text-neutral-500 hover:text-neutral-900"
           >
             My account
           </a>
@@ -196,7 +198,7 @@ export default function Example() {
             target="_blank"
             rel="noreferrer"
             href="https://my.smartlist.tech/signup"
-            className="hidden sm:flex focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-gray-700 to-gray-900"
+            className="hidden sm:flex focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-neutral-700 to-neutral-900"
           >
             Get started
           </a>
@@ -204,7 +206,7 @@ export default function Example() {
             target="_blank"
             rel="noreferrer"
             href="https://my.smartlist.tech/signup"
-            className="sm:hidden focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-gray-700 to-gray-900"
+            className="sm:hidden focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-neutral-700 to-neutral-900"
           >
             Sign up
           </a>
