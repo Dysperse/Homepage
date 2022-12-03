@@ -107,6 +107,17 @@ export function FrequentlyAskedQuestions() {
             </p>
           </Accordion.Content>
         </Accordion.Panel>
+        <Accordion.Panel>
+          <Accordion.Title>
+            Is Smartlist available on mobile and desktop?
+          </Accordion.Title>
+          <Accordion.Content>
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+              Smartlist is available on mobile and desktop, as well as the web.
+              You can install it by visiting your account settings.
+            </p>
+          </Accordion.Content>
+        </Accordion.Panel>
       </Accordion>
     </div>
   );
