@@ -80,7 +80,7 @@ export function Header() {
       <div className="pb-80 sm:pb-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
-            <h1 className="mt-[100px] md:mt-[200px] font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-green-500 to-green-900 font-[900] tracking-tight sm:tracking-tight sm:text-6xl">
+            <h1 className="mt-[100px] md:mt-[120px] font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-green-500 to-green-900 font-[700] tracking-tight sm:tracking-tight sm:text-7xl">
               The only productivity app you&apos;ll ever need.
             </h1>
             <p className="mt-4 text-lg text-gray-500">

@@ -22,6 +22,10 @@ export default function Document() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,200&display=swap"
         />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,GRAD@48,400,200&display=swap"
+        />
       </Head>
       <Script id="google-analytics" strategy="afterInteractive">
         {`
@@ -39,7 +43,7 @@ export default function Document() {
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
-           />
+          />
         </noscript>
         <Main />
         <NextScript />

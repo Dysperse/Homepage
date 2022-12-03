@@ -7,11 +7,16 @@
   }
 }
 
-*:not(.material-symbols-rounded) {
+*:not(.material-symbols-rounded, .material-symbols-outlined) {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   font-family: "Figtree", sans-serif !important;
 }
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined" !important;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
