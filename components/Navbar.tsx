@@ -99,7 +99,7 @@ export default function Example() {
             target="_blank"
             href="https://discord.gg/9EJSxkJhnQ"
           >
-            <a className="text-base hidden sm:inline-flex font-medium text-neutral-500 hover:text-neutral-900">
+            <a className="text-base hidden sm:inline-flex font-medium text-neutral-600 hover:text-neutral-900 focus:ring-2 ring-black">
               Community
             </a>
           </Link>
@@ -108,12 +108,12 @@ export default function Example() {
             target="_blank"
             href="http://github.com/Smartlist-App"
           >
-            <a className="text-base hidden sm:inline-flex font-medium text-neutral-500 hover:text-neutral-900">
+            <a className="text-base hidden sm:inline-flex font-medium text-neutral-600 hover:text-neutral-900 focus:ring-2 ring-black">
               Open source
             </a>
           </Link>
           <Link href="/support">
-            <a className="hidden sm:inline-flex text-base font-medium text-neutral-500 hover:text-neutral-900">
+            <a className="hidden sm:inline-flex text-base font-medium text-neutral-600 hover:text-neutral-900 focus:ring-2 ring-black">
               Support
             </a>
           </Link>
@@ -122,8 +122,8 @@ export default function Example() {
               <>
                 <Popover.Button
                   className={classNames(
-                    open ? "text-neutral-900" : "text-neutral-500",
-                    "group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-neutral-900 focus:outline-none"
+                    open ? "text-neutral-900" : "text-neutral-600",
+                    "group bg-transparent focus:ring-2 ring-black inline-flex items-center text-base font-medium hover:text-neutral-900 focus:outline-none"
                   )}
                 >
                   <span>Apps</span>
@@ -162,7 +162,7 @@ export default function Example() {
                               <p className="text-base font-medium text-neutral-900">
                                 {item.name}
                               </p>
-                              <p className="mt-1 text-sm text-neutral-500">
+                              <p className="mt-1 text-sm text-neutral-600">
                                 {item.description}
                               </p>
                             </div>
@@ -190,7 +190,7 @@ export default function Example() {
             target="_blank"
             rel="noreferrer"
             href="https://my.smartlist.tech"
-            className="hidden md:inline-flex whitespace-nowrap hover:underline focus:ring-2 ring-black text-base font-medium text-neutral-500 hover:text-neutral-900"
+            className="hidden md:inline-flex whitespace-nowrap hover:underline focus:ring-2 ring-black text-base font-medium text-neutral-600 hover:text-neutral-900"
           >
             My account
           </a>

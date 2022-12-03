@@ -81,7 +81,7 @@ export function Header() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
             <h1
-              className="mt-[100px] md:mt-[120px] font text-transparent text-6xl mb-2 tracking-tight sm:tracking-tight sm:text-7xl dm-serif"
+              className="mt-[100px] md:mt-[120px] font text-transparent text-6xl mb-2 sm:text-7xl dm-serif"
               style={{
                 color: "hsl(240,11%,10%)",
               }}
@@ -113,7 +113,7 @@ export function Header() {
             </a>
           </div>
           <div>
-            <div className="mt-[50px] -ml-[170px] md:-ml-0">
+            <div className="mt-[50px] sm:mt-[25px] -ml-[170px] md:-ml-0">
               {/* Decorative image grid */}
               <div
                 aria-hidden="true"
