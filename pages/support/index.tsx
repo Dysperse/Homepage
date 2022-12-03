@@ -88,7 +88,7 @@ export default function Home() {
           content="https://i.ibb.co/8D9qnzV/image.png"
         />
       </Head>
-      <h1 className="text-center mt-[100px] md:mt-[200px] font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-green-500 to-green-900 font-[900] tracking-tight sm:tracking-tight sm:text-6xl">
+      <h1 className="text-center mt-[100px] md:mt-[200px] font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-neutral-500 to-neutral-900 font-[900] tracking-tight sm:tracking-tight sm:text-6xl">
         Support
         <br />
         &nbsp;

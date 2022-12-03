@@ -39,7 +39,7 @@ export default function Home({ title, meta, data }) {
         <Link href="/support">
           <a>&larr;&nbsp; Back to articles</a>
         </Link>
-        <h1 className="mt-6 text-left font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-green-500 to-green-900 font-[900] tracking-tight sm:tracking-tight sm:text-6xl">
+        <h1 className="mt-6 text-left font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-neutral-500 to-neutral-900 tracking-tight sm:tracking-tight sm:text-6xl dm-serif">
           {title}
           <br />
           &nbsp;
@@ -48,7 +48,7 @@ export default function Home({ title, meta, data }) {
       <article
         className="prose lg:prose-lg -mt-7 max-w-[100vw] sm:max-w-3xl"
         dangerouslySetInnerHTML={{ __html: data }}
-       />
+      />
     </div>
   );
 }
