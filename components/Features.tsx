@@ -38,7 +38,7 @@ const features = [
   {
     name: "Make a positive impact",
     description:
-      "We'll occassionally send you updates on how to make your home tidier and more eco-friendly",
+      "We'll occasionally send you updates on how to make your home tidier and more eco-friendly",
     icon: AnnotationIcon,
   },
 ];
