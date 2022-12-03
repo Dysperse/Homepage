@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t mt-10 p-4 bg-white sm:p-16 dark:bg-gray-900">
+    <footer className="border-t mt-16 p-4 bg-white sm:p-16 dark:bg-black dark:border-neutral-800">
       <div className="max-w-[90vw] mx-auto md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
           <a href="https://smartlist.tech/" className="flex items-center">
@@ -74,7 +74,7 @@ export default function Footer() {
               <li className="mb-4">
                 <a
                   href="https://vercel.com/?utm_source=smartlist&utm_campaign=oss"
-                  className="hover:underline"
+                  className="hover:underline dark:filter dark:invert"
                 >
                   <picture>
                     <img
@@ -88,7 +88,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <hr className="max-w-[90vw] mx-auto my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <hr className="max-w-[90vw] mx-auto my-6 border-gray-200 sm:mx-auto dark:border-neutral-800 lg:my-8" />
       <div className="max-w-[90vw] mx-auto sm:flex sm:items-center sm:justify-between">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           &copy; {new Date().getFullYear()}{" "}

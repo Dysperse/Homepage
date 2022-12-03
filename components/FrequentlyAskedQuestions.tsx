@@ -11,14 +11,14 @@ export function FrequentlyAskedQuestions() {
   }, []);
   return (
     <div className="max-w-7xl mx-auto my-20">
-      <p className="mt-2 text-3xl text-center mb-5 leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
+      <p className="mt-2 text-3xl text-center mb-5 leading-8 font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl sm:tracking-tight">
         Frequently asked questions
       </p>{" "}
       <Accordion flush alwaysOpen>
         <Accordion.Panel>
           <Accordion.Title id="panel1">Is Smartlist free?</Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+            <p className="faq-answer">
               Smartlist is 100% free, forever. No hidden fees, no ads, or credit
               card information required!
             </p>
@@ -29,7 +29,7 @@ export function FrequentlyAskedQuestions() {
             Can I use Smartlist for my dorm or apartment?
           </Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+            <p className="faq-answer">
               Absolutely! Smartlist is compatible with student dormitories and
               apartments.
             </p>
@@ -38,7 +38,7 @@ export function FrequentlyAskedQuestions() {
         <Accordion.Panel>
           <Accordion.Title>How secure is Smartlist?</Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+            <p className="faq-answer">
               At Smartlist, we take your privacy{" "}
               <Link rel="noreferrer" href="/privacy">
                 very seriously
@@ -53,7 +53,7 @@ export function FrequentlyAskedQuestions() {
         <Accordion.Panel>
           <Accordion.Title>How did Smartlist start?</Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+            <p className="faq-answer">
               Smartlist started in 2020, during the peak COVID-19 pandemic. We
               often found people struggling with goal-setting, task management,
               and home inventory. We decided to create a solution that would
@@ -65,7 +65,7 @@ export function FrequentlyAskedQuestions() {
         <Accordion.Panel>
           <Accordion.Title>How do I contact support?</Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+            <p className="faq-answer">
               You can contact support by emailing{" "}
               <Link
                 href="mailto:hello@smartlist.tech"
@@ -84,7 +84,7 @@ export function FrequentlyAskedQuestions() {
             What is the difference between Smartlist and other task managers?
           </Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+            <p className="faq-answer">
               Smartlist is a task manager that focuses on everything in general,
               from life goals, to daily tasks, to shopping lists. Smartlist is
               also a home inventory manager, which allows you to keep track of
@@ -98,7 +98,7 @@ export function FrequentlyAskedQuestions() {
             apps?
           </Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+            <p className="faq-answer">
               Smartlist is the one and only home inventory manager that allows
               you to seamlessly add and organize your items, with features to
               tidy your home. Smartlist provides a feature-rich and intuitive UI
@@ -112,7 +112,7 @@ export function FrequentlyAskedQuestions() {
             Is Smartlist available on mobile and desktop?
           </Accordion.Title>
           <Accordion.Content>
-            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+            <p className="faq-answer">
               Smartlist is available on mobile and desktop, as well as the web.
               You can install it by visiting your account settings.
             </p>

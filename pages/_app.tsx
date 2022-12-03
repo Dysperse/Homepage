@@ -1,11 +1,19 @@
-import "../styles/globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import React from "react";
-import Head from "next/head";
 import Script from "next/script";
+import { useEffect } from "react";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
+  // If window is not undefined, do something
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      }
+    }
+  }, []);
+
   return (
     <>
       <Script

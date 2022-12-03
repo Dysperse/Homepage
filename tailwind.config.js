@@ -15,4 +15,6 @@ module.exports = {
     require("flowbite/plugin"),
     require('@tailwindcss/typography'),
   ],
+
+  darkMode: 'class',
 }

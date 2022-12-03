@@ -76,19 +76,14 @@ export function Header() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="relative bg-white overflow-hidden">
+    <div className="relative dark:bg-black dark:text-white overflow-hidden">
       <div className="pb-80 sm:pb-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
-            <h1
-              className="mt-[100px] md:mt-[120px] font text-transparent text-6xl mb-2 sm:text-7xl dm-serif"
-              style={{
-                color: "hsl(240,11%,10%)",
-              }}
-            >
+            <h1 className="mt-[100px] md:mt-[120px] font text-transparent text-6xl mb-2 sm:text-7xl dm-serif text-black dark:text-white">
               The only productivity app you&apos;ll ever need.
             </h1>
-            <p className="mt-7 text-lg text-neutral-900">
+            <p className="mt-7 text-lg text-neutral-900 dark:text-neutral-300">
               Ever stuck at the grocery store wondering what to buy? Having
               trouble managing your tasks in a single place? Want to set goals
               in life but don&apos;t know where to start?{" "}
@@ -101,13 +96,13 @@ export function Header() {
               rel="noreferrer"
               href="https://my.smartlist.tech/signup"
               target="_blank"
-              className="mt-5 inline-block text-center bg-gradient-to-br from-gray-400 to-gray-900 rounded-3xl py-3 px-8 font-medium text-white outline-none mr-4 focus:ring ring-offset-2 ring-gray-500"
+              className="mt-5 inline-block text-center bg-gradient-to-br from-gray-400 to-gray-900 rounded-3xl py-3 px-8 font-medium text-white outline-none mr-4 focus:ring ring-offset-2 ring-gray-500 dark:from-gray-100 dark:to-gray-400 dark:text-black dark:ring-gray-400 dark:ring-offset-black"
             >
               Get started
             </a>
             <a
               href="#/features"
-              className="mt-5 inline-block text-center bg-gradient-to-br from-gray-200 to-gray-400 rounded-3xl py-3 px-8 font-medium text-gray-900 hover:bg-gray-100 outline-none focus:ring ring-offset-2 ring-gray-500"
+              className="mt-5 inline-block text-center bg-gradient-to-br from-gray-200 to-gray-400 rounded-3xl py-3 px-8 font-medium text-gray-900 hover:bg-gray-100 outline-none focus:ring ring-offset-2 ring-gray-200 dark:from-gray-800 dark:to-gray-900 dark:text-white dark:ring-gray-400 dark:ring-offset-black"
             >
               Tell me more!
             </a>

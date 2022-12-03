@@ -3,7 +3,10 @@
 @tailwind utilities;
 @layer components {
   .icon-item {
-    @apply w-24 h-24 rounded-[35px] bg-gradient-to-br from-neutral-100 to-neutral-200 items-center inline-flex justify-center overflow-hidden sm:opacity-0 lg:opacity-100;
+    @apply w-24 h-24 rounded-[35px] bg-gradient-to-br from-neutral-100 to-neutral-200 items-center inline-flex justify-center overflow-hidden sm:opacity-0 lg:opacity-100 dark:from-neutral-800 dark:to-neutral-900;
+  }
+  .faq-answer {
+    @apply mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl dark:bg-gray-800;
   }
 }
 

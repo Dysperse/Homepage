@@ -36,7 +36,7 @@ export default function Document() {
           })(window,document,'script','dataLayer','GTM-PPH4TH4');
          `}
       </Script>
-      <body>
+      <body className="dark:bg-black dark:text-white">
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PPH4TH4"

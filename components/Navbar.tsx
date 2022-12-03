@@ -79,7 +79,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <Popover className="bg-white">
-      <div className="flex justify-between items-center fixed z-[999999] w-full backdrop-blur-lg border-b top-0 left-0 bg-[rgba(240,240,240,.9)] py-5 md:justify-start md:space-x-10 px-10 h-20">
+      <div className="flex justify-between items-center fixed z-[999999] w-full backdrop-blur-lg border-b top-0 left-0 bg-[rgba(240,240,240,.9)] dark:bg-[rgba(0,0,0,0.9)] py-5 md:justify-start md:space-x-10 px-10 h-20 dark:border-neutral-900">
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <Link href="/">
             <a className="flex items-center gap-5">
@@ -99,7 +99,7 @@ export default function Example() {
             target="_blank"
             href="https://discord.gg/9EJSxkJhnQ"
           >
-            <a className="text-base hidden sm:inline-flex font-medium text-neutral-600 hover:text-neutral-900 focus:ring-2 ring-black">
+            <a className="text-base hidden sm:inline-flex font-medium text-neutral-600 hover:text-neutral-900 focus:ring-2 ring-black dark:text-neutral-300 dark:ring-white dark:hover:text-white">
               Community
             </a>
           </Link>
@@ -108,12 +108,12 @@ export default function Example() {
             target="_blank"
             href="http://github.com/Smartlist-App"
           >
-            <a className="text-base hidden sm:inline-flex font-medium text-neutral-600 hover:text-neutral-900 focus:ring-2 ring-black">
+            <a className="text-base hidden sm:inline-flex font-medium text-neutral-600 hover:text-neutral-900 focus:ring-2 ring-black dark:text-neutral-300 dark:ring-white dark:hover:text-white">
               Open source
             </a>
           </Link>
           <Link href="/support">
-            <a className="hidden sm:inline-flex text-base font-medium text-neutral-600 hover:text-neutral-900 focus:ring-2 ring-black">
+            <a className="hidden sm:inline-flex text-base font-medium text-neutral-600 hover:text-neutral-900 focus:ring-2 ring-black dark:text-neutral-300 dark:ring-white dark:hover:text-white">
               Support
             </a>
           </Link>
@@ -123,14 +123,16 @@ export default function Example() {
                 <Popover.Button
                   className={classNames(
                     open ? "text-neutral-900" : "text-neutral-600",
-                    "group bg-transparent focus:ring-2 ring-black inline-flex items-center text-base font-medium hover:text-neutral-900 focus:outline-none"
+                    "group bg-transparent focus:ring-2 ring-black inline-flex items-center text-base font-medium hover:text-neutral-900 focus:outline-none ring-black dark:text-neutral-300 dark:ring-white dark:hover:text-white"
                   )}
                 >
                   <span>Apps</span>
                   <ChevronDownIcon
                     className={classNames(
-                      open ? "text-neutral-900" : "text-neutral-400",
-                      "ml-2 h-5 w-5 group-hover:text-neutral-900"
+                      open
+                        ? "text-neutral-900 dark:text-white"
+                        : "text-neutral-400 dark:text-neutral-300",
+                      "ml-2 h-5 w-5 group-hover:text-neutral-900 dark:group-hover:text-white"
                     )}
                     aria-hidden="true"
                   />
@@ -145,35 +147,35 @@ export default function Example() {
                   leaveFrom="translate-y-0"
                   leaveTo="translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-10 fixed right-0 mt-3 px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                  <Popover.Panel className="absolute z-10 right-0 mt-3 px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                     <div className="rounded-lg shadow-lg  overflow-hidden">
-                      <div className="relative grid gap-6 bg-neutral-100 px-5 py-6 sm:gap-8 sm:p-8">
+                      <div className="relative grid gap-6 bg-neutral-100 dark:bg-neutral-900 px-5 py-6 sm:gap-8 sm:p-8">
                         {solutions.map((item) => (
                           <a
                             key={item.name}
                             href={item.href}
-                            className="-m-3 p-3 flex items-start rounded-2xl hover:bg-neutral-200"
+                            className="-m-3 p-3 flex items-start rounded-2xl hover:bg-neutral-200 dark:hover:bg-neutral-800"
                           >
                             <item.icon
-                              className="flex-shrink-0 h-6 w-6 mt-1 text-neutral-600"
+                              className="flex-shrink-0 h-6 w-6 mt-1 text-neutral-600 dark:text-neutral-300"
                               aria-hidden="true"
                             />
                             <div className="ml-4">
-                              <p className="text-base font-medium text-neutral-900">
+                              <p className="text-base font-medium text-neutral-900 dark:text-neutral-200">
                                 {item.name}
                               </p>
-                              <p className="mt-1 text-sm text-neutral-600">
+                              <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-500">
                                 {item.description}
                               </p>
                             </div>
                           </a>
                         ))}
                       </div>
-                      <div className="px-5 py-5 bg-neutral-200 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
+                      <div className="px-5 py-5 bg-neutral-200 dark:bg-neutral-800 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                         Suggestions? Contact us at:&nbsp;
                         <a
                           href="mailto:hello@smartlist.tech"
-                          className="text-blue-900 focus:ring ring-black hover:underline"
+                          className="text-blue-900 focus:ring ring-black hover:underline dark:text-blue-300 dark:ring-blue-100"
                         >
                           hello@smartlist.tech
                         </a>
@@ -190,7 +192,7 @@ export default function Example() {
             target="_blank"
             rel="noreferrer"
             href="https://my.smartlist.tech"
-            className="hidden md:inline-flex whitespace-nowrap hover:underline focus:ring-2 ring-black text-base font-medium text-neutral-600 hover:text-neutral-900"
+            className="hidden sm:inline-flex text-base font-medium text-neutral-600 hover:text-neutral-900 focus:ring-2 ring-black dark:text-neutral-300 dark:ring-white dark:hover:text-white"
           >
             My account
           </a>
@@ -198,7 +200,7 @@ export default function Example() {
             target="_blank"
             rel="noreferrer"
             href="https://my.smartlist.tech/signup"
-            className="hidden sm:flex focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-neutral-700 to-neutral-900"
+            className="hidden sm:flex focus:ring ring-offset-2 ring-black ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-2xl shadow-sm text-base font-medium text-white bg-gradient-to-br hover:bg-gradient-to-tl from-neutral-700 to-neutral-900 dark:from-neutral-100 dark:to-neutral-400 dark:text-neutral-900 dark:ring-white dark:hover:from-neutral-400 dark:hover:to-neutral-100"
           >
             Get started
           </a>
