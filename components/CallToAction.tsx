@@ -7,14 +7,14 @@ export function CallToAction(): JSX.Element {
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-20 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <h2 className="text-2xl tracking-tight text-gray-100 sm:text-4xl sm:tracking-tight">
             <span className="block font-bold text-4xl">Ready to dive in?</span>
-            <span className="block text-green-600 text-xl mt-2">
+            <span className="block text-gray-400 text-xl mt-2">
               Create your free account today!
             </span>
             <a
               target="_blank"
               rel="noreferrer"
               href="https://my.smartlist.tech/signup"
-              className="focus:ring-2 ring-offset-2 ring-white ring-offset-gray-900 mt-3 whitespace-nowrap inline-flex items-center justify-center px-6 py-3 rounded-2xl shadow-sm text-base font-medium text-black bg-gradient-to-br hover:bg-gradient-to-tl from-gray-200 to-gray-400"
+              className="focus:ring-2 ring-offset-2 ring-white ring-offset-gray-900 mt-3 whitespace-nowrap inline-flex items-center justify-center px-6 py-3 rounded-3xl shadow-sm text-base font-medium text-black bg-gradient-to-br hover:bg-gradient-to-tl from-gray-200 to-gray-400"
             >
               Get started
             </a>
@@ -23,7 +23,7 @@ export function CallToAction(): JSX.Element {
             <div className="inline-flex rounded-md shadow">
               <picture>
                 <img
-                  src="https://i.ibb.co/rpcYLKC/Screenshot-2022-11-22-11-16-59-PM.png"
+                  src="https://i.ibb.co/kJx03m8/Untitled-3840-2160-px-1.png"
                   className="w-full -mb-2 -mr-20 max-w-2xl xl:max-w-3xl rounded-tl-3xl right-0 absolute bottom-0"
                   alt="dashboard"
                 />
