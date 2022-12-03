@@ -80,25 +80,29 @@ export function Header() {
       <div className="pb-80 sm:pb-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
-            <h1 className="mt-[100px] md:mt-[120px] font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-green-500 to-green-900 font-[700] tracking-tight sm:tracking-tight sm:text-7xl">
+            <h1 className="mt-[100px] md:mt-[120px] font text-transparent text-6xl bg-clip-text bg-gradient-to-br from-pink-400 to-pink-900 font-[600] tracking-tight sm:tracking-tight sm:text-7xl">
               The only productivity app you&apos;ll ever need.
             </h1>
             <p className="mt-4 text-lg text-gray-500">
-              Ever been stuck at the grocery store wondering what you need?
-              Smartlist helps you organize your home&apos;s items, rooms, lists,
-              and more.
+              Ever stuck at the grocery store wondering what to buy? Having
+              trouble managing your tasks in a single place? Want to set goals
+              in life but don&apos;t know where to start?{" "}
+              <b>
+                Carbon is an all-in-one productivity app which will help you
+                manage your life.
+              </b>
             </p>
             <a
               rel="noreferrer"
               href="https://my.smartlist.tech/signup"
               target="_blank"
-              className="mt-5 inline-block text-center bg-gradient-to-br from-orange-400 to-orange-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-green-700 outline-none mr-4 focus:ring ring-offset-2 ring-orange-500"
+              className="mt-5 inline-block text-center bg-gradient-to-br from-purple-400 to-purple-900 rounded-2xl py-3 px-8 font-medium text-white outline-none mr-4 focus:ring ring-offset-2 ring-purple-500"
             >
               Get started
             </a>
             <a
               href="#/features"
-              className="mt-5 inline-block text-center bg-gradient-to-br from-indigo-400 to-indigo-900 rounded-2xl py-3 px-8 font-medium text-white hover:bg-indigo-700 outline-none focus:ring ring-offset-2 ring-indigo-500"
+              className="mt-5 inline-block text-center bg-gradient-to-br from-gray-200 to-gray-400 rounded-2xl py-3 px-8 font-medium text-gray-900 hover:bg-gray-100 outline-none focus:ring ring-offset-2 ring-gray-500"
             >
               Tell me more!
             </a>
