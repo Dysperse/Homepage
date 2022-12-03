@@ -11,10 +11,10 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    require("@tailwindcss/forms"),
     require("flowbite/plugin"),
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/typography"),
   ],
 
-  darkMode: 'class',
-}
+  darkMode: "class",
+};
