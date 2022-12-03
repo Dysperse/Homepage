@@ -79,7 +79,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <Popover className="bg-white">
-      <div className="flex justify-between items-center fixed z-[999999] w-full backdrop-blur-lg border-b top-0 left-0 bg-[rgba(255,255,255,.9)] py-5 md:justify-start md:space-x-10 px-10 h-20">
+      <div className="flex justify-between items-center fixed z-[999999] w-full backdrop-blur-lg border-b top-0 left-0 bg-[rgba(240,240,240,.9)] py-5 md:justify-start md:space-x-10 px-10 h-20">
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <Link href="/">
             <a className="flex items-center gap-5">
