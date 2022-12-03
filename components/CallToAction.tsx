@@ -3,7 +3,7 @@ import React from "react";
 export function CallToAction(): JSX.Element {
   return (
     <div className="p-5 max-w-[95rem] mx-auto hidden md:block">
-      <div className="relative bg-gray-900 shadow-lg rounded-3xl dark:bg-gray-200 py-20 overflow-hidden">
+      <div className="relative bg-neutral-900 shadow-lg rounded-3xl dark:bg-gray-200 py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-20 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <h2 className="text-2xl tracking-tight text-gray-100 sm:text-4xl sm:tracking-tight dark:text-gray-900">
             <span className="block font-bold text-4xl">Ready to dive in?</span>
