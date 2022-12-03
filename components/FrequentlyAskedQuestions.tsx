@@ -20,7 +20,7 @@ export function FrequentlyAskedQuestions() {
           <Accordion.Content>
             <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
               Smartlist is 100% free, forever. No hidden fees, no ads, or credit
-              card required!
+              card information required!
             </p>
           </Accordion.Content>
         </Accordion.Panel>
@@ -51,30 +51,14 @@ export function FrequentlyAskedQuestions() {
           </Accordion.Content>
         </Accordion.Panel>
         <Accordion.Panel>
-          <Accordion.Title>What are the limitations?</Accordion.Title>
+          <Accordion.Title>How did Smartlist start?</Accordion.Title>
           <Accordion.Content>
             <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
-              At Smartlist, we believe that you shouldn&apos;t pay to organize
-              your home. However, this comes with some limitations, as this is a
-              free service. Learn more about these limitations:
-              <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
-                <li>
-                  <b>500</b> maximum number of items per home
-                </li>
-                <li>
-                  <b>150</b> maximum number of items per room
-                </li>
-                <li>
-                  <b>5</b> maximum rooms
-                </li>
-                <li>
-                  <b>20</b> maximum number of items per list
-                </li>
-                <li>
-                  <b>7</b> maximum number of custom lists (excluding shopping
-                  and to-do lists)
-                </li>
-              </ul>
+              Smartlist started in 2020, during the peak COVID-19 pandemic. We
+              often found people struggling with goal-setting, task management,
+              and home inventory. We decided to create a solution that would
+              help people organize their lives. Since then, Smartlist has grown
+              to more than 100K monthly active users!
             </p>
           </Accordion.Content>
         </Accordion.Panel>

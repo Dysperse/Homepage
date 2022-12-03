@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer components {
   .icon-item {
-    @apply w-24 h-24 rounded-[35px] bg-gray-100 items-center inline-flex justify-center overflow-hidden sm:opacity-0 lg:opacity-100;
+    @apply w-24 h-24 rounded-[35px] bg-gradient-to-br from-gray-100 to-gray-200 items-center inline-flex justify-center overflow-hidden sm:opacity-0 lg:opacity-100;
   }
 }
 
