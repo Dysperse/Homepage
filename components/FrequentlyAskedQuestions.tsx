@@ -62,6 +62,46 @@ export function FrequentlyAskedQuestions() {
             </p>
           </Accordion.Content>
         </Accordion.Panel>
+        <Accordion.Panel>
+          <Accordion.Title>How do I contact support?</Accordion.Title>
+          <Accordion.Content>
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+              You can contact support by emailing{" "}
+              <Link
+                href="mailto:hello@smartlist.tech"
+                style={{
+                  color: "#3B82F6!important",
+                  textDecoration: "underline",
+                }}
+              >
+                hello@smartlist.tech
+              </Link>
+            </p>
+          </Accordion.Content>
+        </Accordion.Panel>
+        <Accordion.Panel>
+          <Accordion.Title>
+            What is the difference between Smartlist and other task managers?
+          </Accordion.Title>
+          <Accordion.Content>
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+              Smartlist is a task manager that focuses on everything in general,
+              from life goals, to daily tasks, to shopping lists. Smartlist is
+              also a home inventory manager, which allows you to keep track of
+              your belongings.
+            </p>
+          </Accordion.Content>
+        </Accordion.Panel>
+        <Accordion.Panel>
+          <Accordion.Title>
+            What is the difference between Smartlist and other home inventory
+          </Accordion.Title>
+          <Accordion.Content>
+            <p className="mb-2 text-gray-500 dark:text-gray-400 block bg-gray-100 px-10 py-8 rounded-2xl">
+              Smartlist is the one and only home inventory manager that allows you to seamlessly add and organize your items, with features to tidy your home. Smartlist provides a feature-rich and intuitive UI to organize your things. Furthermore, unlike other home inventory managers, Smartlist is free, forever. 
+            </p>
+          </Accordion.Content>
+        </Accordion.Panel>
       </Accordion>
     </div>
   );
