@@ -55,7 +55,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://i.ibb.co/G55rtd3/image.png"
+          content="https://i.ibb.co/SrjvdPc/The-only-productivity-app-you-ll-ever-need.png"
         />
 
         <meta property="twitter:card" content="summary_large_image" />
@@ -70,7 +70,7 @@ export default function Home() {
         />
         <meta
           property="twitter:image"
-          content="https://i.ibb.co/G55rtd3/image.png"
+          content="https://i.ibb.co/SrjvdPc/The-only-productivity-app-you-ll-ever-need.png"
         />
       </Head>
       <Announcement />
