@@ -26,6 +26,7 @@ import { FrequentlyAskedQuestions } from "../components/FrequentlyAskedQuestions
 import { Header } from "../components/Header";
 import { Features } from "../components/Features";
 import { CallToAction } from "../components/CallToAction";
+import { Compare } from "../components/Compare";
 
 export default function Home() {
   return (
@@ -78,6 +79,7 @@ export default function Home() {
       <div className="fade" />
       <Features />
       <FrequentlyAskedQuestions />
+      <Compare />
       <CallToAction />
     </>
   );
