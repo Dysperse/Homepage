@@ -65,12 +65,12 @@ export function Compare() {
               compare: [1, 0, 0, 0, 0, 0],
             },
           ].map((feature) => (
-            <div className="grid grid-cols-7 gap-x-5 py-4 px-3 text-sm text-neutral-700 border-b border-neutral-200 dark:border-neutral-700">
+            <div className="grid grid-cols-7 gap-x-5 py-4 px-3 text-sm text-neutral-700 border-b border-neutral-200 dark:border-neutral-700" key={feature.name}>
               <div className="text-neutral-500 dark:text-neutral-400">
                 {feature.name}
               </div>
-              {feature.compare.map((r) => (
-                <div className="text-center">
+              {feature.compare.map((r,i) => (
+                <div className="text-center" key={i}>
                   {r == 1 ? (
                     <span className="material-symbols-rounded text-green-700 dark:text-green-400">
                       check
