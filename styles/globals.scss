@@ -34,6 +34,19 @@
   }
 }
 
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  transition: height 0.2s;
+  align-items: flex-start;
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
 .material-symbols-outlined {
   font-family: "Material Symbols Rounded";
   font-weight: normal;
