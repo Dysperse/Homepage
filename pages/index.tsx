@@ -56,20 +56,14 @@ function Features() {
 
   const [tab, setTab] = useState(0);
 
-  const options = { delay: 5000 }; // Options
-  const autoplayRoot = (emblaRoot) => emblaRoot.parentElement; // Root node
-  const autoplay = Autoplay(options);
-
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
     },
     [
       WheelGesturesPlugin(),
-      AutoHeight({
-        destroyHeight: "auto",
-      }),
-      autoplay,
+      Autoplay({ delay: 5000 }),
+      AutoHeight({ destroyHeight: "auto" }),
     ]
   );
 
