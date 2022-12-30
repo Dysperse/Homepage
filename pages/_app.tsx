@@ -1,47 +1,36 @@
-import Script from "next/script";
-import { useEffect } from "react";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import "../styles/globals.css";
+import { Navbar } from "../components/navbar";
+import "../styles/globals.scss";
+import { ThemeProvider, createTheme } from "@mui/material";
 
-function MyApp({ Component, pageProps }) {
-  // If window is not undefined, do something
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.documentElement.classList.add("dark");
-      }
-    }
-  }, []);
-
-  return (
-    <>
-      <Script
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        id="schema"
-      >
-        {`
+export default function App({ Component, PageProps }) {
+  const userTheme = createTheme({
+    components: {
+      MuiPaper: {
+        defaultProps: { elevation: 0 },
+      },
+      MuiIcon: {
+        defaultProps: {
+          // Replace the `material-icons` default value.
+          baseClassName: "material-symbols-rounded",
+        },
+        variants: [
           {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Smartlist",
-            "url": "https://smartlist.tech",
-            "logo": "https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png",
-            "sameAs": [
-              "https://twitter.com/getsmartlist",
-              "https://instagram.com/getsmartlist",
-              "https://github.com/Smartlist-App",
-              "https://smartlist.tech/"
-            ]
-          }
-      `}
-      </Script>
+            props: {
+              className: "outlined",
+            },
+            style: {
+              fontVariationSettings:
+                '"FILL" 0, "wght" 350, "GRAD" 0, "opsz" 40!important',
+            },
+          },
+        ],
+      },
+    },
+  });
+  return (
+    <ThemeProvider theme={userTheme}>
       <Navbar />
-      <Component {...pageProps} />
-      <Footer />
-    </>
+      <Component {...PageProps} />
+    </ThemeProvider>
   );
 }
-
-export default MyApp;

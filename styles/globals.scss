@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*:not(
+    .material-symbols-rounded,
+    .material-symbols-rounded *,
+    .material-symbols-outlined,
+    .material-symbols-outlined *,
+    .MuiIcon-root,
+    .MuiIcon-root *,
+    .text-heading,
+    .text-heading *
+  ) {
+  font-family: "DM Sans", sans-serif !important;
+}
+
+.text-heading {
+  font-family: "DM Serif Display", serif !important;
+}
+
+@layer components {
+  .nav-btn {
+    @apply hover:ring-0 active:ring-0 focus-visible:ring-2 ring-black outline-none p-2 rounded-full px-4 flex items-center gap-2 text-gray-200 hover:text-white hover:bg-[rgba(255,255,255,.1)] active:bg-[rgba(255,255,255,.2)];
+    .elevated & {
+      @apply hover:bg-gray-100 active:bg-gray-200 text-gray-500 hover:text-gray-900;
+    }
+  }
+  .header-btn {
+    @apply flex bg-green-800 px-6 py-3 rounded-full gap-5 hover:bg-green-900 text-green-200 hover:text-green-100 active:text-green-50 outline-none focus-visible:ring-2 ring-green-200;
+    &:active {
+      background: rgb(12, 53, 28);
+    }
+  }
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Rounded";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block !important;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+
+  font-variation-settings: "FILL" 0, "wght" 350, "GRAD" 0, "opsz" 40;
+}
+.material-symbols-rounded {
+  font-display: block !important;
+  font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 40;
+}
