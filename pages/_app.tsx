@@ -1,5 +1,6 @@
 import { Navbar } from "../components/navbar";
 import "../styles/globals.scss";
+import Head from "next/head";
 import { ThemeProvider, createTheme } from "@mui/material";
 
 export default function App({ Component, PageProps }) {
@@ -29,6 +30,9 @@ export default function App({ Component, PageProps }) {
   });
   return (
     <ThemeProvider theme={userTheme}>
+      <Head>
+        <title>Carbon</title>
+      </Head>
       <Navbar />
       <Component {...PageProps} />
     </ThemeProvider>
