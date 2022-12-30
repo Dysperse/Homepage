@@ -22,10 +22,10 @@ function Header() {
     >
       <Box className="mt-auto w-full">
         <Typography
-          variant="h1"
+          variant="h2"
           className="text-heading text-gray-100  rounded-3xl p-2 px-4"
         >
-          Let's grow from here.
+          Let&apos;s grow from here.
         </Typography>
         <Typography className="mt-0 inline-flex text-gray-100 rounded-xl p-2 px-4">
           Carbon&apos;s an all-in-one productivity app complete with kanban
@@ -58,7 +58,7 @@ function Features() {
 
   const options = { delay: 5000 }; // Options
   const autoplayRoot = (emblaRoot) => emblaRoot.parentElement; // Root node
-  const autoplay = Autoplay(options, autoplayRoot);
+  const autoplay = Autoplay(options);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
