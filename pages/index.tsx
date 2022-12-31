@@ -1,9 +1,11 @@
-import { Box, Button, Grid, Icon, Typography } from "@mui/material";
+import { Box, Button, Collapse, Grid, Icon, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import AutoHeight from "embla-carousel-auto-height";
 import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
+import { Twitter, Instagram, Github } from "feather-icons-react";
 
 function Header() {
   return (
@@ -69,10 +71,24 @@ function Stats() {
       >
         <source src="/blur.mp4" type="video/mp4" />
       </video>
-      <Grid spacing={2}>
-        <Grid item xs={12} md={6} className="stats-card">
-          <Typography className="text-2xl mb-1">ten thousand</Typography>
-          <Typography>Users</Typography>
+      <Grid spacing={2} container>
+        <Grid item xs={12} md={4} className="stats-card text-center">
+          <Typography className="text-3xl mb-1 font-[700]">
+            ten thousand
+          </Typography>
+          <Typography>active users</Typography>
+        </Grid>
+        <Grid item xs={12} md={4} className="stats-card text-center">
+          <Typography className="text-3xl mb-1 font-[700]">
+            one million
+          </Typography>
+          <Typography>daily requests</Typography>
+        </Grid>
+        <Grid item xs={12} md={4} className="stats-card text-center">
+          <Typography className="text-3xl mb-1 font-[700]">
+            six thousand
+          </Typography>
+          <Typography>items &amp; tasks stored</Typography>
         </Grid>
       </Grid>
     </Box>
@@ -81,23 +97,24 @@ function Stats() {
 
 function Security() {
   return (
-    <Box className="my-18 relative text-gray-900 bg-gradient-to-br from-gray-100 to-gray-400">
+    <Box className="my-18 relative text-gray-900">
       <Box
         sx={{
-          py: 10,
-          pt: 15,
-          px: 5,
+          p: 10,
         }}
       >
         <Typography variant="h4" className="text-center font-[700]">
           Secure by <span className="text-green-600 underline">design</span>
+        </Typography>
+        <Typography className="text-center text-gray-500 mt-2 mb-5">
+          refined to perfection
         </Typography>
         <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid item xs={12} md={6} className="security-card">
             <Typography className="text-2xl mb-1">
               transparency by default
             </Typography>
-            <Typography className="underline cursor-pointer">
+            <Typography className="hover:underline cursor-pointer inline-block">
               Learn more &rarr;
             </Typography>
           </Grid>
@@ -105,7 +122,7 @@ function Security() {
             <Typography className="text-2xl mb-1">
               zero-access encryption
             </Typography>
-            <Typography className="underline cursor-pointer">
+            <Typography className="hover:underline cursor-pointer inline-block">
               Learn more &rarr;
             </Typography>
           </Grid>
@@ -113,20 +130,159 @@ function Security() {
             <Typography className="text-2xl mb-1">
               Invite-only access
             </Typography>
-            <Typography className="underline cursor-pointer">
+            <Typography className="hover:underline cursor-pointer inline-block">
               Learn more &rarr;
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} className="security-card">
             <Typography className="text-2xl mb-1">
-              Multi-factor authentication
+              multi-factor authentication
             </Typography>
-            <Typography className="underline cursor-pointer">
+            <Typography className="hover:underline cursor-pointer inline-block">
               Learn more &rarr;
             </Typography>
           </Grid>
         </Grid>
       </Box>
+    </Box>
+  );
+}
+
+function Footer() {
+  return (
+    <Box
+      sx={{ background: "#332B2B", color: "#C2ACAC" }}
+      className="p-10 relative"
+    >
+      <Box sx={{ zIndex: 1 }}>
+        <Typography variant="h4" className="font-[700] mb-2">
+          Carbon
+        </Typography>
+        <Typography className={"font-[700] my-5 mb-3"}>Quick links</Typography>
+
+        <Link href="/" className="footer-btn">
+          Terms of service &rarr;
+        </Link>
+        <Link href="/" className="footer-btn">
+          Privacy policy &rarr;
+        </Link>
+        <Link href="/" className="footer-btn">
+          My dashboard &rarr;
+        </Link>
+        <Link href="/" className="footer-btn">
+          Availability &rarr;
+        </Link>
+
+        <Typography className={"font-[700] my-5 mb-3"}>Sponsors</Typography>
+        <Link
+          href="https://vercel.com/?utm_source=smartlist&utm_campaign=oss"
+          className="footer-btn"
+        >
+          <img
+            src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
+            alt="Powered by Vercel"
+          />
+        </Link>
+
+        <Typography className={"font-[700] my-5 mb-3"}>Social</Typography>
+        <Link
+          href="https://twitter.com/getsmartlist"
+          className="footer-btn inline-flex mr-4"
+          target="_blank"
+        >
+          <Twitter />
+        </Link>
+        <Link
+          href="https://instagram.com/getsmartlist"
+          className="footer-btn inline-flex mr-4"
+          target="_blank"
+        >
+          <Instagram />
+        </Link>
+        <Link
+          href="https://github.com/Smartlist-App"
+          className="footer-btn inline-flex mr-4"
+          target="_blank"
+        >
+          <Github />
+        </Link>
+      </Box>
+      <picture>
+        <img
+          src="/footer.svg"
+          alt="logo"
+          className="h-[90%] absolute bottom-0 right-0 rounded-tl-3xl"
+        />
+      </picture>
+    </Box>
+  );
+}
+
+function FAQ() {
+  const questions = [
+    {
+      question: "What is Carbon?",
+      answer:
+        "Carbon is a personal productivity platform that helps you organize your life and get things done.",
+    },
+    {
+      question: "Is Carbon free?",
+      answer: "Yes, Carbon is free to use.",
+    },
+    {
+      question: "Can I use Carbon for my dorm or apartment?",
+      answer:
+        "Yes, Carbon is perfect for dorms and apartments. Carbon has specific features for dorms and apartments.",
+    },
+    {
+      question: "Can I use Carbon for just myself, without a group?",
+      answer:
+        "Yes, Carbon lets you customize your experience to fit your needs.",
+    },
+    {
+      question: "Does Cabon take my credit card information?",
+      answer:
+        "No, Carbon does not take your credit card information. Carbon is free to use.",
+    },
+  ];
+
+  const section = ({ question, answer }) => {
+    const [open, setOpen] = useState(false);
+
+    return (
+      <Box>
+        <button
+          onClick={() => setOpen(!open)}
+          className="border-b w-full text-left p-2 px-2 border-gray-200 flex"
+        >
+          {question}
+          <Icon className="ml-auto">
+            {open ? "expand_less" : "expand_more"}
+          </Icon>
+        </button>
+        <Collapse in={open}>
+          <Typography className="p-2 bg-gray-100 my-2 rounded-xl px-3">
+            {answer}
+          </Typography>
+        </Collapse>
+      </Box>
+    );
+  };
+  return (
+    <Box className="my-18 relative text-gray-900" sx={{ p: 10 }}>
+      <Grid container>
+        <Grid item xs={12} sm={6}>
+          <Typography variant="h4" className="font-[700]">
+            Frequently asked questions
+          </Typography>
+          <Typography className="text-gray-500 mt-2 mb-5 underline">
+            Visit our support center &rarr;
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          {questions.map((e) => section(e))}
+        </Grid>
+      </Grid>
     </Box>
   );
 }
@@ -183,6 +339,7 @@ function Features() {
             }}
             sx={{
               ...(tab === features.indexOf(feature) && {
+                fontWeight: "600!important",
                 color: "black!important",
                 borderColor: "black!important",
               }),
@@ -311,11 +468,13 @@ function Features() {
 
 export default function Home() {
   return (
-    <>
+    <Box>
       <Header />
       <Features />
       <Stats />
       <Security />
-    </>
+      <FAQ />
+      <Footer />
+    </Box>
   );
 }

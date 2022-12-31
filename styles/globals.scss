@@ -36,7 +36,10 @@
     @apply flex gap-5 items-center px-5 py-3 hover:bg-neutral-900 text-gray-200 hover:text-gray-50 active:text-white active:bg-neutral-800;
   }
   .security-card {
-    @apply hover:backdrop-blur-xl hover:bg-[rgba(255,255,255,.2)] p-4 rounded-xl;
+    @apply hover:backdrop-blur-xl hover:bg-[rgba(200,200,200,.2)] p-4 rounded-xl;
+  }
+  .footer-btn {
+    @apply hover:underline mt-2 flex hover:text-gray-50 active:text-white;
   }
 }
 body {
