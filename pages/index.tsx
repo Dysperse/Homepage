@@ -23,15 +23,24 @@ function Header() {
         flexDirection: "column",
       }}
     >
-      <Box className="mb-auto mt-14 rounded-xl backdrop-blur-lg p-3 text-white bg-[rgba(255,255,255,.1)] flex items-center gap-2">
+      <Box
+        className="mb-auto mt-14 rounded-xl backdrop-blur-lg p-3 text-white bg-[rgba(255,255,255,.1)] flex items-center gap-2 relative overflow-hidden"
+        sx={{
+          overflow: "hidden",
+        }}
+      >
         <Icon className="outlined">info</Icon>
         <span>
-          <Link href="//availability.smartlist.tech" className="underline">
+          <Link
+            href="//availability.smartlist.tech"
+            className="underline focus:ring ring-white p-1 rounded-md"
+          >
             Carbon Availability
           </Link>{" "}
           is now in public beta. Availability helps you find the best time to
           meet based on your guest's availability. No signup required
         </span>
+        <span className="animate-announcement" />
       </Box>
       <Box className="mt-auto w-full">
         <Typography

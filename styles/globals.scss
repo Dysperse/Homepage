@@ -85,3 +85,31 @@ body {
   font-display: block !important;
   font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 40;
 }
+
+.animate-announcement {
+  animation: animateAnnouncement 5s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 33%,
+    rgba(255, 255, 255, 0.5) 66%,
+    rgba(0, 0, 0, 0)
+  );
+  display: block;
+  height: 500px;
+  transform: rotate(45deg);
+  width: 100px;
+  position: absolute;
+  top: -150px;
+  left: 0;
+}
+@keyframes animateAnnouncement {
+  0% {
+    left: -120%;
+  }
+  50% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
