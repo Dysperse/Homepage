@@ -20,8 +20,19 @@ function Header() {
         display: "flex",
         mb: 5,
         p: 5,
+        flexDirection: "column",
       }}
     >
+      <Box className="mb-auto mt-14 rounded-xl backdrop-blur-lg p-3 text-white bg-[rgba(255,255,255,.1)] flex items-center gap-2">
+        <Icon className="outlined">info</Icon>
+        <span>
+          <Link href="//availability.smartlist.tech" className="underline">
+            Carbon Availability
+          </Link>{" "}
+          is now in public beta. Availability helps you find the best time to
+          meet based on your guest's availability. No signup required
+        </span>
+      </Box>
       <Box className="mt-auto w-full">
         <Typography
           variant="h2"
