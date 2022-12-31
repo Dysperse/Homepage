@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import AutoHeight from "embla-carousel-auto-height";
 import Autoplay from "embla-carousel-autoplay";
+import styles from "../../styles/features.module.scss";
 
 export function Features(): JSX.Element {
   const features = [
@@ -71,7 +72,7 @@ export function Features(): JSX.Element {
         <div className="embla__container">
           <div className="embla__slide flex items-center w-full">
             <Box className="w-full">
-              <Typography className="feature-title">
+              <Typography className={styles.featureTitle}>
                 Track your belongings.
               </Typography>
               {[
@@ -100,7 +101,7 @@ export function Features(): JSX.Element {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <Typography className="feature-title">
+              <Typography className={styles.featureTitle}>
                 Master your tasks
               </Typography>
               {[
@@ -127,7 +128,7 @@ export function Features(): JSX.Element {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <Typography className="feature-title">
+              <Typography className={styles.featureTitle}>
                 Never lose important notes again
               </Typography>
               {[
@@ -153,7 +154,7 @@ export function Features(): JSX.Element {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <Typography className="feature-title">
+              <Typography className={styles.featureTitle}>
                 Acheive the impossible
               </Typography>
               {[

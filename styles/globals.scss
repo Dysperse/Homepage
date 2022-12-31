@@ -19,12 +19,6 @@
   font-family: "DM Serif Display", serif !important;
 }
 
-.feature-title {
-  font-weight: 700;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
 @layer components {
   .nav-btn {
     @apply hover:ring-0 active:ring-0 focus-visible:ring-2 ring-black outline-none p-2 rounded-full px-4 flex items-center gap-2 text-gray-200 hover:text-white hover:bg-[rgba(255,255,255,.1)] active:bg-[rgba(255,255,255,.2)];
