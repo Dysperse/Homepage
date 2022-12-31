@@ -23,15 +23,15 @@ export function Stats() {
       </video>
       <Grid spacing={2} container>
         <Grid item xs={12} md={4} className="text-center">
-          <Typography className={styles.statsItem}>ten thousand</Typography>
+          <h2 className={styles.statsItem}>ten thousand</h2>
           <Typography>active users</Typography>
         </Grid>
         <Grid item xs={12} md={4} className="text-center">
-          <Typography className={styles.statsItem}>one million</Typography>
+          <h2 className={styles.statsItem}>one million</h2>
           <Typography>daily requests</Typography>
         </Grid>
         <Grid item xs={12} md={4} className="text-center">
-          <Typography className={styles.statsItem}>six thousand</Typography>
+          <h2 className={styles.statsItem}>six thousand</h2>
           <Typography>items &amp; tasks stored</Typography>
         </Grid>
       </Grid>
