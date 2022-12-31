@@ -70,7 +70,7 @@ export function Features(): JSX.Element {
       <div ref={emblaRef} className="mx-auto mt-10 embla max-w-5xl">
         <div className="embla__container">
           <div className="embla__slide flex items-center w-full">
-            <Box className="w-full ">
+            <Box className="w-full">
               <Typography className="feature-title">
                 Track your belongings.
               </Typography>
