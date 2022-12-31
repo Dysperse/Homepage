@@ -8,13 +8,13 @@ import { Features } from "../components/homepage/Features";
 
 export default function Home() {
   return (
-    <Box>
+    <>
       <Header />
       <Features />
       <Stats />
       <Security />
       <FAQ />
       <Footer />
-    </Box>
+    </>
   );
 }
