@@ -18,16 +18,19 @@ export function Header() {
       }}
     >
       <Box
-        className="mb-auto mt-14 rounded-xl backdrop-blur-lg p-3 text-white bg-[rgba(255,255,255,.1)] flex items-center gap-2 relative overflow-hidden"
+        className="mb-auto mt-14 rounded-xl backdrop-blur-lg p-3 text-white bg-[rgba(255,255,255,.1)] flex items-center relative overflow-hidden"
         sx={{
           overflow: "hidden",
         }}
       >
-        <Icon className="outlined">info</Icon>
+        <Icon className="outlined" sx={{ mr: 1 }}>
+          info
+        </Icon>
         <span>
           <Link
-            href="//availability.smartlist.tech"
-            className="underline focus:ring ring-white p-1 rounded-md"
+            href="https://availability.smartlist.tech"
+            target="_blank"
+            className="underline focus:ring-2 ring-white p-1 rounded-md -mr-1"
           >
             Carbon Availability
           </Link>{" "}
