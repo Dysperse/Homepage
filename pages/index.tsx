@@ -93,21 +93,15 @@ function Stats() {
       </video>
       <Grid spacing={2} container>
         <Grid item xs={12} md={4} className="stats-card text-center">
-          <Typography className="text-3xl mb-1 font-[700]">
-            ten thousand
-          </Typography>
+          <Typography className="stats-item">ten thousand</Typography>
           <Typography>active users</Typography>
         </Grid>
         <Grid item xs={12} md={4} className="stats-card text-center">
-          <Typography className="text-3xl mb-1 font-[700]">
-            one million
-          </Typography>
+          <Typography className="stats-item">one million</Typography>
           <Typography>daily requests</Typography>
         </Grid>
         <Grid item xs={12} md={4} className="stats-card text-center">
-          <Typography className="text-3xl mb-1 font-[700]">
-            six thousand
-          </Typography>
+          <Typography className="stats-item">six thousand</Typography>
           <Typography>items &amp; tasks stored</Typography>
         </Grid>
       </Grid>
@@ -347,7 +341,7 @@ function Features() {
       <Typography variant="h4" className="text-center font-[700]">
         Say hello to <span className="text-green-600 underline">Carbon.</span>
       </Typography>
-      <Typography className="text-center text-gray-500 mt-2 mb-5">
+      <Typography className="text-center text-gray-500 mt-2" sx={{ my: 2 }}>
         Meet your new all-in-one personal organizer.
       </Typography>
       <Box className="flex flex-col md:flex-row justify-center mx-auto embla max-w-3xl w-full">
@@ -373,7 +367,7 @@ function Features() {
         <div className="embla__container">
           <div className="embla__slide flex items-center w-full">
             <Box className="w-full ">
-              <Typography className="text-4xl mb-5 font-[700]">
+              <Typography className="feature-title">
                 Track your belongings.
               </Typography>
               {[
@@ -384,7 +378,7 @@ function Features() {
                 "Categorize items by type",
                 "Quickly find items by searching/filtering for them",
               ].map((feature) => (
-                <span className="flex gap-2 mb-2 text-gray-500">
+                <span className="feature-sub">
                   <Icon>east</Icon>
                   <Typography className="text-gray-800">{feature}</Typography>
                 </span>
@@ -402,7 +396,7 @@ function Features() {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <Typography className="text-4xl mb-5 font-[700]">
+              <Typography className="feature-title">
                 Master your tasks
               </Typography>
               {[
@@ -429,7 +423,7 @@ function Features() {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <Typography className="text-4xl mb-5 font-[700]">
+              <Typography className="feature-title">
                 Never lose important notes again
               </Typography>
               {[
@@ -455,7 +449,7 @@ function Features() {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <Typography className="text-4xl mb-5 font-[700]">
+              <Typography className="feature-title">
                 Acheive the impossible
               </Typography>
               {[

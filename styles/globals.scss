@@ -32,6 +32,17 @@
       background: rgb(12, 53, 28);
     }
   }
+  .stats-item {
+    @apply text-3xl mb-1;
+    font-weight: 700;
+  }
+  .feature-sub {
+    @apply flex gap-2 mb-2 text-gray-500;
+  }
+  .feature-title {
+    @apply text-4xl mb-5;
+    font-weight: 700;
+  }
   .dropdown-item {
     @apply flex gap-5 items-center px-5 py-3 hover:bg-neutral-900 text-gray-200 hover:text-gray-50 active:text-white active:bg-neutral-800;
   }
