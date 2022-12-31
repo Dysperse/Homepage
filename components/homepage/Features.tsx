@@ -72,9 +72,9 @@ export function Features(): JSX.Element {
         <div className="embla__container">
           <div className="embla__slide flex items-center w-full">
             <Box className="w-full">
-              <Typography className={styles.featureTitle}>
+              <h1 className={styles.featureTitle}>
                 Track your belongings.
-              </Typography>
+              </h1>
               {[
                 "Sync your home inventory with your phone.",
                 "Organize items into rooms",
@@ -101,9 +101,9 @@ export function Features(): JSX.Element {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <Typography className={styles.featureTitle}>
+              <h1 className={styles.featureTitle}>
                 Master your tasks
-              </Typography>
+              </h1>
               {[
                 "Create kanban boards to organize your tasks",
                 "Customize columns with emojis & colors",
@@ -128,9 +128,9 @@ export function Features(): JSX.Element {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <Typography className={styles.featureTitle}>
+              <h1 className={styles.featureTitle}>
                 Never lose important notes again
-              </Typography>
+              </h1>
               {[
                 "Store notes, files, and photos in one place",
                 "Allow for easy searching and filtering",
@@ -154,9 +154,9 @@ export function Features(): JSX.Element {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <Typography className={styles.featureTitle}>
+              <h1 className={styles.featureTitle}>
                 Acheive the impossible
-              </Typography>
+              </h1>
               {[
                 "Create goals and track your progress",
                 "Prepare for exams, interviews, and more",
