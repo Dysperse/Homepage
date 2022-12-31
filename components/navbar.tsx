@@ -23,7 +23,7 @@ function UseCases() {
 
   return (
     <>
-      <Link href="/" className="nav-btn" onClick={handleClick}>
+      <Link href="javascript:void(0)" className="nav-btn" onClick={handleClick}>
         Use cases
         <Icon>expand_more</Icon>
       </Link>
@@ -183,13 +183,17 @@ export function Navbar() {
       elevation={0}
     >
       <Toolbar className="w-full">
-        <picture className="mr-auto">
-          <img
-            src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
-            alt="Carbon"
-            className="w-10 h-10"
-          />
-        </picture>
+        <Link href={"/"} className="mr-auto">
+          {" "}
+          <picture>
+            <img
+              src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
+              alt="Carbon"
+              className="w-10 h-10"
+            />
+          </picture>
+        </Link>
+
         <Box className="mx-auto flex items-center gap-2">
           <Link
             href="https://github.com/Smartlist-App"
@@ -204,6 +208,15 @@ export function Navbar() {
             target="_blank"
           >
             Community
+          </Link>
+          <Link
+            href="/support"
+            className={
+              "nav-btn" +
+              (window.location.pathname === "/support" ? " active" : "")
+            }
+          >
+            Support
           </Link>
           <Solutions />
           <UseCases />
