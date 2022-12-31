@@ -41,7 +41,7 @@ export function Header() {
           variant="h2"
           className="text-heading text-gray-100  rounded-3xl p-2 px-4"
         >
-          It&apos;s <i>your</i> productivity{" "}
+          It&apos;s <i>your</i> productivity:{" "}
           <span className="border-2 border-orange-400 text-orange-400 px-2 rounded-2xl">
             boosted
           </span>
