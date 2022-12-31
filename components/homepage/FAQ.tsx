@@ -44,9 +44,7 @@ export function FAQ(): JSX.Element {
           </Icon>
         </button>
         <Collapse in={open}>
-          <Typography className="p-2 bg-gray-100 my-2 rounded-xl px-3">
-            {answer}
-          </Typography>
+          <h4 className="p-2 bg-gray-100 my-2 rounded-xl px-3">{answer}</h4>
         </Collapse>
       </Box>
     );
