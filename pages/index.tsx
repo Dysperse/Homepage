@@ -1,4 +1,4 @@
-import { Box, Button, Icon, Typography } from "@mui/material";
+import { Box, Button, Grid, Icon, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
@@ -25,11 +25,14 @@ function Header() {
           variant="h2"
           className="text-heading text-gray-100  rounded-3xl p-2 px-4"
         >
-          Let&apos;s grow from here.
+          It&apos;s <i>your</i> productivity{" "}
+          <span className="border-2 border-orange-400 text-orange-400 px-2 rounded-2xl">
+            boosted
+          </span>
         </Typography>
-        <Typography className="mt-0 inline-flex text-gray-100 rounded-xl p-2 px-4">
-          Carbon&apos;s an all-in-one productivity app complete with kanban
-          boards, home inventory, goal-setting, and more.
+        <Typography className="mt-0 inline-flex text-gray-100 rounded-xl p-2 px-4 max-w-3xl font-[700]">
+          Meet Carbon: The all-in-one personal productivity platform trusted and
+          loved by thousands of students, families, seniors, and entrepreneurs.
         </Typography>
         <Box className="mt-3 flex gap-4 ml-5">
           <button className="header-btn">
@@ -41,6 +44,88 @@ function Header() {
             <Icon>expand_more</Icon>
           </button>
         </Box>
+      </Box>
+    </Box>
+  );
+}
+
+function Stats() {
+  return (
+    <Box className="relative text-white p-14 py-10">
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          overflow: "hidden",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: -1,
+        }}
+      >
+        <source src="/blur.mp4" type="video/mp4" />
+      </video>
+      <Grid spacing={2}>
+        <Grid item xs={12} md={6} className="stats-card">
+          <Typography className="text-2xl mb-1">ten thousand</Typography>
+          <Typography>Users</Typography>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+}
+
+function Security() {
+  return (
+    <Box className="my-18 relative text-gray-900 bg-gradient-to-br from-gray-100 to-gray-400">
+      <Box
+        sx={{
+          py: 10,
+          pt: 15,
+          px: 5,
+        }}
+      >
+        <Typography variant="h4" className="text-center font-[700]">
+          Secure by <span className="text-green-600 underline">design</span>
+        </Typography>
+        <Grid container spacing={2} sx={{ mt: 3 }}>
+          <Grid item xs={12} md={6} className="security-card">
+            <Typography className="text-2xl mb-1">
+              transparency by default
+            </Typography>
+            <Typography className="underline cursor-pointer">
+              Learn more &rarr;
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6} className="security-card">
+            <Typography className="text-2xl mb-1">
+              zero-access encryption
+            </Typography>
+            <Typography className="underline cursor-pointer">
+              Learn more &rarr;
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6} className="security-card">
+            <Typography className="text-2xl mb-1">
+              Invite-only access
+            </Typography>
+            <Typography className="underline cursor-pointer">
+              Learn more &rarr;
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6} className="security-card">
+            <Typography className="text-2xl mb-1">
+              Multi-factor authentication
+            </Typography>
+            <Typography className="underline cursor-pointer">
+              Learn more &rarr;
+            </Typography>
+          </Grid>
+        </Grid>
       </Box>
     </Box>
   );
@@ -229,6 +314,8 @@ export default function Home() {
     <>
       <Header />
       <Features />
+      <Stats />
+      <Security />
     </>
   );
 }

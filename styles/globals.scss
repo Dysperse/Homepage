@@ -32,8 +32,21 @@
       background: rgb(12, 53, 28);
     }
   }
+  .dropdown-item {
+    @apply flex gap-5 items-center px-5 py-3 hover:bg-neutral-900 text-gray-200 hover:text-gray-50 active:text-white active:bg-neutral-800;
+  }
+  .security-card {
+    @apply hover:backdrop-blur-xl hover:bg-[rgba(255,255,255,.2)] p-4 rounded-xl;
+  }
 }
-
+body {
+  overflow-x: hidden;
+}
+* {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-backface-visibility: hidden;
+  outline: none;
+}
 .embla {
   overflow: hidden;
 }
