@@ -8,12 +8,12 @@ export function Security() {
           p: 10,
         }}
       >
-        <Typography variant="h4" className="text-center font-[700]">
+        <h4 className="text-center font-[700]">
           Secure by <span className="text-green-600 underline">design</span>
-        </Typography>
-        <Typography className="text-center text-gray-500 mt-2 mb-5">
+        </h4>
+        <h5 className="text-center text-gray-500 mt-2 mb-5">
           refined to perfection
-        </Typography>
+        </h5>
         <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid item xs={12} md={6} className="security-card">
             <Typography className="security-title">
