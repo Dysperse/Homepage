@@ -7,5 +7,6 @@ module.exports = {
   theme: {
     extend: {},
   },
+  safelist: ["text-3xl", "mb-1"],
   plugins: [],
-}
+};
