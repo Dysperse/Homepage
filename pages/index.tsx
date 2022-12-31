@@ -125,7 +125,7 @@ function Security() {
         </Typography>
         <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid item xs={12} md={6} className="security-card">
-            <Typography className="text-2xl mb-1">
+            <Typography className="security-title">
               transparency by default
             </Typography>
             <Typography className="hover:underline cursor-pointer inline-block">
@@ -133,7 +133,7 @@ function Security() {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} className="security-card">
-            <Typography className="text-2xl mb-1">
+            <Typography className="security-title">
               zero-access encryption
             </Typography>
             <Typography className="hover:underline cursor-pointer inline-block">
@@ -141,7 +141,7 @@ function Security() {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} className="security-card">
-            <Typography className="text-2xl mb-1">
+            <Typography className="security-title">
               Invite-only access
             </Typography>
             <Typography className="hover:underline cursor-pointer inline-block">
@@ -149,7 +149,7 @@ function Security() {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} className="security-card">
-            <Typography className="text-2xl mb-1">
+            <Typography className="security-title">
               multi-factor authentication
             </Typography>
             <Typography className="hover:underline cursor-pointer inline-block">
