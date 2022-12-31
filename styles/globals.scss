@@ -32,6 +32,18 @@
       background: rgb(12, 53, 28);
     }
   }
+  .question-button {
+    @apply border-b w-full text-left p-2 px-2 border-gray-200 flex text-gray-800 hover:text-gray-900 active:text-black;
+    & .question {
+      @apply text-gray-800 p-1 px-2 flex rounded-xl;
+    }
+    &:hover .question {
+      @apply text-gray-900 bg-gray-100;
+    }
+    &:active .question {
+      @apply text-gray-900 bg-gray-200;
+    }
+  }
   .feature-sub {
     @apply flex gap-2 mb-2 text-gray-500;
   }

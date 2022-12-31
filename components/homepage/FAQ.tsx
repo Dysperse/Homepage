@@ -34,11 +34,8 @@ export function FAQ(): JSX.Element {
 
     return (
       <Box>
-        <button
-          onClick={() => setOpen(!open)}
-          className="border-b w-full text-left p-2 px-2 border-gray-200 flex"
-        >
-          {question}
+        <button onClick={() => setOpen(!open)} className="question-button">
+          <span className="question">{question}</span>
           <Icon className="ml-auto">
             {open ? "expand_less" : "expand_more"}
           </Icon>
