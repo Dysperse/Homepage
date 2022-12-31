@@ -8,7 +8,7 @@ export function Security() {
           p: 10,
         }}
       >
-        <h4 className="text-center font-[700]">
+        <h4 className="text-center font-[700] text-4xl">
           Secure by <span className="text-green-600 underline">design</span>
         </h4>
         <h5 className="text-center text-gray-500 mt-2 mb-5">
@@ -16,33 +16,25 @@ export function Security() {
         </h5>
         <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid item xs={12} md={6} className="security-card">
-            <Typography className="security-title">
-              transparency by default
-            </Typography>
+            <h5 className="security-title">transparency by default</h5>
             <Typography className="hover:underline cursor-pointer inline-block">
               Learn more &rarr;
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} className="security-card">
-            <Typography className="security-title">
-              zero-access encryption
-            </Typography>
+            <h5 className="security-title">zero-access encryption</h5>
             <Typography className="hover:underline cursor-pointer inline-block">
               Learn more &rarr;
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} className="security-card">
-            <Typography className="security-title">
-              Invite-only access
-            </Typography>
+            <h5 className="security-title">Invite-only access</h5>
             <Typography className="hover:underline cursor-pointer inline-block">
               Learn more &rarr;
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} className="security-card">
-            <Typography className="security-title">
-              multi-factor authentication
-            </Typography>
+            <h5 className="security-title">multi-factor authentication</h5>
             <Typography className="hover:underline cursor-pointer inline-block">
               Learn more &rarr;
             </Typography>
