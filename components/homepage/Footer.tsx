@@ -9,10 +9,8 @@ export function Footer() {
       className="p-10 relative"
     >
       <Box sx={{ zIndex: 1 }}>
-        <Typography variant="h4" className="font-[700] mb-2">
-          Carbon
-        </Typography>
-        <Typography className={"font-[700] my-5 mb-3"}>Quick links</Typography>
+        <h2 className="font-[700] mb-2 text-4xl">Carbon</h2>
+        <h4 className={"font-[700] my-5 mb-3"}>Quick links</h4>
 
         <Link href="/" className="footer-btn">
           Terms of service &rarr;
@@ -27,7 +25,7 @@ export function Footer() {
           Availability &rarr;
         </Link>
 
-        <Typography className={"font-[700] my-5 mb-3"}>Sponsors</Typography>
+        <h4 className={"font-[700] my-5 mb-3"}>Sponsors</h4>
         <Link
           href="https://vercel.com/?utm_source=smartlist&utm_campaign=oss"
           className="footer-btn"
@@ -38,7 +36,7 @@ export function Footer() {
           />
         </Link>
 
-        <Typography className={"font-[700] my-5 mb-3"}>Social</Typography>
+        <h4 className={"font-[700] my-5 mb-3"}>Social</h4>
         <Link
           href="https://twitter.com/getsmartlist"
           className="footer-btn inline-flex mr-4"
