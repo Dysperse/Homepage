@@ -32,10 +32,6 @@
       background: rgb(12, 53, 28);
     }
   }
-  .stats-item {
-    @apply text-3xl mb-1;
-    font-weight: 700;
-  }
   .feature-sub {
     @apply flex gap-2 mb-2 text-gray-500;
   }
