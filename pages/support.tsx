@@ -43,6 +43,11 @@ export default function Support() {
             slug="all-about-boards"
           />
           <ArticleCard
+            article="Goals"
+            description="Learn how to set and achieve your goals using Carbon"
+            slug="goals"
+          />
+          <ArticleCard
             article="Storage limits"
             description="Read more about the storage limits of your account"
             slug="storage-limits"
