@@ -110,7 +110,11 @@ export function Features({ useCase }): JSX.Element {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <h1 className={styles.featureTitle}>Master your tasks</h1>
+              <h1 className={styles.featureTitle}>
+                {useCase == "study groups" || useCase == "students"
+                  ? "Never miss an assignment again."
+                  : "Master your tasks."}
+              </h1>
               {[
                 "Create kanban boards to organize your tasks",
                 "Customize columns with emojis & colors",
@@ -140,7 +144,9 @@ export function Features({ useCase }): JSX.Element {
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
               <h1 className={styles.featureTitle}>
-                Never lose important notes again
+                {useCase == "study groups" || useCase == "students"
+                  ? "Keep important stuff at your fingertips."
+                  : "Never lose important notes again."}
               </h1>
               {[
                 "Store notes, files, and photos in one place",
@@ -165,7 +171,7 @@ export function Features({ useCase }): JSX.Element {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <h1 className={styles.featureTitle}>Acheive the impossible</h1>
+              <h1 className={styles.featureTitle}>Acheive the impossible.</h1>
               {[
                 "Create goals and track your progress",
                 "Prepare for exams, interviews, and more",
