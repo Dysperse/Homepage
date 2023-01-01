@@ -46,7 +46,7 @@ export function Features({ useCase }): JSX.Element {
   }, [tab]);
 
   return (
-    <Box className="my-16">
+    <Box className="my-16" id="features">
       <Typography variant="h4" className="text-center font-[700]">
         Say hello to <span className="text-green-600 underline">Carbon.</span>
       </Typography>

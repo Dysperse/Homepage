@@ -69,7 +69,20 @@ export function Header({ useCase = false }: any) {
             <Icon className="text-yellow-300">arrow_forward</Icon>
           </button>
           <button className="header-btn">Watch the video</button>
-          <button className="header-btn ml-auto px-3 hidden-on-mobile bg-gray-900 hover:bg-gray-900">
+          <button
+            className="header-btn ml-auto px-3 hidden-on-mobile bg-gray-900 hover:bg-gray-900"
+            onClick={() => {
+              const id = "features";
+              const yOffset = -100;
+              const element = document.getElementById(id);
+              const y =
+                element.getBoundingClientRect().top +
+                window.pageYOffset +
+                yOffset;
+
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }}
+          >
             <Icon>expand_more</Icon>
           </button>
         </Box>
