@@ -6,7 +6,11 @@ export function Header({ useCase = false }: any) {
     <Box
       sx={{
         background:
-          "linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
+          "linear-gradient(0deg, rgba(0, 0, 0, 0." +
+          (useCase === "study groups" || useCase === "students" ? "8" : "5") +
+          "), rgba(0, 0, 0, 0." +
+          (useCase === "study groups" || useCase === "students" ? "8" : "5") +
+          ")), url(" +
           (useCase === "study groups" || useCase === "students"
             ? "/education.jpg"
             : "/image.jpg") +
