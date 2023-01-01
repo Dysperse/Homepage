@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/articles/creating-an-item.mdx"  ],
   "exclude": [
     "node_modules"
   ]

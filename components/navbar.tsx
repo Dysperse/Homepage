@@ -2,12 +2,14 @@ import {
   AppBar,
   Icon,
   Menu,
+  NoSsr,
   Toolbar,
   Typography,
   useScrollTrigger,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 function UseCases() {
@@ -165,16 +167,19 @@ function Solutions() {
 }
 
 export function Navbar() {
+  const router = useRouter();
+
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 500,
   });
+
   return (
     <AppBar
       className={
         trigger
-          ? "border-b border-[rgba(200,200,200,.3)] backdrop-blur-lg text-gray-900 py-1 fixed top-0 left-0 w-full elevated"
-          : "border-b border-[rgba(200,200,200,.3)] backdrop-blur-lg text-gray-900 py-1 fixed top-0 left-0 w-full"
+          ? "border-b border-[rgba(200,200,200,.3)] backdrop-blur-lg text-gray-900 py-1 w-full elevated"
+          : "border-b border-[rgba(200,200,200,.3)] backdrop-blur-lg text-gray-900 py-1 w-full"
       }
       sx={{
         background: trigger ? "rgba(255,255,255,.9)" : "transparent",
@@ -212,8 +217,7 @@ export function Navbar() {
           <Link
             href="/support"
             className={
-              "nav-btn" +
-              (window.location.pathname === "/support" ? " active" : "")
+              "nav-btn" + (router.pathname === "/support" ? " active" : "")
             }
           >
             Support
