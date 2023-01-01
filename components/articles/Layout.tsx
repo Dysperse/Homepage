@@ -20,10 +20,13 @@ export function Layout({ title, children }) {
       </div>
       <div
         style={{
-          marginBottom: "550px",
+          marginTop: "550px",
+          marginBottom: "50px",
         }}
-      />
-      <div className="prose mx-auto">{children}</div>
+        className="prose mx-auto"
+      >
+        {children}
+      </div>
     </>
   );
 }

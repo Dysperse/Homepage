@@ -28,6 +28,9 @@
     &.active {
       @apply bg-[rgba(255,255,255,.1)] text-white;
     }
+    .elevated &.active {
+      @apply bg-[rgba(0,0,0,.1)] text-black;
+    }
   }
   .header-btn {
     @apply flex bg-green-800 px-5 py-3 rounded-full gap-5 hover:bg-green-900 text-green-200 hover:text-green-100 active:text-green-50 outline-none focus-visible:ring-2 ring-green-200;
