@@ -25,7 +25,7 @@ function UseCases() {
 
   return (
     <>
-      <Link href="javascript:void(0)" className="nav-btn" onClick={handleClick}>
+      <Link href="#!" className="nav-btn" onClick={handleClick}>
         Use cases
         <Icon>expand_more</Icon>
       </Link>
@@ -61,19 +61,35 @@ function UseCases() {
           className: "bg-black rounded-2xl",
         }}
       >
-        <Link className="items-center dropdown-item small" href="/">
+        <Link
+          className="items-center dropdown-item small"
+          href="/for/study-groups"
+          onClick={handleClose}
+        >
           <Icon className="outlined">book</Icon>
           <Typography>Study groups</Typography>
         </Link>
-        <Link className="items-center dropdown-item small" href="/">
+        <Link
+          className="items-center dropdown-item small"
+          href="/for/students"
+          onClick={handleClose}
+        >
           <Icon className="outlined">school</Icon>
           <Typography>Students</Typography>
         </Link>
-        <Link className="items-center dropdown-item small" href="/">
+        <Link
+          className="items-center dropdown-item small"
+          href="/"
+          onClick={handleClose}
+        >
           <Icon className="outlined">house</Icon>
           <Typography>Families</Typography>
         </Link>
-        <Link className="items-center dropdown-item small" href="/">
+        <Link
+          className="items-center dropdown-item small"
+          href="/for/senior-citizens"
+          onClick={handleClose}
+        >
           <Icon className="outlined">elderly</Icon>
           <Typography>Senior citizens</Typography>
         </Link>
@@ -95,7 +111,7 @@ function Solutions() {
 
   return (
     <>
-      <Link href="javascript:void(0)" className="nav-btn" onClick={handleClick}>
+      <Link href="#!" className="nav-btn" onClick={handleClick}>
         Solutions
         <Icon>expand_more</Icon>
       </Link>

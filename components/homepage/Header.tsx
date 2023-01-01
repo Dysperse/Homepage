@@ -1,12 +1,16 @@
 import { Box, Icon, Typography } from "@mui/material";
 import Link from "next/link";
 
-export function Header() {
+export function Header({ useCase = false }: any) {
   return (
     <Box
       sx={{
         background:
-          "linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/image.jpg)",
+          "linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
+          (useCase === "study groups" || useCase === "students"
+            ? "/education.jpg"
+            : "/image.jpg") +
+          ")",
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
@@ -44,9 +48,15 @@ export function Header() {
           variant="h2"
           className="text-heading text-gray-100  rounded-3xl p-2 px-4"
         >
-          It&apos;s <i>your</i> productivity{" "}
+          {useCase ? (
+            <>Carbon for </>
+          ) : (
+            <>
+              It&apos;s <i>your</i> productivity{" "}
+            </>
+          )}
           <span className="border-2 border-orange-400 text-orange-400 px-2 rounded-2xl">
-            boosted
+            {useCase ? useCase : "boosted"}
           </span>
         </Typography>
         <Typography className="mt-0 inline-flex text-gray-100 rounded-xl p-2 px-4 max-w-3xl font-[700]">

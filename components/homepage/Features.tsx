@@ -6,9 +6,13 @@ import AutoHeight from "embla-carousel-auto-height";
 import Autoplay from "embla-carousel-autoplay";
 import styles from "../../styles/features.module.scss";
 
-export function Features(): JSX.Element {
+export function Features({ useCase }): JSX.Element {
   const features = [
-    "home inventory",
+    useCase === "study groups"
+      ? "personal belongings tracker"
+      : useCase === "students"
+      ? "dorm inventory"
+      : "home inventory",
     "kanban boards",
     "memo organization",
     "goal-setting",
@@ -72,12 +76,17 @@ export function Features(): JSX.Element {
         <div className="embla__container">
           <div className="embla__slide flex items-center w-full">
             <Box className="w-full">
-              <h1 className={styles.featureTitle}>
-                Track your belongings.
-              </h1>
+              <h1 className={styles.featureTitle}>Track your belongings.</h1>
               {[
-                "Sync your home inventory with your phone.",
-                "Organize items into rooms",
+                "Sync your " +
+                  (useCase == "study groups"
+                    ? "personal belongings"
+                    : useCase == "students"
+                    ? "dorm inventory"
+                    : "home inventory") +
+                  " inventory with your phone.",
+                "Organize items into " +
+                  (useCase == "study groups" ? "containers" : "rooms"),
                 "Add notes and photos to each item",
                 "Scan items to quickly build up your inventory",
                 "Categorize items by type",
@@ -92,7 +101,7 @@ export function Features(): JSX.Element {
             <Box className="ml-auto">
               <picture>
                 <img
-                  src="https://i.ibb.co/6WzTXMY/image.png"
+                  src="/screenshots/inventory.png"
                   alt="image"
                   className="max-w-[300px]"
                 />
@@ -101,9 +110,7 @@ export function Features(): JSX.Element {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <h1 className={styles.featureTitle}>
-                Master your tasks
-              </h1>
+              <h1 className={styles.featureTitle}>Master your tasks</h1>
               {[
                 "Create kanban boards to organize your tasks",
                 "Customize columns with emojis & colors",
@@ -119,7 +126,11 @@ export function Features(): JSX.Element {
             <Box>
               <picture>
                 <img
-                  src="https://i.ibb.co/6WzTXMY/image.png"
+                  src={
+                    useCase == "study groups" || useCase == "students"
+                      ? "/screenshots/tasks-student.png"
+                      : "/screenshots/tasks.png"
+                  }
                   alt="image"
                   className="max-w-[300px]"
                 />
@@ -145,7 +156,7 @@ export function Features(): JSX.Element {
             <Box>
               <picture>
                 <img
-                  src="https://i.ibb.co/6WzTXMY/image.png"
+                  src="/screenshots/spaces.png"
                   alt="image"
                   className="max-w-[300px]"
                 />
@@ -154,9 +165,7 @@ export function Features(): JSX.Element {
           </div>
           <div className="embla__slide flex items-center">
             <Box className="w-full flex-grow">
-              <h1 className={styles.featureTitle}>
-                Acheive the impossible
-              </h1>
+              <h1 className={styles.featureTitle}>Acheive the impossible</h1>
               {[
                 "Create goals and track your progress",
                 "Prepare for exams, interviews, and more",
@@ -172,7 +181,7 @@ export function Features(): JSX.Element {
             <Box>
               <picture>
                 <img
-                  src="https://i.ibb.co/6WzTXMY/image.png"
+                  src="/screenshots/goals.png"
                   alt="image"
                   className="max-w-[300px]"
                 />
