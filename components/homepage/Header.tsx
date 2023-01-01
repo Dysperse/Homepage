@@ -70,7 +70,7 @@ export function Header({ useCase = false }: any) {
           </button>
           <button className="header-btn">Watch the video</button>
           <button
-            className="header-btn ml-auto px-3 hidden-on-mobile bg-gray-900 hover:bg-gray-900"
+            className="flex items-center header-btn ml-auto hidden-on-mobile w-20 h-20 bg-transparent absolute bottom-5 right-5 p-0 hover:bg-transparent"
             onClick={() => {
               const id = "features";
               const yOffset = -100;
@@ -83,7 +83,36 @@ export function Header({ useCase = false }: any) {
               window.scrollTo({ top: y, behavior: "smooth" });
             }}
           >
-            <Icon>expand_more</Icon>
+            <picture
+              className="read-more"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <img src="/curved.png" draggable="false" />
+            </picture>
+            <Box
+              sx={{
+                position: "absolute",
+                color: "#fff",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <Icon
+                className="animate-bounce"
+                sx={{
+                  mt: 1,
+                }}
+              >
+                south
+              </Icon>
+            </Box>
           </button>
         </Box>
       </Box>
