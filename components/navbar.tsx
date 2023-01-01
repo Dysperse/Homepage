@@ -217,7 +217,11 @@ export function Navbar() {
           <Link
             href="/support"
             className={
-              "nav-btn" + (router.pathname === "/support" ? " active" : "")
+              "nav-btn" +
+              (router.pathname === "/support" ||
+              router.pathname.includes("/articles")
+                ? " active"
+                : "")
             }
           >
             Support
