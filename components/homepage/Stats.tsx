@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
-import styles from "../../styles/stats.module.scss";
-import { scroll, animate } from "motion";
+import { scroll } from "motion";
 import { useEffect, useState } from "react";
+import styles from "../../styles/stats.module.scss";
 
 export function Stats() {
   const [scrollPosition, setScrollPosition] = useState(0);

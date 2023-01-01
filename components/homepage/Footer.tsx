@@ -1,10 +1,24 @@
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 import { Twitter, Instagram, Github } from "feather-icons-react";
+import { scroll } from "motion";
+import { useEffect, useState } from "react";
 
 export function Footer() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  useEffect(() => {
+    const statsContainer = document.getElementById("footer");
+    const scrollOptions: any = {
+      target: statsContainer,
+      offset: ["start end", "400px end"],
+    };
+    scroll(({ y }) => {
+      setScrollPosition(y.progress);
+    }, scrollOptions);
+  }, []);
   return (
     <Box
+      id="footer"
       sx={{ background: "#332B2B", color: "#C2ACAC" }}
       className="p-10 relative"
     >
@@ -63,6 +77,10 @@ export function Footer() {
         <img
           src="/footer.svg"
           alt="logo"
+          style={{
+            // opacity: scrollPosition,
+            marginRight: -100 + scrollPosition * 100,
+          }}
           className="h-[90%] absolute bottom-0 right-0 hidden-on-mobile"
         />
       </picture>
