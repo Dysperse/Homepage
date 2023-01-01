@@ -21,9 +21,9 @@ export function Stats() {
       >
         <source src="/blur.mp4" type="video/mp4" />
       </video>
-      <Grid spacing={2} container>
+      <Grid spacing={5} container>
         <Grid item xs={12} md={4} className="text-center">
-          <h2 className={styles.statsItem}>ten thousand</h2>
+          <h2 className={styles.statsItem}>eleven thousand</h2>
           <Typography>active users</Typography>
         </Grid>
         <Grid item xs={12} md={4} className="text-center">
@@ -31,7 +31,7 @@ export function Stats() {
           <Typography>daily requests</Typography>
         </Grid>
         <Grid item xs={12} md={4} className="text-center">
-          <h2 className={styles.statsItem}>six thousand</h2>
+          <h2 className={styles.statsItem}>nine thousand</h2>
           <Typography>items &amp; tasks stored</Typography>
         </Grid>
       </Grid>

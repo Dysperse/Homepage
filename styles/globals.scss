@@ -50,6 +50,18 @@
       @apply text-gray-900 bg-gray-200;
     }
   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .feature-img {
+    @apply sm:ml-auto mt-5 sm:mt-0;
+  }
+  .feature-slide {
+    @apply flex flex-col sm:flex-row items-center w-full;
+    & img {
+      @apply sm:max-w-[300px];
+    }
+  }
   .feature-sub {
     @apply flex gap-2 mb-2 text-gray-500;
   }

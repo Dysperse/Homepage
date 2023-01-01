@@ -47,7 +47,15 @@ export function FAQ(): JSX.Element {
     );
   };
   return (
-    <Box className="my-18 relative text-gray-900" sx={{ p: 10 }}>
+    <Box
+      className="my-18 relative text-gray-900"
+      sx={{
+        p: {
+          xs: 5,
+          sm: 10,
+        },
+      }}
+    >
       <Grid container>
         <Grid item xs={12} sm={6}>
           <Typography variant="h4" className="font-[700]">
@@ -57,7 +65,14 @@ export function FAQ(): JSX.Element {
             Visit our support center &rarr;
           </Typography>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            ml: { xs: -1 },
+          }}
+        >
           {questions.map((e) => section(e))}
         </Grid>
       </Grid>

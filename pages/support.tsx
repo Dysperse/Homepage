@@ -97,7 +97,7 @@ export default function Support() {
           )}
         </div>
       </div>
-      <div className="container mx-auto my-10">
+      <div className="container mx-auto my-10 px-5">
         <Grid container spacing={2}>
           {filteredArticles.map((article) => (
             <ArticleCard {...article} />

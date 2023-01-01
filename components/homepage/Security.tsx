@@ -5,13 +5,13 @@ export function Security() {
     <Box className="my-18 relative text-gray-900">
       <Box
         sx={{
-          p: 10,
+          p: { xs: 5, sm: 10 },
         }}
       >
-        <h4 className="text-center font-[700] text-4xl">
+        <h4 className="sm:text-center font-[700] text-4xl">
           Secure by <span className="text-green-600 underline">design</span>
         </h4>
-        <h5 className="text-center text-gray-500 mt-2 mb-5">
+        <h5 className="sm:text-center text-gray-500 mt-2 mb-5">
           refined to perfection
         </h5>
         <Grid container spacing={2} sx={{ mt: 3 }}>

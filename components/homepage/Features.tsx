@@ -53,7 +53,13 @@ export function Features({ useCase }): JSX.Element {
       <Typography className="text-center text-gray-500 mt-2" sx={{ my: 2 }}>
         Meet your new all-in-one personal organizer.
       </Typography>
-      <Box className="flex flex-col md:flex-row justify-center mx-auto embla max-w-3xl w-full">
+      <Box
+        className="flex overflow-scroll sm:justify-center mx-auto embla max-w-3xl w-full"
+        sx={{
+          width: "auto!important",
+          overflowX: "auto!important",
+        }}
+      >
         {features.map((feature) => (
           <Box
             className="flex flex-col gap-2 items-center border-b-2 p-2 hover:bg-gray-200 hover:text-gray-900 text-gray-600 text-lg px-4 rounded-t-sm hover:border-gray-300 cursor-pointer select-none active:bg-gray-300 active:text-black active:border-gray-400"
@@ -66,15 +72,16 @@ export function Features({ useCase }): JSX.Element {
                 color: "black!important",
                 borderColor: "black!important",
               }),
+              whiteSpace: "nowrap",
             }}
           >
             {feature}
           </Box>
         ))}
       </Box>
-      <div ref={emblaRef} className="mx-auto mt-10 embla max-w-5xl">
+      <div ref={emblaRef} className="mx-auto mt-10 embla max-w-md sm:max-w-5xl">
         <div className="embla__container">
-          <div className="embla__slide flex items-center w-full">
+          <div className="embla__slide feature-slide">
             <Box className="w-full">
               <h1 className={styles.featureTitle}>Track your belongings.</h1>
               {[
@@ -98,17 +105,17 @@ export function Features({ useCase }): JSX.Element {
                 </span>
               ))}
             </Box>
-            <Box className="ml-auto">
+            <Box className="feature-img">
               <picture>
                 <img
                   src="/screenshots/inventory.png"
                   alt="image"
-                  className="max-w-[300px]"
+                  className="feature-img"
                 />
               </picture>
             </Box>
           </div>
-          <div className="embla__slide flex items-center">
+          <div className="embla__slide feature-slide flex items-center">
             <Box className="w-full flex-grow">
               <h1 className={styles.featureTitle}>
                 {useCase == "study groups" || useCase == "students"
@@ -127,7 +134,7 @@ export function Features({ useCase }): JSX.Element {
                 </span>
               ))}
             </Box>
-            <Box>
+            <Box className="feature-img">
               <picture>
                 <img
                   src={
@@ -136,12 +143,12 @@ export function Features({ useCase }): JSX.Element {
                       : "/screenshots/tasks.png"
                   }
                   alt="image"
-                  className="max-w-[300px]"
+                  className="feature-img"
                 />
               </picture>
             </Box>
           </div>
-          <div className="embla__slide flex items-center">
+          <div className="embla__slide feature-slide flex items-center">
             <Box className="w-full flex-grow">
               <h1 className={styles.featureTitle}>
                 {useCase == "study groups" || useCase == "students"
@@ -159,17 +166,17 @@ export function Features({ useCase }): JSX.Element {
                 </span>
               ))}
             </Box>
-            <Box>
+            <Box className="feature-img">
               <picture>
                 <img
                   src="/screenshots/spaces.png"
                   alt="image"
-                  className="max-w-[300px]"
+                  className="feature-img"
                 />
               </picture>
             </Box>
           </div>
-          <div className="embla__slide flex items-center">
+          <div className="embla__slide feature-slide flex items-center">
             <Box className="w-full flex-grow">
               <h1 className={styles.featureTitle}>Acheive the impossible.</h1>
               {[
@@ -184,12 +191,12 @@ export function Features({ useCase }): JSX.Element {
                 </span>
               ))}
             </Box>
-            <Box>
+            <Box className="feature-img">
               <picture>
                 <img
                   src="/screenshots/goals.png"
                   alt="image"
-                  className="max-w-[300px]"
+                  className="feature-img"
                 />
               </picture>
             </Box>

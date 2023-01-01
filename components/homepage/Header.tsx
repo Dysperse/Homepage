@@ -17,7 +17,7 @@ export function Header({ useCase = false }: any) {
         width: "100vw",
         display: "flex",
         mb: 5,
-        p: 5,
+        p: { xs: 2, sm: 5 },
         flexDirection: "column",
       }}
     >
@@ -61,12 +61,15 @@ export function Header({ useCase = false }: any) {
           loved by thousands of students, families, seniors, and entrepreneurs.
         </Typography>
         <Box className="mt-3 flex gap-4 ml-5">
-          <button className="header-btn">
+          <button
+            className="header-btn"
+            onClick={() => window.open("https://my.smartlist.tech/signup")}
+          >
             Get started
             <Icon className="text-yellow-300">arrow_forward</Icon>
           </button>
           <button className="header-btn">Watch the video</button>
-          <button className="header-btn ml-auto px-3 bg-gray-900 hover:bg-gray-900">
+          <button className="header-btn ml-auto px-3 hidden-on-mobile bg-gray-900 hover:bg-gray-900">
             <Icon>expand_more</Icon>
           </button>
         </Box>

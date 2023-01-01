@@ -63,7 +63,7 @@ export function Footer() {
         <img
           src="/footer.svg"
           alt="logo"
-          className="h-[90%] absolute bottom-0 right-0"
+          className="h-[90%] absolute bottom-0 right-0 hidden-on-mobile"
         />
       </picture>
     </Box>

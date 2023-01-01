@@ -23,7 +23,7 @@ export function Layout({ title, children }) {
           marginTop: "550px",
           marginBottom: "50px",
         }}
-        className="prose mx-auto"
+        className="prose mx-auto px-5"
       >
         {children}
       </div>
