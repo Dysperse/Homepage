@@ -25,7 +25,11 @@ function UseCases() {
 
   return (
     <>
-      <Link href="#!" className="nav-btn" onClick={handleClick}>
+      <Link
+        href="#!"
+        className="hidden-on-mobile nav-btn"
+        onClick={handleClick}
+      >
         Use cases
         <Icon>expand_more</Icon>
       </Link>
@@ -218,14 +222,14 @@ export function Navbar() {
         <Box className="mx-auto flex items-center gap-2">
           <Link
             href="https://github.com/Smartlist-App"
-            className="nav-btn"
+            className="nav-btn hidden-on-mobile"
             target="_blank"
           >
             Open source
           </Link>
           <Link
             href="https://discord.gg/9EJSxkJhnQ"
-            className="nav-btn"
+            className="nav-btn hidden-on-mobile"
             target="_blank"
           >
             Community
