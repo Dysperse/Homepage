@@ -52,6 +52,11 @@ export default function Support() {
             description="Read our privacy policy to learn more about how we handle your data"
             slug="privacy-policy"
           />
+          <ArticleCard
+            article="Terms of service"
+            description="Read our terms of service"
+            slug="terms-of-service"
+          />
         </Grid>
       </div>
     </>
