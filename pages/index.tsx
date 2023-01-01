@@ -9,8 +9,8 @@ import { Features } from "../components/homepage/Features";
 export default function Home() {
   return (
     <>
-      <Header />
-      <Features />
+      <Header useCase={false}  />
+      <Features  useCase={false} />
       <Stats />
       <Security />
       <FAQ />
