@@ -48,6 +48,11 @@ export default function Support() {
             slug="goals"
           />
           <ArticleCard
+            article="Spaces"
+            description="Learn what spaces are and how to use them"
+            slug="spaces"
+          />
+          <ArticleCard
             article="Storage limits"
             description="Read more about the storage limits of your account"
             slug="storage-limits"
