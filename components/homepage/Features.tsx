@@ -178,7 +178,7 @@ export function Features({ useCase }): JSX.Element {
           </div>
           <div className="embla__slide feature-slide flex items-center">
             <Box className="w-full flex-grow">
-              <h1 className={styles.featureTitle}>Acheive the impossible.</h1>
+              <h1 className={styles.featureTitle}>Achieve the impossible.</h1>
               {[
                 "Create goals and track your progress",
                 "Prepare for exams, interviews, and more",
