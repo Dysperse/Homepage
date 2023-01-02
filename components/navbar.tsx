@@ -229,9 +229,9 @@ export function Navbar() {
           sx: {
             maxHeight: "90vh",
             borderRadius: "1rem 1rem 0 0",
+            background: "rgb(20 83 45)",
             p: 2,
           },
-          className: "bg-green-900",
         }}
       >
         <Box className="flex items-center justify-between p-3 mb-3 sticky top-0 backdrop-blur-md rounded-2xl">
