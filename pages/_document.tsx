@@ -8,6 +8,25 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        
+        
+        <meta name="title" content="Carbon: It's your productivity boosted"/>
+        <meta name="description" content="Meet Carbon: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."/>
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://smartlist.tech"/>
+        <meta property="og:title" content="Carbon: It's your productivity boosted"/>
+        <meta property="og:description" content="Meet Carbon: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."/>
+        <meta property="og:image" content="/meta.png"/>
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:url" content="https://smartlist.tech"/>
+        <meta property="twitter:title" content="Carbon: It's your productivity boosted"/>
+        <meta property="twitter:description" content="Meet Carbon: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."/>
+        <meta property="twitter:image" content="/meta.png"/>
+
         <Script id="google-analytics" strategy="afterInteractive">
           {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -42,8 +61,6 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <meta name="description" content="Carbon user dashboard" />
-        <meta name="theme-color" content="#fff" />
         <link
           rel="apple-touch-icon"
           href="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/img/logo/apple-touch-icon/apple-touch-icon.png"
