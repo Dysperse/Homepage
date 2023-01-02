@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*:not(
+    .material-symbols-rounded,
+    .material-symbols-rounded *,
+    .material-symbols-outlined,
+    .material-symbols-outlined *,
+    .MuiIcon-root,
+    .MuiIcon-root *,
+    .text-heading,
+    .text-heading *
+  ) {
+  font-family: "DM Sans", sans-serif !important;
+}
+
+.text-heading {
+  font-family: "DM Serif Display", serif !important;
+}
+
+@layer components {
+  .nav-btn {
+    @apply hover:ring-0 active:ring-0 focus-visible:ring-2 ring-white outline-none p-1 sm:p-2 rounded-full px-3 sm:px-4 flex items-center gap-2 text-gray-200 hover:text-white hover:bg-[rgba(255,255,255,.1)] active:bg-[rgba(255,255,255,.2)];
+    .elevated & {
+      @apply hover:bg-gray-100 active:bg-gray-200 text-gray-500 hover:text-gray-900 ring-black;
+    }
+    &.active {
+      @apply bg-[rgba(255,255,255,.1)] text-white;
+    }
+    .elevated &.active {
+      @apply bg-[rgba(0,0,0,.1)] text-black;
+    }
+  }
+  .header-btn {
+    @apply flex bg-green-800 px-5 py-3 rounded-full gap-5 hover:bg-green-900 text-green-200 hover:text-green-100 active:text-green-50 outline-none focus-visible:ring-2 ring-green-200;
+    &:active {
+      background: rgb(12, 53, 28);
+    }
+  }
+  .question-button {
+    @apply border-b w-full text-left p-2 px-2 border-gray-200 flex text-gray-800 hover:text-gray-900 active:text-black;
+    & .question {
+      @apply text-gray-800 p-1 px-2 flex rounded-xl;
+    }
+    &:hover .question {
+      @apply text-gray-900 bg-gray-100;
+    }
+    &:active .question {
+      @apply text-gray-900 bg-gray-200;
+    }
+  }
+  ::-webkit-scrollbar {
+    // display: none;
+  }
+  .feature-img {
+    @apply sm:ml-auto mt-5 sm:mt-0;
+  }
+  .feature-slide {
+    @apply flex flex-col sm:flex-row items-center w-full px-4;
+    & img {
+      @apply sm:max-w-[300px];
+    }
+  }
+  .read-more {
+    @apply animate-spin;
+    animation-duration: 5s;
+  }
+  .feature-sub {
+    @apply flex gap-2 mb-2 text-gray-500;
+  }
+  .security-title {
+    @apply text-xl mb-1 ml-1;
+    font-weight: 500;
+  }
+  .security-btn {
+    @apply hover:underline cursor-pointer inline-block px-2 py-1 -ml-1;
+  }
+  .dropdown-item {
+    @apply flex gap-5 px-5 py-3 hover:bg-neutral-900 text-gray-200 hover:text-gray-50 active:text-white active:bg-neutral-800 rounded-2xl border border-transparent hover:border-neutral-700 active:border-gray-600;
+    &.small {
+      @apply px-3 py-2;
+    }
+  }
+  .security-card {
+    @apply hover:backdrop-blur-xl p-4 rounded-xl flex gap-2;
+    &:hover .security-btn {
+      @apply bg-gray-200 rounded-lg;
+    }
+    & .MuiIcon-root {
+      @apply text-gray-500 mt-1;
+    }
+  }
+  .footer-btn {
+    @apply hover:underline mt-2 flex hover:text-gray-50 active:text-white;
+  }
+}
+body {
+  overflow-x: hidden;
+}
+* {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-backface-visibility: hidden;
+  outline: none;
+}
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  transition: height 0.2s;
+  align-items: flex-start;
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Rounded";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block !important;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+
+  font-variation-settings: "FILL" 0, "wght" 350, "GRAD" 0, "opsz" 40;
+}
+
+.font-\[700\] {
+  font-weight: 700 !important;
+}
+
+.material-symbols-rounded {
+  font-display: block !important;
+  font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 40;
+}
+
+.animate-announcement {
+  animation: animateAnnouncement 5s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 33%,
+    rgba(255, 255, 255, 0.3) 66%,
+    rgba(0, 0, 0, 0)
+  );
+  display: block;
+  height: 500px;
+  transform: rotate(45deg);
+  width: 150px;
+  position: absolute;
+  top: -150px;
+  left: 0;
+}
+@keyframes animateAnnouncement {
+  0% {
+    left: -120%;
+  }
+  50% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hidden-on-mobile {
+    display: none !important;
+  }
+}

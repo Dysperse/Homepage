@@ -1,20 +1,12 @@
-/**
- *  * @type {import('@types/tailwindcss/tailwind-config').TailwindConfig}
- */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./node_modules/flowbite-react/**/*.js",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require("flowbite/plugin"),
-    require('@tailwindcss/typography'),
-  ],
-
-  darkMode: 'class',
-}
+  safelist: ["text-3xl", "mb-1"],
+  plugins: [require("@tailwindcss/typography")],
+};
