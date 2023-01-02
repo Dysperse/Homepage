@@ -117,10 +117,7 @@ export default function Support() {
       <div className="container sm:max-w-5xl mx-auto my-10 px-5">
         <Box
           sx={{
-            mr: {
-              xs: -2,
-              sm: 0,
-            },
+            mr: -2,
           }}
         >
           <Masonry columns={{ xs: 1, sm: 2 }} spacing={2}>
