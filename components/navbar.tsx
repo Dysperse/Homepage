@@ -249,7 +249,11 @@ export function Navbar() {
             </picture>
             Carbon
           </Link>
-          <Link href="#!" onClick={() => setOpen(false)} className="nav-btn">
+          <Link
+            href="#!"
+            onClick={() => setOpen(false)}
+            className="nav-btn active:scale-90 transition-all"
+          >
             <Icon className="outlined">close</Icon>
           </Link>
         </Box>
