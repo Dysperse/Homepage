@@ -8,7 +8,5 @@ module.exports = {
     extend: {},
   },
   safelist: ["text-3xl", "mb-1"],
-  plugins: [
-    require('@tailwindcss/typography')
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };
