@@ -24,6 +24,7 @@
     "@heroicons/react": "^2.0.13",
     "@mdx-js/loader": "^2.2.1",
     "@mdx-js/react": "^2.2.1",
+    "@mui/lab": "^5.0.0-alpha.114",
     "@mui/material": "^5.11.2",
     "@next/font": "^13.1.1",
     "@next/mdx": "^13.1.1",

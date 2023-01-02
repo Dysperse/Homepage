@@ -1,17 +1,18 @@
+import { Masonry } from "@mui/lab";
 import { Box, Grid, Icon, IconButton } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
 
 function ArticleCard({ slug, article, description }) {
   return (
-    <Grid item xs={12} md={6}>
+    <Box>
       <Link href={`/articles/${slug}`}>
         <div className="shadow-lg rounded-2xl p-4 flex flex-col gap-2 w-full border hover:bg-gray-100 active:bg-gray-200 hover:border-gray-300 active:border-gray-400 cursor-pointer">
           <h1 className="text-xl font-[700]">{article}</h1>
           <h1 className="text-md font-[400] opacity-80">{description}</h1>
         </div>
       </Link>
-    </Grid>
+    </Box>
   );
 }
 
@@ -113,12 +114,12 @@ export default function Support() {
           )}
         </div>
       </div>
-      <div className="container mx-auto my-10 px-5">
-        <Grid container spacing={2}>
+      <div className="container sm:max-w-5xl mx-auto my-10 px-5">
+        <Masonry columns={{ xs: 1, sm: 2 }} spacing={2}>
           {filteredArticles.map((article) => (
             <ArticleCard {...article} />
           ))}
-        </Grid>
+        </Masonry>
 
         <div className="flex justify-center mt-16 text-gray-700">
           More articles coming soon!
