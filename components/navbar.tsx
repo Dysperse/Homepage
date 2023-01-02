@@ -3,6 +3,7 @@ import {
   Icon,
   Menu,
   NoSsr,
+  SwipeableDrawer,
   Toolbar,
   Typography,
   useScrollTrigger,
@@ -10,7 +11,7 @@ import {
 import { Box } from "@mui/system";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 
 function UseCases() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -115,7 +116,11 @@ function Solutions() {
 
   return (
     <>
-      <Link href="#!" className="nav-btn" onClick={handleClick}>
+      <Link
+        href="#!"
+        className="nav-btn hidden-on-mobile"
+        onClick={handleClick}
+      >
         Solutions
         <Icon>expand_more</Icon>
       </Link>
@@ -194,6 +199,8 @@ export function Navbar() {
     threshold: 500,
   });
 
+  const [open, setOpen] = useState(false);
+
   return (
     <AppBar
       className={
@@ -207,9 +214,150 @@ export function Navbar() {
       }}
       elevation={0}
     >
+      <SwipeableDrawer
+        open={open}
+        onClose={() => setOpen(false)}
+        onOpen={() => setOpen(true)}
+        anchor="bottom"
+        BackdropProps={{
+          sx: {
+            backdropFilter: "blur(5px)",
+            backgroundColor: "rgba(0,0,0,0.1)",
+          },
+        }}
+        PaperProps={{
+          sx: {
+            borderRadius: "1rem 1rem 0 0",
+            p: 4,
+          },
+          className: "bg-green-800",
+        }}
+      >
+        <Box className="flex items-center justify-between mb-3">
+          <Link href={"/"}>
+            <picture>
+              <img
+                src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
+                alt="Carbon"
+                className="w-10 h-10"
+              />
+            </picture>
+          </Link>
+          <Link
+            href="#!"
+            onClick={() => {
+              setOpen(false);
+            }}
+            className="nav-btn"
+          >
+            <Icon className="outlined">close</Icon>
+          </Link>
+        </Box>
+        <Link
+          href="/support"
+          className="nav-btn p-2 rounded-2xl"
+          onClick={() => {
+            setOpen(false);
+          }}
+        >
+          <Icon className="outlined">help</Icon>
+          Support
+        </Link>
+        <Link
+          href="https://discord.gg/9EJSxkJhnQ"
+          target="_blank"
+          className="nav-btn p-2 rounded-2xl"
+          onClick={() => {
+            setOpen(false);
+          }}
+        >
+          <Icon className="outlined">chat_bubble</Icon>
+          Community
+        </Link>
+        <h2 className="text-green-200 my-5 mb-2 text-sm uppercase ml-1">
+          SOLUTIONS
+        </h2>
+        <Box className="flex flex-col gap-1">
+          <Link
+            href="/"
+            className="nav-btn p-2 rounded-2xl"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            <Icon className="outlined">category</Icon>
+            <span>Carbon</span>
+          </Link>
+          <Link
+            href="https://availability.smartlist.tech"
+            target="_blank"
+            className="nav-btn p-2 rounded-2xl"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            <Icon className="outlined">today</Icon>
+            <span>Carbon Availability</span>
+          </Link>
+        </Box>
+        <h2 className="text-green-200 my-5 mb-2 text-sm uppercase ml-1">
+          USE CASES
+        </h2>
+        <Box className="flex flex-col gap-1">
+          <Link
+            href="/for/senior-citizens"
+            className="nav-btn p-2 rounded-2xl"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            <Icon className="outlined">elderly</Icon>
+            <span>For Senior Citizens</span>
+          </Link>
+          <Link
+            href="/for/families"
+            className="nav-btn p-2 rounded-2xl"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            <Icon className="outlined">family_restroom</Icon>
+            <span>For Families</span>
+          </Link>
+          <Link
+            href="/for/students"
+            className="nav-btn p-2 rounded-2xl"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            <Icon className="outlined">school</Icon>
+            <span>For Students</span>
+          </Link>
+          <Link
+            href="/for/study-groups"
+            className="nav-btn p-2 rounded-2xl"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            <Icon className="outlined">book</Icon>
+            <span>For Study Groups</span>
+          </Link>
+        </Box>
+      </SwipeableDrawer>
       <Toolbar className="w-full">
-        <Link href={"/"} className="mr-auto">
-          {" "}
+        <Link
+          href="#!"
+          onClick={() => {
+            setOpen(true);
+          }}
+          className="nav-btn mr-auto px-1 sm:px-4 sm:hidden"
+        >
+          <Icon className="outlined">menu</Icon>
+        </Link>
+
+        <Link href={"/"} className="mr-3 sm:mr-auto">
           <picture>
             <img
               src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
@@ -219,7 +367,7 @@ export function Navbar() {
           </picture>
         </Link>
 
-        <Box className="mx-auto flex items-center gap-2">
+        <Box className="sm:mx-auto flex items-center gap-2">
           <Link
             href="https://github.com/Smartlist-App"
             className="nav-btn hidden-on-mobile"
@@ -237,7 +385,7 @@ export function Navbar() {
           <Link
             href="/support"
             className={
-              "nav-btn" +
+              "hidden-on-mobile nav-btn" +
               (router.pathname === "/support" ||
               router.pathname.includes("/articles")
                 ? " active"
@@ -251,10 +399,10 @@ export function Navbar() {
         </Box>
         <Link
           href="https://my.smartlist.tech"
-          className="nav-btn ml-auto"
+          className="nav-btn ml-auto px-1 sm:px-4"
           target="_blank"
         >
-          My account
+          <Icon className="outlined">account_circle</Icon>
         </Link>
       </Toolbar>
     </AppBar>
