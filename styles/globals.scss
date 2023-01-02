@@ -70,7 +70,11 @@
     @apply flex gap-2 mb-2 text-gray-500;
   }
   .security-title {
-    @apply text-2xl mb-1;
+    @apply text-xl mb-1 ml-1;
+    font-weight: 500;
+  }
+  .security-btn {
+    @apply hover:underline cursor-pointer inline-block px-2 py-1 -ml-1;
   }
   .dropdown-item {
     @apply flex gap-5 px-5 py-3 hover:bg-neutral-900 text-gray-200 hover:text-gray-50 active:text-white active:bg-neutral-800 rounded-2xl border border-transparent hover:border-neutral-700 active:border-gray-600;
@@ -79,7 +83,13 @@
     }
   }
   .security-card {
-    @apply hover:backdrop-blur-xl hover:bg-[rgba(200,200,200,.2)] p-4 rounded-xl;
+    @apply hover:backdrop-blur-xl p-4 rounded-xl flex gap-2;
+    &:hover .security-btn {
+      @apply bg-gray-200 rounded-lg;
+    }
+    & .MuiIcon-root {
+      @apply text-gray-500 mt-1;
+    }
   }
   .footer-btn {
     @apply hover:underline mt-2 flex hover:text-gray-50 active:text-white;

@@ -26,16 +26,24 @@ export function Footer() {
         <h2 className="font-[700] mb-2 text-4xl">Carbon</h2>
         <h4 className={"font-[700] my-5 mb-3"}>Quick links</h4>
 
-        <Link href="/" className="footer-btn">
+        <Link href="/articles/terms-of-service" className="footer-btn">
           Terms of service &rarr;
         </Link>
-        <Link href="/" className="footer-btn">
+        <Link href="/articles/privacy-policy" className="footer-btn">
           Privacy policy &rarr;
         </Link>
-        <Link href="/" className="footer-btn">
+        <Link
+          href="https://my.smartlist.tech"
+          className="footer-btn"
+          target="_blank"
+        >
           My dashboard &rarr;
         </Link>
-        <Link href="/" className="footer-btn">
+        <Link
+          href="https://availability.smartlist.tech"
+          target="_blank"
+          className="footer-btn"
+        >
           Availability &rarr;
         </Link>
 
