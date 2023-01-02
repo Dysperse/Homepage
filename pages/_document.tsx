@@ -13,14 +13,12 @@ export default function Document() {
         <meta name="title" content="Carbon: It's your productivity boosted"/>
         <meta name="description" content="Meet Carbon: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."/>
 
-        <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://smartlist.tech"/>
         <meta property="og:title" content="Carbon: It's your productivity boosted"/>
         <meta property="og:description" content="Meet Carbon: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."/>
         <meta property="og:image" content="/meta.png"/>
 
-        <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image"/>
         <meta property="twitter:url" content="https://smartlist.tech"/>
         <meta property="twitter:title" content="Carbon: It's your productivity boosted"/>
