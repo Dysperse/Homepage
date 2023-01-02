@@ -54,6 +54,11 @@ export default function Support() {
       slug: "multi-factor-authentication",
     },
     {
+      article: "Invite-only access",
+      description: "Learn what invite-only access is",
+      slug: "invite-only-access",
+    },
+    {
       article: "Privacy policy",
       description:
         "Read our privacy policy to learn more about how we handle your data",
