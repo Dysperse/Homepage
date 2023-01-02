@@ -115,11 +115,20 @@ export default function Support() {
         </div>
       </div>
       <div className="container sm:max-w-5xl mx-auto my-10 px-5">
-        <Masonry columns={{ xs: 1, sm: 2 }} spacing={2}>
-          {filteredArticles.map((article) => (
-            <ArticleCard {...article} />
-          ))}
-        </Masonry>
+        <Box
+          sx={{
+            mr: {
+              xs: -2,
+              sm: 0,
+            },
+          }}
+        >
+          <Masonry columns={{ xs: 1, sm: 2 }} spacing={2}>
+            {filteredArticles.map((article) => (
+              <ArticleCard {...article} />
+            ))}
+          </Masonry>
+        </Box>
 
         <div className="flex justify-center mt-16 text-gray-700">
           More articles coming soon!
