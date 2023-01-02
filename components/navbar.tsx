@@ -227,14 +227,19 @@ export function Navbar() {
         }}
         PaperProps={{
           sx: {
+            maxHeight: "90vh",
             borderRadius: "1rem 1rem 0 0",
-            p: 4,
+            p: 2,
           },
-          className: "bg-green-800",
+          className: "bg-green-900",
         }}
       >
-        <Box className="flex items-center justify-between mb-3">
-          <Link href={"/"}>
+        <Box className="flex items-center justify-between p-3 mb-3 sticky top-0 backdrop-blur-md rounded-2xl">
+          <Link
+            href={"/"}
+            onClick={() => setOpen(false)}
+            className="flex items-center text-green-100 gap-4 text-xl font-[700]"
+          >
             <picture>
               <img
                 src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
@@ -242,108 +247,93 @@ export function Navbar() {
                 className="w-10 h-10"
               />
             </picture>
+            Carbon
           </Link>
-          <Link
-            href="#!"
-            onClick={() => {
-              setOpen(false);
-            }}
-            className="nav-btn"
-          >
+          <Link href="#!" onClick={() => setOpen(false)} className="nav-btn">
             <Icon className="outlined">close</Icon>
           </Link>
         </Box>
-        <Link
-          href="/support"
-          className="nav-btn p-2 rounded-2xl"
-          onClick={() => {
-            setOpen(false);
-          }}
-        >
-          <Icon className="outlined">help</Icon>
-          Support
-        </Link>
-        <Link
-          href="https://discord.gg/9EJSxkJhnQ"
-          target="_blank"
-          className="nav-btn p-2 rounded-2xl"
-          onClick={() => {
-            setOpen(false);
-          }}
-        >
-          <Icon className="outlined">chat_bubble</Icon>
-          Community
-        </Link>
-        <h2 className="text-green-200 my-5 mb-2 text-sm uppercase ml-1">
-          SOLUTIONS
-        </h2>
-        <Box className="flex flex-col gap-1">
+        <Box sx={{ p: 2, pt: 0 }}>
           <Link
-            href="/"
+            href="/support"
             className="nav-btn p-2 rounded-2xl"
             onClick={() => {
               setOpen(false);
             }}
           >
-            <Icon className="outlined">category</Icon>
-            <span>Carbon</span>
+            <Icon className="outlined">help</Icon>
+            Support
           </Link>
           <Link
-            href="https://availability.smartlist.tech"
+            href="https://discord.gg/9EJSxkJhnQ"
             target="_blank"
             className="nav-btn p-2 rounded-2xl"
             onClick={() => {
               setOpen(false);
             }}
           >
-            <Icon className="outlined">today</Icon>
-            <span>Carbon Availability</span>
+            <Icon className="outlined">chat_bubble</Icon>
+            Community
           </Link>
-        </Box>
-        <h2 className="text-green-200 my-5 mb-2 text-sm uppercase ml-1">
-          USE CASES
-        </h2>
-        <Box className="flex flex-col gap-1">
-          <Link
-            href="/for/senior-citizens"
-            className="nav-btn p-2 rounded-2xl"
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            <Icon className="outlined">elderly</Icon>
-            <span>For Senior Citizens</span>
-          </Link>
-          <Link
-            href="/for/families"
-            className="nav-btn p-2 rounded-2xl"
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            <Icon className="outlined">family_restroom</Icon>
-            <span>For Families</span>
-          </Link>
-          <Link
-            href="/for/students"
-            className="nav-btn p-2 rounded-2xl"
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            <Icon className="outlined">school</Icon>
-            <span>For Students</span>
-          </Link>
-          <Link
-            href="/for/study-groups"
-            className="nav-btn p-2 rounded-2xl"
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            <Icon className="outlined">book</Icon>
-            <span>For Study Groups</span>
-          </Link>
+          <h2 className="text-green-200 my-5 mb-2 text-sm uppercase ml-1">
+            SOLUTIONS
+          </h2>
+          <Box className="flex flex-col gap-1">
+            <Link
+              href="/"
+              className="nav-btn p-2 rounded-2xl"
+              onClick={() => setOpen(false)}
+            >
+              <Icon className="outlined">category</Icon>
+              <span>Carbon</span>
+            </Link>
+            <Link
+              href="https://availability.smartlist.tech"
+              target="_blank"
+              className="nav-btn p-2 rounded-2xl"
+              onClick={() => setOpen(false)}
+            >
+              <Icon className="outlined">today</Icon>
+              <span>Carbon Availability</span>
+            </Link>
+          </Box>
+          <h2 className="text-green-200 my-5 mb-2 text-sm uppercase ml-1">
+            USE CASES
+          </h2>
+          <Box className="flex flex-col gap-1">
+            <Link
+              href="/for/senior-citizens"
+              className="nav-btn p-2 rounded-2xl"
+              onClick={() => setOpen(false)}
+            >
+              <Icon className="outlined">elderly</Icon>
+              <span>For Senior Citizens</span>
+            </Link>
+            <Link
+              href="/for/families"
+              className="nav-btn p-2 rounded-2xl"
+              onClick={() => setOpen(false)}
+            >
+              <Icon className="outlined">family_restroom</Icon>
+              <span>For Families</span>
+            </Link>
+            <Link
+              href="/for/students"
+              className="nav-btn p-2 rounded-2xl"
+              onClick={() => setOpen(false)}
+            >
+              <Icon className="outlined">school</Icon>
+              <span>For Students</span>
+            </Link>
+            <Link
+              href="/for/study-groups"
+              className="nav-btn p-2 rounded-2xl"
+              onClick={() => setOpen(false)}
+            >
+              <Icon className="outlined">book</Icon>
+              <span>For Study Groups</span>
+            </Link>
+          </Box>
         </Box>
       </SwipeableDrawer>
       <Toolbar className="w-full">
