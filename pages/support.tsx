@@ -43,6 +43,17 @@ export default function Support() {
       slug: "storage-limits",
     },
     {
+      article: "Encryption",
+      description: "Learn what encryption is and how we encrypt your data",
+      slug: "encryption",
+    },
+    {
+      article: "Multi-factor authentication",
+      description:
+        "Learn how to enable multi-factor authentication for your account",
+      slug: "multi-factor-authentication",
+    },
+    {
       article: "Privacy policy",
       description:
         "Read our privacy policy to learn more about how we handle your data",

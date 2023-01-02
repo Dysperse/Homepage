@@ -56,7 +56,7 @@ export function Security() {
               <h5 className="security-title">multi-factor authentication</h5>
               <Link
                 className="security-btn"
-                href="/multi-factor-authentication"
+                href="/articles/multi-factor-authentication"
               >
                 Learn more &rarr;
               </Link>

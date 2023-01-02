@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Box } from "@mui/material";
 
 export function Layout({ title, children }) {
   return (
@@ -18,15 +19,23 @@ export function Layout({ title, children }) {
           &larr; back to all articles
         </Link>
       </div>
-      <div
-        style={{
-          marginTop: "550px",
-          marginBottom: "50px",
+      <Box
+        sx={{
+          "& img": {
+            borderRadius: 5,
+          },
         }}
-        className="prose mx-auto px-5"
       >
-        {children}
-      </div>
+        <div
+          style={{
+            marginTop: "550px",
+            marginBottom: "50px",
+          }}
+          className="prose mx-auto px-5"
+        >
+          {children}
+        </div>
+      </Box>
     </>
   );
 }
