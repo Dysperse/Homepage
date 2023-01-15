@@ -215,7 +215,7 @@ export function Navbar() {
       elevation={0}
     >
       <SwipeableDrawer
-        open={open}
+        open={open} disableBackdropTransition 
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         anchor="bottom"
