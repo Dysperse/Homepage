@@ -23,7 +23,7 @@ export function Footer() {
       className="p-10 relative"
     >
       <Box sx={{ zIndex: 1 }}>
-        <h2 className="font-[700] mb-2 text-4xl">Carbon</h2>
+        <h2 className="font-[700] mb-2 text-4xl">Dysperse</h2>
         <h4 className={"font-[700] my-5 mb-3"}>Quick links</h4>
 
         <Link href="/articles/terms-of-service" className="footer-btn">
@@ -33,14 +33,14 @@ export function Footer() {
           Privacy policy &rarr;
         </Link>
         <Link
-          href="https://my.smartlist.tech"
+          href="https://my.dysperse.com"
           className="footer-btn"
           target="_blank"
         >
           My dashboard &rarr;
         </Link>
         <Link
-          href="https://availability.smartlist.tech"
+          href="https://availability.dysperse.com"
           target="_blank"
           className="footer-btn"
         >

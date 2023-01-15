@@ -36,11 +36,11 @@ export function Header({ useCase = false }: any) {
         </Icon>
         <span>
           <Link
-            href="https://availability.smartlist.tech"
+            href="https://availability.dysperse.com"
             target="_blank"
             className="underline focus:ring-2 ring-white p-1 rounded-md -mr-1"
           >
-            Carbon Availability
+            Dysperse Availability
           </Link>{" "}
           is now in public beta. Availability helps you find the best time to
           meet based on your guest's availability. No signup required
@@ -50,7 +50,7 @@ export function Header({ useCase = false }: any) {
       <Box className="mt-auto w-full">
         <h1 className="text-5xl sm:text-7xl text-heading text-gray-100  rounded-3xl p-2 px-4">
           {useCase ? (
-            <>Carbon for </>
+            <>Dysperse for </>
           ) : (
             <>
               It&apos;s <i>your</i> productivity{" "}
@@ -61,13 +61,14 @@ export function Header({ useCase = false }: any) {
           </span>
         </h1>
         <Typography className="mt-0 inline-flex text-gray-100 rounded-xl p-2 px-4 max-w-3xl font-[700]">
-          Meet Carbon: The all-in-one personal productivity platform trusted and
-          loved by thousands of students, families, seniors, and entrepreneurs.
+          Meet Dysperse: The all-in-one personal productivity platform trusted
+          and loved by thousands of students, families, seniors, and
+          entrepreneurs.
         </Typography>
         <Box className="mt-3 flex gap-4 ml-5">
           <button
             className="header-btn"
-            onClick={() => window.open("https://my.smartlist.tech/signup")}
+            onClick={() => window.open("https://my.dysperse.com/signup")}
           >
             Get started
             <Icon className="text-yellow-300">arrow_forward</Icon>

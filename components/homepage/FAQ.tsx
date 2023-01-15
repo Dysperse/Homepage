@@ -4,28 +4,28 @@ import { useState } from "react";
 export function FAQ(): JSX.Element {
   const questions = [
     {
-      question: "What is Carbon?",
+      question: "What is Dysperse?",
       answer:
-        "Carbon is a personal productivity platform that helps you organize your life and get things done.",
+        "Dysperse is a personal productivity platform that helps you organize your life and get things done.",
     },
     {
-      question: "Is Carbon free?",
-      answer: "Yes, Carbon is free to use.",
+      question: "Is Dysperse free?",
+      answer: "Yes, Dysperse is free to use.",
     },
     {
-      question: "Can I use Carbon for my dorm or apartment?",
+      question: "Can I use Dysperse for my dorm or apartment?",
       answer:
-        "Yes, Carbon is perfect for dorms and apartments. Carbon has specific features for dorms and apartments.",
+        "Yes, Dysperse is perfect for dorms and apartments. Dysperse has specific features for dorms and apartments.",
     },
     {
-      question: "Can I use Carbon for just myself, without a group?",
+      question: "Can I use Dysperse for just myself, without a group?",
       answer:
-        "Yes, Carbon lets you customize your experience to fit your needs.",
+        "Yes, Dysperse lets you customize your experience to fit your needs.",
     },
     {
       question: "Does Cabon take my credit card information?",
       answer:
-        "No, Carbon does not take your credit card information. Carbon is free to use.",
+        "No, Dysperse does not take your credit card information. Dysperse is free to use.",
     },
   ];
 

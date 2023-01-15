@@ -48,7 +48,7 @@ export function Features({ useCase }): JSX.Element {
   return (
     <Box className="my-16" id="features">
       <Typography variant="h4" className="text-center font-[700]">
-        Say hello to <span className="text-green-600 underline">Carbon.</span>
+        Say hello to <span className="text-green-600 underline">Dysperse.</span>
       </Typography>
       <Typography className="text-center text-gray-500 mt-2" sx={{ my: 2 }}>
         Meet your new all-in-one personal organizer.

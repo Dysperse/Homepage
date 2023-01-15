@@ -30,7 +30,7 @@ export default function Support() {
     },
     {
       article: "Goals",
-      description: "Learn how to set and achieve your goals using Carbon",
+      description: "Learn how to set and achieve your goals using Dysperse",
       slug: "goals",
     },
     {

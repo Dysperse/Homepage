@@ -8,22 +8,35 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        
-        
-        <meta name="title" content="Carbon: It's your productivity boosted"/>
-        <meta name="description" content="Meet Carbon: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."/>
+        <meta name="title" content="Dysperse: It's your productivity boosted" />
+        <meta
+          name="description"
+          content="Meet Dysperse: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."
+        />
 
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://smartlist.tech"/>
-        <meta property="og:title" content="Carbon: It's your productivity boosted"/>
-        <meta property="og:description" content="Meet Carbon: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."/>
-        <meta property="og:image" content="/meta.png"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dysperse.com" />
+        <meta
+          property="og:title"
+          content="Dysperse: It's your productivity boosted"
+        />
+        <meta
+          property="og:description"
+          content="Meet Dysperse: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."
+        />
+        <meta property="og:image" content="/meta.png" />
 
-        <meta property="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:url" content="https://smartlist.tech"/>
-        <meta property="twitter:title" content="Carbon: It's your productivity boosted"/>
-        <meta property="twitter:description" content="Meet Carbon: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."/>
-        <meta property="twitter:image" content="/meta.png"/>
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://dysperse.com" />
+        <meta
+          property="twitter:title"
+          content="Dysperse: It's your productivity boosted"
+        />
+        <meta
+          property="twitter:description"
+          content="Meet Dysperse: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."
+        />
+        <meta property="twitter:image" content="/meta.png" />
 
         <Script id="google-analytics" strategy="afterInteractive">
           {`

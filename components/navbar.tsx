@@ -160,7 +160,7 @@ function Solutions() {
             <Icon className="outlined">category</Icon>
           </Box>
           <Box>
-            <Typography variant="h6">Carbon</Typography>
+            <Typography variant="h6">Dysperse</Typography>
             <h6 className="text-gray-400 text-sm">
               Manage your home inventory, organize your memos, and set goals.
             </h6>
@@ -168,7 +168,7 @@ function Solutions() {
         </Link>
         <Link
           className="dropdown-item"
-          href="https://availability.smartlist.tech"
+          href="https://availability.dysperse.com"
           target="_blank"
         >
           <Box sx={{ pt: 1.5 }}>
@@ -243,11 +243,11 @@ export function Navbar() {
             <picture>
               <img
                 src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
-                alt="Carbon"
+                alt="Dysperse"
                 className="w-10 h-10"
               />
             </picture>
-            Carbon
+            Dysperse
           </Link>
           <Link
             href="#!"
@@ -289,16 +289,16 @@ export function Navbar() {
               onClick={() => setOpen(false)}
             >
               <Icon className="outlined">category</Icon>
-              <span>Carbon</span>
+              <span>Dysperse</span>
             </Link>
             <Link
-              href="https://availability.smartlist.tech"
+              href="https://availability.dysperse.com"
               target="_blank"
               className="nav-btn p-2 rounded-2xl"
               onClick={() => setOpen(false)}
             >
               <Icon className="outlined">today</Icon>
-              <span>Carbon Availability</span>
+              <span>Dysperse Availability</span>
             </Link>
           </Box>
           <h2 className="text-green-200 my-5 mb-2 text-sm uppercase ml-1">
@@ -355,7 +355,7 @@ export function Navbar() {
           <picture>
             <img
               src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
-              alt="Carbon"
+              alt="Dysperse"
               className="w-10 h-10"
             />
           </picture>
@@ -392,7 +392,7 @@ export function Navbar() {
           <UseCases />
         </Box>
         <Link
-          href="https://my.smartlist.tech"
+          href="https://my.dysperse.com"
           className="nav-btn ml-auto px-1 sm:px-4"
           target="_blank"
         >

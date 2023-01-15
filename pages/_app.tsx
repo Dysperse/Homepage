@@ -31,7 +31,7 @@ export default function App({ Component, PageProps }) {
   return (
     <ThemeProvider theme={userTheme}>
       <Head>
-        <title>Carbon</title>
+        <title>Dysperse</title>
       </Head>
       <Navbar />
       <Component {...PageProps} />
