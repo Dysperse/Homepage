@@ -23,7 +23,7 @@ export function FAQ(): JSX.Element {
         "Yes, Dysperse lets you customize your experience to fit your needs.",
     },
     {
-      question: "Does Cabon take my credit card information?",
+      question: "Does Dysperse take my credit card information?",
       answer:
         "No, Dysperse does not take your credit card information. Dysperse is free to use.",
     },
