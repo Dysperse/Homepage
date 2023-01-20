@@ -9,6 +9,7 @@ export default function Document() {
     <Html>
       <Head>
         <meta name="title" content="Dysperse: It's your productivity boosted" />
+        <link rel="canonical" href="https://example.com/dresses/green-dresses" />
         <meta
           name="description"
           content="Meet Dysperse: The all-in-one personal productivity platform trusted and loved by thousands of students, families, seniors, and entrepreneurs."
