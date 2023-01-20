@@ -215,7 +215,8 @@ export function Navbar() {
       elevation={0}
     >
       <SwipeableDrawer
-        open={open} disableBackdropTransition 
+        open={open}
+        disableBackdropTransition
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         anchor="bottom"
@@ -242,7 +243,7 @@ export function Navbar() {
           >
             <picture>
               <img
-                src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
+                src="https://cdn.jsdelivr.net/gh/Dysperse/Assets@latest/v5/windows11/Square44x44Logo.altform-unplated_targetsize-256.png"
                 alt="Dysperse"
                 className="w-10 h-10"
               />
@@ -354,7 +355,7 @@ export function Navbar() {
         <Link href={"/"} className="mr-3 sm:mr-auto">
           <picture>
             <img
-              src="https://cdn.jsdelivr.net/gh/Smartlist-App/Assets@master/v2/rounded.png"
+              src="https://cdn.jsdelivr.net/gh/Dysperse/Assets@latest/v5/windows11/Square44x44Logo.altform-unplated_targetsize-256.png"
               alt="Dysperse"
               className="w-10 h-10"
             />
@@ -363,7 +364,7 @@ export function Navbar() {
 
         <Box className="sm:mx-auto flex items-center gap-2">
           <Link
-            href="https://github.com/Smartlist-App"
+            href="https://github.com/Dysperse"
             className="nav-btn hidden-on-mobile"
             target="_blank"
           >

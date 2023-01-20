@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Smartlist-App/Homepage.git"
+    "url": "git+https://github.com/Dysperse/Homepage.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Smartlist-App/Homepage/issues"
+    "url": "https://github.com/Dysperse/Homepage/issues"
   },
-  "homepage": "https://github.com/Smartlist-App/Homepage#readme",
+  "homepage": "https://github.com/Dysperse/Homepage#readme",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

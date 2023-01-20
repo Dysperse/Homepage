@@ -74,7 +74,7 @@ export function Footer() {
           <Instagram />
         </Link>
         <Link
-          href="https://github.com/Smartlist-App"
+          href="https://github.com/Dysperse"
           className="footer-btn inline-flex mr-4"
           target="_blank"
         >
