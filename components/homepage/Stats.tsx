@@ -21,6 +21,7 @@ export function Stats() {
       <video
         autoPlay
         loop
+        playsInline
         muted
         style={{
           position: "absolute",
@@ -80,8 +81,8 @@ export function Stats() {
               left: 50 - scrollPosition * 50 + "px",
             }}
           >
-            <h2 className={styles.statsItem}>nine thousand</h2>
-            <Typography>items &amp; tasks stored</Typography>
+            <h2 className={styles.statsItem}>four terabytes</h2>
+            <Typography>worth of data stored</Typography>
           </Grid>
         </Grid>
       </Box>

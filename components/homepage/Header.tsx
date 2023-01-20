@@ -65,15 +65,25 @@ export function Header({ useCase = false }: any) {
           and loved by thousands of students, families, seniors, and
           entrepreneurs.
         </Typography>
-        <Box className="mt-3 flex gap-4 ml-5">
+        <Box className="mt-3 flex gap-4 ml-5 flex-col sm:flex-row">
           <button
+            style={{
+              flex: "0 0 auto",
+            }}
             className="header-btn"
             onClick={() => window.open("https://my.dysperse.com/signup")}
           >
             Get started
-            <Icon className="text-yellow-300">arrow_forward</Icon>
+            <Icon className="text-yellow-300 ml-auto">arrow_forward</Icon>
           </button>
-          <button className="header-btn">Watch the video</button>
+          <button
+            style={{
+              flex: "0 0 auto",
+            }}
+            className="header-btn"
+          >
+            Watch the video
+          </button>
           <button
             className="flex items-center header-btn ml-auto hidden-on-mobile w-20 h-20 bg-transparent absolute bottom-5 right-5 p-0 hover:bg-transparent"
             onClick={() => {

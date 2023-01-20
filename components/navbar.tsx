@@ -90,14 +90,6 @@ function UseCases() {
           <Icon className="outlined">house</Icon>
           <Typography>Families</Typography>
         </Link>
-        <Link
-          className="items-center dropdown-item small"
-          href="/for/senior-citizens"
-          onClick={handleClose}
-        >
-          <Icon className="outlined">elderly</Icon>
-          <Typography>Senior citizens</Typography>
-        </Link>
       </Menu>
     </>
   );
@@ -306,14 +298,6 @@ export function Navbar() {
             USE CASES
           </h2>
           <Box className="flex flex-col gap-1">
-            <Link
-              href="/for/senior-citizens"
-              className="nav-btn p-2 rounded-2xl"
-              onClick={() => setOpen(false)}
-            >
-              <Icon className="outlined">elderly</Icon>
-              <span>For Senior Citizens</span>
-            </Link>
             <Link
               href="/for/families"
               className="nav-btn p-2 rounded-2xl"
