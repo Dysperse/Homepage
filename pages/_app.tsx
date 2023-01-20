@@ -31,7 +31,7 @@ export default function App({ Component, PageProps }) {
   return (
     <ThemeProvider theme={userTheme}>
       <Head>
-        <title>Dysperse</title>
+        <title>Dysperse &bull; It's your productivity boosted</title>
       </Head>
       <Navbar />
       <Component {...PageProps} />

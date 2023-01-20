@@ -118,7 +118,7 @@ export default function Document() {
           href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/img/logo/apple-touch-icon/apple-touch-icon-180x180.png"
         />
         <link
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/v2/rounded.png"
+          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@latest/v5/windows11/Square44x44Logo.altform-unplated_targetsize-256.png"
           rel="shortcut icon"
         />
         <link href="/manifest.json" rel="manifest" />

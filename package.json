@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "feather-icons-react": "^0.6.2",
     "motion": "^10.15.3",
     "next": "^13.1.1",
+    "next-sitemap": "^3.1.45",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark-gfm": "^3.0.1",
