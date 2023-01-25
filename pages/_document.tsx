@@ -48,8 +48,8 @@ export default function Document() {
           })(window,document,'script','dataLayer','GTM-PPH4TH4');
          `}
         </Script>
-        <script type="application/ld+json">
-        {
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: `{
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "Dysperse",
@@ -62,8 +62,8 @@ export default function Document() {
             "https://github.com/Dysperse",
             "https://dysperse.com"
           ]
-        }
-        </script>
+        }`        
+        }} />
         <link rel="preconnect" href="https://i.ibb.co" />
         <link rel="preconnect" href="https://vitals.vercel-insights.com" />
         <link rel="preconnect" href="https://ouch-cdn2.icons8.com" />
