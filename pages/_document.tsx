@@ -48,6 +48,22 @@ export default function Document() {
           })(window,document,'script','dataLayer','GTM-PPH4TH4');
          `}
         </Script>
+        <Script strategy="beforeInteractive" type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Dysperse",
+          "alternateName": "Dysperse",
+          "url": "https://dysperse.com",
+          "logo": "https://assets.dysperse.com/v5/windows11/Square44x44Logo.altform-unplated_targetsize-256.png",
+          "sameAs": [
+            "https://twitter.com/getdysperse",
+            "https://www.instagram.com/dysperse",
+            "https://github.com/Dysperse",
+            "https://dysperse.com"
+          ]
+        }
+        </Script>
         <link rel="preconnect" href="https://i.ibb.co" />
         <link rel="preconnect" href="https://vitals.vercel-insights.com" />
         <link rel="preconnect" href="https://ouch-cdn2.icons8.com" />
