@@ -55,6 +55,7 @@ function UseCases() {
             ml: 8,
             width: "auto",
             maxWidth: "100vw",
+            borderRadius:4,
             overflowY: "scroll",
             maxHeight: 350,
             p: 2,
@@ -63,7 +64,7 @@ function UseCases() {
             backgroundColor: "rgba(0,0,0,0.9)",
           },
           elevation: 0,
-          className: "bg-black rounded-2xl",
+          className: "bg-black",
         }}
       >
         <Link
@@ -135,6 +136,7 @@ function Solutions() {
             mt: 3,
             ml: 8,
             width: 450,
+            borderRadius:4,
             maxWidth: "100vw",
             overflowY: "scroll",
             maxHeight: 350,
@@ -144,7 +146,7 @@ function Solutions() {
             backgroundColor: "rgba(0,0,0,0.9)",
           },
           elevation: 0,
-          className: "bg-black rounded-2xl",
+          className: "bg-black",
         }}
       >
         <Link className="dropdown-item" href="/">
@@ -272,6 +274,17 @@ export function Navbar() {
             <Icon className="outlined">chat_bubble</Icon>
             Community
           </Link>
+           <Link
+            href="https://discord.gg/9EJSxkJhnQ"
+            target="_blank"
+            className="nav-btn p-2 rounded-2xl"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            <Icon className="outlined">dns</Icon>
+            Server status
+          </Link>
           <h2 className="text-green-200 my-5 mb-2 text-sm uppercase ml-1">
             SOLUTIONS
           </h2>
@@ -360,6 +373,13 @@ export function Navbar() {
             target="_blank"
           >
             Community
+          </Link>
+          <Link
+            href="https://status.dysperse.com"
+            className="nav-btn hidden-on-mobile"
+            target="_blank"
+          >
+            Server status
           </Link>
           <Link
             href="/support"
