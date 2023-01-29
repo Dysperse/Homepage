@@ -96,46 +96,50 @@ export default function Document() {
         <meta name="mobile-web-app-capable" content="yes" />
         <link
           rel="apple-touch-icon"
+          href="https://assets.dysperse.com/v6/ios/57.png"
+        />
+        <link
+          rel="apple-touch-icon"
           sizes="57x57"
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/img/logo/apple-touch-icon/apple-touch-icon-57x57.png"
+          href="https://assets.dysperse.com/v6/ios/57.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="72x72"
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/img/logo/apple-touch-icon/apple-touch-icon-72x72.png"
+          href="https://assets.dysperse.com/v6/ios/72.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="76x76"
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/img/logo/apple-touch-icon/apple-touch-icon-76x76.png"
+          href="https://assets.dysperse.com/v6/ios/76.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="114x114"
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/img/logo/apple-touch-icon/apple-touch-icon-114x114.png"
+          href="https://assets.dysperse.com/v6/ios/114.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="120x120"
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/img/logo/apple-touch-icon/apple-touch-icon-120x120.png"
+          href="https://assets.dysperse.com/v6/ios/120.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="144x144"
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/img/logo/apple-touch-icon/apple-touch-icon-144x144.png"
+          href="https://assets.dysperse.com/v6/ios/144.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="152x152"
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/img/logo/apple-touch-icon/apple-touch-icon-152x152.png"
+          href="https://assets.dysperse.com/v6/ios/152.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/img/logo/apple-touch-icon/apple-touch-icon-180x180.png"
+          href="https://assets.dysperse.com/v6/ios/180.png"
         />
         <link
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@latest/v5/windows11/Square44x44Logo.altform-unplated_targetsize-256.png"
+          href="https://assets.dysperse.com/v5/windows11/SmallTile.scale-100.png"
           rel="shortcut icon"
         />
         <link href="/manifest.json" rel="manifest" />
