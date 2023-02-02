@@ -12,6 +12,7 @@
     .text-heading,
     .text-heading *
   ) {
+-webkit-tap-highlight-color: transparent; /* for removing the highlight */
   font-family: "DM Sans", sans-serif !important;
 }
 
