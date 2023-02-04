@@ -89,12 +89,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link
-          rel="apple-touch-icon"
-          href="https://cdn.jsdelivr.net/gh/Dysperse/Assets@master/img/logo/apple-touch-icon/apple-touch-icon.png"
-        />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <link
+               <link
           rel="apple-touch-icon"
           href="https://assets.dysperse.com/v6/ios/57.png"
         />
@@ -142,6 +137,7 @@ export default function Document() {
           href="https://assets.dysperse.com/v5/windows11/SmallTile.scale-100.png"
           rel="shortcut icon"
         />
+        
         <link href="/manifest.json" rel="manifest" />
       </Head>
       <body>
