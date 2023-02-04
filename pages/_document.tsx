@@ -67,7 +67,7 @@ export default function Document() {
         <link rel="preconnect" href="https://i.ibb.co" />
         <link rel="preconnect" href="https://vitals.vercel-insights.com" />
         <link rel="preconnect" href="https://ouch-cdn2.icons8.com" />
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        <link rel="preconnect" href="https://assets.dysperse.com" />
         <link rel="preconnect" href="https://ouch-cdn2.icons8.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
