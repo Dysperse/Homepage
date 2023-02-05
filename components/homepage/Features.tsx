@@ -8,13 +8,13 @@ import styles from "../../styles/features.module.scss";
 
 export function Features({ useCase }): JSX.Element {
   const features = [
+    "zen mode",
     useCase === "study groups"
       ? "personal belongings tracker"
       : useCase === "students"
       ? "dorm inventory"
       : "home inventory",
     "kanban boards",
-    "memo organization",
     "goal-setting",
   ];
 
@@ -48,10 +48,10 @@ export function Features({ useCase }): JSX.Element {
   return (
     <Box className="my-16" id="features">
       <Typography variant="h4" className="text-center font-[700]">
-        Say hello to <span className="text-green-600 underline">Dysperse.</span>
+        Meet <span className="text-green-600 underline">Dysperse.</span>
       </Typography>
       <Typography className="text-center text-gray-500 mt-2" sx={{ my: 2 }}>
-        Meet your new all-in-one personal organizer.
+        Not just <i>another</i> to-do list app...
       </Typography>
       <Box
         className="flex overflow-scroll sm:justify-center mx-auto embla max-w-3xl w-full"
@@ -81,6 +81,35 @@ export function Features({ useCase }): JSX.Element {
       </Box>
       <div ref={emblaRef} className="mx-auto mt-10 embla max-w-md sm:max-w-5xl">
         <div className="embla__container">
+          <div className="embla__slide feature-slide flex items-center">
+            <Box className="w-full flex-grow">
+              <h1 className={styles.featureTitle}>
+                Minimalism &#8212; at its best.
+              </h1>
+              {[
+                "Customize your theme colors",
+                "Move & reorder widgets",
+                "Brag about your daily streak",
+                "Set daily goals & achieve them",
+                "Allow for easy searching and filtering",
+                "View your progress & get encouraged to finish tasks",
+              ].map((feature) => (
+                <span className="flex gap-2 mb-2 text-gray-500">
+                  <Icon>east</Icon>
+                  <Typography className="text-gray-800">{feature}</Typography>
+                </span>
+              ))}
+            </Box>
+            <Box className="feature-img">
+              <picture>
+                <img
+                  src="/screenshots/zen.png"
+                  alt="image"
+                  className="feature-img"
+                />
+              </picture>
+            </Box>
+          </div>
           <div className="embla__slide feature-slide">
             <Box className="w-full">
               <h1 className={styles.featureTitle}>Track your belongings.</h1>
@@ -127,6 +156,7 @@ export function Features({ useCase }): JSX.Element {
                 "Customize columns with emojis & colors",
                 "Attach notes & photos to tasks",
                 "Set due dates to tasks",
+                "Sync your to-do list to Canvas LMS",
               ].map((feature) => (
                 <span className="flex gap-2 mb-2 text-gray-500">
                   <Icon>east</Icon>
@@ -137,39 +167,7 @@ export function Features({ useCase }): JSX.Element {
             <Box className="feature-img">
               <picture>
                 <img
-                  src={
-                    useCase == "study groups" || useCase == "students"
-                      ? "/screenshots/tasks-student.png"
-                      : "/screenshots/tasks.png"
-                  }
-                  alt="image"
-                  className="feature-img"
-                />
-              </picture>
-            </Box>
-          </div>
-          <div className="embla__slide feature-slide flex items-center">
-            <Box className="w-full flex-grow">
-              <h1 className={styles.featureTitle}>
-                {useCase == "study groups" || useCase == "students"
-                  ? "Keep important stuff at your fingertips."
-                  : "Never lose important notes again."}
-              </h1>
-              {[
-                "Store notes, files, and photos in one place",
-                "Allow for easy searching and filtering",
-                "Let everyone in your group see your notes, or, create private notes",
-              ].map((feature) => (
-                <span className="flex gap-2 mb-2 text-gray-500">
-                  <Icon>east</Icon>
-                  <Typography className="text-gray-800">{feature}</Typography>
-                </span>
-              ))}
-            </Box>
-            <Box className="feature-img">
-              <picture>
-                <img
-                  src="/screenshots/spaces.png"
+                  src={"/screenshots/tasks.png"}
                   alt="image"
                   className="feature-img"
                 />

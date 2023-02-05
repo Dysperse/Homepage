@@ -49,21 +49,16 @@ export function Header({ useCase = false }: any) {
       </Box>
       <Box className="mt-auto w-full">
         <h1 className="text-5xl sm:text-7xl text-heading text-gray-100  rounded-3xl p-2 px-4">
-          {useCase ? (
-            <>Dysperse for </>
-          ) : (
-            <>
-              It&apos;s <i>your</i> productivity{" "}
-            </>
-          )}
-          <span className="inline-flex sm:inline border-2 border-orange-400 text-orange-400 px-2 rounded-2xl">
-            {useCase ? useCase : "boosted"}
-          </span>
+          A{" "}
+          <span className="inline-flex border-2 border-orange-400 text-orange-400 px-2 rounded-2xl">
+            {useCase ? useCase : "radically different"}
+          </span>{" "}
+          {useCase ? <>&amp; Dysperse </> : <>unified productivity platform</>}
         </h1>
-        <Typography className="mt-0 inline-flex text-gray-100 rounded-xl p-2 px-4 max-w-3xl font-[700]">
-          Meet Dysperse: The all-in-one personal productivity platform trusted
-          and loved by thousands of students, families, seniors, and
-          entrepreneurs.
+        <Typography className="mt-0 inline-flex text-gray-100 rounded-xl p-2 px-4 max-w-3xl">
+          Meet Dysperse: The all-in-one minimalistic, personal productivity
+          platform &#8211; trusted &amp; loved by thousands of students,
+          families, and entrepreneurs.
         </Typography>
         <Box className="mt-3 flex gap-4 ml-5 flex-col sm:flex-row">
           <button
