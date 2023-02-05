@@ -59,7 +59,7 @@ export function Header({ useCase = false }: any) {
       </Box>
       <Box className="mt-auto w-full z-10">
         <h1 className="text-5xl sm:text-7xl text-heading text-gray-100  rounded-3xl p-2 px-4">
-          A{" "}
+          {!useCase && "A"}{" "}
           <span className="inline-flex border-2 border-orange-400 text-orange-400 px-2 rounded-2xl">
             {useCase ? useCase : "radically different"}
           </span>{" "}
