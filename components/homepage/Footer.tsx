@@ -57,6 +57,16 @@ export function Footer() {
             alt="Powered by Vercel"
           />
         </Link>
+        
+         <Link
+          href="https://neon.tech"
+          className="footer-btn"
+        >
+          <img
+            src="/neon.png"
+            alt="Neon"
+          />
+        </Link>
 
         <h4 className={"font-[700] my-5 mb-3"}>Social</h4>
         <Link
