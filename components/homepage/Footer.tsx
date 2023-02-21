@@ -50,7 +50,7 @@ export function Footer() {
         <h4 className={"font-[700] my-5 mb-3"}>Sponsors</h4>
         <Link
           href="https://vercel.com/?utm_source=smartlist&utm_campaign=oss"
-          className="footer-btn max-w-xl"
+          className="footer-btn max-w-md"
         >
           <img
             src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
@@ -60,7 +60,7 @@ export function Footer() {
         
          <Link
           href="https://neon.tech"
-          className="footer-btn max-w-xl"
+          className="footer-btn max-w-md"
         >
           <img
             src="/neon.png"
