@@ -53,7 +53,7 @@ export function Footer() {
           className="footer-btn"
         >
           <img
-            width="150px"
+            width="250px"
             src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
             alt="Powered by Vercel"
           />
@@ -64,7 +64,7 @@ export function Footer() {
           className="footer-btn"
         >
           <img
-            width="150px"
+            width="250px"
             src="/neon.png"
             alt="Neon"
           />
