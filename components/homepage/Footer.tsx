@@ -72,14 +72,14 @@ export function Footer() {
 
         <h4 className={"font-[700] my-5 mb-3"}>Social</h4>
         <Link
-          href="https://twitter.com/getsmartlist"
+          href="https://twitter.com/dysperse"
           className="footer-btn inline-flex mr-4"
           target="_blank"
         >
           <Twitter />
         </Link>
         <Link
-          href="https://instagram.com/getsmartlist"
+          href="https://instagram.com/getdysperse"
           className="footer-btn inline-flex mr-4"
           target="_blank"
         >
