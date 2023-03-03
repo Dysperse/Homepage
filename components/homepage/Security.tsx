@@ -21,7 +21,7 @@ export function Security() {
             <Box>
               <h5 className="security-title">transparency by default</h5>
               <Link
-                href="https://github.com/Dysperse/Smartlist"
+                href="https://github.com/Dysperse/Dysperse"
                 target="_blank"
                 className="security-btn"
               >
