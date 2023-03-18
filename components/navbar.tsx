@@ -29,7 +29,7 @@ function UseCases() {
     <>
       <Link
         href="#!"
-        className="hidden-on-mobile nav-btn"
+        className="nav-btn hidden"
         onClick={handleClick}
       >
         Use cases
@@ -310,10 +310,10 @@ export function Navbar() {
               <span>Dysperse Availability</span>
             </Link>
           </Box>
-          <h2 className="text-green-200 my-5 mb-2 text-sm uppercase ml-1">
+          <h2 className="hidden text-green-200 my-5 mb-2 text-sm uppercase ml-1">
             USE CASES
           </h2>
-          <Box className="flex flex-col gap-1">
+          <Box className="hidden flex flex-col gap-1">
             <Link
               href="/for/families"
               className="nav-btn p-2 rounded-2xl"
