@@ -53,7 +53,7 @@ export function Stats() {
               opacity: scrollPosition,
             }}
           >
-            <h2 className={styles.statsItem}>ten thousand</h2>
+            <h2 className={styles.statsItem}>two thousand</h2>
             <Typography>active users</Typography>
           </Grid>
           <Grid
