@@ -20,6 +20,7 @@ export default function Home() {
             opacity: 0,
             pointerEvents: "none",
           }),
+          transition: "all .2s",
           position: "fixed",
           bottom: 0,
           right: 0,
