@@ -28,12 +28,12 @@ export default function Home() {
           backdropFilter: "blur(10px)",
           background: "hsla(240,11%,10%,.9)",
           gap: 2,
-          m: 3,
+          m: "20px",
           p: 3,
           color: "#fff",
           borderRadius: 5,
           width: "340px",
-          maxWidth: "calc(100vw - 20px)",
+          maxWidth: "calc(100vw - 40px)",
         }}
       >
         <Box sx={{ display: "flex" }}>
