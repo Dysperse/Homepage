@@ -70,6 +70,12 @@ export default function Support() {
       description: "Read our terms of service",
       slug: "terms-of-service",
     },
+    {
+      article: "Syncing to your Canvas dashboard",
+      description:
+        "How do I sync my Dysperse account to my Canvas LMS dashboard?",
+      slug: "how-to-sync-to-your-canvas-dashboard",
+    },
   ];
   const [filteredArticles, setFilteredArticles] = useState(articles);
   const [search, setSearch] = useState("");

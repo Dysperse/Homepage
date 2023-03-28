@@ -5,7 +5,7 @@ export function Layout({ title, children }) {
   return (
     <>
       <div
-        className="w-full flex items-center justify-center flex-col gap-4 pt-[60px] absolute top-0 left-0"
+        className="w-full flex items-center justify-center flex-col gap-4 pt-[60px] absolute top-0 left-0 px-10 text-center"
         style={{
           height: "500px",
           background: "linear-gradient(10deg, #5D4444 0%, #382b2b 100%)",
