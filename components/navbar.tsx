@@ -257,11 +257,9 @@ export function Navbar() {
         </Box>
         <Box sx={{ p: 2, pt: 0 }}>
           <Link
-            href="/support"
+            href="https://blog.dysperse.com/series/support"
             className="nav-btn p-2 rounded-2xl"
-            onClick={() => {
-              setOpen(false);
-            }}
+            onClick={() => setOpen(false)}
           >
             <Icon className="outlined">help</Icon>
             Support
@@ -387,14 +385,8 @@ export function Navbar() {
             Server status
           </Link>
           <Link
-            href="/support"
-            className={
-              "hidden-on-mobile nav-btn" +
-              (router.pathname === "/support" ||
-              router.pathname.includes("/articles")
-                ? " active"
-                : "")
-            }
+            href="https://blog.dysperse.com/series/support"
+            className="hidden-on-mobile nav-btn"
           >
             Support
           </Link>
