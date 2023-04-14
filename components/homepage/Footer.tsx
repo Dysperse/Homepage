@@ -66,6 +66,17 @@ export function Footer() {
           <img
             width="250px"
             src="/neon.png"
+            alt="Cloudflare Logo"
+          />
+        </Link>
+        
+         <Link
+          href="https://cloudflare.com?utm_source=dysperse.com"
+          className="footer-btn"
+        >
+          <img
+            width="250px"
+            src="/cloudflare.png"
             alt="Neon"
           />
         </Link>
