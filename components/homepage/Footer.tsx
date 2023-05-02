@@ -80,6 +80,16 @@ export function Footer() {
             alt="Neon"
           />
         </Link>
+            <Link
+          href="https://emailjs.org?utm_source=dysperse.com"
+          className="footer-btn"
+        >
+          <img
+            width="250px"
+            src="/emailjs.png"
+            alt="EmailJS"
+          />
+        </Link>
 
         <h4 className={"font-[700] my-5 mb-3"}>Social</h4>
         <Link
