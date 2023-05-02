@@ -81,7 +81,7 @@ export function Footer() {
           />
         </Link>
             <Link
-          href="https://emailjs.org?utm_source=dysperse.com"
+          href="https://emailjs.com?utm_source=dysperse.com"
           className="footer-btn"
         >
           <img
