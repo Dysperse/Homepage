@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://dysperse.com
-
-# Sitemaps
-Sitemap: https://dysperse.com/sitemap.xml
