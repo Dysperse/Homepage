@@ -7,11 +7,12 @@ export function Navbar() {
   const [blurBackground, setBlurBackground] = useState(false);
   const [highlightBackground, setHighlightBackground] = useState(false);
 
-  const { scrollY } = useScroll();
+  const { scrollY } = useScroll({
+    target: document.body as any,
+  });
   const screenHeight = typeof window !== "undefined" ? window.innerHeight : 0;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // If the user has scrolled down 100vh, show the toolbar using framer motion else hide it
     setBlurBackground(latest > 0);
     setHighlightBackground(latest > screenHeight - 200);
   });
