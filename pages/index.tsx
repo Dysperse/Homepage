@@ -1,7 +1,8 @@
 import { Box } from "@mui/material";
 import Head from "next/head";
 import { Features } from "../components/Home/Features";
-import { Navbar } from "../components/Navbar";
+import dynamic from "next/dynamic";
+const Navbar = dynamic(() => import("../components/Navbar"));
 import { Header } from "../components/Home/Header";
 
 export default function Home() {

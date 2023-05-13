@@ -3,13 +3,11 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-export function Navbar() {
+export default function Navbar() {
   const [blurBackground, setBlurBackground] = useState(false);
   const [highlightBackground, setHighlightBackground] = useState(false);
 
-  const { scrollY } = useScroll({
-    target: document.body as any,
-  });
+  const { scrollY } = useScroll();
   const screenHeight = typeof window !== "undefined" ? window.innerHeight : 0;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
