@@ -3,7 +3,7 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Navbar() {
+export function Navbar() {
   const [blurBackground, setBlurBackground] = useState(false);
   const [highlightBackground, setHighlightBackground] = useState(false);
 

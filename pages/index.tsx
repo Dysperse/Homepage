@@ -1,8 +1,7 @@
-import { Box } from "@mui/material";
+import { Box, NoSsr } from "@mui/material";
 import Head from "next/head";
 import { Features } from "../components/Home/Features";
-import dynamic from "next/dynamic";
-const Navbar = dynamic(() => import("../components/Navbar"));
+import { Navbar } from "../components/Navbar";
 import { Header } from "../components/Home/Header";
 
 export default function Home() {
@@ -17,9 +16,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      <NoSsr>
+        <Navbar />
+      </NoSsr>
       <Header />
-      <Features />
+      <NoSsr>
+        <Features />
+      </NoSsr>
       <Box sx={{ mb: 10 }} />
     </>
   );
