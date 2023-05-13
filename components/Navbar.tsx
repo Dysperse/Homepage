@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export function Navbar() {
+  const [blurBackground, setBlurBackground] = useState(false);
   const [highlightBackground, setHighlightBackground] = useState(false);
 
   const { scrollY } = useScroll();
@@ -11,6 +12,7 @@ export function Navbar() {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     // If the user has scrolled down 100vh, show the toolbar using framer motion else hide it
+    setBlurBackground(latest > 0);
     setHighlightBackground(latest > screenHeight - 200);
   });
 
@@ -20,11 +22,16 @@ export function Navbar() {
       elevation={0}
       sx={{
         zIndex: 999,
-        background: highlightBackground ? "" : "transparent",
+        background: highlightBackground
+          ? "rgba(255,255,255,.6)"
+          : "transparent",
         height: "60px",
-        backdropFilter: "blur(10px)",
-        borderBottom: "1px solid rgba(0,0,0,0.05)",
+        backdropFilter: blurBackground ? "blur(10px)" : "",
+        borderBottom: "1px solid",
+        transition: "all .2s",
+        borderColor: blurBackground ? "rgba(0,0,0,0.05)" : "transparent",
         p: 0,
+        px: { sm: 5 },
       }}
       color="inherit"
     >
@@ -37,17 +44,30 @@ export function Navbar() {
           gap: 2,
         }}
       >
-        <Image src="/logo.svg" width={30} height={30} alt="logo" />
-        <Box sx={{ mr: "auto" }}>
+        <Button
+          size="small"
+          sx={{
+            fontWeight: 600,
+            color: "#000",
+            fontSize: "15px",
+          }}
+        >
+          <Image src="/logo.svg" width={30} height={30} alt="logo" />
+          Dysperse
+        </Button>
+        <Box sx={{ mx: "auto", pr: 8 }}>
           {[
-            { label: "Open source", href: "/" },
+            { label: "Open source", href: "//github.com/dysperse" },
+            { label: "Server status", href: "//status.dysperse.com" },
             { label: "Community", href: "/" },
-            { label: "Support", href: "/" },
+            { label: "Blog", href: "//blog.dysperse.com" },
+            { label: "Support", href: "//blog.dysperse.com/series/support" },
           ].map((button) => (
             <Button
               key={button.label}
               href={button.href}
               color="inherit"
+              size="large"
               target="_blank"
               sx={{ px: 2 }}
             >
@@ -55,7 +75,7 @@ export function Navbar() {
             </Button>
           ))}
         </Box>
-        <Button>
+        <Button sx={{ minWidth: "50px" }}>
           <Icon>account_circle</Icon>
         </Button>
       </Toolbar>

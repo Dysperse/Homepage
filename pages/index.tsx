@@ -19,7 +19,7 @@ export default function Home() {
       <Navbar />
       <Header />
       <Features />
-      <Box sx={{ mb: "120vh" }} />
+      <Box sx={{ mb: 10 }} />
     </>
   );
 }

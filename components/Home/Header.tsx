@@ -16,6 +16,17 @@ export function Header() {
         userSelect: "none",
       }}
     >
+      <Box
+        sx={{
+          background: "linear-gradient(transparent, #fff)",
+          width: "100%",
+          height: "100vh",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          zIndex: -1,
+        }}
+      />
       <Image
         height={1080}
         width={1920}
@@ -29,7 +40,7 @@ export function Header() {
           position: "absolute",
           top: 0,
           left: 0,
-          zIndex: -1,
+          zIndex: -2,
         }}
       />
       <Button
