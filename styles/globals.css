@@ -13,7 +13,7 @@ body {
     .MuiIcon-root,
     .MuiIcon-root *
   ) {
-  font-family: "DM Sans", sans-serif;
+  font-family: "DM Sans", sans-serif !important;
 }
 
 .MuiIcon-root,
