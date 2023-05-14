@@ -1,4 +1,12 @@
-import { AppBar, Box, Button, Icon, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Button,
+  Divider,
+  Icon,
+  SwipeableDrawer,
+  Toolbar,
+} from "@mui/material";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +15,7 @@ import { useState } from "react";
 export function Navbar() {
   const [blurBackground, setBlurBackground] = useState(false);
   const [highlightBackground, setHighlightBackground] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const { scrollY } = useScroll();
   const screenHeight = typeof window !== "undefined" ? window.innerHeight : 0;
@@ -15,6 +24,29 @@ export function Navbar() {
     setBlurBackground(latest > 0);
     setHighlightBackground(latest > screenHeight - 200);
   });
+
+  const buttons = (
+    <>
+      {[
+        { label: "Open source", href: "//github.com/dysperse" },
+        { label: "Server status", href: "//status.dysperse.com" },
+        { label: "Community", href: "/" },
+        { label: "Blog", href: "//blog.dysperse.com" },
+        { label: "Support", href: "//blog.dysperse.com/series/support" },
+      ].map((button) => (
+        <Button
+          key={button.label}
+          href={button.href}
+          color="inherit"
+          size="large"
+          target="_blank"
+          sx={{ px: 2, justifyContent: { xs: "start", sm: "center" } }}
+        >
+          {button.label}
+        </Button>
+      ))}
+    </>
+  );
 
   return (
     <AppBar
@@ -35,6 +67,49 @@ export function Navbar() {
       }}
       color="inherit"
     >
+      <SwipeableDrawer
+        open={open}
+        onClose={() => setOpen(false)}
+        onOpen={() => setOpen(true)}
+        disableSwipeToOpen
+        anchor="bottom"
+        PaperProps={{
+          sx: {
+            borderRadius: 5,
+            m: "20px",
+            width: "calc(100% - 40px)",
+            boxShadow: 0,
+          },
+        }}
+        BackdropProps={{
+          sx: {
+            backdropFilter: "blur(10px)",
+            background: "rgba(0,0,0,.1)",
+          },
+        }}
+      >
+        <Box
+          sx={{ width: 40, height: 2, background: "#ddd", mx: "auto", my: 2 }}
+        />
+        <Button
+          size="small"
+          sx={{
+            fontWeight: 600,
+            color: "#000",
+            py: 2,
+            justifyContent: "start",
+            px: 2,
+            background: "transparent!important",
+            pt: 1,
+            fontSize: "15px",
+          }}
+        >
+          <Image src="/grainy.svg" width={30} height={30} alt="logo" />
+          Dysperse
+        </Button>
+        <Divider sx={{ mb: 2 }} />
+        {buttons}
+      </SwipeableDrawer>
       <Toolbar
         sx={{
           minHeight: "60px!important",
@@ -50,6 +125,7 @@ export function Navbar() {
             mr: "auto",
             minWidth: { xs: "45px", md: "75px" },
           }}
+          onClick={() => setOpen(true)}
         >
           <Icon>menu</Icon>
         </Button>
@@ -70,24 +146,7 @@ export function Navbar() {
           </Button>
         </Link>
         <Box sx={{ mx: "auto", pr: 8, display: { xs: "none", md: "block" } }}>
-          {[
-            { label: "Open source", href: "//github.com/dysperse" },
-            { label: "Server status", href: "//status.dysperse.com" },
-            { label: "Community", href: "/" },
-            { label: "Blog", href: "//blog.dysperse.com" },
-            { label: "Support", href: "//blog.dysperse.com/series/support" },
-          ].map((button) => (
-            <Button
-              key={button.label}
-              href={button.href}
-              color="inherit"
-              size="large"
-              target="_blank"
-              sx={{ px: 2 }}
-            >
-              {button.label}
-            </Button>
-          ))}
+          {buttons}
         </Box>
         <Button
           sx={{

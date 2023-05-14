@@ -68,6 +68,7 @@ function Encryption({ featureStyles }: any) {
               gap: 2,
               alignItems: "center",
               height: "100%",
+              mb: { xs: 4 },
             }}
           >
             <Box sx={{ ...styles, position: "relative" }}>
@@ -136,6 +137,7 @@ function Encryption({ featureStyles }: any) {
               sx={{
                 position: "relative",
                 right: -10,
+                transform: { xs: "rotate(90deg)", sm: "none" },
               }}
             >
               east
@@ -156,7 +158,7 @@ function Encryption({ featureStyles }: any) {
             >
               <Typography variant="body2" sx={{ mb: 1, display: "flex" }}>
                 What&apos;s stored on our end
-                <Tooltip title="For security reasons, this is an ~75% accurate representation of account information stored in our servers.">
+                <Tooltip title="For security reasons, this is not a 100% accurate representation of account information stored in our servers.">
                   <Icon sx={{ opacity: "0.6", ml: "auto" }}>info</Icon>
                 </Tooltip>
               </Typography>
@@ -257,12 +259,18 @@ export function Features() {
       }}
     >
       {/* Separate the content below the header */}
-      <Box sx={{ mb: 10, borderTop: "1px solid rgba(0,0,0,0.05)" }} />
+      <Box
+        sx={{
+          mb: 10,
+          mt: { xs: -5, sm: 0 },
+          borderTop: "1px solid rgba(0,0,0,0.05)",
+        }}
+      />
 
       <Box>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            <Card sx={{ ...featureStyles.card, borderColor: "#ccc" }}>
+            <Card sx={{ ...featureStyles.card, borderColor: "#ddd" }}>
               <CardContent>
                 <Image
                   src="/devices.svg"
@@ -292,7 +300,7 @@ export function Features() {
         </Grid>
         <Grid container spacing={4} sx={{ mt: 2 }}>
           <Grid item xs={12} md={8}>
-            <Card sx={{ ...featureStyles.card, borderColor: "#ccc" }}>
+            <Card sx={{ ...featureStyles.card, borderColor: "#ddd" }}>
               <CardContent>
                 <Typography variant="h6" sx={{ fontWeight: "700" }}>
                   Customize your Dysperse
@@ -304,7 +312,7 @@ export function Features() {
             </Card>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Card sx={{ ...featureStyles.card, borderColor: "#ccc" }}>
+            <Card sx={{ ...featureStyles.card, borderColor: "#ddd" }}>
               <CardContent>
                 <Typography variant="h6" sx={{ fontWeight: "700" }}>
                   Collaborative by default

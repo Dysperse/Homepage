@@ -65,7 +65,7 @@ export function Header() {
       </Button>
       <Typography
         sx={{
-          fontSize: { xs: 25, md: 35 },
+          fontSize: { xs: 30, md: 45 },
           mb: 2,
           textAlign: { xs: "left", md: "center" },
           fontWeight: 700,
@@ -101,6 +101,8 @@ export function Header() {
       <Button
         size="large"
         variant="contained"
+        href="//my.dysperse.com/auth/signup"
+        target="_blank"
         sx={{
           width: "auto",
           borderRadius: 999,
