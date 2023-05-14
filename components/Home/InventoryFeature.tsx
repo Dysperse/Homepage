@@ -48,7 +48,7 @@ export function InventoryFeature({ featureStyles }: any) {
             color: `${limeDark["lime7"]}!important`,
           }}
         >
-          with Boards
+          with Inventory
         </Typography>
       </Box>
       <Typography
