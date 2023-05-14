@@ -19,15 +19,7 @@ export function BoardsFeature({ featureStyles }: any) {
         <Box
           sx={{
             background: `${greenDark["green11"]}`,
-            opacity: 0.2,
-            zIndex: -1,
-            width: 200,
-            height: 200,
-            borderRadius: 999,
-            filter: "blur(30px)",
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
+            ...featureStyles.blur,
           }}
         />
         <Typography
@@ -58,7 +50,7 @@ export function BoardsFeature({ featureStyles }: any) {
         streamlined way. Share boards with your friends and family.
       </Typography>
 
-      <Box sx={{ p: 4, px: 8, mt: 4 }}>
+      <Box sx={{ mt: 4, mb: 10 }}>
         <Grid container spacing={4} sx={{ mb: 2 }}>
           <Grid item xs={12} md={6}>
             <Card

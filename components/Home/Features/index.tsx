@@ -192,15 +192,17 @@ export function Features() {
   const featureStyles = {
     featureTitle: {
       fontWeight: 800,
+      fontSize: { xs: "2rem", sm: "2.5rem" },
     },
     featureSubTitle: {
       mb: 4,
+      fontSize: { xs: "2rem", sm: "2.5rem" },
     },
     featureDescription: {
       textAlign: "center",
-      maxWidth: "100vw",
+      maxWidth: "80%",
       width: "550px",
-      fontSize: "1.5rem",
+      fontSize: { xs: "1.1rem", sm: "1.5rem" },
       fontWeight: 600,
       margin: "auto",
       mt: -7,
@@ -236,19 +238,24 @@ export function Features() {
       width: "400px",
     },
     blur: {
-      width: 300,
-      height: 300,
+      opacity: 0.2,
+      zIndex: -1,
+      width: { xs: 150, md: 300 },
+      height: { xs: 150, md: 300 },
       borderRadius: 999,
-      filter: "blur(40px)",
+      filter: "blur(30px)",
       position: "absolute",
-      top: "50%",
       left: "50%",
-      transform: "translate(-50%, -50%)",
+      transform: "translateX(-50%)",
     },
   };
 
   return (
-    <Container>
+    <Container
+      sx={{
+        maxWidth: "100vw",
+      }}
+    >
       {/* Separate the content below the header */}
       <Box sx={{ mb: 10, borderTop: "1px solid rgba(0,0,0,0.05)" }} />
 
@@ -322,6 +329,7 @@ export function Features() {
           background: showToolbar ? "rgba(255,255,255,.5)" : "transparent",
           borderBottom: "1px solid rgba(0,0,0,0.05)",
           height: "45px",
+          overflow: "scroll",
           px: { sm: 5 },
         }}
       >
@@ -329,6 +337,9 @@ export function Features() {
           sx={{
             height: "45px!important",
             minHeight: "45px!important",
+            "& *": {
+              flexShrink: 0,
+            },
             // justifyContent: "center",
             gap: 2.5,
           }}

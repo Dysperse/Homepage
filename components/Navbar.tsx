@@ -31,7 +31,7 @@ export function Navbar() {
         transition: "all .2s",
         borderColor: blurBackground ? "rgba(0,0,0,0.05)" : "transparent",
         p: 0,
-        px: { sm: 5 },
+        px: { md: 5 },
       }}
       color="inherit"
     >
@@ -41,9 +41,18 @@ export function Navbar() {
           height: "60px!important",
           pr: 0,
           pl: 1,
-          gap: 2,
+          gap: { md: 2 },
         }}
       >
+        <Button
+          sx={{
+            display: { md: "none" },
+            mr: "auto",
+            minWidth: { xs: "45px", md: "75px" },
+          }}
+        >
+          <Icon>menu</Icon>
+        </Button>
         <Link href="/">
           <Button
             size="small"
@@ -51,13 +60,16 @@ export function Navbar() {
               fontWeight: 600,
               color: "#000",
               fontSize: "15px",
+              "& span": {
+                display: { xs: "none", md: "unset" },
+              },
             }}
           >
-            <Image src="/logo.svg" width={30} height={30} alt="logo" />
-            Dysperse
+            <Image src="/grainy.svg" width={30} height={30} alt="logo" />
+            <span>Dysperse</span>
           </Button>
         </Link>
-        <Box sx={{ mx: "auto", pr: 8 }}>
+        <Box sx={{ mx: "auto", pr: 8, display: { xs: "none", md: "block" } }}>
           {[
             { label: "Open source", href: "//github.com/dysperse" },
             { label: "Server status", href: "//status.dysperse.com" },
@@ -77,7 +89,13 @@ export function Navbar() {
             </Button>
           ))}
         </Box>
-        <Button sx={{ mr: "-40px" }}>
+        <Button
+          sx={{
+            mr: { xs: 2, md: "-40px" },
+            minWidth: { xs: "45px", md: "75px" },
+            ml: { xs: "auto", md: "unset" },
+          }}
+        >
           <Icon>account_circle</Icon>
         </Button>
       </Toolbar>

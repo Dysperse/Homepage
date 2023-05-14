@@ -18,15 +18,7 @@ export function CoachFeature({ featureStyles }: any) {
         <Box
           sx={{
             background: `${purpleDark["purple11"]}`,
-            opacity: 0.2,
-            zIndex: -1,
-            width: 200,
-            height: 200,
-            borderRadius: 999,
-            filter: "blur(30px)",
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
+            ...featureStyles.blur,
           }}
         />
         <Typography
@@ -60,7 +52,7 @@ export function CoachFeature({ featureStyles }: any) {
         routine. Receive daily reminders to nudge yourself.
       </Typography>
 
-      <Box sx={{ p: 4, mt: 4 }}>
+      <Box sx={{ mt: 4, mb: 10 }}>
         <Grid container spacing={4}>
           {[
             {

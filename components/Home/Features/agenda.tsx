@@ -19,15 +19,7 @@ export function AgendaFeature({ featureStyles }: any) {
         <Box
           sx={{
             background: `${redDark["red11"]}`,
-            opacity: 0.2,
-            zIndex: -1,
-            width: 200,
-            height: 200,
-            borderRadius: 999,
-            filter: "blur(30px)",
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
+            ...featureStyles.blur,
           }}
         />
         <Typography
@@ -61,7 +53,7 @@ export function AgendaFeature({ featureStyles }: any) {
         track and make the most of your day.
       </Typography>
 
-      <Box sx={{ p: 4, px: 8, mt: 4 }}>
+      <Box sx={{ mt: 4, mb: 10 }}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Card sx={{ ...featureStyles.card, borderColor: redDark["red12"] }}>
