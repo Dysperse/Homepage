@@ -1,6 +1,7 @@
 import { AppBar, Box, Button, Icon, Toolbar } from "@mui/material";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export function Navbar() {
@@ -43,17 +44,19 @@ export function Navbar() {
           gap: 2,
         }}
       >
-        <Button
-          size="small"
-          sx={{
-            fontWeight: 600,
-            color: "#000",
-            fontSize: "15px",
-          }}
-        >
-          <Image src="/logo.svg" width={30} height={30} alt="logo" />
-          Dysperse
-        </Button>
+        <Link href="/">
+          <Button
+            size="small"
+            sx={{
+              fontWeight: 600,
+              color: "#000",
+              fontSize: "15px",
+            }}
+          >
+            <Image src="/logo.svg" width={30} height={30} alt="logo" />
+            Dysperse
+          </Button>
+        </Link>
         <Box sx={{ mx: "auto", pr: 8 }}>
           {[
             { label: "Open source", href: "//github.com/dysperse" },

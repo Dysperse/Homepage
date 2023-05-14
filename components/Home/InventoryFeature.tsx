@@ -1,8 +1,8 @@
 import { Box, Card, CardContent, Grid, Icon, Typography } from "@mui/material";
-import { greenDark } from "@radix-ui/colors";
+import { limeDark } from "@radix-ui/colors";
 import Image from "next/image";
 
-export function BoardsFeature({ featureStyles }: any) {
+export function InventoryFeature({ featureStyles }: any) {
   return (
     <>
       <Box
@@ -18,7 +18,7 @@ export function BoardsFeature({ featureStyles }: any) {
       >
         <Box
           sx={{
-            background: `${greenDark["green11"]}`,
+            background: `${limeDark["lime11"]}`,
             opacity: 0.2,
             zIndex: -1,
             width: 200,
@@ -35,24 +35,24 @@ export function BoardsFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureTitle,
-            color: `${greenDark["green5"]}!important`,
+            color: `${limeDark["lime5"]}!important`,
           }}
         >
-          Plan visually
+          Track and share
         </Typography>
         <Typography
           variant="h3"
           className="font-serif"
           sx={{
             ...featureStyles.featureSubTitle,
-            color: `${greenDark["green7"]}!important`,
+            color: `${limeDark["lime7"]}!important`,
           }}
         >
           with Boards
         </Typography>
       </Box>
       <Typography
-        sx={{ ...featureStyles.featureDescription, color: greenDark["green8"] }}
+        sx={{ ...featureStyles.featureDescription, color: limeDark["lime8"] }}
       >
         Organize anything, from shopping lists, to business plans in a
         streamlined way. Share boards with your friends and family.
@@ -62,18 +62,18 @@ export function BoardsFeature({ featureStyles }: any) {
         <Grid container spacing={4} sx={{ mb: 2 }}>
           <Grid item xs={12} md={6}>
             <Card
-              sx={{ ...featureStyles.card, borderColor: greenDark["green12"] }}
+              sx={{ ...featureStyles.card, borderColor: limeDark["lime12"] }}
             >
               <CardContent>
                 <Box sx={{ position: "relative", zIndex: 99 }}>
                   <Typography
                     variant="h5"
-                    sx={{ fontWeight: 800, color: greenDark["green4"] }}
+                    sx={{ fontWeight: 800, color: limeDark["lime4"] }}
                     gutterBottom
                   >
                     Tap. Create. Share.
                   </Typography>
-                  <Typography sx={{ color: greenDark["green7"] }}>
+                  <Typography sx={{ color: limeDark["lime7"] }}>
                     It&apos;s that easy to create a board. Explore over 25+
                     templates to fit your needs
                   </Typography>
@@ -86,25 +86,25 @@ export function BoardsFeature({ featureStyles }: any) {
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${greenDark["green12"]}`,
+                  boxShadow: `-20px -20px 100px ${limeDark["lime12"]}`,
                 }}
               />
             </Card>
           </Grid>
           <Grid item xs={12} md={6}>
             <Card
-              sx={{ ...featureStyles.card, borderColor: greenDark["green12"] }}
+              sx={{ ...featureStyles.card, borderColor: limeDark["lime12"] }}
             >
               <CardContent>
                 <Box sx={{ position: "relative", zIndex: 99 }}>
                   <Typography
                     variant="h5"
-                    sx={{ fontWeight: 800, color: greenDark["green4"] }}
+                    sx={{ fontWeight: 800, color: limeDark["lime4"] }}
                     gutterBottom
                   >
                     Plan literally anything
                   </Typography>
-                  <Typography sx={{ color: greenDark["green7"] }}>
+                  <Typography sx={{ color: limeDark["lime7"] }}>
                     From your next vacation to your next business plan, boards
                     are a super flexible way to plan anything
                   </Typography>
@@ -117,7 +117,7 @@ export function BoardsFeature({ featureStyles }: any) {
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${greenDark["green12"]}`,
+                  boxShadow: `-20px -20px 100px ${limeDark["lime12"]}`,
                 }}
               />
             </Card>
@@ -143,12 +143,12 @@ export function BoardsFeature({ featureStyles }: any) {
                 sx={{
                   height: "100%",
                   ...featureStyles.card,
-                  borderColor: greenDark["green12"],
+                  borderColor: limeDark["lime12"],
                 }}
               >
                 <Box
                   sx={{
-                    background: `${greenDark["green12"]}`,
+                    background: `${limeDark["lime12"]}`,
                     ...featureStyles.blur,
                     opacity: 0.4,
                   }}

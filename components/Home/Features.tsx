@@ -4,6 +4,7 @@ import {
   Button,
   Card,
   CardContent,
+  Container,
   Grid,
   Icon,
   Toolbar,
@@ -15,6 +16,7 @@ import { AgendaFeature } from "./AgendaFeature";
 import { BoardsFeature } from "./BoardsFeature";
 import { purpleDark } from "@radix-ui/colors";
 import Image from "next/image";
+import { InventoryFeature } from "./InventoryFeature";
 
 function CoachFeature({ featureStyles }: any) {
   return (
@@ -75,7 +77,7 @@ function CoachFeature({ featureStyles }: any) {
         routine. Receive daily reminders to nudge yourself.
       </Typography>
 
-      <Box sx={{ p: 4, px: 8, mt: 4 }}>
+      <Box sx={{ p: 4, mt: 4 }}>
         <Grid container spacing={4}>
           {[
             {
@@ -170,6 +172,7 @@ export function Features() {
     card: {
       width: "100%",
       border: "1px solid",
+      height: "100%",
       borderRadius: 8,
       boxShadow: "none",
       position: "relative",
@@ -178,15 +181,13 @@ export function Features() {
       },
     },
     cardImage: {
-      width: "100%",
       height: "auto",
-      maxWidth: "400px",
       zIndex: 9,
       position: "relative",
       float: "right",
-      borderTop: "1px solid",
-      borderLeft: "1px solid",
       borderTopLeftRadius: "28px",
+      maxWidth: "calc(100% - 40px)",
+      width: "400px",
     },
     blur: {
       width: 300,
@@ -201,8 +202,11 @@ export function Features() {
   };
 
   return (
-    <Box>
-      <Box sx={{ px: 8 }}>
+    <Container>
+      {/* Separate the content below the header */}
+      <Box sx={{ mb: 10, borderTop: "1px solid rgba(0,0,0,0.05)" }} />
+
+      <Box>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <Card sx={featureStyles.card}>
@@ -276,33 +280,43 @@ export function Features() {
             height: "45px!important",
             minHeight: "45px!important",
             // justifyContent: "center",
-            gap: 1,
+            gap: 2.5,
           }}
         >
           <Button size="small" variant="contained">
+            <Icon
+              sx={{
+                fontVariationSettings: `'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48`,
+              }}
+            >
+              check_circle
+            </Icon>
             Agenda
           </Button>
-          <Button size="small" variant="contained">
+          <Button size="small">
+            <Icon>view_kanban</Icon>
             Boards
           </Button>
-          <Button size="small" variant="contained">
+          <Button size="small">
+            <Icon>rocket_launch</Icon>
             Coach
           </Button>
-          <Button size="small" variant="contained">
+          <Button size="small">
+            <Icon>inventory_2</Icon>
             Inventory
           </Button>
-          <Button size="small" variant="contained">
+          <Button size="small">
+            <Icon>stress_management</Icon>
             Mood tracking
           </Button>
         </Toolbar>
       </AppBar>
 
-      {/* Separate the content below the header */}
-      <Box sx={{ mb: 10, borderTop: "1px solid rgba(0,0,0,0.05)" }} />
-
+      <Box sx={{ mb: 10 }} />
       <AgendaFeature featureStyles={featureStyles} />
       <BoardsFeature featureStyles={featureStyles} />
       <CoachFeature featureStyles={featureStyles} />
-    </Box>
+      <InventoryFeature featureStyles={featureStyles} />
+    </Container>
   );
 }

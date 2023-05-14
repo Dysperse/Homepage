@@ -8,7 +8,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Dysperse</title>
+        <title>
+          Dysperse: A radically different, unified productivity platform
+        </title>
         <meta
           name="description"
           content="Dysperse is a radically different, unified productivity platform"
