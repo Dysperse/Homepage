@@ -50,3 +50,14 @@ body {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
+
+::-webkit-scrollbar {
+  display: "none";
+}
+
+/* hide mobile scrollbar */
+@media (max-width: 600px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
