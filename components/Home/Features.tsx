@@ -5,6 +5,7 @@ import {
   Card,
   CardContent,
   Grid,
+  Icon,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -73,6 +74,59 @@ function CoachFeature({ featureStyles }: any) {
         Achieve personal goals by adding small tasks to enrich your daily
         routine. Receive daily reminders to nudge yourself.
       </Typography>
+
+      <Box sx={{ p: 4, px: 8, mt: 4 }}>
+        <Grid container spacing={4}>
+          {[
+            {
+              icon: "ios_share",
+              name: "Share your progress",
+              description:
+                "Share your progress with your friends via your favorite social media",
+            },
+            {
+              icon: "notifications",
+              name: "Daily reminders",
+              description: "Receive daily nudges to work towards goals",
+            },
+            {
+              icon: "local_fire_department",
+              name: "Coach streak",
+              description: "Maintain a streak to keep yourself motivated",
+            },
+            {
+              icon: "view_column",
+              name: "Adapt to your needs",
+              description: "Sort columns by priority, due date, or name",
+            },
+          ].map((feature) => (
+            <Grid item xs={12} md={6} key={feature.name}>
+              <Card
+                sx={{
+                  ...featureStyles.card,
+                  borderColor: purpleDark["purple12"],
+                }}
+              >
+                <Box
+                  sx={{
+                    background: `${purpleDark["purple12"]}`,
+                    ...featureStyles.blur,
+                    opacity: 0.4,
+                  }}
+                />
+                <CardContent sx={{ zIndex: 9, position: "relative" }}>
+                  <Typography sx={featureStyles.textDescriptionTitle}>
+                    <Icon>{feature.icon}</Icon> {feature.name}
+                  </Typography>
+                  <Typography sx={featureStyles.textDescriptionParagraph}>
+                    {feature.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </>
   );
 }
