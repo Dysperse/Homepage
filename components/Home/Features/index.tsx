@@ -14,7 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import { useCallback, useDeferredValue, useState } from "react";
+import { useCallback, useDeferredValue, useRef, useState } from "react";
 import { AgendaFeature } from "./agenda";
 import { BoardsFeature } from "./boards";
 import Image from "next/image";
@@ -181,15 +181,49 @@ function Encryption({ featureStyles }: any) {
   );
 }
 
-export function Features() {
+export function Features({ statsRef }: any) {
+  const agendaRef: any = useRef(null);
+  const boardsRef: any = useRef(null);
+  const coachRef: any = useRef(null);
+  const moodRef: any = useRef(null);
+  const inventoryRef: any = useRef(null);
+
   const [showToolbar, setShowToolbar] = useState(false);
+  const [activeFeature, setActiveFeature] = useState("agenda");
 
   const { scrollY } = useScroll();
   const screenHeight = typeof window !== "undefined" ? window.innerHeight : 0;
 
-  useMotionValueEvent(scrollY, "change", (latest) =>
-    setShowToolbar(latest > screenHeight - 200)
-  );
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const refs = [
+      { ref: agendaRef, feature: "agenda" },
+      { ref: boardsRef, feature: "boards" },
+      { ref: coachRef, feature: "coach" },
+      { ref: inventoryRef, feature: "inventory" },
+      { ref: moodRef, feature: "mood" },
+    ];
+
+    for (const { ref, feature } of refs) {
+      if (!ref) continue;
+      const { top } = ref.current.getBoundingClientRect();
+      if (top < document.documentElement.clientHeight) {
+        setActiveFeature(feature);
+      }
+    }
+
+    if (latest > screenHeight - 200) {
+      setShowToolbar(true);
+    }
+
+    if (statsRef.current) {
+      const statsRect = statsRef.current.getBoundingClientRect();
+      if (statsRect.top < document.documentElement.clientHeight) {
+        setShowToolbar(false);
+      } else {
+        setShowToolbar(latest > screenHeight - 200);
+      }
+    }
+  });
 
   const featureStyles = {
     featureTitle: {
@@ -250,6 +284,23 @@ export function Features() {
       left: "50%",
       transform: "translateX(-50%)",
     },
+  };
+
+  const buttonStyles = (isActive: boolean) => ({
+    "& .MuiIcon-root, & .MuiIcon-root *": {
+      transition: "all .2s!important",
+    },
+    ...(isActive && {
+      background: "rgba(200,200,200,.3)!important",
+      color: "#000",
+      "& .MuiIcon-root": {
+        fontVariationSettings: `'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48`,
+      },
+    }),
+  });
+
+  const handleScroll = (ref: any) => {
+    ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -348,33 +399,46 @@ export function Features() {
             "& *": {
               flexShrink: 0,
             },
-            // justifyContent: "center",
             gap: 2.5,
           }}
         >
-          <Button size="small" variant="contained">
-            <Icon
-              sx={{
-                fontVariationSettings: `'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48`,
-              }}
-            >
-              check_circle
-            </Icon>
+          <Button
+            size="small"
+            sx={buttonStyles(activeFeature === "agenda")}
+            onClick={() => handleScroll(agendaRef)}
+          >
+            <Icon>check_circle</Icon>
             Agenda
           </Button>
-          <Button size="small">
+          <Button
+            size="small"
+            sx={buttonStyles(activeFeature === "boards")}
+            onClick={() => handleScroll(boardsRef)}
+          >
             <Icon>view_kanban</Icon>
             Boards
           </Button>
-          <Button size="small">
+          <Button
+            size="small"
+            sx={buttonStyles(activeFeature === "coach")}
+            onClick={() => handleScroll(coachRef)}
+          >
             <Icon>rocket_launch</Icon>
             Coach
           </Button>
-          <Button size="small">
+          <Button
+            size="small"
+            sx={buttonStyles(activeFeature === "inventory")}
+            onClick={() => handleScroll(inventoryRef)}
+          >
             <Icon>inventory_2</Icon>
             Inventory
           </Button>
-          <Button size="small">
+          <Button
+            size="small"
+            sx={buttonStyles(activeFeature === "mood")}
+            onClick={() => handleScroll(moodRef)}
+          >
             <Icon>stress_management</Icon>
             Mood tracking
           </Button>
@@ -382,11 +446,21 @@ export function Features() {
       </AppBar>
 
       <Box sx={{ mb: 10 }} />
-      <AgendaFeature featureStyles={featureStyles} />
-      <BoardsFeature featureStyles={featureStyles} />
-      <CoachFeature featureStyles={featureStyles} />
-      <InventoryFeature featureStyles={featureStyles} />
-      <MoodTrackingFeature featureStyles={featureStyles} />
+      <Box ref={agendaRef} sx={{ scrollMarginTop: "200px" }}>
+        <AgendaFeature featureStyles={featureStyles} />
+      </Box>
+      <Box ref={boardsRef} sx={{ scrollMarginTop: "200px" }}>
+        <BoardsFeature featureStyles={featureStyles} />
+      </Box>
+      <Box ref={coachRef} sx={{ scrollMarginTop: "200px" }}>
+        <CoachFeature featureStyles={featureStyles} />
+      </Box>
+      <Box ref={inventoryRef} sx={{ scrollMarginTop: "200px" }}>
+        <InventoryFeature featureStyles={featureStyles} />
+      </Box>
+      <Box ref={moodRef} sx={{ scrollMarginTop: "200px" }}>
+        <MoodTrackingFeature featureStyles={featureStyles} />
+      </Box>
     </Container>
   );
 }

@@ -8,12 +8,9 @@ export function Stats() {
       mb: 0.5,
     },
   };
+
   return (
-    <Container
-      sx={{
-        mt: 10,
-      }}
-    >
+    <Container sx={{ mt: 10 }}>
       <Box
         sx={{
           p: 4,

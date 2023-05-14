@@ -6,8 +6,11 @@ import { Header } from "../components/Home/Header";
 import { Stats } from "@/components/Home/Stats";
 import { CallToAction } from "@/components/Home/CallToAction";
 import { Footer } from "@/components/Home/Footer";
+import { useRef } from "react";
 
 export default function Home() {
+  const statsRef = useRef();
+
   return (
     <>
       <Head>
@@ -26,9 +29,11 @@ export default function Home() {
       </NoSsr>
       <Header />
       <NoSsr>
-        <Features />
+        <Features statsRef={statsRef} />
       </NoSsr>
-      <Stats />
+      <Box ref={statsRef}>
+        <Stats />
+      </Box>
       <CallToAction />
       <Footer />
     </>
