@@ -1,8 +1,8 @@
 import { Box, Card, CardContent, Grid, Icon, Typography } from "@mui/material";
-import { limeDark } from "@radix-ui/colors";
+import { cyanDark } from "@radix-ui/colors";
 import Image from "next/image";
 
-export function InventoryFeature({ featureStyles }: any) {
+export function MoodTrackingFeature({ featureStyles }: any) {
   return (
     <>
       <Box
@@ -18,7 +18,7 @@ export function InventoryFeature({ featureStyles }: any) {
       >
         <Box
           sx={{
-            background: `${limeDark["lime11"]}`,
+            background: `${cyanDark["cyan11"]}`,
             opacity: 0.2,
             zIndex: -1,
             width: 200,
@@ -35,47 +35,47 @@ export function InventoryFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureTitle,
-            color: `${limeDark["lime5"]}!important`,
+            color: `${cyanDark["cyan5"]}!important`,
           }}
         >
-          Track and share
+          Understand yourself
         </Typography>
         <Typography
           variant="h3"
           className="font-serif"
           sx={{
             ...featureStyles.featureSubTitle,
-            color: `${limeDark["lime7"]}!important`,
+            color: `${cyanDark["cyan7"]}!important`,
           }}
         >
-          with Inventory
+          with Mood Tracking
         </Typography>
       </Box>
       <Typography
-        sx={{ ...featureStyles.featureDescription, color: limeDark["lime8"] }}
+        sx={{ ...featureStyles.featureDescription, color: cyanDark["cyan8"] }}
       >
-        Organize anything, from shopping lists, to business plans in a
-        streamlined way. Share boards with your friends and family.
+        Complete quick daily check-ins to track your mood and reflect on your
+        day. View your mood history to see how your mood has changed over time.
       </Typography>
 
       <Box sx={{ p: 4, px: 8, mt: 4 }}>
         <Grid container spacing={4} sx={{ mb: 2 }}>
           <Grid item xs={12} md={6}>
             <Card
-              sx={{ ...featureStyles.card, borderColor: limeDark["lime12"] }}
+              sx={{ ...featureStyles.card, borderColor: cyanDark["cyan12"] }}
             >
               <CardContent>
                 <Box sx={{ position: "relative", zIndex: 99 }}>
                   <Typography
                     variant="h5"
-                    sx={{ fontWeight: 800, color: limeDark["lime4"] }}
+                    sx={{ fontWeight: 800, color: cyanDark["cyan4"] }}
                     gutterBottom
                   >
-                    Tap. Create. Share.
+                    Practice basic mindfulness
                   </Typography>
-                  <Typography sx={{ color: limeDark["lime7"] }}>
-                    It&apos;s that easy to create a board. Explore over 25+
-                    templates to fit your needs
+                  <Typography sx={{ color: cyanDark["cyan7"] }}>
+                    Complete 2-minute daily check-ins to track your mood and
+                    stress levels
                   </Typography>
                 </Box>
               </CardContent>
@@ -86,27 +86,27 @@ export function InventoryFeature({ featureStyles }: any) {
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${limeDark["lime12"]}`,
+                  boxShadow: `-20px -20px 100px ${cyanDark["cyan12"]}`,
                 }}
               />
             </Card>
           </Grid>
           <Grid item xs={12} md={6}>
             <Card
-              sx={{ ...featureStyles.card, borderColor: limeDark["lime12"] }}
+              sx={{ ...featureStyles.card, borderColor: cyanDark["cyan12"] }}
             >
               <CardContent>
                 <Box sx={{ position: "relative", zIndex: 99 }}>
                   <Typography
                     variant="h5"
-                    sx={{ fontWeight: 800, color: limeDark["lime4"] }}
+                    sx={{ fontWeight: 800, color: cyanDark["cyan4"] }}
                     gutterBottom
                   >
-                    Plan literally anything
+                    See your mood history
                   </Typography>
-                  <Typography sx={{ color: limeDark["lime7"] }}>
-                    From your next vacation to your next business plan, boards
-                    are a super flexible way to plan anything
+                  <Typography sx={{ color: cyanDark["cyan7"] }}>
+                    View up to 30 days of your mood history to see how your
+                    moods have changed over time
                   </Typography>
                 </Box>
               </CardContent>
@@ -117,7 +117,7 @@ export function InventoryFeature({ featureStyles }: any) {
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${limeDark["lime12"]}`,
+                  boxShadow: `-20px -20px 100px ${cyanDark["cyan12"]}`,
                 }}
               />
             </Card>
@@ -126,16 +126,16 @@ export function InventoryFeature({ featureStyles }: any) {
         <Grid container spacing={4}>
           {[
             {
-              icon: "cloud",
-              name: "Sync with your Canvas assignments",
+              icon: "lock",
+              name: "Only you can see your mood history",
               description:
-                "Automatically import assignments from your Canvas courses",
+                "Your mood history is private and only visible to you",
             },
             {
-              icon: "push_pin",
-              name: "Pin frequently used boards",
+              icon: "notifications",
+              name: "Notification reminders",
               description:
-                "Pin a frequently-accessed board for everybody in your group",
+                "We'll check in with you during the day to see how you're feeling",
             },
           ].map((feature) => (
             <Grid item xs={12} md={6} key={feature.name}>
@@ -143,12 +143,12 @@ export function InventoryFeature({ featureStyles }: any) {
                 sx={{
                   height: "100%",
                   ...featureStyles.card,
-                  borderColor: limeDark["lime12"],
+                  borderColor: cyanDark["cyan12"],
                 }}
               >
                 <Box
                   sx={{
-                    background: `${limeDark["lime12"]}`,
+                    background: `${cyanDark["cyan12"]}`,
                     ...featureStyles.blur,
                     opacity: 0.4,
                   }}

@@ -77,7 +77,7 @@ export function Navbar() {
             </Button>
           ))}
         </Box>
-        <Button sx={{ minWidth: "50px" }}>
+        <Button sx={{ mr: "-40px" }}>
           <Icon>account_circle</Icon>
         </Button>
       </Toolbar>

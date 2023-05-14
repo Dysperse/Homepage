@@ -1,9 +1,14 @@
 body {
   margin: 0;
+  user-select: none;
 }
 .font-serif,
 .font-serif * {
   font-family: "Fraunces", serif !important;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-drag: none;
 }
 *:not(
     .font-serif,

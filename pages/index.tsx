@@ -3,6 +3,9 @@ import Head from "next/head";
 import { Features } from "../components/Home/Features";
 import { Navbar } from "../components/Navbar";
 import { Header } from "../components/Home/Header";
+import { Stats } from "@/components/Home/Stats";
+import { CallToAction } from "@/components/Home/CallToAction";
+import { Footer } from "@/components/Home/Footer";
 
 export default function Home() {
   return (
@@ -25,7 +28,9 @@ export default function Home() {
       <NoSsr>
         <Features />
       </NoSsr>
-      <Box sx={{ mb: 10 }} />
+      <Stats />
+      <CallToAction />
+      <Footer />
     </>
   );
 }
