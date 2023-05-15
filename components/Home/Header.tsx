@@ -31,7 +31,7 @@ export function Header() {
             position: "absolute",
             top: 0,
             left: 0,
-            zIndex: -1,
+            zIndex: 2,
           }}
         />
         <Image
@@ -53,7 +53,7 @@ export function Header() {
             position: "absolute",
             top: 0,
             left: 0,
-            zIndex: -2,
+            zIndex: 1,
           }}
         />
         <motion.div
@@ -73,6 +73,7 @@ export function Header() {
               fontSize: { xs: "14px", md: "16px" },
               mb: 2,
               color: isDark ? "#fff" : "#000",
+              zIndex: 3,
               "&:hover": {
                 backdropFilter: "blur(1px)",
               },
@@ -108,6 +109,8 @@ export function Header() {
               })`,
               whiteSpace: { md: "nowrap" },
               backgroundClip: "text",
+              zIndex: 3,
+              position: "relative",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
@@ -139,6 +142,8 @@ export function Header() {
             sx={{
               textAlign: { md: "center" },
               fontWeight: 700,
+              zIndex: 3,
+              position: "relative",
               mb: 3,
               color: "#505050",
               fontSize: { xs: "15px", md: "20px" },
@@ -161,6 +166,7 @@ export function Header() {
             href="//my.dysperse.com/auth/signup"
             target="_blank"
             sx={{
+              zIndex: 3,
               width: "auto",
               borderRadius: 999,
               color: isDark ? "#fff" : "#000",
