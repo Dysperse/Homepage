@@ -24,13 +24,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NoSsr>
-        <Navbar />
-      </NoSsr>
+      <Navbar />
       <Header />
-      <NoSsr>
-        <Features statsRef={statsRef} />
-      </NoSsr>
+      <Features statsRef={statsRef} />
       <Box ref={statsRef}>
         <Stats />
       </Box>
