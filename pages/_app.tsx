@@ -1,40 +1,71 @@
-import { Navbar } from "../components/navbar";
-import "../styles/globals.scss";
-import Head from "next/head";
-import { ThemeProvider, createTheme } from "@mui/material";
+import "@/styles/globals.css";
+import { ThemeProvider, createTheme, useMediaQuery } from "@mui/material";
+import type { AppProps } from "next/app";
 
-export default function App({ Component, PageProps }) {
-  const userTheme = createTheme({
+export default function App({ Component, pageProps }: AppProps) {
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
+  const theme = createTheme({
     components: {
-      MuiPaper: {
-        defaultProps: { elevation: 0 },
-      },
-      MuiIcon: {
+      MuiCard: {
         defaultProps: {
-          // Replace the `material-icons` default value.
-          baseClassName: "material-symbols-rounded",
-        },
-        variants: [
-          {
-            props: {
-              className: "outlined",
-            },
-            style: {
-              fontVariationSettings:
-                '"FILL" 0, "wght" 350, "GRAD" 0, "opsz" 40!important',
-            },
+          style: {
+            background: "transparent",
           },
-        ],
+        },
+      },
+      MuiButton: {
+        defaultProps: {
+          disableElevation: true,
+          disableRipple: true,
+          color: "inherit",
+        },
+        styleOverrides: {
+          root: ({ theme }) =>
+            theme.unstable_sx({
+              textTransform: "none",
+              transition: "none",
+              gap: "10px",
+              borderRadius: 999,
+              background: "transparent",
+              color: isDark ? "#eee" : "#606060",
+              "&:hover": {
+                color: isDark ? "#fff" : "#000",
+                background: isDark
+                  ? "rgba(255,255,255,0.04)"
+                  : "rgba(0,0,0,0.04)",
+              },
+              "&:active": {
+                color: isDark ? "#fff" : "#000",
+                background: isDark
+                  ? "rgba(255,255,255,0.06)"
+                  : "rgba(0,0,0,0.06)",
+              },
+            }),
+          contained: ({ theme }) =>
+            theme.unstable_sx({
+              background: isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)",
+              "&:hover": {
+                color: isDark ? "#fff" : "#000",
+                background: isDark
+                  ? "rgba(255,255,255,0.15)"
+                  : "rgba(0,0,0,0.15)",
+              },
+              "&:active": {
+                color: isDark ? "#fff" : "#000",
+                background: isDark
+                  ? "rgba(255,255,255,0.2)"
+                  : "rgba(0,0,0,0.2)",
+              },
+            }),
+        },
       },
     },
   });
+
   return (
-    <ThemeProvider theme={userTheme}>
-      <Head>
-        <title>Dysperse &bull; It's your productivity boosted</title>
-      </Head>
-      <Navbar />
-      <Component {...PageProps} />
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 }

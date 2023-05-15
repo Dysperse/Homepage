@@ -1,9 +1,0 @@
-@tailwind components;
-@tailwind utilities;
-
-@layer components {
-  .featureTitle {
-    font-weight: 700;
-    @apply text-3xl my-5;
-  }
-}
