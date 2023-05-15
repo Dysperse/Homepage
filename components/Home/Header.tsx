@@ -56,127 +56,134 @@ export function Header() {
             zIndex: 1,
           }}
         />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 3,
+        <Box
+          sx={{
+            position: "relative",
+            zIndex: 3,
+            height: "100vh",
+            maxWidth: "100vw",
+            flexDirection: "column",
+            display: "flex",
+            alignItems: { xs: "start", md: "center" },
+            justifyContent: { xs: "end", sm: "center" },
           }}
         >
-          <Button
-            sx={{
-              border: isDark ? "2px solid #fff" : "2px solid #000",
-              borderRadius: 999,
-              px: { xs: 2, md: 4 },
-              py: { xs: 0.5, md: 1 },
-              fontSize: { xs: "14px", md: "16px" },
-              mb: 2,
-              color: isDark ? "#fff" : "#000",
-              zIndex: 3,
-              "&:hover": {
-                backdropFilter: "blur(1px)",
-              },
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 3,
             }}
-            size="large"
-            color="inherit"
-            href="https://blog.dysperse.com/introducing-dysperse-ai"
-            target="_blank"
           >
-            Introducing Dysperse AI
-            <Icon>east</Icon>
-          </Button>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 1,
-          }}
-          style={{
-            display: "block",
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: { xs: 30, md: 45 },
-              mb: 2,
-              textAlign: { xs: "left", md: "center" },
-              fontWeight: 700,
-              background: `linear-gradient(#${isDark ? "fff" : "000"}, #${
-                isDark ? "606060" : "555"
-              })`,
-              whiteSpace: { md: "nowrap" },
-              backgroundClip: "text",
-              zIndex: 3,
-              position: "relative",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
+            <Button
+              sx={{
+                border: isDark ? "2px solid #fff" : "2px solid #000",
+                borderRadius: 999,
+                px: { xs: 2, md: 4 },
+                py: { xs: 0.5, md: 1 },
+                fontSize: { xs: "14px", md: "16px" },
+                mb: 2,
+                color: isDark ? "#fff" : "#000",
+                "&:hover": {
+                  backdropFilter: "blur(1px)",
+                },
+              }}
+              size="large"
+              color="inherit"
+              href="https://blog.dysperse.com/introducing-dysperse-ai"
+              target="_blank"
+            >
+              Introducing Dysperse AI
+              <Icon>east</Icon>
+            </Button>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 1,
             }}
-            className="font-serif"
+            style={{
+              display: "block",
+            }}
           >
-            Dysperse is a radically different
             <Typography
               sx={{
-                display: { xs: "inline", md: "block" },
-                fontSize: "inherit",
+                fontSize: { xs: 30, md: 45 },
+                mb: 2,
+                textAlign: { xs: "left", md: "center" },
+                fontWeight: 700,
+                background: `linear-gradient(#${isDark ? "fff" : "000"}, #${
+                  isDark ? "606060" : "555"
+                })`,
+                whiteSpace: { md: "nowrap" },
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
               }}
-              component="span"
+              className="font-serif"
             >
-              {" "}
-              unified productivity platform
+              Dysperse is a radically different
+              <Typography
+                sx={{
+                  display: { xs: "inline", md: "block" },
+                  fontSize: "inherit",
+                }}
+                component="span"
+              >
+                {" "}
+                unified productivity platform
+              </Typography>
             </Typography>
-          </Typography>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 2,
-          }}
-        >
-          <Typography
-            variant="h6"
-            sx={{
-              textAlign: { md: "center" },
-              fontWeight: 700,
-              zIndex: 3,
-              position: "relative",
-              mb: 3,
-              color: "#505050",
-              fontSize: { xs: "15px", md: "20px" },
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 2,
             }}
           >
-            Introducing the new benchmark for productivity
-          </Typography>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 2.5,
-          }}
-        >
-          <Button
-            size="large"
-            variant="contained"
-            href="//my.dysperse.com/auth/signup"
-            target="_blank"
-            sx={{
-              zIndex: 3,
-              width: "auto",
-              borderRadius: 999,
-              color: isDark ? "#fff" : "#000",
-              backdropFilter: "blur(2px)",
-              mb: { xs: 3, sm: 0 },
+            <Typography
+              variant="h6"
+              sx={{
+                textAlign: { md: "center" },
+                fontWeight: 700,
+                mb: 3,
+                color: "#505050",
+                fontSize: { xs: "15px", md: "20px" },
+              }}
+            >
+              Introducing the new benchmark for productivity
+            </Typography>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 2.5,
             }}
           >
-            Get started <Icon>north_east</Icon>
-          </Button>
-        </motion.div>
+            <Button
+              size="large"
+              variant="contained"
+              href="//my.dysperse.com/auth/signup"
+              target="_blank"
+              sx={{
+                width: "auto",
+                borderRadius: 999,
+                color: isDark ? "#fff" : "#000",
+                backdropFilter: "blur(2px)",
+                mb: { xs: 3, sm: 0 },
+              }}
+            >
+              Get started <Icon>north_east</Icon>
+            </Button>
+          </motion.div>
+        </Box>
       </Box>
     </motion.div>
   );
