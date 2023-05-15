@@ -164,7 +164,10 @@ export function Navbar() {
           >
             <Icon>menu</Icon>
           </Button>
-          <Link href="/">
+          <Link
+            href="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <Button
               size="small"
               sx={{
@@ -177,7 +180,6 @@ export function Navbar() {
               }}
             >
               <Image
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 src="/grainy.svg"
                 width={30}
                 height={30}
