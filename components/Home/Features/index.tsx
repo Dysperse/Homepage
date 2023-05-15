@@ -243,10 +243,12 @@ export function Features({ statsRef }: any) {
   const featureStyles = {
     featureTitle: {
       fontWeight: 800,
+      textAlign: "center",
       fontSize: { xs: "2rem", sm: "2.5rem" },
     },
     featureSubTitle: {
       mb: 4,
+      textAlign: "center",
       fontSize: { xs: "2rem", sm: "2.5rem" },
     },
     featureDescription: {
@@ -459,6 +461,7 @@ export function Features({ statsRef }: any) {
           }}
         >
           <Button
+            id="agendaTrigger"
             size="small"
             sx={buttonStyles(activeFeature === "agenda")}
             onClick={() => handleScroll(agendaRef)}
@@ -467,6 +470,7 @@ export function Features({ statsRef }: any) {
             Agenda
           </Button>
           <Button
+            id="boardsTrigger"
             size="small"
             sx={buttonStyles(activeFeature === "boards")}
             onClick={() => handleScroll(boardsRef)}
@@ -475,6 +479,7 @@ export function Features({ statsRef }: any) {
             Boards
           </Button>
           <Button
+            id="coachTrigger"
             size="small"
             sx={buttonStyles(activeFeature === "coach")}
             onClick={() => handleScroll(coachRef)}
@@ -483,6 +488,7 @@ export function Features({ statsRef }: any) {
             Coach
           </Button>
           <Button
+            id="inventoryTrigger"
             size="small"
             sx={buttonStyles(activeFeature === "inventory")}
             onClick={() => handleScroll(inventoryRef)}
@@ -491,6 +497,7 @@ export function Features({ statsRef }: any) {
             Inventory
           </Button>
           <Button
+            id="moodTrigger"
             size="small"
             sx={buttonStyles(activeFeature === "mood")}
             onClick={() => handleScroll(moodRef)}

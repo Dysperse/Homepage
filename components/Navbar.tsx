@@ -66,7 +66,11 @@ export function Navbar() {
         backdropFilter: blurBackground ? "blur(10px)" : "",
         borderBottom: "1px solid",
         transition: "all .2s",
-        borderColor: blurBackground ? "rgba(0,0,0,0.05)" : "transparent",
+        borderColor: blurBackground
+          ? isDark
+            ? "rgba(255,255,255,0.05)"
+            : "rgba(0,0,0,0.05)"
+          : "transparent",
         p: 0,
         px: { md: 5 },
       }}
