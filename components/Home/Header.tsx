@@ -59,6 +59,8 @@ export function Header() {
         }}
         size="large"
         color="inherit"
+        href="https://blog.dysperse.com/introducing-dysperse-ai"
+        target="_blank"
       >
         Introducing Dysperse AI
         <Icon>east</Icon>
