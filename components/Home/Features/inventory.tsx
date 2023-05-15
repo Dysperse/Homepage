@@ -95,7 +95,7 @@ export function InventoryFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/inventory/list${isDark ? "-dark" : ""}.png`}
+                src={`/features/inventory/createItem.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
