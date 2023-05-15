@@ -83,6 +83,9 @@ export function Navbar() {
             m: "20px",
             width: "calc(100% - 40px)",
             boxShadow: 0,
+            ...(isDark && {
+              background: "#000",
+            }),
           },
         }}
         BackdropProps={{
@@ -93,7 +96,13 @@ export function Navbar() {
         }}
       >
         <Box
-          sx={{ width: 40, height: 2, background: "#ddd", mx: "auto", my: 2 }}
+          sx={{
+            width: 40,
+            height: 2,
+            background: isDark ? "#303030" : "#ddd",
+            mx: "auto",
+            my: 2,
+          }}
         />
         <Button
           size="small"
