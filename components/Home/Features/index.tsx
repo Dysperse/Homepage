@@ -334,7 +334,9 @@ export function Features({ statsRef }: any) {
         sx={{
           mb: 10,
           mt: { xs: -5, sm: 0 },
-          borderTop: "1px solid rgba(0,0,0,0.05)",
+          borderTop: isDark
+            ? "1px solid rgba(255,255,255,.1)"
+            : "1px solid rgba(0,0,0,0.05)",
         }}
       />
 

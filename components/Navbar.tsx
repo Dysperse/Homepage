@@ -52,33 +52,33 @@ export function Navbar() {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        duration: 0.8,
-        delay: 3,
+    <AppBar
+      position="fixed"
+      elevation={0}
+      sx={{
+        zIndex: 999,
+        background: highlightBackground
+          ? isDark
+            ? "rgba(0,0,0,0.6)"
+            : "rgba(255,255,255,.6)"
+          : "transparent",
+        height: "60px",
+        backdropFilter: blurBackground ? "blur(10px)" : "",
+        borderBottom: "1px solid",
+        transition: "all .2s",
+        borderColor: blurBackground ? "rgba(0,0,0,0.05)" : "transparent",
+        p: 0,
+        px: { md: 5 },
       }}
+      color="inherit"
     >
-      <AppBar
-        position="fixed"
-        elevation={0}
-        sx={{
-          zIndex: 999,
-          background: highlightBackground
-            ? isDark
-              ? "rgba(0,0,0,0.6)"
-              : "rgba(255,255,255,.6)"
-            : "transparent",
-          height: "60px",
-          backdropFilter: blurBackground ? "blur(10px)" : "",
-          borderBottom: "1px solid",
-          transition: "all .2s",
-          borderColor: blurBackground ? "rgba(0,0,0,0.05)" : "transparent",
-          p: 0,
-          px: { md: 5 },
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 3,
         }}
-        color="inherit"
       >
         <SwipeableDrawer
           open={open}
@@ -198,7 +198,7 @@ export function Navbar() {
             <Icon>account_circle</Icon>
           </Button>
         </Toolbar>
-      </AppBar>
-    </motion.div>
+      </motion.div>
+    </AppBar>
   );
 }
