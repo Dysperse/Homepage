@@ -72,7 +72,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ ...(isDark && { background: "#000" }) }}>
+      <Box sx={{ ...(isDark && { background: "#000", color: "#fff" }) }}>
         <Component {...pageProps} />
       </Box>
     </ThemeProvider>
