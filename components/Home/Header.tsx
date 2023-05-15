@@ -5,11 +5,14 @@ import { motion } from "framer-motion";
 export function Header() {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
 
+  const windowHeight =
+    typeof window !== "undefined" ? `${window.innerHeight}px` : "100vh";
+
   return (
     <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
       <Box
         sx={{
-          height: "100vh",
+          height: windowHeight,
           maxWidth: "100vw",
           flexDirection: "column",
           overflow: "hidden",
@@ -27,7 +30,7 @@ export function Header() {
               isDark ? "000" : "fff"
             })`,
             width: "100%",
-            height: "100vh",
+            height: windowHeight,
             position: "absolute",
             top: 0,
             left: 0,
@@ -48,7 +51,7 @@ export function Header() {
           style={{
             opacity: isDark ? 1 : 0.6,
             width: "100vw",
-            height: "100vh",
+            height: windowHeight,
             objectFit: "cover",
             position: "absolute",
             top: 0,
@@ -60,7 +63,7 @@ export function Header() {
           sx={{
             position: "relative",
             zIndex: 3,
-            height: "100vh",
+            height: windowHeight,
             maxWidth: "100vw",
             flexDirection: "column",
             display: "flex",
