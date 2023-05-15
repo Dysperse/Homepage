@@ -102,11 +102,11 @@ export default function App({ Component, pageProps }: AppProps) {
                 right: 0,
                 zIndex: 999,
                 backdropFilter: "blur(10px)",
-                background: "hsla(240,11%,10%,.9)",
+                background: `hsla(240,11%,${isDark ? 90 : 10}%,.9)`,
                 gap: 2,
                 m: "20px",
                 p: 3,
-                color: "#fff",
+                color: isDark ? "#000" : "#fff",
                 borderRadius: 5,
                 width: "340px",
                 maxWidth: "calc(100vw - 40px)",
@@ -116,15 +116,17 @@ export default function App({ Component, pageProps }: AppProps) {
                 <Typography gutterBottom variant="h6" sx={{ fontWeight: 700 }}>
                   Product launch countdown
                 </Typography>
-                <IconButton
-                  onClick={() => setOpen(false)}
-                  sx={{ color: "#fff" }}
-                >
-                  <span className="material-symbols-outlined">close</span>
-                </IconButton>
+                <Box>
+                  <IconButton
+                    onClick={() => setOpen(false)}
+                    sx={{ color: isDark ? "#000" : "#fff" }}
+                  >
+                    <span className="material-symbols-outlined">close</span>
+                  </IconButton>
+                </Box>
               </Box>
               <Typography sx={{ mb: 2 }}>
-                We&apos;re going live in May 2023 -<br /> are you excited?
+                We&apos;re going soon &mdash; are you excited?
               </Typography>
               <Countdown
                 date={new Date("2023-05-27T00:00:00")}
@@ -135,7 +137,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   } else {
                     const styles = {
                       background: "hsla(240,11%,40%,.2)",
-                      color: "#fff",
+                      color: isDark ? "#000" : "#fff",
                       p: 2,
                       py: 1,
                       borderRadius: 5,
