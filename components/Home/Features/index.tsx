@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useCallback, useDeferredValue, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { AgendaFeature } from "./agenda";
 import { BoardsFeature } from "./boards";
 import Image from "next/image";
@@ -488,19 +489,49 @@ export function Features({ statsRef }: any) {
 
       <Box sx={{ mb: 10 }} />
       <Box ref={agendaRef} sx={{ scrollMarginTop: "200px" }}>
-        <AgendaFeature featureStyles={featureStyles} />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <AgendaFeature featureStyles={featureStyles} />
+        </motion.div>
       </Box>
       <Box ref={boardsRef} sx={{ scrollMarginTop: "200px" }}>
-        <BoardsFeature featureStyles={featureStyles} />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <BoardsFeature featureStyles={featureStyles} />
+        </motion.div>
       </Box>
       <Box ref={coachRef} sx={{ scrollMarginTop: "200px" }}>
-        <CoachFeature featureStyles={featureStyles} />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <CoachFeature featureStyles={featureStyles} />
+        </motion.div>
       </Box>
       <Box ref={inventoryRef} sx={{ scrollMarginTop: "200px" }}>
-        <InventoryFeature featureStyles={featureStyles} />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <InventoryFeature featureStyles={featureStyles} />
+        </motion.div>
       </Box>
       <Box ref={moodRef} sx={{ scrollMarginTop: "200px" }}>
-        <MoodTrackingFeature featureStyles={featureStyles} />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <MoodTrackingFeature featureStyles={featureStyles} />
+        </motion.div>
       </Box>
     </Container>
   );
