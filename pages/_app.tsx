@@ -126,7 +126,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   </IconButton>
                 </Box>
               </Box>
-              <Typography sx={{ mb: 2, display: { xs: "none" } }}>
+              <Typography sx={{ mb: 2 }}>
                 We&apos;re going live soon &mdash; are you excited?
               </Typography>
               <Countdown
