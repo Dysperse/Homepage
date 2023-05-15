@@ -15,7 +15,7 @@ export function Header() {
           overflow: "hidden",
           display: "flex",
           alignItems: { xs: "start", md: "center" },
-          justifyContent: "center",
+          justifyContent: { xs: "end", sm: "center" },
           position: "relative",
           userSelect: "none",
           px: 3,
@@ -165,6 +165,7 @@ export function Header() {
               borderRadius: 999,
               color: isDark ? "#fff" : "#000",
               backdropFilter: "blur(2px)",
+              mb: { xs: 3, sm: 0 },
             }}
           >
             Get started <Icon>north_east</Icon>

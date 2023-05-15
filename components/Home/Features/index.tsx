@@ -333,14 +333,17 @@ export function Features({ statsRef }: any) {
       <Box
         sx={{
           mb: 10,
-          mt: { xs: -5, sm: 0 },
           borderTop: isDark
             ? "1px solid rgba(255,255,255,.1)"
             : "1px solid rgba(0,0,0,0.05)",
         }}
       />
 
-      <Box>
+      <Box
+        sx={{
+          mt: { xs: -10, sm: 0 },
+        }}
+      >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
