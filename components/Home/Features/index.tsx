@@ -488,51 +488,51 @@ export function Features({ statsRef }: any) {
       </AppBar>
 
       <Box sx={{ mb: 10 }} />
-      <Box ref={agendaRef} sx={{ scrollMarginTop: "200px" }}>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
+        <Box ref={agendaRef} sx={{ scrollMarginTop: "200px" }}>
           <AgendaFeature featureStyles={featureStyles} />
-        </motion.div>
-      </Box>
-      <Box ref={boardsRef} sx={{ scrollMarginTop: "200px" }}>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
+        </Box>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
+        <Box ref={boardsRef} sx={{ scrollMarginTop: "200px" }}>
           <BoardsFeature featureStyles={featureStyles} />
-        </motion.div>
-      </Box>
-      <Box ref={coachRef} sx={{ scrollMarginTop: "200px" }}>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
+        </Box>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
+        <Box ref={coachRef} sx={{ scrollMarginTop: "200px" }}>
           <CoachFeature featureStyles={featureStyles} />
-        </motion.div>
-      </Box>
-      <Box ref={inventoryRef} sx={{ scrollMarginTop: "200px" }}>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
+        </Box>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
+        <Box ref={inventoryRef} sx={{ scrollMarginTop: "200px" }}>
           <InventoryFeature featureStyles={featureStyles} />
-        </motion.div>
-      </Box>
-      <Box ref={moodRef} sx={{ scrollMarginTop: "200px" }}>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
+        </Box>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
+        <Box ref={moodRef} sx={{ scrollMarginTop: "200px" }}>
           <MoodTrackingFeature featureStyles={featureStyles} />
-        </motion.div>
-      </Box>
+        </Box>
+      </motion.div>
     </Container>
   );
 }
