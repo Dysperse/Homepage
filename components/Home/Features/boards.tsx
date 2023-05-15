@@ -1,8 +1,17 @@
-import { Box, Card, CardContent, Grid, Icon, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Grid,
+  Icon,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { greenDark } from "@radix-ui/colors";
 import Image from "next/image";
 
 export function BoardsFeature({ featureStyles }: any) {
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
   return (
     <>
       <Box
@@ -18,7 +27,7 @@ export function BoardsFeature({ featureStyles }: any) {
       >
         <Box
           sx={{
-            background: `${greenDark["green11"]}`,
+            background: `${greenDark[isDark ? "green3" : "green11"]}`,
             ...featureStyles.blur,
           }}
         />
@@ -27,7 +36,7 @@ export function BoardsFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureTitle,
-            color: `${greenDark["green5"]}!important`,
+            color: `${greenDark[isDark ? "green11" : "green5"]}!important`,
           }}
         >
           Plan visually
@@ -37,14 +46,17 @@ export function BoardsFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureSubTitle,
-            color: `${greenDark["green7"]}!important`,
+            color: `${greenDark[isDark ? "green10" : "green7"]}!important`,
           }}
         >
           with Boards
         </Typography>
       </Box>
       <Typography
-        sx={{ ...featureStyles.featureDescription, color: greenDark["green8"] }}
+        sx={{
+          ...featureStyles.featureDescription,
+          color: greenDark[isDark ? "green9" : "green8"],
+        }}
       >
         Organize anything, from shopping lists, to business plans in a
         streamlined way. Share boards with your friends and family.
@@ -54,18 +66,26 @@ export function BoardsFeature({ featureStyles }: any) {
         <Grid container spacing={4} sx={{ mb: 2 }}>
           <Grid item xs={12} md={6}>
             <Card
-              sx={{ ...featureStyles.card, borderColor: greenDark["green12"] }}
+              sx={{
+                ...featureStyles.card,
+                borderColor: greenDark[isDark ? "green1" : "green12"],
+              }}
             >
               <CardContent>
                 <Box sx={{ position: "relative", zIndex: 99 }}>
                   <Typography
                     variant="h5"
-                    sx={{ fontWeight: 800, color: greenDark["green4"] }}
+                    sx={{
+                      fontWeight: 800,
+                      color: greenDark[isDark ? "green11" : "green4"],
+                    }}
                     gutterBottom
                   >
                     Tap. Create. Share.
                   </Typography>
-                  <Typography sx={{ color: greenDark["green7"] }}>
+                  <Typography
+                    sx={{ color: greenDark[isDark ? "green10" : "green7"] }}
+                  >
                     It&apos;s that easy to create a board. Explore over 25+
                     templates to fit your needs
                   </Typography>
@@ -74,29 +94,39 @@ export function BoardsFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src="/features/agenda/Backlog1.png"
+                src={`/features/boards/create${isDark ? "-dark" : ""}.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${greenDark["green12"]}`,
+                  boxShadow: `-20px -20px 100px ${
+                    greenDark[isDark ? "green1" : "green12"]
+                  }`,
                 }}
               />
             </Card>
           </Grid>
           <Grid item xs={12} md={6}>
             <Card
-              sx={{ ...featureStyles.card, borderColor: greenDark["green12"] }}
+              sx={{
+                ...featureStyles.card,
+                borderColor: greenDark[isDark ? "green1" : "green12"],
+              }}
             >
               <CardContent>
                 <Box sx={{ position: "relative", zIndex: 99 }}>
                   <Typography
                     variant="h5"
-                    sx={{ fontWeight: 800, color: greenDark["green4"] }}
+                    sx={{
+                      fontWeight: 800,
+                      color: greenDark[isDark ? "green11" : "green4"],
+                    }}
                     gutterBottom
                   >
                     Plan literally anything
                   </Typography>
-                  <Typography sx={{ color: greenDark["green7"] }}>
+                  <Typography
+                    sx={{ color: greenDark[isDark ? "green10" : "green7"] }}
+                  >
                     From your next vacation to your next business plan, boards
                     are a super flexible way to plan anything
                   </Typography>
@@ -105,11 +135,13 @@ export function BoardsFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src="/features/agenda/Backlog1.png"
+                src={`/features/boards/boards${isDark ? "-dark" : ""}.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${greenDark["green12"]}`,
+                  boxShadow: `-20px -20px 100px ${
+                    greenDark[isDark ? "green1" : "green12"]
+                  }`,
                 }}
               />
             </Card>
@@ -135,12 +167,12 @@ export function BoardsFeature({ featureStyles }: any) {
                 sx={{
                   height: "100%",
                   ...featureStyles.card,
-                  borderColor: greenDark["green12"],
+                  borderColor: greenDark[isDark ? "green1" : "green12"],
                 }}
               >
                 <Box
                   sx={{
-                    background: `${greenDark["green12"]}`,
+                    background: `${greenDark[isDark ? "green1" : "green12"]}`,
                     ...featureStyles.blur,
                     opacity: 0.4,
                   }}

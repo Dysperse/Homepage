@@ -1,7 +1,9 @@
-import { Box, Button, Icon, Typography } from "@mui/material";
+import { Box, Button, Icon, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
 export function Header() {
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
   return (
     <Box
       sx={{
@@ -19,7 +21,9 @@ export function Header() {
     >
       <Box
         sx={{
-          background: "linear-gradient(transparent, #fff)",
+          background: `linear-gradient(transparent, #${
+            isDark ? "000" : "fff"
+          })`,
           width: "100%",
           height: "100vh",
           position: "absolute",
@@ -29,12 +33,14 @@ export function Header() {
         }}
       />
       <Image
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFDQJcGv7LzQAAAABJRU5ErkJggg=="
+        placeholder="blur"
         height={1080}
         width={1920}
-        src="/cover.png"
+        src={isDark ? "/cover-darkMode.png" : "/cover.png"}
         alt="hero"
         style={{
-          opacity: 0.6,
+          opacity: isDark ? 1 : 0.6,
           width: "100vw",
           height: "100vh",
           objectFit: "cover",
@@ -46,13 +52,13 @@ export function Header() {
       />
       <Button
         sx={{
-          border: "2px solid #000",
+          border: isDark ? "2px solid #fff" : "2px solid #000",
           borderRadius: 999,
           px: { xs: 2, md: 4 },
           py: { xs: 0.5, md: 1 },
           fontSize: { xs: "14px", md: "16px" },
           mb: 2,
-          color: "#000",
+          color: isDark ? "#fff" : "#000",
           "&:hover": {
             backdropFilter: "blur(1px)",
           },
@@ -71,7 +77,9 @@ export function Header() {
           mb: 2,
           textAlign: { xs: "left", md: "center" },
           fontWeight: 700,
-          background: "linear-gradient(#000, #555)",
+          background: `linear-gradient(#${isDark ? "fff" : "000"}, #${
+            isDark ? "606060" : "555"
+          })`,
           whiteSpace: { md: "nowrap" },
           backgroundClip: "text",
           WebkitBackgroundClip: "text",
@@ -108,7 +116,7 @@ export function Header() {
         sx={{
           width: "auto",
           borderRadius: 999,
-          color: "#000",
+          color: isDark ? "#fff" : "#000",
           backdropFilter: "blur(2px)",
         }}
       >

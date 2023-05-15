@@ -1,8 +1,18 @@
-import { Box, Card, CardContent, Grid, Icon, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Grid,
+  Icon,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { limeDark } from "@radix-ui/colors";
 import Image from "next/image";
 
 export function InventoryFeature({ featureStyles }: any) {
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
   return (
     <>
       <Box
@@ -18,7 +28,7 @@ export function InventoryFeature({ featureStyles }: any) {
       >
         <Box
           sx={{
-            background: `${limeDark["lime11"]}`,
+            background: `${limeDark[isDark ? "lime6" : "lime11"]}`,
             ...featureStyles.blur,
           }}
         />
@@ -27,7 +37,7 @@ export function InventoryFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureTitle,
-            color: `${limeDark["lime5"]}!important`,
+            color: `${limeDark[isDark ? "lime11" : "lime5"]}!important`,
           }}
         >
           Scan and track
@@ -37,14 +47,17 @@ export function InventoryFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureSubTitle,
-            color: `${limeDark["lime7"]}!important`,
+            color: `${limeDark[isDark ? "lime10" : "lime7"]}!important`,
           }}
         >
           with Inventory
         </Typography>
       </Box>
       <Typography
-        sx={{ ...featureStyles.featureDescription, color: limeDark["lime8"] }}
+        sx={{
+          ...featureStyles.featureDescription,
+          color: limeDark[isDark ? "lime9" : "lime8"],
+        }}
       >
         Keep track of your personal belongings with shareable lists. Easily sync
         with boards so you&apos;ll never forget to buy something again.
@@ -54,18 +67,26 @@ export function InventoryFeature({ featureStyles }: any) {
         <Grid container spacing={4} sx={{ mb: 2 }}>
           <Grid item xs={12} md={6}>
             <Card
-              sx={{ ...featureStyles.card, borderColor: limeDark["lime12"] }}
+              sx={{
+                ...featureStyles.card,
+                borderColor: limeDark[isDark ? "lime1" : "lime12"],
+              }}
             >
               <CardContent>
                 <Box sx={{ position: "relative", zIndex: 99 }}>
                   <Typography
                     variant="h5"
-                    sx={{ fontWeight: 800, color: limeDark["lime4"] }}
+                    sx={{
+                      fontWeight: 800,
+                      color: limeDark[isDark ? "lime11" : "lime4"],
+                    }}
                     gutterBottom
                   >
                     Scan. Create. Share.
                   </Typography>
-                  <Typography sx={{ color: limeDark["lime7"] }}>
+                  <Typography
+                    sx={{ color: limeDark[isDark ? "lime10" : "lime7"] }}
+                  >
                     Quickly build your inventory by hovering your camera over
                     your item.
                   </Typography>
@@ -74,29 +95,39 @@ export function InventoryFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src="/features/agenda/Backlog1.png"
+                src={`/features/inventory/list${isDark ? "-dark" : ""}.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${limeDark["lime12"]}`,
+                  boxShadow: `-20px -20px 100px ${
+                    limeDark[isDark ? "lime1" : "lime12"]
+                  }`,
                 }}
               />
             </Card>
           </Grid>
           <Grid item xs={12} md={6}>
             <Card
-              sx={{ ...featureStyles.card, borderColor: limeDark["lime12"] }}
+              sx={{
+                ...featureStyles.card,
+                borderColor: limeDark[isDark ? "lime1" : "lime12"],
+              }}
             >
               <CardContent>
                 <Box sx={{ position: "relative", zIndex: 99 }}>
                   <Typography
                     variant="h5"
-                    sx={{ fontWeight: 800, color: limeDark["lime4"] }}
+                    sx={{
+                      fontWeight: 800,
+                      color: limeDark[isDark ? "lime11" : "lime4"],
+                    }}
                     gutterBottom
                   >
                     Know what you have
                   </Typography>
-                  <Typography sx={{ color: limeDark["lime7"] }}>
+                  <Typography
+                    sx={{ color: limeDark[isDark ? "lime10" : "lime7"] }}
+                  >
                     Always have your inventory on hand so you&apos;ll never
                     forget what you have.
                   </Typography>
@@ -105,11 +136,13 @@ export function InventoryFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src="/features/agenda/Backlog1.png"
+                src={`/features/inventory/list${isDark ? "-dark" : ""}.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${limeDark["lime12"]}`,
+                  boxShadow: `-20px -20px 100px ${
+                    limeDark[isDark ? "lime1" : "lime12"]
+                  }`,
                 }}
               />
             </Card>
@@ -135,12 +168,12 @@ export function InventoryFeature({ featureStyles }: any) {
                 sx={{
                   height: "100%",
                   ...featureStyles.card,
-                  borderColor: limeDark["lime12"],
+                  borderColor: limeDark[isDark ? "lime1" : "lime12"],
                 }}
               >
                 <Box
                   sx={{
-                    background: `${limeDark["lime12"]}`,
+                    background: `${limeDark[isDark ? "lime1" : "lime12"]}`,
                     ...featureStyles.blur,
                     opacity: 0.4,
                   }}

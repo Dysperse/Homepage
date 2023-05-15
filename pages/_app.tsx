@@ -1,51 +1,68 @@
 import "@/styles/globals.css";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider, createTheme, useMediaQuery } from "@mui/material";
 import type { AppProps } from "next/app";
 
-const theme = createTheme({
-  components: {
-    MuiButton: {
-      defaultProps: {
-        disableElevation: true,
-        disableRipple: true,
-        color: "inherit",
-      },
-      styleOverrides: {
-        root: ({ theme }) =>
-          theme.unstable_sx({
-            textTransform: "none",
-            transition: "none",
-            gap: "10px",
-            borderRadius: 999,
+export default function App({ Component, pageProps }: AppProps) {
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
+  const theme = createTheme({
+    components: {
+      MuiCard: {
+        defaultProps: {
+          style: {
             background: "transparent",
-            color: "#606060",
-            "&:hover": {
-              color: "#000",
-              background: "rgba(0,0,0,0.04)",
-            },
-            "&:active": {
-              color: "#000",
-              background: "rgba(0,0,0,0.06)",
-            },
-          }),
-        contained: ({ theme }) =>
-          theme.unstable_sx({
-            background: "rgba(0,0,0,0.1)",
-            "&:hover": {
-              color: "#000",
-              background: "rgba(0,0,0,0.15)",
-            },
-            "&:active": {
-              color: "#000",
-              background: "rgba(0,0,0,0.2)",
-            },
-          }),
+          },
+        },
+      },
+      MuiButton: {
+        defaultProps: {
+          disableElevation: true,
+          disableRipple: true,
+          color: "inherit",
+        },
+        styleOverrides: {
+          root: ({ theme }) =>
+            theme.unstable_sx({
+              textTransform: "none",
+              transition: "none",
+              gap: "10px",
+              borderRadius: 999,
+              background: "transparent",
+              color: isDark ? "#eee" : "#606060",
+              "&:hover": {
+                color: isDark ? "#fff" : "#000",
+                background: isDark
+                  ? "rgba(255,255,255,0.04)"
+                  : "rgba(0,0,0,0.04)",
+              },
+              "&:active": {
+                color: isDark ? "#fff" : "#000",
+                background: isDark
+                  ? "rgba(255,255,255,0.06)"
+                  : "rgba(0,0,0,0.06)",
+              },
+            }),
+          contained: ({ theme }) =>
+            theme.unstable_sx({
+              background: isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)",
+              "&:hover": {
+                color: isDark ? "#fff" : "#000",
+                background: isDark
+                  ? "rgba(255,255,255,0.15)"
+                  : "rgba(0,0,0,0.15)",
+              },
+              "&:active": {
+                color: isDark ? "#fff" : "#000",
+                background: isDark
+                  ? "rgba(255,255,255,0.2)"
+                  : "rgba(0,0,0,0.2)",
+              },
+            }),
+        },
       },
     },
-  },
-});
+  });
 
-export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />

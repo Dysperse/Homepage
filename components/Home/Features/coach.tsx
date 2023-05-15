@@ -1,7 +1,17 @@
-import { Box, Card, CardContent, Grid, Icon, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Grid,
+  Icon,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { purpleDark } from "@radix-ui/colors";
 
 export function CoachFeature({ featureStyles }: any) {
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
   return (
     <>
       <Box
@@ -17,7 +27,7 @@ export function CoachFeature({ featureStyles }: any) {
       >
         <Box
           sx={{
-            background: `${purpleDark["purple11"]}`,
+            background: `${purpleDark[isDark ? "purple3" : "purple11"]}`,
             ...featureStyles.blur,
           }}
         />
@@ -26,7 +36,7 @@ export function CoachFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureTitle,
-            color: `${purpleDark["purple5"]}!important`,
+            color: `${purpleDark[isDark ? "purple11" : "purple5"]}!important`,
           }}
         >
           Achieve more
@@ -36,7 +46,7 @@ export function CoachFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureSubTitle,
-            color: `${purpleDark["purple7"]}!important`,
+            color: `${purpleDark[isDark ? "purple10" : "purple7"]}!important`,
           }}
         >
           with Coach
@@ -45,7 +55,7 @@ export function CoachFeature({ featureStyles }: any) {
       <Typography
         sx={{
           ...featureStyles.featureDescription,
-          color: purpleDark["purple8"],
+          color: purpleDark[isDark ? "purple9" : "purple8"],
         }}
       >
         Achieve personal goals by adding small tasks to enrich your daily
@@ -81,12 +91,14 @@ export function CoachFeature({ featureStyles }: any) {
               <Card
                 sx={{
                   ...{ ...featureStyles.card },
-                  borderColor: purpleDark["purple12"],
+                  borderColor: purpleDark[isDark ? "purple1" : "purple12"],
                 }}
               >
                 <Box
                   sx={{
-                    background: `${purpleDark["purple12"]}`,
+                    background: `${
+                      purpleDark[isDark ? "purple2" : "purple12"]
+                    }`,
                     ...featureStyles.blur,
                     opacity: 0.4,
                   }}

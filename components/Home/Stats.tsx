@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 
 export function Stats() {
   const styles = {
@@ -9,12 +9,15 @@ export function Stats() {
     },
   };
 
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
   return (
     <Container sx={{ mt: 10 }}>
       <Box
         sx={{
           p: 4,
-          background: "linear-gradient(45deg, #FF66C4, #FFDE59)",
+          background: !isDark
+            ? "linear-gradient(45deg, #FF66C4, #FFDE59)"
+            : "linear-gradient(45deg, #261744, #392011)",
           borderRadius: 5,
         }}
       >

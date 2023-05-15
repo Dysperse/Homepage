@@ -6,14 +6,17 @@ import {
   Grid,
   Icon,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import Image from "next/image";
 
 export function Footer() {
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
   return (
     <Box
       sx={{
-        borderTop: "1px solid #ddd",
+        borderTop: isDark ? "1px solid #303030" : "1px solid #ddd",
         pt: 4,
         mt: 10,
       }}
@@ -106,6 +109,12 @@ export function Footer() {
                   target="_blank"
                 >
                   <Image
+                    style={{
+                      ...(isDark && {
+                        border: "1px solid #303030",
+                        borderRadius: "10px",
+                      }),
+                    }}
                     src={`/sponsors/${sponsor.name}.${
                       sponsor.name == "vercel" ? "svg" : "png"
                     }`}
@@ -126,6 +135,7 @@ export function Footer() {
         alt="Dysperse logo"
         style={{
           width: "100%",
+          filter: isDark ? "invert(1)" : "invert(0)",
           maxWidth: "500px",
           height: "auto",
           marginTop: "40px",

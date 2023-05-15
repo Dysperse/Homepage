@@ -6,6 +6,7 @@ import {
   Icon,
   SwipeableDrawer,
   Toolbar,
+  useMediaQuery,
 } from "@mui/material";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
@@ -47,6 +48,7 @@ export function Navbar() {
       ))}
     </>
   );
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
 
   return (
     <AppBar
@@ -55,7 +57,9 @@ export function Navbar() {
       sx={{
         zIndex: 999,
         background: highlightBackground
-          ? "rgba(255,255,255,.6)"
+          ? isDark
+            ? "rgba(0,0,0,0.6)"
+            : "rgba(255,255,255,.6)"
           : "transparent",
         height: "60px",
         backdropFilter: blurBackground ? "blur(10px)" : "",
@@ -95,7 +99,7 @@ export function Navbar() {
           size="small"
           sx={{
             fontWeight: 600,
-            color: "#000",
+            color: isDark ? "#fff" : "#000",
             py: 2,
             justifyContent: "start",
             px: 2,
@@ -104,7 +108,15 @@ export function Navbar() {
             fontSize: "15px",
           }}
         >
-          <Image src="/grainy.svg" width={30} height={30} alt="logo" />
+          <Image
+            src="/grainy.svg"
+            width={30}
+            height={30}
+            alt="logo"
+            style={{
+              filter: isDark ? "invert(1)" : "invert(0)",
+            }}
+          />
           Dysperse
         </Button>
         <Divider sx={{ mb: 2 }} />
@@ -134,14 +146,22 @@ export function Navbar() {
             size="small"
             sx={{
               fontWeight: 600,
-              color: "#000",
+              color: isDark ? "#fff" : "#000",
               fontSize: "15px",
               "& span": {
                 display: { xs: "none", md: "unset" },
               },
             }}
           >
-            <Image src="/grainy.svg" width={30} height={30} alt="logo" />
+            <Image
+              src="/grainy.svg"
+              width={30}
+              height={30}
+              alt="logo"
+              style={{
+                filter: isDark ? "invert(1)" : "invert(0)",
+              }}
+            />
             <span>Dysperse</span>
           </Button>
         </Link>

@@ -12,6 +12,7 @@ import {
   Toolbar,
   Tooltip,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useCallback, useDeferredValue, useRef, useState } from "react";
@@ -39,17 +40,21 @@ function Encryption({ featureStyles }: any) {
     },
     [deferredValue]
   );
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
   const styles = {
     boxShadow:
       "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
-    border: "1px solid #eee",
+    border: `1px solid #${isDark ? "303030" : "eee"}`,
     height: "100%",
     borderRadius: 8,
     p: 3,
   };
 
   return (
-    <Card sx={{ ...featureStyles.card, borderColor: "#ddd" }}>
+    <Card
+      sx={{ ...featureStyles.card, borderColor: isDark ? "#303030" : "#ddd" }}
+    >
       <CardContent>
         <Typography variant="h6" sx={{ fontWeight: "700" }}>
           AES-256 bit encryption
@@ -80,14 +85,21 @@ function Encryption({ featureStyles }: any) {
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <Icon>check_circle</Icon>
+                      <Icon
+                        sx={{
+                          color: isDark ? "#fff" : "#000",
+                        }}
+                      >
+                        check_circle
+                      </Icon>
                     </InputAdornment>
                   ),
                   disableUnderline: true,
                   sx: {
-                    background: "hsl(240,11%,95%)",
+                    background: `hsl(240,11%,${isDark ? 10 : 95}%)`,
                     px: 2,
                     py: 1,
+                    color: isDark ? "#fff" : "#000",
                     borderRadius: 5,
                   },
                 }}
@@ -164,7 +176,7 @@ function Encryption({ featureStyles }: any) {
               </Typography>
               <Box
                 sx={{
-                  background: "hsl(240,11%,95%)",
+                  background: `hsl(240,11%,${isDark ? 10 : 95}%)`,
                   px: 2,
                   py: 1,
                   borderRadius: 5,
@@ -225,6 +237,8 @@ export function Features({ statsRef }: any) {
     }
   });
 
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
   const featureStyles = {
     featureTitle: {
       fontWeight: 800,
@@ -260,6 +274,7 @@ export function Features({ statsRef }: any) {
       borderRadius: 8,
       boxShadow: "none",
       position: "relative",
+      color: isDark ? "white" : "black",
       "& .MuiCardContent-root": {
         p: 4,
       },
@@ -290,9 +305,13 @@ export function Features({ statsRef }: any) {
     "& .MuiIcon-root, & .MuiIcon-root *": {
       transition: "all .2s!important",
     },
+    ...(isDark && { color: "#ccc" }),
+
     ...(isActive && {
-      background: "rgba(200,200,200,.3)!important",
-      color: "#000",
+      background: isDark
+        ? "rgba(255,255,255,.1)!important"
+        : "rgba(200,200,200,.3)!important",
+      color: isDark ? "#fff" : "#000",
       "& .MuiIcon-root": {
         fontVariationSettings: `'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48`,
       },
@@ -321,7 +340,12 @@ export function Features({ statsRef }: any) {
       <Box>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            <Card sx={{ ...featureStyles.card, borderColor: "#ddd" }}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: isDark ? "#303030" : "#ddd",
+              }}
+            >
               <CardContent>
                 <Image
                   src="/devices.svg"
@@ -330,6 +354,7 @@ export function Features({ statsRef }: any) {
                   alt="Sync with all your devices!"
                   style={{
                     width: "80%",
+                    ...(isDark && { filter: "invert(1)" }),
                     margin: "auto",
                     display: "block",
                     height: "auto",
@@ -351,7 +376,12 @@ export function Features({ statsRef }: any) {
         </Grid>
         <Grid container spacing={4} sx={{ mt: 2 }}>
           <Grid item xs={12} md={8}>
-            <Card sx={{ ...featureStyles.card, borderColor: "#ddd" }}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: isDark ? "#303030" : "#ddd",
+              }}
+            >
               <CardContent>
                 <Typography variant="h6" sx={{ fontWeight: "700" }}>
                   Customize your Dysperse
@@ -363,7 +393,12 @@ export function Features({ statsRef }: any) {
             </Card>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Card sx={{ ...featureStyles.card, borderColor: "#ddd" }}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: isDark ? "#303030" : "#ddd",
+              }}
+            >
               <CardContent>
                 <Typography variant="h6" sx={{ fontWeight: "700" }}>
                   Collaborative by default
@@ -385,8 +420,14 @@ export function Features({ statsRef }: any) {
           opacity: showToolbar ? 1 : 0,
           position: "fixed",
           backdropFilter: "blur(10px)",
-          background: showToolbar ? "rgba(255,255,255,.5)" : "transparent",
-          borderBottom: "1px solid rgba(0,0,0,0.05)",
+          background: showToolbar
+            ? isDark
+              ? "rgba(0,0,0,0.5)"
+              : "rgba(255,255,255,.5)"
+            : "transparent",
+          borderBottom: isDark
+            ? "1px solid rgba(255,255,255,0.1)"
+            : "1px solid rgba(0,0,0,0.05)",
           height: "45px",
           overflow: "scroll",
           px: { sm: 5 },

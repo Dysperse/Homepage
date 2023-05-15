@@ -1,12 +1,28 @@
-import { Box, Button, Container, Icon, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Icon,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { red } from "@mui/material/colors";
 import Image from "next/image";
 
 export function CallToAction() {
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
   return (
     <Container sx={{ mt: 10 }}>
       <Box sx={{ textAlign: "center" }}>
-        <Image src="/grainy.svg" width={100} height={100} alt="Dysperse logo" />
+        <Image
+          src="/grainy.svg"
+          width={100}
+          height={100}
+          alt="Dysperse logo"
+          style={{
+            filter: isDark ? "invert(1)" : "invert(0)",
+          }}
+        />
         <Typography
           className="font-serif"
           variant="h4"
