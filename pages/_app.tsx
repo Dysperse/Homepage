@@ -105,18 +105,19 @@ export default function App({ Component, pageProps }: AppProps) {
                 background: `hsla(240,11%,${isDark ? 90 : 10}%,.9)`,
                 gap: 2,
                 m: "20px",
-                p: 3,
+                display: { xs: "none", sm: "unset" },
+                p: { xs: 2, sm: 3 },
                 color: isDark ? "#000" : "#fff",
                 borderRadius: 5,
                 width: "340px",
                 maxWidth: "calc(100vw - 40px)",
               }}
             >
-              <Box sx={{ display: "flex" }}>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Typography gutterBottom variant="h6" sx={{ fontWeight: 700 }}>
-                  Product launch countdown
+                  Launch countdown
                 </Typography>
-                <Box>
+                <Box sx={{ ml: "auto" }}>
                   <IconButton
                     onClick={() => setOpen(false)}
                     sx={{ color: isDark ? "#000" : "#fff" }}
@@ -125,8 +126,8 @@ export default function App({ Component, pageProps }: AppProps) {
                   </IconButton>
                 </Box>
               </Box>
-              <Typography sx={{ mb: 2 }}>
-                We&apos;re going soon &mdash; are you excited?
+              <Typography sx={{ mb: 2, display: { xs: "none" } }}>
+                We&apos;re going live soon &mdash; are you excited?
               </Typography>
               <Countdown
                 date={new Date("2023-05-27T00:00:00")}
@@ -141,7 +142,12 @@ export default function App({ Component, pageProps }: AppProps) {
                       p: 2,
                       py: 1,
                       borderRadius: 5,
+                      alignItems: { xs: "center", sm: "flex-start" },
+                      gap: { xs: 1, sm: 0 },
                       width: "100%",
+                      "& h6": {
+                        fontSize: { xs: "15px", sm: "20px" },
+                      },
                     };
                     // Render a countdown
                     return (
