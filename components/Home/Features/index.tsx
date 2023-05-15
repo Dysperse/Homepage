@@ -293,7 +293,6 @@ export function Features({ statsRef }: any) {
     },
     blur: {
       opacity: 0.2,
-      zIndex: -1,
       width: { xs: 150, md: 300 },
       height: { xs: 150, md: 300 },
       borderRadius: 999,
