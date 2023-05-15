@@ -141,6 +141,7 @@ export function Footer() {
           style={{
             width: "100%",
             filter: isDark ? "invert(1)" : "invert(0)",
+            background: isDark ? "#000" : "#fff",
             maxWidth: "500px",
             height: "auto",
             marginTop: "40px",

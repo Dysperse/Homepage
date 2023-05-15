@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 
 export function CallToAction() {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
   return (
     <Container sx={{ mt: 10 }}>
       <motion.div
@@ -35,6 +36,7 @@ export function CallToAction() {
             sx={{
               fontWeight: 900,
               my: 1,
+              color: isDark ? "#fff" : "#000",
             }}
           >
             meet your absolute productivity{" "}
