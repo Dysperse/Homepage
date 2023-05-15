@@ -154,6 +154,8 @@ export function Navbar() {
             minWidth: { xs: "45px", md: "75px" },
             ml: { xs: "auto", md: "unset" },
           }}
+          target="_blank"
+          href="//my.dysperse.com"
         >
           <Icon>account_circle</Icon>
         </Button>
