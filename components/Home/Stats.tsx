@@ -10,6 +10,7 @@ export function Stats() {
   };
 
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
   return (
     <Container sx={{ mt: 10 }}>
       <motion.div
@@ -24,6 +25,7 @@ export function Stats() {
               ? "linear-gradient(45deg, #FF66C4, #FFDE59)"
               : "linear-gradient(45deg, #261744, #392011)",
             borderRadius: 5,
+            color: isDark ? "#fff" : "#000",
           }}
         >
           <Grid container spacing={4}>

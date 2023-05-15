@@ -134,14 +134,12 @@ export function Footer() {
           </Grid>
         </Container>
         <Image
-          src="/footer.svg"
+          src={`/footer${isDark ? "-dark" : ""}.svg`}
           width={1920}
           height={480}
           alt="Dysperse logo"
           style={{
-            width: "100%",
-            filter: isDark ? "invert(1)" : "invert(0)",
-            background: isDark ? "#000" : "#fff",
+            width: "calc(100% - 50px)",
             maxWidth: "500px",
             height: "auto",
             marginTop: "40px",
