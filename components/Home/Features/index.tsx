@@ -341,76 +341,85 @@ export function Features({ statsRef }: any) {
       />
 
       <Box>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
-            <Card
-              sx={{
-                ...featureStyles.card,
-                borderColor: isDark ? "#303030" : "#ddd",
-              }}
-            >
-              <CardContent>
-                <Image
-                  src="/devices.svg"
-                  width={500}
-                  height={500}
-                  alt="Sync with all your devices!"
-                  style={{
-                    width: "80%",
-                    ...(isDark && { filter: "invert(1)" }),
-                    margin: "auto",
-                    display: "block",
-                    height: "auto",
-                    marginBottom: "5px",
-                  }}
-                />
-                <Typography variant="h6" sx={{ fontWeight: "700" }}>
-                  Sync across devices
-                </Typography>
-                <Typography>
-                  Sign into your Dysperse account on any device
-                </Typography>
-              </CardContent>
-            </Card>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 2.5,
+          }}
+        >
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={4}>
+              <Card
+                sx={{
+                  ...featureStyles.card,
+                  borderColor: isDark ? "#303030" : "#ddd",
+                }}
+              >
+                <CardContent>
+                  <Image
+                    src="/devices.svg"
+                    width={500}
+                    height={500}
+                    alt="Sync with all your devices!"
+                    style={{
+                      width: "80%",
+                      ...(isDark && { filter: "invert(1)" }),
+                      margin: "auto",
+                      display: "block",
+                      height: "auto",
+                      marginBottom: "5px",
+                    }}
+                  />
+                  <Typography variant="h6" sx={{ fontWeight: "700" }}>
+                    Sync across devices
+                  </Typography>
+                  <Typography>
+                    Sign into your Dysperse account on any device
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Encryption featureStyles={featureStyles} />
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={8}>
-            <Encryption featureStyles={featureStyles} />
+          <Grid container spacing={4} sx={{ mt: 2 }}>
+            <Grid item xs={12} md={8}>
+              <Card
+                sx={{
+                  ...featureStyles.card,
+                  borderColor: isDark ? "#303030" : "#ddd",
+                }}
+              >
+                <CardContent>
+                  <Typography variant="h6" sx={{ fontWeight: "700" }}>
+                    Customize your Dysperse
+                  </Typography>
+                  <Typography>
+                    Change the colors and theme to make Dysperse your own
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Card
+                sx={{
+                  ...featureStyles.card,
+                  borderColor: isDark ? "#303030" : "#ddd",
+                }}
+              >
+                <CardContent>
+                  <Typography variant="h6" sx={{ fontWeight: "700" }}>
+                    Collaborative by default
+                  </Typography>
+                  <Typography>Invite up to 5 people to your group</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container spacing={4} sx={{ mt: 2 }}>
-          <Grid item xs={12} md={8}>
-            <Card
-              sx={{
-                ...featureStyles.card,
-                borderColor: isDark ? "#303030" : "#ddd",
-              }}
-            >
-              <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: "700" }}>
-                  Customize your Dysperse
-                </Typography>
-                <Typography>
-                  Change the colors and theme to make Dysperse your own
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Card
-              sx={{
-                ...featureStyles.card,
-                borderColor: isDark ? "#303030" : "#ddd",
-              }}
-            >
-              <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: "700" }}>
-                  Collaborative by default
-                </Typography>
-                <Typography>Invite up to 5 people to your group</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
+        </motion.div>
       </Box>
 
       <AppBar

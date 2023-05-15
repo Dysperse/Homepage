@@ -152,7 +152,7 @@ export function Header() {
           animate={{ opacity: 1 }}
           transition={{
             duration: 0.8,
-            delay: 3,
+            delay: 2.5,
           }}
         >
           <Button
