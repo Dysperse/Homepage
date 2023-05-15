@@ -127,6 +127,7 @@ export function Navbar() {
             }}
           >
             <Image
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               src="/grainy.svg"
               width={30}
               height={30}

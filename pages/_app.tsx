@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import {
+  Box,
   CssBaseline,
   ThemeProvider,
   createTheme,
@@ -71,7 +72,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Component {...pageProps} />
+      <Box sx={{ ...(isDark && { background: "#000" }) }}>
+        <Component {...pageProps} />
+      </Box>
     </ThemeProvider>
   );
 }
