@@ -74,7 +74,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             transition={{
               duration: 0.8,
-              delay: 3,
+              delay: 1.7,
             }}
           >
             <Button
@@ -104,7 +104,7 @@ export function Header() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.8,
-              delay: 1,
+              delay: 0,
             }}
             style={{
               display: "block",
@@ -144,7 +144,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             transition={{
               duration: 0.8,
-              delay: 2,
+              delay: 1,
             }}
           >
             <Typography
@@ -165,7 +165,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             transition={{
               duration: 0.8,
-              delay: 2.5,
+              delay: 1.5,
             }}
           >
             <Button

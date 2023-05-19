@@ -80,15 +80,15 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <NoSsr>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 4,
-          }}
-        >
-          <Box>
+        <Box>
+          <motion.div
+            initial={{ y: -100, scale: 0.95 }}
+            animate={{ y: 0, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 2.5,
+            }}
+          >
             <Box
               sx={{
                 ...(!open && {
@@ -177,8 +177,8 @@ export default function App({ Component, pageProps }: AppProps) {
                 }}
               />
             </Box>
-          </Box>
-        </motion.div>
+          </motion.div>
+        </Box>
       </NoSsr>
 
       <Box sx={{ ...(isDark && { background: "#000", color: "#fff" }) }}>

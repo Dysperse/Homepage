@@ -81,7 +81,7 @@ export function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{
           duration: 0.8,
-          delay: 3,
+          delay: 2,
         }}
       >
         <SwipeableDrawer

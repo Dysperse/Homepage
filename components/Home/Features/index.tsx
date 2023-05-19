@@ -350,7 +350,7 @@ export function Features({ statsRef }: any) {
           animate={{ opacity: 1 }}
           transition={{
             duration: 0.8,
-            delay: 2.5,
+            delay: 2,
           }}
         >
           <Grid container spacing={4}>
