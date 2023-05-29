@@ -135,7 +135,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   if (completed) {
                     return (
                       <>
-                        <Typography>We launched on May 27, 2023!</Typography>
+                        <Typography sx={{ mt: -1, mb: 1 }}>We launched on May 27, 2023!</Typography>
                         <a
                           href="https://www.producthunt.com/posts/dysperse?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-dysperse"
                           target="_blank"
