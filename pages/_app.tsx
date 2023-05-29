@@ -134,7 +134,12 @@ export default function App({ Component, pageProps }: AppProps) {
                 renderer={({ days, hours, minutes, seconds, completed }) => {
                   if (completed) {
                     // Render a completed state
-                    return "Completed!";
+                    return (
+                      <>
+                        <Typography>We launched on May 27, 2023!</Typography>
+                        <a href="https://www.producthunt.com/posts/dysperse?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-dysperse" target="_blank"><img src=`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=394715&theme=${isDark ? "dark" : "neutral"}` alt="Dysperse - Dysperse&#0032;is&#0032;a&#0032;radically&#0032;different&#0044;&#0032;unified&#0032;productivity&#0032;app | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+                      </>
+                    );
                   } else {
                     const styles = {
                       background: "hsla(240,11%,40%,.2)",
