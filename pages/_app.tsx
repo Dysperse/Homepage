@@ -141,11 +141,12 @@ export default function App({ Component, pageProps }: AppProps) {
                           target="_blank"
                         >
                           <img
-                            src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=394715&theme=${
-                              isDark ? "dark" : "neutral"
-                            }` as any}
+                            src={
+                              `https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=394715&theme=${
+                                isDark ? "dark" : "neutral"
+                              }` as any
+                            }
                             alt="Dysperse - Dysperse&#0032;is&#0032;a&#0032;radically&#0032;different&#0044;&#0032;unified&#0032;productivity&#0032;app | Product Hunt"
-                            style="width: 250px; height: 54px;"
                             width="250"
                             height="54"
                           />
