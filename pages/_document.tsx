@@ -52,7 +52,7 @@ export default function Document() {
           content="Meet Dysperse: The ultimate productivity platform that streamlines your life with planners, boards, routines, and more. Say goodbye to scattered tasks and hello to seamless productivity with Dysperse."
         />
         <meta property="twitter:image" content="/meta.png" />
-        <Script
+        <script
           id="schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
