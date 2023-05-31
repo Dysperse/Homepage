@@ -53,6 +53,7 @@ export default function Document() {
         />
         <meta property="twitter:image" content="/meta.png" />
         <Script
+          id="schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
