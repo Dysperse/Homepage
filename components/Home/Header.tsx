@@ -126,7 +126,7 @@ export function Header() {
               }}
               className="font-serif"
             >
-              Dysperse is a radically different
+              Dysperse is a completely different
               <Typography
                 sx={{
                   display: { xs: "inline", md: "block" },
