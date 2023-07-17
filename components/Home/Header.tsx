@@ -156,7 +156,7 @@ export function Header() {
                 fontSize: { xs: "15px", md: "20px" },
               }}
             >
-              Introducing the new benchmark for productivity
+              Meet the minimalist, unified productivity app loved by thousands
             </Typography>
           </motion.div>
           <motion.div
