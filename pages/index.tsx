@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Dysperse: A radically different, unified productivity platform
+          Dysperse: The new standard for productivity
         </title>
         <meta
           name="description"
