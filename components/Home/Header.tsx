@@ -126,7 +126,7 @@ export function Header() {
               }}
               className="font-serif"
             >
-              Dysperse is a completely different
+              Dysperse is the new
               <Typography
                 sx={{
                   display: { xs: "inline", md: "block" },
@@ -134,8 +134,7 @@ export function Header() {
                 }}
                 component="span"
               >
-                {" "}
-                unified productivity platform
+                standard for productivity
               </Typography>
             </Typography>
           </motion.div>
