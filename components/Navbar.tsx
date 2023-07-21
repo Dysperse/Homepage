@@ -32,7 +32,7 @@ export function Navbar() {
       {[
         { label: "Open source", href: "//github.com/dysperse" },
         { label: "Server status", href: "//status.dysperse.com" },
-        { label: "Community", href: "/" },
+        { label: "Community", href: "//discord.gg/fvngmDzh77" },
         { label: "Blog", href: "//blog.dysperse.com" },
         { label: "Support", href: "//blog.dysperse.com/series/support" },
       ].map((button) => (
