@@ -126,7 +126,7 @@ export function Header() {
               }}
               className="font-serif"
             >
-              Dysperse is the new
+              Dysperse is the new{" "}
               <Typography
                 sx={{
                   display: { xs: "inline", md: "block" },
