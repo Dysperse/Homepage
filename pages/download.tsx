@@ -219,7 +219,6 @@ export default function Page() {
             mt: { sm: -9 },
             zIndex: 99,
             position: "sticky",
-            alignItems: "center",
             mx: "auto",
             flexDirection: { xs: "column", sm: "row" },
             gap: 3,
