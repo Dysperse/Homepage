@@ -9,7 +9,7 @@ export function Header() {
     <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
       <Box
         sx={{
-          height: "100vh",
+          height: "100dvh",
           maxWidth: "100vw",
           flexDirection: "column",
           overflow: "hidden",
@@ -27,7 +27,7 @@ export function Header() {
               isDark ? "000" : "fff"
             })`,
             width: "100%",
-            height: "100vh",
+            height: "100dvh",
             position: "absolute",
             top: 0,
             left: 0,
@@ -48,7 +48,7 @@ export function Header() {
           style={{
             opacity: isDark ? 1 : 0.6,
             width: "100vw",
-            height: "100vh",
+            height: "100dvh",
             objectFit: "cover",
             position: "absolute",
             top: 0,
@@ -60,7 +60,7 @@ export function Header() {
           sx={{
             position: "relative",
             zIndex: 3,
-            height: "100vh",
+            height: "100dvh",
             maxWidth: "100vw",
             flexDirection: "column",
             overflow: "hidden",
