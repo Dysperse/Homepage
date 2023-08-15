@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Home/Footer";
 
 export default function Page() {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
@@ -22,9 +23,9 @@ export default function Page() {
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    flexBasis: 0,
-    flexGrow: 1,
-    minWidth: 0,
+    flexBasis: { sm: 0 },
+    flexGrow: { sm: 1 },
+    minWidth: { sm: 0 },
     "&:hover": {
       backdropFilter: "blur(1px)",
       background: isDark ? "rgba(255,255,255,.1)" : "rgba(0,0,0,0.1)",
@@ -167,99 +168,133 @@ export default function Page() {
                 delay: 1.5,
               }}
             >
-              <Box
+              <Button
+                size="large"
+                variant="contained"
+                onClick={() =>
+                  window.scrollTo({
+                    top: window.innerHeight - 100,
+                    behavior: "smooth",
+                  })
+                }
                 sx={{
-                  maxWidth: "100vw",
-                  width: "1000px",
-                  mt: 3,
-                  display: "flex",
-                  gap: 3,
+                  width: "auto",
+                  borderRadius: 999,
+                  color: isDark ? "#fff" : "#000",
+                  backdropFilter: "blur(2px)",
+                  mb: { xs: 3, sm: 0 },
                 }}
               >
-                <Box
-                  sx={boxStyles}
-                  onClick={() => window.open("https://my.dysperse.com")}
-                >
-                  <Icon
-                    sx={{
-                      fontSize: "65px!important",
-                    }}
-                  >
-                    language
-                  </Icon>
-                  <Typography variant="h6">Web</Typography>
-                  <Typography sx={{ mt: -2 }}>Stable</Typography>
-                </Box>
-                <Box sx={{ ...boxStyles, opacity: 0.5 }}>
-                  <picture>
-                    <img
-                      width={50}
-                      height={60}
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png"
-                      style={{
-                        ...(isDark && { filter: "invert(1)" }),
-                      }}
-                    />
-                  </picture>
-                  <Typography variant="h6">iOS</Typography>
-                  <Typography sx={{ mt: -2 }}>Coming soon</Typography>
-                </Box>
-                <Box
-                  sx={boxStyles}
-                  onClick={() =>
-                    window.open(
-                      "https://manu-codes.pages.dev/Dysperse-unsigned.apk"
-                    )
-                  }
-                >
-                  <picture>
-                    <img
-                      width={50}
-                      height={60}
-                      src="https://cdn.freebiesupply.com/logos/large/2x/android-logo-black-and-white.png"
-                      style={{
-                        ...(isDark && { filter: "invert(1)" }),
-                      }}
-                    />
-                  </picture>
-                  <Typography variant="h6">Android</Typography>
-                  <Typography sx={{ mt: -2 }}>Pre-release</Typography>
-                </Box>
-                <Box sx={{ ...boxStyles, opacity: 0.5 }}>
-                  <Icon
-                    sx={{
-                      fontSize: "65px!important",
-                    }}
-                  >
-                    desktop_mac
-                  </Icon>
-                  <Typography variant="h6">Mac</Typography>
-                  <Typography sx={{ mt: -2 }}>Coming soon</Typography>
-                </Box>
-                <Box
-                  sx={boxStyles}
-                  onClick={() =>
-                    window.open("https://cdn1.cdn.pet/KI7OVf0kfnzCKXX.exe")
-                  }
-                >
-                  <picture>
-                    <img
-                      width={50}
-                      height={50}
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Windows_logo_2012-Black.svg/1024px-Windows_logo_2012-Black.svg.png"
-                      style={{
-                        ...(isDark && { filter: "invert(1)" }),
-                      }}
-                    />
-                  </picture>
-                  <Typography variant="h6">Windows</Typography>
-                  <Typography sx={{ mt: -2 }}>Pre-release</Typography>
-                </Box>
-              </Box>
+                See platforms <Icon>south</Icon>
+              </Button>
             </motion.div>
           </Box>
         </Box>
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 1.5,
+        }}
+      >
+        <Box
+          sx={{
+            maxWidth: "100vw",
+            width: "1000px",
+            display: "flex",
+            justifyContent: "center",
+            mt: { sm: -9 },
+            zIndex: 99,
+            position: "sticky",
+            alignItems: "center",
+            mx: "auto",
+            flexDirection: { xs: "column", sm: "row" },
+            gap: 3,
+            p: 4,
+          }}
+        >
+          <Box
+            sx={boxStyles}
+            onClick={() => window.open("https://my.dysperse.com")}
+          >
+            <Icon
+              sx={{
+                fontSize: "65px!important",
+              }}
+            >
+              language
+            </Icon>
+            <Typography variant="h6">Web</Typography>
+            <Typography sx={{ mt: -2 }}>Stable</Typography>
+          </Box>
+          <Box sx={{ ...boxStyles, opacity: 0.5 }}>
+            <picture>
+              <img
+                width={50}
+                height={60}
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png"
+                style={{
+                  ...(isDark && { filter: "invert(1)" }),
+                }}
+              />
+            </picture>
+            <Typography variant="h6">iOS</Typography>
+            <Typography sx={{ mt: -2 }}>Coming soon</Typography>
+          </Box>
+          <Box
+            sx={boxStyles}
+            onClick={() =>
+              window.open("https://manu-codes.pages.dev/Dysperse-unsigned.apk")
+            }
+          >
+            <picture>
+              <img
+                width={50}
+                height={60}
+                src="https://cdn.freebiesupply.com/logos/large/2x/android-logo-black-and-white.png"
+                style={{
+                  ...(isDark && { filter: "invert(1)" }),
+                }}
+              />
+            </picture>
+            <Typography variant="h6">Android</Typography>
+            <Typography sx={{ mt: -2 }}>Pre-release</Typography>
+          </Box>
+          <Box sx={{ ...boxStyles, opacity: 0.5 }}>
+            <Icon
+              sx={{
+                fontSize: "65px!important",
+              }}
+            >
+              desktop_mac
+            </Icon>
+            <Typography variant="h6">Mac</Typography>
+            <Typography sx={{ mt: -2 }}>Coming soon</Typography>
+          </Box>
+          <Box
+            sx={boxStyles}
+            onClick={() =>
+              window.open("https://cdn1.cdn.pet/KI7OVf0kfnzCKXX.exe")
+            }
+          >
+            <picture>
+              <img
+                width={50}
+                height={50}
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Windows_logo_2012-Black.svg/1024px-Windows_logo_2012-Black.svg.png"
+                style={{
+                  ...(isDark && { filter: "invert(1)" }),
+                }}
+              />
+            </picture>
+            <Typography variant="h6">Windows</Typography>
+            <Typography sx={{ mt: -2 }}>Pre-release</Typography>
+          </Box>
+        </Box>
+      </motion.div>
+      <Footer />
     </>
   );
 }
