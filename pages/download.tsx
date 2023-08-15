@@ -10,6 +10,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Home/Footer";
+import Head from "next/head";
 
 export default function Page() {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
@@ -36,6 +37,15 @@ export default function Page() {
   };
   return (
     <>
+      <Head>
+        <title>Download Dysperse</title>
+        <meta
+          name="description"
+          content="The future of productivity - at your fingertips. "
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar />
       <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
         <Box
@@ -173,7 +183,7 @@ export default function Page() {
                 variant="contained"
                 onClick={() =>
                   window.scrollTo({
-                    top: window.innerHeight - 100,
+                    top: window.innerHeight - 200,
                     behavior: "smooth",
                   })
                 }
