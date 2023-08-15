@@ -24,9 +24,10 @@ export default function Page() {
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    flexBasis: { sm: 0 },
-    flexGrow: { sm: 1 },
-    minWidth: { sm: 0 },
+    flexBasis: 0,
+    width: "100%",
+    flexGrow: 1,
+    minWidth: 0,
     "&:hover": {
       backdropFilter: "blur(1px)",
       background: isDark ? "rgba(255,255,255,.1)" : "rgba(0,0,0,0.1)",
