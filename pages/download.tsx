@@ -286,7 +286,7 @@ export default function Page() {
           <Box
             sx={boxStyles}
             onClick={() =>
-              window.open("https://cdn1.cdn.pet/KI7OVf0kfnzCKXX.exe")
+              window.open("https://apps.microsoft.com/store/detail/dysperse/9N42Z6V0RL94")
             }
           >
             <picture>
