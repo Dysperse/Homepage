@@ -31,7 +31,8 @@ export function Navbar() {
     <>
       {[
         { label: "Open source", href: "//github.com/dysperse" },
-        { label: "Server status", href: "//status.dysperse.com" },
+        { label: "Status", href: "//status.dysperse.com" },
+        { label: "Download", href: "/download" },
         { label: "Community", href: "//discord.gg/fvngmDzh77" },
         { label: "Blog", href: "//blog.dysperse.com" },
         { label: "Support", href: "//blog.dysperse.com/series/support" },
