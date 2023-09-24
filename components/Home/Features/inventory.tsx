@@ -7,7 +7,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { limeDark } from "@radix-ui/colors";
+import { limeDark, purpleDark } from "@radix-ui/colors";
 import Image from "next/image";
 
 export function InventoryFeature({ featureStyles }: any) {
@@ -19,49 +19,37 @@ export function InventoryFeature({ featureStyles }: any) {
         sx={{
           position: "relative",
           display: "flex",
-          alignItems: "center",
-          height: 200,
-          my: 4,
-          justifyContent: "center",
           flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <Box
-          sx={{
-            background: `${limeDark[isDark ? "lime6" : "lime11"]}`,
-            ...featureStyles.blur,
-          }}
-        />
         <Typography
-          variant="h3"
-          className="font-serif"
-          sx={{
-            ...featureStyles.featureTitle,
-            color: `${limeDark[isDark ? "lime11" : "lime5"]}!important`,
-          }}
-        >
-          Scan and track
-        </Typography>
-        <Typography
-          variant="h3"
+          variant="h1"
           className="font-serif"
           sx={{
             ...featureStyles.featureSubTitle,
-            color: `${limeDark[isDark ? "lime10" : "lime7"]}!important`,
+            color: `${purpleDark[isDark ? "purple10" : "purple7"]}!important`,
           }}
         >
-          with Inventory
+          <Icon
+            sx={{
+              fontSize: "inherit!important",
+            }}
+          >
+            inventory_2
+          </Icon>
+          Inventory
+        </Typography>
+        <Typography
+          sx={{
+            ...featureStyles.featupurpleescription,
+            color: purpleDark[isDark ? "purple9" : "purple8"],
+          }}
+        >
+          View your to-do list and schedule tasks by time, so you can stay on
+          track and make the most of your day.
         </Typography>
       </Box>
-      <Typography
-        sx={{
-          ...featureStyles.featureDescription,
-          color: limeDark[isDark ? "lime9" : "lime8"],
-        }}
-      >
-        Keep track of your personal belongings with shareable lists. Easily sync
-        with boards so you&apos;ll never forget to buy something again.
-      </Typography>
 
       <Box sx={{ mt: 4, mb: 10 }}>
         <Grid container spacing={4} sx={{ mb: 2 }}>

@@ -189,7 +189,6 @@ export function Navbar() {
                   filter: isDark ? "invert(1)" : "invert(0)",
                 }}
               />
-              <span>Dysperse</span>
             </Button>
           </Link>
           <Box sx={{ mx: "auto", pr: 8, display: { xs: "none", md: "block" } }}>

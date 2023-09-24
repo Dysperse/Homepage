@@ -112,10 +112,9 @@ export function Header() {
           >
             <Typography
               sx={{
-                fontSize: { xs: 30, md: 45 },
+                fontSize: { xs: 30, md: 60 },
                 mb: 2,
                 textAlign: { xs: "left", md: "center" },
-                fontWeight: 700,
                 background: `linear-gradient(#${isDark ? "fff" : "000"}, #${
                   isDark ? "606060" : "555"
                 })`,
@@ -126,16 +125,7 @@ export function Header() {
               }}
               className="font-serif"
             >
-              Dysperse is the new{" "}
-              <Typography
-                sx={{
-                  display: { xs: "inline", md: "block" },
-                  fontSize: "inherit",
-                }}
-                component="span"
-              >
-                standard for productivity
-              </Typography>
+              Not just another productivity platform
             </Typography>
           </motion.div>
           <motion.div
@@ -156,7 +146,7 @@ export function Header() {
                 fontSize: { xs: "15px", md: "20px" },
               }}
             >
-              Meet the minimalist, unified productivity app loved by thousands
+              Dysperse is the new standard for productivity.
             </Typography>
           </motion.div>
           <motion.div

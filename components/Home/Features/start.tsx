@@ -4,13 +4,14 @@ import {
   CardContent,
   Grid,
   Icon,
+  IconButton,
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { blueDark } from "@radix-ui/colors";
+import { redDark } from "@radix-ui/colors";
 import Image from "next/image";
 
-export function AgendaFeature({ featureStyles }: any) {
+export function StartFeature({ featureStyles }: any) {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
 
   return (
@@ -19,6 +20,7 @@ export function AgendaFeature({ featureStyles }: any) {
         sx={{
           position: "relative",
           display: "flex",
+          my: 4,
           flexDirection: "column",
           alignItems: "center",
         }}
@@ -28,7 +30,7 @@ export function AgendaFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureSubTitle,
-            color: `${blueDark[isDark ? "blue10" : "blue7"]}!important`,
+            color: `${redDark[isDark ? "red10" : "red7"]}!important`,
           }}
         >
           <Icon
@@ -36,27 +38,28 @@ export function AgendaFeature({ featureStyles }: any) {
               fontSize: "inherit!important",
             }}
           >
-            check_circle
+            change_history
           </Icon>
-          Tasks
+          Start
         </Typography>
         <Typography
           sx={{
-            ...featureStyles.featublueescription,
-            color: blueDark[isDark ? "blue9" : "blue8"],
+            ...featureStyles.featuredescription,
+            color: redDark[isDark ? "red9" : "red8"],
           }}
         >
           View your to-do list and schedule tasks by time, so you can stay on
           track and make the most of your day.
         </Typography>
       </Box>
+
       <Box sx={{ mt: 4, mb: 10 }}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: blueDark[isDark ? "blue1" : "blue12"],
+                borderColor: redDark[isDark ? "red1" : "red12"],
               }}
             >
               <CardContent>
@@ -65,14 +68,14 @@ export function AgendaFeature({ featureStyles }: any) {
                     variant="h5"
                     sx={{
                       fontWeight: 800,
-                      color: blueDark[isDark ? "blue11" : "blue4"],
+                      color: redDark[isDark ? "red11" : "red4"],
                     }}
                     gutterBottom
                   >
                     Make it yours
                   </Typography>
                   <Typography
-                    sx={{ color: blueDark[isDark ? "blue10" : "blue7"] }}
+                    sx={{ color: redDark[isDark ? "red10" : "red7"] }}
                   >
                     Prioritize, color-code, and attach files/emojis to your
                     tasks
@@ -88,7 +91,7 @@ export function AgendaFeature({ featureStyles }: any) {
                   position: "sticky",
                   ...(featureStyles.cardImage as any),
                   boxShadow: `-20px -20px 100px ${
-                    blueDark[isDark ? "blue1" : "blue12"]
+                    redDark[isDark ? "red1" : "red12"]
                   }`,
                 }}
               />
@@ -98,7 +101,7 @@ export function AgendaFeature({ featureStyles }: any) {
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: blueDark[isDark ? "blue1" : "blue12"],
+                borderColor: redDark[isDark ? "red1" : "red12"],
               }}
             >
               <CardContent>
@@ -107,14 +110,14 @@ export function AgendaFeature({ featureStyles }: any) {
                     variant="h5"
                     sx={{
                       fontWeight: 800,
-                      color: blueDark[isDark ? "blue11" : "blue4"],
+                      color: redDark[isDark ? "red11" : "red4"],
                     }}
                     gutterBottom
                   >
                     See unfinished tasks
                   </Typography>
                   <Typography
-                    sx={{ color: blueDark[isDark ? "blue10" : "blue7"] }}
+                    sx={{ color: redDark[isDark ? "red10" : "red7"] }}
                   >
                     You can view unfinished tasks in your backlog
                   </Typography>
@@ -128,7 +131,7 @@ export function AgendaFeature({ featureStyles }: any) {
                 style={{
                   ...(featureStyles.cardImage as any),
                   boxShadow: `-20px -20px 100px ${
-                    blueDark[isDark ? "blue1" : "blue12"]
+                    redDark[isDark ? "red1" : "red12"]
                   }`,
                 }}
               />

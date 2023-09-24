@@ -1,4 +1,13 @@
 import {
+  TimelineSeparator,
+  TimelineDot,
+  timelineItemClasses,
+  TimelineItem,
+  TimelineContent,
+  Timeline,
+  TimelineConnector,
+} from "@mui/lab";
+import {
   AppBar,
   Box,
   Button,
@@ -14,15 +23,13 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { useMotionValueEvent, useScroll } from "framer-motion";
-import { useCallback, useDeferredValue, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { AgendaFeature } from "./agenda";
-import { BoardsFeature } from "./boards";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
+import { useCallback, useDeferredValue, useRef, useState } from "react";
+import { AgendaFeature } from "./agenda";
 import { InventoryFeature } from "./inventory";
-import { MoodTrackingFeature } from "./moodTracking";
-import { CoachFeature } from "./coach";
+import { StartFeature } from "./start";
+import { blueDark, purpleDark, redDark } from "@radix-ui/colors";
 
 function Encryption({ featureStyles }: any) {
   const [value, setValue] = useState("Throw the trash");
@@ -195,10 +202,8 @@ function Encryption({ featureStyles }: any) {
 }
 
 export function Features({ statsRef }: any) {
-  const agendaRef: any = useRef(null);
-  const boardsRef: any = useRef(null);
-  const coachRef: any = useRef(null);
-  const moodRef: any = useRef(null);
+  const startRef: any = useRef(null);
+  const tasksRef: any = useRef(null);
   const inventoryRef: any = useRef(null);
 
   const [showToolbar, setShowToolbar] = useState(false);
@@ -209,11 +214,9 @@ export function Features({ statsRef }: any) {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const refs = [
-      { ref: agendaRef, feature: "agenda" },
-      { ref: boardsRef, feature: "boards" },
-      { ref: coachRef, feature: "coach" },
+      { ref: startRef, feature: "start" },
+      { ref: tasksRef, feature: "tasks" },
       { ref: inventoryRef, feature: "inventory" },
-      { ref: moodRef, feature: "mood" },
     ];
 
     for (const { ref, feature } of refs) {
@@ -241,24 +244,26 @@ export function Features({ statsRef }: any) {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
 
   const featureStyles = {
-    featureTitle: {
-      fontWeight: 800,
-      textAlign: "center",
-      fontSize: { xs: "2rem", sm: "2.5rem" },
+    featureTitle: {},
+    timelineDot: {
+      width: 35,
+      height: 35,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      background: isDark ? "#303030" : "#eee",
     },
     featureSubTitle: {
-      mb: 4,
-      textAlign: "center",
-      fontSize: { xs: "2rem", sm: "2.5rem" },
+      fontSize: { xs: "2rem", sm: "4rem" },
+      display: "flex",
+      alignItems: "center",
+      mt: 2,
     },
     featureDescription: {
-      textAlign: "center",
       maxWidth: "80%",
       width: "550px",
-      fontSize: { xs: "1.1rem", sm: "1.5rem" },
+      fontSize: { xs: "1.1rem", sm: "1rem" },
       fontWeight: 600,
-      margin: "auto",
-      mt: -7,
     },
     textDescriptionTitle: {
       fontWeight: 800,
@@ -291,16 +296,6 @@ export function Features({ statsRef }: any) {
       maxWidth: "calc(100% - 40px)",
       width: "400px",
     },
-    blur: {
-      opacity: 0.2,
-      width: { xs: 150, md: 300 },
-      height: { xs: 150, md: 300 },
-      borderRadius: 999,
-      filter: "blur(30px)",
-      position: "absolute",
-      left: "50%",
-      transform: "translateX(-50%)",
-    },
   };
 
   const buttonStyles = (isActive: boolean) => ({
@@ -315,7 +310,7 @@ export function Features({ statsRef }: any) {
         : "rgba(200,200,200,.3)!important",
       color: isDark ? "#fff" : "#000",
       "& .MuiIcon-root": {
-        fontVariationSettings: `'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48`,
+        fontVariationSettings: `'FILL' 1, 'wght' 100, 'GRAD' 0, 'opsz' 48`,
       },
     }),
   });
@@ -459,100 +454,187 @@ export function Features({ statsRef }: any) {
             gap: 2.5,
           }}
         >
-          <Button
-            id="agendaTrigger"
-            size="small"
-            sx={buttonStyles(activeFeature === "agenda")}
-            onClick={() => handleScroll(agendaRef)}
-          >
-            <Icon>check_circle</Icon>
-            Agenda
-          </Button>
-          <Button
-            id="boardsTrigger"
-            size="small"
-            sx={buttonStyles(activeFeature === "boards")}
-            onClick={() => handleScroll(boardsRef)}
-          >
-            <Icon>view_kanban</Icon>
-            Boards
-          </Button>
-          <Button
-            id="coachTrigger"
-            size="small"
-            sx={buttonStyles(activeFeature === "coach")}
-            onClick={() => handleScroll(coachRef)}
-          >
-            <Icon>rocket_launch</Icon>
-            Coach
-          </Button>
-          <Button
-            id="inventoryTrigger"
-            size="small"
-            sx={buttonStyles(activeFeature === "inventory")}
-            onClick={() => handleScroll(inventoryRef)}
-          >
-            <Icon>inventory_2</Icon>
-            Inventory
-          </Button>
-          <Button
-            id="moodTrigger"
-            size="small"
-            sx={buttonStyles(activeFeature === "mood")}
-            onClick={() => handleScroll(moodRef)}
-          >
-            <Icon>stress_management</Icon>
-            Mood tracking
-          </Button>
+          {[
+            { id: "startTrigger", icon: "change_history", text: "Start" },
+            { id: "tasksTrigger", icon: "check_circle", text: "Tasks" },
+            { id: "inventoryTrigger", icon: "inventory_2", text: "Inventory" },
+          ].map((item) => (
+            <Button
+              id={item.id}
+              size="small"
+              sx={buttonStyles(activeFeature === item.text.toLowerCase())}
+              onClick={() => handleScroll(item.text.toLowerCase())}
+            >
+              <Icon>{item.icon}</Icon>
+              {item.text}
+            </Button>
+          ))}
         </Toolbar>
       </AppBar>
 
       <Box sx={{ mb: 10 }} />
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        viewport={{ once: true }}
-        whileInView={{ opacity: 1, y: 0 }}
+      <Typography variant="h2" className="font-serif">
+        The four elements.
+      </Typography>
+      <Typography sx={{ mt: 1, opacity: 0.6 }}>
+        Core principles that drive Dysperse&apos;s design.
+      </Typography>
+      <Grid
+        container
+        sx={{
+          border: "2px solid",
+          p: 2,
+          borderColor: "rgba(255,255,255,.1)",
+          borderRadius: 5,
+          mt: 2,
+        }}
       >
-        <Box ref={agendaRef} sx={{ scrollMarginTop: "200px" }}>
-          <AgendaFeature featureStyles={featureStyles} />
-        </Box>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        viewport={{ once: true }}
-        whileInView={{ opacity: 1, y: 0 }}
+        {[
+          {
+            heading: "Instinct",
+            description: "Engineered for minimal effort",
+            icon: "pan_tool_alt",
+          },
+          {
+            heading: "Adaptation",
+            description: "Flexible for any personality",
+            icon: "circle",
+          },
+          {
+            heading: "Utility",
+            description: "Designed for conveniency",
+            icon: "auto_awesome_motion",
+          },
+          {
+            heading: "Journey",
+            description: "Unleash collective brilliance",
+            icon: "conversion_path",
+          },
+        ].map((element, index) => (
+          <Grid
+            item
+            xs={12}
+            md={3}
+            sx={{
+              "& .motion": {
+                display: "flex",
+                alignItems: "center",
+                gap: 2,
+                p: 1.5,
+              },
+            }}
+          >
+            <motion.div
+              className="motion"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.5 * index + 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Icon sx={{ fontSize: "60px!important" }}>{element.icon}</Icon>
+              <Box>
+                <Typography variant="h6">{element.heading}</Typography>
+                <Typography sx={{ opacity: 0.6 }}>
+                  {element.description}
+                </Typography>
+              </Box>
+            </motion.div>
+          </Grid>
+        ))}
+      </Grid>
+      <Timeline
+        sx={{
+          p: 0,
+          [`& .${timelineItemClasses.root}:before`]: {
+            p: 0,
+            flex: 0,
+          },
+        }}
       >
-        <Box ref={boardsRef} sx={{ scrollMarginTop: "200px" }}>
-          <BoardsFeature featureStyles={featureStyles} />
-        </Box>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        viewport={{ once: true }}
-        whileInView={{ opacity: 1, y: 0 }}
-      >
-        <Box ref={coachRef} sx={{ scrollMarginTop: "200px" }}>
-          <CoachFeature featureStyles={featureStyles} />
-        </Box>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        viewport={{ once: true }}
-        whileInView={{ opacity: 1, y: 0 }}
-      >
-        <Box ref={inventoryRef} sx={{ scrollMarginTop: "200px" }}>
-          <InventoryFeature featureStyles={featureStyles} />
-        </Box>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        viewport={{ once: true }}
-        whileInView={{ opacity: 1, y: 0 }}
-      >
-        <Box ref={moodRef} sx={{ scrollMarginTop: "200px" }}>
-          <MoodTrackingFeature featureStyles={featureStyles} />
-        </Box>
-      </motion.div>
+        <TimelineItem>
+          <TimelineSeparator sx={{ mt: "-50px" }}>
+            <TimelineDot sx={{ ...featureStyles.timelineDot, opacity: 0 }} />
+            <TimelineConnector
+              sx={{
+                height: "50px",
+                background: `linear-gradient(transparent, ${
+                  redDark[isDark ? "red10" : "red7"]
+                })`,
+              }}
+            />
+          </TimelineSeparator>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot
+              sx={{
+                ...featureStyles.timelineDot,
+                color: redDark[isDark ? "red1" : "red12"],
+                background: redDark[isDark ? "red10" : "red7"],
+              }}
+            >
+              1
+            </TimelineDot>
+            <TimelineConnector
+              sx={{
+                background: `linear-gradient(${
+                  redDark[isDark ? "red10" : "red7"]
+                } 90%, ${blueDark[isDark ? "blue10" : "blue7"]})`,
+              }}
+            />
+          </TimelineSeparator>
+          <TimelineContent ref={startRef}>
+            <StartFeature featureStyles={featureStyles} />
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot
+              sx={{
+                ...featureStyles.timelineDot,
+                color: blueDark[isDark ? "blue1" : "blue12"],
+                background: blueDark[isDark ? "blue10" : "blue7"],
+              }}
+            >
+              2
+            </TimelineDot>
+            <TimelineConnector
+              sx={{
+                background: `linear-gradient(${
+                  blueDark[isDark ? "blue10" : "blue7"]
+                } 90%, ${purpleDark[isDark ? "purple10" : "purple7"]})`,
+              }}
+            />
+          </TimelineSeparator>
+          <TimelineContent ref={tasksRef}>
+            <AgendaFeature featureStyles={featureStyles} />
+          </TimelineContent>
+        </TimelineItem>
+
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot
+              sx={{
+                ...featureStyles.timelineDot,
+                color: purpleDark[isDark ? "purple1" : "purple12"],
+                background: purpleDark[isDark ? "purple10" : "purple7"],
+              }}
+            >
+              3
+            </TimelineDot>
+            <TimelineConnector
+              sx={{
+                background: `linear-gradient(${
+                  purpleDark[isDark ? "purple10" : "purple7"]
+                } 90%, ${purpleDark[isDark ? "purple10" : "purple7"]})`,
+              }}
+            />
+          </TimelineSeparator>
+          <TimelineContent ref={inventoryRef}>
+            <InventoryFeature featureStyles={featureStyles} />
+          </TimelineContent>
+        </TimelineItem>
+      </Timeline>
     </Container>
   );
 }
