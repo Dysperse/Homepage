@@ -639,7 +639,6 @@ export function Features({ statsRef }: any) {
       "& .MuiCardContent-root": {
         p: 4,
       },
-      pb: { xs: "0", sm: "300px" },
     },
     cardImage: {
       height: "auto",
