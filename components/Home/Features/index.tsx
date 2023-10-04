@@ -715,16 +715,31 @@ export function Features({ statsRef }: any) {
           }}
         >
           {[
-            { id: "startTrigger", icon: "change_history", text: "Start" },
-            { id: "tasksTrigger", icon: "check_circle", text: "Tasks" },
-            { id: "inventoryTrigger", icon: "inventory_2", text: "Inventory" },
+            {
+              ref: startRef,
+              id: "startTrigger",
+              icon: "change_history",
+              text: "Start",
+            },
+            {
+              ref: tasksRef,
+              id: "tasksTrigger",
+              icon: "check_circle",
+              text: "Tasks",
+            },
+            {
+              ref: inventoryRef,
+              id: "inventoryTrigger",
+              icon: "inventory_2",
+              text: "Inventory",
+            },
           ].map((item) => (
             <Button
               key={item.id}
               id={item.id}
               size="small"
               sx={buttonStyles(activeFeature === item.text.toLowerCase())}
-              onClick={() => handleScroll(item.text.toLowerCase())}
+              onClick={() => handleScroll(item.ref)}
             >
               <Icon
                 sx={{
