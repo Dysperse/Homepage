@@ -275,7 +275,8 @@ export function AgendaFeature({ featureStyles }: any) {
                     Organize anything
                   </Typography>
                   <Typography sx={{ color: colors.blue11, opacity: 0.8 }}>
-                    Create boards to organize items by your own categories
+                    Create kanban-style boards to organize items by your own
+                    categories
                   </Typography>
                 </Box>
               </CardContent>

@@ -286,7 +286,7 @@ function Elements() {
   );
 }
 
-function Extras({ isDark, featureStyles }: any) {
+function Extras({ featureStyles }: any) {
   return (
     <Box
       sx={{
@@ -306,7 +306,8 @@ function Extras({ isDark, featureStyles }: any) {
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: isDark ? "#303030" : "#ddd",
+                borderColor: "#303030",
+                pb: 0,
               }}
             >
               <CardContent>
@@ -317,7 +318,7 @@ function Extras({ isDark, featureStyles }: any) {
                   alt="Sync with all your devices!"
                   style={{
                     width: "80%",
-                    ...(isDark && { filter: "invert(1)" }),
+                    filter: "invert(1)",
                     margin: "auto",
                     display: "block",
                     height: "auto",
@@ -342,7 +343,8 @@ function Extras({ isDark, featureStyles }: any) {
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: isDark ? "#303030" : "#ddd",
+                borderColor: "#303030",
+                pb: 0,
               }}
             >
               <CardContent>
@@ -359,7 +361,8 @@ function Extras({ isDark, featureStyles }: any) {
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: isDark ? "#303030" : "#ddd",
+                borderColor: "#303030",
+                pb: 0,
               }}
             >
               <CardContent>
@@ -393,12 +396,10 @@ function Encryption({ featureStyles }: any) {
     },
     [deferredValue]
   );
-  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
-
   const styles = {
     boxShadow:
       "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
-    border: `1px solid #${isDark ? "303030" : "eee"}`,
+    border: `1px solid #303030`,
     height: "100%",
     borderRadius: 8,
     p: 3,
@@ -406,7 +407,11 @@ function Encryption({ featureStyles }: any) {
 
   return (
     <Card
-      sx={{ ...featureStyles.card, borderColor: isDark ? "#303030" : "#ddd" }}
+      sx={{
+        ...featureStyles.card,
+        borderColor: "#303030",
+        pb: 0,
+      }}
     >
       <CardContent>
         <Typography variant="h6" sx={{ fontWeight: "700" }}>
@@ -440,7 +445,7 @@ function Encryption({ featureStyles }: any) {
                     <InputAdornment position="start">
                       <Icon
                         sx={{
-                          color: isDark ? "#fff" : "#000",
+                          color: "#fff",
                         }}
                       >
                         check_circle
@@ -449,10 +454,10 @@ function Encryption({ featureStyles }: any) {
                   ),
                   disableUnderline: true,
                   sx: {
-                    background: `hsl(240,11%,${isDark ? 10 : 95}%)`,
+                    background: `hsl(240,11%,10%)`,
                     px: 2,
                     py: 1,
-                    color: isDark ? "#fff" : "#000",
+                    color: "#fff",
                     borderRadius: 5,
                   },
                 }}
@@ -529,7 +534,7 @@ function Encryption({ featureStyles }: any) {
               </Typography>
               <Box
                 sx={{
-                  background: `hsl(240,11%,${isDark ? 10 : 95}%)`,
+                  background: `hsl(240,11%,10%)`,
                   px: 2,
                   py: 1,
                   borderRadius: 5,
@@ -586,8 +591,6 @@ export function Features({ statsRef }: any) {
     }
   });
 
-  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
-
   const featureStyles = {
     featureTitle: {},
     timelineConnector: {
@@ -601,7 +604,7 @@ export function Features({ statsRef }: any) {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      background: isDark ? "#303030" : "#eee",
+      background: "#303030",
     },
     featureSubTitle: {
       fontSize: { xs: "2rem", sm: "4rem" },
@@ -632,19 +635,22 @@ export function Features({ statsRef }: any) {
       borderRadius: 8,
       boxShadow: "none",
       position: "relative",
-      color: isDark ? "white" : "black",
+      color: "white",
       "& .MuiCardContent-root": {
         p: 4,
       },
+      paddingBottom: "300px",
     },
     cardImage: {
       height: "auto",
       zIndex: 9,
-      position: "relative",
+      position: "absolute",
       float: "right",
       borderTopLeftRadius: "28px",
       maxWidth: "calc(100% - 40px)",
       width: "400px",
+      bottom: 0,
+      right: 0,
     },
   };
 
@@ -652,13 +658,11 @@ export function Features({ statsRef }: any) {
     "& .MuiIcon-root, & .MuiIcon-root *": {
       transition: "all .2s!important",
     },
-    ...(isDark && { color: "#ccc" }),
+    color: "#ccc",
 
     ...(isActive && {
-      background: isDark
-        ? "rgba(255,255,255,.1)!important"
-        : "rgba(200,200,200,.3)!important",
-      color: isDark ? "#fff" : "#000",
+      background: "rgba(255,255,255,.1)!important",
+      color: "#fff",
       "& .MuiIcon-root": {
         fontVariationSettings: `'FILL' 1, 'wght' 100, 'GRAD' 0, 'opsz' 48`,
       },
@@ -679,9 +683,7 @@ export function Features({ statsRef }: any) {
       <Box
         sx={{
           mb: 10,
-          borderTop: isDark
-            ? "1px solid rgba(255,255,255,.1)"
-            : "1px solid rgba(0,0,0,0.05)",
+          borderTop: "1px solid rgba(255,255,255,.1)",
         }}
       />
 
@@ -695,14 +697,8 @@ export function Features({ statsRef }: any) {
           opacity: showToolbar ? 1 : 0,
           position: "fixed",
           backdropFilter: "blur(10px)",
-          background: showToolbar
-            ? isDark
-              ? "rgba(0,0,0,0.5)"
-              : "rgba(255,255,255,.5)"
-            : "transparent",
-          borderBottom: isDark
-            ? "1px solid rgba(255,255,255,0.1)"
-            : "1px solid rgba(0,0,0,0.05)",
+          background: showToolbar ? "rgba(0,0,0,0.5)" : "transparent",
+          borderBottom: "1px solid rgba(255,255,255,0.1)",
           height: "55px",
           overflowX: "scroll",
           overflowY: "hidden",
@@ -764,9 +760,7 @@ export function Features({ statsRef }: any) {
               sx={{
                 ...featureStyles.timelineConnector,
                 height: "50px",
-                background: `linear-gradient(transparent, ${
-                  (isDark ? redDark : red).red10
-                })`,
+                background: `linear-gradient(transparent, ${redDark.red10})`,
               }}
             />
           </TimelineSeparator>
@@ -776,8 +770,8 @@ export function Features({ statsRef }: any) {
             <TimelineDot
               sx={{
                 ...featureStyles.timelineDot,
-                color: (isDark ? redDark : red).red1,
-                background: (isDark ? redDark : red).red10,
+                color: redDark.red1,
+                background: redDark.red10,
               }}
             >
               1
@@ -785,9 +779,7 @@ export function Features({ statsRef }: any) {
             <TimelineConnector
               sx={{
                 ...featureStyles.timelineConnector,
-                background: `linear-gradient(${
-                  (isDark ? redDark : red).red10
-                } 80%, ${(isDark ? blueDark : blue).blue10})`,
+                background: `linear-gradient(${redDark.red10} 80%, ${blueDark.blue10})`,
               }}
             />
           </TimelineSeparator>
@@ -800,8 +792,8 @@ export function Features({ statsRef }: any) {
             <TimelineDot
               sx={{
                 ...featureStyles.timelineDot,
-                color: (isDark ? blueDark : blue).blue1,
-                background: (isDark ? blueDark : blue).blue10,
+                color: blueDark.blue1,
+                background: blueDark.blue10,
               }}
             >
               2
@@ -809,9 +801,7 @@ export function Features({ statsRef }: any) {
             <TimelineConnector
               sx={{
                 ...featureStyles.timelineConnector,
-                background: `linear-gradient(${
-                  (isDark ? blueDark : blue).blue10
-                } 80%, ${(isDark ? purpleDark : purple).purple10})`,
+                background: `linear-gradient(${blueDark.blue10} 80%, ${purpleDark.purple10})`,
               }}
             />
           </TimelineSeparator>
@@ -825,8 +815,8 @@ export function Features({ statsRef }: any) {
             <TimelineDot
               sx={{
                 ...featureStyles.timelineDot,
-                color: (isDark ? purpleDark : purple).purple1,
-                background: (isDark ? purpleDark : purple).purple10,
+                color: purpleDark.purple1,
+                background: purpleDark.purple10,
               }}
             >
               3
@@ -834,9 +824,7 @@ export function Features({ statsRef }: any) {
             <TimelineConnector
               sx={{
                 ...featureStyles.timelineConnector,
-                background: `linear-gradient(${
-                  (isDark ? purpleDark : purple).purple10
-                } 80%, ${(isDark ? purpleDark : purple).purple10})`,
+                background: `linear-gradient(${purpleDark.purple10} 80%, ${purpleDark.purple10})`,
               }}
             />
           </TimelineSeparator>
@@ -845,7 +833,7 @@ export function Features({ statsRef }: any) {
           </TimelineContent>
         </TimelineItem>
       </Timeline>
-      <Extras isDark={isDark} featureStyles={featureStyles} />
+      <Extras featureStyles={featureStyles} />
     </Container>
   );
 }

@@ -157,6 +157,7 @@ export function InventoryFeature({ featureStyles }: any) {
                   height: "100%",
                   ...featureStyles.card,
                   borderColor: purpleDark[isDark ? "purple1" : "purple12"],
+                  pb: 0,
                 }}
               >
                 <Box
