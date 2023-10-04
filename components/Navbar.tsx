@@ -58,20 +58,12 @@ export function Navbar() {
       elevation={0}
       sx={{
         zIndex: 999,
-        background: highlightBackground
-          ? isDark
-            ? "rgba(0,0,0,0.6)"
-            : "rgba(255,255,255,.6)"
-          : "transparent",
+        background: highlightBackground ? "rgba(0,0,0,0.6)" : "transparent",
         height: "60px",
         backdropFilter: blurBackground ? "blur(10px)" : "",
         borderBottom: "1px solid",
         transition: "all .2s",
-        borderColor: blurBackground
-          ? isDark
-            ? "rgba(255,255,255,0.05)"
-            : "rgba(0,0,0,0.05)"
-          : "transparent",
+        borderColor: blurBackground ? "rgba(255,255,255,0.05)" : "transparent",
         p: 0,
         px: { md: 5 },
       }}
@@ -96,9 +88,7 @@ export function Navbar() {
               m: "20px",
               width: "calc(100% - 40px)",
               boxShadow: 0,
-              ...(isDark && {
-                background: "#000",
-              }),
+              background: "#000",
             },
           }}
           BackdropProps={{
@@ -112,7 +102,7 @@ export function Navbar() {
             sx={{
               width: 40,
               height: 2,
-              background: isDark ? "#303030" : "#ddd",
+              background: "#303030",
               mx: "auto",
               my: 2,
             }}
@@ -121,7 +111,7 @@ export function Navbar() {
             size="small"
             sx={{
               fontWeight: 600,
-              color: isDark ? "#fff" : "#000",
+              color: "#fff",
               py: 2,
               justifyContent: "start",
               px: 2,
@@ -137,7 +127,7 @@ export function Navbar() {
               height={30}
               alt="logo"
               style={{
-                filter: isDark ? "invert(1)" : "invert(0)",
+                filter: "invert(1)",
               }}
             />
             Dysperse

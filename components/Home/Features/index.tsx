@@ -13,10 +13,14 @@ import {
   Button,
   Card,
   CardContent,
+  Chip,
   Container,
   Grid,
   Icon,
   InputAdornment,
+  ListItem,
+  ListItemButton,
+  ListItemText,
   TextField,
   Toolbar,
   Tooltip,
@@ -37,6 +41,133 @@ import {
   red,
   redDark,
 } from "@radix-ui/colors";
+
+function Difference() {
+  return (
+    <>
+      <Typography
+        variant="h2"
+        className="font-serif"
+        sx={{
+          background: "linear-gradient(#fff 0%, #aaa 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
+        Another productivity app?
+      </Typography>
+      <Typography sx={{ opacity: 0.6, mt: 1 }} variant="h6">
+        Think again
+      </Typography>
+      <Grid
+        container
+        sx={{
+          mt: 2,
+          mb: 4,
+          mx: -1,
+          "& .MuiGrid-root": {
+            p: 1,
+          },
+          "& .grid-item": {
+            p: 2,
+            border: `2px solid rgba(255,255,255,.2)`,
+            borderRadius: 5,
+          },
+          "& .MuiChip-root": {
+            fontWeight: 900,
+          },
+        }}
+      >
+        <Grid xs={12} sm={6}>
+          <Box className="grid-item">
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1.5,
+                mb: 1,
+              }}
+            >
+              <Chip label="BEFORE" size="small" />
+              <Typography variant="h6">Other apps</Typography>
+            </Box>
+            {[
+              ["Endless to-do lists", "Never check anything off"],
+              ["Predefined format", "Limited options for flexibility"],
+              ["Forgotten tasks", "No organization"],
+              ["Too many tools", "Calendars, to-do lists, and spreadsheets"],
+              ["Hard to switch", "Limited connections with other apps"],
+            ].map((bullet) => (
+              <ListItem
+                key={bullet[0]}
+                sx={{ gap: 2, p: 0, alignItems: "start", py: 0.5 }}
+              >
+                <Icon sx={{ mt: 0.5 }}>radio_button_unchecked</Icon>
+                <ListItemText
+                  primary={
+                    <>
+                      <b>{bullet[0]}</b>
+                      {" - "}
+                      <span style={{ opacity: 0.6 }}>{bullet[1]}</span>
+                    </>
+                  }
+                />{" "}
+              </ListItem>
+            ))}
+          </Box>
+        </Grid>
+        <Grid xs={12} sm={6}>
+          <Box className="grid-item" sx={{ borderColor: "#fff!important" }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1.5,
+                mb: 1,
+              }}
+            >
+              <Chip label="AFTER" size="small" />
+              <Typography variant="h6">Dysperse</Typography>
+            </Box>
+            {[
+              ["Focus mode", "Only see what you need to work on"],
+              ["Customizable", "35+ themes, multiple layouts, & more"],
+              ["Forgotten tasks", "No organization"],
+              [
+                "Optional widgets",
+                "Carefully crafted widgets for your session",
+              ],
+              [
+                "Easy switch",
+                "Connect with your favorite apps and import your data",
+              ],
+              [
+                "Forget nothing",
+                "Customizable, repeating notifications for your most important tasks",
+              ],
+            ].map((bullet) => (
+              <ListItem
+                key={bullet[0]}
+                sx={{ gap: 2, p: 0, alignItems: "start", py: 0.5 }}
+              >
+                <Icon sx={{ mt: 0.5 }}>radio_button_unchecked</Icon>
+                <ListItemText
+                  primary={
+                    <>
+                      <b>{bullet[0]}</b>
+                      {" - "}
+                      <span style={{ opacity: 0.6 }}>{bullet[1]}</span>
+                    </>
+                  }
+                />
+              </ListItem>
+            ))}
+          </Box>
+        </Grid>
+      </Grid>
+    </>
+  );
+}
 
 function Elements() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -572,15 +703,16 @@ export function Features({ statsRef }: any) {
           borderBottom: isDark
             ? "1px solid rgba(255,255,255,0.1)"
             : "1px solid rgba(0,0,0,0.05)",
-          height: "45px",
-          overflow: "scroll",
+          height: "55px",
+          overflowX: "scroll",
+          overflowY: "hidden",
           px: { sm: 5 },
         }}
       >
         <Toolbar
           sx={{
-            height: "45px!important",
-            minHeight: "45px!important",
+            height: "55px!important",
+            minHeight: "55px!important",
             "& *": {
               flexShrink: 0,
             },
@@ -599,7 +731,14 @@ export function Features({ statsRef }: any) {
               sx={buttonStyles(activeFeature === item.text.toLowerCase())}
               onClick={() => handleScroll(item.text.toLowerCase())}
             >
-              <Icon>{item.icon}</Icon>
+              <Icon
+                sx={{
+                  transition: "all .4s!important",
+                  fontSize: "30px!important",
+                }}
+              >
+                {item.icon}
+              </Icon>
               {item.text}
             </Button>
           ))}
@@ -607,6 +746,7 @@ export function Features({ statsRef }: any) {
       </AppBar>
 
       <Box sx={{ mb: 10 }} />
+      <Difference />
       <Elements />
       <Timeline
         sx={{

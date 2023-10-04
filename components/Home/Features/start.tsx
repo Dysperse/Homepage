@@ -87,14 +87,12 @@ export function StartFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/boards/emojis${isDark ? "-dark" : ""}.png`}
+                src={`/features/boards/emojis.png`}
                 alt="features"
                 style={{
                   position: "sticky",
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${
-                    redDark[isDark ? "red1" : "red12"]
-                  }`,
+                  boxShadow: `-20px -20px 100px ${colors.red1}`,
                 }}
               />
             </Card>
@@ -126,13 +124,11 @@ export function StartFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                src={`/features/agenda/Backlog.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${
-                    redDark[isDark ? "red1" : "red12"]
-                  }`,
+                  boxShadow: `-20px -20px 100px ${colors.red1}`,
                 }}
               />
             </Card>
@@ -165,13 +161,11 @@ export function StartFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                src={`/features/agenda/Backlog.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${
-                    redDark[isDark ? "red1" : "red12"]
-                  }`,
+                  boxShadow: `-20px -20px 100px ${colors.red1}`,
                 }}
               />
             </Card>
@@ -204,13 +198,11 @@ export function StartFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                src={`/features/agenda/Backlog.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${
-                    redDark[isDark ? "red1" : "red12"]
-                  }`,
+                  boxShadow: `-20px -20px 100px ${colors.red1}`,
                 }}
               />
             </Card>

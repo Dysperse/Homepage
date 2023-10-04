@@ -76,48 +76,10 @@ export function AgendaFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/boards/emojis${isDark ? "-dark" : ""}.png`}
+                src={`/features/Customize.png`}
                 alt="features"
                 style={{
                   position: "sticky",
-                  ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${
-                    blueDark[isDark ? "blue1" : "blue12"]
-                  }`,
-                }}
-              />
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Card
-              sx={{
-                ...featureStyles.card,
-                borderColor: colors.blue2,
-              }}
-            >
-              <CardContent>
-                <Box sx={{ position: "relative", zIndex: 99 }}>
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      fontWeight: 800,
-                      color: colors.blue11,
-                    }}
-                    gutterBottom
-                  >
-                    Keep up with the flow
-                  </Typography>
-                  <Typography sx={{ color: colors.blue11, opacity: 0.8 }}>
-                    Stay on top of your missed and upcoming tasks with Stream
-                  </Typography>
-                </Box>
-              </CardContent>
-              <Image
-                width={400}
-                height={300}
-                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
-                alt="features"
-                style={{
                   ...(featureStyles.cardImage as any),
                   boxShadow: `-20px -20px 100px ${
                     blueDark[isDark ? "blue1" : "blue12"]
@@ -154,7 +116,7 @@ export function AgendaFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                src={`/features/Focus.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
@@ -193,7 +155,7 @@ export function AgendaFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                src={`/features/Integrations.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
@@ -243,7 +205,7 @@ export function AgendaFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                src={`/features/Perspectives.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
@@ -282,7 +244,45 @@ export function AgendaFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                src={`/features/CommandPalette.png`}
+                alt="features"
+                style={{
+                  ...(featureStyles.cardImage as any),
+                  boxShadow: `-20px -20px 100px ${
+                    blueDark[isDark ? "blue1" : "blue12"]
+                  }`,
+                }}
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: colors.blue2,
+              }}
+            >
+              <CardContent>
+                <Box sx={{ position: "relative", zIndex: 99 }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 800,
+                      color: colors.blue11,
+                    }}
+                    gutterBottom
+                  >
+                    Organize anything
+                  </Typography>
+                  <Typography sx={{ color: colors.blue11, opacity: 0.8 }}>
+                    Create boards to organize items by your own categories
+                  </Typography>
+                </Box>
+              </CardContent>
+              <Image
+                width={400}
+                height={300}
+                src={`/features/Boards.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
