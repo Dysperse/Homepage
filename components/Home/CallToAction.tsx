@@ -32,9 +32,8 @@ export function CallToAction() {
           />
           <Typography
             className="font-serif"
-            variant="h4"
+            variant="h2"
             sx={{
-              fontWeight: 900,
               my: 1,
               color: isDark ? "#fff" : "#000",
             }}

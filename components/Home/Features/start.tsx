@@ -87,7 +87,7 @@ export function StartFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/boards/emojis.png`}
+                src={`/features/Availability.png`}
                 alt="features"
                 style={{
                   position: "sticky",
@@ -124,7 +124,7 @@ export function StartFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/agenda/Backlog.png`}
+                src={`/features/Status.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
@@ -161,7 +161,7 @@ export function StartFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/agenda/Backlog.png`}
+                src={`/features/Birthday.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),
@@ -198,7 +198,7 @@ export function StartFeature({ featureStyles }: any) {
               <Image
                 width={400}
                 height={300}
-                src={`/features/agenda/Backlog.png`}
+                src={`/features/Profile.png`}
                 alt="features"
                 style={{
                   ...(featureStyles.cardImage as any),

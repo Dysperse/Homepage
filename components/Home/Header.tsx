@@ -192,7 +192,7 @@ export function Header() {
                 mb: { xs: 3, sm: 0 },
               }}
             >
-              Isn&apos;t that captivating? <Icon>lightbulb</Icon>
+              Let&apos;s do it! <Icon>local_fire_department</Icon>
             </Button>
           </motion.div>
         </Box>

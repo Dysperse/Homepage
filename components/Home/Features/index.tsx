@@ -607,7 +607,7 @@ export function Features({ statsRef }: any) {
       background: "#303030",
     },
     featureSubTitle: {
-      fontSize: { xs: "2rem", sm: "4rem" },
+      fontSize: "4rem",
       display: "flex",
       alignItems: "center",
       mt: 2,
@@ -639,12 +639,12 @@ export function Features({ statsRef }: any) {
       "& .MuiCardContent-root": {
         p: 4,
       },
-      paddingBottom: "300px",
+      pb: { xs: "0", sm: "300px" },
     },
     cardImage: {
       height: "auto",
       zIndex: 9,
-      position: "absolute",
+      position: { xs: "static", sm: "absolute" },
       float: "right",
       borderTopLeftRadius: "28px",
       maxWidth: "calc(100% - 40px)",

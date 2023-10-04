@@ -161,6 +161,7 @@ export function Navbar() {
             <Button
               size="small"
               sx={{
+                mr: { xs: "-40px", sm: 0 },
                 fontWeight: 600,
                 color: isDark ? "#fff" : "#000",
                 fontSize: "15px",

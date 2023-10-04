@@ -40,15 +40,6 @@ export function InventoryFeature({ featureStyles }: any) {
           </Icon>
           Inventory
         </Typography>
-        <Typography
-          sx={{
-            ...featureStyles.featupurpleescription,
-            color: purpleDark[isDark ? "purple9" : "purple8"],
-          }}
-        >
-          View your to-do list and schedule tasks by time, so you can stay on
-          track and make the most of your day.
-        </Typography>
       </Box>
 
       <Box sx={{ mt: 4, mb: 10 }}>
