@@ -157,17 +157,16 @@ export function Header() {
                 mb: 2,
                 color: "#909090",
                 fontSize: { xs: "15px", md: "20px" },
-                "& span": {
-                  textDecoration: "line-through",
-                  opacity: 0.5,
-                },
+                // "& span": {
+                //   textDecoration: "line-through",
+                //   opacity: 0.5,
+                // },
                 "& .e": {
                   display: { xs: "inline", sm: "block" },
                 },
               }}
             >
-              To-do lists don&apos;t work. And Dysperse{" "}
-              <span>is more than that</span> isn&apos;t that.
+              To-do lists don&apos;t work. And Dysperse isn&apos;t that.
               <span className="e" /> We&apos;re here to redefine the standard
               for productivity.
             </Typography>

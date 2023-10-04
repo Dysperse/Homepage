@@ -195,14 +195,17 @@ export function Navbar() {
           </Box>
           <Button
             sx={{
+              px: 2,
               mr: { xs: 2, md: "-40px" },
               minWidth: { xs: "45px", md: "75px" },
-              ml: { xs: "auto", md: "unset" },
+              ml: { xs: "auto", md: "-40px" },
+              background: "rgba(255,255,255,.1) !important",
             }}
             target="_blank"
             href="//my.dysperse.com"
           >
-            <Icon>account_circle</Icon>
+            Open
+            <Icon>outbound</Icon>
           </Button>
         </Toolbar>
       </motion.div>
