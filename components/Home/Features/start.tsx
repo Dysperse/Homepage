@@ -2,17 +2,19 @@ import {
   Box,
   Card,
   CardContent,
+  Chip,
   Grid,
   Icon,
-  IconButton,
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { redDark } from "@radix-ui/colors";
+import { red, redDark } from "@radix-ui/colors";
 import Image from "next/image";
 
 export function StartFeature({ featureStyles }: any) {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
+  const colors = isDark ? redDark : red;
 
   return (
     <>
@@ -20,7 +22,6 @@ export function StartFeature({ featureStyles }: any) {
         sx={{
           position: "relative",
           display: "flex",
-          my: 4,
           flexDirection: "column",
           alignItems: "center",
         }}
@@ -30,7 +31,9 @@ export function StartFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureSubTitle,
-            color: `${redDark[isDark ? "red10" : "red7"]}!important`,
+            background: `linear-gradient(${colors.red8}, ${colors.red11})`,
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
           }}
         >
           <Icon
@@ -42,15 +45,6 @@ export function StartFeature({ featureStyles }: any) {
           </Icon>
           Start
         </Typography>
-        <Typography
-          sx={{
-            ...featureStyles.featuredescription,
-            color: redDark[isDark ? "red9" : "red8"],
-          }}
-        >
-          View your to-do list and schedule tasks by time, so you can stay on
-          track and make the most of your day.
-        </Typography>
       </Box>
 
       <Box sx={{ mt: 4, mb: 10 }}>
@@ -59,7 +53,7 @@ export function StartFeature({ featureStyles }: any) {
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: redDark[isDark ? "red1" : "red12"],
+                borderColor: colors.red2,
               }}
             >
               <CardContent>
@@ -68,17 +62,25 @@ export function StartFeature({ featureStyles }: any) {
                     variant="h5"
                     sx={{
                       fontWeight: 800,
-                      color: redDark[isDark ? "red11" : "red4"],
+                      color: colors.red11,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 2,
                     }}
                     gutterBottom
                   >
-                    Make it yours
+                    Availability{" "}
+                    <Chip
+                      size="small"
+                      sx={{
+                        background: `linear-gradient(#00ff87, #60efff)`,
+                        color: "#000!important",
+                      }}
+                      label="BETA"
+                    />
                   </Typography>
-                  <Typography
-                    sx={{ color: redDark[isDark ? "red10" : "red7"] }}
-                  >
-                    Prioritize, color-code, and attach files/emojis to your
-                    tasks
+                  <Typography sx={{ color: colors.red11, opacity: 0.8 }}>
+                    Find the best time to meet in under three clicks.
                   </Typography>
                 </Box>
               </CardContent>
@@ -101,7 +103,7 @@ export function StartFeature({ featureStyles }: any) {
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: redDark[isDark ? "red1" : "red12"],
+                borderColor: colors.red2,
               }}
             >
               <CardContent>
@@ -110,16 +112,92 @@ export function StartFeature({ featureStyles }: any) {
                     variant="h5"
                     sx={{
                       fontWeight: 800,
-                      color: redDark[isDark ? "red11" : "red4"],
+                      color: colors.red11,
                     }}
                     gutterBottom
                   >
-                    See unfinished tasks
+                    Update your status
                   </Typography>
+                  <Typography sx={{ color: colors.red11, opacity: 0.8 }}>
+                    Let everyone know what you&apos;re up to.
+                  </Typography>
+                </Box>
+              </CardContent>
+              <Image
+                width={400}
+                height={300}
+                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                alt="features"
+                style={{
+                  ...(featureStyles.cardImage as any),
+                  boxShadow: `-20px -20px 100px ${
+                    redDark[isDark ? "red1" : "red12"]
+                  }`,
+                }}
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: colors.red2,
+              }}
+            >
+              <CardContent>
+                <Box sx={{ position: "relative", zIndex: 99 }}>
                   <Typography
-                    sx={{ color: redDark[isDark ? "red10" : "red7"] }}
+                    variant="h5"
+                    sx={{
+                      fontWeight: 800,
+                      color: colors.red11,
+                    }}
+                    gutterBottom
                   >
-                    You can view unfinished tasks in your backlog
+                    Never miss a birthday
+                  </Typography>
+                  <Typography sx={{ color: colors.red11, opacity: 0.8 }}>
+                    Get notified when it&apos;s someone&apos;s birthday. Works
+                    seamlessly with Tasks.
+                  </Typography>
+                </Box>
+              </CardContent>
+              <Image
+                width={400}
+                height={300}
+                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                alt="features"
+                style={{
+                  ...(featureStyles.cardImage as any),
+                  boxShadow: `-20px -20px 100px ${
+                    redDark[isDark ? "red1" : "red12"]
+                  }`,
+                }}
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: colors.red2,
+              }}
+            >
+              <CardContent>
+                <Box sx={{ position: "relative", zIndex: 99 }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 800,
+                      color: colors.red11,
+                    }}
+                    gutterBottom
+                  >
+                    Complete your productivity profile
+                  </Typography>
+                  <Typography sx={{ color: colors.red11, opacity: 0.8 }}>
+                    Display useful information about yourself, such as working
+                    hours.
                   </Typography>
                 </Box>
               </CardContent>

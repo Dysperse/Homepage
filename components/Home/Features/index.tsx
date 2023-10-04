@@ -29,7 +29,221 @@ import { useCallback, useDeferredValue, useRef, useState } from "react";
 import { AgendaFeature } from "./agenda";
 import { InventoryFeature } from "./inventory";
 import { StartFeature } from "./start";
-import { blueDark, purpleDark, redDark } from "@radix-ui/colors";
+import {
+  blue,
+  blueDark,
+  purple,
+  purpleDark,
+  red,
+  redDark,
+} from "@radix-ui/colors";
+
+function Elements() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [show, setShow] = useState(false);
+
+  return (
+    <>
+      <Typography
+        variant="h2"
+        className="font-serif"
+        sx={{
+          background: "linear-gradient(#fff 0%, #aaa 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
+        The four elements.
+      </Typography>
+      <Typography sx={{ mt: 1, opacity: 0.6 }}>
+        Core principles that drive Dysperse&apos;s design.
+      </Typography>
+      <Grid
+        container
+        sx={{
+          // border: "2px solid",
+          p: 2,
+          boxShadow: "inset 0px 0px 0px 2px rgba(255,255,255,.1)",
+          borderRadius: 5,
+          mt: 2,
+          position: "relative",
+          "& *": {
+            pointerEvents: "none",
+          },
+          overflow: "hidden",
+        }}
+        onMouseMove={(e) => {
+          setPosition({
+            x: e.nativeEvent.offsetX,
+            y: e.nativeEvent.offsetY,
+          });
+        }}
+        onMouseEnter={() => setShow(true)}
+        onMouseLeave={() => setShow(false)}
+      >
+        <Box
+          sx={{
+            opacity: show ? 1 : 0,
+            position: "absolute",
+            top: position.y,
+            left: position.x,
+            width: "100px",
+            height: "100px",
+            borderRadius: "50%",
+            transition: "opacity .2s",
+            transform: "translate(-50%, -50%)",
+            zIndex: 0,
+            background: "#fff",
+            filter: "blur(100px)",
+          }}
+        />
+        {[
+          {
+            heading: "Instinct",
+            description: "Engineered for minimal effort",
+            icon: "pan_tool_alt",
+          },
+          {
+            heading: "Adaptation",
+            description: "Flexible for any personality",
+            icon: "airwave",
+          },
+          {
+            heading: "Utility",
+            description: "Conveniency, not feature bloat",
+            icon: "auto_awesome_motion",
+          },
+          {
+            heading: "Journey",
+            description: "Unleash collective brilliance",
+            icon: "conversion_path",
+          },
+        ].map((element, index) => (
+          <Grid
+            key={element.heading}
+            item
+            xs={12}
+            md={3}
+            sx={{
+              "& .motion": {
+                display: "flex",
+                alignItems: "center",
+                gap: 2,
+                p: 1.5,
+              },
+            }}
+          >
+            <motion.div
+              className="motion"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.5 * index + 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Icon sx={{ fontSize: "60px!important" }}>{element.icon}</Icon>
+              <Box>
+                <Typography variant="h6">{element.heading}</Typography>
+                <Typography sx={{ opacity: 0.6 }}>
+                  {element.description}
+                </Typography>
+              </Box>
+            </motion.div>
+          </Grid>
+        ))}
+      </Grid>
+    </>
+  );
+}
+
+function Extras({ isDark, featureStyles }: any) {
+  return (
+    <Box
+      sx={{
+        mt: { xs: -10, sm: 0 },
+      }}
+    >
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 2,
+        }}
+      >
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={4}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: isDark ? "#303030" : "#ddd",
+              }}
+            >
+              <CardContent>
+                <Image
+                  src="/devices.svg"
+                  width={500}
+                  height={500}
+                  alt="Sync with all your devices!"
+                  style={{
+                    width: "80%",
+                    ...(isDark && { filter: "invert(1)" }),
+                    margin: "auto",
+                    display: "block",
+                    height: "auto",
+                    marginBottom: "5px",
+                  }}
+                />
+                <Typography variant="h6" sx={{ fontWeight: "700" }}>
+                  Sync across devices
+                </Typography>
+                <Typography>
+                  Sign into your Dysperse account on any device
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={8}>
+            <Encryption featureStyles={featureStyles} />
+          </Grid>
+        </Grid>
+        <Grid container spacing={4} sx={{ mt: 2 }}>
+          <Grid item xs={12} md={8}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: isDark ? "#303030" : "#ddd",
+              }}
+            >
+              <CardContent>
+                <Typography variant="h6" sx={{ fontWeight: "700" }}>
+                  Customize your Dysperse
+                </Typography>
+                <Typography>
+                  Change the colors and theme to make Dysperse your own
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: isDark ? "#303030" : "#ddd",
+              }}
+            >
+              <CardContent>
+                <Typography variant="h6" sx={{ fontWeight: "700" }}>
+                  Collaborative by default
+                </Typography>
+                <Typography>Invite up to 5 people to your group</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </motion.div>
+    </Box>
+  );
+}
 
 function Encryption({ featureStyles }: any) {
   const [value, setValue] = useState("Throw the trash");
@@ -245,6 +459,11 @@ export function Features({ statsRef }: any) {
 
   const featureStyles = {
     featureTitle: {},
+    timelineConnector: {
+      width: "4px",
+      ml: "0px",
+      borderRadius: 9,
+    },
     timelineDot: {
       width: 35,
       height: 35,
@@ -277,7 +496,7 @@ export function Features({ statsRef }: any) {
     },
     card: {
       width: "100%",
-      border: "1px solid",
+      border: "2px solid",
       height: "100%",
       borderRadius: 8,
       boxShadow: "none",
@@ -335,92 +554,6 @@ export function Features({ statsRef }: any) {
         }}
       />
 
-      <Box
-        sx={{
-          mt: { xs: -10, sm: 0 },
-        }}
-      >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 2,
-          }}
-        >
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-              <Card
-                sx={{
-                  ...featureStyles.card,
-                  borderColor: isDark ? "#303030" : "#ddd",
-                }}
-              >
-                <CardContent>
-                  <Image
-                    src="/devices.svg"
-                    width={500}
-                    height={500}
-                    alt="Sync with all your devices!"
-                    style={{
-                      width: "80%",
-                      ...(isDark && { filter: "invert(1)" }),
-                      margin: "auto",
-                      display: "block",
-                      height: "auto",
-                      marginBottom: "5px",
-                    }}
-                  />
-                  <Typography variant="h6" sx={{ fontWeight: "700" }}>
-                    Sync across devices
-                  </Typography>
-                  <Typography>
-                    Sign into your Dysperse account on any device
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={8}>
-              <Encryption featureStyles={featureStyles} />
-            </Grid>
-          </Grid>
-          <Grid container spacing={4} sx={{ mt: 2 }}>
-            <Grid item xs={12} md={8}>
-              <Card
-                sx={{
-                  ...featureStyles.card,
-                  borderColor: isDark ? "#303030" : "#ddd",
-                }}
-              >
-                <CardContent>
-                  <Typography variant="h6" sx={{ fontWeight: "700" }}>
-                    Customize your Dysperse
-                  </Typography>
-                  <Typography>
-                    Change the colors and theme to make Dysperse your own
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Card
-                sx={{
-                  ...featureStyles.card,
-                  borderColor: isDark ? "#303030" : "#ddd",
-                }}
-              >
-                <CardContent>
-                  <Typography variant="h6" sx={{ fontWeight: "700" }}>
-                    Collaborative by default
-                  </Typography>
-                  <Typography>Invite up to 5 people to your group</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </motion.div>
-      </Box>
-
       <AppBar
         elevation={0}
         color="inherit"
@@ -460,6 +593,7 @@ export function Features({ statsRef }: any) {
             { id: "inventoryTrigger", icon: "inventory_2", text: "Inventory" },
           ].map((item) => (
             <Button
+              key={item.id}
               id={item.id}
               size="small"
               sx={buttonStyles(activeFeature === item.text.toLowerCase())}
@@ -473,75 +607,7 @@ export function Features({ statsRef }: any) {
       </AppBar>
 
       <Box sx={{ mb: 10 }} />
-      <Typography variant="h2" className="font-serif">
-        The four elements.
-      </Typography>
-      <Typography sx={{ mt: 1, opacity: 0.6 }}>
-        Core principles that drive Dysperse&apos;s design.
-      </Typography>
-      <Grid
-        container
-        sx={{
-          border: "2px solid",
-          p: 2,
-          borderColor: "rgba(255,255,255,.1)",
-          borderRadius: 5,
-          mt: 2,
-        }}
-      >
-        {[
-          {
-            heading: "Instinct",
-            description: "Engineered for minimal effort",
-            icon: "pan_tool_alt",
-          },
-          {
-            heading: "Adaptation",
-            description: "Flexible for any personality",
-            icon: "circle",
-          },
-          {
-            heading: "Utility",
-            description: "Designed for conveniency",
-            icon: "auto_awesome_motion",
-          },
-          {
-            heading: "Journey",
-            description: "Unleash collective brilliance",
-            icon: "conversion_path",
-          },
-        ].map((element, index) => (
-          <Grid
-            item
-            xs={12}
-            md={3}
-            sx={{
-              "& .motion": {
-                display: "flex",
-                alignItems: "center",
-                gap: 2,
-                p: 1.5,
-              },
-            }}
-          >
-            <motion.div
-              className="motion"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.5 * index + 0.5 }}
-              viewport={{ once: true }}
-            >
-              <Icon sx={{ fontSize: "60px!important" }}>{element.icon}</Icon>
-              <Box>
-                <Typography variant="h6">{element.heading}</Typography>
-                <Typography sx={{ opacity: 0.6 }}>
-                  {element.description}
-                </Typography>
-              </Box>
-            </motion.div>
-          </Grid>
-        ))}
-      </Grid>
+      <Elements />
       <Timeline
         sx={{
           p: 0,
@@ -556,9 +622,10 @@ export function Features({ statsRef }: any) {
             <TimelineDot sx={{ ...featureStyles.timelineDot, opacity: 0 }} />
             <TimelineConnector
               sx={{
+                ...featureStyles.timelineConnector,
                 height: "50px",
                 background: `linear-gradient(transparent, ${
-                  redDark[isDark ? "red10" : "red7"]
+                  (isDark ? redDark : red).red10
                 })`,
               }}
             />
@@ -569,17 +636,18 @@ export function Features({ statsRef }: any) {
             <TimelineDot
               sx={{
                 ...featureStyles.timelineDot,
-                color: redDark[isDark ? "red1" : "red12"],
-                background: redDark[isDark ? "red10" : "red7"],
+                color: (isDark ? redDark : red).red1,
+                background: (isDark ? redDark : red).red10,
               }}
             >
               1
             </TimelineDot>
             <TimelineConnector
               sx={{
+                ...featureStyles.timelineConnector,
                 background: `linear-gradient(${
-                  redDark[isDark ? "red10" : "red7"]
-                } 90%, ${blueDark[isDark ? "blue10" : "blue7"]})`,
+                  (isDark ? redDark : red).red10
+                } 80%, ${(isDark ? blueDark : blue).blue10})`,
               }}
             />
           </TimelineSeparator>
@@ -592,17 +660,18 @@ export function Features({ statsRef }: any) {
             <TimelineDot
               sx={{
                 ...featureStyles.timelineDot,
-                color: blueDark[isDark ? "blue1" : "blue12"],
-                background: blueDark[isDark ? "blue10" : "blue7"],
+                color: (isDark ? blueDark : blue).blue1,
+                background: (isDark ? blueDark : blue).blue10,
               }}
             >
               2
             </TimelineDot>
             <TimelineConnector
               sx={{
+                ...featureStyles.timelineConnector,
                 background: `linear-gradient(${
-                  blueDark[isDark ? "blue10" : "blue7"]
-                } 90%, ${purpleDark[isDark ? "purple10" : "purple7"]})`,
+                  (isDark ? blueDark : blue).blue10
+                } 80%, ${(isDark ? purpleDark : purple).purple10})`,
               }}
             />
           </TimelineSeparator>
@@ -616,17 +685,18 @@ export function Features({ statsRef }: any) {
             <TimelineDot
               sx={{
                 ...featureStyles.timelineDot,
-                color: purpleDark[isDark ? "purple1" : "purple12"],
-                background: purpleDark[isDark ? "purple10" : "purple7"],
+                color: (isDark ? purpleDark : purple).purple1,
+                background: (isDark ? purpleDark : purple).purple10,
               }}
             >
               3
             </TimelineDot>
             <TimelineConnector
               sx={{
+                ...featureStyles.timelineConnector,
                 background: `linear-gradient(${
-                  purpleDark[isDark ? "purple10" : "purple7"]
-                } 90%, ${purpleDark[isDark ? "purple10" : "purple7"]})`,
+                  (isDark ? purpleDark : purple).purple10
+                } 80%, ${(isDark ? purpleDark : purple).purple10})`,
               }}
             />
           </TimelineSeparator>
@@ -635,6 +705,7 @@ export function Features({ statsRef }: any) {
           </TimelineContent>
         </TimelineItem>
       </Timeline>
+      <Extras isDark={isDark} featureStyles={featureStyles} />
     </Container>
   );
 }

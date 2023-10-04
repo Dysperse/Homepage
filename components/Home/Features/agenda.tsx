@@ -2,16 +2,19 @@ import {
   Box,
   Card,
   CardContent,
+  Chip,
   Grid,
   Icon,
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { blueDark } from "@radix-ui/colors";
+import { blue, blueDark } from "@radix-ui/colors";
 import Image from "next/image";
 
 export function AgendaFeature({ featureStyles }: any) {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+
+  const colors = isDark ? blueDark : blue;
 
   return (
     <>
@@ -28,7 +31,9 @@ export function AgendaFeature({ featureStyles }: any) {
           className="font-serif"
           sx={{
             ...featureStyles.featureSubTitle,
-            color: `${blueDark[isDark ? "blue10" : "blue7"]}!important`,
+            background: `linear-gradient(${colors.blue8}, ${colors.blue11})`,
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
           }}
         >
           <Icon
@@ -40,15 +45,6 @@ export function AgendaFeature({ featureStyles }: any) {
           </Icon>
           Tasks
         </Typography>
-        <Typography
-          sx={{
-            ...featureStyles.featublueescription,
-            color: blueDark[isDark ? "blue9" : "blue8"],
-          }}
-        >
-          View your to-do list and schedule tasks by time, so you can stay on
-          track and make the most of your day.
-        </Typography>
       </Box>
       <Box sx={{ mt: 4, mb: 10 }}>
         <Grid container spacing={4}>
@@ -56,7 +52,7 @@ export function AgendaFeature({ featureStyles }: any) {
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: blueDark[isDark ? "blue1" : "blue12"],
+                borderColor: colors.blue2,
               }}
             >
               <CardContent>
@@ -65,15 +61,13 @@ export function AgendaFeature({ featureStyles }: any) {
                     variant="h5"
                     sx={{
                       fontWeight: 800,
-                      color: blueDark[isDark ? "blue11" : "blue4"],
+                      color: colors.blue11,
                     }}
                     gutterBottom
                   >
                     Make it yours
                   </Typography>
-                  <Typography
-                    sx={{ color: blueDark[isDark ? "blue10" : "blue7"] }}
-                  >
+                  <Typography sx={{ color: colors.blue11, opacity: 0.8 }}>
                     Prioritize, color-code, and attach files/emojis to your
                     tasks
                   </Typography>
@@ -98,7 +92,7 @@ export function AgendaFeature({ featureStyles }: any) {
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: blueDark[isDark ? "blue1" : "blue12"],
+                borderColor: colors.blue2,
               }}
             >
               <CardContent>
@@ -107,16 +101,181 @@ export function AgendaFeature({ featureStyles }: any) {
                     variant="h5"
                     sx={{
                       fontWeight: 800,
-                      color: blueDark[isDark ? "blue11" : "blue4"],
+                      color: colors.blue11,
                     }}
                     gutterBottom
                   >
-                    See unfinished tasks
+                    Keep up with the flow
                   </Typography>
+                  <Typography sx={{ color: colors.blue11, opacity: 0.8 }}>
+                    Stay on top of your missed and upcoming tasks with Stream
+                  </Typography>
+                </Box>
+              </CardContent>
+              <Image
+                width={400}
+                height={300}
+                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                alt="features"
+                style={{
+                  ...(featureStyles.cardImage as any),
+                  boxShadow: `-20px -20px 100px ${
+                    blueDark[isDark ? "blue1" : "blue12"]
+                  }`,
+                }}
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: colors.blue2,
+              }}
+            >
+              <CardContent>
+                <Box sx={{ position: "relative", zIndex: 99 }}>
                   <Typography
-                    sx={{ color: blueDark[isDark ? "blue10" : "blue7"] }}
+                    variant="h5"
+                    sx={{
+                      fontWeight: 800,
+                      color: colors.blue11,
+                    }}
+                    gutterBottom
                   >
-                    You can view unfinished tasks in your backlog
+                    Burnout? Never.
+                  </Typography>
+                  <Typography sx={{ color: colors.blue11, opacity: 0.8 }}>
+                    Turn on Focus Mode to blur unimportant tasks and stay
+                    focused on what matters
+                  </Typography>
+                </Box>
+              </CardContent>
+              <Image
+                width={400}
+                height={300}
+                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                alt="features"
+                style={{
+                  ...(featureStyles.cardImage as any),
+                  boxShadow: `-20px -20px 100px ${
+                    blueDark[isDark ? "blue1" : "blue12"]
+                  }`,
+                }}
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: colors.blue2,
+              }}
+            >
+              <CardContent>
+                <Box sx={{ position: "relative", zIndex: 99 }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 800,
+                      color: colors.blue11,
+                    }}
+                    gutterBottom
+                  >
+                    Sync with your favorite apps
+                  </Typography>
+                  <Typography sx={{ color: colors.blue11, opacity: 0.8 }}>
+                    Integrate your tasks with Google Calendar, Canvas LMS, and
+                    more.
+                  </Typography>
+                </Box>
+              </CardContent>
+              <Image
+                width={400}
+                height={300}
+                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                alt="features"
+                style={{
+                  ...(featureStyles.cardImage as any),
+                  boxShadow: `-20px -20px 100px ${
+                    blueDark[isDark ? "blue1" : "blue12"]
+                  }`,
+                }}
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: colors.blue2,
+              }}
+            >
+              <CardContent>
+                <Box sx={{ position: "relative", zIndex: 99 }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 800,
+                      color: colors.blue11,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 2,
+                    }}
+                    gutterBottom
+                  >
+                    Perspectives{" "}
+                    <Chip
+                      size="small"
+                      sx={{
+                        background: `linear-gradient(#00ff87, #60efff)`,
+                        color: "#000!important",
+                      }}
+                      label="NEW"
+                    />
+                  </Typography>
+                  <Typography sx={{ color: colors.blue11, opacity: 0.8 }}>
+                    Redefine the way you view your to-do list with flexible
+                    views
+                  </Typography>
+                </Box>
+              </CardContent>
+              <Image
+                width={400}
+                height={300}
+                src={`/features/agenda/Backlog${isDark ? "-dark" : ""}.png`}
+                alt="features"
+                style={{
+                  ...(featureStyles.cardImage as any),
+                  boxShadow: `-20px -20px 100px ${
+                    blueDark[isDark ? "blue1" : "blue12"]
+                  }`,
+                }}
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Card
+              sx={{
+                ...featureStyles.card,
+                borderColor: colors.blue2,
+              }}
+            >
+              <CardContent>
+                <Box sx={{ position: "relative", zIndex: 99 }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 800,
+                      color: colors.blue11,
+                    }}
+                    gutterBottom
+                  >
+                    Find what you need. Fast.
+                  </Typography>
+                  <Typography sx={{ color: colors.blue11, opacity: 0.8 }}>
+                    Quickly search for anything in under 5 seconds with
+                    ⌘&nbsp;+&nbsp;K
                   </Typography>
                 </Box>
               </CardContent>

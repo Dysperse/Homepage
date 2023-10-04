@@ -7,7 +7,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { limeDark, purpleDark } from "@radix-ui/colors";
+import { purpleDark } from "@radix-ui/colors";
 import Image from "next/image";
 
 export function InventoryFeature({ featureStyles }: any) {
@@ -57,7 +57,7 @@ export function InventoryFeature({ featureStyles }: any) {
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: limeDark[isDark ? "lime1" : "lime12"],
+                borderColor: purpleDark[isDark ? "purple1" : "purple12"],
               }}
             >
               <CardContent>
@@ -66,14 +66,14 @@ export function InventoryFeature({ featureStyles }: any) {
                     variant="h5"
                     sx={{
                       fontWeight: 800,
-                      color: limeDark[isDark ? "lime11" : "lime4"],
+                      color: purpleDark[isDark ? "purple11" : "purple4"],
                     }}
                     gutterBottom
                   >
                     Scan. Create. Share.
                   </Typography>
                   <Typography
-                    sx={{ color: limeDark[isDark ? "lime10" : "lime7"] }}
+                    sx={{ color: purpleDark[isDark ? "purple10" : "purple7"] }}
                   >
                     Quickly build your inventory by hovering your camera over
                     your item.
@@ -88,7 +88,7 @@ export function InventoryFeature({ featureStyles }: any) {
                 style={{
                   ...(featureStyles.cardImage as any),
                   boxShadow: `-20px -20px 100px ${
-                    limeDark[isDark ? "lime1" : "lime12"]
+                    purpleDark[isDark ? "purple1" : "purple12"]
                   }`,
                 }}
               />
@@ -98,7 +98,7 @@ export function InventoryFeature({ featureStyles }: any) {
             <Card
               sx={{
                 ...featureStyles.card,
-                borderColor: limeDark[isDark ? "lime1" : "lime12"],
+                borderColor: purpleDark[isDark ? "purple1" : "purple12"],
               }}
             >
               <CardContent>
@@ -107,14 +107,14 @@ export function InventoryFeature({ featureStyles }: any) {
                     variant="h5"
                     sx={{
                       fontWeight: 800,
-                      color: limeDark[isDark ? "lime11" : "lime4"],
+                      color: purpleDark[isDark ? "purple11" : "purple4"],
                     }}
                     gutterBottom
                   >
                     Know what you have
                   </Typography>
                   <Typography
-                    sx={{ color: limeDark[isDark ? "lime10" : "lime7"] }}
+                    sx={{ color: purpleDark[isDark ? "purple10" : "purple7"] }}
                   >
                     Always have your inventory on hand so you&apos;ll never
                     forget what you have.
@@ -129,7 +129,7 @@ export function InventoryFeature({ featureStyles }: any) {
                 style={{
                   ...(featureStyles.cardImage as any),
                   boxShadow: `-20px -20px 100px ${
-                    limeDark[isDark ? "lime1" : "lime12"]
+                    purpleDark[isDark ? "purple1" : "purple12"]
                   }`,
                 }}
               />
@@ -156,12 +156,14 @@ export function InventoryFeature({ featureStyles }: any) {
                 sx={{
                   height: "100%",
                   ...featureStyles.card,
-                  borderColor: limeDark[isDark ? "lime1" : "lime12"],
+                  borderColor: purpleDark[isDark ? "purple1" : "purple12"],
                 }}
               >
                 <Box
                   sx={{
-                    background: `${limeDark[isDark ? "lime1" : "lime12"]}`,
+                    background: `${
+                      purpleDark[isDark ? "purple1" : "purple12"]
+                    }`,
                     ...featureStyles.blur,
                     opacity: 0.4,
                   }}
