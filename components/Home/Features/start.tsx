@@ -48,7 +48,7 @@ export function StartFeature({ featureStyles }: any) {
       </Box>
 
       <Box sx={{ mt: 4, mb: 10 }}>
-        <Grid container spacing={4}>
+        <Grid container spacing={{ xs: 2, sm: 4 }}>
           <Grid item xs={12} md={6}>
             <Card
               sx={{

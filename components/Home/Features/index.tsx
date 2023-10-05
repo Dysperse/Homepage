@@ -302,7 +302,7 @@ function Extras({ featureStyles }: any) {
           delay: 2,
         }}
       >
-        <Grid container spacing={4}>
+        <Grid container spacing={{ xs: 2, sm: 4 }}>
           <Grid item xs={12} md={4}>
             <Card
               sx={{
@@ -339,7 +339,7 @@ function Extras({ featureStyles }: any) {
             <Encryption featureStyles={featureStyles} />
           </Grid>
         </Grid>
-        <Grid container spacing={4} sx={{ mt: 2 }}>
+        <Grid container spacing={{ sm: 4 }} sx={{ mt: 2 }}>
           <Grid item xs={12} md={8}>
             <Card
               sx={{
@@ -422,7 +422,7 @@ function Encryption({ featureStyles }: any) {
           Dysperse encrypts all your user data with AES-256 GCM, zero-access
           encryption.
         </Typography>
-        <Grid container spacing={4} sx={{ mt: 0 }}>
+        <Grid container spacing={{ sm: 4 }} sx={{ mt: 0 }}>
           <Grid
             item
             xs={12}
@@ -769,7 +769,11 @@ export function Features({ statsRef }: any) {
             p: 0,
             flex: 0,
           },
-          maxWidth: "100vw",
+          "& .MuiTimelineContent-root": {
+            p: 0,
+            mb: 3,
+          },
+          m: "0!important",
         }}
       >
         <TimelineItem>

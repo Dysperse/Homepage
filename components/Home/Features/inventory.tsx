@@ -43,7 +43,7 @@ export function InventoryFeature({ featureStyles }: any) {
       </Box>
 
       <Box sx={{ mt: 4, mb: 10 }}>
-        <Grid container spacing={4} sx={{ mb: 2 }}>
+        <Grid container spacing={{ sm: 4 }} sx={{ mb: 2 }}>
           <Grid item xs={12} md={6}>
             <Card
               sx={{
@@ -127,7 +127,7 @@ export function InventoryFeature({ featureStyles }: any) {
             </Card>
           </Grid>
         </Grid>
-        <Grid container spacing={4}>
+        <Grid container spacing={{ xs: 2, sm: 4 }}>
           {[
             {
               icon: "sticky_note_2",

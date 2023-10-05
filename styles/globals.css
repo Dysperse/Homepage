@@ -1,8 +1,10 @@
-body {
+body,
+html {
   margin: 0;
   user-select: none;
   overflow-x: hidden;
 }
+
 .font-serif,
 .font-serif * {
   font-family: "League Gothic", serif !important;
