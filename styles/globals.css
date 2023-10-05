@@ -1,6 +1,7 @@
 body {
   margin: 0;
   user-select: none;
+  overflow-x: hidden;
 }
 .font-serif,
 .font-serif * {

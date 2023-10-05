@@ -72,6 +72,7 @@ function Difference() {
             p: 2,
             border: `2px solid rgba(255,255,255,.2)`,
             borderRadius: 5,
+            width: "100%",
           },
           "& .MuiChip-root": {
             fontWeight: 900,
@@ -702,6 +703,9 @@ export function Features({ statsRef }: any) {
           overflowX: "scroll",
           overflowY: "hidden",
           px: { sm: 5 },
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
         }}
       >
         <Toolbar
@@ -765,6 +769,7 @@ export function Features({ statsRef }: any) {
             p: 0,
             flex: 0,
           },
+          maxWidth: "100vw",
         }}
       >
         <TimelineItem>
