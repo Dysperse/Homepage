@@ -1,5 +1,4 @@
 import { Box, Button, Icon, Typography, useMediaQuery } from "@mui/material";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -14,7 +13,7 @@ export function Header() {
     <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
       <Box
         sx={{
-          height: "100dvh",
+          height: { xs: "auto", sm: "100dvh" },
           maxWidth: "100vw",
           flexDirection: "column",
           overflow: "hidden",
@@ -24,6 +23,7 @@ export function Header() {
           position: "relative",
           userSelect: "none",
           px: { xs: 3, sm: 15 },
+          py: { xs: 15, sm: 0 },
         }}
       >
         <Box
@@ -32,7 +32,7 @@ export function Header() {
               isDark ? "000" : "fff"
             })`,
             width: "100%",
-            height: "100dvh",
+            height: { xs: "auto", sm: "100dvh" },
             position: "absolute",
             top: 0,
             left: 0,
@@ -62,7 +62,7 @@ export function Header() {
           sx={{
             position: "relative",
             zIndex: 3,
-            height: "100dvh",
+            height: { xs: "auto", sm: "100dvh" },
             maxWidth: "100vw",
             flexDirection: "column",
             overflow: "hidden",
@@ -86,7 +86,7 @@ export function Header() {
                 px: { xs: 2, md: 4 },
                 py: { xs: 0.5, md: 1 },
                 fontSize: { xs: "14px", md: "16px" },
-                mb: 4,
+                mb: { xs: 2, sm: 4 },
                 color: isDark ? "#ddd" : "#000",
                 "&:hover": {
                   backdropFilter: "blur(1px)",
@@ -108,6 +108,7 @@ export function Header() {
               textAlign: { xs: "left", md: "center" },
               whiteSpace: { md: "nowrap" },
               "& .text": {
+                lineHeight: { xs: 1.3, sm: 1 },
                 background: `linear-gradient(#${isDark ? "fff" : "000"}, #${
                   isDark ? "606060" : "555"
                 })`,
