@@ -139,9 +139,9 @@ function Difference() {
               <Typography variant="h6">Dysperse</Typography>
             </Box>
             {[
-              ["Focus mode", "Only see what you need to work on"],
+              ["Burnout? Never.", "Only see what you need to work on"],
               ["Customizable", "35+ themes, multiple layouts, & more"],
-              ["Forgotten tasks", "No organization"],
+              ["Never miss anything", "Customizable, repeating notifications"],
               [
                 "Optional widgets",
                 "Carefully crafted widgets for your session",
