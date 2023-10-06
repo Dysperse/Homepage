@@ -253,12 +253,7 @@ export default function Page() {
             <Typography variant="h6">iOS</Typography>
             <Typography sx={{ mt: -2 }}>Coming soon</Typography>
           </Box>
-          <Box
-            sx={boxStyles}
-            onClick={() =>
-              window.open("https://manu-codes.pages.dev/Dysperse-unsigned.apk")
-            }
-          >
+          <Box sx={{ ...boxStyles, opacity: 0.5 }}>
             <picture>
               <img
                 width={50}
@@ -270,7 +265,7 @@ export default function Page() {
               />
             </picture>
             <Typography variant="h6">Android</Typography>
-            <Typography sx={{ mt: -2 }}>Pre-release</Typography>
+            <Typography sx={{ mt: -2 }}>Coming soon</Typography>
           </Box>
           <Box sx={{ ...boxStyles, opacity: 0.5 }}>
             <Icon
