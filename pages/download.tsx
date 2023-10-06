@@ -222,6 +222,7 @@ export default function Page() {
             flexDirection: { xs: "column", sm: "row" },
             gap: 3,
             p: 4,
+            textAlign: "center",
           }}
         >
           <Box
