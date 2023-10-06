@@ -7,8 +7,9 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { limeDark } from "@radix-ui/colors";
+import { purpleDark } from "@radix-ui/colors";
 import Image from "next/image";
+import { CardAnimation } from ".";
 
 export function InventoryFeature({ featureStyles }: any) {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
@@ -19,136 +20,123 @@ export function InventoryFeature({ featureStyles }: any) {
         sx={{
           position: "relative",
           display: "flex",
-          alignItems: "center",
-          height: 200,
-          my: 4,
-          justifyContent: "center",
           flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <Box
-          sx={{
-            background: `${limeDark[isDark ? "lime6" : "lime11"]}`,
-            ...featureStyles.blur,
-          }}
-        />
         <Typography
-          variant="h3"
-          className="font-serif"
-          sx={{
-            ...featureStyles.featureTitle,
-            color: `${limeDark[isDark ? "lime11" : "lime5"]}!important`,
-          }}
-        >
-          Scan and track
-        </Typography>
-        <Typography
-          variant="h3"
+          variant="h1"
           className="font-serif"
           sx={{
             ...featureStyles.featureSubTitle,
-            color: `${limeDark[isDark ? "lime10" : "lime7"]}!important`,
+            color: `${purpleDark[isDark ? "purple10" : "purple7"]}!important`,
           }}
         >
-          with Inventory
+          <Icon
+            sx={{
+              fontSize: "inherit!important",
+            }}
+          >
+            inventory_2
+          </Icon>
+          Inventory
         </Typography>
       </Box>
-      <Typography
-        sx={{
-          ...featureStyles.featureDescription,
-          color: limeDark[isDark ? "lime9" : "lime8"],
-        }}
-      >
-        Keep track of your personal belongings with shareable lists. Easily sync
-        with boards so you&apos;ll never forget to buy something again.
-      </Typography>
 
       <Box sx={{ mt: 4, mb: 10 }}>
-        <Grid container spacing={4} sx={{ mb: 2 }}>
+        <Grid container spacing={{ xs: 2, sm: 4 }} sx={{ mb: 2 }}>
           <Grid item xs={12} md={6}>
-            <Card
-              sx={{
-                ...featureStyles.card,
-                borderColor: limeDark[isDark ? "lime1" : "lime12"],
-              }}
-            >
-              <CardContent>
-                <Box sx={{ position: "relative", zIndex: 99 }}>
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      fontWeight: 800,
-                      color: limeDark[isDark ? "lime11" : "lime4"],
-                    }}
-                    gutterBottom
-                  >
-                    Scan. Create. Share.
-                  </Typography>
-                  <Typography
-                    sx={{ color: limeDark[isDark ? "lime10" : "lime7"] }}
-                  >
-                    Quickly build your inventory by hovering your camera over
-                    your item.
-                  </Typography>
-                </Box>
-              </CardContent>
-              <Image
-                width={400}
-                height={300}
-                src={`/features/inventory/createItem.png`}
-                alt="features"
-                style={{
-                  ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${
-                    limeDark[isDark ? "lime1" : "lime12"]
-                  }`,
+            <CardAnimation>
+              <Card
+                sx={{
+                  ...featureStyles.card,
+                  borderColor: purpleDark[isDark ? "purple1" : "purple12"],
                 }}
-              />
-            </Card>
+              >
+                <CardContent>
+                  <Box sx={{ position: "relative", zIndex: 99 }}>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 800,
+                        color: purpleDark[isDark ? "purple11" : "purple4"],
+                      }}
+                      gutterBottom
+                    >
+                      Scan. Create. Share.
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: purpleDark[isDark ? "purple10" : "purple7"],
+                      }}
+                    >
+                      Quickly build your inventory by hovering your camera over
+                      your item.
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <Image
+                  width={400}
+                  height={300}
+                  src={`/features/createItem.png`}
+                  alt="features"
+                  style={{
+                    ...(featureStyles.cardImage as any),
+                    boxShadow: `-20px -20px 100px ${
+                      purpleDark[isDark ? "purple1" : "purple12"]
+                    }`,
+                  }}
+                />
+              </Card>
+            </CardAnimation>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Card
-              sx={{
-                ...featureStyles.card,
-                borderColor: limeDark[isDark ? "lime1" : "lime12"],
-              }}
-            >
-              <CardContent>
-                <Box sx={{ position: "relative", zIndex: 99 }}>
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      fontWeight: 800,
-                      color: limeDark[isDark ? "lime11" : "lime4"],
-                    }}
-                    gutterBottom
-                  >
-                    Know what you have
-                  </Typography>
-                  <Typography
-                    sx={{ color: limeDark[isDark ? "lime10" : "lime7"] }}
-                  >
-                    Always have your inventory on hand so you&apos;ll never
-                    forget what you have.
-                  </Typography>
-                </Box>
-              </CardContent>
-              <Image
-                width={400}
-                height={300}
-                src={`/features/inventory/list${isDark ? "-dark" : ""}.png`}
-                alt="features"
-                style={{
-                  ...(featureStyles.cardImage as any),
-                  boxShadow: `-20px -20px 100px ${
-                    limeDark[isDark ? "lime1" : "lime12"]
-                  }`,
+            <CardAnimation>
+              <Card
+                sx={{
+                  ...featureStyles.card,
+                  borderColor: purpleDark[isDark ? "purple1" : "purple12"],
                 }}
-              />
-            </Card>
+              >
+                <CardContent>
+                  <Box sx={{ position: "relative", zIndex: 99 }}>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 800,
+                        color: purpleDark[isDark ? "purple11" : "purple4"],
+                      }}
+                      gutterBottom
+                    >
+                      Know what you have
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: purpleDark[isDark ? "purple10" : "purple7"],
+                      }}
+                    >
+                      Always have your inventory on hand so you&apos;ll never
+                      forget what you have.
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <Image
+                  width={400}
+                  height={300}
+                  src={`/features/Inventory.png`}
+                  alt="features"
+                  style={{
+                    ...(featureStyles.cardImage as any),
+                    boxShadow: `-20px -20px 100px ${
+                      purpleDark[isDark ? "purple1" : "purple12"]
+                    }`,
+                  }}
+                />
+              </Card>
+            </CardAnimation>
           </Grid>
         </Grid>
-        <Grid container spacing={4}>
+        <Grid container spacing={{ xs: 2, sm: 4 }}>
           {[
             {
               icon: "sticky_note_2",
@@ -164,29 +152,34 @@ export function InventoryFeature({ featureStyles }: any) {
             },
           ].map((feature) => (
             <Grid item xs={12} md={6} key={feature.name}>
-              <Card
-                sx={{
-                  height: "100%",
-                  ...featureStyles.card,
-                  borderColor: limeDark[isDark ? "lime1" : "lime12"],
-                }}
-              >
-                <Box
+              <CardAnimation>
+                <Card
                   sx={{
-                    background: `${limeDark[isDark ? "lime1" : "lime12"]}`,
-                    ...featureStyles.blur,
-                    opacity: 0.4,
+                    height: "100%",
+                    ...featureStyles.card,
+                    borderColor: purpleDark[isDark ? "purple1" : "purple12"],
+                    pb: 0,
                   }}
-                />
-                <CardContent sx={{ zIndex: 9, position: "relative" }}>
-                  <Typography sx={featureStyles.textDescriptionTitle}>
-                    <Icon>{feature.icon}</Icon> {feature.name}
-                  </Typography>
-                  <Typography sx={featureStyles.textDescriptionParagraph}>
-                    {feature.description}
-                  </Typography>
-                </CardContent>
-              </Card>
+                >
+                  <Box
+                    sx={{
+                      background: `${
+                        purpleDark[isDark ? "purple1" : "purple12"]
+                      }`,
+                      ...featureStyles.blur,
+                      opacity: 0.4,
+                    }}
+                  />
+                  <CardContent sx={{ zIndex: 9, position: "relative" }}>
+                    <Typography sx={featureStyles.textDescriptionTitle}>
+                      <Icon>{feature.icon}</Icon> {feature.name}
+                    </Typography>
+                    <Typography sx={featureStyles.textDescriptionParagraph}>
+                      {feature.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </CardAnimation>
             </Grid>
           ))}
         </Grid>

@@ -1,10 +1,15 @@
-body {
+body,
+html {
   margin: 0;
   user-select: none;
+  overflow-x: hidden;
 }
+
 .font-serif,
 .font-serif * {
-  font-family: "Fraunces", serif !important;
+  font-family: "League Gothic", serif !important;
+  text-transform: uppercase;
+  line-height: 1;
 }
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -18,7 +23,7 @@ body {
     .MuiIcon-root,
     .MuiIcon-root *
   ) {
-  font-family: "DM Sans", sans-serif !important;
+  font-family: "Space Grotesk", sans-serif !important;
 }
 
 .MuiIcon-root,
@@ -47,8 +52,9 @@ body {
   background: hsl(240, 11%, 10%);
 }
 
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+.material-symbols-outlined,
+.MuiIcon-root {
+  font-variation-settings: "FILL" 0, "wght" 100, "GRAD" 0, "opsz" 24;
 }
 
 ::-webkit-scrollbar {

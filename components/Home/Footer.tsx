@@ -26,8 +26,8 @@ export function Footer() {
           mt: 10,
         }}
       >
-        <Container>
-          <Grid container spacing={4}>
+        <Container fixed>
+          <Grid container spacing={{ xs: 2, sm: 4 }}>
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"

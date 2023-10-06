@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@mui/lab": "^5.0.0-alpha.145",
     "@mui/material": "^5.13.0",
     "@radix-ui/colors": "^0.1.8",
     "@types/node": "^20.1.4",
