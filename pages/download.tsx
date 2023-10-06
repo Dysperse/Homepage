@@ -124,10 +124,9 @@ export default function Page() {
             >
               <Typography
                 sx={{
-                  fontSize: { xs: 30, md: 45 },
+                  fontSize: { xs: 53, md: 60, xl: 90 },
                   mb: 2,
                   textAlign: { xs: "left", md: "center" },
-                  fontWeight: 700,
                   background: `linear-gradient(#${isDark ? "fff" : "000"}, #${
                     isDark ? "606060" : "555"
                   })`,
@@ -138,7 +137,7 @@ export default function Page() {
                 }}
                 className="font-serif"
               >
-                The future of productivity{" "}
+                <u>The future of productivity</u>{" "}
                 <Typography
                   sx={{
                     display: { xs: "inline", md: "block" },
@@ -286,7 +285,9 @@ export default function Page() {
           <Box
             sx={boxStyles}
             onClick={() =>
-              window.open("https://apps.microsoft.com/store/detail/dysperse/9N42Z6V0RL94")
+              window.open(
+                "https://apps.microsoft.com/store/detail/dysperse/9N42Z6V0RL94"
+              )
             }
           >
             <picture>

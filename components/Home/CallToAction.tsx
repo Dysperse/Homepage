@@ -14,13 +14,13 @@ export function CallToAction() {
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
 
   return (
-    <Container sx={{ mt: 10 }}>
+    <Container sx={{ mt: 10 }} fixed>
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         viewport={{ once: true }}
         whileInView={{ opacity: 1, scale: 1 }}
       >
-        <Box sx={{ textAlign: "center" }}>
+        <Box sx={{ textAlign: { xs: "left", sm: "center" } }}>
           <Image
             src="/grainy.svg"
             width={100}

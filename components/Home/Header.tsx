@@ -103,7 +103,7 @@ export function Header() {
           </motion.div>
           <Typography
             sx={{
-              fontSize: { xs: 53, md: 60 },
+              fontSize: { xs: 53, md: 60, xl: 90 },
               mb: 1,
               textAlign: { xs: "left", md: "center" },
               whiteSpace: { md: "nowrap" },
@@ -127,7 +127,6 @@ export function Header() {
                 mx: 0.5,
                 "& span": {
                   display: "inline-block",
-                  // transform: "skewX(4deg)",
                 },
               },
             }}
@@ -156,14 +155,10 @@ export function Header() {
                 fontWeight: 700,
                 mb: 2,
                 color: "#909090",
-                fontSize: { xs: "15px", md: "20px" },
-                // "& span": {
-                //   textDecoration: "line-through",
-                //   opacity: 0.5,
-                // },
                 "& .e": {
                   display: { xs: "inline", sm: "block" },
                 },
+                fontSize: { xs: "15px", md: "20px", xl: "30px" },
               }}
             >
               To-do lists don&apos;t work. And Dysperse isn&apos;t that.
