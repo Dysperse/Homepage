@@ -81,7 +81,7 @@ export default function Page() {
         >
           we're not just building a product, we're building a movement.
         </Typography>
-        <Button
+        {/* <Button
           sx={{
             marginTop: 3,
             background: mintDark.mint10,
@@ -106,6 +106,31 @@ export default function Page() {
           target="_blank"
         >
           Induct myself <span className="material-symbols-outlined">east</span>
+        </Button> */}
+        <Button
+          sx={{
+            marginTop: 3,
+            background: mintDark.mint2,
+            color: mintDark.mint8,
+            "&:hover": {
+              background: mintDark.mint3,
+            },
+            "&:active": {
+              background: mintDark.mint4,
+            },
+            textTransform: "none",
+            borderRadius: 99,
+            transition: "none",
+            gap: 2,
+          }}
+          disableElevation
+          disableRipple
+          size="large"
+          className={jost.className}
+          href="https://my.dysperse.com"
+          target="_blank"
+        >
+          Visit old site
         </Button>
         <Box sx={{ marginBottom: "auto" }} />
       </Box>
