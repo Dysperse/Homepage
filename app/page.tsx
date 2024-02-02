@@ -23,10 +23,11 @@ export default function Page() {
           bgcolor: mintDark.mint2,
           minHeight: "100%",
           display: "flex",
+          px: 5,
           flexDirection: "column",
           justifyContent: "center",
           borderRadius: 10,
-          alignItems: "center",
+          alignItems: { sm: "center" },
           "& *": {
             fontFamily: jost.style.fontFamily,
           },
@@ -45,7 +46,11 @@ export default function Page() {
         />
         <Typography
           className={jost.className}
-          sx={{ fontWeight: 300, marginBottom: 2, opacity: 0.6 }}
+          sx={{
+            fontWeight: 300,
+            marginBottom: 2,
+            opacity: 0.6,
+          }}
         >
           coming spring 2024
         </Typography>
@@ -53,6 +58,7 @@ export default function Page() {
           className={jost.className}
           sx={{
             fontWeight: 900,
+            fontSize: { xs: 30, sm: 70 },
             "& span": {
               color: mintDark.mint12,
             },
@@ -65,9 +71,10 @@ export default function Page() {
           className={jost.className}
           variant="h5"
           sx={{
-            textAlign: "center",
+            textAlign: { sm: "center" },
             fontWeight: 200,
             marginTop: 2,
+            fontSize: { xs: 16, sm: 30 },
           }}
         >
           we're not just building a product, we're building a movement.
