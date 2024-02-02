@@ -1,53 +1,105 @@
-"use client";
-import { Box, TextField, Typography } from "@mui/material";
-import { Jost } from "next/font/google";
+import { Box, Button, Chip, Typography } from "@mui/material";
+import { mintDark } from "./themes";
 import Image from "next/image";
+import { Jost } from "next/font/google";
 
-const jost = Jost({
-  subsets: ["latin"],
-  display: "swap",
-});
+const jost = Jost({ subsets: ["latin"] });
 
 export default function Page() {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-
   return (
-    <>
-      <Image
-        alt="Grain background"
-        src="/grain.png"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        priority={true}
-        quality={100}
-      />
+    <Box
+      sx={{
+        bgcolor: mintDark.mint11,
+        height: "100vh",
+        width: "100vw",
+        padding: "3px",
+        userSelect: "none",
+        boxSizing: "border-box",
+        color: mintDark.mint12,
+      }}
+    >
       <Box
-        sx={(theme: any) => ({
-          width: "100%",
-          zIndex: 1,
-          height: "100dvh",
+        sx={{
+          bgcolor: mintDark.mint2,
+          minHeight: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
           justifyContent: "center",
-          gap: 2,
-          color: theme.palette[11],
-          background: theme.palette[1],
-        })}
+          borderRadius: 10,
+          alignItems: "center",
+          "& *": {
+            fontFamily: jost.style.fontFamily,
+          },
+        }}
       >
+        <Image
+          width={70}
+          height={70}
+          src="/logo.svg"
+          alt="logo"
+          style={{
+            marginTop: 20,
+            borderRadius: 99,
+            marginBottom: "auto",
+          }}
+        />
         <Typography
-          variant="h3"
           className={jost.className}
-          sx={{ fontWeight: 500 }}
+          sx={{ fontWeight: 300, marginBottom: 2, opacity: 0.6 }}
         >
-          We&apos;re building the future of productivity
+          coming spring 2024
         </Typography>
-        <Typography variant="h5" className={jost.className}>
-          Your new productivity weapon awaits. Arriving Spring 2024.
+        <Typography
+          className={jost.className}
+          sx={{
+            fontWeight: 900,
+            "& span": {
+              color: mintDark.mint12,
+            },
+          }}
+          variant="h2"
+        >
+          productivity for the <span>human</span>.
         </Typography>
+        <Typography
+          className={jost.className}
+          variant="h5"
+          sx={{
+            textAlign: "center",
+            fontWeight: 200,
+            marginTop: 2,
+          }}
+        >
+          we're not just building a product, we're building a movement.
+        </Typography>
+        <Button
+          sx={{
+            marginTop: 3,
+            background: mintDark.mint10,
+            color: mintDark.mint2,
+            "&:hover": {
+              background: mintDark.mint11,
+            },
+            "&:active": {
+              background: mintDark.mint12,
+            },
+            textTransform: "none",
+            borderRadius: 99,
+            transition: "none",
+            gap: 2,
+          }}
+          disableElevation
+          disableRipple
+          size="large"
+          variant="contained"
+          className={jost.className}
+          href="https://my.dysperse.com"
+          target="_blank"
+        >
+          Induct myself <span className="material-symbols-outlined">east</span>
+        </Button>
+        <Box sx={{ marginBottom: "auto" }} />
       </Box>
-    </>
+    </Box>
   );
 }
