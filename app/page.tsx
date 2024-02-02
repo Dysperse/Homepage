@@ -42,6 +42,7 @@ export default function Page() {
             marginTop: 20,
             borderRadius: 99,
             marginBottom: "auto",
+            alignSelf: "center",
           }}
         />
         <Typography
@@ -57,8 +58,9 @@ export default function Page() {
         <Typography
           className={jost.className}
           sx={{
+            textAlign: { sm: "center" },
             fontWeight: 900,
-            fontSize: { xs: 30, sm: 70 },
+            fontSize: { xs: 30, sm: 50, md: 70 },
             "& span": {
               color: mintDark.mint12,
             },
