@@ -67,7 +67,7 @@ export default function Page() {
           }}
           variant="h2"
         >
-          productivity for the <span>human</span>.
+          productivity for <span>humans</span>.
         </Typography>
         <Typography
           className={jost.className}
