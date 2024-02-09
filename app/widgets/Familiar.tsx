@@ -1,12 +1,10 @@
 "use client";
 import { Box, IconButton, Typography } from "@mui/material";
-import { mintDark } from "../themes";
+import { Caveat } from "next/font/google";
 import { useState } from "react";
 import { CardContainer, Emoji } from "../page";
-import { Caveat } from "next/font/google";
-import Image from "next/image";
+import { mintDark } from "../themes";
 import { ArrowContainer } from "./ArrowContainer";
-const caveat = Caveat({ subsets: ["latin"] });
 
 export const Familiar = () => {
   const [selected, setSelected] = useState(0);
