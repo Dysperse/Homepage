@@ -199,11 +199,17 @@ export default function Page() {
           display: "flex",
           p: 2,
           gap: 2,
-          flexDirection: "row",
-          height: "100dvh",
+          flexDirection: { xs: "column", sm: "row" },
+          height: { md: "100dvh" },
         }}
       >
-        <Box sx={{ width: "400px", height: "100%", display: "flex" }}>
+        <Box
+          sx={{
+            width: { xs: "100%", md: "400px" },
+            height: { xs: "calc(100dvh - 120px)", sm: "100%" },
+            display: "flex",
+          }}
+        >
           <About />
         </Box>
         <Box
@@ -215,12 +221,25 @@ export default function Page() {
             flexDirection: "column",
           }}
         >
-          <Box sx={{ gap: 2, display: "flex" }}>
+          <Box
+            sx={{
+              gap: 2,
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+            }}
+          >
             <Time />
             <Familiar />
             <Weather />
           </Box>
-          <Box sx={{ gap: 2, display: "flex", flex: 2 }}>
+          <Box
+            sx={{
+              gap: 2,
+              display: "flex",
+              flex: 2,
+              flexDirection: { xs: "column", sm: "row" },
+            }}
+          >
             <Box
               sx={{
                 flex: 3,
@@ -233,7 +252,7 @@ export default function Page() {
                 sx={{
                   display: "flex",
                   gap: 2,
-                  flexDirection: "row",
+                  flexDirection: { xs: "column", sm: "row" },
                   flex: 1,
                 }}
               >
@@ -301,6 +320,7 @@ export default function Page() {
             display: "flex",
             justifyContent: "center",
             gap: 2,
+            flexDirection: { xs: "column", sm: "row" },
             pt: 5,
           }}
         >

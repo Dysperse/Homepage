@@ -1,12 +1,9 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Image from "next/image";
+import { CardContainer } from "../page";
 import { mintDark } from "../themes";
-import { CardContainer, jetBrainsMono } from "../page";
-import { Caveat } from "next/font/google";
 import { ArrowContainer } from "./ArrowContainer";
-
-const caveat = Caveat({ subsets: ["latin"] });
 
 export const Integrated = () => (
   <CardContainer sx={{ flex: undefined, py: 1, pb: 3 }}>
@@ -16,6 +13,7 @@ export const Integrated = () => (
         alignItems: "center",
         gap: 2,
         my: 1,
+        flexWrap: { xs: "wrap", sm: "nowrap" },
         justifyContent: "center",
       }}
     >
@@ -31,8 +29,8 @@ export const Integrated = () => (
           sx={{
             border: `1px solid ${mintDark.mint5}`,
             backdropFilter: "blur(10px)",
-            minWidth: 40,
-            maxWidth: 70,
+            minWidth: { xs: 30, md: 40 },
+            maxWidth: { xs: 50, md: 70 },
             width: "100%",
             aspectRatio: "1 / 1",
             borderRadius: 5,

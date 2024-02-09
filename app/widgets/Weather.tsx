@@ -11,6 +11,7 @@ export const Weather = () => (
       borderColor: skyDark.sky6,
       alignItems: "center",
       justifyContent: "space-between",
+      minHeight: 150,
       px: 4,
     }}
   >

@@ -1,6 +1,5 @@
 "use client";
 import { Box, IconButton, Typography } from "@mui/material";
-import { Caveat } from "next/font/google";
 import { useState } from "react";
 import { CardContainer, Emoji } from "../page";
 import { mintDark } from "../themes";

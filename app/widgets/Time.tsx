@@ -19,6 +19,7 @@ export const Time = () => {
         alignItems: "center",
         background: `linear-gradient(180deg, ${orangeDark.orange3} 0%, ${orangeDark.orange2} 100%)`,
         borderColor: orangeDark.orange6,
+        minHeight: 150,
       }}
     >
       <Box
