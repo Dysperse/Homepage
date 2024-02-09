@@ -36,7 +36,7 @@ export const ArrowContainer = ({
     />
     <Typography
       sx={{
-        transform: reverse ? "rotate(1deg)" : "rotate(-2deg)",
+        // transform: reverse ? "rotate(1deg)" : "rotate(-2deg)",
         mt: -0.3,
       }}
       className={caveat.className}

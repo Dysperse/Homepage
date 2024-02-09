@@ -5,6 +5,7 @@ import { useState } from "react";
 import { CardContainer, Emoji } from "../page";
 import { Caveat } from "next/font/google";
 import Image from "next/image";
+import { ArrowContainer } from "./ArrowContainer";
 const caveat = Caveat({ subsets: ["latin"] });
 
 export const Familiar = () => {
@@ -16,12 +17,14 @@ export const Familiar = () => {
         justifyContent: "start",
         overflow: "hidden",
         p: 1.5,
+        pb: 3,
         flex: 1.5,
       }}
     >
       <Box
         sx={{
           flex: 1,
+          mb: 1,
           gap: 0.5,
           display: "flex",
           flexDirection: "column",
@@ -114,33 +117,7 @@ export const Familiar = () => {
         />
       </Box>
 
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "start",
-          mt: 1.5,
-          justifyContent: "center",
-          opacity: 0.6,
-        }}
-      >
-        <Image
-          alt=""
-          src="/arrow.png"
-          style={{
-            filter: "invert(1)",
-            marginTop: -5,
-            transform: "rotate(-60deg)",
-          }}
-          width={30}
-          height={30}
-        />
-        <Typography
-          sx={{ transform: "rotate(-2deg)", mt: -0.3 }}
-          className={caveat.className}
-        >
-          Focus on what matters with tabs
-        </Typography>
-      </Box>
+      <ArrowContainer text="Focus on what matters with tabs" />
     </CardContainer>
   );
 };
