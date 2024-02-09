@@ -4,11 +4,6 @@ import { skyDark } from "@radix-ui/colors";
 import { CardContainer } from "../CardContainer";
 import { JetBrains_Mono } from "next/font/google";
 
-const jetBrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: "variable",
-});
-
 export const Weather = () => (
   <CardContainer
     sx={{
@@ -36,11 +31,7 @@ export const Weather = () => (
           San Francisco
         </Typography>
       </Box>
-      <Typography
-        variant="h3"
-        fontWeight={900}
-        className={jetBrainsMono.className}
-      >
+      <Typography variant="h3" fontWeight={900} className="monospace">
         74°
       </Typography>
       <Typography

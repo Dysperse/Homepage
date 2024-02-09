@@ -211,8 +211,11 @@ export default function Page() {
         display: "flex",
         userSelect: "none",
         flexDirection: "column",
-        "& *": {
-          fontFamily: jost.style.fontFamily,
+        "& *:not(.monospace,.material-symbols-rounded)": {
+          fontFamily: jost.style.fontFamily + "!important",
+        },
+        "& .monospace, & .monospace *": {
+          fontFamily: jetBrainsMono.style.fontFamily + "!important",
         },
       }}
     >

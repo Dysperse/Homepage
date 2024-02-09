@@ -9,7 +9,6 @@ import { CardContainer } from "../CardContainer";
 import { ArrowContainer } from "./ArrowContainer";
 
 const jost = Jost({ subsets: ["latin"] });
-const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export function Keyboard() {
   const keyboardRef = useRef(null);
@@ -138,7 +137,7 @@ export function Keyboard() {
                       lineHeight: 25,
                       justifyContent: "center",
                     }}
-                    className={jetBrainsMono.className}
+                    className="monospace"
                   >
                     {shortcut.keybind}
                   </Box>
