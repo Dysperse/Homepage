@@ -55,7 +55,7 @@ function About() {
       />
 
       <Typography
-        className={jetBrainsMono.className}
+        className="monospace"
         sx={{
           fontFamily: jetBrainsMono.style.fontFamily,
           mt: -2,
@@ -70,7 +70,7 @@ function About() {
         sx={{
           fontWeight: 800,
           textAlign: { xs: "start", sm: "center", lg: "start" },
-          fontSize: { xs: 50, sm: 55, md: 70 },
+          fontSize: { xs: 50, sm: 55, md: 70, lg: 55 },
           "& .humans": {
             color: mintDark.mint11,
           },
@@ -80,7 +80,7 @@ function About() {
         }}
         variant="h2"
       >
-        <span className="productivity">productivity</span>{" "}
+        <span className="productivity">productivity</span>&nbsp;
         <span className="productivity">for</span>{" "}
         <span className="humans">humans</span>
       </Typography>
