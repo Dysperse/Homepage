@@ -3,9 +3,14 @@ import { Box, Typography } from "@mui/material";
 import { orangeDark } from "../themes";
 import { useEffect, useState } from "react";
 import { CardContainer } from "../CardContainer";
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Jost } from "next/font/google";
 
 const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: "variable",
+});
+
+const jost = Jost({
   subsets: ["latin"],
   weight: "variable",
 });
@@ -38,7 +43,6 @@ export const Time = () => {
         <Typography
           variant="h3"
           fontWeight={900}
-          className={jetBrainsMono.className}
           sx={{
             position: "absolute",
             top: 0,
@@ -46,6 +50,7 @@ export const Time = () => {
             zIndex: 1,
             whiteSpace: "nowrap",
             color: orangeDark.orange9,
+            fontFamily: jetBrainsMono.style.fontFamily + "!important",
           }}
         >
           {time.toLocaleTimeString("en-US", {
@@ -56,7 +61,6 @@ export const Time = () => {
         <Typography
           variant="h3"
           fontWeight={900}
-          className={jetBrainsMono.className}
           sx={{
             position: "absolute",
             top: 0,
@@ -64,6 +68,7 @@ export const Time = () => {
             opacity: 0.2,
             color: orangeDark.orange8,
             whiteSpace: "nowrap",
+            fontFamily: jetBrainsMono.style.fontFamily + "!important",
           }}
         >
           00:00 AM
@@ -73,6 +78,7 @@ export const Time = () => {
         sx={{ color: orangeDark.orange10, mt: 0.5, opacity: 0.8 }}
         fontWeight={300}
         variant="h5"
+        className={jost.className}
       >
         {time.toLocaleDateString("en-US", {
           weekday: "long",

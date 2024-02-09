@@ -88,6 +88,7 @@ function About() {
           fontSize: { xs: 16, sm: 30 },
           opacity: 0.3,
         }}
+        className={jost.className}
       >
         #dysperse makes organization simple again
       </Typography>

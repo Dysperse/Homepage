@@ -5,6 +5,12 @@ import { CardContainer } from "../CardContainer";
 import { Emoji } from "../Emoji";
 import { mintDark } from "../themes";
 import { ArrowContainer } from "./ArrowContainer";
+import { Jost } from "next/font/google";
+
+const jost = Jost({
+  subsets: ["latin"],
+  weight: "variable",
+});
 
 export const Familiar = () => {
   const [selected, setSelected] = useState(0);
@@ -79,6 +85,7 @@ export const Familiar = () => {
                 }}
                 fontSize={15}
                 fontWeight={700}
+                className={jost.className}
               >
                 {button.primary}
               </Typography>
