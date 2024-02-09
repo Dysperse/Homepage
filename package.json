@@ -13,9 +13,12 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.6",
     "@radix-ui/colors": "^3.0.0",
+    "embla-carousel-autoplay": "^8.0.0-rc22",
+    "embla-carousel-react": "^8.0.0-rc22",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-simple-keyboard": "^3.7.81"
   },
   "devDependencies": {
     "@types/node": "^20",

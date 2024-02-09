@@ -1,16 +1,26 @@
-import { Box, Button, Chip, Link, SxProps, Typography } from "@mui/material";
-import { mintDark } from "./themes";
+"use client";
+import { Box, Button, Link, SxProps, Tooltip, Typography } from "@mui/material";
+import { JetBrains_Mono, Jost } from "next/font/google";
 import Image from "next/image";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-import { Jost, JetBrains_Mono } from "next/font/google";
+import { mintDark, skyDark } from "./themes";
+import { Weather } from "./widgets/Weather";
+import { Flexible } from "./widgets/Flexible";
+import { Time } from "./widgets/Time";
+import { Integrated } from "./widgets/Integrated";
+import { UpNext } from "./widgets/UpNext";
+import { Familiar } from "./widgets/Familiar";
+import { Customizable } from "./widgets/Customizable";
+import { Keyboard } from "./widgets/Keyboard";
 
-const jost = Jost({ subsets: ["latin"] });
-const jetBrainsMono = JetBrains_Mono({
+export const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: "variable",
 });
 
-function Emoji({
+export const addHslAlpha = (hsl: string, alpha: number) =>
+  hsl.replace(")", `, ${alpha})`).replace("hsl", "hsla");
+
+export function Emoji({
   size = 24,
   emoji,
   style = {},
@@ -31,7 +41,7 @@ function Emoji({
   );
 }
 
-const CardContainer = ({
+export const CardContainer = ({
   children,
   sx,
 }: {
@@ -40,7 +50,8 @@ const CardContainer = ({
 }) => (
   <Box
     sx={{
-      bgcolor: mintDark.mint2,
+      bgcolor: addHslAlpha(mintDark.mint2, 0.5),
+      backdropFilter: "blur(10px)",
       display: "flex",
       px: 5,
       flex: 1,
@@ -48,9 +59,6 @@ const CardContainer = ({
       justifyContent: "center",
       borderRadius: 7,
       border: `1px solid ${mintDark.mint5}`,
-      "& *": {
-        fontFamily: jost.style.fontFamily,
-      },
       ...sx,
     }}
   >
@@ -58,136 +66,13 @@ const CardContainer = ({
   </Box>
 );
 
-const Familiar = () => (
-  <CardContainer sx={{ flex: 2 }}>
-    <Typography
-      className={jetBrainsMono.className}
-      fontSize={12}
-      fontWeight={900}
-    >
-      Familiar.
-    </Typography>
-    <Typography className={jost.className} fontWeight={200}>
-      Like your everyday browser, but for navigating <i>productivity</i>.
-    </Typography>
-  </CardContainer>
-);
-
-const Synced = () => (
-  <CardContainer>
-    <Typography
-      className={jetBrainsMono.className}
-      fontSize={12}
-      fontWeight={900}
-    >
-      Synced.
-    </Typography>
-    <Typography className={jost.className} fontWeight={200}>
-      Always up to date, no matter where you are.
-    </Typography>
-  </CardContainer>
-);
-const Flexible = () => {
-  const options = [
-    { icon: "calendar_today", text: "Agenda" },
-    { icon: "view_kanban", text: "Kanban" },
-    { icon: "view_agenda", text: "Stream" },
-    { icon: "view_cozy", text: "Grid" },
-    { icon: "exercise", text: "Workload" },
-  ];
-  return (
-    <CardContainer>
-      <Typography
-        className={jetBrainsMono.className}
-        fontSize={16}
-        fontWeight={900}
-      >
-        Flexible.
-      </Typography>
-      <Typography className={jost.className} fontWeight={200}>
-        Want precision? Or a more relaxed view? Maybe both? We got you.
-      </Typography>
-      <Box
-        sx={{
-          display: "flex",
-          gap: 1,
-          mt: 1,
-          flexWrap: "wrap",
-        }}
-      >
-        {options.map((option) => (
-          <Box key={option.text}>
-            <Chip
-              label={option.text}
-              icon={
-                <span
-                  style={{ color: mintDark.mint11 }}
-                  className="material-symbols-rounded"
-                >
-                  {option.icon}
-                </span>
-              }
-              sx={{
-                color: mintDark.mint11,
-                bgcolor: mintDark.mint4,
-                borderRadius: 99,
-              }}
-            />
-          </Box>
-        ))}
-      </Box>
-    </CardContainer>
-  );
-};
-
-const Sophisticated = () => (
-  <CardContainer>
-    <Typography
-      className={jetBrainsMono.className}
-      fontSize={12}
-      fontWeight={900}
-    >
-      Sophisticated.
-    </Typography>
-    <Typography className={jost.className} fontWeight={200}>
-      Integrated AI which understands you.
-    </Typography>
-  </CardContainer>
-);
-
-const Integrated = () => (
-  <CardContainer>
-    <Typography
-      className={jetBrainsMono.className}
-      fontSize={12}
-      fontWeight={900}
-    >
-      Integrated.
-    </Typography>
-    <Typography className={jost.className} fontWeight={200}>
-      Connects with your favorite apps.
-    </Typography>
-  </CardContainer>
-);
-
-const Customizable = () => (
-  <CardContainer>
-    <Typography
-      className={jetBrainsMono.className}
-      fontSize={12}
-      fontWeight={900}
-    >
-      Customizable.
-    </Typography>
-    <Typography className={jost.className} fontWeight={200}>
-      Make it your own with themes, emojis, & more.
-    </Typography>
-  </CardContainer>
-);
-
 function About() {
   return (
-    <CardContainer>
+    <CardContainer
+      sx={{
+        background: addHslAlpha(mintDark.mint3, 0.5),
+      }}
+    >
       <Image
         src="/logo.svg"
         alt="logo"
@@ -211,10 +96,9 @@ function About() {
         arriving spring 2024
       </Typography>
       <Typography
-        className={jost.className}
         sx={{
-          fontWeight: 900,
-          fontSize: { xs: 30, sm: 50, md: 70 },
+          fontWeight: 800,
+          fontSize: { xs: 30, sm: 50, md: 55 },
           "& .humans": {
             color: mintDark.mint11,
           },
@@ -224,12 +108,12 @@ function About() {
         }}
         variant="h2"
       >
-        <span className="productivity">productivity&nbsp;for</span>
+        <span className="productivity">productivity</span>
         <br />
+        <span className="productivity">for</span>{" "}
         <span className="humans">humans</span>
       </Typography>
       <Typography
-        className={jost.className}
         variant="h5"
         sx={{
           mt: 1,
@@ -261,7 +145,6 @@ function About() {
           disableRipple
           size="large"
           variant="contained"
-          className={jost.className}
           href="https://app.dysperse.com/auth/sign-up"
           target="_blank"
         >
@@ -271,7 +154,7 @@ function About() {
         <Button
           sx={{
             marginTop: 3,
-            background: mintDark.mint2,
+            background: "transparent",
             color: mintDark.mint8,
             "&:hover": {
               background: mintDark.mint3,
@@ -287,7 +170,6 @@ function About() {
           disableElevation
           disableRipple
           size="large"
-          className={jost.className}
           href="https://app.dysperse.com/auth/sign-in"
           target="_blank"
         >
@@ -317,10 +199,9 @@ export default function Page() {
           gap: 2,
           flexDirection: "row",
           height: "100dvh",
-          boxSizing: "border-box",
         }}
       >
-        <Box sx={{ width: "500px", height: "100%", display: "flex" }}>
+        <Box sx={{ width: "400px", height: "100%", display: "flex" }}>
           <About />
         </Box>
         <Box
@@ -332,21 +213,32 @@ export default function Page() {
             flexDirection: "column",
           }}
         >
-          <Box sx={{ gap: 2, display: "flex", flex: 1 }}>
+          <Box sx={{ gap: 2, display: "flex" }}>
             <Familiar />
-            <Sophisticated />
-            <Synced />
+            <Time />
+            <Weather />
           </Box>
           <Box sx={{ gap: 2, display: "flex", flex: 2 }}>
             <Box
               sx={{ flex: 3, display: "flex", flexDirection: "column", gap: 2 }}
             >
-              <Flexible />
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  flexDirection: "row",
+                  flex: 1,
+                }}
+              >
+                <UpNext />
+                <Flexible />
+              </Box>
               <Integrated />
             </Box>
             <Box
               sx={{ flex: 2, display: "flex", flexDirection: "column", gap: 2 }}
             >
+              <Keyboard />
               <Customizable />
             </Box>
           </Box>
@@ -357,30 +249,96 @@ export default function Page() {
           borderTop: `1px solid ${mintDark.mint5}`,
           backdropFilter: "blur(10px)",
           py: 5,
+          pb: 3,
           px: 10,
-
-          alignItems: "center",
-          justifyContent: "center",
-          display: "flex",
-          gap: 2,
-          "& .MuiLink-root": {
-            color: mintDark.mint8,
-            textDecorationColor: mintDark.mint6,
-            "&:hover": {
-              color: mintDark.mint10,
-              textDecorationColor: mintDark.mint8,
-            },
-          },
         }}
       >
-        <Link href="/" sx={{ mr: "auto" }}>
-          What's new
-        </Link>
+        <Box
+          sx={{
+            alignItems: "center",
+            justifyContent: "center",
+            display: "flex",
+            gap: 2,
+            "& .MuiLink-root": {
+              color: mintDark.mint8,
+              textDecorationColor: mintDark.mint6,
+              "&:hover": {
+                color: mintDark.mint10,
+                textDecorationColor: mintDark.mint8,
+              },
+            },
+          }}
+        >
+          <Link href="/" sx={{ mr: "auto" }}>
+            What's new
+          </Link>
 
-        <Link href="/">Status</Link>
-        <Link href="/">Blog</Link>
-        <Link href="/">Terms</Link>
-        <Link href="/">Privacy Policy</Link>
+          <Link target="_blank" href="//status.dysperse.com">
+            Status
+          </Link>
+          <Link target="_blank" href="//blog.dysperse.com">
+            Blog
+          </Link>
+          <Link
+            target="_blank"
+            href="https://blog.dysperse.com/terms-of-service"
+          >
+            Terms
+          </Link>
+          <Link target="_blank" href="https://blog.dysperse.com/privacy-policy">
+            Privacy Policy
+          </Link>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: 2,
+            pt: 5,
+          }}
+        >
+          <Link
+            href="https://www.producthunt.com/posts/dysperse?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-dysperse"
+            target="_blank"
+            sx={{
+              marginRight: "auto",
+            }}
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=394715&theme=dark"
+              alt="Dysperse - Dysperse&#0032;is&#0032;a&#0032;completely&#0032;different&#0044;&#0032;unified&#0032;productivity&#0032;app | Product Hunt"
+              height={54 / 1.3}
+              width={250 / 1.3}
+            />
+          </Link>
+          <Link href="https://www.cloudflare.com" target="_blank">
+            <Image
+              alt="Cloudflare"
+              width={374 / 2}
+              height={75 / 2}
+              src="/sponsors/cloudflare.png"
+            />
+          </Link>
+          <Link href="https://www.neon.tech" target="_blank">
+            <Image
+              alt="Neon"
+              width={374 / 2}
+              height={75 / 2}
+              src="/sponsors/neon.png"
+            />
+          </Link>
+          <Link
+            href="https://vercel.com/?utm_source=dysperse&utm_campaign=oss"
+            target="_blank"
+          >
+            <Image
+              alt="Vercel"
+              width={374 / 2}
+              height={75 / 2}
+              src="/sponsors/vercel.svg"
+            />
+          </Link>
+        </Box>
       </Box>
     </Box>
   );
