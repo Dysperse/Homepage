@@ -33,10 +33,11 @@ function About() {
   return (
     <CardContainer
       sx={{
-        background: { sm: addHslAlpha(mintDark.mint4, 0.5) },
-        border: { xs: "none", sm: `1px solid ${mintDark.mint5}` },
-        backdropFilter: { sm: "blur(10px)" },
+        background: { lg: addHslAlpha(mintDark.mint4, 0.5) },
+        border: { xs: "none", lg: `1px solid ${mintDark.mint5}` },
+        backdropFilter: { lg: "blur(10px)" },
         p: { xs: 1, sm: 4 },
+        alignItems: { xs: "start", sm: "center", md: "center", lg: "start" },
         "& .logo": {
           alignSelf: { sm: "center" },
           mt: { sm: 2 },
@@ -67,7 +68,8 @@ function About() {
         className={jost.className}
         sx={{
           fontWeight: 800,
-          fontSize: { xs: 50, sm: 55 },
+          textAlign: { xs: "start", sm: "center", lg: "start" },
+          fontSize: { xs: 50, sm: 55, md: 70 },
           "& .humans": {
             color: mintDark.mint11,
           },
@@ -77,8 +79,7 @@ function About() {
         }}
         variant="h2"
       >
-        <span className="productivity">productivity</span>
-        <br />
+        <span className="productivity">productivity</span>{" "}
         <span className="productivity">for</span>{" "}
         <span className="humans">humans</span>
       </Typography>
@@ -89,6 +90,7 @@ function About() {
           fontWeight: 400,
           fontSize: { xs: 16, sm: 30 },
           opacity: 0.3,
+          textAlign: { xs: "start", sm: "center", lg: "start" },
         }}
         className={jost.className}
       >
@@ -98,6 +100,7 @@ function About() {
         sx={{
           gap: { xs: 1, sm: 2 },
           display: "flex",
+          width: { xs: "100%", sm: "auto" },
           flexDirection: { xs: "column", sm: "row" },
         }}
       >
@@ -116,6 +119,7 @@ function About() {
             borderRadius: 99,
             transition: "none",
             gap: 1,
+            width: { xs: "100%", sm: "auto" },
           }}
           disableElevation
           disableRipple
@@ -245,13 +249,13 @@ export default function Page() {
           display: "flex",
           p: 2,
           gap: 2,
-          flexDirection: { xs: "column", sm: "row" },
+          flexDirection: { xs: "column", lg: "row" },
           height: { sm: "auto", xl: "100dvh" },
         }}
       >
         <Box
           sx={{
-            width: { xs: "100%", sm: "400px" },
+            width: { xs: "100%", lg: "400px" },
             height: { xs: "calc(100dvh + 30px)", sm: "calc(100dvh - 32px)" },
             display: "flex",
           }}
@@ -298,7 +302,7 @@ export default function Page() {
                 sx={{
                   display: "flex",
                   gap: 2,
-                  flexDirection: { xs: "column", sm: "row" },
+                  flexDirection: { xs: "column", md: "row" },
                   flex: 1,
                 }}
               >
@@ -337,7 +341,7 @@ export default function Page() {
             alignItems: "center",
             justifyContent: "center",
             display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
+            flexDirection: { xs: "column", lg: "row" },
             gap: 2,
             "& .MuiLink-root": {
               color: mintDark.mint8,
@@ -349,7 +353,7 @@ export default function Page() {
             },
           }}
         >
-          <Link href="/" sx={{ mr: { sm: "auto" } }}>
+          <Link href="/" sx={{ mr: { lg: "auto" } }}>
             What's new
           </Link>
 
@@ -373,8 +377,9 @@ export default function Page() {
           sx={{
             display: "flex",
             justifyContent: "center",
+            alignItems: "center",
             gap: 2,
-            flexDirection: { xs: "column", sm: "row" },
+            flexDirection: { xs: "column", lg: "row" },
             pt: 5,
           }}
         >
@@ -382,7 +387,7 @@ export default function Page() {
             href="https://www.producthunt.com/posts/dysperse?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-dysperse"
             target="_blank"
             sx={{
-              marginRight: "auto",
+              marginRight: { lg: "auto" },
             }}
           >
             <img

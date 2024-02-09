@@ -73,7 +73,7 @@ export function Keyboard() {
       sx={{
         p: 1,
         flex: 2,
-        maxWidth: { xs: "100%", sm: "32vw" },
+        maxWidth: { xs: "100%", sm: "56vw", md: "50vw", lg: "32vw" },
         "& *": { fontFamily: jost.style.fontFamily, fontWeight: 500 },
       }}
     >
