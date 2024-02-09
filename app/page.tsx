@@ -15,12 +15,12 @@ import { Time } from "./widgets/Time";
 import { UpNext } from "./widgets/UpNext";
 import { Weather } from "./widgets/Weather";
 
-export const jetBrainsMono = JetBrains_Mono({
+const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: "variable",
 });
 
-export const caveat = Caveat({
+const caveat = Caveat({
   subsets: ["latin"],
 });
 
