@@ -15,12 +15,12 @@ import { Time } from "./widgets/Time";
 import { UpNext } from "./widgets/UpNext";
 import { Weather } from "./widgets/Weather";
 
-const jetBrainsMono = JetBrains_Mono({
+export const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: "variable",
 });
 
-const caveat = Caveat({
+export const caveat = Caveat({
   subsets: ["latin"],
 });
 
@@ -57,6 +57,7 @@ function About() {
       <Typography
         className={jetBrainsMono.className}
         sx={{
+          fontFamily: jetBrainsMono.style.fontFamily,
           mt: -2,
           fontWeight: 300,
           opacity: 0.6,
