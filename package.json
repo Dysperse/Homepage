@@ -1,5 +1,5 @@
 {
-  "name": "dysperse-homepage",
+  "name": "homepage",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,25 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.0",
+    "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
-    "@mui/lab": "^5.0.0-alpha.145",
-    "@mui/material": "^5.13.0",
-    "@radix-ui/colors": "^0.1.8",
-    "@types/node": "^20.1.4",
-    "@types/react": "18.2.6",
-    "@types/react-dom": "18.2.4",
-    "crypto-js": "^4.1.1",
-    "eslint": "8.40.0",
-    "eslint-config-next": "^13.4.2",
-    "framer-motion": "^10.12.11",
-    "next": "^13.4.2",
-    "react": "18.2.0",
-    "react-countdown": "^2.3.5",
-    "react-dom": "18.2.0",
-    "typescript": "5.0.4"
+    "@mui/material": "^5.15.6",
+    "@radix-ui/colors": "^3.0.0",
+    "embla-carousel-autoplay": "^8.0.0-rc22",
+    "embla-carousel-react": "^8.0.0-rc22",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-simple-keyboard": "^3.7.81"
   },
   "devDependencies": {
-    "@types/crypto-js": "^4.1.1"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5"
   }
 }
