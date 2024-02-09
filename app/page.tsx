@@ -151,10 +151,10 @@ function About() {
           disableElevation
           disableRipple
           size="large"
-          href="https://app.dysperse.com/auth/sign-in"
+          href="https://my.dysperse.com"
           target="_blank"
         >
-          Login
+          Visit old site
         </Button>
       </Box>
       <Box
