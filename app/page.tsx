@@ -19,6 +19,11 @@ const jetBrainsMono = JetBrains_Mono({
   weight: "variable",
 });
 
+const jost = Jost({
+  subsets: ["latin"],
+  weight: "variable",
+});
+
 function About() {
   return (
     <CardContainer
@@ -49,6 +54,7 @@ function About() {
         arriving spring 2024
       </Typography>
       <Typography
+        className={jost.className}
         sx={{
           fontWeight: 800,
           fontSize: { xs: 30, sm: 50, md: 55 },
