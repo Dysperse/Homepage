@@ -149,6 +149,9 @@ export default function Page() {
         display: "flex",
         userSelect: "none",
         flexDirection: "column",
+        "& *": {
+          fontFamily: jost.style.fontFamily,
+        },
       }}
     >
       <Box
