@@ -8,7 +8,8 @@ import { Caveat } from "next/font/google";
 export const Flexible = () => {
   const [selected, setSelected] = useState("Kanban");
   const options = [
-    { icon: "calendar_today", text: "Agenda" },
+    { icon: "view_column_2", text: "Agenda" },
+    { icon: "calendar_today", text: "Calendar" },
     { icon: "view_kanban", text: "Kanban" },
     { icon: "view_agenda", text: "Stream" },
     { icon: "view_cozy", text: "Grid" },
@@ -17,7 +18,7 @@ export const Flexible = () => {
   return (
     <CardContainer
       sx={{
-        flex: 1,
+        flex: undefined,
         px: 1,
         justifyContent: "flex-start",
         overflow: "hidden",

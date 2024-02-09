@@ -30,11 +30,13 @@ export function Emoji({
   style?: any;
 }) {
   return (
-    <img
+    <Image
       style={{
         width: size,
         height: size,
       }}
+      width={size}
+      height={size}
       alt="Emoji"
       src={`https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/${emoji?.toLowerCase()}.png`}
     />
@@ -214,13 +216,18 @@ export default function Page() {
           }}
         >
           <Box sx={{ gap: 2, display: "flex" }}>
-            <Familiar />
             <Time />
+            <Familiar />
             <Weather />
           </Box>
           <Box sx={{ gap: 2, display: "flex", flex: 2 }}>
             <Box
-              sx={{ flex: 3, display: "flex", flexDirection: "column", gap: 2 }}
+              sx={{
+                flex: 3,
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+              }}
             >
               <Box
                 sx={{
@@ -230,16 +237,16 @@ export default function Page() {
                   flex: 1,
                 }}
               >
-                <UpNext />
                 <Flexible />
+                <Keyboard />
               </Box>
               <Integrated />
             </Box>
             <Box
               sx={{ flex: 2, display: "flex", flexDirection: "column", gap: 2 }}
             >
-              <Keyboard />
               <Customizable />
+              <UpNext />
             </Box>
           </Box>
         </Box>

@@ -7,7 +7,7 @@ export function UpNext() {
   return (
     <CardContainer
       sx={{
-        flex: 2,
+        flex: undefined,
         p: 3,
         background: addHslAlpha(grassDark.grass8, 0.1),
         borderColor: grassDark.grass6,
@@ -24,9 +24,9 @@ export function UpNext() {
       </Typography>
       <Typography
         variant="h4"
-        sx={{ mt: 1, fontWeight: 200, color: grassDark.grass11 }}
+        sx={{ mt: 1, fontSize: 37, fontWeight: 200, color: grassDark.grass11 }}
       >
-        Saturday night concert w/ friends
+        hangout @ chipotle
       </Typography>
       <Typography
         sx={{

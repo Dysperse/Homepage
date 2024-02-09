@@ -54,7 +54,7 @@ export const Time = () => {
             position: "absolute",
             top: 0,
             left: 0,
-            opacity: 0.3,
+            opacity: 0.2,
             color: orangeDark.orange8,
             whiteSpace: "nowrap",
           }}

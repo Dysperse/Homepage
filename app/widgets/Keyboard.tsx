@@ -1,11 +1,12 @@
-import { Box, Chip, Typography } from "@mui/material";
+import { Box, Chip } from "@mui/material";
+import { mintDark } from "@radix-ui/colors";
+import Autoplay from "embla-carousel-autoplay";
+import useEmblaCarousel from "embla-carousel-react";
 import { JetBrains_Mono, Jost } from "next/font/google";
 import { useEffect, useMemo, useRef, useState } from "react";
 import VirtualKeyboard from "react-simple-keyboard";
 import { CardContainer } from "../page";
-import { mintDark } from "@radix-ui/colors";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import { ArrowContainer } from "./ArrowContainer";
 
 const jost = Jost({ subsets: ["latin"] });
 const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
@@ -73,9 +74,8 @@ export function Keyboard() {
       sx={{
         p: 1,
         flex: 1,
-        maxWidth: 400,
-        display: "block",
-        "& *": { fontFamily: jost.style.fontFamily, fontWeight: 700 },
+        maxWidth: "30vw",
+        "& *": { fontFamily: jost.style.fontFamily, fontWeight: 500 },
       }}
     >
       <VirtualKeyboard
@@ -93,15 +93,15 @@ export function Keyboard() {
         onRender={() => console.log("Rendered")}
         layout={{
           default: [
-            "~ 1 2 3 4 5 6 7 8 9 0 del",
-            "tab q w e r t y u i o p",
+            "esc 1 2 3 4 5 6 7 8 9 0 del",
+            "{tab} q w e r t y u i o p",
             "caps a s d f g h j k l",
             "shift z x c v b n m , . {shift}",
             "[ctrl alt] {space} {alt}",
           ],
           shift: [
-            "` ! @ # $ % ^ & * ( ) del",
-            "tab Q W E R T Y U I O P",
+            "esc ` ! @ # $ % ^ & * ( ) del",
+            "{tab} Q W E R T Y U I O P",
             "caps A S D F G H J K L",
             "shift Z X C V B N M , . {shift}",
             "[ctrl alt] {space} {alt}",
@@ -161,6 +161,7 @@ export function Keyboard() {
           ))}
         </Box>
       </Box>
+      <ArrowContainer text="Insanely fast keyboard shortcuts" reverse />
     </CardContainer>
   );
 }

@@ -4,17 +4,18 @@ import Image from "next/image";
 import { mintDark } from "../themes";
 import { CardContainer, jetBrainsMono } from "../page";
 import { Caveat } from "next/font/google";
+import { ArrowContainer } from "./ArrowContainer";
 
 const caveat = Caveat({ subsets: ["latin"] });
 
 export const Integrated = () => (
-  <CardContainer sx={{ flex: undefined, py: 1 }}>
+  <CardContainer sx={{ flex: undefined, py: 1, pb: 3 }}>
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
         gap: 2,
-        mt: 1,
+        my: 1,
         justifyContent: "center",
       }}
     >
@@ -31,6 +32,7 @@ export const Integrated = () => (
             border: `1px solid ${mintDark.mint5}`,
             backdropFilter: "blur(10px)",
             minWidth: 40,
+            maxWidth: 70,
             width: "100%",
             aspectRatio: "1 / 1",
             borderRadius: 5,
@@ -44,28 +46,6 @@ export const Integrated = () => (
         </Box>
       ))}
     </Box>
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "end",
-        my: 1,
-        justifyContent: "center",
-        opacity: 0.6,
-      }}
-    >
-      <Typography
-        sx={{ transform: "rotate(-2deg)" }}
-        className={caveat.className}
-      >
-        Connected with the apps you love
-      </Typography>
-      <Image
-        alt=""
-        src="/arrow.png"
-        style={{ filter: "invert(1)", transform: "rotate(-105deg) scaleY(-1)" }}
-        width={30}
-        height={30}
-      />
-    </Box>
+    <ArrowContainer text="Connected with the apps you love" />
   </CardContainer>
 );

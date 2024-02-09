@@ -50,7 +50,7 @@
 }
 .hg-theme-default {
   background-color: var(--mint2);
-  font-size: 13px;
+  font-size: 14px;
   box-sizing: border-box;
   font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue,
     Helvetica, Arial, Lucida Grande, sans-serif;
@@ -76,6 +76,19 @@
 }
 .hg-theme-default .hg-row {
   display: flex;
+}
+.hg-button-tab,
+[data-skbtn="caps"],
+[data-skbtn="shift"] {
+  min-width: 70px;
+  padding-left: 10px !important;
+  justify-content: flex-start !important;
+}
+[data-skbtn="caps"] {
+  min-width: 65px;
+}
+[data-skbtn="shift"] {
+  min-width: 80px;
 }
 .hg-theme-default .hg-row:not(:last-child) {
   margin-bottom: 5px;

@@ -19,7 +19,17 @@ export const Familiar = () => {
         flex: 1.5,
       }}
     >
-      <Box sx={{ flex: 1, gap: 0.5, display: "flex", flexDirection: "column" }}>
+      <Box
+        sx={{
+          flex: 1,
+          gap: 0.5,
+          display: "flex",
+          flexDirection: "column",
+          position: "relative",
+          maxHeight: 135,
+          overflow: "hidden",
+        }}
+      >
         {[
           {
             emoji: "2708",
@@ -29,7 +39,7 @@ export const Familiar = () => {
           {
             emoji: "1f392",
             primary: "my assignments",
-            secondary: "Kanban",
+            secondary: "Agenda",
           },
           {
             emoji: "1f91e",
@@ -45,6 +55,7 @@ export const Familiar = () => {
               alignItems: "center",
               p: 2,
               height: 50,
+              flexShrink: 0,
               gap: 2,
               borderRadius: 5,
               background: selected === index ? mintDark.mint3 : undefined,
@@ -88,6 +99,19 @@ export const Familiar = () => {
             )}
           </Box>
         ))}
+        <Box
+          sx={{
+            height: 50,
+            pointerEvents: "none",
+            background: `linear-gradient(transparent, #091b19)`,
+            zIndex: 1,
+            width: "100%",
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+          }}
+        />
       </Box>
 
       <Box
