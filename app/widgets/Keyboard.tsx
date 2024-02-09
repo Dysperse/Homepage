@@ -2,7 +2,7 @@ import { Box, Chip } from "@mui/material";
 import { mintDark } from "@radix-ui/colors";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { JetBrains_Mono, Jost } from "next/font/google";
+import { Jost } from "next/font/google";
 import { useEffect, useMemo, useRef, useState } from "react";
 import VirtualKeyboard from "react-simple-keyboard";
 import { CardContainer } from "../CardContainer";
@@ -72,8 +72,8 @@ export function Keyboard() {
     <CardContainer
       sx={{
         p: 1,
-        flex: 1,
-        maxWidth: { xs: "100%", sm: "30vw" },
+        flex: 2,
+        maxWidth: { xs: "100%", sm: "32vw" },
         "& *": { fontFamily: jost.style.fontFamily, fontWeight: 500 },
       }}
     >

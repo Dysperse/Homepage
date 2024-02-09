@@ -29,8 +29,8 @@ export const Integrated = () => (
           sx={{
             border: `1px solid ${mintDark.mint5}`,
             backdropFilter: "blur(10px)",
-            minWidth: { xs: 30, md: 40 },
-            maxWidth: { xs: 50, md: 70 },
+            minWidth: { xs: 30, sm: 40 },
+            maxWidth: { xs: 50, sm: 70 },
             width: "100%",
             aspectRatio: "1 / 1",
             borderRadius: 5,

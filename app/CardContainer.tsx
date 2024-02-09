@@ -11,6 +11,7 @@ export const CardContainer = ({
   sx?: SxProps;
 }) => (
   <Box
+    className="card"
     sx={{
       bgcolor: addHslAlpha(mintDark.mint2, 0.5),
       backdropFilter: "blur(10px)",

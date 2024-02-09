@@ -1,30 +1,27 @@
 "use client";
-import {
-  Box,
-  Button,
-  IconButton,
-  Link,
-  Tooltip,
-  Typography,
-} from "@mui/material";
-import { JetBrains_Mono, Jost } from "next/font/google";
+import { Box, Button, Link, Typography } from "@mui/material";
+import { Caveat, JetBrains_Mono, Jost } from "next/font/google";
 import Image from "next/image";
-import { mintDark, skyDark } from "./themes";
-import { Weather } from "./widgets/Weather";
-import { Flexible } from "./widgets/Flexible";
-import { Time } from "./widgets/Time";
-import { Integrated } from "./widgets/Integrated";
-import { UpNext } from "./widgets/UpNext";
-import { Familiar } from "./widgets/Familiar";
-import { Customizable } from "./widgets/Customizable";
-import { Keyboard } from "./widgets/Keyboard";
+import { useEffect, useState } from "react";
 import { CardContainer } from "./CardContainer";
 import { addHslAlpha } from "./addHslAlpha";
-import { useEffect, useState } from "react";
+import { mintDark } from "./themes";
+import { Customizable } from "./widgets/Customizable";
+import { Familiar } from "./widgets/Familiar";
+import { Flexible } from "./widgets/Flexible";
+import { Integrated } from "./widgets/Integrated";
+import { Keyboard } from "./widgets/Keyboard";
+import { Time } from "./widgets/Time";
+import { UpNext } from "./widgets/UpNext";
+import { Weather } from "./widgets/Weather";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: "variable",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
 });
 
 const jost = Jost({
@@ -36,7 +33,16 @@ function About() {
   return (
     <CardContainer
       sx={{
-        background: addHslAlpha(mintDark.mint3, 0.5),
+        background: { sm: addHslAlpha(mintDark.mint4, 0.5) },
+        border: { xs: "none", sm: `1px solid ${mintDark.mint5}` },
+        backdropFilter: { sm: "blur(10px)" },
+        p: { xs: 1, sm: 4 },
+        "& .logo": {
+          alignSelf: { sm: "center" },
+          mt: { sm: 2 },
+          ml: { xs: -2, sm: 0 },
+          mb: "auto",
+        },
       }}
     >
       <Image
@@ -44,11 +50,7 @@ function About() {
         alt="logo"
         width={70}
         height={70}
-        style={{
-          alignSelf: "center",
-          marginTop: 20,
-          marginBottom: "auto",
-        }}
+        className="logo"
       />
 
       <Typography
@@ -65,7 +67,7 @@ function About() {
         className={jost.className}
         sx={{
           fontWeight: 800,
-          fontSize: { xs: 30, sm: 50, md: 55 },
+          fontSize: { xs: 50, sm: 55 },
           "& .humans": {
             color: mintDark.mint11,
           },
@@ -92,10 +94,16 @@ function About() {
       >
         #dysperse makes organization simple again
       </Typography>
-      <Box sx={{ gap: 2, display: "flex", flexDirection: "row" }}>
+      <Box
+        sx={{
+          gap: { xs: 1, sm: 2 },
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+        }}
+      >
         <Button
           sx={{
-            marginTop: 3,
+            mt: 3,
             background: mintDark.mint10,
             color: mintDark.mint2,
             "&:hover": {
@@ -121,7 +129,7 @@ function About() {
         </Button>
         <Button
           sx={{
-            marginTop: 3,
+            marginTop: { sm: 3 },
             background: "transparent",
             color: mintDark.mint8,
             "&:hover": {
@@ -144,7 +152,16 @@ function About() {
           Login
         </Button>
       </Box>
-      <Box sx={{ marginBottom: "auto" }} />
+      <Box
+        sx={{
+          mb: {
+            xs: 3,
+            mb: "auto",
+          },
+          mt: { xs: 3, sm: 0 },
+          borderBottom: { xs: `2px solid ${mintDark.mint6}`, sm: "none" },
+        }}
+      />
     </CardContainer>
   );
 }
@@ -214,6 +231,9 @@ export default function Page() {
         "& *:not(.monospace,.material-symbols-rounded)": {
           fontFamily: jost.style.fontFamily + "!important",
         },
+        "& .caveat": {
+          fontFamily: caveat.style.fontFamily + "!important",
+        },
         "& .monospace, & .monospace *": {
           fontFamily: jetBrainsMono.style.fontFamily + "!important",
         },
@@ -226,13 +246,13 @@ export default function Page() {
           p: 2,
           gap: 2,
           flexDirection: { xs: "column", sm: "row" },
-          height: { md: "100dvh" },
+          height: { sm: "auto", xl: "100dvh" },
         }}
       >
         <Box
           sx={{
-            width: { xs: "100%", md: "400px" },
-            height: { xs: "calc(100dvh - 120px)", sm: "100%" },
+            width: { xs: "100%", sm: "400px" },
+            height: { xs: "calc(100dvh + 30px)", sm: "calc(100dvh - 32px)" },
             display: "flex",
           }}
         >
@@ -283,7 +303,13 @@ export default function Page() {
                 }}
               >
                 <Flexible />
-                <Keyboard />
+                <Box
+                  sx={{
+                    display: { xs: "none", sm: "flex" },
+                  }}
+                >
+                  <Keyboard />
+                </Box>
               </Box>
               <Integrated />
             </Box>
@@ -303,6 +329,7 @@ export default function Page() {
           py: 5,
           pb: 3,
           px: 10,
+          width: "100vw",
         }}
       >
         <Box
@@ -310,6 +337,7 @@ export default function Page() {
             alignItems: "center",
             justifyContent: "center",
             display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
             gap: 2,
             "& .MuiLink-root": {
               color: mintDark.mint8,
@@ -321,7 +349,7 @@ export default function Page() {
             },
           }}
         >
-          <Link href="/" sx={{ mr: "auto" }}>
+          <Link href="/" sx={{ mr: { sm: "auto" } }}>
             What's new
           </Link>
 

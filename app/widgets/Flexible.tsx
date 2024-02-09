@@ -21,7 +21,7 @@ export const Flexible = () => {
         px: 1,
         justifyContent: "flex-start",
         overflow: "hidden",
-        minWidth: 180,
+        minWidth: 170,
       }}
     >
       <Box
@@ -41,7 +41,7 @@ export const Flexible = () => {
               display: "flex",
               gap: 1,
               alignItems: "center",
-              px: 2,
+              px: 1.5,
               py: 1.5,
               borderRadius: 5,
               backgroundColor:

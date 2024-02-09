@@ -19,7 +19,13 @@ export const ArrowContainer = ({
       mt: 1,
       mb: reverse ? 0 : -1,
       justifyContent: "center",
-      opacity: 0.6,
+      opacity: 0.5,
+      transform: "scale(0.95)",
+      transition: "opacity 0.2s, transform .2s cubic-bezier(.17,.67,.4,1.81)",
+      ".card:hover &": {
+        opacity: 1,
+        transform: "scale(1)",
+      },
     }}
   >
     <Image
@@ -36,10 +42,10 @@ export const ArrowContainer = ({
     />
     <Typography
       sx={{
-        // transform: reverse ? "rotate(1deg)" : "rotate(-2deg)",
         mt: -0.3,
+        fontSize: 18,
       }}
-      className={caveat.className}
+      className="caveat"
     >
       {text}
     </Typography>
