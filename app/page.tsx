@@ -342,7 +342,7 @@ export default function Page() {
             alignItems: "center",
             justifyContent: "center",
             display: "flex",
-            flexDirection: { xs: "column", lg: "row" },
+            flexDirection: { xs: "column", md: "row" },
             gap: 2,
             "& .MuiLink-root": {
               color: mintDark.mint8,
@@ -354,7 +354,7 @@ export default function Page() {
             },
           }}
         >
-          <Link href="/" sx={{ mr: { lg: "auto" } }}>
+          <Link href="/" sx={{ mr: { md: "auto" } }}>
             What's new
           </Link>
 
@@ -380,7 +380,7 @@ export default function Page() {
             justifyContent: "center",
             alignItems: "center",
             gap: 2,
-            flexDirection: { xs: "column", lg: "row" },
+            flexDirection: { xs: "column", md: "row" },
             pt: 5,
           }}
         >
@@ -388,7 +388,7 @@ export default function Page() {
             href="https://www.producthunt.com/posts/dysperse?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-dysperse"
             target="_blank"
             sx={{
-              marginRight: { lg: "auto" },
+              marginRight: { md: "auto" },
             }}
           >
             <img
