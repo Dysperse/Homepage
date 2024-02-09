@@ -275,7 +275,7 @@ export default function Page() {
             sx={{
               gap: 2,
               display: "flex",
-              flexDirection: { xs: "column", sm: "row" },
+              flexDirection: { xs: "column", md: "row" },
             }}
           >
             <Time />
