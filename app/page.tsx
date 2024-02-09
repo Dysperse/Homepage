@@ -1,5 +1,12 @@
 "use client";
-import { Box, Button, Link, Tooltip, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  Link,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import { JetBrains_Mono, Jost } from "next/font/google";
 import Image from "next/image";
 import { mintDark, skyDark } from "./themes";
@@ -13,6 +20,7 @@ import { Customizable } from "./widgets/Customizable";
 import { Keyboard } from "./widgets/Keyboard";
 import { CardContainer } from "./CardContainer";
 import { addHslAlpha } from "./addHslAlpha";
+import { useEffect, useState } from "react";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -140,6 +148,59 @@ function About() {
   );
 }
 
+function CookieBanner() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("cookieBanner") !== "true") {
+      setOpen(true);
+    }
+  }, []);
+  return (
+    <Box
+      sx={{
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        p: 1,
+        width: "100vw",
+        maxWidth: { xs: "100%", sm: "350px" },
+        zIndex: 9999,
+      }}
+    >
+      <Box
+        sx={{
+          backdropFilter: "blur(10px)",
+          background: addHslAlpha(mintDark.mint4, 0.9),
+          px: 3,
+          py: 1,
+          fontSize: 12,
+          color: mintDark.mint11,
+          gap: 2,
+          display: open ? "flex" : "none",
+          alignItems: "center",
+          border: `1px solid ${mintDark.mint5}`,
+          borderRadius: 5,
+        }}
+      >
+        We use cookies (not the kind you eat) to keep our app functional. By
+        using our app, you allow us to use cookies.
+        <Button
+          onClick={() => {
+            localStorage.setItem("cookieBanner", "true");
+            setOpen(false);
+          }}
+          sx={{
+            color: mintDark.mint11,
+          }}
+        >
+          🍪&nbsp;Yum!
+        </Button>
+      </Box>
+    </Box>
+  );
+}
+
 export default function Page() {
   return (
     <Box
@@ -154,6 +215,7 @@ export default function Page() {
         },
       }}
     >
+      <CookieBanner />
       <Box
         sx={{
           display: "flex",
