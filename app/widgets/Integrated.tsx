@@ -1,7 +1,7 @@
 "use client";
 import { Box } from "@mui/material";
 import Image from "next/image";
-import { CardContainer } from "../page";
+import { CardContainer } from "../CardContainer";
 import { mintDark } from "../themes";
 import { ArrowContainer } from "./ArrowContainer";
 

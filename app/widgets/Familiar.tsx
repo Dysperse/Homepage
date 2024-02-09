@@ -1,7 +1,8 @@
 "use client";
 import { Box, IconButton, Typography } from "@mui/material";
 import { useState } from "react";
-import { CardContainer, Emoji } from "../page";
+import { CardContainer } from "../CardContainer";
+import { Emoji } from "../Emoji";
 import { mintDark } from "../themes";
 import { ArrowContainer } from "./ArrowContainer";
 

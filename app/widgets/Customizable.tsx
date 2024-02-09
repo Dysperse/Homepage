@@ -1,10 +1,11 @@
 "use client";
-import { Box, Typography } from "@mui/material";
-import { CardContainer, Emoji, addHslAlpha, jetBrainsMono } from "../page";
+import { Box } from "@mui/material";
 import { Caveat } from "next/font/google";
-import Image from "next/image";
-import { mintDark } from "../themes";
 import { useState } from "react";
+import { CardContainer } from "../CardContainer";
+import { Emoji } from "../Emoji";
+import { addHslAlpha } from "../addHslAlpha";
+import { mintDark } from "../themes";
 import { ArrowContainer } from "./ArrowContainer";
 
 const caveat = Caveat({ subsets: ["latin"] });

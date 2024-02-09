@@ -1,7 +1,13 @@
 "use client";
 import { Box, Typography } from "@mui/material";
 import { skyDark } from "@radix-ui/colors";
-import { CardContainer, jetBrainsMono } from "../page";
+import { CardContainer } from "../CardContainer";
+import { JetBrains_Mono } from "next/font/google";
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: "variable",
+});
 
 export const Weather = () => (
   <CardContainer

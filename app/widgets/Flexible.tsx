@@ -1,9 +1,8 @@
 "use client";
-import { Box, Chip, Typography } from "@mui/material";
-import { mintDark } from "../themes";
-import { CardContainer, jetBrainsMono } from "../page";
+import { Box, Typography } from "@mui/material";
 import { useState } from "react";
-import { Caveat } from "next/font/google";
+import { CardContainer } from "../CardContainer";
+import { mintDark } from "../themes";
 
 export const Flexible = () => {
   const [selected, setSelected] = useState("Kanban");

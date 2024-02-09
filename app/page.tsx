@@ -1,5 +1,5 @@
 "use client";
-import { Box, Button, Link, SxProps, Tooltip, Typography } from "@mui/material";
+import { Box, Button, Link, Tooltip, Typography } from "@mui/material";
 import { JetBrains_Mono, Jost } from "next/font/google";
 import Image from "next/image";
 import { mintDark, skyDark } from "./themes";
@@ -11,62 +11,13 @@ import { UpNext } from "./widgets/UpNext";
 import { Familiar } from "./widgets/Familiar";
 import { Customizable } from "./widgets/Customizable";
 import { Keyboard } from "./widgets/Keyboard";
+import { CardContainer } from "./CardContainer";
+import { addHslAlpha } from "./addHslAlpha";
 
-export const jetBrainsMono = JetBrains_Mono({
+const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: "variable",
 });
-
-export const addHslAlpha = (hsl: string, alpha: number) =>
-  hsl.replace(")", `, ${alpha})`).replace("hsl", "hsla");
-
-export function Emoji({
-  size = 24,
-  emoji,
-  style = {},
-}: {
-  size?: number;
-  emoji: string;
-  style?: any;
-}) {
-  return (
-    <Image
-      style={{
-        width: size,
-        height: size,
-      }}
-      width={size}
-      height={size}
-      alt="Emoji"
-      src={`https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/${emoji?.toLowerCase()}.png`}
-    />
-  );
-}
-
-export const CardContainer = ({
-  children,
-  sx,
-}: {
-  children: React.ReactNode;
-  sx?: SxProps;
-}) => (
-  <Box
-    sx={{
-      bgcolor: addHslAlpha(mintDark.mint2, 0.5),
-      backdropFilter: "blur(10px)",
-      display: "flex",
-      px: 5,
-      flex: 1,
-      flexDirection: "column",
-      justifyContent: "center",
-      borderRadius: 7,
-      border: `1px solid ${mintDark.mint5}`,
-      ...sx,
-    }}
-  >
-    {children}
-  </Box>
-);
 
 function About() {
   return (

@@ -1,5 +1,6 @@
 import { Button, Typography } from "@mui/material";
-import { CardContainer, addHslAlpha } from "../page";
+import { addHslAlpha } from "../addHslAlpha";
+import { CardContainer } from "../CardContainer";
 import { mintDark } from "@radix-ui/colors";
 import { grassDark } from "../themes";
 

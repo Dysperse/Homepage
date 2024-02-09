@@ -5,7 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { JetBrains_Mono, Jost } from "next/font/google";
 import { useEffect, useMemo, useRef, useState } from "react";
 import VirtualKeyboard from "react-simple-keyboard";
-import { CardContainer } from "../page";
+import { CardContainer } from "../CardContainer";
 import { ArrowContainer } from "./ArrowContainer";
 
 const jost = Jost({ subsets: ["latin"] });

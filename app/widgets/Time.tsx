@@ -2,7 +2,13 @@
 import { Box, Typography } from "@mui/material";
 import { orangeDark } from "../themes";
 import { useEffect, useState } from "react";
-import { CardContainer, jetBrainsMono } from "../page";
+import { CardContainer } from "../CardContainer";
+import { JetBrains_Mono } from "next/font/google";
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: "variable",
+});
 
 export const Time = () => {
   const [time, setTime] = useState(new Date());
