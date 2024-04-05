@@ -55,17 +55,6 @@ function About() {
       />
 
       <Typography
-        className="monospace"
-        sx={{
-          fontFamily: jetBrainsMono.style.fontFamily,
-          mt: -2,
-          fontWeight: 300,
-          opacity: 0.6,
-        }}
-      >
-        arriving spring 2024
-      </Typography>
-      <Typography
         className={jost.className}
         sx={{
           fontWeight: 800,
