@@ -8,7 +8,7 @@ const jost = Jost({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dysperse",
-  description: "We're building the future of productivity. Stay tuned!",
+  description: "Dysperse is minimalist productivity, built for humans.",
 };
 
 export default function RootLayout({
