@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import {
   Box,
   Button,
+  Chip,
   CssBaseline,
   Typography,
   useScrollTrigger,
@@ -85,9 +86,39 @@ function Header() {
                 fontSize: 25,
                 my: 2,
                 maxWidth: 900,
+                lineHeight: "50px",
               }}
             >
-              Productivity is personal. Supercharge it with #dysperse
+              Productivity is personal. Supercharge it with{" "}
+              <Chip
+                label="#dysperse"
+                variant="outlined"
+                sx={{
+                  color: mintDark.mint11,
+                  fontWeight: 800,
+                  fontSize: 20,
+                  height: "37px",
+                  px: 1,
+                  borderRadius: 99,
+                  transition: "none",
+                  boxShadow: "none",
+                  "&:hover": {
+                    backgroundColor: mintDark.mint5,
+                  },
+                }}
+                onClick={() => {
+                  const audio = new Audio("/pronunciation.mp3");
+                  audio.play();
+                }}
+                icon={
+                  <span
+                    className="material-symbols-rounded"
+                    style={{ color: mintDark.mint11 }}
+                  >
+                    volume_up
+                  </span>
+                }
+              />
             </Typography>
             <Box sx={{ mt: 1, gap: 2, display: "flex" }}>
               <Button
