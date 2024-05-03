@@ -72,7 +72,7 @@ export function Keyboard() {
     <CardContainer
       sx={{
         p: 1,
-        maxWidth: { xs: "100%", sm: "56vw", md: "50vw", lg: "32vw" },
+        maxWidth: { xs: "100%", sm: "56vw", md: "40vw", lg: "45vw" },
         "& *": { fontFamily: jost.style.fontFamily, fontWeight: 500 },
       }}
     >
