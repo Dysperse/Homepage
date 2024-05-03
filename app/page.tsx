@@ -84,20 +84,21 @@ function Header() {
                   xs: "50px",
                   md: "60px",
                   lg: "80px",
-                  xl: "105px",
+                  xl: "100px",
                 },
                 lineHeight: {
                   xs: "50px",
                   md: "60px",
                   lg: "80px",
-                  xl: "105px",
+                  xl: "100px",
                 },
                 fontWeight: 900,
               }}
             >
-              <span style={{ opacity: 0.7 }}>You could have</span>
+              <span style={{ opacity: 0.7 }}>You&nbsp;could&nbsp;have</span>
               <br />
-              25 hours <span style={{ opacity: 0.7 }}>in a day.</span>
+              25&nbsp;hours{" "}
+              <span style={{ opacity: 0.7 }}>in&nbsp;a&nbsp;day.</span>
             </Typography>
             <Typography
               className={jost.className}
@@ -350,7 +351,7 @@ function PictureThis() {
           Maybe you like things aesthetic. <br />
           Maybe you like to organize things by effort <br />
           Maybe you&apos;re all of the above. <br />
-          whoever you are, dyseperse is for you.
+          Whoever you are, Dysperse is for you.
         </Typography>
       </Box>
     </Box>
@@ -384,7 +385,6 @@ function InteractiveWidgets() {
         sx={{
           display: "flex",
           flexDirection: { xs: "column", lg: "row" },
-          height: { sm: "auto", xl: "100dvh" },
         }}
       >
         <Box
@@ -417,7 +417,7 @@ function InteractiveWidgets() {
           >
             <Box
               sx={{
-                flex: 3,
+                flex: 2,
                 display: "flex",
                 flexDirection: "column",
                 gap: 2,
@@ -443,7 +443,13 @@ function InteractiveWidgets() {
               <Integrated />
             </Box>
             <Box
-              sx={{ flex: 2, display: "flex", flexDirection: "column", gap: 2 }}
+              sx={{
+                flex: 3,
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+                flexShrink: 0,
+              }}
             >
               <Customizable />
               <UpNext />

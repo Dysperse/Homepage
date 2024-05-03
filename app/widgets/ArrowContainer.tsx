@@ -2,6 +2,7 @@
 import { Box, Typography } from "@mui/material";
 import { Caveat } from "next/font/google";
 import Image from "next/image";
+import { mintDark } from "../themes";
 
 const caveat = Caveat({ subsets: ["latin"] });
 
@@ -43,6 +44,7 @@ export const ArrowContainer = ({
     <Typography
       sx={{
         mt: -0.3,
+        color: mintDark.mint12,
         fontSize: 18,
         fontFamily: caveat.style.fontFamily + "!important",
       }}

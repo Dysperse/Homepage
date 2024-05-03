@@ -10,6 +10,7 @@ export const Weather = () => (
       background: `linear-gradient(180deg, ${skyDark.sky4} 0%, ${skyDark.sky2} 100%)`,
       flexDirection: "row",
       borderColor: skyDark.sky6,
+      color: skyDark.sky11,
       alignItems: "center",
       justifyContent: "space-between",
       minHeight: 150,
@@ -45,7 +46,7 @@ export const Weather = () => (
     </Box>
     <span
       className="material-symbols-rounded"
-      style={{ color: "white", fontSize: 50 }}
+      style={{ fontSize: 50, color: skyDark.sky11 }}
     >
       partly_cloudy_night
     </span>

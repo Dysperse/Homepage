@@ -72,7 +72,11 @@ export function Keyboard() {
     <CardContainer
       sx={{
         p: 1,
-        maxWidth: { xs: "100%", sm: "56vw", md: "40vw", lg: "50vw" },
+        maxWidth: {
+          xs: "100%",
+          md: "27vw",
+          lg: "32vw",
+        },
         "& *": { fontFamily: jost.style.fontFamily, fontWeight: 400 },
       }}
     >
@@ -81,7 +85,6 @@ export function Keyboard() {
         layoutName={layoutName}
         onChange={onChange}
         onKeyPress={onKeyPress}
-        // Highlight specific keys by adding a class to them
         buttonTheme={[
           {
             class: "shortcut",

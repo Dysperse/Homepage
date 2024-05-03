@@ -25,7 +25,6 @@ export const Flexible = () => {
         justifyContent: "flex-start",
         overflow: "hidden",
         minWidth: 170,
-        maxHeight: 390,
         position: "relative",
       }}
     >
@@ -56,7 +55,7 @@ export const Flexible = () => {
           return (
             <Box
               key={option}
-              onClick={() => setSelected(option)}
+              onClick={() => setSelected(t)}
               sx={{
                 display: "flex",
                 gap: 1,
@@ -65,21 +64,20 @@ export const Flexible = () => {
                 py: 1.5,
                 borderRadius: 5,
                 backgroundColor:
-                  selected === option ? mintDark.mint4 : "transparent",
+                  selected === t ? mintDark.mint4 : "transparent",
                 "&:hover": {
                   backgroundColor:
-                    selected === option ? mintDark.mint5 : mintDark.mint3,
+                    selected === t ? mintDark.mint5 : mintDark.mint3,
                 },
                 "&:active": {
                   backgroundColor:
-                    selected === option ? mintDark.mint6 : mintDark.mint4,
+                    selected === t ? mintDark.mint6 : mintDark.mint4,
                 },
               }}
             >
               <span
                 style={{
                   color: mintDark.mint11,
-                  // transition: "all .2s",
                   fontVariationSettings: `"FILL" ${
                     selected === option.text ? 1 : 0
                   }, "wght" 100, "GRAD" 0, "opsz" 40`,
@@ -97,7 +95,7 @@ export const Flexible = () => {
               >
                 {t}
               </Typography>
-              {selected === option.text && (
+              {selected === t && (
                 <span
                   style={{ marginLeft: "auto", color: mintDark.mint11 }}
                   className="material-symbols-rounded"
