@@ -3,11 +3,12 @@ import { addHslAlpha, rubyDark } from "../themes";
 import { CardContainer } from "./CardContainer";
 import { JetBrains_Mono } from "next/font/google";
 const mono = JetBrains_Mono({ subsets: ["latin"] });
+
 export function Theme() {
   return (
     <CardContainer
       sx={{
-        flex: 2,
+        flex: 1,
         p: 3,
         background: rubyDark.ruby3,
         borderColor: rubyDark.ruby6,

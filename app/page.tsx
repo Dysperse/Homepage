@@ -407,7 +407,7 @@ function InteractiveWidgets() {
               flexDirection: { xs: "column", md: "row" },
             }}
           >
-            <Time />
+            <Theme />
             <Familiar />
             <Weather />
           </Box>
@@ -461,7 +461,7 @@ function InteractiveWidgets() {
           </Box>
           <Box sx={{ display: "flex", gap: 2, flexDirection: "row" }}>
             <Quote />
-            <Theme />
+            <Time />
             <Box
               sx={{
                 flex: 4,
