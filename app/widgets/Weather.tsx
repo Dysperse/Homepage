@@ -2,14 +2,13 @@
 import { Box, Typography } from "@mui/material";
 import { skyDark } from "@radix-ui/colors";
 import { CardContainer } from "./CardContainer";
-import { JetBrains_Mono } from "next/font/google";
 
 export const Weather = () => (
   <CardContainer
     sx={{
       background: `linear-gradient(180deg, ${skyDark.sky4} 0%, ${skyDark.sky2} 100%)`,
       flexDirection: "row",
-      borderColor: skyDark.sky6,
+      borderColor: skyDark.sky5,
       color: skyDark.sky11,
       alignItems: "center",
       justifyContent: "space-between",

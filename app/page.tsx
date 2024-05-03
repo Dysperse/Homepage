@@ -25,6 +25,10 @@ import { Integrated } from "./widgets/Integrated";
 import { Customizable } from "./widgets/Customizable";
 import { UpNext } from "./widgets/UpNext";
 import { Familiar } from "./widgets/Familiar";
+import { Quote } from "./widgets/Quote";
+import { PlanDay } from "./widgets/PlanDay";
+import { Task } from "./widgets/Task";
+import { Theme } from "./widgets/Theme";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -453,6 +457,21 @@ function InteractiveWidgets() {
             >
               <Customizable />
               <UpNext />
+            </Box>
+          </Box>
+          <Box sx={{ display: "flex", gap: 2, flexDirection: "row" }}>
+            <Quote />
+            <Theme />
+            <Box
+              sx={{
+                flex: 4,
+                display: "flex",
+                gap: 2,
+                flexDirection: "column",
+              }}
+            >
+              <PlanDay />
+              <Task />
             </Box>
           </Box>
         </Box>

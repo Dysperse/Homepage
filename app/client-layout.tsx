@@ -18,6 +18,12 @@ export function ClientLayout({
       fontFamily: jost.style.fontFamily,
     },
     components: {
+      MuiChip: {
+        defaultProps: {
+          sx: (theme) =>
+            theme.unstable_sx({ height: 35, px: 2, borderRadius: 99 }),
+        },
+      },
       MuiTypography: {
         defaultProps: {
           className: jost.className,
@@ -32,18 +38,6 @@ export function ClientLayout({
             gap: "10px",
           },
           className: jost.className,
-        },
-      },
-      MuiChip: {
-        defaultProps: {
-          className: jost.className,
-        },
-        styleOverrides: {
-          root: ({ theme }) =>
-            theme.unstable_sx({
-              px: 2,
-              height: 40,
-            }),
         },
       },
       MuiIconButton: {

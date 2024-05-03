@@ -11,7 +11,7 @@ html {
 }
 
 .MuiTypography-root {
-  cursor: default
+  cursor: default;
 }
 
 .material-symbols-rounded {
@@ -74,18 +74,18 @@ html {
 }
 
 :root {
-  --mint1: hsl(173, 50.0%, 6.6%);
-  --mint2: hsl(174, 51.2%, 8.0%);
-  --mint3: hsl(174, 53.5%, 10.6%);
-  --mint4: hsl(174, 55.1%, 12.6%);
-  --mint5: hsl(173, 56.6%, 14.8%);
-  --mint6: hsl(173, 58.3%, 17.9%);
-  --mint7: hsl(172, 60.1%, 23.6%);
-  --mint8: hsl(170, 59.8%, 35.1%);
-  --mint9: hsl(167, 70.0%, 72.0%);
-  --mint10: hsl(163, 80.0%, 77.0%);
-  --mint11: hsl(167, 70.0%, 58.0%);
-  --mint12: hsl(155, 70.0%, 86.5%);
+  --mint1: hsl(75, 55%, 6%);
+  --mint2: hsl(78, 41.5%, 8%);
+  --mint3: hsl(81, 38.1%, 11%);
+  --mint4: hsl(81, 39.4%, 13.1%);
+  --mint5: hsl(81, 40.8%, 15.3%);
+  --mint6: hsl(80, 42.6%, 18.4%);
+  --mint7: hsl(78, 45.4%, 24%);
+  --mint8: hsl(75, 49.7%, 35.1%);
+  --mint9: hsl(81, 80%, 66%);
+  --mint10: hsl(75, 85%, 60%);
+  --mint11: hsl(70, 70%, 50%);
+  --mint12: hsl(80, 80%, 85%);
 }
 .hg-theme-default {
   background-color: var(--mint2);

@@ -7,6 +7,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import VirtualKeyboard from "react-simple-keyboard";
 import { CardContainer } from "./CardContainer";
 import { ArrowContainer } from "./ArrowContainer";
+import { limeDark } from "../themes";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -72,6 +73,9 @@ export function Keyboard() {
     <CardContainer
       sx={{
         p: 1,
+        background: limeDark.lime2,
+        borderColor: limeDark.lime5,
+        color: limeDark.lime11,
         maxWidth: {
           xs: "100%",
           md: "27vw",
@@ -131,7 +135,7 @@ export function Keyboard() {
                       px: 1,
                       height: 25,
                       borderRadius: 99,
-                      bgcolor: mintDark.mint4,
+                      bgcolor: limeDark.lime4,
                       display: "flex",
                       fontWeight: 400,
                       alignItems: "center",
@@ -148,13 +152,13 @@ export function Keyboard() {
                   mx: 1,
                   p: 0.2,
                   height: 34,
-                  bgcolor: mintDark.mint3,
+                  bgcolor: limeDark.lime3,
                   borderRadius: 999,
                   "& *": {
                     fontWeight: 400,
                   },
                   borderWidth: 1,
-                  borderColor: mintDark.mint4,
+                  borderColor: limeDark.lime4,
                   borderStyle: "solid",
                 }}
               />

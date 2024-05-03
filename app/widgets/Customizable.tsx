@@ -4,7 +4,7 @@ import { Caveat } from "next/font/google";
 import { useState } from "react";
 import { CardContainer } from "./CardContainer";
 import { Emoji } from "../Emoji";
-import { mintDark, addHslAlpha } from "../themes";
+import { mintDark, addHslAlpha, mauveDark } from "../themes";
 import { ArrowContainer } from "./ArrowContainer";
 
 const caveat = Caveat({ subsets: ["latin"] });
@@ -121,7 +121,15 @@ export const Customizable = () => {
     "1f6d1",
   ];
   return (
-    <CardContainer sx={{ px: 2, py: 2 }}>
+    <CardContainer
+      sx={{
+        px: 2,
+        py: 2,
+        borderColor: mauveDark.mauve5,
+        backgroundColor: mauveDark.mauve2,
+        color: mauveDark.mauve11,
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -177,7 +185,7 @@ export const Customizable = () => {
           sx={{
             height: 50,
             pointerEvents: "none",
-            background: `linear-gradient(transparent, ${mintDark.mint2})`,
+            background: `linear-gradient(transparent, ${mauveDark.mauve2})`,
             zIndex: 1,
             width: "100%",
             position: "absolute",

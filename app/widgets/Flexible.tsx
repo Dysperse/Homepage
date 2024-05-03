@@ -2,7 +2,7 @@
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 import { CardContainer } from "./CardContainer";
-import { mintDark } from "../themes";
+import { grayDark } from "../themes";
 
 export const Flexible = () => {
   const [selected, setSelected] = useState("Kanban");
@@ -25,6 +25,8 @@ export const Flexible = () => {
         justifyContent: "flex-start",
         overflow: "hidden",
         minWidth: 170,
+        backgroundColor: grayDark.gray2,
+        borderColor: grayDark.gray5,
         position: "relative",
       }}
     >
@@ -32,7 +34,7 @@ export const Flexible = () => {
         sx={{
           height: 50,
           pointerEvents: "none",
-          background: `linear-gradient(transparent, ${mintDark.mint2})`,
+          background: `linear-gradient(transparent, ${grayDark.gray2})`,
           zIndex: 1,
           width: "100%",
           position: "absolute",
@@ -64,20 +66,20 @@ export const Flexible = () => {
                 py: 1.5,
                 borderRadius: 5,
                 backgroundColor:
-                  selected === t ? mintDark.mint4 : "transparent",
+                  selected === t ? grayDark.gray4 : "transparent",
                 "&:hover": {
                   backgroundColor:
-                    selected === t ? mintDark.mint5 : mintDark.mint3,
+                    selected === t ? grayDark.gray5 : grayDark.gray3,
                 },
                 "&:active": {
                   backgroundColor:
-                    selected === t ? mintDark.mint6 : mintDark.mint4,
+                    selected === t ? grayDark.gray6 : grayDark.gray4,
                 },
               }}
             >
               <span
                 style={{
-                  color: mintDark.mint11,
+                  color: grayDark.gray11,
                   fontVariationSettings: `"FILL" ${
                     selected === option.text ? 1 : 0
                   }, "wght" 100, "GRAD" 0, "opsz" 40`,
@@ -88,7 +90,7 @@ export const Flexible = () => {
               </span>
               <Typography
                 sx={{
-                  color: mintDark.mint11,
+                  color: grayDark.gray11,
                   fontSize: 16,
                   fontWeight: 300,
                 }}
@@ -97,7 +99,7 @@ export const Flexible = () => {
               </Typography>
               {selected === t && (
                 <span
-                  style={{ marginLeft: "auto", color: mintDark.mint11 }}
+                  style={{ marginLeft: "auto", color: grayDark.gray11 }}
                   className="material-symbols-rounded"
                 >
                   check
