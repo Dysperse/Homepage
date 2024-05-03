@@ -14,8 +14,7 @@ export const CardContainer = ({
     sx={{
       color: mintDark.mint11,
       flex: 1,
-      bgcolor: addHslAlpha(mintDark.mint2, 0.5),
-      backdropFilter: "blur(10px)",
+      bgcolor: mintDark.mint2,
       display: "flex",
       px: 5,
       flexDirection: "column",

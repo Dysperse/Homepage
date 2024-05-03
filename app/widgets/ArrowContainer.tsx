@@ -44,7 +44,7 @@ export const ArrowContainer = ({
       sx={{
         mt: -0.3,
         fontSize: 18,
-        ...caveat.style,
+        fontFamily: caveat.style.fontFamily,
       }}
     >
       {text}

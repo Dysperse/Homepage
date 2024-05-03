@@ -8,6 +8,7 @@ import {
   Box,
   Button,
   Chip,
+  Container,
   CssBaseline,
   Link,
   Skeleton,
@@ -379,11 +380,9 @@ function InteractiveWidgets() {
         </span>
       </Box>
 
-      <Box
+      <Container
         sx={{
           display: "flex",
-          p: 2,
-          gap: 2,
           flexDirection: { xs: "column", lg: "row" },
           height: { sm: "auto", xl: "100dvh" },
         }}
@@ -451,14 +450,14 @@ function InteractiveWidgets() {
             </Box>
           </Box>
         </Box>
-      </Box>
+      </Container>
     </Box>
   );
 }
 
 function CTA() {
   return (
-    <Box sx={{ p: 2 }}>
+    <Container sx={{ mt: 10 }}>
       <Box
         sx={{
           background: mintDark.mint4,
@@ -472,7 +471,7 @@ function CTA() {
           What would you do with that extra hour?
         </Typography>
       </Box>
-    </Box>
+    </Container>
   );
 }
 

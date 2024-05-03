@@ -111,7 +111,7 @@ export const Familiar = () => {
           sx={{
             height: 50,
             pointerEvents: "none",
-            background: `linear-gradient(transparent, #091b19)`,
+            background: `linear-gradient(transparent, ${mintDark.mint2})`,
             zIndex: 1,
             width: "100%",
             position: "absolute",
