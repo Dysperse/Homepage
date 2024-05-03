@@ -20,7 +20,7 @@ function Header() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: "calc(100vh - 70px)",
+        height: "calc(100vh - 50px)",
         width: "100vw",
         color: mintDark.mint11,
         position: "relative",
@@ -202,18 +202,15 @@ export default function Home() {
       <CssBaseline />
       <Navbar />
       <Header />
-      <Box sx={{ maxWidth: "100vw", overflowX: "hidden", mt: -4, zIndex: 99 }}>
-        <Box
-          sx={{
-            position: "relative",
-            width: "100%",
-            height: "auto",
-            aspectRatio: "1280/46",
-          }}
-        >
-          <Image priority src="/line.svg" alt="Line" fill />
-        </Box>
-      </Box>
+      <Box
+        sx={{
+          background: `linear-gradient(${mintDark.mint7}, ${mintDark.mint4})`,
+          width: "100%",
+          height: 50,
+          mt: -4,
+        }}
+        className="wave"
+      ></Box>
     </Box>
   );
 }
