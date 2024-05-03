@@ -73,7 +73,7 @@ export function Keyboard() {
       sx={{
         p: 1,
         maxWidth: { xs: "100%", sm: "56vw", md: "40vw", lg: "50vw" },
-        "& *": { fontFamily: jost.style.fontFamily, fontWeight: 500 },
+        "& *": { fontFamily: jost.style.fontFamily, fontWeight: 400 },
       }}
     >
       <VirtualKeyboard

@@ -10,6 +10,7 @@ export default function RootLayout(props: any) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
+        <link rel="favicon" href="/favicon.ico" />
       </head>
       <body>
         <AppRouterCacheProvider>
