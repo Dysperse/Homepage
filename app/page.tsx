@@ -8,6 +8,8 @@ import {
   Button,
   Chip,
   CssBaseline,
+  Link,
+  Skeleton,
   Typography,
   useScrollTrigger,
 } from "@mui/material";
@@ -91,6 +93,7 @@ function Header() {
             >
               Productivity is personal. Supercharge it with{" "}
               <Chip
+                component={"span"}
                 label="#dysperse"
                 variant="outlined"
                 sx={{
@@ -349,18 +352,103 @@ function InteractiveWidgets() {
           web_traffic
         </span>
       </Box>
+      <Box sx={{ p: 2, gap: 2, display: "flex", mb: 10 }}>
+        {[...Array(3)].map((_, i) => (
+          <Skeleton
+            variant="rectangular"
+            width="100%"
+            height={300}
+            animation="wave"
+            key={i}
+            sx={{ borderRadius: 25 }}
+          />
+        ))}
+      </Box>
     </Box>
   );
 }
 
 function CTA() {
   return (
+    <Box sx={{ p: 2 }}>
+      <Box
+        sx={{
+          background: mintDark.mint4,
+          color: mintDark.mint11,
+          borderRadius: 25,
+          p: 5,
+          py: 10,
+        }}
+      >
+        <Typography variant="h2" sx={{ textAlign: "center" }}>
+          What would you do with that extra hour?
+        </Typography>
+      </Box>
+    </Box>
+  );
+}
+
+function Footer() {
+  const [time, setTime] = useState<any>(new Date().getFullYear());
+
+  return (
     <Box
       sx={{
-        background: mintDark.mint4,
+        mt: 5,
+        py: 10,
+        color: mintDark.mint11,
+        borderTop: `2px solid ${mintDark.mint5}`,
+        backdropFilter: "blur(2px)",
+        p: 5,
+        textAlign: "center",
       }}
     >
-      <Typography>What would you do with that extra hour?</Typography>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 2,
+          mb: 4,
+          "& *": {
+            fontWeight: 300,
+            textDecorationThickness: 2,
+            color: mintDark.mint8,
+            textDecorationColor: mintDark.mint7,
+          },
+        }}
+      >
+        <Link href="//github.com/dysperse" target="_blank">
+          Open source
+        </Link>
+        <Link
+          href="//instagram.com/dysperse"
+          target="_blank"
+          sx={{ mr: "auto" }}
+        >
+          Instagram
+        </Link>
+        <Link href="https://status.dysperse.com/" target="_blank">
+          Status
+        </Link>
+        <Link href="https://blog.dysperse.com/terms-of-service" target="_blank">
+          Terms
+        </Link>
+        <Link href="https://blog.dysperse.com/privacy-policy" target="_blank">
+          Privacy
+        </Link>
+      </Box>
+      <Typography
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 2,
+          opacity: 0.5,
+          justifyContent: "center",
+        }}
+        fontWeight={700}
+      >
+        <Image src="/usa.png" alt="USA flag" width={24} height={24} />
+        Proudly made in the US &bull; Copyright {time}
+      </Typography>
     </Box>
   );
 }
@@ -381,6 +469,7 @@ export default function Home() {
       <PictureThis />
       <InteractiveWidgets />
       <CTA />
+      <Footer />
     </Box>
   );
 }
