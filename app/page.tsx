@@ -95,16 +95,20 @@ function Header() {
                 variant="outlined"
                 sx={{
                   color: mintDark.mint11,
-                  fontWeight: 800,
+                  fontWeight: 700,
                   fontSize: 20,
                   height: "37px",
                   px: 1,
                   borderRadius: 99,
+                  borderColor: mintDark.mint11,
+                  borderWidth: 2,
+                  mt: "-3px",
                   transition: "none",
                   boxShadow: "none",
                   "&:hover": {
                     backgroundColor: mintDark.mint5,
                   },
+                  "&:active": { opacity: 0.6 },
                 }}
                 onClick={() => {
                   const audio = new Audio("/pronunciation.mp3");
