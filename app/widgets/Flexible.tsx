@@ -49,8 +49,8 @@ export const Flexible = () => {
           flexDirection: "column",
         }}
       >
-        {Object.keys(options).map((t) => {
-          const option = options[t];
+        {Object.keys(options).map((t: any) => {
+          const option = (options as any)[t];
 
           return (
             <Box
