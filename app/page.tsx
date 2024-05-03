@@ -345,11 +345,11 @@ function PictureThis() {
           }}
         >
           You&apos;ve got goals. <br />
-          maybe you like setting broad deadlines. <br />
-          maybe you like organizing things by color. <br />
-          maybe you like things aesthetic. <br />
-          maybe you like to organize things by effort <br />
-          maybe you&apos;re all of the above. <br />
+          Maybe you like setting broad deadlines. <br />
+          Maybe you like organizing things by color. <br />
+          Maybe you like things aesthetic. <br />
+          Maybe you like to organize things by effort <br />
+          Maybe you&apos;re all of the above. <br />
           whoever you are, dyseperse is for you.
         </Typography>
       </Box>

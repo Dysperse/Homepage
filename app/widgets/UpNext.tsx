@@ -8,7 +8,7 @@ export function UpNext() {
       sx={{
         flex: undefined,
         p: 3,
-        background: addHslAlpha(grassDark.grass8, 0.1),
+        background: grassDark.grass3,
         borderColor: grassDark.grass6,
       }}
     >

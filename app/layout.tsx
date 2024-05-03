@@ -6,14 +6,12 @@ export default function RootLayout(props: any) {
   return (
     <html lang="en">
       <head>
+        <title>Dysperse &bull; Productivity for Humans</title>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
-        <meta
-          name="title"
-          content="Dysperse: A radically different, unified productivity platform"
-        />
+        <meta name="title" content="#dysperse is productivity, for humans<" />
         <meta
           name="description"
           content="Meet Dysperse: The ultimate productivity platform that streamlines your life with planners, boards, routines, and more. Say goodbye to scattered tasks and hello to seamless productivity with Dysperse."
