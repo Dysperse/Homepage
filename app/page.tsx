@@ -19,6 +19,10 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { Time } from "./widgets/Time";
 import { Weather } from "./widgets/Weather";
 import { Keyboard } from "./widgets/Keyboard";
+import { Flexible } from "./widgets/Flexible";
+import { Integrated } from "./widgets/Integrated";
+import { Customizable } from "./widgets/Customizable";
+import { UpNext } from "./widgets/UpNext";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -373,18 +377,79 @@ function InteractiveWidgets() {
           web_traffic
         </span>
       </Box>
+
       <Box
         sx={{
+          display: "flex",
           p: 2,
           gap: 2,
-          display: "flex",
-          mb: 10,
-          alignItems: "start",
+          flexDirection: { xs: "column", lg: "row" },
+          height: { sm: "auto", xl: "100dvh" },
         }}
       >
-        <Time />
-        <Weather />
-        <Keyboard />
+        <Box
+          sx={{
+            gap: 2,
+            flex: 1,
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Box
+            sx={{
+              gap: 2,
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+            }}
+          >
+            <Time />
+            {/* <Familiar /> */}
+            <Weather />
+          </Box>
+          <Box
+            sx={{
+              gap: 2,
+              display: "flex",
+              flex: 2,
+              flexDirection: { xs: "column", sm: "row" },
+            }}
+          >
+            <Box
+              sx={{
+                flex: 3,
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  flexDirection: { xs: "column", md: "row" },
+                  flex: 1,
+                }}
+              >
+                <Flexible />
+                <Box
+                  sx={{
+                    display: { xs: "none", sm: "flex" },
+                  }}
+                >
+                  <Keyboard />
+                </Box>
+              </Box>
+              <Integrated />
+            </Box>
+            <Box
+              sx={{ flex: 2, display: "flex", flexDirection: "column", gap: 2 }}
+            >
+              <Customizable />
+              <UpNext />
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
