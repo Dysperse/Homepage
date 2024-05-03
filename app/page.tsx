@@ -23,6 +23,7 @@ import { Flexible } from "./widgets/Flexible";
 import { Integrated } from "./widgets/Integrated";
 import { Customizable } from "./widgets/Customizable";
 import { UpNext } from "./widgets/UpNext";
+import { Familiar } from "./widgets/Familiar";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -404,7 +405,7 @@ function InteractiveWidgets() {
             }}
           >
             <Time />
-            {/* <Familiar /> */}
+            <Familiar />
             <Weather />
           </Box>
           <Box
