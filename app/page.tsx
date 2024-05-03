@@ -334,7 +334,7 @@ function PictureThis() {
             WebkitTextFillColor: "transparent",
           }}
         >
-          You have goals. <br />
+          You&apos;ve got goals. <br />
           maybe you like setting broad deadlines. <br />
           maybe you like organizing things by color. <br />
           maybe you like things aesthetic. <br />
