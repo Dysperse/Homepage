@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Bebas_Neue, Jost } from "next/font/google";
 import { mint } from "@radix-ui/colors";
 import { useEffect, useState } from "react";
+import { Masonry } from "@mui/lab";
 import {
   Box,
   Button,
@@ -15,6 +16,9 @@ import {
 } from "@mui/material";
 import { addHslAlpha, mintDark } from "./themes";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { Time } from "./widgets/Time";
+import { Weather } from "./widgets/Weather";
+import { Keyboard } from "./widgets/Keyboard";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -369,17 +373,18 @@ function InteractiveWidgets() {
           web_traffic
         </span>
       </Box>
-      <Box sx={{ p: 2, gap: 2, display: "flex", mb: 10 }}>
-        {[...Array(3)].map((_, i) => (
-          <Skeleton
-            variant="rectangular"
-            width="100%"
-            height={300}
-            animation="wave"
-            key={i}
-            sx={{ borderRadius: 25 }}
-          />
-        ))}
+      <Box
+        sx={{
+          p: 2,
+          gap: 2,
+          display: "flex",
+          mb: 10,
+          alignItems: "start",
+        }}
+      >
+        <Time />
+        <Weather />
+        <Keyboard />
       </Box>
     </Box>
   );
