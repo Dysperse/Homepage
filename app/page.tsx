@@ -55,10 +55,9 @@ function Header() {
           priority
         />
       </Box>
-      <Box sx={{ zIndex: 1, height: "100%", width: "100%" }}>
-        <Box sx={{ height: "100%", display: "flex" }}>
-          <Grid2
-            xs={9}
+      <Box sx={{ zIndex: 1, height: "100%", width: "100dvw" }}>
+        <Box sx={{ height: "100%", display: "flex", maxWidth: "100dvw" }}>
+          <Box
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -71,8 +70,18 @@ function Header() {
               variant="h2"
               sx={{
                 fontFamily: "Agrandir",
-                fontSize: "80px",
-                lineHeight: "80px",
+                fontSize: {
+                  xs: "50px",
+                  md: "60px",
+                  lg: "80px",
+                  xl: "105px",
+                },
+                lineHeight: {
+                  xs: "50px",
+                  md: "60px",
+                  lg: "80px",
+                  xl: "105px",
+                },
                 fontWeight: 900,
               }}
             >
@@ -165,12 +174,20 @@ function Header() {
                 What&apos;s this about?
               </Button>
             </Box>
-          </Grid2>
-          <Box sx={{ marginLeft: "auto", pr: 5, pt: 10 }}>
+          </Box>
+          <Box
+            sx={{
+              marginLeft: "auto",
+              pr: 5,
+              pt: 10,
+              flex: 1,
+            }}
+          >
             <Box
               sx={{
                 position: "relative",
                 display: "flex",
+                marginLeft: "auto",
                 flexDirection: "column",
                 height: "100%",
                 aspectRatio: "1080/1124.99995",
