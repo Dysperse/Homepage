@@ -1,6 +1,13 @@
 @font-face {
-  font-family: "Agrandir Wide";
-  src: url("/PPAgrandir-WideLight.otf");
+  font-family: "Agrandir";
+  src: url("/PPAgrandir-Regular.otf");
+}
+
+body,
+html {
+  overflow-x: hidden;
+  background-color: #1e1e1e;
+  background-image: url("/grid.svg");
 }
 
 .material-symbols-rounded {
@@ -9,19 +16,23 @@
 
 .wave {
   --mask: radial-gradient(
-        15.44px at 50% calc(100% + 3px),
-        #0000 calc(99% - 10px),
-        #000 calc(101% - 10px) 99%,
+        15.21px at 50% calc(100% + 7px),
+        #0000 calc(99% - 6px),
+        #000 calc(101% - 6px) 99%,
         #0000 101%
       )
-      calc(50% - 20px) calc(50% - 10px + 0.5px) / 40px 20px repeat-x,
+      calc(50% - 20px) calc(50% - 8px + 0.5px) / 40px 16px repeat-x,
     radial-gradient(
-        15.44px at 50% -3px,
-        #0000 calc(99% - 10px),
-        #000 calc(101% - 10px) 99%,
+        15.21px at 50% -7px,
+        #0000 calc(99% - 6px),
+        #000 calc(101% - 6px) 99%,
         #0000 101%
       )
-      50% calc(50% + 10px) / 40px 20px repeat-x;
+      50% calc(50% + 8px) / 40px 16px repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
+}
+
+* {
+  color-scheme: dark;
 }

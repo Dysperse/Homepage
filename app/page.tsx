@@ -3,7 +3,13 @@ import Image from "next/image";
 import { Bebas_Neue, Jost } from "next/font/google";
 import { mint } from "@radix-ui/colors";
 import { useEffect, useState } from "react";
-import { Box, Button, CssBaseline, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  CssBaseline,
+  Typography,
+  useScrollTrigger,
+} from "@mui/material";
 import { addHslAlpha, mintDark } from "./themes";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 
@@ -25,6 +31,7 @@ function Header() {
         color: mintDark.mint11,
         position: "relative",
         zIndex: 0,
+        pt: 5,
       }}
     >
       <Box
@@ -60,30 +67,43 @@ function Header() {
             <Typography
               variant="h2"
               sx={{
-                fontFamily: heading.style.fontFamily,
-                fontSize: "100px",
-                lineHeight: "100px",
+                fontFamily: "Agrandir",
+                fontSize: "80px",
+                lineHeight: "80px",
+                fontWeight: 900,
               }}
             >
-              <span style={{ opacity: 0.6 }}>You could have</span>
+              <span style={{ opacity: 0.7 }}>You could have</span>
               <br />
-              25 hours <span style={{ opacity: 0.6 }}>in a day.</span>
+              25 hours <span style={{ opacity: 0.7 }}>in a day.</span>
             </Typography>
             <Typography
               className={jost.className}
               sx={{
                 opacity: 0.7,
-                fontWeight: 350,
+                fontWeight: 300,
                 fontSize: 25,
-                mt: 1,
+                my: 2,
                 maxWidth: 900,
               }}
             >
-              Meet #dysperse. It&apos;s human productivity, but with
-              superpowers. It adapts to the way you work and helps you get more
-              done.
+              Productivity is personal. Supercharge it with #dysperse
             </Typography>
-            <Box sx={{ mt: 1 }}>
+            <Box sx={{ mt: 1, gap: 2, display: "flex" }}>
+              <Button
+                size="large"
+                variant="contained"
+                sx={{
+                  fontSize: 20,
+                  backgroundColor: mintDark.mint11,
+                  "&:hover": {
+                    backgroundColor: mintDark.mint12,
+                  },
+                }}
+              >
+                Induct myself
+                <span className="material-symbols-rounded">east</span>
+              </Button>
               <Button
                 size="large"
                 variant="outlined"
@@ -104,8 +124,7 @@ function Header() {
                   },
                 }}
               >
-                Induct myself{" "}
-                <span className="material-symbols-rounded">east</span>
+                What&apos;s this about?
               </Button>
             </Box>
           </Grid2>
@@ -147,44 +166,166 @@ function Header() {
   );
 }
 
-function Navbar() {
+function Separator() {
   return (
     <Box
       sx={{
-        display: "flex",
-        alignItems: "center",
-        gap: 2,
-        p: 3.5,
-        width: "100vw",
+        background: `linear-gradient(${mintDark.mint11}, ${mintDark.mint8})`,
+        width: "100%",
+        height: 50,
+        mt: -4,
+      }}
+      className="wave"
+    />
+  );
+}
+
+function Navbar() {
+  const status = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
+  return (
+    <Box
+      sx={{
+        p: 2,
+        width: "100%",
         position: "fixed",
-        zIndex: 100,
-        "& .MuiButton-root": {
-          transition: "none",
-          textTransform: "none",
-          borderRadius: 999,
-          gap: "10px",
-          fontSize: 20,
-          color: mintDark.mint11,
-          fontWeight: 800,
-        },
+        top: 0,
+        zIndex: 99,
+        left: 0,
       }}
     >
-      <Image src="/logo.svg" alt="Dysperse logo" width={60} height={60} />
-      <Box sx={{ mx: "auto" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 2,
+          px: 3.5,
+          py: 2,
+          width: "100%",
+          borderRadius: 99,
+          backdropFilter: status ? "blur(20px)" : "none",
+          borderWidth: 2,
+          borderColor: status
+            ? addHslAlpha(mintDark.mint11, 0.1)
+            : "transparent",
+          borderStyle: "solid",
+          backgroundColor: status
+            ? addHslAlpha(mintDark.mint11, 0.05)
+            : "transparent",
+          transition: "background 0.5s, backdrop-filter 0.5s, border-color .5s",
+          "& .MuiButton-root": {
+            transition: "none",
+            textTransform: "none",
+            borderRadius: 999,
+            gap: "10px",
+            fontSize: 20,
+            color: mintDark.mint11,
+            fontWeight: 800,
+          },
+        }}
+      >
+        <Image src="/logo.svg" alt="Dysperse logo" width={60} height={60} />
+        <Box sx={{ mx: "auto" }}>
+          <Button color="primary" size="large">
+            templates
+          </Button>
+          <Button color="primary" size="large">
+            download
+          </Button>
+          <Button color="primary" size="large">
+            blog
+          </Button>
+        </Box>
         <Button color="primary" size="large">
-          templates
-        </Button>
-        <Button color="primary" size="large">
-          download
-        </Button>
-        <Button color="primary" size="large">
-          blog
+          account
+          <span className="material-symbols-rounded">north_east</span>
         </Button>
       </Box>
-      <Button color="primary" size="large">
-        account
-        <span className="material-symbols-rounded">north_east</span>
-      </Button>
+    </Box>
+  );
+}
+
+function PictureThis() {
+  return (
+    <Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          color: mintDark.mint11,
+          textTransform: "uppercase",
+          gap: 2,
+          alignItems: "center",
+          py: 5,
+          opacity: 0.1,
+        }}
+      >
+        <Typography style={{ fontWeight: 500, fontSize: 40 }}>
+          Picture this
+        </Typography>
+        <span className="material-symbols-rounded" style={{ fontSize: 50 }}>
+          emoji_objects
+        </span>
+      </Box>
+      <Box sx={{ p: 10, pt: 0, mt: -3, textAlign: "center" }}>
+        <Typography
+          variant="h2"
+          sx={{
+            background: `linear-gradient(${mintDark.mint6}, ${mintDark.mint8})`,
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          You have goals. <br />
+          maybe you like setting broad deadlines. <br />
+          maybe you like organizing things by color. <br />
+          maybe you like things aesthetic. <br />
+          maybe you like to organize things by effort <br />
+          maybe you&apos;re all of the above. <br />
+          whoever you are, dyseperse is for you.
+        </Typography>
+      </Box>
+    </Box>
+  );
+}
+
+function InteractiveWidgets() {
+  return (
+    <Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          color: mintDark.mint11,
+          textTransform: "uppercase",
+          gap: 2,
+          alignItems: "center",
+          py: 5,
+          opacity: 0.1,
+        }}
+      >
+        <Typography style={{ fontWeight: 500, fontSize: 40 }}>
+          it&apos;s interactive!
+        </Typography>
+        <span className="material-symbols-rounded" style={{ fontSize: 50 }}>
+          web_traffic
+        </span>
+      </Box>
+    </Box>
+  );
+}
+
+function CTA() {
+  return (
+    <Box
+      sx={{
+        background: mintDark.mint4,
+      }}
+    >
+      <Typography>What would you do with that extra hour?</Typography>
     </Box>
   );
 }
@@ -193,24 +334,18 @@ export default function Home() {
   return (
     <Box
       sx={{
-        bgcolor: "#1E1E1E",
         color: mint.mint12,
         maxWidth: "100vw",
-        overflowX: "hidden",
+        overflow: "hidden",
       }}
     >
       <CssBaseline />
       <Navbar />
       <Header />
-      <Box
-        sx={{
-          background: `linear-gradient(${mintDark.mint7}, ${mintDark.mint4})`,
-          width: "100%",
-          height: 50,
-          mt: -4,
-        }}
-        className="wave"
-      ></Box>
+      <Separator />
+      <PictureThis />
+      <InteractiveWidgets />
+      <CTA />
     </Box>
   );
 }
