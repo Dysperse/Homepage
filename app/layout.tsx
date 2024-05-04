@@ -5,6 +5,12 @@ import { Navbar } from "./navbar";
 import { mintDark } from "./themes";
 import { Box, CssBaseline } from "@mui/material";
 
+export const metadata = {
+  openGraph: {
+    images: ["/meta/home.png"],
+  },
+};
+
 export default function RootLayout(props: any) {
   return (
     <html lang="en">
