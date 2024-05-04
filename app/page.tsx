@@ -5,6 +5,7 @@ import {
   Button,
   Chip,
   CircularProgress,
+  Collapse,
   Container,
   LinearProgress,
   Link,
@@ -759,6 +760,30 @@ function CTA() {
             </Box>
           ))}
         </Box>
+        <Collapse in={data} sx={{ borderRadius: 99 }}>
+          <Box sx={{ mt: 3 }}>
+            <Button
+              fullWidth
+              href="https://app.dysperse.com/auth/sign-up"
+              variant="contained"
+              sx={{
+                borderRadius: 99,
+                background: mintDark.mint11,
+                "&:hover": {
+                  background: mintDark.mint12,
+                },
+                py: 2,
+                fontSize: 20,
+                fontWeight: 700,
+              }}
+              color="primary"
+              size="large"
+            >
+              Induct myself{" "}
+              <span className="material-symbols-rounded">east</span>
+            </Button>
+          </Box>
+        </Collapse>
       </Box>
     </Container>
   );
