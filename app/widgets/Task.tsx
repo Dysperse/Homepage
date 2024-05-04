@@ -18,7 +18,7 @@ export const Task = () => {
         alignItems: "center",
         justifyContent: "start",
         gap: 2,
-        px: 3,
+        px: { xs: 2, sm: 3 },
         color: theme[12],
         "&, & *": {
           cursor: "pointer",
@@ -38,6 +38,7 @@ export const Task = () => {
           height: 30,
           borderWidth: 1,
           borderRadius: 99,
+          flexShrink: 0,
           borderColor: theme[9],
           backgroundColor: done ? theme[9] : "transparent",
           borderStyle: "solid",

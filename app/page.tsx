@@ -48,7 +48,7 @@ function Header() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: "calc(100vh - 50px)",
+        height: { xs: "auto", md: "calc(100vh - 50px)" },
         width: "100vw",
         color: mintDark.mint11,
         position: "relative",
@@ -65,17 +65,31 @@ function Header() {
           height: "100%",
         }}
       >
-        <Image fill src="/background.png" alt="Hero" quality={100} priority />
+        <Image
+          fill
+          src="/background.png"
+          objectFit="cover"
+          alt="Hero"
+          quality={100}
+          priority
+        />
       </Box>
       <Box sx={{ zIndex: 1, height: "100%", width: "100dvw" }}>
-        <Box sx={{ height: "100%", display: "flex", maxWidth: "100dvw" }}>
+        <Box
+          sx={{
+            height: "100%",
+            display: "flex",
+            flexDirection: { xs: "column", lg: "row" },
+            maxWidth: "100dvw",
+          }}
+        >
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              pl: 10,
-              pt: 10,
+              px: { xs: 3, md: 10 },
+              pt: { xs: 30, sm: 10 },
             }}
           >
             <Typography
@@ -83,13 +97,13 @@ function Header() {
               sx={{
                 fontFamily: "Agrandir",
                 fontSize: {
-                  xs: "50px",
+                  xs: "37px",
                   md: "60px",
                   lg: "70px",
                   xl: "100px",
                 },
                 lineHeight: {
-                  xs: "50px",
+                  xs: "40px",
                   md: "60px",
                   lg: "70px",
                   xl: "100px",
@@ -106,14 +120,21 @@ function Header() {
               className={jost.className}
               sx={{
                 opacity: 0.7,
-                fontWeight: 300,
-                fontSize: 25,
+                fontWeight: { xs: 700, md: 300 },
+                fontSize: { xs: 20, md: 25 },
                 my: 2,
                 maxWidth: 900,
                 lineHeight: "40px",
+                "& #d": {
+                  display: { xs: "none", md: "inline" },
+                },
+                "& #m": {
+                  display: { xs: "inline", md: "none" },
+                },
               }}
             >
-              Organization & productivity are&nbsp;your&nbsp;domain.
+              <span id="d">Organization & Productivity are your domain</span>
+              <span id="m">Productivity is your domain</span>
               <br /> Let&nbsp;
               <Chip
                 component={"span"}
@@ -122,9 +143,9 @@ function Header() {
                 sx={{
                   color: mintDark.mint11,
                   fontWeight: 500,
-                  fontSize: 20,
+                  fontSize: { xs: 18, sm: 25 },
                   height: "35px",
-                  px: 1,
+                  px: { xs: 0.5, sm: 1 },
                   pr: 0.5,
                   borderRadius: 99,
                   borderColor: mintDark.mint11,
@@ -155,7 +176,14 @@ function Header() {
               />
               &nbsp;be&nbsp;the&nbsp;catalyst.
             </Typography>
-            <Box sx={{ mt: 1, gap: 2, display: "flex" }}>
+            <Box
+              sx={{
+                mt: 1,
+                gap: 2,
+                display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
+              }}
+            >
               <Button
                 size="large"
                 variant="contained"
@@ -289,7 +317,11 @@ function PictureThis() {
       }}
     >
       <Hint text="Picture this" icon="emoji_objects" />
-      <Grid2 container sx={{ textAlign: "center", px: 5 }} spacing={2}>
+      <Grid2
+        container
+        sx={{ textAlign: "center", px: { xs: 2, sm: 5 } }}
+        spacing={2}
+      >
         <Grid2 xs={12} sm={6}>
           <Box
             sx={{
@@ -376,7 +408,15 @@ function ThemeSelector() {
 
   return (
     <Box
-      sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 5, mt: -2 }}
+      sx={{
+        display: "flex",
+        gap: 2,
+        px: 2,
+        py: 2,
+        mb: 5,
+        mt: -4,
+        overflowX: "auto",
+      }}
     >
       {[
         "mint",
@@ -389,13 +429,15 @@ function ThemeSelector() {
         "lime",
         "amber",
         "orange",
-      ].map((theme) => (
+      ].map((theme, index) => (
         <Box
           key={theme}
           onClick={() => setColor(theme)}
           sx={{
+            ...(index === 0 && { ml: "auto" }),
             aspectRatio: "1 / 1",
             width: 40,
+            flexShrink: 0,
             borderRadius: color === theme ? 3 : 9,
             transition: "border-radius .2s,transform .2s",
             transform: "rotate(45deg)",
@@ -431,6 +473,8 @@ function ThemeSelector() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          flexShrink: 0,
+          mr: "auto",
         }}
       >
         <Typography
@@ -460,12 +504,15 @@ function Hint({ text, icon }: any) {
         py: 5,
         mt: 5,
         opacity: 0.2,
+        "& .material-symbols-rounded": {
+          fontSize: { xs: 30, sm: 50 },
+        },
       }}
     >
-      <Typography style={{ fontWeight: 500, fontSize: 40 }}>{text}</Typography>
-      <span className="material-symbols-rounded" style={{ fontSize: 50 }}>
-        {icon}
-      </span>
+      <Typography sx={{ fontWeight: 500, fontSize: { xs: 27, sm: 40 } }}>
+        {text}
+      </Typography>
+      <span className="material-symbols-rounded">{icon}</span>
     </Box>
   );
 }
@@ -568,6 +615,7 @@ function InteractiveWidgets() {
                   display: "flex",
                   gap: 2,
                   flexDirection: "column",
+                  minHeight: 250,
                 }}
               >
                 <PlanDay />

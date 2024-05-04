@@ -14,9 +14,10 @@ export const Quote = () => {
     <CardContainer
       sx={{
         flex: 2,
-        py: 5,
+        py: { xs: 3, sm: 5 },
+        px: { xs: 3, sm: 5 },
         gap: 1,
-        maxWidth: 330,
+        maxWidth: { sm: 330 },
         color: theme[11],
       }}
     >
