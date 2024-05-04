@@ -354,7 +354,7 @@ const BulletPoint = ({ title, description, icon }: any) => {
         display: "flex",
         gap: 2,
         textAlign: "left",
-        mb: 1,
+        mb: 1.5,
       }}
     >
       <span
@@ -365,12 +365,9 @@ const BulletPoint = ({ title, description, icon }: any) => {
       </span>
       <Box>
         <Typography key={title} sx={{ textAlign: "left", flex: 1 }}>
-          <b style={{ fontWeight: 900 }}>
-            {title}
-            {!title.includes("?") && "."}
-          </b>{" "}
+          <b style={{ fontWeight: 900 }}>{title}</b>
         </Typography>
-        <Typography sx={{ mt: 0.2, opacity: 0.5 }}>{description}</Typography>
+        <Typography sx={{ mt: 0.15, opacity: 0.5 }}>{description}</Typography>
       </Box>
     </Box>
   );
