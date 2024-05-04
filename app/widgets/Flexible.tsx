@@ -3,8 +3,11 @@ import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 import { CardContainer } from "./CardContainer";
 import { grayDark } from "../themes";
+import { useColorTheme } from "../useColor";
 
 export const Flexible = () => {
+  const theme = useColorTheme();
+
   const [selected, setSelected] = useState("Kanban");
   const options = {
     Planner: "transition_slide",
@@ -43,6 +46,8 @@ export const Flexible = () => {
           right: 0,
         }}
       />
+      {JSON.stringify(theme)}
+
       <Box
         sx={{
           display: "flex",

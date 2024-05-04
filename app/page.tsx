@@ -1,9 +1,5 @@
 "use client";
-import Image from "next/image";
-import { Bebas_Neue, Jost } from "next/font/google";
-import { mint } from "@radix-ui/colors";
-import { useEffect, useState } from "react";
-import { Masonry } from "@mui/lab";
+
 import {
   Box,
   Button,
@@ -11,28 +7,32 @@ import {
   Container,
   CssBaseline,
   Link,
-  Skeleton,
   Typography,
   useScrollTrigger,
 } from "@mui/material";
+import { mint } from "@radix-ui/colors";
+import { Bebas_Neue, Jost } from "next/font/google";
+import Image from "next/image";
+import { useState } from "react";
 import { addHslAlpha, mintDark } from "./themes";
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { Time } from "./widgets/Time";
-import { Weather } from "./widgets/Weather";
-import { Keyboard } from "./widgets/Keyboard";
+import { Customizable } from "./widgets/Customizable";
+import { Familiar } from "./widgets/Familiar";
 import { Flexible } from "./widgets/Flexible";
 import { Integrated } from "./widgets/Integrated";
-import { Customizable } from "./widgets/Customizable";
-import { UpNext } from "./widgets/UpNext";
-import { Familiar } from "./widgets/Familiar";
-import { Quote } from "./widgets/Quote";
+import { Keyboard } from "./widgets/Keyboard";
 import { PlanDay } from "./widgets/PlanDay";
+import { Quote } from "./widgets/Quote";
 import { Task } from "./widgets/Task";
 import { Theme } from "./widgets/Theme";
+import { Time } from "./widgets/Time";
+import { UpNext } from "./widgets/UpNext";
+import { Weather } from "./widgets/Weather";
+import { ThemeContext, ThemeContextProvider } from "./useColor";
 
 const jost = Jost({
   subsets: ["latin"],
 });
+
 const heading = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 
 function Header() {
@@ -60,14 +60,7 @@ function Header() {
           height: "100%",
         }}
       >
-        <Image
-          fill
-          src="/background.png"
-          alt="Hero"
-          objectFit="cover"
-          quality={100}
-          priority
-        />
+        <Image fill src="/background.png" alt="Hero" quality={100} priority />
       </Box>
       <Box sx={{ zIndex: 1, height: "100%", width: "100dvw" }}>
         <Box sx={{ height: "100%", display: "flex", maxWidth: "100dvw" }}>
@@ -363,6 +356,8 @@ function PictureThis() {
 }
 
 function InteractiveWidgets() {
+  const [theme, setTheme] = useState("mint");
+
   return (
     <Box>
       <Box
@@ -384,98 +379,99 @@ function InteractiveWidgets() {
           web_traffic
         </span>
       </Box>
-
-      <Container
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", lg: "row" },
-        }}
-      >
-        <Box
+      <ThemeContextProvider>
+        <Container
           sx={{
-            gap: 2,
-            flex: 1,
-            height: "100%",
             display: "flex",
-            flexDirection: "column",
+            flexDirection: { xs: "column", lg: "row" },
           }}
         >
           <Box
             sx={{
               gap: 2,
+              flex: 1,
+              height: "100%",
               display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-            }}
-          >
-            <Theme />
-            <Familiar />
-            <Weather />
-          </Box>
-          <Box
-            sx={{
-              gap: 2,
-              display: "flex",
-              flex: 2,
-              flexDirection: { xs: "column", sm: "row" },
+              flexDirection: "column",
             }}
           >
             <Box
               sx={{
-                flex: 2,
-                display: "flex",
-                flexDirection: "column",
                 gap: 2,
+                display: "flex",
+                flexDirection: { xs: "column", md: "row" },
+              }}
+            >
+              <Theme />
+              <Familiar />
+              <Weather />
+            </Box>
+            <Box
+              sx={{
+                gap: 2,
+                display: "flex",
+                flex: 2,
+                flexDirection: { xs: "column", sm: "row" },
               }}
             >
               <Box
                 sx={{
+                  flex: 2,
                   display: "flex",
+                  flexDirection: "column",
                   gap: 2,
-                  flexDirection: { xs: "column", md: "row" },
-                  flex: 1,
                 }}
               >
-                <Flexible />
                 <Box
                   sx={{
-                    display: { xs: "none", sm: "flex" },
+                    display: "flex",
+                    gap: 2,
+                    flexDirection: { xs: "column", md: "row" },
+                    flex: 1,
                   }}
                 >
-                  <Keyboard />
+                  <Flexible />
+                  <Box
+                    sx={{
+                      display: { xs: "none", sm: "flex" },
+                    }}
+                  >
+                    <Keyboard />
+                  </Box>
                 </Box>
+                <Integrated />
               </Box>
-              <Integrated />
+              <Box
+                sx={{
+                  flex: 3,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                  flexShrink: 0,
+                }}
+              >
+                <Customizable />
+                <UpNext />
+              </Box>
             </Box>
-            <Box
-              sx={{
-                flex: 3,
-                display: "flex",
-                flexDirection: "column",
-                gap: 2,
-                flexShrink: 0,
-              }}
-            >
-              <Customizable />
-              <UpNext />
+            <Box sx={{ display: "flex", gap: 2, flexDirection: "row" }}>
+              <Quote />
+              <Time />
+              <Box
+                sx={{
+                  flex: 4,
+                  display: "flex",
+                  gap: 2,
+                  flexDirection: "column",
+                }}
+              >
+                <PlanDay />
+                <Task />
+              </Box>
             </Box>
           </Box>
-          <Box sx={{ display: "flex", gap: 2, flexDirection: "row" }}>
-            <Quote />
-            <Time />
-            <Box
-              sx={{
-                flex: 4,
-                display: "flex",
-                gap: 2,
-                flexDirection: "column",
-              }}
-            >
-              <PlanDay />
-              <Task />
-            </Box>
-          </Box>
-        </Box>
-      </Container>
+        </Container>
+      </ThemeContextProvider>
     </Box>
   );
 }
