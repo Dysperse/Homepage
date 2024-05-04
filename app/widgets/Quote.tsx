@@ -25,7 +25,7 @@ export const Quote = () => {
         sx={{
           fontFamily: fraunces.style.fontFamily,
           fontWeight: 900,
-          fontSize: 25,
+          fontSize: 27,
         }}
       >
         &ldquo;The only way to do great work is to love what you do.&rdquo;

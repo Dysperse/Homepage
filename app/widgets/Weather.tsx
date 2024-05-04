@@ -12,7 +12,7 @@ export const Weather = () => (
       color: skyDark.sky11,
       justifyContent: "center",
       alignItems: "space-between",
-      minHeight: 150,
+      minHeight: { xs: 290, md: 0 },
       px: 4,
     }}
   >

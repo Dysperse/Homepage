@@ -77,7 +77,7 @@ export function Keyboard() {
         borderColor: theme[5],
         color: theme[11],
         maxWidth: {
-          xs: "100%",
+          xs: "5vw",
           md: "27vw",
           lg: "37vw",
           xl: "32vw",

@@ -562,7 +562,7 @@ function InteractiveWidgets() {
                 gap: 2,
                 display: "flex",
                 flex: 2,
-                flexDirection: { xs: "column", sm: "row" },
+                flexDirection: { xs: "column", md: "row" },
               }}
             >
               <Box
@@ -584,7 +584,7 @@ function InteractiveWidgets() {
                   <Flexible />
                   <Box
                     sx={{
-                      display: { xs: "none", sm: "flex" },
+                      display: { xs: "none", md: "flex" },
                     }}
                   >
                     <Keyboard />
@@ -609,14 +609,20 @@ function InteractiveWidgets() {
               sx={{
                 display: "flex",
                 gap: 2,
-                flexDirection: {
-                  xs: "column",
-                  md: "row",
-                },
+                flexDirection: { xs: "column", md: "row" },
               }}
             >
-              <Quote />
-              <Weather />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: { xs: "row", md: "column" },
+                  gap: 2,
+                  flex: 6,
+                }}
+              >
+                <Quote />
+                <Weather />
+              </Box>
               <Box
                 sx={{
                   flex: 4,
