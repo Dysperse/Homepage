@@ -3,7 +3,7 @@ import { Download } from "./client";
 
 export const metadata: Metadata = {
   openGraph: {
-    images: ["https://dysperse.com/meta/home.png"],
+    images: ["/meta/download.png"],
   },
 };
 
