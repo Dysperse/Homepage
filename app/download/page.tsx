@@ -13,14 +13,15 @@ export default function Page() {
   return (
     <Box
       sx={{
-        height: "100dvh",
+        height: { xs: "auto", md: "100vh" },
         paddingTop: 16,
         display: "flex",
+        flexDirection: { xs: "column", md: "row" },
       }}
     >
       <Box
         sx={{
-          padding: 10,
+          padding: { xs: 3, sm: 10 },
           mt: -4,
         }}
       >
@@ -29,13 +30,13 @@ export default function Page() {
           sx={{
             fontFamily: "Agrandir",
             fontSize: {
-              xs: "50px",
+              xs: "40px",
               md: "60px",
               lg: "70px",
               xl: "100px",
             },
             lineHeight: {
-              xs: "50px",
+              xs: "40px",
               md: "60px",
               lg: "70px",
               xl: "100px",
@@ -43,7 +44,7 @@ export default function Page() {
             fontWeight: 900,
           }}
         >
-          Discover&nbsp;<span style={{ color: mintDark.mint11 }}>portable</span>{" "}
+          Discover <span style={{ color: mintDark.mint11 }}>portable</span>{" "}
           productivity.
         </Typography>
         <Typography
@@ -61,7 +62,7 @@ export default function Page() {
             display: "grid",
             gap: 2,
             mt: 3,
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: { xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)" },
             "& .material-symbols-rounded": {
               fontVariationSettings: `"FILL" 0, "wght" 300, "GRAD" 0, "opsz" 40`,
             },
@@ -153,7 +154,8 @@ export default function Page() {
       <Box
         sx={{
           aspectRatio: "1551/1620",
-          height: "100%",
+          height: { xs: "auto", md: "100%" },
+          width: { xs: "100vw", md: "auto" },
           position: "relative",
           ml: "auto",
         }}

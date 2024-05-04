@@ -200,7 +200,7 @@ export default function RootLayout(props: any) {
             <Box
               sx={{
                 color: mintDark.mint12,
-                maxWidth: "100vw",
+                width: "100vw",
                 overflow: "hidden",
               }}
             >
