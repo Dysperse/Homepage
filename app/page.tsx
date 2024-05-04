@@ -347,6 +347,35 @@ function Navbar() {
   );
 }
 
+const BulletPoint = ({ title, description, icon }: any) => {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        gap: 2,
+        textAlign: "left",
+        mb: 1,
+      }}
+    >
+      <span
+        className="material-symbols-rounded"
+        style={{ fontSize: 30, marginTop: 2.5 }}
+      >
+        {icon}
+      </span>
+      <Box>
+        <Typography key={title} sx={{ textAlign: "left", flex: 1 }}>
+          <b style={{ fontWeight: 900 }}>
+            {title}
+            {!title.includes("?") && "."}
+          </b>{" "}
+        </Typography>
+        <Typography sx={{ mt: 0.2, opacity: 0.5 }}>{description}</Typography>
+      </Box>
+    </Box>
+  );
+};
+
 function PictureThis() {
   return (
     <Box
@@ -395,24 +424,20 @@ function PictureThis() {
               other methods
             </Typography>
             {[
-              [
-                "One-size-fits-all",
-                "You're stuck with a predefined productivity system.",
-              ],
-              ["All-in-one replacement", "You have to switch everything over."],
+              ["One-size-fits-all", "Stuck with one system of doing things."],
+              ["All-in-one replacement", "Switching over is a hassle."],
               ["Boring", "No fun, no motivation."],
               ["Expensive", "You have to pay for everything."],
               ["Free? Ads?", "You're the product."],
               ["Zero vision", "Only one perspective."],
               ["Exclusivity", "Only available on certain platforms."],
             ].map(([title, description]) => (
-              <Typography key={title} sx={{ textAlign: "left", mb: 1 }}>
-                <b style={{ fontWeight: 900 }}>
-                  {title}
-                  {!title.includes("?") && "."}
-                </b>{" "}
-                {description}
-              </Typography>
+              <BulletPoint
+                icon="cancel"
+                title={title}
+                description={description}
+                key={title}
+              />
             ))}
           </Box>
         </Grid2>
@@ -445,13 +470,12 @@ function PictureThis() {
               ["Visionary", "Multiple perspectives, the way you want."],
               ["Focus Panel", "Fun widgets to keep you motivated."],
             ].map(([title, description]) => (
-              <Typography key={title} sx={{ textAlign: "left", mb: 1 }}>
-                <b style={{ fontWeight: 900 }}>
-                  {title}
-                  {!title.includes("?") && "."}
-                </b>{" "}
-                {description}
-              </Typography>
+              <BulletPoint
+                icon="check_circle"
+                title={title}
+                description={description}
+                key={title}
+              />
             ))}
           </Box>
         </Grid2>
