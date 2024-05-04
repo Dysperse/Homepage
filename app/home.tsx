@@ -45,7 +45,8 @@ function Header() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: { xs: "auto", md: "calc(100vh - 50px)" },
+        height: { xs: "auto", sm: "calc(100vh - 50px)" },
+        minHeight: 600,
         width: "100vw",
         color: mintDark.mint11,
         position: "relative",
@@ -76,7 +77,7 @@ function Header() {
           sx={{
             height: "100%",
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
+            flexDirection: { xs: "column", sm: "row" },
             maxWidth: "100dvw",
           }}
         >
@@ -178,7 +179,7 @@ function Header() {
                 mt: 1,
                 gap: 2,
                 display: "flex",
-                flexDirection: { xs: "column", sm: "row" },
+                flexDirection: { xs: "column", md: "row" },
               }}
             >
               <Button
