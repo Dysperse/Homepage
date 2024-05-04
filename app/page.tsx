@@ -550,7 +550,16 @@ function InteractiveWidgets() {
                 <UpNext />
               </Box>
             </Box>
-            <Box sx={{ display: "flex", gap: 2, flexDirection: "row" }}>
+            <Box
+              sx={{
+                display: "flex",
+                gap: 2,
+                flexDirection: {
+                  xs: "column",
+                  md: "row",
+                },
+              }}
+            >
               <Quote />
               <Weather />
               <Box
@@ -613,9 +622,9 @@ function CTA() {
           borderStyle: "solid",
           borderColor: mintDark.mint5,
           color: mintDark.mint11,
-          borderRadius: 20,
-          py: 7,
-          px: 7,
+          borderRadius: { xs: 5, sm: 20 },
+          py: { xs: 3, sm: 7 },
+          px: { xs: 3, sm: 7 },
           mt: -2,
         }}
       >
@@ -737,7 +746,7 @@ function CTA() {
                 <Typography
                   sx={{
                     fontWeight: 700,
-                    fontSize: 20,
+                    fontSize: { xs: 17, sm: 20 },
                   }}
                 >
                   {text}
@@ -749,6 +758,7 @@ function CTA() {
                   <Typography
                     sx={{
                       ml: "auto",
+                      flexShrink: 0,
                       fontWeight: 700,
                       opacity: 0.5,
                     }}
