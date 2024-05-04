@@ -10,17 +10,21 @@ import {
   Typography,
   useScrollTrigger,
 } from "@mui/material";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { mint } from "@radix-ui/colors";
 import { Bebas_Neue, Jost, Oregano } from "next/font/google";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Emoji } from "./Emoji";
+import * as colors from "./themes";
 import { addHslAlpha, mintDark } from "./themes";
+import { ThemeContextProvider, useThemeContext } from "./useColor";
 import { Customizable } from "./widgets/Customizable";
 import { Familiar } from "./widgets/Familiar";
 import { Flexible } from "./widgets/Flexible";
 import { Integrated } from "./widgets/Integrated";
 import { Keyboard } from "./widgets/Keyboard";
-import * as colors from "./themes";
 import { PlanDay } from "./widgets/PlanDay";
 import { Quote } from "./widgets/Quote";
 import { Task } from "./widgets/Task";
@@ -28,13 +32,7 @@ import { Theme } from "./widgets/Theme";
 import { Time } from "./widgets/Time";
 import { UpNext } from "./widgets/UpNext";
 import { Weather } from "./widgets/Weather";
-import {
-  ThemeContext,
-  ThemeContextProvider,
-  useThemeContext,
-} from "./useColor";
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { Emoji } from "./Emoji";
+import { Navbar } from "./navbar";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -258,95 +256,6 @@ function Separator() {
   );
 }
 
-function Navbar() {
-  const status = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 100,
-  });
-
-  return (
-    <Box
-      sx={{
-        p: 2,
-        width: "100%",
-        position: "fixed",
-        top: 0,
-        zIndex: 99,
-        left: 0,
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          gap: 2,
-          px: 3.5,
-          py: 2,
-          width: "100%",
-          borderRadius: 99,
-          backdropFilter: status ? "blur(20px)" : "none",
-          borderWidth: 2,
-          borderColor: status
-            ? addHslAlpha(mintDark.mint11, 0.1)
-            : "transparent",
-          borderStyle: "solid",
-          backgroundColor: status
-            ? addHslAlpha(mintDark.mint11, 0.05)
-            : "transparent",
-          transition: "background 0.5s, backdrop-filter 0.5s, border-color .5s",
-          "& .MuiButton-root": {
-            transition: "none",
-            textTransform: "none",
-            borderRadius: 999,
-            gap: "10px",
-            fontSize: 20,
-            color: mintDark.mint11,
-            fontWeight: 800,
-          },
-        }}
-      >
-        <Image src="/logo.svg" alt="Dysperse logo" width={60} height={60} />
-        <Box sx={{ mx: "auto" }}>
-          <Button color="primary" size="large" href="/">
-            templates
-          </Button>
-          <Button color="primary" size="large" href="/download">
-            download
-          </Button>
-          <Button
-            color="primary"
-            size="large"
-            href="https://blog.dysperse.com"
-            target="_blank"
-          >
-            blog
-          </Button>
-        </Box>
-        <Button
-          color="primary"
-          size="large"
-          href="//app.dysperse.com/auth/sign-in"
-          variant="outlined"
-          sx={{
-            borderColor: addHslAlpha(mintDark.mint9, 0.15),
-            "&:hover": {
-              borderColor: addHslAlpha(mintDark.mint9, 0.3),
-              backgroundColor: addHslAlpha(mintDark.mint9, 0.1),
-            },
-            "&:active": {
-              borderColor: addHslAlpha(mintDark.mint9, 0.4),
-              backgroundColor: addHslAlpha(mintDark.mint9, 0.2),
-            },
-          }}
-        >
-          my account
-          <span className="material-symbols-rounded">account_circle</span>
-        </Button>
-      </Box>
-    </Box>
-  );
-}
-
 const BulletPoint = ({ title, description, icon }: any) => {
   return (
     <Box
@@ -389,7 +298,7 @@ function PictureThis() {
           gap: 2,
           alignItems: "center",
           py: 5,
-          opacity: 0.1,
+          opacity: 0.2,
         }}
       >
         <Typography style={{ fontWeight: 500, fontSize: 40 }}>
@@ -570,7 +479,7 @@ function InteractiveWidgets() {
           alignItems: "center",
           py: 5,
           mt: 5,
-          opacity: 0.1,
+          opacity: 0.2,
         }}
       >
         <Typography style={{ fontWeight: 500, fontSize: 40 }}>
@@ -694,12 +603,33 @@ function CTA() {
           What would you do with that extra hour?
         </Typography>
         {[
-          "Spend time with my family",
-          "Have some me-time",
-          "Work on my side project",
-          "Sleep in",
-          "Go to the gym",
-        ]}
+          { text: "Spend time with my family", icon: "" },
+          { text: "Have some me-time", icon: "" },
+          { text: "Work on my side project", icon: "" },
+          { text: "Sleep in", icon: "" },
+          { text: "Go to the gym", icon: "" },
+        ].map(({ text, icon }) => (
+          <Box
+            key={text}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 2,
+              mt: 2,
+              background: mintDark.mint5,
+              borderRadius: 10,
+              p: 2,
+            }}
+          >
+            <span
+              className="material-symbols-rounded"
+              style={{ fontSize: 30, marginTop: 2.5 }}
+            >
+              {icon}
+            </span>
+            <Typography>{text}</Typography>
+          </Box>
+        ))}
         <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
           <Button
             size="large"
@@ -787,21 +717,13 @@ function Footer() {
 
 export default function Home() {
   return (
-    <Box
-      sx={{
-        color: mint.mint12,
-        maxWidth: "100vw",
-        overflow: "hidden",
-      }}
-    >
-      <CssBaseline />
-      <Navbar />
+    <>
       <Header />
       <Separator />
       <PictureThis />
       <InteractiveWidgets />
       <CTA />
       <Footer />
-    </Box>
+    </>
   );
 }

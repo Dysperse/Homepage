@@ -1,6 +1,9 @@
 import { ClientLayout } from "./client-layout";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { Navbar } from "./navbar";
+import { mintDark } from "./themes";
+import { Box, CssBaseline } from "@mui/material";
 
 export default function RootLayout(props: any) {
   return (
@@ -193,7 +196,20 @@ export default function RootLayout(props: any) {
       </head>
       <body>
         <AppRouterCacheProvider>
-          <ClientLayout>{props.children}</ClientLayout>
+          <ClientLayout>
+            <Box
+              sx={{
+                color: mintDark.mint12,
+                maxWidth: "100vw",
+                overflow: "hidden",
+              }}
+            >
+              <CssBaseline />
+
+              <Navbar />
+              {props.children}
+            </Box>
+          </ClientLayout>
         </AppRouterCacheProvider>
       </body>
     </html>
