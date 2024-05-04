@@ -870,8 +870,8 @@ function Footer() {
           "& *": {
             fontWeight: 300,
             textDecorationThickness: 2,
-            color: mintDark.mint8,
-            textDecorationColor: mintDark.mint7,
+            color: `${mintDark.mint8}!important`,
+            textDecorationColor: `${mintDark.mint7}!important`,
           },
         }}
       >
