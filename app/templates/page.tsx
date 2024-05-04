@@ -12,7 +12,11 @@ export default function Page() {
       }}
     >
       <Chip label="Coming soon" />
-      <Typography variant="h2" sx={{ mt: 1, fontFamily: "Agrandir" }}>
+      <Typography
+        fontWeight={900}
+        variant="h2"
+        sx={{ mt: 1, fontFamily: "Agrandir" }}
+      >
         the #dysverse
       </Typography>
       <Typography sx={{ fontSize: 20, opacity: 0.6, mt: 1 }} fontWeight={600}>

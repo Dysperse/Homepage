@@ -1,12 +1,13 @@
 "use client";
 import { Box, Button, useScrollTrigger } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { addHslAlpha, mintDark } from "./themes";
 import Image from "next/image";
 import Link from "next/link";
 
 export function Navbar() {
   const router = useRouter();
+  const pathname = usePathname();
 
   const status = useScrollTrigger({
     disableHysteresis: true,
@@ -57,15 +58,29 @@ export function Navbar() {
         <Link href="/" style={{ display: "block" }}>
           <Image src="/logo.svg" alt="Dysperse logo" width={60} height={60} />
         </Link>
-        <Box sx={{ mx: "auto", pl: 10 }}>
+        <Box sx={{ mx: "auto", pl: 10, gap: 1, display: "flex" }}>
           <Button
             color="primary"
             size="large"
             onClick={() => router.push("/templates")}
+            sx={{
+              ...(pathname === "/templates" && {
+                backgroundColor: addHslAlpha(mintDark.mint9, 0.1),
+              }),
+            }}
           >
             templates
           </Button>
-          <Button color="primary" size="large" href="/download">
+          <Button
+            color="primary"
+            size="large"
+            onClick={() => router.push("/download")}
+            sx={{
+              ...(pathname === "/download" && {
+                backgroundColor: addHslAlpha(mintDark.mint9, 0.1),
+              }),
+            }}
+          >
             download
           </Button>
           <Button
