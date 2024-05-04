@@ -4,10 +4,13 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Navbar } from "./navbar";
 import { mintDark } from "./themes";
 import { Box, CssBaseline } from "@mui/material";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   openGraph: {
     images: ["/meta/home.png"],
+    description: "Productivity is personal. Let #dysperse be the catalyst.",
+    title: "Dysperse • Productivity for Humans",
   },
 };
 
@@ -20,34 +23,6 @@ export default function RootLayout(props: any) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
-        <meta name="title" content="#dysperse is productivity, for humans<" />
-        <meta
-          name="description"
-          content="Meet Dysperse: The ultimate productivity platform that streamlines your life with planners, boards, routines, and more. Say goodbye to scattered tasks and hello to seamless productivity with Dysperse."
-        />
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dysperse.com" />
-        <meta
-          property="og:title"
-          content="Dysperse: A radically different, unified productivity platform"
-        />
-        <meta
-          property="og:description"
-          content="Meet Dysperse: The ultimate productivity platform that streamlines your life with planners, boards, routines, and more. Say goodbye to scattered tasks and hello to seamless productivity with Dysperse."
-        />
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://dysperse.com" />
-        <meta
-          property="twitter:title"
-          content="Dysperse: A radically different, unified productivity platform"
-        />
-        <meta
-          property="twitter:description"
-          content="Meet Dysperse: The ultimate productivity platform that streamlines your life with planners, boards, routines, and more. Say goodbye to scattered tasks and hello to seamless productivity with Dysperse."
-        />
-        <meta property="twitter:image" content="/meta/home.png" />
         <script
           id="schema"
           type="application/ld+json"
