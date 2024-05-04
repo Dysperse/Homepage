@@ -194,6 +194,7 @@ function Header() {
                     backgroundColor: mintDark.mint12,
                   },
                 }}
+                href="https://app.dysperse.com/auth/sign-up"
               >
                 Induct myself
                 <span className="material-symbols-rounded">east</span>
@@ -216,6 +217,12 @@ function Header() {
                   "&:active": {
                     backgroundColor: addHslAlpha(mintDark.mint7, 0.3),
                   },
+                }}
+                onClick={() => {
+                  const element = document.getElementById("about");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
                 }}
               >
                 What&apos;s this about?
@@ -278,6 +285,7 @@ function Separator() {
         mt: -4,
       }}
       className="wave"
+      id="about"
     />
   );
 }
