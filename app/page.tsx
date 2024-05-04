@@ -615,7 +615,7 @@ function InteractiveWidgets() {
               <Box
                 sx={{
                   display: "flex",
-                  flexDirection: { xs: "row", md: "column" },
+                  flexDirection: { xs: "column", sm: "row" },
                   gap: 2,
                   flex: 6,
                 }}
