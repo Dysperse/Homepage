@@ -27,10 +27,14 @@ export function Navbar() {
       <Button
         color="primary"
         size="large"
-        onClick={() => router.push("/templates")}
+        onClick={() => {
+          router.push("/templates");
+          setOpen(false);
+        }}
         sx={{
           ...(pathname === "/templates" && {
             backgroundColor: addHslAlpha(mintDark.mint9, 0.1),
+            color: mintDark.mint11,
           }),
         }}
       >
@@ -39,10 +43,14 @@ export function Navbar() {
       <Button
         color="primary"
         size="large"
-        onClick={() => router.push("/download")}
+        onClick={() => {
+          router.push("/download");
+          setOpen(false);
+        }}
         sx={{
           ...(pathname === "/download" && {
             backgroundColor: addHslAlpha(mintDark.mint9, 0.1),
+            color: mintDark.mint11,
           }),
         }}
       >
@@ -181,6 +189,12 @@ export function Navbar() {
             "& *": {
               color: mintDark.mint11,
             },
+            "& .MuiButton-root": {
+              justifyContent: "flex-start",
+              py: 2,
+              px: 3,
+              width: { xs: "100%", sm: "auto" },
+            },
           },
         }}
         slotProps={{
@@ -206,7 +220,12 @@ export function Navbar() {
           }}
         >
           launch
-          <span className="material-symbols-rounded">arrow_right_alt</span>
+          <span
+            style={{ marginLeft: "auto" }}
+            className="material-symbols-rounded"
+          >
+            arrow_right_alt
+          </span>
         </Button>
       </SwipeableDrawer>
     </Box>
