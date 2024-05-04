@@ -1,7 +1,5 @@
-import { useMediaQuery } from "@mui/material";
-import { Children, Dispatch, SetStateAction, useMemo } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 import * as colors from "./themes";
-import { createContext, useContext, useState } from "react";
 
 export const ThemeContext = createContext({
   color: "mint",
@@ -20,7 +18,7 @@ export const ThemeContextProvider = ({ children }: any) => {
 };
 
 export const addHslAlpha = (hsl: string, alpha: number) =>
-  hsl.replace(")", `, ${alpha})`).replace("hsl", "hsla");
+  hsl.replace(")", `, ${alpha})`)?.replace("hsl", "hsla");
 
 /**
  * Returns a color palette.
@@ -31,7 +29,7 @@ export const addHslAlpha = (hsl: string, alpha: number) =>
 
 export function useColorTheme() {
   const { color: base } = useThemeContext();
-  const isDark = true
+  const isDark = true;
 
   const getColorPalette = useMemo(() => {
     const paletteKey = isDark ? `${base}Dark` : base;
@@ -41,7 +39,7 @@ export function useColorTheme() {
 
     for (const key in colorPalette) {
       if (key.includes(base)) {
-        const index = parseInt(key.replace(base, ""));
+        const index = parseInt(key?.replace(base, ""));
         _colorPalette[index] = colorPalette[key];
       }
     }
