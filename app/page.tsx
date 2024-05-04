@@ -869,7 +869,6 @@ function Footer() {
           mb: 4,
           "& *": {
             fontWeight: 300,
-            textDecorationThickness: 2,
             color: `${mintDark.mint8}!important`,
             textDecorationColor: `${mintDark.mint7}!important`,
           },
