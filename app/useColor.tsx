@@ -31,7 +31,7 @@ export const addHslAlpha = (hsl: string, alpha: number) =>
 
 export function useColorTheme() {
   const { color: base } = useThemeContext();
-  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+  const isDark = true
 
   const getColorPalette = useMemo(() => {
     const paletteKey = isDark ? `${base}Dark` : base;
