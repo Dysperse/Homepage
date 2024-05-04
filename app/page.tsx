@@ -907,6 +907,29 @@ function Footer() {
         <Image src="/usa.png" alt="USA flag" width={24} height={24} />
         Proudly made in the US &bull; Copyright {time}
       </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 2,
+          justifyContent: "center",
+          mt: 2,
+          flexDirection: { xs: "column", sm: "row" },
+        }}
+      >
+        {[
+          { text: "cloudflare", href: "https://www.cloudflare.com" },
+          { text: "neon", href: "https://neon.tech" },
+        ].map((sponsor) => (
+          <Link target="_blank" key={sponsor.text} href={sponsor.href}>
+            <Image
+              src={`/sponsors/${sponsor.text}.png`}
+              alt="Dysperse"
+              width={374 / 2}
+              height={75 / 2}
+            />
+          </Link>
+        ))}
+      </Box>
     </Box>
   );
 }
