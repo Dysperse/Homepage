@@ -192,8 +192,12 @@ export function Navbar() {
             "& .MuiButton-root": {
               justifyContent: "flex-start",
               py: 2,
+              fontSize: 20,
               px: 3,
               width: { xs: "100%", sm: "auto" },
+              "& span": {
+                fontSize: 30,
+              },
             },
           },
         }}
