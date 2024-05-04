@@ -690,9 +690,31 @@ function CTA() {
           py: 10,
         }}
       >
-        <Typography variant="h2" sx={{ textAlign: "center" }}>
+        <Typography variant="h2" sx={{ textAlign: "center" }} fontWeight={100}>
           What would you do with that extra hour?
         </Typography>
+        {[
+          "Spend time with my family",
+          "Have some me-time",
+          "Work on my side project",
+          "Sleep in",
+          "Go to the gym",
+        ]}
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
+          <Button
+            size="large"
+            variant="contained"
+            sx={{
+              backgroundColor: mintDark.mint11,
+              "&:hover": {
+                backgroundColor: mintDark.mint12,
+              },
+            }}
+          >
+            Induct myself
+            <span className="material-symbols-rounded">east</span>
+          </Button>
+        </Box>
       </Box>
     </Container>
   );
