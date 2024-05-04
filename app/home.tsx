@@ -45,7 +45,7 @@ function Header() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: { xs: "auto", lg: "calc(100vh - 50px)" },
+        height: { xs: "auto", md: "calc(100vh - 50px)" },
         width: "100vw",
         color: mintDark.mint11,
         position: "relative",
@@ -76,7 +76,7 @@ function Header() {
           sx={{
             height: "100%",
             display: "flex",
-            flexDirection: { xs: "column", lg: "row" },
+            flexDirection: { xs: "column", md: "row" },
             maxWidth: "100dvw",
           }}
         >
