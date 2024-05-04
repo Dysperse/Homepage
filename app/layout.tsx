@@ -1,32 +1,20 @@
-import { CssBaseline } from "@mui/material";
-import type { Metadata } from "next";
-import { Jost } from "next/font/google";
-import { ClientLayout } from "./ClientLayout";
+import { ClientLayout } from "./client-layout";
 import "./globals.css";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { Navbar } from "./navbar";
+import { mintDark } from "./themes";
+import { Box, CssBaseline } from "@mui/material";
 
-const jost = Jost({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Dysperse",
-  description: "Dysperse is minimalist productivity, built for humans.",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout(props: any) {
   return (
     <html lang="en">
       <head>
+        <title>Dysperse &bull; Productivity for Humans</title>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
-        <meta
-          name="title"
-          content="Dysperse: A radically different, unified productivity platform"
-        />
+        <meta name="title" content="#dysperse is productivity, for humans<" />
         <meta
           name="description"
           content="Meet Dysperse: The ultimate productivity platform that streamlines your life with planners, boards, routines, and more. Say goodbye to scattered tasks and hello to seamless productivity with Dysperse."
@@ -42,7 +30,6 @@ export default function RootLayout({
           property="og:description"
           content="Meet Dysperse: The ultimate productivity platform that streamlines your life with planners, boards, routines, and more. Say goodbye to scattered tasks and hello to seamless productivity with Dysperse."
         />
-        <meta property="og:image" content="/meta.png" />
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://dysperse.com" />
@@ -206,15 +193,23 @@ export default function RootLayout({
         />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body
-        className={jost.className}
-        style={{
-          background: `url("/bg.svg"), hsl(173, 50%, 6.6%)`,
-          overflowX: "hidden",
-        }}
-      >
-        <CssBaseline />
-        <ClientLayout>{children}</ClientLayout>
+      <body>
+        <AppRouterCacheProvider>
+          <ClientLayout>
+            <Box
+              sx={{
+                color: mintDark.mint12,
+                width: "100vw",
+                overflow: "hidden",
+              }}
+            >
+              <CssBaseline />
+
+              <Navbar />
+              {props.children}
+            </Box>
+          </ClientLayout>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

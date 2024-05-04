@@ -1,11 +1,11 @@
 "use client";
 import { Box, IconButton, Typography } from "@mui/material";
-import { useState } from "react";
-import { CardContainer } from "../CardContainer";
-import { Emoji } from "../Emoji";
-import { mintDark } from "../themes";
-import { ArrowContainer } from "./ArrowContainer";
 import { Jost } from "next/font/google";
+import { useState } from "react";
+import { Emoji } from "../Emoji";
+import { useColorTheme } from "../useColor";
+import { ArrowContainer } from "./ArrowContainer";
+import { CardContainer } from "./CardContainer";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -13,7 +13,9 @@ const jost = Jost({
 });
 
 export const Familiar = () => {
+  const theme = useColorTheme();
   const [selected, setSelected] = useState(0);
+
   return (
     <CardContainer
       sx={{
@@ -33,7 +35,7 @@ export const Familiar = () => {
           display: "flex",
           flexDirection: "column",
           position: "relative",
-          maxHeight: 135,
+          maxHeight: 150,
           overflow: "hidden",
         }}
       >
@@ -53,6 +55,11 @@ export const Familiar = () => {
             primary: "wishlist",
             secondary: "Grid",
           },
+          {
+            emoji: "1f4d6",
+            primary: "books to read",
+            secondary: "List",
+          },
         ].map((button, index) => (
           <Box
             onClick={() => setSelected(index)}
@@ -65,12 +72,12 @@ export const Familiar = () => {
               flexShrink: 0,
               gap: 2,
               borderRadius: 5,
-              background: selected === index ? mintDark.mint3 : undefined,
+              background: selected === index ? theme[3] : undefined,
               "&:hover": {
-                background: mintDark[selected === index ? "mint4" : "mint3"],
+                background: theme[selected === index ? 4 : 3],
               },
               "&:active": {
-                background: mintDark[selected === index ? "mint5" : "mint4"],
+                background: theme[selected === index ? 5 : 4],
               },
               overflow: "hidden",
             }}
@@ -111,7 +118,7 @@ export const Familiar = () => {
           sx={{
             height: 50,
             pointerEvents: "none",
-            background: `linear-gradient(transparent, #091b19)`,
+            background: `linear-gradient(transparent, ${theme[2]})`,
             zIndex: 1,
             width: "100%",
             position: "absolute",

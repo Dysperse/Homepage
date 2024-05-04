@@ -1,31 +1,32 @@
 import { Button, Typography } from "@mui/material";
-import { addHslAlpha } from "../addHslAlpha";
-import { CardContainer } from "../CardContainer";
-import { mintDark } from "@radix-ui/colors";
-import { grassDark } from "../themes";
+import { addHslAlpha, grassDark } from "../themes";
+import { CardContainer } from "./CardContainer";
+import { useColorTheme } from "../useColor";
 
 export function UpNext() {
+  const theme = useColorTheme();
+
   return (
     <CardContainer
       sx={{
         flex: undefined,
         p: 3,
-        background: addHslAlpha(grassDark.grass8, 0.1),
-        borderColor: grassDark.grass6,
+        background: theme[3],
+        borderColor: theme[6],
       }}
     >
       <Typography
         sx={{
           fontWeight: 800,
           textTransform: "uppercase",
-          color: grassDark.grass10,
+          color: theme[10],
         }}
       >
         Up next
       </Typography>
       <Typography
         variant="h4"
-        sx={{ mt: 1, fontSize: 37, fontWeight: 200, color: grassDark.grass11 }}
+        sx={{ mt: 1, fontSize: 37, fontWeight: 200, color: theme[11] }}
       >
         hangout @ chipotle
       </Typography>
@@ -35,7 +36,7 @@ export function UpNext() {
           mb: 2,
           fontSize: 18,
           mt: 0.5,
-          color: grassDark.grass11,
+          color: theme[11],
         }}
         fontWeight={600}
       >
@@ -46,12 +47,12 @@ export function UpNext() {
         sx={{
           mt: "auto",
           transition: "none",
-          backgroundColor: grassDark.grass9,
+          backgroundColor: theme[9],
           "&:hover": {
-            backgroundColor: grassDark.grass11,
+            backgroundColor: theme[11],
           },
           "&:active": {
-            backgroundColor: grassDark.grass8,
+            backgroundColor: theme[8],
           },
           fontWeight: 300,
         }}

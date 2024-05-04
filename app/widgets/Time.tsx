@@ -1,9 +1,12 @@
 "use client";
 import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { CardContainer } from "../CardContainer";
+import { CardContainer } from "./CardContainer";
 import { orangeDark } from "../themes";
-import { addHslAlpha } from "../addHslAlpha";
+import { addHslAlpha } from "../themes";
+import { JetBrains_Mono } from "next/font/google";
+
+const mono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const Time = () => {
   const [timeZone, setTimeZone] = useState("PST");
@@ -20,7 +23,7 @@ export const Time = () => {
       sx={{
         alignItems: "center",
         background: `linear-gradient(180deg, ${orangeDark.orange3} 0%, ${orangeDark.orange2} 100%)`,
-        borderColor: orangeDark.orange6,
+        borderColor: orangeDark.orange5,
         minHeight: { xs: 200, nd: 150 },
       }}
     >
@@ -56,6 +59,7 @@ export const Time = () => {
           <Box
             key={t}
             onClick={() => setTimeZone(t)}
+            sx={{ cursor: "pointer" }}
             className={timeZone === t ? "active" : ""}
           >
             {t}
@@ -79,8 +83,8 @@ export const Time = () => {
             zIndex: 1,
             whiteSpace: "nowrap",
             color: orangeDark.orange9,
+            fontFamily: mono.style.fontFamily,
           }}
-          className="monospace"
         >
           {time.toLocaleTimeString("en-US", {
             hour: "2-digit",
@@ -99,8 +103,8 @@ export const Time = () => {
             opacity: 0.2,
             color: orangeDark.orange8,
             whiteSpace: "nowrap",
+            fontFamily: mono.style.fontFamily,
           }}
-          className="monospace"
         >
           00:00 AM
         </Typography>

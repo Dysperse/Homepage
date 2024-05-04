@@ -1,16 +1,14 @@
 "use client";
 import { Box } from "@mui/material";
-import { Caveat } from "next/font/google";
 import { useState } from "react";
-import { CardContainer } from "../CardContainer";
 import { Emoji } from "../Emoji";
-import { addHslAlpha } from "../addHslAlpha";
-import { mintDark } from "../themes";
+import { addHslAlpha, mintDark } from "../themes";
+import { useColorTheme } from "../useColor";
 import { ArrowContainer } from "./ArrowContainer";
-
-const caveat = Caveat({ subsets: ["latin"] });
+import { CardContainer } from "./CardContainer";
 
 export const Customizable = () => {
+  const theme = useColorTheme();
   const [selected, setSelected] = useState("1f4a9");
 
   const emojis = [
@@ -38,17 +36,95 @@ export const Customizable = () => {
     "1f4b4",
     "1f4bb",
     "2708",
+    "1f680",
+    "1f681",
+    "1f682",
+    "1f683",
+    "1f684",
+    "1f685",
+    "1f686",
+    "1f687",
+    "1f688",
+    "1f689",
+    "1f68a",
+    "1f68b",
+    "1f68c",
+    "1f68d",
+    "1f68e",
+    "1f68f",
+    "1f690",
+    "1f691",
+    "1f692",
+    "1f693",
+    "1f694",
+    "1f695",
+    "1f696",
+    "1f697",
+    "1f698",
+    "1f699",
+    "1f69a",
+    "1f69b",
+    "1f69c",
+    "1f69d",
+    "1f69e",
+    "1f69f",
+    "1f6a0",
+    "1f6a1",
+    "1f6a2",
+    "1f6a3",
+    "1f6a4",
+    "1f6a5",
+    "1f6a6",
+    "1f6a7",
+    "1f6a8",
+    "1f6a9",
+    "1f6aa",
+    "1f6ab",
+    "1f6ac",
+    "1f6ad",
+    "1f6ae",
+    "1f6af",
+    "1f6b0",
+    "1f6b1",
+    "1f6b2",
+    "1f6b3",
+    "1f6b4",
+    "1f6b5",
+    "1f6b6",
+    "1f6b7",
+    "1f6b8",
+    "1f6b9",
+    "1f6ba",
+    "1f6bb",
+    "1f6bc",
+    "1f6bd",
+    "1f6be",
+    "1f6bf",
+    "1f6c0",
+    "1f6c1",
+    "1f6c2",
+    "1f6c3",
+    "1f6c4",
+    "1f6c5",
   ];
   return (
-    <CardContainer sx={{ px: 2, py: 2 }}>
+    <CardContainer
+      sx={{
+        px: 2,
+        py: 2,
+        borderColor: theme[5],
+        backgroundColor: theme[2],
+        color: theme[11],
+      }}
+    >
       <Box
         sx={{
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-          maxHeight: 190,
           position: "relative",
           overflow: "hidden",
+          maxHeight: { xs: 190, lg: 275 },
           gap: "7px",
         }}
       >
@@ -57,7 +133,10 @@ export const Customizable = () => {
             key={emoji}
             onClick={() => setSelected(emoji)}
             sx={{
-              flex: "calc(20% - 7px)",
+              flex: {
+                xs: "calc(16% - 7px)",
+                xl: "calc(20% - 7px)",
+              },
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -93,7 +172,7 @@ export const Customizable = () => {
           sx={{
             height: 50,
             pointerEvents: "none",
-            background: `linear-gradient(transparent, #091b19)`,
+            background: `linear-gradient(transparent, ${theme[2]})`,
             zIndex: 1,
             width: "100%",
             position: "absolute",
@@ -103,7 +182,7 @@ export const Customizable = () => {
           }}
         />
       </Box>
-      <ArrowContainer text="Customize literally everything" />
+      <ArrowContainer text="Customize literally anything" />
     </CardContainer>
   );
 };

@@ -1,5 +1,48 @@
-::-webkit-scrollbar {
-  width: 15px;
+@font-face {
+  font-family: "Agrandir";
+  src: url("/PPAgrandir-Regular.otf");
+}
+
+body,
+html {
+  overflow-x: hidden;
+  background-color: #1e1e1e;
+  background-image: url("/grid.svg");
+}
+
+.MuiTypography-root {
+  cursor: default;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 40;
+}
+
+.wave {
+  --mask: radial-gradient(
+        15.21px at 50% calc(100% + 7px),
+        #0000 calc(99% - 6px),
+        #000 calc(101% - 6px) 99%,
+        #0000 101%
+      )
+      calc(50% - 20px) calc(50% - 8px + 0.5px) / 40px 16px repeat-x,
+    radial-gradient(
+        15.21px at 50% -7px,
+        #0000 calc(99% - 6px),
+        #000 calc(101% - 6px) 99%,
+        #0000 101%
+      )
+      50% calc(50% + 8px) / 40px 16px repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+* {
+  color-scheme: dark;
 }
 
 ::-webkit-scrollbar-track {
@@ -35,22 +78,22 @@
 }
 
 :root {
-  --mint1: #0e1515;
-  --mint2: #0f1b1b;
-  --mint3: #092c2b;
-  --mint4: #003a38;
-  --mint5: #004744;
-  --mint6: #105650;
-  --mint7: #1e685f;
-  --mint8: #277f70;
-  --mint9: #86ead4;
-  --mint10: #a8f5e5;
-  --mint11: #58d5ba;
-  --mint12: #c4f5e1;
+  --mint1: hsl(75, 55%, 6%);
+  --mint2: hsl(78, 41.5%, 8%);
+  --mint3: hsl(81, 38.1%, 11%);
+  --mint4: hsl(81, 39.4%, 13.1%);
+  --mint5: hsl(81, 40.8%, 15.3%);
+  --mint6: hsl(80, 42.6%, 18.4%);
+  --mint7: hsl(78, 45.4%, 24%);
+  --mint8: hsl(75, 49.7%, 35.1%);
+  --mint9: hsl(81, 80%, 66%);
+  --mint10: hsl(75, 85%, 60%);
+  --mint11: hsl(70, 70%, 50%);
+  --mint12: hsl(80, 80%, 85%);
 }
 .hg-theme-default {
   background-color: var(--mint2);
-  font-size: 14px;
+  font-size: 16px;
   box-sizing: border-box;
   font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue,
     Helvetica, Arial, Lucida Grande, sans-serif;
@@ -67,7 +110,7 @@
 }
 .hg-theme-default button.hg-button {
   border-width: 0;
-  font-size: 13px;
+  font-size: 18px;
   outline: 0;
 }
 .hg-theme-default .hg-button {
@@ -110,7 +153,7 @@
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  height: 40px;
+  height: 50px;
   justify-content: center;
   padding: 5px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);

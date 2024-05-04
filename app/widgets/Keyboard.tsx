@@ -1,12 +1,12 @@
 import { Box, Chip } from "@mui/material";
-import { mintDark } from "@radix-ui/colors";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { Jost } from "next/font/google";
 import { useEffect, useMemo, useRef, useState } from "react";
 import VirtualKeyboard from "react-simple-keyboard";
-import { CardContainer } from "../CardContainer";
+import { useColorTheme } from "../useColor";
 import { ArrowContainer } from "./ArrowContainer";
+import { CardContainer } from "./CardContainer";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -14,6 +14,7 @@ export function Keyboard() {
   const keyboardRef = useRef(null);
   const [key, setKey] = useState("ctrl 5");
   const [layoutName, setLayoutName] = useState("default");
+  const theme = useColorTheme();
 
   const onChange = () => {};
 
@@ -72,9 +73,21 @@ export function Keyboard() {
     <CardContainer
       sx={{
         p: 1,
-        flex: 2,
-        maxWidth: { xs: "100%", sm: "56vw", md: "50vw", lg: "32vw" },
-        "& *": { fontFamily: jost.style.fontFamily, fontWeight: 500 },
+        background: theme[2],
+        borderColor: theme[5],
+        color: theme[11],
+        maxWidth: {
+          xs: "5vw",
+          md: "27vw",
+          lg: "37vw",
+          xl: "32vw",
+        },
+        minWidth: { sm: 550 },
+        "& *": { fontFamily: jost.style.fontFamily, fontWeight: 400 },
+        ...Object.entries(theme).reduce(
+          (acc, [key, value]) => ({ ...acc, [`--mint${key}`]: value }),
+          {}
+        ),
       }}
     >
       <VirtualKeyboard
@@ -82,7 +95,6 @@ export function Keyboard() {
         layoutName={layoutName}
         onChange={onChange}
         onKeyPress={onKeyPress}
-        // Highlight specific keys by adding a class to them
         buttonTheme={[
           {
             class: "shortcut",
@@ -129,7 +141,7 @@ export function Keyboard() {
                       px: 1,
                       height: 25,
                       borderRadius: 99,
-                      bgcolor: mintDark.mint4,
+                      bgcolor: theme[4],
                       display: "flex",
                       fontWeight: 400,
                       alignItems: "center",
@@ -146,13 +158,13 @@ export function Keyboard() {
                   mx: 1,
                   p: 0.2,
                   height: 34,
-                  bgcolor: mintDark.mint3,
+                  bgcolor: theme[3],
                   borderRadius: 999,
                   "& *": {
                     fontWeight: 400,
                   },
                   borderWidth: 1,
-                  borderColor: mintDark.mint4,
+                  borderColor: theme[4],
                   borderStyle: "solid",
                 }}
               />
