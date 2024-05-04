@@ -1,9 +1,8 @@
 "use client";
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
-import { CardContainer } from "./CardContainer";
-import { grayDark } from "../themes";
 import { useColorTheme } from "../useColor";
+import { CardContainer } from "./CardContainer";
 
 export const Flexible = () => {
   const theme = useColorTheme();
@@ -28,8 +27,8 @@ export const Flexible = () => {
         justifyContent: "flex-start",
         overflow: "hidden",
         minWidth: 170,
-        backgroundColor: grayDark.gray2,
-        borderColor: grayDark.gray5,
+        backgroundColor: theme[2],
+        borderColor: theme[5],
         position: "relative",
       }}
     >
@@ -37,7 +36,7 @@ export const Flexible = () => {
         sx={{
           height: 50,
           pointerEvents: "none",
-          background: `linear-gradient(transparent, ${grayDark.gray2})`,
+          background: `linear-gradient(transparent, ${theme[2]})`,
           zIndex: 1,
           width: "100%",
           position: "absolute",
@@ -46,8 +45,6 @@ export const Flexible = () => {
           right: 0,
         }}
       />
-      {JSON.stringify(theme)}
-
       <Box
         sx={{
           display: "flex",
@@ -70,21 +67,18 @@ export const Flexible = () => {
                 px: 1.5,
                 py: 1.5,
                 borderRadius: 5,
-                backgroundColor:
-                  selected === t ? grayDark.gray4 : "transparent",
+                backgroundColor: selected === t ? theme[4] : "transparent",
                 "&:hover": {
-                  backgroundColor:
-                    selected === t ? grayDark.gray5 : grayDark.gray3,
+                  backgroundColor: theme[selected === t ? 5 : 3],
                 },
                 "&:active": {
-                  backgroundColor:
-                    selected === t ? grayDark.gray6 : grayDark.gray4,
+                  backgroundColor: theme[selected === t ? 6 : 4],
                 },
               }}
             >
               <span
                 style={{
-                  color: grayDark.gray11,
+                  color: theme[11],
                   fontVariationSettings: `"FILL" ${
                     selected === option.text ? 1 : 0
                   }, "wght" 100, "GRAD" 0, "opsz" 40`,
@@ -95,7 +89,7 @@ export const Flexible = () => {
               </span>
               <Typography
                 sx={{
-                  color: grayDark.gray11,
+                  color: theme[11],
                   fontSize: 16,
                   fontWeight: 300,
                 }}
@@ -104,7 +98,7 @@ export const Flexible = () => {
               </Typography>
               {selected === t && (
                 <span
-                  style={{ marginLeft: "auto", color: grayDark.gray11 }}
+                  style={{ marginLeft: "auto", color: theme[11] }}
                   className="material-symbols-rounded"
                 >
                   check

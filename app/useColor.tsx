@@ -5,12 +5,12 @@ import { createContext, useContext, useState } from "react";
 
 export const ThemeContext = createContext({
   color: "mint",
-  setColor: (s: Dispatch<SetStateAction<string>>) => null,
+  setColor: (s: any) => {},
 });
 
 export const useThemeContext = () => useContext(ThemeContext);
 
-export const ThemeContextProvider = ({ children }) => {
+export const ThemeContextProvider = ({ children }: any) => {
   const [color, setColor] = useState("mint");
   return (
     <ThemeContext.Provider value={{ color, setColor }}>

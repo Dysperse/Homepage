@@ -3,30 +3,31 @@ import { Box, Chip, Typography } from "@mui/material";
 import { CardContainer } from "./CardContainer";
 import { jadeDark, orangeDark } from "../themes";
 import { useState } from "react";
+import { useColorTheme } from "../useColor";
 
 export const Task = () => {
+  const theme = useColorTheme();
   const [done, setDone] = useState(false);
+
   return (
     <CardContainer
       sx={{
-        flex: 1,
+        flex: 1.5,
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "start",
         gap: 2,
         px: 3,
-        backgroundColor: jadeDark.jade3,
-        borderColor: jadeDark.jade5,
-        color: jadeDark.jade12,
+        color: theme[12],
         "&, & *": {
           cursor: "pointer",
         },
         "&:hover": {
-          backgroundColor: jadeDark.jade4,
+          backgroundColor: theme[4],
         },
         "&:active": {
-          backgroundColor: jadeDark.jade2,
+          backgroundColor: theme[2],
         },
       }}
       onClick={() => setDone(!done)}
@@ -37,8 +38,8 @@ export const Task = () => {
           height: 30,
           borderWidth: 1,
           borderRadius: 99,
-          borderColor: jadeDark.jade9,
-          backgroundColor: done ? jadeDark.jade9 : "transparent",
+          borderColor: theme[9],
+          backgroundColor: done ? theme[9] : "transparent",
           borderStyle: "solid",
           display: "flex",
           justifyContent: "center",
@@ -49,7 +50,7 @@ export const Task = () => {
           <span
             className="material-symbols-rounded"
             style={{
-              color: jadeDark.jade3,
+              color: theme[3],
               fontSize: 24,
               fontVariationSettings: `'wght' 500`,
             }}
@@ -82,7 +83,7 @@ export const Task = () => {
             icon={
               <span
                 className="material-symbols-rounded"
-                style={{ color: orangeDark.orange11 }}
+                style={{ color: theme[11] }}
               >
                 priority_high
               </span>
@@ -90,13 +91,13 @@ export const Task = () => {
           />
           <Chip
             sx={{
-              background: jadeDark.jade5,
-              color: jadeDark.jade11,
+              background: theme[5],
+              color: theme[11],
             }}
             icon={
               <span
                 className="material-symbols-rounded"
-                style={{ color: jadeDark.jade11 }}
+                style={{ color: theme[11] }}
               >
                 calendar_today
               </span>

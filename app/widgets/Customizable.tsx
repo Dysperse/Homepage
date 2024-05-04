@@ -6,10 +6,10 @@ import { CardContainer } from "./CardContainer";
 import { Emoji } from "../Emoji";
 import { mintDark, addHslAlpha, mauveDark } from "../themes";
 import { ArrowContainer } from "./ArrowContainer";
-
-const caveat = Caveat({ subsets: ["latin"] });
+import { useColorTheme } from "../useColor";
 
 export const Customizable = () => {
+  const theme = useColorTheme();
   const [selected, setSelected] = useState("1f4a9");
 
   const emojis = [
@@ -107,27 +107,15 @@ export const Customizable = () => {
     "1f6c3",
     "1f6c4",
     "1f6c5",
-    "1f6c6",
-    "1f6c7",
-    "1f6c8",
-    "1f6c9",
-    "1f6ca",
-    "1f6cb",
-    "1f6cc",
-    "1f6cd",
-    "1f6ce",
-    "1f6cf",
-    "1f6d0",
-    "1f6d1",
   ];
   return (
     <CardContainer
       sx={{
         px: 2,
         py: 2,
-        borderColor: mauveDark.mauve5,
-        backgroundColor: mauveDark.mauve2,
-        color: mauveDark.mauve11,
+        borderColor: theme[5],
+        backgroundColor: theme[2],
+        color: theme[11],
       }}
     >
       <Box
@@ -185,7 +173,7 @@ export const Customizable = () => {
           sx={{
             height: 50,
             pointerEvents: "none",
-            background: `linear-gradient(transparent, ${mauveDark.mauve2})`,
+            background: `linear-gradient(transparent, ${theme[2]})`,
             zIndex: 1,
             width: "100%",
             position: "absolute",

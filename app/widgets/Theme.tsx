@@ -1,18 +1,24 @@
-import { Button, Typography } from "@mui/material";
-import { addHslAlpha, rubyDark } from "../themes";
-import { CardContainer } from "./CardContainer";
+import { Typography } from "@mui/material";
 import { JetBrains_Mono } from "next/font/google";
+import themes from "../themes.json";
+import { rubyDark } from "../themes";
+import { useColorTheme, useThemeContext } from "../useColor";
+import { CardContainer } from "./CardContainer";
+
 const mono = JetBrains_Mono({ subsets: ["latin"] });
 
 export function Theme() {
+  const theme = useColorTheme();
+  const { color } = useThemeContext();
+
   return (
     <CardContainer
       sx={{
         flex: 1,
         p: 3,
-        background: rubyDark.ruby3,
-        borderColor: rubyDark.ruby6,
-        color: rubyDark.ruby11,
+        background: `radial-gradient(circle, ${theme[4]} 0%, ${theme[6]} 100%)`,
+        borderColor: theme[5],
+        color: theme[12],
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
@@ -29,7 +35,7 @@ export function Theme() {
       </Typography>
       <span
         className="material-symbols-rounded"
-        style={{ fontSize: 70, color: rubyDark.ruby11 }}
+        style={{ fontSize: 70, color: theme[12] }}
       >
         hexagon
       </span>
@@ -39,10 +45,10 @@ export function Theme() {
           fontWeight: 900,
         }}
       >
-        Scarlet Temptest
+        {(themes as any)[color].name}
       </Typography>
       <Typography sx={{ mb: "auto", opacity: 0.6 }}>
-        A stormy hue that embodies passionate fervor
+        {(themes as any)[color].description}
       </Typography>
     </CardContainer>
   );

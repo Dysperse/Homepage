@@ -1,13 +1,12 @@
 import { Box, Chip } from "@mui/material";
-import { mintDark } from "@radix-ui/colors";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { Jost } from "next/font/google";
 import { useEffect, useMemo, useRef, useState } from "react";
 import VirtualKeyboard from "react-simple-keyboard";
-import { CardContainer } from "./CardContainer";
+import { useColorTheme } from "../useColor";
 import { ArrowContainer } from "./ArrowContainer";
-import { limeDark } from "../themes";
+import { CardContainer } from "./CardContainer";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -15,6 +14,7 @@ export function Keyboard() {
   const keyboardRef = useRef(null);
   const [key, setKey] = useState("ctrl 5");
   const [layoutName, setLayoutName] = useState("default");
+  const theme = useColorTheme();
 
   const onChange = () => {};
 
@@ -73,15 +73,21 @@ export function Keyboard() {
     <CardContainer
       sx={{
         p: 1,
-        background: limeDark.lime2,
-        borderColor: limeDark.lime5,
-        color: limeDark.lime11,
+        background: theme[2],
+        borderColor: theme[5],
+        color: theme[11],
         maxWidth: {
           xs: "100%",
           md: "27vw",
-          lg: "32vw",
+          lg: "37vw",
+          xl: "32vw",
         },
+        minWidth: { sm: 550 },
         "& *": { fontFamily: jost.style.fontFamily, fontWeight: 400 },
+        ...Object.entries(theme).reduce(
+          (acc, [key, value]) => ({ ...acc, [`--mint${key}`]: value }),
+          {}
+        ),
       }}
     >
       <VirtualKeyboard
@@ -135,7 +141,7 @@ export function Keyboard() {
                       px: 1,
                       height: 25,
                       borderRadius: 99,
-                      bgcolor: limeDark.lime4,
+                      bgcolor: theme[4],
                       display: "flex",
                       fontWeight: 400,
                       alignItems: "center",
@@ -152,13 +158,13 @@ export function Keyboard() {
                   mx: 1,
                   p: 0.2,
                   height: 34,
-                  bgcolor: limeDark.lime3,
+                  bgcolor: theme[3],
                   borderRadius: 999,
                   "& *": {
                     fontWeight: 400,
                   },
                   borderWidth: 1,
-                  borderColor: limeDark.lime4,
+                  borderColor: theme[4],
                   borderStyle: "solid",
                 }}
               />

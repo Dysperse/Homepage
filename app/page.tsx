@@ -20,6 +20,7 @@ import { Familiar } from "./widgets/Familiar";
 import { Flexible } from "./widgets/Flexible";
 import { Integrated } from "./widgets/Integrated";
 import { Keyboard } from "./widgets/Keyboard";
+import * as colors from "./themes";
 import { PlanDay } from "./widgets/PlanDay";
 import { Quote } from "./widgets/Quote";
 import { Task } from "./widgets/Task";
@@ -27,7 +28,11 @@ import { Theme } from "./widgets/Theme";
 import { Time } from "./widgets/Time";
 import { UpNext } from "./widgets/UpNext";
 import { Weather } from "./widgets/Weather";
-import { ThemeContext, ThemeContextProvider } from "./useColor";
+import {
+  ThemeContext,
+  ThemeContextProvider,
+  useThemeContext,
+} from "./useColor";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -355,9 +360,83 @@ function PictureThis() {
   );
 }
 
-function InteractiveWidgets() {
-  const [theme, setTheme] = useState("mint");
+function ThemeSelector() {
+  const { color, setColor } = useThemeContext();
 
+  return (
+    <Box
+      sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 5, mt: -2 }}
+    >
+      {[
+        "mint",
+        "tomato",
+        "pink",
+        "plum",
+        "blue",
+        "cyan",
+        "green",
+        "lime",
+        "amber",
+        "orange",
+      ].map((theme) => (
+        <Box
+          key={theme}
+          onClick={() => setColor(theme)}
+          sx={{
+            aspectRatio: "1 / 1",
+            width: 40,
+            borderRadius: color === theme ? 3 : 9,
+            transition: "border-radius .2s,transform .2s",
+            transform: "rotate(45deg)",
+            cursor: "pointer",
+            background: `linear-gradient(-45deg, ${
+              (colors as any)[`${theme}Dark`][`${theme}9`]
+            }, ${(colors as any)[`${theme}Dark`][`${theme}11`]})`,
+            "&:hover": {
+              transform: "scale(1.05) rotate(45deg)",
+              background: `linear-gradient(-45deg, ${
+                (colors as any)[`${theme}Dark`][`${theme}8`]
+              }, ${(colors as any)[`${theme}Dark`][`${theme}10`]})`,
+            },
+            "&:active": {
+              transform: "scale(.95) rotate(-45deg)",
+              transitionDuration: "0s",
+              background: `linear-gradient(-45deg, ${
+                (colors as any)[`${theme}Dark`][`${theme}7`]
+              }, ${(colors as any)[`${theme}Dark`][`${theme}9`]})`,
+            },
+            color: (colors as any)[`${theme}Dark`][`${theme}11`],
+          }}
+        />
+      ))}
+      <Box
+        sx={{
+          aspectRatio: "1 / 1",
+          width: 40,
+          borderRadius: 4,
+          transform: "rotate(45deg)",
+          cursor: "pointer",
+          background: "rgba(255,255,255,.1)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography
+          sx={{
+            transform: "rotate(-45deg)",
+            color: mintDark.mint12,
+            opacity: 0.5,
+          }}
+        >
+          +30
+        </Typography>
+      </Box>
+    </Box>
+  );
+}
+
+function InteractiveWidgets() {
   return (
     <Box>
       <Box
@@ -380,6 +459,7 @@ function InteractiveWidgets() {
         </span>
       </Box>
       <ThemeContextProvider>
+        <ThemeSelector />
         <Container
           sx={{
             display: "flex",
@@ -404,7 +484,7 @@ function InteractiveWidgets() {
             >
               <Theme />
               <Familiar />
-              <Weather />
+              <Time />
             </Box>
             <Box
               sx={{
@@ -456,7 +536,7 @@ function InteractiveWidgets() {
             </Box>
             <Box sx={{ display: "flex", gap: 2, flexDirection: "row" }}>
               <Quote />
-              <Time />
+              <Weather />
               <Box
                 sx={{
                   flex: 4,
