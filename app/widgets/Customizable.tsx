@@ -1,12 +1,11 @@
 "use client";
 import { Box } from "@mui/material";
-import { Caveat } from "next/font/google";
 import { useState } from "react";
-import { CardContainer } from "./CardContainer";
 import { Emoji } from "../Emoji";
-import { mintDark, addHslAlpha, mauveDark } from "../themes";
-import { ArrowContainer } from "./ArrowContainer";
+import { addHslAlpha, mintDark } from "../themes";
 import { useColorTheme } from "../useColor";
+import { ArrowContainer } from "./ArrowContainer";
+import { CardContainer } from "./CardContainer";
 
 export const Customizable = () => {
   const theme = useColorTheme();

@@ -1,11 +1,11 @@
 "use client";
 import { Box, Typography } from "@mui/material";
-import { Caveat } from "next/font/google";
+import { Oregano } from "next/font/google";
 import Image from "next/image";
 import { mintDark } from "../themes";
 import { useColorTheme } from "../useColor";
 
-const caveat = Caveat({ subsets: ["latin"] });
+const oregano = Oregano({ subsets: ["latin"], weight: ["400"] });
 
 export const ArrowContainer = ({
   text,
@@ -50,7 +50,7 @@ export const ArrowContainer = ({
           mt: -0.3,
           color: theme[12],
           fontSize: 18,
-          fontFamily: caveat.style.fontFamily + "!important",
+          fontFamily: oregano.style.fontFamily + "!important",
         }}
       >
         {text}

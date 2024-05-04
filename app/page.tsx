@@ -11,7 +11,7 @@ import {
   useScrollTrigger,
 } from "@mui/material";
 import { mint } from "@radix-ui/colors";
-import { Bebas_Neue, Jost } from "next/font/google";
+import { Bebas_Neue, Jost, Oregano } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
 import { addHslAlpha, mintDark } from "./themes";
@@ -33,10 +33,14 @@ import {
   ThemeContextProvider,
   useThemeContext,
 } from "./useColor";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { Emoji } from "./Emoji";
 
 const jost = Jost({
   subsets: ["latin"],
 });
+
+const oregano = Oregano({ subsets: ["latin"], weight: "400" });
 
 const heading = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 
@@ -85,13 +89,13 @@ function Header() {
                 fontSize: {
                   xs: "50px",
                   md: "60px",
-                  lg: "80px",
+                  lg: "70px",
                   xl: "100px",
                 },
                 lineHeight: {
                   xs: "50px",
                   md: "60px",
-                  lg: "80px",
+                  lg: "70px",
                   xl: "100px",
                 },
                 fontWeight: 900,
@@ -99,7 +103,7 @@ function Header() {
             >
               <span style={{ opacity: 0.7 }}>You&nbsp;could&nbsp;have</span>
               <br />
-              25&nbsp;hours{" "}
+              25&nbsp;hours&nbsp;
               <span style={{ opacity: 0.7 }}>in&nbsp;a&nbsp;day.</span>
             </Typography>
             <Typography
@@ -110,20 +114,22 @@ function Header() {
                 fontSize: 25,
                 my: 2,
                 maxWidth: 900,
-                lineHeight: "50px",
+                lineHeight: "40px",
               }}
             >
-              Productivity is personal. Supercharge it with{" "}
+              Organization & productivity are&nbsp;your&nbsp;domain.
+              <br /> Let&nbsp;
               <Chip
                 component={"span"}
-                label="#dysperse"
+                label="Dysperse"
                 variant="outlined"
                 sx={{
                   color: mintDark.mint11,
-                  fontWeight: 700,
+                  fontWeight: 500,
                   fontSize: 20,
-                  height: "37px",
+                  height: "35px",
                   px: 1,
+                  pr: 0.5,
                   borderRadius: 99,
                   borderColor: mintDark.mint11,
                   borderWidth: 2,
@@ -142,12 +148,16 @@ function Header() {
                 icon={
                   <span
                     className="material-symbols-rounded"
-                    style={{ color: mintDark.mint11 }}
+                    style={{
+                      color: mintDark.mint11,
+                      fontVariationSettings: `'wght' 400`,
+                    }}
                   >
                     volume_up
                   </span>
                 }
               />
+              &nbsp;be&nbsp;the&nbsp;catalyst.
             </Typography>
             <Box sx={{ mt: 1, gap: 2, display: "flex" }}>
               <Button
@@ -297,19 +307,40 @@ function Navbar() {
       >
         <Image src="/logo.svg" alt="Dysperse logo" width={60} height={60} />
         <Box sx={{ mx: "auto" }}>
-          <Button color="primary" size="large">
+          <Button color="primary" size="large" href="/">
             templates
           </Button>
-          <Button color="primary" size="large">
+          <Button color="primary" size="large" href="/download">
             download
           </Button>
-          <Button color="primary" size="large">
+          <Button
+            color="primary"
+            size="large"
+            href="https://blog.dysperse.com"
+            target="_blank"
+          >
             blog
           </Button>
         </Box>
-        <Button color="primary" size="large">
-          account
-          <span className="material-symbols-rounded">north_east</span>
+        <Button
+          color="primary"
+          size="large"
+          href="//app.dysperse.com/auth/sign-in"
+          variant="outlined"
+          sx={{
+            borderColor: addHslAlpha(mintDark.mint9, 0.15),
+            "&:hover": {
+              borderColor: addHslAlpha(mintDark.mint9, 0.3),
+              backgroundColor: addHslAlpha(mintDark.mint9, 0.1),
+            },
+            "&:active": {
+              borderColor: addHslAlpha(mintDark.mint9, 0.4),
+              backgroundColor: addHslAlpha(mintDark.mint9, 0.2),
+            },
+          }}
+        >
+          my account
+          <span className="material-symbols-rounded">account_circle</span>
         </Button>
       </Box>
     </Box>
@@ -318,7 +349,11 @@ function Navbar() {
 
 function PictureThis() {
   return (
-    <Box>
+    <Box
+      sx={{
+        color: mintDark.mint11,
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -338,24 +373,89 @@ function PictureThis() {
           emoji_objects
         </span>
       </Box>
-      <Box sx={{ p: 10, pt: 0, mt: -3, textAlign: "center" }}>
-        <Typography
-          variant="h2"
-          sx={{
-            background: `linear-gradient(${mintDark.mint6}, ${mintDark.mint8})`,
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          You&apos;ve got goals. <br />
-          Maybe you like setting broad deadlines. <br />
-          Maybe you like organizing things by color. <br />
-          Maybe you like things aesthetic. <br />
-          Maybe you like to organize things by effort <br />
-          Maybe you&apos;re all of the above. <br />
-          Whoever you are, Dysperse is for you.
-        </Typography>
-      </Box>
+      <Grid2 container sx={{ textAlign: "center", px: 5 }} spacing={2}>
+        <Grid2 xs={12} sm={6}>
+          <Box
+            sx={{
+              p: 5,
+              borderRadius: 20,
+              border: `1px solid ${mintDark.mint5}`,
+              backdropFilter: "blur(4px)",
+            }}
+          >
+            <Emoji emoji="1f4a9" size={50} />
+            <Typography
+              sx={{
+                fontSize: 30,
+                fontWeight: 300,
+                opacity: 0.6,
+                mb: 2,
+              }}
+            >
+              other methods
+            </Typography>
+            {[
+              [
+                "One-size-fits-all",
+                "You're stuck with a predefined productivity system.",
+              ],
+              ["All-in-one replacement", "You have to switch everything over."],
+              ["Boring", "No fun, no motivation."],
+              ["Expensive", "You have to pay for everything."],
+              ["Free? Ads?", "You're the product."],
+              ["Zero vision", "Only one perspective."],
+              ["Exclusivity", "Only available on certain platforms."],
+            ].map(([title, description]) => (
+              <Typography key={title} sx={{ textAlign: "left", mb: 1 }}>
+                <b style={{ fontWeight: 900 }}>
+                  {title}
+                  {!title.includes("?") && "."}
+                </b>{" "}
+                {description}
+              </Typography>
+            ))}
+          </Box>
+        </Grid2>
+        <Grid2 xs={12} sm={6}>
+          <Box
+            sx={{
+              p: 5,
+              background: mintDark.mint4,
+              borderRadius: 20,
+              border: `1px solid ${mintDark.mint5}`,
+            }}
+          >
+            <Emoji emoji="270c" size={50} />
+            <Typography
+              sx={{
+                fontSize: 30,
+                fontWeight: 300,
+                opacity: 0.6,
+                mb: 2,
+              }}
+            >
+              the #dysperse method
+            </Typography>
+            {[
+              ["Flexible", "Choose what works for you."],
+              ["Integrated", "Continue to use what you love"],
+              ["Customizable", "32+ themes & dark mode"],
+              ["Free", "No cost, no ads, no tracking."],
+              ["Open source", "You can see how it works."],
+              ["Visionary", "Multiple perspectives, the way you want."],
+              ["Focus Panel", "Fun widgets to keep you motivated."],
+            ].map(([title, description]) => (
+              <Typography key={title} sx={{ textAlign: "left", mb: 1 }}>
+                <b style={{ fontWeight: 900 }}>
+                  {title}
+                  {!title.includes("?") && "."}
+                </b>{" "}
+                {description}
+              </Typography>
+            ))}
+          </Box>
+        </Grid2>
+      </Grid2>
     </Box>
   );
 }
@@ -425,8 +525,8 @@ function ThemeSelector() {
         <Typography
           sx={{
             transform: "rotate(-45deg)",
-            color: mintDark.mint12,
             opacity: 0.5,
+            color: "#fff",
           }}
         >
           +30
