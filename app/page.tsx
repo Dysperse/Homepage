@@ -569,6 +569,7 @@ function InteractiveWidgets() {
           gap: 2,
           alignItems: "center",
           py: 5,
+          mt: 5,
           opacity: 0.1,
         }}
       >
