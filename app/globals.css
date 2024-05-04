@@ -5,6 +5,8 @@
 
 body,
 html {
+  user-select: none;
+  -webkit-user-drag: none;
   overflow-x: hidden;
   background-color: #1e1e1e;
   background-image: url("/grid.svg");
