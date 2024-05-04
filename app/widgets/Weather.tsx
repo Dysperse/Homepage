@@ -8,11 +8,10 @@ export const Weather = () => (
     sx={{
       flex: 2,
       background: `linear-gradient(180deg, ${skyDark.sky4} 0%, ${skyDark.sky2} 100%)`,
-      flexDirection: "row",
       borderColor: skyDark.sky5,
       color: skyDark.sky11,
-      alignItems: "center",
-      justifyContent: "space-between",
+      justifyContent: "center",
+      alignItems: "space-between",
       minHeight: 150,
       px: 4,
     }}
