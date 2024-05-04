@@ -30,7 +30,6 @@ export default function RootLayout(props: any) {
           property="og:description"
           content="Meet Dysperse: The ultimate productivity platform that streamlines your life with planners, boards, routines, and more. Say goodbye to scattered tasks and hello to seamless productivity with Dysperse."
         />
-        <meta property="og:image" content="/meta.png" />
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://dysperse.com" />
