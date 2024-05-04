@@ -7,6 +7,8 @@ import { Box, CssBaseline } from "@mui/material";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  description: "Productivity is personal. Let #dysperse be the catalyst.",
+  title: "Dysperse • Productivity for Humans",
   openGraph: {
     images: ["/meta/home.png"],
     description: "Productivity is personal. Let #dysperse be the catalyst.",
