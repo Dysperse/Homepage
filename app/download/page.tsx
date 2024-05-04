@@ -14,13 +14,14 @@ export default function Page() {
     <Box
       sx={{
         height: "100dvh",
-        paddingTop: 20,
+        paddingTop: 16,
         display: "flex",
       }}
     >
       <Box
         sx={{
           padding: 10,
+          mt: -4,
         }}
       >
         <Typography
@@ -45,7 +46,15 @@ export default function Page() {
           Discover&nbsp;<span style={{ color: mintDark.mint11 }}>portable</span>{" "}
           productivity.
         </Typography>
-
+        <Typography
+          sx={{
+            fontSize: "20px",
+            fontWeight: 300,
+            mt: 2.5,
+          }}
+        >
+          Download #dysperse on all your devices.
+        </Typography>
         <Box
           sx={{
             display: "grid",
