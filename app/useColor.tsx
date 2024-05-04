@@ -36,7 +36,7 @@ export function useColorTheme() {
   const getColorPalette = useMemo(() => {
     const paletteKey = isDark ? `${base}Dark` : base;
 
-    const colorPalette = colors[paletteKey];
+    const colorPalette = (colors as any)[paletteKey];
     const _colorPalette: Record<string, string> = {};
 
     for (const key in colorPalette) {
