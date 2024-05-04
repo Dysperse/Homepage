@@ -1,12 +1,12 @@
+import { Metadata } from "next";
 import { Home } from "./home";
 
+export const metadata: Metadata = {
+  openGraph: {
+    images: ["/meta/home.png"],
+  },
+};
+
 export default function Page() {
-  return (
-    <>
-      <head>
-        <link rel="og:image" href="/meta/home.png" />
-      </head>
-      <Home />
-    </>
-  );
+  return <Home />;
 }
