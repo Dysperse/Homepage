@@ -1,5 +1,5 @@
 export const addHslAlpha = (hsl: string, alpha: number) =>
-  hsl.replace(")", `, ${alpha})`).replace("hsl", "hsla");
+  hsl?.replace(")", `, ${alpha})`)?.replace("hsl", "hsla");
 
 export const gray = {
   gray1: "hsl(0, 0%, 99.0%)",

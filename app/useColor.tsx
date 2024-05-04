@@ -18,7 +18,7 @@ export const ThemeContextProvider = ({ children }: any) => {
 };
 
 export const addHslAlpha = (hsl: string, alpha: number) =>
-  hsl.replace(")", `, ${alpha})`)?.replace("hsl", "hsla");
+  hsl?.replace(")", `, ${alpha})`)?.replace("hsl", "hsla");
 
 /**
  * Returns a color palette.
