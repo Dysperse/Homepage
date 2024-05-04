@@ -2,7 +2,7 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
 import { Emoji } from "../Emoji";
-import { addHslAlpha, mintDark } from "../themes";
+import { addHslAlpha } from "../themes";
 import { useColorTheme } from "../useColor";
 import { ArrowContainer } from "./ArrowContainer";
 import { CardContainer } from "./CardContainer";
@@ -146,20 +146,17 @@ export const Customizable = () => {
               borderStyle: "solid",
               borderColor: "transparent",
               ...(selected === emoji && {
-                borderColor: mintDark.mint6,
-                bgcolor: addHslAlpha(mintDark.mint4, 0.5),
+                borderColor: theme[6],
+                bgcolor: addHslAlpha(theme[4], 0.5),
               }),
               "&:hover": {
-                borderColor: mintDark[selected === emoji ? "mint7" : "mint4"],
-                bgcolor: addHslAlpha(
-                  mintDark[selected === emoji ? "mint5" : "mint3"],
-                  0.5
-                ),
+                borderColor: theme[selected === emoji ? 7 : 4],
+                bgcolor: addHslAlpha(theme[selected === emoji ? 5 : 3], 0.5),
               },
               "&:active": {
-                borderColor: mintDark[selected === emoji ? "mint8" : "mint5"],
+                borderColor: theme[selected === emoji ? 8 : 5],
                 bgcolor: addHslAlpha(
-                  mintDark[selected === emoji ? "mint6" : "mint4"],
+                  theme[selected === emoji ? "mint6" : "mint4"],
                   0.5
                 ),
               },
