@@ -51,6 +51,7 @@ export default function Page() {
             fontSize: "20px",
             fontWeight: 300,
             mt: 2.5,
+            opacity: 0.6,
           }}
         >
           Download #dysperse on all your devices.
