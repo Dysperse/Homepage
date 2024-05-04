@@ -4,18 +4,16 @@ import {
   Box,
   Button,
   Chip,
+  CircularProgress,
   Container,
-  CssBaseline,
+  LinearProgress,
   Link,
   Typography,
-  useScrollTrigger,
 } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { mint } from "@radix-ui/colors";
 import { Bebas_Neue, Jost, Oregano } from "next/font/google";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Emoji } from "./Emoji";
 import * as colors from "./themes";
 import { addHslAlpha, mintDark } from "./themes";
@@ -32,7 +30,6 @@ import { Theme } from "./widgets/Theme";
 import { Time } from "./widgets/Time";
 import { UpNext } from "./widgets/UpNext";
 import { Weather } from "./widgets/Weather";
-import { Navbar } from "./navbar";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -287,27 +284,10 @@ function PictureThis() {
     <Box
       sx={{
         color: mintDark.mint11,
+        mt: -3,
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          color: mintDark.mint11,
-          textTransform: "uppercase",
-          gap: 2,
-          alignItems: "center",
-          py: 5,
-          opacity: 0.2,
-        }}
-      >
-        <Typography style={{ fontWeight: 500, fontSize: 40 }}>
-          Picture this
-        </Typography>
-        <span className="material-symbols-rounded" style={{ fontSize: 50 }}>
-          emoji_objects
-        </span>
-      </Box>
+      <Hint text="Picture this" icon="emoji_objects" />
       <Grid2 container sx={{ textAlign: "center", px: 5 }} spacing={2}>
         <Grid2 xs={12} sm={6}>
           <Box
@@ -466,29 +446,33 @@ function ThemeSelector() {
   );
 }
 
+function Hint({ text, icon }: any) {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        color: mintDark.mint11,
+        textTransform: "uppercase",
+        gap: 2,
+        alignItems: "center",
+        py: 5,
+        mt: 5,
+        opacity: 0.2,
+      }}
+    >
+      <Typography style={{ fontWeight: 500, fontSize: 40 }}>{text}</Typography>
+      <span className="material-symbols-rounded" style={{ fontSize: 50 }}>
+        {icon}
+      </span>
+    </Box>
+  );
+}
+
 function InteractiveWidgets() {
   return (
     <Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          color: mintDark.mint11,
-          textTransform: "uppercase",
-          gap: 2,
-          alignItems: "center",
-          py: 5,
-          mt: 5,
-          opacity: 0.2,
-        }}
-      >
-        <Typography style={{ fontWeight: 500, fontSize: 40 }}>
-          it&apos;s interactive!
-        </Typography>
-        <span className="material-symbols-rounded" style={{ fontSize: 50 }}>
-          web_traffic
-        </span>
-      </Box>
+      <Hint text="It's interactive!" icon="web_traffic" />
       <ThemeContextProvider>
         <ThemeSelector />
         <Container
@@ -588,62 +572,192 @@ function InteractiveWidgets() {
 }
 
 function CTA() {
+  const [data, setData] = useState<any>(null);
+  const [error, setError] = useState(false);
+
+  // -1: not voted, 0-5: voted
+  const [loading, setLoading] = useState(-1);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const poll = localStorage.getItem("poll");
+    if (poll) {
+      setData(JSON.parse(poll));
+    }
+  }, []);
+
+  const handleClick = async (index: number) => {
+    try {
+      setError(false);
+      const response = await fetch("/api/poll", {
+        method: "POST",
+        body: JSON.stringify({ index }),
+      });
+      const json = await response.json();
+      setData(json);
+      localStorage.setItem("poll", JSON.stringify(json));
+    } catch (e) {
+      setError(true);
+    }
+  };
+
   return (
     <Container sx={{ mt: 10 }}>
+      <Hint text="Poll" icon="emoji_objects" />
       <Box
         sx={{
-          background: mintDark.mint4,
+          background: addHslAlpha(mintDark.mint6, 0.2),
+          backdropFilter: "blur(4px)",
+          borderWidth: 1,
+          borderStyle: "solid",
+          borderColor: mintDark.mint5,
           color: mintDark.mint11,
-          borderRadius: 25,
-          p: 5,
-          py: 10,
+          borderRadius: 20,
+          py: 7,
+          px: 7,
+          mt: -2,
         }}
       >
-        <Typography variant="h2" sx={{ textAlign: "center" }} fontWeight={100}>
+        <Typography variant="h4" fontWeight={900}>
           What would you do with that extra hour?
         </Typography>
-        {[
-          { text: "Spend time with my family", icon: "" },
-          { text: "Have some me-time", icon: "" },
-          { text: "Work on my side project", icon: "" },
-          { text: "Sleep in", icon: "" },
-          { text: "Go to the gym", icon: "" },
-        ].map(({ text, icon }) => (
+        {error && (
           <Box
-            key={text}
             sx={{
-              display: "flex",
-              alignItems: "center",
-              gap: 2,
-              mt: 2,
-              background: mintDark.mint5,
-              borderRadius: 10,
               p: 2,
+              borderRadius: 99,
+              background: colors.redDark.red4,
+              display: "flex",
+              gap: 2,
+              alignItems: "center",
+              mt: 2,
             }}
           >
-            <span
-              className="material-symbols-rounded"
-              style={{ fontSize: 30, marginTop: 2.5 }}
-            >
-              {icon}
-            </span>
-            <Typography>{text}</Typography>
+            <Emoji emoji="1F62D" size={30} />
+            <Typography sx={{ color: colors.redDark.red11 }}>
+              Something went wrong, please try again later
+            </Typography>
           </Box>
-        ))}
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
-          <Button
-            size="large"
-            variant="contained"
-            sx={{
-              backgroundColor: mintDark.mint11,
-              "&:hover": {
-                backgroundColor: mintDark.mint12,
-              },
-            }}
-          >
-            Induct myself
-            <span className="material-symbols-rounded">east</span>
-          </Button>
+        )}
+        <Box
+          sx={{
+            gap: 2,
+            mt: 3,
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "1fr 1fr",
+            },
+          }}
+        >
+          {[
+            { key: 0, text: "Spend time with my family", icon: "1F60C" },
+            { key: 1, text: "Have some me-time", icon: "1F60C" },
+            {
+              key: 2,
+              text: "Work on my side project",
+              icon: "1f468-200d-1f4bb",
+            },
+            { key: 3, text: "Sleep in", icon: "1F634" },
+            { key: 4, text: "Go to the gym", icon: "1F4AA" },
+            { key: 5, text: "Watch a movie", icon: "1F3AC" },
+          ].map(({ key, text, icon }) => (
+            <Box
+              key={text}
+              sx={{
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+                overflow: "hidden",
+                gap: 2,
+                transition: "background .2s, transform .05s",
+                "&, & *": {
+                  cursor: "pointer",
+                },
+                background: mintDark.mint4,
+                "&:hover": {
+                  background: mintDark.mint5,
+                },
+                "&:active": {
+                  transform: "scale(.95)",
+                },
+                borderRadius: 10,
+                p: 2,
+                ...((loading !== -1 || data) && {
+                  pointerEvents: "none",
+                }),
+                ...(loading !== -1 &&
+                  !data && {
+                    opacity: 0.5,
+                  }),
+              }}
+              onClick={() => {
+                if (loading === -1 && !data) {
+                  setLoading(key);
+                  handleClick(key);
+                }
+              }}
+            >
+              {data && (
+                <LinearProgress
+                  variant="determinate"
+                  sx={{
+                    height: "100%",
+                    width: "100%",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    background: mintDark.mint4,
+                    "& .MuiLinearProgress-bar": {
+                      borderRadius: 0,
+                      backgroundColor: mintDark.mint5,
+                    },
+                  }}
+                  value={
+                    (data[key] /
+                      (Object.values(data) as any).reduce(
+                        (acc: number, curr: number) => acc + curr,
+                        0
+                      )) *
+                    100
+                  }
+                />
+              )}
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                  zIndex: 1,
+                  width: "100%",
+                }}
+              >
+                <Emoji emoji={icon} size={30} />
+                <Typography
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: 20,
+                  }}
+                >
+                  {text}
+                </Typography>
+                {loading === key && !data && (
+                  <CircularProgress sx={{ ml: "auto" }} size={20} />
+                )}
+                {data && (
+                  <Typography
+                    sx={{
+                      ml: "auto",
+                      fontWeight: 700,
+                      opacity: 0.5,
+                    }}
+                  >
+                    {data[key]} {data[key] === 1 ? "vote" : "votes"}
+                  </Typography>
+                )}
+              </Box>
+            </Box>
+          ))}
         </Box>
       </Box>
     </Container>
