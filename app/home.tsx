@@ -45,7 +45,7 @@ function Header() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: { xs: "auto", md: "calc(100vh - 50px)" },
+        height: { xs: "auto", lg: "calc(100vh - 50px)" },
         width: "100vw",
         color: mintDark.mint11,
         position: "relative",
