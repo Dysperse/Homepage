@@ -131,7 +131,7 @@ function Header() {
                 },
               }}
             >
-              <span id="d">Organization & Productivity are your domain</span>
+              <span id="d">Organization & productivity are your domain.</span>
               <span id="m">Productivity is your domain</span>
               <br /> Let&nbsp;
               <Chip
