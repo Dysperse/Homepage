@@ -5,6 +5,7 @@ import { Navbar } from "./navbar";
 import { mintDark } from "./themes";
 import { Box, CssBaseline } from "@mui/material";
 import { Metadata } from "next";
+import { Script } from "next/script";
 
 export const metadata: Metadata = {
   description: "Productivity is personal. Let #dysperse be the catalyst.",
@@ -25,6 +26,14 @@ export default function RootLayout(props: any) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-KFJ4BEE09N"></script>
+        <Script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-KFJ4BEE09N');
+        </Script>
         <script
           id="schema"
           type="application/ld+json"
