@@ -68,7 +68,7 @@ async function Recent() {
         Recently added
       </Typography>
       <Masonry sx={{ mt: 2 }} spacing={2} columns={3}>
-        {templates.map((template) => (
+        {templates.map((template: any) => (
           <Card
             variant="outlined"
             sx={{
