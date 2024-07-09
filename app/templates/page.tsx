@@ -1,34 +1,30 @@
 import { Masonry } from "@mui/lab";
-import { Box, Card, Chip, Container, Typography } from "@mui/material";
+import { Box, Card, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import Link from "next/link";
 import { Emoji } from "../Emoji";
+import { SYMBOL_PREVIEW_DATA } from "next/dist/server/api-utils";
+import { Preview } from "./Preview";
+import { ProfilePicture } from "./ProfilePicture";
+import { collectionCategories, collectionViews } from "./categories";
 
-const collectionCategories = [
-  { text: "Home", icon: "home" },
-  { text: "Business", icon: "business" },
-  { text: "Education", icon: "school" },
-  { text: "Movies & TV", icon: "theaters" },
-  { text: "Food & Drink", icon: "lunch_dining" },
-  { text: "Sports & Fitness", icon: "exercise" },
-  { text: "Meet-ups", icon: "celebration" },
-  { text: "Travel", icon: "flight" },
-  { text: "Holidays", icon: "celebration" },
-];
-
-const collectionViews: any = {
-  planner: "transition_slide",
-  kanban: "view_kanban",
-  stream: "whatshot",
-  grid: "view_cozy",
-  workload: "exercise",
-  list: "view_agenda",
-  matrix: "target",
-  calendar: "calendar_today",
-};
+const Filter = require("bad-words");
 
 export default async function Page() {
   return (
-    <>
+    <Box
+      sx={{
+        "& .MuiCard-root": {
+          bgcolor: "hsl(0, 0%, 13%)",
+          "&:hover": {
+            filter: "brightness(1.1)",
+          },
+          "&:active": {
+            filter: "brightness(0.8)",
+          },
+        },
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -56,7 +52,7 @@ export default async function Page() {
       <Categories />
       <Views />
       <Recent />
-    </>
+    </Box>
   );
 }
 
@@ -64,47 +60,52 @@ async function Recent() {
   const templates = await getTemplates();
   return (
     <Container sx={{ mt: 8 }}>
-      <Typography variant="h5" sx={{ fontWeight: 900 }}>
+      <Typography variant="h4" sx={{ fontWeight: 900 }}>
         Recently added
       </Typography>
-      <Masonry sx={{ mt: 2 }} spacing={2} columns={3}>
+      <Masonry sx={{ mt: 2 }} spacing={2} columns={{ xs: 1, sm: 3 }}>
         {templates.map((template: any) => (
-          <Card
-            variant="outlined"
-            sx={{
-              bgcolor: "transparent",
-              borderRadius: 5,
-              p: 3,
-            }}
-          >
-            <Typography
+          <Link key={template.id} href={`/templates/${template.id}`} passHref>
+            <Card
+              key={template.id}
+              variant="outlined"
               sx={{
-                fontWeight: 900,
-                textTransform: "uppercase",
-                opacity: 0.7,
+                borderRadius: 5,
+                cursor: "pointer",
+                p: 3,
               }}
             >
-              {template.defaultView}
-            </Typography>
-            <Typography sx={{ fontSize: 30 }}>{template.name}</Typography>
-
-            <Box
-              sx={{
-                display: "flex",
-                gap: 1,
-                mt: 1,
-                flexWrap: "wrap",
-              }}
-            >
-              {template.labels.map((tag: any) => (
-                <Chip
-                  size="small"
-                  label={tag.name}
-                  icon={<Emoji emoji={tag.emoji} />}
-                />
-              ))}
-            </Box>
-          </Card>
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 1.5,
+                  mb: 1.5,
+                  py: 1,
+                }}
+              >
+                <Emoji emoji={template.emoji} size={24} />
+                <Box sx={{ mt: -1 }}>
+                  <Typography sx={{ fontSize: 24 }} fontWeight={900}>
+                    {template.name}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontWeight: 800,
+                      textTransform: "uppercase",
+                      opacity: 0.7,
+                      mt: 0.3,
+                      ml: 0.2,
+                      fontSize: 12,
+                    }}
+                  >
+                    {template.defaultView}
+                  </Typography>
+                </Box>
+              </Box>
+              <Preview view={template.defaultView} labels={template.labels} />
+              <ProfilePicture template={template} />
+            </Card>
+          </Link>
         ))}
       </Masonry>
     </Container>
@@ -148,7 +149,7 @@ function Categories() {
       </Typography>
       <Grid container sx={{ mt: 2 }} spacing={2}>
         {collectionCategories.map((category) => (
-          <Grid xs={2} sm={4}>
+          <Grid xs={2} sm={3} key={category.text}>
             <Card
               variant="outlined"
               sx={{
@@ -173,9 +174,16 @@ function Categories() {
 }
 
 const getTemplates = async () => {
+  const filter = new Filter();
+  filter.addWords("drugs", "cocaine", "meth", "weed", "heroin", "crack", "lsd");
+
   const data = await fetch("https://api.dysperse.com/dysverse").then((res) =>
     res.json()
   );
-  return data;
+  return data.filter((template: any) => {
+    if (JSON.stringify(template) !== filter.clean(JSON.stringify(template))) {
+      return false;
+    }
+    return true;
+  });
 };
-
