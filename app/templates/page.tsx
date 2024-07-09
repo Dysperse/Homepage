@@ -6,6 +6,7 @@ import { Emoji } from "../Emoji";
 import { Preview } from "./Preview";
 import { ProfilePicture } from "./ProfilePicture";
 import { collectionCategories, collectionViews } from "./categories";
+import { mintDark } from "../themes";
 
 const Filter = require("bad-words");
 
@@ -60,7 +61,7 @@ export default async function Page({ searchParams }: any) {
         {searchParams.category ||
           (searchParams.defaultView && (
             <Link href="/templates" passHref>
-              <Button>
+              <Button sx={{ color: mintDark.mint11 }}>
                 <span className="material-symbols-rounded">remove_circle</span>{" "}
                 Clear filters
               </Button>
