@@ -136,6 +136,7 @@ export default async function Page({ params: { id } }: any) {
               borderRadius: 99,
               background: mintDark.mint11,
               color: mintDark.mint5,
+              flexShrink: 0,
               "&:hover": {
                 background: mintDark.mint10,
               },
@@ -144,7 +145,7 @@ export default async function Page({ params: { id } }: any) {
               },
             }}
           >
-            Get template
+            Get&nbsp;template
           </Button>
         </Box>
         <ProfilePicture template={template} />
