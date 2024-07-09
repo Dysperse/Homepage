@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { mintDark } from "../themes";
 
 export function ProfilePicture({ template }: any) {
   return (
@@ -27,7 +28,16 @@ export function ProfilePicture({ template }: any) {
         By {template.createdBy.profile?.name}
       </Typography>
       {template.createdBy?.email === "hello@dysperse.com" && (
-        <span style={{ fontSize: 20 }} className="material-symbols-rounded">
+        <span
+          style={{
+            fontSize: 20,
+            marginLeft: -5,
+            fontVariationSettings: "'wght' 900, 'FILL' 1",
+            color: mintDark.mint11,
+            opacity: 0.8,
+          }}
+          className="material-symbols-rounded"
+        >
           verified
         </span>
       )}

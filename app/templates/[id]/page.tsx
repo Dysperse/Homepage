@@ -150,7 +150,7 @@ export default async function Page({ params: { id } }: any) {
         <ProfilePicture template={template} />
         <Typography variant="h5" fontWeight={900} sx={{ mb: 1, mt: 5 }}>
           {template.labels.length} label
-          {template.labels.length > 1 ? "s" : ""}
+          {template.labels.length !== 1 ? "s" : ""}
         </Typography>
         {template.labels.map((label: any) => (
           <Chip
