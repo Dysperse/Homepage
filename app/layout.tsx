@@ -27,10 +27,11 @@ export default function RootLayout(props: any) {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
         <Script
+          id="a"
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-KFJ4BEE09N"
         ></Script>
-        <Script>
+        <Script id="b">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -211,4 +212,3 @@ export default function RootLayout(props: any) {
     </html>
   );
 }
-
