@@ -137,7 +137,17 @@ function Views() {
       <Typography variant="h4" sx={{ fontWeight: 900 }}>
         Explore by perspective
       </Typography>
-      <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "repeat(2, 1fr)",
+            sm: "repeat(8, 1fr)",
+          },
+          gap: 2,
+          mt: 2,
+        }}
+      >
         {Object.keys(collectionViews).map((view) => (
           <Link
             key={view}
@@ -181,7 +191,7 @@ function Categories() {
       </Typography>
       <Grid container sx={{ mt: 2 }} spacing={2}>
         {collectionCategories.map((category) => (
-          <Grid xs={2} sm={12 / 5} key={category.text}>
+          <Grid xs={6} sm={12 / 5} key={category.text}>
             <Link
               key={category.text}
               href={`/templates?category=${category.text}`}

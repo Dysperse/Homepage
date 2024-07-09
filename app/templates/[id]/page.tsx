@@ -109,15 +109,16 @@ export default async function Page({ params: { id } }: any) {
         <Box
           sx={{
             mt: 1,
-            alignItems: "center",
+            alignItems: { xs: "flex-start", sm: "center" },
             display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
           }}
         >
           <Typography
             fontWeight={900}
             variant="h1"
             sx={{
-              fontSize: 80,
+              fontSize: { xs: 40, sm: 80 },
               fontWeight: 900,
               fontFamily: "Agrandir",
             }}
@@ -126,10 +127,11 @@ export default async function Page({ params: { id } }: any) {
           </Typography>
           <Button
             sx={{
-              mt: 3,
+              mt: { xs: 2, sm: 3 },
               px: 4,
+              mb: { xs: 3, sm: 0 },
               py: 1.5,
-              ml: "auto",
+              ml: { sm: "auto" },
               fontSize: 20,
               fontWeight: 900,
               textTransform: "uppercase",
