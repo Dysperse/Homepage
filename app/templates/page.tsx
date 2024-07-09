@@ -1,16 +1,15 @@
 import { Masonry } from "@mui/lab";
-import { Box, Card, Container, Typography } from "@mui/material";
+import { Box, Button, Card, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import Link from "next/link";
 import { Emoji } from "../Emoji";
-import { SYMBOL_PREVIEW_DATA } from "next/dist/server/api-utils";
 import { Preview } from "./Preview";
 import { ProfilePicture } from "./ProfilePicture";
 import { collectionCategories, collectionViews } from "./categories";
 
 const Filter = require("bad-words");
 
-export default async function Page() {
+export default async function Page({ searchParams }: any) {
   return (
     <Box
       sx={{
@@ -31,7 +30,13 @@ export default async function Page() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "100vh",
+          height: "70vh",
+          minHeight: 400,
+          pt: 15,
+          ...(searchParams.category ||
+            (searchParams.defaultView && {
+              height: "auto",
+            })),
         }}
       >
         <Typography
@@ -39,7 +44,11 @@ export default async function Page() {
           variant="h2"
           sx={{ mt: 1, fontFamily: "Agrandir" }}
         >
-          the #dysverse
+          {(searchParams.category &&
+            `Browse ${searchParams.category} templates`) ||
+            (searchParams.defaultView &&
+              `Explore ${searchParams.defaultView} templates`) ||
+            "the #dysverse"}
         </Typography>
         <Typography
           variant="body1"
@@ -48,16 +57,25 @@ export default async function Page() {
           Browse templates curated by the community to inspire your next big
           idea.
         </Typography>
+        {searchParams.category ||
+          (searchParams.defaultView && (
+            <Link href="/templates" passHref>
+              <Button>
+                <span className="material-symbols-rounded">remove_circle</span>{" "}
+                Clear filters
+              </Button>
+            </Link>
+          ))}
       </Box>
-      <Categories />
-      <Views />
-      <Recent />
+      {!searchParams.category && !searchParams.defaultView && <Categories />}
+      {!searchParams.category && !searchParams.defaultView && <Views />}
+      <Recent searchParams={searchParams} />
     </Box>
   );
 }
 
-async function Recent() {
-  const templates = await getTemplates();
+async function Recent({ searchParams }: any) {
+  const templates = await getTemplates(searchParams);
   return (
     <Container sx={{ mt: 8 }}>
       <Typography variant="h4" sx={{ fontWeight: 900 }}>
@@ -115,26 +133,39 @@ async function Recent() {
 function Views() {
   return (
     <Container sx={{ mt: 8 }}>
-      <Typography variant="h5" sx={{ fontWeight: 900 }}>
+      <Typography variant="h4" sx={{ fontWeight: 900 }}>
         Explore by perspective
       </Typography>
       <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
         {Object.keys(collectionViews).map((view) => (
-          <Card
+          <Link
             key={view}
-            variant="outlined"
-            sx={{
-              bgcolor: "transparent",
-              flex: 1,
-              borderRadius: 5,
-              p: 3,
-            }}
+            href={`/templates?defaultView=${view}`}
+            passHref
+            style={{ flex: 1, display: "flex" }}
           >
-            <span style={{ fontSize: 30 }} className="material-symbols-rounded">
-              {collectionViews[view]}
-            </span>
-            <Typography sx={{ textTransform: "capitalize" }}>{view}</Typography>
-          </Card>
+            <Card
+              key={view}
+              variant="outlined"
+              sx={{
+                cursor: "pointer",
+                bgcolor: "transparent",
+                flex: 1,
+                borderRadius: 5,
+                p: 3,
+              }}
+            >
+              <span
+                style={{ fontSize: 30 }}
+                className="material-symbols-rounded"
+              >
+                {collectionViews[view]}
+              </span>
+              <Typography sx={{ textTransform: "capitalize" }}>
+                {view}
+              </Typography>
+            </Card>
+          </Link>
         ))}
       </Box>
     </Container>
@@ -144,28 +175,35 @@ function Views() {
 function Categories() {
   return (
     <Container sx={{ mt: 2 }}>
-      <Typography variant="h5" sx={{ fontWeight: 900 }}>
+      <Typography variant="h4" sx={{ fontWeight: 900 }}>
         Popular categories
       </Typography>
       <Grid container sx={{ mt: 2 }} spacing={2}>
         {collectionCategories.map((category) => (
           <Grid xs={2} sm={12 / 5} key={category.text}>
-            <Card
-              variant="outlined"
-              sx={{
-                bgcolor: "transparent",
-                borderRadius: 5,
-                p: 3,
-              }}
+            <Link
+              key={category.text}
+              href={`/templates?category=${category.text}`}
+              passHref
             >
-              <span
-                style={{ fontSize: 30 }}
-                className="material-symbols-rounded"
+              <Card
+                variant="outlined"
+                sx={{
+                  cursor: "pointer",
+                  bgcolor: "transparent",
+                  borderRadius: 5,
+                  p: 3,
+                }}
               >
-                {category.icon}
-              </span>
-              <Typography>{category.text}</Typography>
-            </Card>
+                <span
+                  style={{ fontSize: 30 }}
+                  className="material-symbols-rounded"
+                >
+                  {category.icon}
+                </span>
+                <Typography>{category.text}</Typography>
+              </Card>
+            </Link>
           </Grid>
         ))}
       </Grid>
@@ -173,13 +211,14 @@ function Categories() {
   );
 }
 
-const getTemplates = async () => {
+const getTemplates = async (searchParams: any) => {
   const filter = new Filter();
   filter.addWords("drugs", "cocaine", "meth", "weed", "heroin", "crack", "lsd");
 
-  const data = await fetch("https://api.dysperse.com/dysverse").then((res) =>
-    res.json()
-  );
+  const data = await fetch(
+    "https://api.dysperse.com/dysverse?" + new URLSearchParams(searchParams),
+    { cache: "no-cache" }
+  ).then((res) => res.json());
   return data.filter((template: any) => {
     if (JSON.stringify(template) !== filter.clean(JSON.stringify(template))) {
       return false;

@@ -82,7 +82,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
     case "kanban":
       return (
         <Container sx={{ gap: 1 }}>
-          {labels.slice(0, 4).map((label: any) => (
+          {labels.slice(0, large ? 8 : 4).map((label: any) => (
             <Box
               key={label.name}
               sx={{
@@ -112,8 +112,9 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                 sx={{
                   overflow: "hidden",
                   textOverflow: "ellipsis",
-                  whiteSpace: "nowrap",
-                  fontSize: !large ? 13 : { xs: 13, sm: 30 },
+                  whiteSpace: large ? "wrap" : "nowrap",
+                  textAlign: large ? "center" : undefined,
+                  fontSize: !large ? 13 : { xs: 13, sm: 20 },
                   minWidth: 0,
                   maxWidth: "100%",
                 }}
@@ -123,7 +124,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
               </Typography>
             </Box>
           ))}
-          {labels.length > 4 && (
+          {labels.length > (large ? 8 : 4) && (
             <Box
               sx={{
                 gap: 1,
@@ -131,9 +132,20 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                 flex: 1,
                 background: "hsl(0, 0%, 20%)",
                 borderRadius: 2,
-                minWidth: 100,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
-            />
+            >
+              <Typography
+                sx={{
+                  fontSize: !large ? 13 : { xs: 13, sm: 20 },
+                  fontWeight: 700,
+                }}
+              >
+                +{labels.length - 4}
+              </Typography>
+            </Box>
           )}
           {labels.length < 4 &&
             new Array(4 - labels.length).fill(0).map((_, i) => (
