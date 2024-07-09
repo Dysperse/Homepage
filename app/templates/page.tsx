@@ -149,7 +149,7 @@ function Categories() {
       </Typography>
       <Grid container sx={{ mt: 2 }} spacing={2}>
         {collectionCategories.map((category) => (
-          <Grid xs={2} sm={3} key={category.text}>
+          <Grid xs={2} sm={12 / 5} key={category.text}>
             <Card
               variant="outlined"
               sx={{
