@@ -101,6 +101,7 @@ export default async function Page({ params: { id } }: any) {
               height: "auto",
               fontSize: 15,
               py: 1,
+              pr: 1.7,
               mt: 3,
               borderRadius: 99,
             }}
