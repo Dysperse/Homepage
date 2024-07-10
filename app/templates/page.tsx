@@ -94,6 +94,24 @@ export default async function Page({ searchParams }: any) {
       {!hasFilters && <Categories />}
       {!hasFilters && <Views />}
       <Recent hasFilters={hasFilters} searchParams={searchParams} />
+
+      {!hasFilters && (
+        <Container>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              mt: 8,
+              mb: 8,
+              fontWeight: 700,
+              opacity: 0.7,
+            }}
+          >
+            Can&apos;t find what you&apos;re looking for? Join #dysperse to
+            build what you need.
+          </Box>
+        </Container>
+      )}
     </Box>
   );
 }
@@ -109,7 +127,16 @@ async function Recent({ searchParams, hasFilters }: any) {
         </Typography>
       )}
       {templates.length === 0 && (
-        <Typography sx={{ mt: 2, opacity: 0.7, textAlign: "center" }}>
+        <Typography
+          fontWeight={900}
+          sx={{
+            mt: 2,
+            mb: 10,
+            fontSize: 20,
+            opacity: 0.7,
+            textAlign: "center",
+          }}
+        >
           No templates found. Try clearing filters or searching for something
           else.
         </Typography>

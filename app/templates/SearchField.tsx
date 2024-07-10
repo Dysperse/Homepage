@@ -15,6 +15,9 @@ export const SearchField = ({ searchParams, hasFilters }: any) => {
         "& *": {
           fontWeight: 500,
         },
+        "& .MuiInputBase-root": {
+          borderRadius: 99,
+        },
       }}
       onKeyDown={(e) => {
         if (e.key === "Enter") {
