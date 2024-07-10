@@ -126,6 +126,7 @@ export default async function Page({ params: { id } }: any) {
             {template?.name}
           </Typography>
           <Button
+            href={`https://app.dysperse.com/template/${id}`}
             sx={{
               mt: { xs: 2, sm: 3 },
               px: 4,
