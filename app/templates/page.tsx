@@ -102,7 +102,7 @@ async function Recent({ searchParams, hasFilters }: any) {
   const templates = await getTemplates(searchParams);
 
   return (
-    <Container sx={{ mt: hasFilters ? -8 : 2 }}>
+    <Container sx={{ mt: hasFilters ? -8 : 8 }}>
       {!hasFilters && (
         <Typography variant="h4" sx={{ fontWeight: 900 }}>
           Recently added
