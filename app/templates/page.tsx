@@ -3,14 +3,16 @@ import { Box, Button, Card, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import Link from "next/link";
 import { Emoji } from "../Emoji";
+import { mintDark } from "../themes";
 import { Preview } from "./Preview";
 import { ProfilePicture } from "./ProfilePicture";
 import { collectionCategories, collectionViews } from "./categories";
-import { mintDark } from "../themes";
+import { SearchField } from "./SearchField";
 
 const Filter = require("bad-words");
 
 export default async function Page({ searchParams }: any) {
+  const hasFilters = Object.keys(searchParams).length > 0;
   return (
     <Box
       sx={{
@@ -25,64 +27,98 @@ export default async function Page({ searchParams }: any) {
         },
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "70vh",
-          minHeight: 400,
-          pt: 15,
-          ...(searchParams.category ||
-            (searchParams.defaultView && {
-              height: "auto",
-            })),
-        }}
-      >
-        <Typography
-          fontWeight={900}
-          variant="h2"
-          sx={{ mt: 1, fontFamily: "Agrandir" }}
+      <Container>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: hasFilters ? undefined : "center",
+            justifyContent: "center",
+            height: "70vh",
+            minHeight: 400,
+            pt: 15,
+            ...(searchParams.category ||
+              (searchParams.defaultView && {
+                height: "auto",
+              })),
+          }}
         >
-          {(searchParams.category &&
-            `Browse ${searchParams.category} templates`) ||
-            (searchParams.defaultView &&
-              `Explore ${searchParams.defaultView} templates`) ||
-            "the #dysverse"}
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{ mt: 1, fontSize: 20, opacity: 0.7, fontWeight: 700, mb: 2 }}
-        >
-          Browse templates curated by the community to inspire your next big
-          idea.
-        </Typography>
-        {searchParams.category ||
-          (searchParams.defaultView && (
-            <Link href="/templates" passHref>
-              <Button sx={{ color: mintDark.mint11 }}>
-                <span className="material-symbols-rounded">remove_circle</span>{" "}
-                Clear filters
-              </Button>
-            </Link>
-          ))}
-      </Box>
-      {!searchParams.category && !searchParams.defaultView && <Categories />}
-      {!searchParams.category && !searchParams.defaultView && <Views />}
-      <Recent searchParams={searchParams} />
+          {hasFilters ? (
+            <>
+              <Link href="/templates" passHref>
+                <Button sx={{ color: mintDark.mint11, ml: -1 }}>
+                  <span className="material-symbols-rounded">west</span> Clear
+                  filters
+                </Button>
+              </Link>
+              <Typography
+                fontWeight={900}
+                variant="h4"
+                sx={{ mt: 0.5, mb: 2, fontFamily: "Agrandir" }}
+              >
+                Search results{" "}
+                {searchParams.search && `for "${searchParams.search}"`}
+              </Typography>
+            </>
+          ) : (
+            <>
+              <Typography
+                fontWeight={900}
+                variant="h2"
+                sx={{ mt: 1, fontFamily: "Agrandir" }}
+              >
+                {(searchParams.category &&
+                  `Browse ${searchParams.category} templates`) ||
+                  (searchParams.defaultView &&
+                    `Explore ${searchParams.defaultView} templates`) ||
+                  "the #dysverse"}
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  mt: 1,
+                  fontSize: 20,
+                  opacity: 0.7,
+                  fontWeight: 700,
+                  mb: 2,
+                }}
+              >
+                Browse templates curated by the community to inspire your next
+                big idea.
+              </Typography>
+            </>
+          )}
+          <SearchField searchParams={searchParams} hasFilters={hasFilters} />
+        </Box>
+        {!hasFilters && <Categories />}
+        {!hasFilters && <Views />}
+      </Container>
+      <Recent hasFilters={hasFilters} searchParams={searchParams} />
     </Box>
   );
 }
 
-async function Recent({ searchParams }: any) {
+async function Recent({ searchParams, hasFilters }: any) {
   const templates = await getTemplates(searchParams);
+
   return (
-    <Container sx={{ mt: 8 }}>
-      <Typography variant="h4" sx={{ fontWeight: 900 }}>
-        Recently added
-      </Typography>
-      <Masonry sx={{ mt: 2 }} spacing={2} columns={{ xs: 1, sm: 3 }}>
+    <Container sx={{ mt: hasFilters ? -8 : 2 }}>
+      {!hasFilters && (
+        <Typography variant="h4" sx={{ fontWeight: 900 }}>
+          Recently added
+        </Typography>
+      )}
+      {templates.length === 0 && (
+        <Typography sx={{ mt: 2, opacity: 0.7, textAlign: "center" }}>
+          No templates found. Try clearing filters or searching for something
+          else.
+        </Typography>
+      )}
+      <Masonry
+        sx={{ mt: hasFilters ? 0 : 2 }}
+        spacing={2}
+        columns={{ xs: 1, sm: 3 }}
+      >
         {templates.map((template: any) => (
           <Link key={template.id} href={`/templates/${template.id}`} passHref>
             <Card
@@ -172,7 +208,9 @@ function Views() {
               >
                 {collectionViews[view]}
               </span>
-              <Typography sx={{ textTransform: "capitalize" }}>
+              <Typography
+                sx={{ textTransform: "capitalize", pointerEvents: "none" }}
+              >
                 {view}
               </Typography>
             </Card>
@@ -212,7 +250,9 @@ function Categories() {
                 >
                   {category.icon}
                 </span>
-                <Typography>{category.text}</Typography>
+                <Typography style={{ pointerEvents: "none" }}>
+                  {category.text}
+                </Typography>
               </Card>
             </Link>
           </Grid>

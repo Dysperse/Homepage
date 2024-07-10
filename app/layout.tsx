@@ -6,6 +6,7 @@ import { mintDark } from "./themes";
 import { Box, CssBaseline } from "@mui/material";
 import { Metadata } from "next";
 import Script from "next/script";
+import { Footer } from "./Footer";
 
 export const metadata: Metadata = {
   description: "Productivity is personal. Let #dysperse be the catalyst.",
@@ -205,6 +206,7 @@ export default function RootLayout(props: any) {
 
               <Navbar />
               {props.children}
+              <Footer />
             </Box>
           </ClientLayout>
         </AppRouterCacheProvider>
