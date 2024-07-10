@@ -90,9 +90,9 @@ export default async function Page({ searchParams }: any) {
           )}
           <SearchField searchParams={searchParams} hasFilters={hasFilters} />
         </Box>
-        {!hasFilters && <Categories />}
-        {!hasFilters && <Views />}
       </Container>
+      {!hasFilters && <Categories />}
+      {!hasFilters && <Views />}
       <Recent hasFilters={hasFilters} searchParams={searchParams} />
     </Box>
   );
