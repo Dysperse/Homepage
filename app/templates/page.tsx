@@ -1,5 +1,5 @@
 import { Masonry } from "@mui/lab";
-import { Box, Button, Card, Container, Typography } from "@mui/material";
+import { Box, Button, Card, Container, NoSsr, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import Link from "next/link";
 import { Emoji } from "../Emoji";
@@ -8,6 +8,7 @@ import { Preview } from "./Preview";
 import { ProfilePicture } from "./ProfilePicture";
 import { collectionCategories, collectionViews } from "./categories";
 import { SearchField } from "./SearchField";
+import { Background } from "./Background";
 
 const Filter = require("bad-words");
 
@@ -27,20 +28,30 @@ export default async function Page({ searchParams }: any) {
         },
       }}
     >
-      <Container>
-        <Box
-          sx={{
+      <Box
+        sx={{
+          position: "relative",
+          justifyContent: "center",
+          height: hasFilters ? "50vh" : "100vh",
+          minHeight: 400,
+          borderBottom: `2px solid hsl(0, 0%, 20%)`,
+          pt: 10,
+          pb: 5,
+          ...(searchParams.category ||
+            (searchParams.defaultView && {
+              height: "auto",
+            })),
+        }}
+      >
+        <Background />
+        <Container
+          style={{
+            height: "100%",
+            zIndex: 99,
             display: "flex",
             flexDirection: "column",
-            alignItems: hasFilters ? undefined : "center",
             justifyContent: "center",
-            height: "70vh",
-            minHeight: 400,
-            pt: 15,
-            ...(searchParams.category ||
-              (searchParams.defaultView && {
-                height: "auto",
-              })),
+            alignItems: hasFilters ? undefined : "center",
           }}
         >
           {hasFilters ? (
@@ -54,7 +65,7 @@ export default async function Page({ searchParams }: any) {
               <Typography
                 fontWeight={900}
                 variant="h4"
-                sx={{ mt: 0.5, mb: 2, fontFamily: "Agrandir" }}
+                sx={{ mt: 0.5, mb: 2, fontFamily: "Agrandir", zIndex: 99 }}
               >
                 Search results{" "}
                 {searchParams.search && `for "${searchParams.search}"`}
@@ -65,7 +76,7 @@ export default async function Page({ searchParams }: any) {
               <Typography
                 fontWeight={900}
                 variant="h2"
-                sx={{ mt: 1, fontFamily: "Agrandir" }}
+                sx={{ mt: 1, fontFamily: "Agrandir", zIndex: 99 }}
               >
                 {(searchParams.category &&
                   `Browse ${searchParams.category} templates`) ||
@@ -89,8 +100,9 @@ export default async function Page({ searchParams }: any) {
             </>
           )}
           <SearchField searchParams={searchParams} hasFilters={hasFilters} />
-        </Box>
-      </Container>
+        </Container>
+      </Box>
+
       {!hasFilters && <Categories />}
       {!hasFilters && <Views />}
       <Recent hasFilters={hasFilters} searchParams={searchParams} />
@@ -142,7 +154,7 @@ async function Recent({ searchParams, hasFilters }: any) {
         </Typography>
       )}
       <Masonry
-        sx={{ mt: hasFilters ? 0 : 2 }}
+        sx={{ mt: hasFilters ? 20 : 2 }}
         spacing={2}
         columns={{ xs: 1, sm: 3 }}
       >
@@ -250,7 +262,7 @@ function Views() {
 
 function Categories() {
   return (
-    <Container sx={{ mt: 2 }}>
+    <Container sx={{ mt: 5 }}>
       <Typography variant="h4" sx={{ fontWeight: 900 }}>
         Popular categories
       </Typography>
