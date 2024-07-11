@@ -7,27 +7,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: "https://dysperse.com",
       lastModified: new Date(),
-      changeFrequency: "yearly",
+      changeFrequency: "daily",
       priority: 1,
     },
     {
       url: "https://dysperse.com/download",
       lastModified: new Date(),
-      changeFrequency: "yearly",
+      changeFrequency: "daily",
       priority: 1,
     },
     {
       url: "https://dysperse.com/templates",
       lastModified: new Date(),
-      changeFrequency: "yearly",
+      changeFrequency: "daily",
       priority: 1,
     },
     ...templates.map((template: any) => {
       return {
         url: `https://dysperse.com/templates/${template.id}`,
-        changeFrequency: "yearly",
+        changeFrequency: "weekly",
         priority: 0.8,
-      };
+      } as MetadataRoute.Sitemap[0];
     }),
   ];
 }
