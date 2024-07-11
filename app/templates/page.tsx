@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Explore the #dysverse • Dysperse",
   description:
     "Browse templates curated by the community to inspire your next big idea.",
+  keywords: ["Dysperse", "Dysverse", "templates"],
   openGraph: {
     images: ["/meta/dysverse.png"],
     title: "Explore the #dysverse • Dysperse",
