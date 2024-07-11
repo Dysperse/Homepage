@@ -17,12 +17,17 @@
     "@mui/material-nextjs": "^5.15.11",
     "@radix-ui/colors": "^3.0.0",
     "@vercel/kv": "^1.0.1",
+    "bad-words": "^3.0.4",
+    "dayjs": "^1.11.11",
     "embla-carousel-autoplay": "^8.0.2",
     "embla-carousel-react": "^8.0.2",
     "next": "14.2.3",
+    "p5": "^1.9.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-simple-keyboard": "^3.7.116"
+    "react-markdown": "^9.0.1",
+    "react-simple-keyboard": "^3.7.116",
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -258,3 +258,7 @@ li.hg-candidate-box-list-item:active {
 .hg-candidate-box-btn-active {
   color: #444;
 }
+
+a {
+  text-decoration: none;
+}
