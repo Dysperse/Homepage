@@ -76,7 +76,7 @@ export default async function Page({ searchParams }: any) {
               <Typography
                 fontWeight={900}
                 variant="h2"
-                sx={{ mt: 1, fontFamily: "Agrandir", zIndex: 99 }}
+                sx={{ mt: 1, fontFamily: "Agrandir", zIndex: 1 }}
               >
                 {(searchParams.category &&
                   `Browse ${searchParams.category} templates`) ||
