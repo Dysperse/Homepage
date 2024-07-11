@@ -9,8 +9,21 @@ import { ProfilePicture } from "./ProfilePicture";
 import { collectionCategories, collectionViews } from "./categories";
 import { SearchField } from "./SearchField";
 import { Background } from "./Background";
+import { Metadata } from "next";
 
 const Filter = require("bad-words");
+
+export const metadata: Metadata = {
+  title: "Explore the #dysverse • Dysperse",
+  description:
+    "Browse templates curated by the community to inspire your next big idea.",
+  openGraph: {
+    images: ["/meta/dysverse.png"],
+    title: "Explore the #dysverse • Dysperse",
+    description:
+      "Browse templates curated by the community to inspire your next big idea.",
+  },
+};
 
 export default async function Page({ searchParams }: any) {
   const hasFilters = Object.keys(searchParams).length > 0;
