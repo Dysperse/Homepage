@@ -24,6 +24,17 @@ export async function generateMetadata(
       description:
         template.description ||
         "Browse templates curated by the community to inspire your next big idea.",
+      authors: {
+        name: template.createdBy.profile?.name,
+      },
+      keywords: [
+        "Dysperse",
+        "Dysverse",
+        "templates",
+        ...template.labels.map((label: any) => label.name),
+      ],
+      category: template.category,
+      publisher: "#dysverse • by Dysperse",
       openGraph: {
         images: ["/meta/dysverse.png"],
         title: `${template.name} • Dysperse templates`,
