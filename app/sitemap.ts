@@ -36,7 +36,7 @@ const getTemplates = async () => {
   const filter = new Filter();
   filter.addWords("drugs", "cocaine", "meth", "weed", "heroin", "crack", "lsd");
 
-  const data = await fetch("https://api.dysperse.com/dysverse", {
+  const data = await fetch("https://api.dysperse.com/dysverse?all=true", {
     cache: "no-cache",
   }).then((res) => res.json());
 

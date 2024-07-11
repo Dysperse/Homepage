@@ -7,8 +7,35 @@ import { collectionCategories } from "../categories";
 import { Preview } from "../Preview";
 import { ProfilePicture } from "../ProfilePicture";
 import Link from "next/link";
+import { Metadata, ResolvingMetadata } from "next";
 
 const Filter = require("bad-words");
+
+export async function generateMetadata(
+  { params, searchParams }: any,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const id = params.id;
+  const template = await getTemplate(id);
+
+  if (template)
+    return {
+      title: `${template.name} • Dysperse templates`,
+      description:
+        template.description ||
+        "Browse templates curated by the community to inspire your next big idea.",
+      openGraph: {
+        images: ["/meta/dysverse.png"],
+        title: `${template.name} • Dysperse templates`,
+        description:
+          template.description ||
+          "Browse templates curated by the community to inspire your next big idea.",
+      },
+    };
+  else {
+    return {};
+  }
+}
 
 function Back() {
   return (
