@@ -187,8 +187,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
         <Container
           sx={{
             display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gridAutoRows: "1fr",
+            gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
             gap: 1,
           }}
         >
@@ -212,6 +211,8 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                   whiteSpace: "nowrap",
                   overflow: "hidden",
                   textOverflow: "ellipsis",
+                  minWidth: 0,
+                  maxWidth: "100%",
                 }}
                 fontWeight={700}
               >
