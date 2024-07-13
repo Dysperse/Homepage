@@ -41,7 +41,7 @@ export const Background = () => {
       }
     }
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
       // @ts-expect-error ignore
       particles.current.push(new Particle());
     }
