@@ -70,7 +70,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                 p: 1,
                 flex: 1,
                 background: "hsl(0, 0%, 20%)",
-                borderRadius: 2,
+                borderRadius: 4,
                 justifyContent: "center",
               }}
             >
@@ -91,7 +91,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                 py: 2,
                 flex: 1,
                 background: "hsl(0, 0%, 20%)",
-                borderRadius: 2,
+                borderRadius: 4,
                 whiteSpace: "nowrap",
                 ...(large
                   ? {
@@ -131,7 +131,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                 p: 1,
                 flex: 1,
                 background: "hsl(0, 0%, 20%)",
-                borderRadius: 2,
+                borderRadius: 4,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -156,7 +156,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                   p: 1,
                   flex: 1,
                   background: "hsl(0, 0%, 20%)",
-                  borderRadius: 2,
+                  borderRadius: 4,
                 }}
               />
             ))}
@@ -188,6 +188,8 @@ export function Preview({ large, showToolbar, view, labels }: any) {
           sx={{
             display: "grid",
             gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+            gridAutoColumns: "1fr",
+            gridAutoRows: "1fr",
             gap: 1,
           }}
         >
@@ -196,7 +198,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
               key={label.name}
               sx={{
                 background: "hsl(0, 0%, 20%)",
-                borderRadius: 2,
+                borderRadius: 4,
                 p: 1,
                 px: 2,
                 display: "flex",
@@ -226,7 +228,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                 key={i}
                 sx={{
                   background: "hsl(0, 0%, 20%)",
-                  borderRadius: 2,
+                  borderRadius: 4,
                   p: 1,
                 }}
               />
@@ -250,7 +252,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                 p: 1.5,
                 flex: 1,
                 background: "hsl(0, 0%, 20%)",
-                borderRadius: 2,
+                borderRadius: 4,
                 whiteSpace: "nowrap",
                 textOrientation: "mixed",
                 writingMode: "vertical-rl",
@@ -363,7 +365,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
               <Box
                 sx={{
                   background: "hsl(0, 0%, 20%)",
-                  borderRadius: 2,
+                  borderRadius: 4,
                   p: 1,
                   flex: 1,
                 }}
@@ -371,7 +373,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
               <Box
                 sx={{
                   background: "hsl(0, 0%, 20%)",
-                  borderRadius: 2,
+                  borderRadius: 4,
                   p: 1,
                   flex: 1,
                 }}
@@ -391,7 +393,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
               <Box
                 sx={{
                   background: "hsl(0, 0%, 20%)",
-                  borderRadius: 2,
+                  borderRadius: 4,
                   p: 1,
                   flex: 1,
                 }}
@@ -399,7 +401,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
               <Box
                 sx={{
                   background: "hsl(0, 0%, 20%)",
-                  borderRadius: 2,
+                  borderRadius: 4,
                   p: 1,
                   flex: 1,
                 }}
@@ -425,7 +427,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                 gap: 1,
                 p: 1,
                 background: "hsl(0, 0%, 23%)",
-                borderRadius: 2,
+                borderRadius: 4,
                 justifyContent: "center",
               }}
             >
@@ -440,7 +442,7 @@ export function Preview({ large, showToolbar, view, labels }: any) {
                 gap: 1,
                 p: 1,
                 background: "hsl(0, 0%, 20%)",
-                borderRadius: 2,
+                borderRadius: 4,
                 justifyContent: "center",
               }}
             />
