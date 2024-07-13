@@ -37,7 +37,7 @@ export const Background = () => {
 
       draw(context: any) {
         context.fillStyle = "#fff";
-        context.fillRect(this.x, this.y, 2, 10);
+        context.fillRect(this.x, this.y, 2, 40);
       }
     }
 
