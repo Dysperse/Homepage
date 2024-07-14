@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       return {
         url: `https://dysperse.com/templates/${template.id}`,
         changeFrequency: "weekly",
-        priority: 0.8,
+        priority: 1,
       } as MetadataRoute.Sitemap[0];
     }),
   ];

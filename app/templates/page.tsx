@@ -9,22 +9,34 @@ import { ProfilePicture } from "./ProfilePicture";
 import { collectionCategories, collectionViews } from "./categories";
 import { SearchField } from "./SearchField";
 import { Background } from "./Background";
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 
 const Filter = require("bad-words");
 
-export const metadata: Metadata = {
-  title: "Explore the #dysverse • Dysperse",
-  description:
-    "Browse templates curated by the community to inspire your next big idea.",
-  keywords: ["Dysperse", "Dysverse", "templates"],
-  openGraph: {
-    images: ["/meta/dysverse.png"],
-    title: "Explore the #dysverse • Dysperse",
+export async function generateMetadata({
+  searchParams,
+}: any): Promise<Metadata> {
+  const defaultView = searchParams.defaultView;
+  const category = searchParams.category;
+
+  const title = defaultView
+    ? `Explore ${defaultView} templates • Dysperse`
+    : category
+    ? `Browse ${category} templates • Dysperse`
+    : "Explore the #dysverse • Dysperse";
+  return {
+    title,
     description:
       "Browse templates curated by the community to inspire your next big idea.",
-  },
-};
+    keywords: ["Dysperse", "Dysverse", "templates"],
+    openGraph: {
+      images: ["/meta/dysverse.png"],
+      title,
+      description:
+        "Browse templates curated by the community to inspire your next big idea.",
+    },
+  };
+}
 
 export default async function Page({ searchParams }: any) {
   const hasFilters = Object.keys(searchParams).length > 0;
