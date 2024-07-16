@@ -195,22 +195,30 @@ export default async function Page({ params: { id } }: any) {
           {template.labels.length} label
           {template.labels.length !== 1 ? "s" : ""}
         </Typography>
-        {template.labels.map((label: any) => (
-          <Chip
-            key={label}
-            label={label.name}
-            icon={<Emoji emoji={label.emoji} size={24} />}
-            sx={{
-              mr: 1,
-              pl: 2,
-              height: "auto",
-              fontSize: 15,
-              py: 1,
-              borderRadius: 99,
-              backgroundColor: "rgba(255, 255, 255, 0.1)",
-            }}
-          />
-        ))}
+        <Box
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 5,
+            marginBottom: 20,
+          }}
+        >
+          {template.labels.map((label: any) => (
+            <Chip
+              key={label}
+              label={label.name}
+              icon={<Emoji emoji={label.emoji} size={24} />}
+              sx={{
+                pl: 2,
+                height: "auto",
+                fontSize: 15,
+                py: 1,
+                borderRadius: 99,
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+              }}
+            />
+          ))}
+        </Box>
 
         <Typography variant="h5" fontWeight={900} sx={{ mb: 1, mt: 5 }}>
           Description
