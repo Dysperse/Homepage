@@ -1,10 +1,4 @@
-import {
-  Box,
-  Button,
-  ListItemButton,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { mintDark } from "../themes";
@@ -83,6 +77,13 @@ export function Download() {
               description: "Windows 10 or later",
             },
             {
+              filled: true,
+              icon: "edge.svg",
+              name: "Edge extension",
+              href: "https://click.dysperse.com/edge-extension",
+              description: "All Edge versions",
+            },
+            {
               icon: "desktop_mac",
               name: "Mac",
               //   href: "https://click.dysperse.com/mac",
@@ -129,17 +130,21 @@ export function Download() {
                   py: 1.5,
                 }}
               >
-                <span
-                  className="material-symbols-rounded"
-                  style={{
-                    fontSize: 30,
-                    ...(item.filled && {
-                      fontVariationSettings: `"FILL" 1, "wght" 300, "GRAD" 0, "opsz" 40`,
-                    }),
-                  }}
-                >
-                  {item.icon}
-                </span>
+                {item.icon === "edge.svg" ? (
+                  <Image src="/edge.svg" alt="Edge" width={30} height={30} />
+                ) : (
+                  <span
+                    className="material-symbols-rounded"
+                    style={{
+                      fontSize: 30,
+                      ...(item.filled && {
+                        fontVariationSettings: `"FILL" 1, "wght" 300, "GRAD" 0, "opsz" 40`,
+                      }),
+                    }}
+                  >
+                    {item.icon}
+                  </span>
+                )}
                 <Box>
                   <Typography fontWeight={900}>{item.name}</Typography>
                   <Typography sx={{ opacity: 0.6 }} fontWeight={300}>
