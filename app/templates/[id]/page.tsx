@@ -36,7 +36,7 @@ export async function generateMetadata(
       category: template.category,
       publisher: "#dysverse • by Dysperse",
       openGraph: {
-        images: ["/meta/dysverse.png"],
+        images: ["https://dysperse-og.koyeb.app/?id=" + id],
         title: `${template.name} • Dysperse templates`,
         description:
           template.description ||
