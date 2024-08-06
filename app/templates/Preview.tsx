@@ -13,35 +13,6 @@ export function Preview({ large, showToolbar, view, labels }: any) {
         background: "hsl(0, 0%, 17%)",
       }}
     >
-      {showToolbar && (
-        <Box
-          sx={{
-            display: "flex",
-            gap: 0.7,
-            mb: 2,
-            py: 1,
-            pb: 2,
-            px: 2,
-            mx: -2,
-            borderBottom: "1px solid hsl(0, 0%, 24%)",
-          }}
-        >
-          {["#f73443", "#f7ae00", "#00c900"].map((color) => (
-            <Box
-              key={color}
-              sx={{
-                width: 15,
-                height: 15,
-                borderRadius: 99,
-                background: color,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            />
-          ))}
-        </Box>
-      )}
       <Box
         sx={{
           aspectRatio: large ? "16/9" : "13/9",

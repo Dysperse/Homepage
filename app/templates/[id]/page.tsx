@@ -8,6 +8,7 @@ import { Preview } from "../Preview";
 import { ProfilePicture } from "../ProfilePicture";
 import Link from "next/link";
 import { Metadata, ResolvingMetadata } from "next";
+import Image from "next/image";
 
 const Filter = require("bad-words");
 
@@ -229,12 +230,43 @@ export default async function Page({ params: { id } }: any) {
         <Typography variant="h5" fontWeight={900} sx={{ mb: 1, mt: 5 }}>
           Preview
         </Typography>
-        <Preview
-          showToolbar
-          large
-          view={template.defaultView}
-          labels={template.labels}
-        />
+        <Box
+          sx={{
+            background: "hsl(0, 0%, 17%)",
+            borderRadius: 5,
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              gap: 0.7,
+              p: 2,
+              borderBottom: "1px solid hsl(0, 0%, 24%)",
+            }}
+          >
+            {["#f73443", "#f7ae00", "#00c900"].map((color) => (
+              <Box
+                key={color}
+                sx={{
+                  width: 15,
+                  height: 15,
+                  borderRadius: 99,
+                  background: color,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              />
+            ))}
+          </Box>
+          <Image
+            alt={`Preview of ${template.name}`}
+            src={`https://og.dysperse.com/${id}`}
+            width={1200}
+            height={630}
+            style={{ width: "100%" }}
+          />
+        </Box>
       </Box>
     </Container>
   );

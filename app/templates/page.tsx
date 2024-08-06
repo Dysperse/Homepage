@@ -10,6 +10,7 @@ import { collectionCategories, collectionViews } from "./categories";
 import { SearchField } from "./SearchField";
 import { Background } from "./Background";
 import { Metadata, ResolvingMetadata } from "next";
+import Image from "next/image";
 
 const Filter = require("bad-words");
 
@@ -222,7 +223,18 @@ async function Recent({ searchParams, hasFilters }: any) {
                   </Typography>
                 </Box>
               </Box>
-              <Preview view={template.defaultView} labels={template.labels} />
+              <Image
+                alt={`Preview of ${template.name}`}
+                src={`https://og.dysperse.com/${template.id}?hideHeader=true`}
+                width={1200}
+                height={630}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  aspectRatio: "1200/630",
+                  borderRadius: 20,
+                }}
+              />
               <ProfilePicture template={template} />
             </Card>
           </Link>
