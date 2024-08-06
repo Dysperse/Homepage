@@ -36,11 +36,7 @@ export async function generateMetadata(
       category: template.category,
       publisher: "#dysverse • by Dysperse",
       openGraph: {
-        images: [
-          `https://og.dysperse.com/${id}`,
-          `https://og.dysperse.com/${id}?isLight=true`,
-          `https://og.dysperse.com/${id}?hideHeader=true`,
-        ],
+        images: [`https://og.dysperse.com/${id}`],
         title: `${template.name} • Dysperse templates`,
         description:
           template.description ||
