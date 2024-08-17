@@ -234,6 +234,7 @@ export default async function Page({ params: { id } }: any) {
           sx={{
             background: "hsl(0, 0%, 17%)",
             borderRadius: 5,
+            aspectRatio: "1200/630",
           }}
         >
           <Box
@@ -264,7 +265,7 @@ export default async function Page({ params: { id } }: any) {
             src={`https://og.dysperse.com/${id}`}
             width={1200}
             height={630}
-            style={{ width: "100%" }}
+            style={{ width: "100%", height: "auto" }}
           />
         </Box>
       </Box>
