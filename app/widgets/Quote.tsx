@@ -14,8 +14,8 @@ export const Quote = () => {
     <CardContainer
       sx={{
         flex: 2,
-        py: { xs: 3, sm: 5 },
-        px: { xs: 3, sm: 5 },
+        py: 2,
+        px: 2,
         gap: 1,
         maxWidth: { sm: 330 },
         color: theme[11],
@@ -25,7 +25,7 @@ export const Quote = () => {
         sx={{
           fontFamily: fraunces.style.fontFamily,
           fontWeight: 900,
-          fontSize: 27,
+          fontSize: { xs: 20, sm: 25 },
         }}
       >
         &ldquo;The only way to do great work is to love what you do.&rdquo;

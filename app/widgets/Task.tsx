@@ -84,7 +84,7 @@ export const Task = () => {
             icon={
               <span
                 className="material-symbols-rounded"
-                style={{ color: theme[11] }}
+                style={{ color: "inherit" }}
               >
                 priority_high
               </span>

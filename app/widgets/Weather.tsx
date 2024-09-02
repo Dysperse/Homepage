@@ -14,26 +14,13 @@ export const Weather = () => (
       alignItems: "space-between",
       minHeight: { xs: 290, md: 0 },
       px: 4,
+      py: 3,
     }}
   >
     <Box>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          gap: 1,
-          ml: -0.5,
-          mb: 0.5,
-        }}
-      >
-        <span className="material-symbols-rounded">location_on</span>
-        <Typography fontWeight={600} fontSize={13}>
-          San Francisco
-        </Typography>
-      </Box>
       <Box sx={{ display: "flex", mb: 2, width: "100%" }}>
         <Box sx={{ flex: 1 }}>
-          <Typography variant="h3" fontWeight={900} className="monospace">
+          <Typography variant="h4" fontWeight={900} className="monospace">
             74°
           </Typography>
           <Typography marginTop={-0.5} sx={{ opacity: 0.7 }}>

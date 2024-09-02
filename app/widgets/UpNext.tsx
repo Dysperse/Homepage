@@ -57,6 +57,9 @@ export function UpNext() {
           fontWeight: 300,
         }}
         size="large"
+        onClick={() => {
+          window.open("https://locations.chipotle.com", "_blank");
+        }}
       >
         <span className="material-symbols-rounded">location_on</span>
         Open directions

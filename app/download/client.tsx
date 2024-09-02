@@ -7,7 +7,7 @@ export function Download() {
   return (
     <Box
       sx={{
-        height: { xs: "auto", md: "100vh" },
+        height: "auto",
         paddingTop: 16,
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
@@ -78,10 +78,15 @@ export function Download() {
             },
             {
               filled: true,
+              icon: "google.svg",
+              name: "Chrome extension",
+              href: "https://click.dysperse.com/chrome-extension",
+            },
+            {
+              filled: true,
               icon: "edge.svg",
               name: "Edge extension",
               href: "https://click.dysperse.com/edge-extension",
-              description: "All Edge versions",
             },
             {
               icon: "desktop_mac",
@@ -97,7 +102,7 @@ export function Download() {
               comingSoon: true,
             },
             {
-              icon: "ios",
+              icon: "apple.svg",
               name: "iPhone & iPad",
               href: null,
               comingSoon: true,
@@ -130,8 +135,13 @@ export function Download() {
                   py: 1.5,
                 }}
               >
-                {item.icon === "edge.svg" ? (
-                  <Image src="/edge.svg" alt="Edge" width={30} height={30} />
+                {item.icon.includes("svg") ? (
+                  <Image
+                    src={`/${item.icon}`}
+                    alt={item.name}
+                    width={30}
+                    height={30}
+                  />
                 ) : (
                   <span
                     className="material-symbols-rounded"
@@ -159,10 +169,12 @@ export function Download() {
       <Box
         sx={{
           aspectRatio: "1551/1620",
-          height: { xs: "auto", md: "100%" },
+          height: { xs: "auto", md: "600px" },
           width: { xs: "100vw", md: "auto" },
           position: "relative",
           ml: "auto",
+          mt: "auto",
+          mb: -5,
         }}
       >
         <Image src="/portable.png" alt="Download Dysperse" fill />

@@ -82,7 +82,7 @@ export function Keyboard() {
           lg: "37vw",
           xl: "32vw",
         },
-        minWidth: { sm: 550 },
+        minWidth: { sm: 600 },
         "& *": { fontFamily: jost.style.fontFamily, fontWeight: 400 },
         ...Object.entries(theme).reduce(
           (acc, [key, value]) => ({ ...acc, [`--mint${key}`]: value }),
