@@ -237,7 +237,7 @@ function Header() {
           <Box
             sx={{
               background: `linear-gradient(rgba(30, 30, 30, .5), #1E1E1E)`,
-              height: "100%",
+              height: { xs: "100%", sm: 0 },
               width: "100vw",
               position: "absolute",
               top: 0,
@@ -257,7 +257,7 @@ function Header() {
               bottom: 0,
               top: 0,
               zIndex: -3,
-              marginRight: -20,
+              marginRight: { xs: -20, sm: 0 },
             }}
           >
             <Box
