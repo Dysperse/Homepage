@@ -22,12 +22,17 @@ export function Footer() {
       <Box
         sx={{
           display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
           gap: 2,
           mb: 4,
           "& *": {
             fontWeight: 300,
             color: `${mintDark.mint8}!important`,
             textDecorationColor: `${mintDark.mint7}!important`,
+          },
+          "& .mrauto": {
+            mr: { xs: "0", sm: "auto" },
           },
         }}
       >
@@ -37,7 +42,7 @@ export function Footer() {
         <Link
           href="//instagram.com/dysperse"
           target="_blank"
-          sx={{ mr: "auto" }}
+          className="mrauto"
         >
           Instagram
         </Link>
