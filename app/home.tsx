@@ -72,11 +72,12 @@ function Header() {
       >
         <Image
           fill
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANAgMAAADUPqbNAAAADFBMVEU3NzgoKCgxMTI9PT5OugwvAAAATElEQVQI12PIYj5w/j9DFP9h+/8MWSsUgOQqBi3mAwwM/7UauIAkE5BssOdhYGDI4FdgYGIIa9ZYwcWQ2vAqbBVDaNrU0FCGUBCAkADipRfd7U7I2AAAAABJRU5ErkJggg=="
           src="/background.png"
           objectFit="cover"
           alt="Hero"
           quality={100}
-          priority
         />
       </Box>
       <Box sx={{ zIndex: 1, height: "100%", width: "100dvw" }}>
