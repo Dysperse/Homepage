@@ -151,7 +151,12 @@ export function Navbar() {
           }}
         >
           launch
-          <span className="material-symbols-rounded">arrow_right_alt</span>
+          <span
+            className="material-symbols-rounded"
+            style={{ maxWidth: "30px" }}
+          >
+            arrow_right_alt
+          </span>
         </Button>
         <IconButton
           sx={{

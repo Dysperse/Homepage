@@ -173,6 +173,7 @@ function Header() {
                     style={{
                       color: mintDark.mint11,
                       fontVariationSettings: `'wght' 400`,
+                      maxWidth: "30px",
                     }}
                   >
                     volume_up
@@ -272,6 +273,8 @@ function Header() {
               }}
             >
               <Image
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAPCAYAAADQ4S5JAAAAAXNSR0IArs4c6QAAAidJREFUKFNjZCARMOJSXzB9ugJIzioj43EYI+NfmDoMDav+/2dempoa8uXl29rvX76x8omLXOcVE94WOnHiXJBGDA0Na5fInF259cDLh0+Vv375ysDNw83AKSzwXM/ZOmhycfkJDA0b710Wf7TnxP7NazZqfvj4ieH923cM/MKC/xTNDTNXT5o0C9NJr67ycF9/vfP84eNWZ86cY7hy5TqDsKjwPzEdtYLNs2dPxurp9YcPNt8+e6Ho9rWbXBcvXmFgZGJE1TBtzcp4Ln7+LwmuHmtBoTHt8GFBob+/Ypjffe4/cvAw89ETp/5J6mkgbFi8adOm/99/WH9h/l+UFRK+EKRp+7GjM3+/+5B26cIlhp079zH85mRZf2LX9iCwk1Yd3JfG+PbTtGs3b75+w8YQ6OPtw/X/6cu11y9dETh//iLD/fuPGP5ysl45tmubLljD/kd3dJ6cvrjp+q1bbF8/ff5s72j/k+XXH/29u/cx3L59l+Hbr18/JdSU5q+YNiUTYsP//8y8x49Ne/7yheG7t+9Y1SSkDN69e/9vw7qNTG/ffmDgEuY/bxkb4NcQHPMEHkpbLp+y+vPk7drP3759FxMQlN62aSvbuXOXGH7++skgKCl23r843znL1vY9SrCuOLA398ej5xPev33HtHv3PoY/f/6Ak5CkitJu/coI/yJZq+8oGla9usrz5fC1eQc27gh98+Ytg6qqMsO3798ZfrGwwDUAALoBDR894P/8AAAAAElFTkSuQmCC"
+                placeholder="blur"
                 priority
                 src="/person.svg"
                 alt="Hero"
