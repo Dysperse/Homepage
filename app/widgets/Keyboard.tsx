@@ -75,14 +75,8 @@ export function Keyboard() {
         p: 1,
         background: theme[2],
         borderColor: theme[5],
+        flex: 1,
         color: theme[11],
-        maxWidth: {
-          xs: "5vw",
-          md: "27vw",
-          lg: "37vw",
-          xl: "32vw",
-        },
-        minWidth: { sm: 600 },
         "& *": { fontFamily: jost.style.fontFamily, fontWeight: 400 },
         ...Object.entries(theme).reduce(
           (acc, [key, value]) => ({ ...acc, [`--mint${key}`]: value }),
@@ -119,7 +113,17 @@ export function Keyboard() {
           ],
         }}
       />
-      <Box sx={{ overflow: "hidden" }} ref={emblaRef}>
+      <Box
+        sx={{
+          overflow: "hidden",
+          width: {
+            xs: "100px",
+            sm: "100px",
+            md: "min(50vw, 700px)",
+          },
+        }}
+        ref={emblaRef}
+      >
         <Box sx={{ display: "flex" }}>
           {slides.map((shortcut) => (
             <Box
