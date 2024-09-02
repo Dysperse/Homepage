@@ -13,6 +13,7 @@ export const Task = () => {
     <CardContainer
       sx={{
         flex: 1.5,
+        py: 2,
         display: "flex",
         flexDirection: "row",
         alignItems: "center",

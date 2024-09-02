@@ -57,6 +57,7 @@ function Header() {
         color: mintDark.mint11,
         position: "relative",
         zIndex: 0,
+        pb: 6,
         pt: 5,
       }}
     >
@@ -235,10 +236,28 @@ function Header() {
           </Box>
           <Box
             sx={{
+              background: `linear-gradient(rgba(30, 30, 30, .5), #1E1E1E)`,
+              height: "100%",
+              width: "100vw",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: -1,
+              pointerEvents: "none",
+            }}
+          />
+          <Box
+            sx={{
               marginLeft: "auto",
               pr: 5,
               pt: 10,
               flex: 1,
+              position: "absolute",
+              right: 0,
+              bottom: 0,
+              top: 0,
+              zIndex: -3,
+              marginRight: -20,
             }}
           >
             <Box
@@ -247,6 +266,7 @@ function Header() {
                 display: "flex",
                 marginLeft: "auto",
                 flexDirection: "column",
+                maxWidth: "120vw",
                 height: "100%",
                 aspectRatio: "1080/1124.99995",
               }}
@@ -268,7 +288,7 @@ function Header() {
       <Box
         sx={{
           background: `linear-gradient(transparent,#1E1E1E)`,
-          height: 100,
+          height: { xs: 0, sm: 100 },
           zIndex: 1,
           width: "100%",
           position: "absolute",
@@ -469,7 +489,7 @@ function Tasks() {
       <Typography
         sx={{
           textAlign: "center",
-          fontSize: 40,
+          fontSize: { xs: 27, sm: 40 },
           mt: 2,
           fontWeight: 900,
         }}
@@ -479,7 +499,7 @@ function Tasks() {
       <Typography
         sx={{
           textAlign: "center",
-          fontSize: 30,
+          fontSize: { xs: 18, sm: 20 },
           fontWeight: 300,
           opacity: 0.6,
           mb: 10,
@@ -497,6 +517,7 @@ function Tasks() {
             xs={12}
             md={5}
             sx={{
+              px: { xs: 4, sm: 0 },
               // color: mintDark.mint12,
               "& .title": {
                 fontWeight: 700,
@@ -599,7 +620,7 @@ function Collections() {
       <Typography
         sx={{
           textAlign: "center",
-          fontSize: 40,
+          fontSize: { xs: 27, sm: 40 },
           mt: 2,
           fontWeight: 900,
         }}
@@ -609,14 +630,15 @@ function Collections() {
       <Typography
         sx={{
           textAlign: "center",
-          fontSize: 30,
+          fontSize: { xs: 18, sm: 20 },
           fontWeight: 300,
           opacity: 0.6,
           mb: 10,
+          px: 2,
         }}
       >
-        Labels can be part of as many collections as you&apos;d like <br />
-        We&apos;ve handcrafted eight different ways to view them
+        Labels can be part of as many collections as you&apos;d like. We&apos;ve
+        handcrafted eight different ways to view them
       </Typography>
 
       <Container>
@@ -641,17 +663,15 @@ function Collections() {
                     gap: 1,
                     flex: 1,
                     p: 1.5,
-                    px: 3,
+                    px: { xs: 2, sm: 3 },
                     borderRadius: 5,
+                    "& .material-symbols-rounded": {
+                      fontSize: { xs: 24, sm: 40 },
+                    },
                   }}
                 >
-                  <span
-                    className="material-symbols-rounded"
-                    style={{ fontSize: 40 }}
-                  >
-                    {value}
-                  </span>
-                  <Typography fontSize={20} fontWeight={300}>
+                  <span className="material-symbols-rounded">{value}</span>
+                  <Typography fontSize={{ xs: 15, sm: 20 }} fontWeight={300}>
                     {key}
                   </Typography>
                 </Box>
@@ -1010,7 +1030,7 @@ function InteractiveWidgets() {
       <Typography
         sx={{
           textAlign: "center",
-          fontSize: 40,
+          fontSize: { xs: 27, sm: 40 },
           mt: 2,
           fontWeight: 900,
         }}
@@ -1020,7 +1040,7 @@ function InteractiveWidgets() {
       <Typography
         sx={{
           textAlign: "center",
-          fontSize: 30,
+          fontSize: { xs: 18, sm: 20 },
           fontWeight: 300,
           opacity: 0.6,
           mb: 10,
