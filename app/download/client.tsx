@@ -154,7 +154,7 @@ export function Download() {
           ))}
         </Box>
 
-        <Box sx={{ mt: 3 }}>
+        <Box sx={{ mt: 5 }}>
           <Typography
             sx={{
               fontSize: "20px",
