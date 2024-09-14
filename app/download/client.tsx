@@ -227,12 +227,7 @@ export function Download() {
                     width={30}
                     height={30}
                   />
-                  <Box>
-                    <Typography fontWeight={900}>{item.name}</Typography>
-                    <Typography sx={{ opacity: 0.6 }} fontWeight={300}>
-                      {item.comingSoon ? "Coming soon" : item.description}
-                    </Typography>
-                  </Box>
+                  <Typography fontWeight={900}>{item.name}</Typography>
                 </Box>
               </Link>
             ))}
