@@ -77,24 +77,6 @@ export function Download() {
               description: "Windows 10 or later",
             },
             {
-              filled: true,
-              icon: "google.svg",
-              name: "Chrome extension",
-              href: "https://click.dysperse.com/chrome-extension",
-            },
-            {
-              filled: true,
-              icon: "edge.svg",
-              name: "Edge extension",
-              href: "https://click.dysperse.com/edge-extension",
-            },
-            {
-              filled: true,
-              icon: "firefox.svg",
-              name: "Firefox Add-on",
-              href: "https://click.dysperse.com/firefox-add-on",
-            },
-            {
               icon: "desktop_mac",
               name: "Mac",
               //   href: "https://click.dysperse.com/mac",
@@ -170,6 +152,91 @@ export function Download() {
               </Box>
             </Link>
           ))}
+        </Box>
+
+        <Box sx={{ mt: 3 }}>
+          <Typography
+            sx={{
+              fontSize: "20px",
+              fontWeight: 300,
+              opacity: 0.6,
+            }}
+          >
+            Add #dysperse to your favorite browser
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              gap: 2,
+              width: "100%",
+            }}
+          >
+            {[
+              {
+                filled: true,
+                icon: "google.svg",
+                name: "Google Chrome",
+                href: "https://click.dysperse.com/chrome-extension",
+              },
+              {
+                filled: true,
+                icon: "edge.svg",
+                name: "Microsoft Edge",
+                href: "https://click.dysperse.com/edge-extension",
+              },
+              {
+                filled: true,
+                icon: "firefox.svg",
+                name: "Firefox",
+                href: "https://click.dysperse.com/firefox-add-on",
+              },
+            ].map((item) => (
+              <Link
+                href={item.href || "/"}
+                key={item.name}
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  color: "inherit",
+                  flex: 1,
+                }}
+              >
+                <Box
+                  sx={{
+                    gap: 2,
+                    borderRadius: 5,
+                    border: `2px solid ${mintDark.mint5}`,
+                    backgroundColor: mintDark.mint3,
+                    "&:hover": {
+                      backgroundColor: mintDark.mint4,
+                    },
+                    "&:active": {
+                      backgroundColor: mintDark.mint5,
+                    },
+                    display: "flex",
+                    alignItems: "center",
+                    px: 2,
+                    py: 1.5,
+                    mt: 2,
+                  }}
+                >
+                  <Image
+                    src={`/${item.icon}`}
+                    alt={item.name}
+                    width={30}
+                    height={30}
+                  />
+                  <Box>
+                    <Typography fontWeight={900}>{item.name}</Typography>
+                    <Typography sx={{ opacity: 0.6 }} fontWeight={300}>
+                      {item.comingSoon ? "Coming soon" : item.description}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Link>
+            ))}
+          </Box>
         </Box>
       </Box>
       <Box
