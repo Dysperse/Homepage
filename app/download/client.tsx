@@ -89,6 +89,12 @@ export function Download() {
               href: "https://click.dysperse.com/edge-extension",
             },
             {
+              filled: true,
+              icon: "firefox.svg",
+              name: "Firefox Add-on",
+              href: "https://click.dysperse.com/firefox-add-on",
+            },
+            {
               icon: "desktop_mac",
               name: "Mac",
               //   href: "https://click.dysperse.com/mac",
