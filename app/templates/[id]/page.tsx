@@ -12,6 +12,9 @@ import Image from "next/image";
 
 const Filter = require("bad-words");
 
+export const dynamicParams = true; // or false, to 404 on unknown paths
+export const revalidate = 60; // 1 hour
+
 export async function generateMetadata(
   { params, searchParams }: any,
   parent: ResolvingMetadata
