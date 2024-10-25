@@ -1,18 +1,18 @@
 import { Masonry } from "@mui/lab";
-import { Box, Button, Card, Container, NoSsr, Typography } from "@mui/material";
+import { Box, Button, Card, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Emoji } from "../Emoji";
 import { mintDark } from "../themes";
-import { Preview } from "./Preview";
-import { ProfilePicture } from "./ProfilePicture";
-import { collectionCategories, collectionViews } from "./categories";
-import { SearchField } from "./SearchField";
 import { Background } from "./Background";
-import { Metadata, ResolvingMetadata } from "next";
-import Image from "next/image";
+import { collectionCategories, collectionViews } from "./categories";
+import { ProfilePicture } from "./ProfilePicture";
+import { SearchField } from "./SearchField";
 
 const Filter = require("bad-words");
+export const revalidate = 60; // 1 hour
 
 export async function generateMetadata({
   searchParams,
