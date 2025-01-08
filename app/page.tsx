@@ -2,9 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Bricolage_Grotesque, Jost } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import Nutshell from "./Nutshell";
 
 const bricolage = Bricolage_Grotesque({
-  weight: ["200", "700"],
+  weight: ["200", "500", "700"],
 });
 
 const jost = Jost({
@@ -14,13 +15,13 @@ const jost = Jost({
 function Hero() {
   return (
     <section>
-      <div className="flex">
-        <div>
+      <div className="items-center flex">
+        <div className="-mt-32">
           <h1
-            className="mt-4"
             style={{
               ...bricolage.style,
-              fontSize: 111,
+              fontSize: 100,
+              fontWeight: 500,
               lineHeight: 1,
             }}
           >
@@ -49,7 +50,7 @@ function Hero() {
         <div
           className="flex-1"
           style={{
-            marginRight: -350,
+            marginRight: -390,
             position: "relative",
             width: "auto",
             aspectRatio: "2234 / 1981",
@@ -73,24 +74,11 @@ function Hero() {
   );
 }
 
-function Nutshell() {
+function Number({ children }: { children: React.ReactNode }) {
   return (
-    <section className="border-2 border-solid border-black p-5 py-10 rounded-3xl">
-      <h1
-        style={bricolage.style}
-        className="font-black text-center text-xl w-full"
-      >
-        Dysperse in a nutshell
-      </h1>
-
-      <div className="flex">
-        <ol>
-          <div className="w-20 h-20 border rounded-full flex items-center">
-            1
-          </div>
-        </ol>
-      </div>
-    </section>
+    <span className="w-14 h-14 border-2 border-black rounded-full flex items-center justify-center font-bold text-lg">
+      {children}
+    </span>
   );
 }
 
@@ -100,7 +88,7 @@ function Footer() {
 
 function Navbar() {
   return (
-    <nav className="h-20 px-16 mt-4 mb-10 flex items-center w-full max-w-6xl mx-auto">
+    <nav className="h-20 px-16 flex items-center w-full max-w-6xl mx-auto mt-4 mb-7">
       <Image
         alt="Logo"
         className="mr-auto"
@@ -135,11 +123,14 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="max-w-5xl mx-auto w-full" style={jost.style}>
-        <Hero />
-        <Nutshell />
+      <main style={jost.style}>
+        <div className="max-w-5xl mx-auto w-full">
+          <Hero />
+          <Nutshell />
+        </div>
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 }
+
