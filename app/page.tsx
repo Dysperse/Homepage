@@ -9,7 +9,7 @@ const bricolage = Bricolage_Grotesque({
 });
 
 const jost = Jost({
-  weight: ["400", "600"],
+  weight: ["400", "600", "700", "800", "900"],
 });
 
 function Hero() {
@@ -119,6 +119,47 @@ function Navbar() {
   );
 }
 
+function AiFeatures() {
+  return (
+    <section className="p-10 border-2 rounded-3xl mt-5">
+      <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
+        Now, with AI
+      </h6>
+      <p className="text-4xl leading-snug tracking-tight font-extrabold">
+        Sidekick{" "}
+        <span className="opacity-50">
+          is your AI assistant that transforms how you manage work.{" "}
+        </span>
+        <span className="opacity-50">From</span> analyzing collections{" "}
+        <span className="opacity-50">and</span> breaking down complex tasks
+        <span className="opacity-50"> to</span> generating actionable subtasks
+        <span className="opacity-50"> and</span> organizing your workload,{" "}
+        <span className="opacity-50">
+          Sidekick keeps you focused on what matters most. It seamlessly{" "}
+        </span>{" "}
+        converts forwarded emails into tasks, creates custom board templates,
+        <span className="opacity-50"> and</span> helps you divide and conquer
+        work effectively.
+      </p>
+      <details>
+        <summary className="trigger inline-flex items-center px-3 py-1 mt-2 gap-2 hover:bg-gray-100 active:bg-gray-200 rounded-xl -ml-2 opacity-50 cursor-pointer select-none">
+          How does this work pricing-wise?{" "}
+          <span className="material-symbols-rounded">expand_more</span>
+        </summary>
+        <div className="mt-2 max-w-lg text-gray-500 font-medium">
+          <p>
+            Sidekick puts you in control of your AI experience. Choose between
+            our complimentary built-in AI tier or seamlessly connect your
+            preferred AI provider at no extra cost. While other apps charge
+            premium fees for AI features, Sidekick gives you the freedom to use
+            your own provider <b>without any surcharges.</b>
+          </p>
+        </div>
+      </details>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -127,6 +168,8 @@ export default function Home() {
         <div className="max-w-5xl mx-auto w-full">
           <Hero />
           <Nutshell />
+          <AiFeatures />
+          <AiFeatures />
         </div>
         <Footer />
       </main>

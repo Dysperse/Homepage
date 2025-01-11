@@ -3,7 +3,7 @@ import "./globals.css";
 import { Jost } from "next/font/google";
 
 const jost = Jost({
-  weight: ["400", "600"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
