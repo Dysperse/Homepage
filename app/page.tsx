@@ -146,7 +146,7 @@ function AiFeatures() {
           How does this work pricing-wise?{" "}
           <span className="material-symbols-rounded">expand_more</span>
         </summary>
-        <div className="mt-2 max-w-lg text-gray-500 font-medium">
+        <div className="content mt-2 max-w-lg text-gray-500 font-medium">
           <p>
             Sidekick puts you in control of your AI experience. Choose between
             our complimentary built-in AI tier or seamlessly connect your
@@ -160,6 +160,74 @@ function AiFeatures() {
   );
 }
 
+function FamiliarUI() {
+  return (
+    <section className="p-10 border-2 rounded-3xl mt-5 overflow-hidden">
+      <div className="flex">
+        <div className="flex-[3] -mb-10 mr-10 -ml-32">
+          <Image
+            src="/tabs.png"
+            alt="Person holding Dysperse on an iPad"
+            width={1000}
+            height={1000}
+            style={{ height: "100%", width: "auto" }}
+          />
+        </div>
+        <div className="flex-[2] flex justify-center flex-col">
+          <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
+            Intuitive by design
+          </h6>
+          <h2 className="text-5xl leading-tight tracking-tight font-extrabold">
+            Easily navigate with our browser-inspired design that feels like
+            second nature
+          </h2>
+          <Button className="text-lg mr-auto h-12 rounded-full px-6 pr-5 border-black border-2 mt-5">
+            Learn more
+            <span className="material-symbols-rounded">north_east</span>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Customization() {
+  return (
+    <section className="p-10 border-2 rounded-3xl mt-5">
+      <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
+        Uniquely yours
+      </h6>
+      <h2 className="text-5xl leading-tight tracking-tight font-extrabold">
+        Shape every detail to fit your needs
+      </h2>
+      <div className="grid grid-cols-3 gap-10 mt-5">
+        <div>
+          <Number>1</Number>
+          <h3 className="text-3xl font-bold mt-2">32+ themes</h3>
+          <p className="text-lg opacity-70 mt-2">
+            Choose from a variety of themes to personalize your workspace.
+          </p>
+        </div>
+        <div>
+          <Number>2</Number>
+          <h3 className="text-3xl font-bold mt-2"></h3>
+          <p className="text-lg opacity-70 mt-2">
+            Start with a blank canvas or select from our collection of pre-built
+            templates.
+          </p>
+        </div>
+        <div>
+          <Number>3</Number>
+          <h3 className="text-3xl font-bold mt-2">Custom boards</h3>
+          <p className="text-lg opacity-70 mt-2">
+            Create custom boards that cater to your unique workflow.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -168,7 +236,8 @@ export default function Home() {
         <div className="max-w-5xl mx-auto w-full">
           <Hero />
           <Nutshell />
-          <AiFeatures />
+          <FamiliarUI />
+          <Customization />
           <AiFeatures />
         </div>
         <Footer />
