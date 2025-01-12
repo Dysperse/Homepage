@@ -6,10 +6,12 @@ import Nutshell from "./Nutshell";
 
 const bricolage = Bricolage_Grotesque({
   weight: ["200", "500", "700"],
+  subsets: ["latin"],
 });
 
 const jost = Jost({
   weight: ["400", "600", "700", "800", "900"],
+  subsets: ["latin"],
 });
 
 function Hero() {
