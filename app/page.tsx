@@ -205,24 +205,24 @@ function Customization() {
       <div className="grid grid-cols-3 gap-10 mt-5">
         <div>
           <Number>1</Number>
-          <h3 className="text-3xl font-bold mt-2">32+ themes</h3>
+          <h3 className="text-3xl font-bold mt-5">32+ themes</h3>
           <p className="text-lg opacity-70 mt-2">
             Choose from a variety of themes to personalize your workspace.
           </p>
         </div>
         <div>
           <Number>2</Number>
-          <h3 className="text-3xl font-bold mt-2"></h3>
+          <h3 className="text-3xl font-bold mt-5">Focus panel</h3>
           <p className="text-lg opacity-70 mt-2">
-            Start with a blank canvas or select from our collection of pre-built
-            templates.
+            Add widgets of your choice in a sidebar that's right next to your
+            tasks
           </p>
         </div>
         <div>
           <Number>3</Number>
-          <h3 className="text-3xl font-bold mt-2">Custom boards</h3>
+          <h3 className="text-3xl font-bold mt-5">Keyboard shortcuts</h3>
           <p className="text-lg opacity-70 mt-2">
-            Create custom boards that cater to your unique workflow.
+            It's as easy as <i>hitting the spacebar</i> to create a new task
           </p>
         </div>
       </div>
