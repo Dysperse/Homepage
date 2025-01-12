@@ -16,8 +16,8 @@ const jost = Jost({
 
 function Hero() {
   return (
-    <section>
-      <div className="items-center flex">
+    <section className="h-[calc(100vh-100px)] xl:h-screen">
+      <div className="items-center flex h-full">
         <div className="-mt-32">
           <h1
             style={{
@@ -50,7 +50,7 @@ function Hero() {
           </Button>
         </div>
         <div
-          className="flex-1"
+          className="flex-1 overflow-hidden relative"
           style={{
             marginRight: -390,
             position: "relative",
@@ -105,8 +105,14 @@ function Navbar() {
         download
       </Link>
       <Link
-        href="/download"
+        href="/faq"
         className="text-lg font-bold px-4 py-2 rounded-full hover:bg-gray-100 active:bg-gray-200"
+      >
+        faq
+      </Link>
+      <Link
+        href="/download"
+        className="-mr-20 text-lg font-bold px-4 py-2 rounded-full hover:bg-gray-100 active:bg-gray-200"
       >
         templates
       </Link>
@@ -170,9 +176,9 @@ function FamiliarUI() {
           <Image
             src="/tabs.png"
             alt="Person holding Dysperse on an iPad"
-            width={1000}
-            height={1000}
-            style={{ height: "100%", width: "auto" }}
+            width={3375 / 5}
+            height={2256 / 5}
+            className="mt-auto"
           />
         </div>
         <div className="flex-[2] flex justify-center flex-col">

@@ -1,6 +1,5 @@
 "use client";
 import type { ReactNode } from "react";
-import { cn } from "@/lib/utils";
 import { Bricolage_Grotesque, Jost } from "next/font/google";
 
 const bricolage = Bricolage_Grotesque({
