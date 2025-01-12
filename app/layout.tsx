@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-red-500 relative overflow-x-hidden">
+    <html lang="en" className="relative overflow-x-hidden">
       <head>
         <link
           rel="stylesheet"

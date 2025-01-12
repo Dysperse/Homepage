@@ -76,6 +76,10 @@ div::-webkit-scrollbar {
   details > summary {
     list-style: none;
   }
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
   details[open] > .trigger {
     opacity: 1;
     @apply bg-gray-100;

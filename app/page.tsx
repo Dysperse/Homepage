@@ -85,7 +85,36 @@ function Number({ children }: { children: React.ReactNode }) {
 }
 
 function Footer() {
-  return <footer className="bg-black text-white mt-10 p-5">dysperse</footer>;
+  return (
+    <footer className="bg-black mt-10 text-white p-5 py-10">
+      <h3 className="text-center text-2xl font-black" style={bricolage.style}>
+        #dysperse
+      </h3>
+      <div className="flex justify-center gap-5 mt-5">
+        <Link href="/download" className="text-lg font-semibold">
+          instagram
+        </Link>
+        <Link href="/download" className="text-lg font-semibold">
+          open source
+        </Link>
+        <Link href="/status" className="text-lg font-semibold">
+          status
+        </Link>
+        <Link href="/privacy" className="text-lg font-semibold">
+          privacy
+        </Link>
+        <Link href="/terms" className="text-lg font-semibold">
+          terms
+        </Link>
+      </div>
+      <div>
+        <p className="text-center mt-5">
+          © {new Date().getFullYear()}{" "}
+          <span className="ml-2">Made with ❤️ in the US</span>
+        </p>
+      </div>
+    </footer>
+  );
 }
 
 function Navbar() {
@@ -212,24 +241,14 @@ function Customization() {
         <div>
           <Number>1</Number>
           <h3 className="text-3xl font-bold mt-5">32+ themes</h3>
-          <p className="text-lg opacity-70 mt-2">
-            Choose from a variety of themes to personalize your workspace.
-          </p>
         </div>
         <div>
           <Number>2</Number>
           <h3 className="text-3xl font-bold mt-5">Focus panel</h3>
-          <p className="text-lg opacity-70 mt-2">
-            Add widgets of your choice in a sidebar that's right next to your
-            tasks
-          </p>
         </div>
         <div>
           <Number>3</Number>
           <h3 className="text-3xl font-bold mt-5">Keyboard shortcuts</h3>
-          <p className="text-lg opacity-70 mt-2">
-            It's as easy as <i>hitting the spacebar</i> to create a new task
-          </p>
         </div>
       </div>
     </section>
