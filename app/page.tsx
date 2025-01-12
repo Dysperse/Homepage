@@ -255,6 +255,37 @@ function Customization() {
   );
 }
 
+function Poll() {
+  return (
+    <section className="p-10 border-2 rounded-3xl mt-16 bg-gradient-to-b from-gray-50 to-gray-200">
+      <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
+        Stay on top w/ dysperse
+      </h6>
+      <h2 className="text-3xl leading-tight tracking-tight font-extrabold">
+        If you had an extra hour in the day, how would you spend it?
+      </h2>
+      <div className="grid grid-cols-2 gap-2 mt-5">
+        {[
+          "Reading",
+          "Exercising",
+          "Learning",
+          "Sleeping",
+          "Working",
+          "Socializing",
+        ].map((option) => (
+          <Button
+            key={option}
+            className="text-lg h-12 rounded-full px-6 border-2 justify-start"
+            variant="secondary"
+          >
+            {option}
+          </Button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -266,6 +297,7 @@ export default function Home() {
           <FamiliarUI />
           <Customization />
           <AiFeatures />
+          <Poll />
         </div>
         <Footer />
       </main>
