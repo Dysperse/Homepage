@@ -1,21 +1,83 @@
 "use client";
-import type { ReactNode } from "react";
-import { Bricolage_Grotesque } from "next/font/google";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Bricolage_Grotesque } from "next/font/google";
+import Image from "next/image";
+import { type ReactNode } from "react";
+import SpeechPreview from "./SpeechPreview";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: "700",
+  weight: ["200", "700"],
 });
+
+function TaskPreview() {
+  return (
+    <div className="w-[600px] h-60 bg-gray-100 px-5 py-5 rounded-3xl flex flex-col gap-3 col-span-2">
+      <div className="flex">
+        <div className="cursor-pointer border -ml-1 inline-flex items-center gap-2 py-2 px-4 rounded-full">
+          <span
+            style={{ fontSize: 20 }}
+            className="material-symbols-rounded cursor-pointer"
+          >
+            label
+          </span>
+          <span className="text-sm cursor-pointer">Personal</span>
+        </div>
+      </div>
+      <textarea
+        placeholder="What's on your mind?"
+        className="resize-none text-3xl font-thin bg-transparent w-full h-full outline-none"
+        style={bricolage.style}
+      />
+      <div className="flex gap-1">
+        <Button
+          size="icon"
+          variant="secondary"
+          className="w-12 h-12 rounded-full bg-gray-200 ml-auto shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
+          style={{ transition: "background-color 0.2s, transform 0.3s" }}
+        >
+          <span className="material-symbols-rounded">mic</span>
+        </Button>
+        <Button
+          size="icon"
+          variant="secondary"
+          className="w-12 h-12 rounded-full bg-gray-200 shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
+          style={{ transition: "background-color 0.2s, transform 0.3s" }}
+        >
+          <span className="material-symbols-rounded">new_label</span>
+        </Button>
+        <Button
+          size="icon"
+          variant="secondary"
+          className="w-12 h-12 rounded-full bg-gray-200 shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
+          style={{ transition: "background-color 0.2s, transform 0.3s" }}
+        >
+          <span className="material-symbols-rounded">calendar_today</span>
+        </Button>
+        <Button
+          size="icon"
+          variant="secondary"
+          className="w-12 h-12 rounded-full bg-gray-200 shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
+          style={{ transition: "background-color 0.2s, transform 0.3s" }}
+        >
+          <span className="material-symbols-rounded">push_pin</span>
+        </Button>
+        <Button
+          size="icon"
+          className="w-12 h-12 rounded-full shadow-none active:bg-gray-950 focus:bg-gray-950 hover:bg-gray-950"
+        >
+          <span className="material-symbols-rounded">north</span>
+        </Button>
+      </div>
+    </div>
+  );
+}
 
 export const Nutshell = () => {
   return (
@@ -43,10 +105,10 @@ export const Nutshell = () => {
         subtitle="Whatever's on your mind—big or small—Dysperse helps you turn it into an
         organized task."
       >
-        <div className="flex gap-3">
-          <div className="w-[600px] h-60 bg-gray-100 px-5 py-5 rounded-3xl"></div>
+        <div className="grid grid-cols-3">
+          <TaskPreview />
           <div className="flex-1 flex flex-col gap-3">
-            <div className="flex-1 bg-gray-100 px-5 py-5 rounded-3xl"></div>
+            <SpeechPreview />
             <div className="flex-1 bg-gray-100 px-5 py-5 rounded-3xl"></div>
           </div>
         </div>
@@ -183,7 +245,7 @@ export const Nutshell = () => {
                     <DialogTitle className="text-4xl mt-2 font-bold text-neutral-700 dark:text-neutral-50">
                       {_.title}
                     </DialogTitle>
-                    <p className="text-2xl font-thin pr-12 text-pretty">
+                    <p className="text-xl font-thin pr-10 text-pretty">
                       {_.description}
                     </p>
                     <div className="flex mt-auto flex-col pr-12">
