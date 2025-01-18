@@ -15,6 +15,15 @@ div::-webkit-scrollbar,
   -webkit-tap-highlight-color: transparent;
 }
 
+::selection {
+  background: black;
+  color: white;
+}
+
+img {
+  user-select: none;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
