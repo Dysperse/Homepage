@@ -6,8 +6,8 @@ function SpeechPreview() {
   const [transcription, setTranscription] = useState("");
   const [audioLevels, setAudioLevels] = useState([]);
   const audioContextRef = useRef(null);
-  const analyserRef = useRef(null);
-  const mediaStreamRef = useRef(null);
+  const analyserRef: any = useRef(null);
+  const mediaStreamRef: any = useRef(null);
 
   useEffect(() => {
     if (isListening) {
@@ -25,7 +25,7 @@ function SpeechPreview() {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       mediaStreamRef.current = stream;
       const audioContext = new (window.AudioContext ||
-        window.webkitAudioContext)();
+        (window as any).webkitAudioContext)();
       const analyser = audioContext.createAnalyser();
       const source = audioContext.createMediaStreamSource(stream);
       source.connect(analyser);
@@ -33,36 +33,44 @@ function SpeechPreview() {
       const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
       analyserRef.current = { analyser, dataArray };
-      audioContextRef.current = audioContext;
+      (audioContextRef as any).current = audioContext;
 
       const visualize = () => {
         analyser.getByteFrequencyData(dataArray);
         const levels = Array.from(dataArray.slice(0, 15)).map(
           (value) => value / 255
         );
-        setAudioLevels(levels);
+        setAudioLevels(levels as any);
         if (isListening) requestAnimationFrame(visualize);
       };
 
       visualize();
     } catch (err) {
-      console.error("Error accessing microphone:", err);
+      alert(
+        "Unfortunately, your browser does not support audio visualization 😔💔 (but the dysperse app does!)"
+      );
     }
   };
 
   const stopAudioVisualization = () => {
     if (mediaStreamRef.current) {
-      mediaStreamRef.current.getTracks().forEach((track) => track.stop());
+      mediaStreamRef.current.getTracks().forEach((track: any) => track.stop());
     }
     if (audioContextRef.current) {
-      audioContextRef.current.close();
+      (audioContextRef as any).current.close();
     }
     setAudioLevels([]);
   };
 
   const startSpeechRecognition = () => {
+    setInterval(() => {
+      document
+        .getElementById("transcript")
+        ?.scrollTo({ left: 9999, behavior: "smooth" });
+    }, 1000);
     const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
+      (window as any).SpeechRecognition ||
+      (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) {
       alert("Speech Recognition API is not supported in your browser.");
       return;
@@ -72,23 +80,17 @@ function SpeechPreview() {
     recognition.continuous = true;
     recognition.interimResults = true;
 
-    recognition.onresult = (event) => {
+    recognition.onresult = (event: any) => {
       let liveTranscript = "";
       for (let i = event.resultIndex; i < event.results.length; i++) {
         const transcript = event.results[i][0].transcript;
         if (event.results[i].isFinal) {
           setTranscription((prev) => prev + transcript + " ");
-          document
-            .getElementById("transcript")
-            ?.scrollTo({ left: 9999, behavior: "smooth" });
         } else {
           liveTranscript += transcript;
         }
       }
       setTranscription((prev) => prev + liveTranscript);
-      document
-        .getElementById("transcript")
-        ?.scrollTo({ left: 9999, behavior: "smooth" });
     };
 
     recognition.onerror = (event) => {
@@ -99,15 +101,28 @@ function SpeechPreview() {
   };
 
   return (
-    <div className="flex-1 bg-gray-100 px-5 py-5 rounded-3xl overflow-hidden">
+    <div className="flex-1 bg-gray-100 px-5 py-5 rounded-3xl overflow-hidden relative">
       {!isListening && (
         <div className="flex items-center justify-center pt-5">
-          <Button
-            onClick={() => setIsListening(!isListening)}
-            className={`text-white font-bold`}
-          >
-            {isListening ? "Stop Listening" : "Tap to Speak"}
-          </Button>
+          <p className="absolute top-0 left-0 font-bold p-4 text-center w-full">
+            Say your tasks out loud
+          </p>
+          <div className="flex items-center justify-center gap-1 h-6 mt-5">
+            {[13, 40, 69, 81, 45, 91, 58, 94, 81].map((level, index) => (
+              <div
+                key={index}
+                className="w-2 bg-black rounded-full min-h-1"
+                style={{ height: `${level}%` }}
+              ></div>
+            ))}
+            <Button
+              onClick={() => setIsListening(!isListening)}
+              size="icon"
+              className={`text-white font-bold ml-1 rounded-full`}
+            >
+              <span className="material-symbols-rounded">mic</span>
+            </Button>
+          </div>
         </div>
       )}
 
