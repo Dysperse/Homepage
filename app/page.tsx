@@ -160,7 +160,7 @@ function AiFeatures() {
   return (
     <section className="p-10 border-2 rounded-3xl mt-5">
       <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
-        Now, with AI
+        And now, with AI
       </h6>
       <p className="text-4xl leading-snug tracking-tight font-extrabold">
         Sidekick{" "}
@@ -215,8 +215,8 @@ function FamiliarUI() {
             Intuitive by design
           </h6>
           <h2 className="text-5xl leading-tight tracking-tight font-extrabold">
-            Easily navigate with our browser-inspired design that feels like
-            second nature
+            Navigate with our browser-inspired design that feels like second
+            nature
           </h2>
           <Button className="text-lg mr-auto h-12 rounded-full px-6 pr-5 border-black border-2 mt-5">
             Learn more
@@ -230,25 +230,44 @@ function FamiliarUI() {
 
 function Customization() {
   return (
-    <section className="p-10 border-2 rounded-3xl mt-5">
-      <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
-        Uniquely yours
-      </h6>
-      <h2 className="text-5xl leading-tight tracking-tight font-extrabold">
-        Shape every detail to fit your needs
-      </h2>
-      <div className="grid grid-cols-3 gap-10 mt-5">
-        <div>
-          <Number>1</Number>
-          <h3 className="text-3xl font-bold mt-5">32+ themes</h3>
+    <section className="border-2 rounded-3xl mt-5">
+      <div className="flex gap-10">
+        <div className="flex-[3] p-10 mt-5">
+          <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
+            Oh there's more...
+          </h6>
+          <h2 className="text-4xl leading-tight tracking-tight font-extrabold">
+            Share anything
+          </h2>
+          <h3 className="mb-2 text-lg font-thin">
+            From tasks to entire collections, get others to know what you're up
+            to
+          </h3>
+          <h2 className="text-4xl leading-tight tracking-tight font-extrabold">
+            Focus widgets
+          </h2>
+          <h3 className="mb-2 text-lg font-thin">
+            See widgets right next to your collections
+          </h3>
+          <h2 className="text-4xl leading-tight tracking-tight font-extrabold">
+            Smart by design
+          </h2>
+          <h3 className="mb-2 text-lg font-thin">
+            We'll understand dates & more when you create tasks
+          </h3>
+          <h2 className="text-4xl leading-tight tracking-tight font-extrabold">
+            32+ themes
+          </h2>
+          <h3 className="mb-2 text-lg font-thin">What's your fav?</h3>
+          <h2 className="text-4xl leading-tight tracking-tight font-extrabold">
+            Emojis & more
+          </h2>
+          <h3 className="mb-2 text-lg font-thin">
+            See widgets right next to your collections
+          </h3>
         </div>
-        <div>
-          <Number>2</Number>
-          <h3 className="text-3xl font-bold mt-5">Focus panel</h3>
-        </div>
-        <div>
-          <Number>3</Number>
-          <h3 className="text-3xl font-bold mt-5">Keyboard shortcuts</h3>
+        <div className="p-2 flex-[2]">
+          <div className="w-full h-full min-h-96 rounded-3xl bg-red-500"></div>
         </div>
       </div>
     </section>
@@ -304,4 +323,3 @@ export default function Home() {
     </>
   );
 }
-
