@@ -8,8 +8,14 @@ import {
 } from "@/components/ui/dialog";
 import { Bricolage_Grotesque } from "next/font/google";
 import Image from "next/image";
-import { type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import SpeechPreview from "./SpeechPreview";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -79,7 +85,77 @@ function TaskPreview() {
   );
 }
 
+function MailPreview() {
+  return (
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger className="flex-1 bg-gray-100 px-5 rounded-3xl h-1/2 flex flex-col cursor-pointer select-none">
+          <div className="flex items-center gap-3 mt-3">
+            <span className="text-sm font-bold">
+              Fwd: Your appointment is confirmed
+            </span>
+            <div className="ml-auto w-5 h-5 bg-black text-white rounded-full flex items-center justify-center">
+              <span
+                className="material-symbols-rounded"
+                style={{ fontSize: 14 }}
+              >
+                north
+              </span>
+            </div>
+          </div>
+
+          <div className="flex border-b border-gray-300 text-xs gap-2 py-0.5">
+            <span className="opacity-50">To:</span>
+            <span className="">tasks@dysperse.com</span>
+          </div>
+          <div className="flex border-b border-gray-300 text-xs gap-2 py-0.5">
+            <span className="opacity-50">
+              Cc/Bcc, From: Tim Cook &lt;timcook@apple.com&gt;
+            </span>
+          </div>
+          <div className="flex border-b border-gray-300 text-xs gap-2 py-0.5">
+            <span className="opacity-50">Subject: </span>
+            <span>Fwd: Your appointment is confirmed</span>
+          </div>
+          <div className="text-xs max-h-[22px] leading-none pt-1 overflow-hidden mt-auto text-left">
+            Your appointment with Dr. Smith is confirmed for 2:30 PM on
+            Thursday, 12th August 2025. Please let us know if you have any
+            questions or need to
+          </div>
+        </TooltipTrigger>
+        <TooltipContent side="bottom">
+          <p>
+            Taskify your emails by forwarding them to <b>tasks@dysperse.com</b>
+          </p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
+}
+
 export const Nutshell = () => {
+  // the video is 5s long. we want to set the position of the video of how much the user has scroller. we want the video to be complete when the video is scrolled halfway through the screen
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleScroll = () => {
+    if (!videoRef.current) return;
+    const video = videoRef.current;
+    const videoTop = video.getBoundingClientRect().top;
+    const videoBottom = video.getBoundingClientRect().bottom;
+    const windowHeight = window.innerHeight;
+
+    if (videoTop < windowHeight - 250 && videoBottom > 250) {
+      video.play();
+      window.removeEventListener("scroll", handleScroll);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+  }, []);
+
   return (
     <section className="w-full p-4 -mt-10">
       <h5
@@ -109,7 +185,7 @@ export const Nutshell = () => {
           <TaskPreview />
           <div className="flex-1 flex flex-col gap-3">
             <SpeechPreview />
-            <div className="flex-1 bg-gray-100 px-5 py-5 rounded-3xl"></div>
+            <MailPreview />
           </div>
         </div>
       </StaticStep>
@@ -129,7 +205,13 @@ export const Nutshell = () => {
             className="flex-1 bg-gray-100 rounded-3xl relative"
             style={{ aspectRatio: "1920/900" }}
           >
-            <Image src="/label-diagram.svg" alt="How labels work" fill />
+            <video
+              className="pointer-events-none rounded-3xl"
+              muted
+              ref={videoRef}
+            >
+              <source src="/label-diagram.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </StaticStep>
@@ -222,7 +304,7 @@ export const Nutshell = () => {
                     />
 
                     <div
-                      className="absolute inset-0 bg-gradient-to-b flex items-end font-medium p-3 text-2xl text-white from-neutral-100/5 to-neutral-900/50"
+                      className="absolute cursor-pointer inset-0 bg-gradient-to-b flex items-end font-medium p-3 text-2xl text-white from-neutral-100/5 to-neutral-900/50"
                       style={bricolage.style}
                     >
                       <h3>{_.title} </h3>

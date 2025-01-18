@@ -6,7 +6,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-div::-webkit-scrollbar,
+::-webkit-scrollbar,
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
@@ -127,6 +127,7 @@ p:hover {
 .nav-btn:hover,
 .chip:hover,
 .cursor-pointer:hover,
+.cursor-pointer:hover *,
 .nav-btn:hover *,
 a:hover,
 a:hover * {

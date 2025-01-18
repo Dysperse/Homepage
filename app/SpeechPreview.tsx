@@ -101,7 +101,7 @@ function SpeechPreview() {
   };
 
   return (
-    <div className="flex-1 bg-gray-100 px-5 py-5 rounded-3xl overflow-hidden relative">
+    <div className="flex-1 bg-gray-100 px-5 py-5 pb-0 rounded-3xl overflow-hidden relative h-1/2">
       {!isListening && (
         <div className="flex items-center justify-center pt-5">
           <p className="absolute top-0 left-0 font-bold p-4 text-center w-full">
@@ -126,23 +126,25 @@ function SpeechPreview() {
         </div>
       )}
 
-      <div className="mt-4">
-        <div className="flex flex-row-reverse items-center justify-center gap-1 h-6">
-          {audioLevels.map((level, index) => (
-            <div
-              key={index}
-              className="w-2 bg-black rounded-full min-h-1"
-              style={{ height: `${level * 100}%` }}
-            ></div>
-          ))}
+      {isListening && (
+        <div className="mt-4">
+          <div className="flex flex-row-reverse items-center justify-center gap-1 h-6">
+            {audioLevels.map((level, index) => (
+              <div
+                key={index}
+                className="w-2 bg-black rounded-full min-h-1"
+                style={{ height: `${level * 100}%` }}
+              ></div>
+            ))}
+          </div>
+          <p
+            id="transcript"
+            className="mt-4 text-gray-700 whitespace-nowrap overflow-x-auto text-center scrollbar-hidden opacity-30"
+          >
+            {transcription || "Start speaking to see the transcription..."}
+          </p>
         </div>
-        <p
-          id="transcript"
-          className="mt-4 text-gray-700 whitespace-nowrap overflow-x-auto text-center scrollbar-hidden opacity-30"
-        >
-          {transcription || "Start speaking to see the transcription..."}
-        </p>
-      </div>
+      )}
     </div>
   );
 }

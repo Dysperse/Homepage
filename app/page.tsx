@@ -37,13 +37,23 @@ function Hero() {
             Meet the sleek, intuitive, and uncomplicated productivity app that
             you've been waiting for.
           </h2>
-          <Button className="text-2xl p-1 h-16 rounded-full px-12 border-2 border-black">
+          <Button
+            slot="a"
+            // @ts-ignore
+            href="https://app.dysperse.com/auth/sign-up"
+            target="_blank"
+            className="text-2xl p-1 h-16 rounded-full px-12 border-2 border-black"
+          >
             <span className="-ml-3 mr-1">I'm intrigued</span>
             <div className="ml-3 w-12 h-12 text-black flex items-center justify-center bg-white rounded-full -mr-10">
               <span className="material-symbols-rounded">north_east</span>
             </div>
           </Button>
           <Button
+            slot="a"
+            // @ts-ignore
+            href="https://app.dysperse.com/auth/sign-up"
+            target="_blank"
             className="text-2xl h-16 rounded-full px-12 border-black border-2 ml-3"
             variant="outline"
           >
@@ -104,32 +114,67 @@ function Number({ children }: { children: React.ReactNode }) {
 
 function Footer() {
   return (
-    <footer className="bg-black mt-10 text-white p-5 py-10">
-      <h3 className="text-center text-2xl font-black" style={bricolage.style}>
-        #dysperse
-      </h3>
-      <div className="flex justify-center gap-5 mt-5">
-        <Link href="/download" className="text-lg font-semibold">
-          instagram
-        </Link>
-        <Link href="/download" className="text-lg font-semibold">
-          open source
-        </Link>
-        <Link href="/status" className="text-lg font-semibold">
-          status
-        </Link>
-        <Link href="/privacy" className="text-lg font-semibold">
-          privacy
-        </Link>
-        <Link href="/terms" className="text-lg font-semibold">
-          terms
-        </Link>
-      </div>
+    <footer className="grid sm:grid-cols-2 bg-black mt-10 text-white px-5 sm:px-16 py-10 sm:py-12">
       <div>
-        <p className="text-center mt-5">
+        <h3 className="text-2xl font-black" style={bricolage.style}>
+          #dysperse
+        </h3>
+        <div className="flex gap-5 mt-2">
+          <Link href="/download" className="text-lg font-semibold">
+            instagram
+          </Link>
+          <Link href="/download" className="text-lg font-semibold">
+            open source
+          </Link>
+          <Link href="/status" className="text-lg font-semibold">
+            status
+          </Link>
+          <Link href="/privacy" className="text-lg font-semibold">
+            privacy
+          </Link>
+          <Link href="/terms" className="text-lg font-semibold">
+            terms
+          </Link>
+        </div>
+        <p className="mt-2 opacity-50">
           © {new Date().getFullYear()}{" "}
-          <span className="ml-2">Made with ❤️ in the US</span>
+          <span className="ml-2">Proudly made in the US</span>. A project by{" "}
+          <Link
+            className="text-blue-500 font-bold"
+            href="https://bymanu.me?utm_source=dysperse.com"
+          >
+            Manu
+          </Link>
         </p>
+      </div>
+      <div className="flex flex-col items-center">
+        <p className="text-center opacity-50 mt-3">
+          Dysperse couldn't be free without the help of our amazing sponsors
+        </p>
+        <div className="flex justify-center gap-5 mt-5">
+          <Link
+            href="https://neon.tech?utm_source=dysperse.com"
+            target="_blank"
+          >
+            <Image
+              src="/sponsors/neon.svg"
+              alt="neon.tech logo"
+              width={40}
+              height={40}
+            />
+          </Link>
+          <Link
+            href="https://cloudflare.com?utm_source=dysperse.com"
+            target="_blank"
+          >
+            <Image
+              src="/sponsors/cloudflare.svg"
+              alt="neon.tech logo"
+              width={180}
+              height={60}
+            />
+          </Link>
+        </div>
       </div>
     </footer>
   );
@@ -164,6 +209,10 @@ function Navbar() {
         templates
       </Link>
       <Button
+        slot="a"
+        // @ts-ignore
+        target="_blank"
+        href="https://app.dysperse.com"
         variant="outline"
         className="ml-auto text-lg h-12 rounded-full px-6 pr-5 border-black border-2"
       >
@@ -240,28 +289,33 @@ function FamiliarUI() {
 
 function Poll() {
   return (
-    <section className="p-10 border-2 rounded-3xl mt-16 bg-gradient-to-b from-gray-50 to-gray-200">
+    <section className="p-10 border-2 rounded-3xl mt-5 bg-gradient-to-b from-gray-50 to-gray-200">
       <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
         Stay on top w/ dysperse
       </h6>
       <h2 className="text-3xl leading-tight tracking-tight font-extrabold">
-        If you had an extra hour in the day, how would you spend it?
+        If you had an extra hour in a day, how would you spend it?
       </h2>
       <div className="grid grid-cols-2 gap-2 mt-5">
         {[
-          "Reading",
-          "Exercising",
-          "Learning",
-          "Sleeping",
-          "Working",
-          "Socializing",
-        ].map((option) => (
+          { emoji: "1F4D6", name: "Reading" },
+          { emoji: "1F3CB", name: "Exercising" },
+          { emoji: "1F4DA", name: "Learning" },
+          { emoji: "1F634", name: "Sleeping" },
+          { emoji: "1F4BC", name: "Working" },
+          { emoji: "1F91D", name: "Socializing" },
+        ].map(({ emoji, name }) => (
           <Button
-            key={option}
-            className="text-lg h-12 rounded-full px-6 border-2 justify-start"
+            key={name}
+            className="text-lg h-12 rounded-full px-6 border-2 justify-start items-center"
             variant="secondary"
           >
-            {option}
+            <img
+              src={`https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/${emoji?.toLowerCase()}.png`}
+              alt={emoji}
+              className="w-6 h-6 mr-2"
+            />
+            {name}
           </Button>
         ))}
       </div>
