@@ -75,7 +75,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="absolute top-[100vh] left-0 bg-gray-100 border-y-2 w-full rotate-[-0.5deg] -mt-8">
+      <div className="absolute top-[100vh] left-0 bg-gray-100 border-y-2 w-full rotate-[-0.5deg] -mt-32 xl:-mt-8">
         <VelocityScroll
           numRows={1}
           className="select-none"

@@ -148,6 +148,7 @@ export const Nutshell = () => {
                 <DialogTrigger>
                   <div className="cursor-pointer active:scale-95 duration-75 transition-transform shrink-0 w-40 h-60 px-5 py-5 rounded-3xl relative bg-gray-100 overflow-hidden">
                     <Image
+                      className="rounded-3xl overflow-hidden"
                       alt={`View ${i + 1}`}
                       src={`/views/${i + 1}.png`}
                       fill

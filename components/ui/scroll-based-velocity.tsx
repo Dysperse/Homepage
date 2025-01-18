@@ -12,6 +12,7 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface VelocityScrollProps extends React.HTMLAttributes<HTMLDivElement> {
   defaultVelocity?: number;
@@ -99,9 +100,11 @@ function ParallaxText({ text, baseVelocity = 100, ...props }: ParallaxProps) {
                 >
                   {t}
                 </span>
-                <span className="opacity-20 pointer-events-none">
-                  {index < text.length - 1 && "ㅤ⬤ㅤ"}
-                </span>
+                {index < text.length - 1 && (
+                  <span className="opacity-20 pointer-events-none align-middle -mt-2 px-4 inline-block shrink-0">
+                    <Image alt="Logo" src="/logo.svg" width={30} height={30} />
+                  </span>
+                )}
               </span>
             ))}
           </span>
