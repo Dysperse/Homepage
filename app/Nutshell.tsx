@@ -104,16 +104,16 @@ function MailPreview() {
             </div>
           </div>
 
-          <div className="flex border-b border-gray-300 text-xs gap-2 py-0.5">
+          <div className="flex border-b w-full border-gray-300 text-xs gap-2 py-0.5">
             <span className="opacity-50">To:</span>
             <span className="">tasks@dysperse.com</span>
           </div>
-          <div className="flex border-b border-gray-300 text-xs gap-2 py-0.5">
+          <div className="flex border-b w-full border-gray-300 text-xs gap-2 py-0.5">
             <span className="opacity-50">
               Cc/Bcc, From: Tim Cook &lt;timcook@apple.com&gt;
             </span>
           </div>
-          <div className="flex border-b border-gray-300 text-xs gap-2 py-0.5">
+          <div className="flex border-b w-full border-gray-300 text-xs gap-2 py-0.5">
             <span className="opacity-50">Subject: </span>
             <span>Fwd: Your appointment is confirmed</span>
           </div>
