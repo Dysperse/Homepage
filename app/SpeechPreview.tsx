@@ -93,7 +93,7 @@ function SpeechPreview() {
       setTranscription((prev) => prev + liveTranscript);
     };
 
-    recognition.onerror = (event) => {
+    recognition.onerror = (event: any) => {
       console.error("Speech recognition error:", event.error);
     };
 
