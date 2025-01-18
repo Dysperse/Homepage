@@ -108,7 +108,7 @@ function SpeechPreview() {
             Say your tasks out loud
           </p>
           <div className="flex items-center justify-center gap-1 h-6 mt-5">
-            {[13, 40, 69, 81, 45, 91, 58, 94, 81].map((level, index) => (
+            {[32, 69, 81, 100, 45, 91, 58, 94, 81].map((level, index) => (
               <div
                 key={index}
                 className="w-2 bg-black rounded-full min-h-1"
