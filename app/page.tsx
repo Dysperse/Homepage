@@ -1,4 +1,6 @@
+import { AuroraText } from "@/components/ui/aurora-text";
 import { Button } from "@/components/ui/button";
+import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import { Bricolage_Grotesque, Jost } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,8 +19,8 @@ const jost = Jost({
 function Hero() {
   return (
     <section className="h-[calc(100vh-100px)] xl:h-screen">
-      <div className="items-center flex h-full">
-        <div className="-mt-32">
+      <div className="items-center flex h-full -mt-5 select-none">
+        <div className="-mt-36">
           <h1
             style={{
               ...bricolage.style,
@@ -26,23 +28,23 @@ function Hero() {
               fontWeight: 500,
               lineHeight: 1,
             }}
+            className="cursor-default"
           >
-            Master your
-            <br />
+            <AuroraText>Master</AuroraText> your <br />
             momentum
           </h1>
-          <h2 className="text-3xl leading-snug max-w-2xl mb-7 mt-5">
+          <h2 className="text-3xl leading-snug max-w-2xl mb-7 mt-5 cursor-default">
             Meet the sleek, intuitive, and uncomplicated productivity app that
             you've been waiting for.
           </h2>
-          <Button className="text-xl p-1 h-70 rounded-full px-7 border-2 border-black">
-            I'm intrigued
-            <div className="ml-3 w-9 h-9 text-black flex items-center justify-center bg-white rounded-full -mr-6">
+          <Button className="text-2xl p-1 h-16 rounded-full px-12 border-2 border-black">
+            <span className="-ml-3 mr-1">I'm intrigued</span>
+            <div className="ml-3 w-12 h-12 text-black flex items-center justify-center bg-white rounded-full -mr-10">
               <span className="material-symbols-rounded">north_east</span>
             </div>
           </Button>
           <Button
-            className="text-xl h-70 rounded-full px-7 border-black border-2 ml-3"
+            className="text-2xl h-16 rounded-full px-12 border-black border-2 ml-3"
             variant="outline"
           >
             Play the demo
@@ -71,6 +73,22 @@ function Hero() {
             alt="A person holding the Dysperse app in their hand"
           />
         </div>
+      </div>
+
+      <div className="absolute top-[100vh] left-0 bg-gray-100 border-y-2 w-full rotate-[-0.5deg] -mt-8">
+        <VelocityScroll
+          numRows={1}
+          className="select-none"
+          text={[
+            "100% free",
+            "Focus widgets",
+            "32+ themes",
+            "Ad free",
+            "Cross platform",
+            "Emojis for everything",
+            "",
+          ]}
+        />
       </div>
     </section>
   );
@@ -162,37 +180,29 @@ function AiFeatures() {
       <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
         And now, with AI
       </h6>
-      <p className="text-4xl leading-snug tracking-tight font-extrabold">
-        Sidekick{" "}
-        <span className="opacity-50">
-          is your AI assistant that transforms how you manage work.{" "}
-        </span>
-        <span className="opacity-50">From</span> analyzing collections{" "}
-        <span className="opacity-50">and</span> breaking down complex tasks
-        <span className="opacity-50"> to</span> generating actionable subtasks
-        <span className="opacity-50"> and</span> organizing your workload,{" "}
-        <span className="opacity-50">
-          Sidekick keeps you focused on what matters most. It seamlessly{" "}
-        </span>{" "}
-        converts forwarded emails into tasks, creates custom board templates,
-        <span className="opacity-50"> and</span> helps you divide and conquer
-        work effectively.
-      </p>
-      <details>
-        <summary className="trigger inline-flex items-center px-3 py-1 mt-2 gap-2 hover:bg-gray-100 active:bg-gray-200 rounded-xl -ml-2 opacity-50 cursor-pointer select-none">
-          How does this work pricing-wise?{" "}
-          <span className="material-symbols-rounded">expand_more</span>
-        </summary>
-        <div className="content mt-2 max-w-lg text-gray-500 font-medium">
-          <p>
-            Sidekick puts you in control of your AI experience. Choose between
-            our complimentary built-in AI tier or seamlessly connect your
-            preferred AI provider at no extra cost. While other apps charge
-            premium fees for AI features, Sidekick gives you the freedom to use
-            your own provider <b>without any surcharges.</b>
-          </p>
-        </div>
-      </details>
+      <h2 className="text-4xl leading-snug tracking-tight font-extrabold">
+        Let Sidekick take the heavy lifting out of your day.
+      </h2>
+      <h3 className="text-lg font-thin mb-2 opacity-50">
+        Connect your preferred AI assistant to Dysperse for no extra cost.
+      </h3>
+      <div>
+        <details>
+          <summary className="trigger inline-flex items-center px-3 py-1 mt-2 gap-2 hover:bg-gray-100 active:bg-gray-200 rounded-xl -ml-2 opacity-50 cursor-pointer select-none">
+            Taskify emails
+          </summary>
+        </details>
+        <details>
+          <summary className="trigger inline-flex items-center px-3 py-1 mt-2 gap-2 hover:bg-gray-100 active:bg-gray-200 rounded-xl -ml-2 opacity-50 cursor-pointer select-none">
+            Create collection templates
+          </summary>
+        </details>
+        <details>
+          <summary className="trigger inline-flex items-center px-3 py-1 mt-2 gap-2 hover:bg-gray-100 active:bg-gray-200 rounded-xl -ml-2 opacity-50 cursor-pointer select-none">
+            Organize tasks
+          </summary>
+        </details>
+      </div>
     </section>
   );
 }
@@ -222,52 +232,6 @@ function FamiliarUI() {
             Learn more
             <span className="material-symbols-rounded">north_east</span>
           </Button>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Customization() {
-  return (
-    <section className="border-2 rounded-3xl mt-5">
-      <div className="flex gap-10">
-        <div className="flex-[3] p-10 mt-5">
-          <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
-            Oh there's more...
-          </h6>
-          <h2 className="text-4xl leading-tight tracking-tight font-extrabold">
-            Share anything
-          </h2>
-          <h3 className="mb-2 text-lg font-thin">
-            From tasks to entire collections, get others to know what you're up
-            to
-          </h3>
-          <h2 className="text-4xl leading-tight tracking-tight font-extrabold">
-            Focus widgets
-          </h2>
-          <h3 className="mb-2 text-lg font-thin">
-            See widgets right next to your collections
-          </h3>
-          <h2 className="text-4xl leading-tight tracking-tight font-extrabold">
-            Smart by design
-          </h2>
-          <h3 className="mb-2 text-lg font-thin">
-            We'll understand dates & more when you create tasks
-          </h3>
-          <h2 className="text-4xl leading-tight tracking-tight font-extrabold">
-            32+ themes
-          </h2>
-          <h3 className="mb-2 text-lg font-thin">What's your fav?</h3>
-          <h2 className="text-4xl leading-tight tracking-tight font-extrabold">
-            Emojis & more
-          </h2>
-          <h3 className="mb-2 text-lg font-thin">
-            See widgets right next to your collections
-          </h3>
-        </div>
-        <div className="p-2 flex-[2]">
-          <div className="w-full h-full min-h-96 rounded-3xl bg-red-500"></div>
         </div>
       </div>
     </section>
@@ -314,7 +278,6 @@ export default function Home() {
           <Hero />
           <Nutshell />
           <FamiliarUI />
-          <Customization />
           <AiFeatures />
           <Poll />
         </div>
@@ -323,3 +286,4 @@ export default function Home() {
     </>
   );
 }
+

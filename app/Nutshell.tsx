@@ -1,6 +1,8 @@
 "use client";
 import type { ReactNode } from "react";
-import { Bricolage_Grotesque, Jost } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -9,12 +11,23 @@ const bricolage = Bricolage_Grotesque({
 
 export const Nutshell = () => {
   return (
-    <section className="w-full p-4 -mt-16">
+    <section className="w-full p-4 -mt-10">
       <h5
-        className="mb-8 font-black text-3xl text-neutral-700 dark:text-neutral-50"
+        className="mb-8 text-3xl flex items-center gap-3 text-neutral-700 dark:text-neutral-50"
         style={bricolage.style}
       >
-        Dysperse in a nutshell
+        <Button
+          className="rounded-full shadow-none border-2 text-3xl h-12 font-medium"
+          variant="outline"
+          onClick={() => new Audio("/pronunciation.mp3").play()}
+        >
+          Dysperse
+          <span style={{ fontSize: 30 }} className="material-symbols-rounded">
+            volume_up
+          </span>
+        </Button>
+        <span className="sr-only">Dysperse</span>
+        <span className="font-medium">in a nutshell</span>
       </h5>
       <StaticStep
         step={1}
@@ -57,15 +70,25 @@ export const Nutshell = () => {
         <div className="flex">
           <div className="shrink-0 w-10 bg-gradient-to-r h-60 from-white to-transparent z-10 -ml-10 px-5 py-5 -mr-10"></div>
           <div className="flex gap-2 overflow-x-auto px-10">
-            <div className="shrink-0 w-40 h-60 bg-gray-100 px-5 py-5 rounded-3xl"></div>
-            <div className="shrink-0 w-40 h-60 bg-gray-100 px-5 py-5 rounded-3xl"></div>
-            <div className="shrink-0 w-40 h-60 bg-gray-100 px-5 py-5 rounded-3xl"></div>
-            <div className="shrink-0 w-40 h-60 bg-gray-100 px-5 py-5 rounded-3xl"></div>
-            <div className="shrink-0 w-40 h-60 bg-gray-100 px-5 py-5 rounded-3xl"></div>
-            <div className="shrink-0 w-40 h-60 bg-gray-100 px-5 py-5 rounded-3xl"></div>
-            <div className="shrink-0 w-40 h-60 bg-gray-100 px-5 py-5 rounded-3xl"></div>
-            <div className="shrink-0 w-40 h-60 bg-gray-100 px-5 py-5 rounded-3xl"></div>
-            <div className="shrink-0 w-40 h-60 bg-gray-100 px-5 py-5 rounded-3xl"></div>
+            {[
+              { title: "List", icon: "list" },
+              { title: "Kanban", icon: "grid" },
+              { title: "Grid", icon: "calendar" },
+              { title: "Planner", icon: "kanban" },
+              { title: "Skyline", icon: "table" },
+              { title: "Stream", icon: "timeline" },
+              { title: "Workload", icon: "timeline" },
+              { title: "Matrix", icon: "map" },
+              { title: "Calendar", icon: "gallery" },
+            ].map((_, i) => (
+              <div className="shrink-0 w-40 h-60 px-5 py-5 rounded-3xl relative bg-gray-100 overflow-hidden">
+                <Image alt={`View ${i + 1}`} src={`/views/${i + 1}.png`} fill />
+
+                <div className="absolute inset-0 bg-gradient-to-b flex items-end font-black p-3 text-lg text-white from-neutral-100/5 to-neutral-900/40">
+                  <h3>{_.title} </h3>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="shrink-0 w-10 bg-gradient-to-l h-60 from-white to-transparent z-10 -ml-10 px-5 py-5"></div>
         </div>
@@ -109,3 +132,4 @@ const StaticStep = ({
 };
 
 export default Nutshell;
+
