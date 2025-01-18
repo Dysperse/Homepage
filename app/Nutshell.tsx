@@ -125,7 +125,12 @@ export const Nutshell = () => {
         }
       >
         <div className="flex gap-3">
-          <div className="flex-1 h-96 bg-gray-100 px-5 py-5 rounded-3xl"></div>
+          <div
+            className="flex-1 bg-gray-100 rounded-3xl relative"
+            style={{ aspectRatio: "1920/900" }}
+          >
+            <Image src="/label-diagram.svg" alt="How labels work" fill />
+          </div>
         </div>
       </StaticStep>
       <StaticStep
@@ -139,7 +144,7 @@ export const Nutshell = () => {
       >
         <div className="flex">
           <div className="shrink-0 w-10 bg-gradient-to-r h-60 from-white to-transparent z-10 -ml-10 px-5 py-5 -mr-10"></div>
-          <div className="flex gap-2 overflow-x-auto px-10">
+          <div className="flex gap-2 overflow-x-auto px-10 pb-4 -mb-4">
             {[
               {
                 title: "List",
