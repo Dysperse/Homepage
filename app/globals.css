@@ -119,6 +119,13 @@ img {
     @apply text-lg font-bold px-4 py-2 rounded-full hover:bg-gray-100 active:bg-gray-200 active:scale-95 inline-block;
     transition: all 0.2s;
   }
+
+  .template-filter-card {
+    @apply text-xl font-thin cursor-pointer bg-white flex-1 rounded-2xl p-4 border-2 border-gray-200 hover:bg-gray-50 active:bg-gray-100 active:scale-95 transition duration-150 ease-in-out focus-visible:bg-gray-50;
+    & .material-symbols-rounded {
+      font-size: 30px !important;
+    }
+  }
 }
 
 h1:hover,

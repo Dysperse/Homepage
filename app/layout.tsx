@@ -10,7 +10,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Dysperse",
+  title: "Dysperse • Master your momentum",
   description: "Master your momentum",
 };
 

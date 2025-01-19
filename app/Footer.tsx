@@ -15,19 +15,39 @@ export default function Footer() {
           #dysperse
         </h3>
         <div className="flex gap-5 mt-2">
-          <Link href="/download" className="text-lg font-semibold">
+          <Link
+            href="https://instagram.com/dysperse"
+            target="_blank"
+            className="text-lg font-semibold"
+          >
             instagram
           </Link>
-          <Link href="/download" className="text-lg font-semibold">
+          <Link
+            href="https://github.com/dysperse"
+            target="_blank"
+            className="text-lg font-semibold"
+          >
             open source
           </Link>
-          <Link href="/status" className="text-lg font-semibold">
+          <Link
+            href="https://status.dysperse.com"
+            target="_blank"
+            className="text-lg font-semibold"
+          >
             status
           </Link>
-          <Link href="/privacy" className="text-lg font-semibold">
+          <Link
+            href="https://blog.dysperse.com/privacy-policy"
+            target="_blank"
+            className="text-lg font-semibold"
+          >
             privacy
           </Link>
-          <Link href="/terms" className="text-lg font-semibold">
+          <Link
+            href="https://blog.dysperse.com/terms-of-service"
+            target="_blank"
+            className="text-lg font-semibold"
+          >
             terms
           </Link>
         </div>

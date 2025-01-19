@@ -366,10 +366,10 @@ const StaticStep = ({
   return (
     <div className="flex gap-6 w-full mt-4">
       <div className="flex flex-col items-center">
-        <p className="flex size-10 flex-none select-none items-center justify-center rounded-full border border-neutral-400/20 bg-neutral-100 font-bold text-neutral-700 text-lg dark:border-neutral-400/10 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80">
+        <p className="flex size-10 flex-none select-none items-center justify-center rounded-full border-[2px] border-neutral-400/20 bg-neutral-50 font-bold text-neutral-700 text-lg dark:border-neutral-400/10 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80">
           {step}
         </p>
-        <div className="relative my-2 h-full w-px rounded-full bg-neutral-200 dark:bg-neutral-700" />
+        <div className="relative my-2 h-full w-[2px] rounded-full bg-neutral-200 dark:bg-neutral-700" />
       </div>
       <div className="mb-4 w-full">
         <h2 className="mb-2 ml-1 font-bold text-3xl text-neutral-700 tracking-tight dark:text-neutral-50">
