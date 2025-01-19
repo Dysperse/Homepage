@@ -60,7 +60,7 @@ export default function Poll() {
         ].map(({ key, text, icon }) => (
           <Button
             key={text}
-            className="text-lg h-12 rounded-full px-6 border-2 justify-start items-center"
+            className="relative text-lg h-12 rounded-full px-6 border-2 justify-start items-center"
             variant="secondary"
             onClick={() => {
               if (loading === -1 && !data) {
