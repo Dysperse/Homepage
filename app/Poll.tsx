@@ -70,6 +70,20 @@ export default function Poll() {
             }}
             disabled={loading !== -1 || !!data}
           >
+            {data && (
+              <div
+                className="absolute top-0 left-0 h-full bg-gray-200"
+                style={{
+                  width: `${
+                    (data[key] /
+                      (Object as any)
+                        .values(data)
+                        .reduce((acc: number, curr: number) => acc + curr, 0)) *
+                    100
+                  }%`,
+                }}
+              />
+            )}
             <img
               src={`https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/${icon?.toLowerCase()}.png`}
               alt={icon}
@@ -122,21 +136,6 @@ export default function Poll() {
                 <span>
                   {data[key]} {data[key] === 1 ? "vote" : "votes"}
                 </span>
-                <div
-                  className="absolute top-0 left-0 h-full bg-gray-200"
-                  style={{
-                    width: `${
-                      (data[key] /
-                        (Object as any)
-                          .values(data)
-                          .reduce(
-                            (acc: number, curr: number) => acc + curr,
-                            0
-                          )) *
-                      100
-                    }%`,
-                  }}
-                />
               </div>
             )}
           </Button>
