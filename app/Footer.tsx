@@ -56,7 +56,7 @@ export default function Footer() {
               terms
             </Link>
           </div>
-          <p className="mt-2 opacity-50 text-center">
+          <p className="mt-5 opacity-50 text-center">
             © {new Date().getFullYear()}{" "}
             <span className="ml-2">Proudly made in the USA</span> by{" "}
             <Link
