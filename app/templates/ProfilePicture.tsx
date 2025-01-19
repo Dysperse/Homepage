@@ -4,7 +4,7 @@ export function ProfilePicture({ template }: any) {
       <img
         src={
           template.createdBy?.email === "hello@dysperse.com"
-            ? template.createdBy.profile?.picture
+            ? "/logo.svg"
             : `https://api.dicebear.com/9.x/notionists/svg?seed=${encodeURIComponent(
                 template.createdBy.profile?.name
               )}`
