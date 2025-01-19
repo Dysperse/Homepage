@@ -128,6 +128,7 @@ export default function Poll() {
       {data && (
         <div className="mt-3">
           <Button
+            //   @ts-ignore
             href="https://app.dysperse.com/auth/sign-up"
             target="_blank"
             className="w-full text-lg h-12 rounded-full px-6 border-2 border-black bg-black text-white"
