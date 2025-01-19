@@ -78,6 +78,7 @@ export default function Footer() {
                 alt="neon.tech logo"
                 width={30}
                 height={30}
+                className="hover:grayscale-0 grayscale"
               />
             </Link>
             <Link
@@ -89,6 +90,7 @@ export default function Footer() {
                 alt="neon.tech logo"
                 width={100}
                 height={40}
+                className="hover:grayscale-0 grayscale"
               />
             </Link>
           </div>
