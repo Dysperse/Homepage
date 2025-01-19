@@ -108,6 +108,17 @@ img {
     opacity: 1;
     @apply bg-gray-100;
   }
+
+  .download-card {
+    @apply w-full !ring-0 max-w-sm mx-auto !rounded-2xl !bg-gray-100 p-4 hover:!bg-gray-200 active:!bg-gray-200 focus:!bg-gray-100;
+    @apply !text-black border-2 flex-col !shadow-none !h-auto !text-lg !py-6 !font-black;
+    @apply hover:border-gray-300 active:border-gray-300 focus-visible:border-gray-400;
+  }
+
+  .navbar-link {
+    @apply text-lg font-bold px-4 py-2 rounded-full hover:bg-gray-100 active:bg-gray-200 active:scale-95 inline-block;
+    transition: all 0.2s;
+  }
 }
 
 h1:hover,

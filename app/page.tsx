@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import { Bricolage_Grotesque, Jost } from "next/font/google";
 import Image from "next/image";
-import Link from "next/link";
 import Nutshell from "./Nutshell";
 
 const bricolage = Bricolage_Grotesque({
@@ -112,130 +111,19 @@ function Number({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="grid sm:grid-cols-2 bg-black mt-10 text-white px-5 sm:px-16 py-10 sm:py-12">
-      <div>
-        <h3 className="text-2xl font-black" style={bricolage.style}>
-          #dysperse
-        </h3>
-        <div className="flex gap-5 mt-2">
-          <Link href="/download" className="text-lg font-semibold">
-            instagram
-          </Link>
-          <Link href="/download" className="text-lg font-semibold">
-            open source
-          </Link>
-          <Link href="/status" className="text-lg font-semibold">
-            status
-          </Link>
-          <Link href="/privacy" className="text-lg font-semibold">
-            privacy
-          </Link>
-          <Link href="/terms" className="text-lg font-semibold">
-            terms
-          </Link>
-        </div>
-        <p className="mt-2 opacity-50">
-          © {new Date().getFullYear()}{" "}
-          <span className="ml-2">Proudly made in the US</span>. A project by{" "}
-          <Link
-            className="text-blue-500 font-bold"
-            href="https://bymanu.me?utm_source=dysperse.com"
-          >
-            Manu
-          </Link>
-        </p>
-      </div>
-      <div className="flex flex-col items-center">
-        <p className="text-center opacity-50 mt-3">
-          Dysperse couldn't be free without the help of our amazing sponsors
-        </p>
-        <div className="flex justify-center gap-5 mt-5">
-          <Link
-            href="https://neon.tech?utm_source=dysperse.com"
-            target="_blank"
-          >
-            <Image
-              src="/sponsors/neon.svg"
-              alt="neon.tech logo"
-              width={40}
-              height={40}
-            />
-          </Link>
-          <Link
-            href="https://cloudflare.com?utm_source=dysperse.com"
-            target="_blank"
-          >
-            <Image
-              src="/sponsors/cloudflare.svg"
-              alt="neon.tech logo"
-              width={180}
-              height={60}
-            />
-          </Link>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-function Navbar() {
-  return (
-    <nav className="h-20 px-16 flex items-center w-full max-w-6xl mx-auto mt-4 mb-7">
-      <Image
-        alt="Logo"
-        className="mr-auto"
-        src="/logo.svg"
-        width={50}
-        height={50}
-      />
-      <Link
-        href="/download"
-        className="text-lg font-bold px-4 py-2 rounded-full hover:bg-gray-100 active:bg-gray-200"
-      >
-        download
-      </Link>
-      <Link
-        href="/faq"
-        className="text-lg font-bold px-4 py-2 rounded-full hover:bg-gray-100 active:bg-gray-200"
-      >
-        faq
-      </Link>
-      <Link
-        href="/download"
-        className="-mr-20 text-lg font-bold px-4 py-2 rounded-full hover:bg-gray-100 active:bg-gray-200"
-      >
-        templates
-      </Link>
-      <Button
-        slot="a"
-        // @ts-ignore
-        target="_blank"
-        href="https://app.dysperse.com"
-        variant="outline"
-        className="ml-auto text-lg h-12 rounded-full px-6 pr-5 border-black border-2"
-      >
-        launch
-        <span className="material-symbols-rounded">north_east</span>
-      </Button>
-    </nav>
-  );
-}
-
 function AiFeatures() {
   return (
     <section className="p-10 border-2 rounded-3xl mt-5">
       <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
-        And now, with AI
+        Arriving 2025
       </h6>
       <h2 className="text-4xl leading-snug tracking-tight font-extrabold">
         Let Sidekick take the heavy lifting out of your day.
       </h2>
-      <h3 className="text-lg font-thin mb-2 opacity-50">
+      <h3 className="text-lg font-thin opacity-50">
         Connect your preferred AI assistant to Dysperse for no extra cost.
       </h3>
-      <div>
+      {/* <div>
         <details>
           <summary className="trigger inline-flex items-center px-3 py-1 mt-2 gap-2 hover:bg-gray-100 active:bg-gray-200 rounded-xl -ml-2 opacity-50 cursor-pointer select-none">
             Taskify emails
@@ -251,7 +139,7 @@ function AiFeatures() {
             Organize tasks
           </summary>
         </details>
-      </div>
+      </div> */}
     </section>
   );
 }
@@ -326,7 +214,6 @@ function Poll() {
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main style={jost.style}>
         <div className="max-w-5xl mx-auto w-full">
           <Hero />
@@ -335,7 +222,6 @@ export default function Home() {
           <AiFeatures />
           <Poll />
         </div>
-        <Footer />
       </main>
     </>
   );
