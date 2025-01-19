@@ -123,7 +123,7 @@ export default function Poll() {
                   {data[key]} {data[key] === 1 ? "vote" : "votes"}
                 </span>
                 <div
-                  className="absolute top-0 left-0 h-full"
+                  className="absolute top-0 left-0 h-full bg-gray-200"
                   style={{
                     width: `${
                       (data[key] /
@@ -135,7 +135,6 @@ export default function Poll() {
                           )) *
                       100
                     }%`,
-                    backgroundColor: "#00bfa5",
                   }}
                 />
               </div>
