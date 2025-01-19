@@ -10,7 +10,7 @@ const bricolage = Bricolage_Grotesque({
 export default function Page() {
   return (
     <main className="min-h-[calc(100vh-300px)] p-10 relative">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl px-5 xl:px-0 mx-auto">
         <div className="max-w-xl">
           <h1 className="text-5xl font-black" style={bricolage.style}>
             Download the apps

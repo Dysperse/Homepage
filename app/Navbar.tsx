@@ -32,7 +32,7 @@ export default function Navbar() {
     <>
       <nav
         className={
-          "h-20 px-4 flex items-center w-full max-w-6xl mx-auto mt-5 mb-7 fixed top-0 left-[50%] backdrop-blur-lg z-50 rounded-full border-2 border-transparent " +
+          "h-20 px-4 flex items-center w-full max-w-6xl mx-auto mt-7 mb-7 fixed top-0 left-[50%] backdrop-blur-lg z-50 rounded-full border-2 border-transparent " +
           (hasScrolled && " shadow-lg max-w-xl")
         }
         style={{
@@ -83,17 +83,17 @@ export default function Navbar() {
           variant="outline"
           className={
             "ml-auto text-lg h-12 rounded-full px-6 pr-5 border-black border-2" +
-            (hasScrolled ? " !bg-black text-white" : "")
+            (hasScrolled ? " !bg-black !text-white" : "")
           }
           style={{
-            transition: "background-color 0.4s, color 0.4s",
+            transition: "background-color 0.4s, color 0.4s, transform 0.4s",
           }}
         >
           launch
           <span className="material-symbols-rounded">north_east</span>
         </Button>
       </nav>
-      <div className="h-20" />
+      <div className="h-32 xl:h-20" />
     </>
   );
 }

@@ -82,7 +82,7 @@ export default async function Page({ params: { id } }: any) {
     );
 
   return (
-    <main className="pt-20 max-w-5xl mx-auto w-full">
+    <main className="pt-20 max-w-5xl px-5 xl:px-0 w-full">
       <Back />
       <div>
         {template.category && (

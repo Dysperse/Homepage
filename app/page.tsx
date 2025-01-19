@@ -85,7 +85,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="absolute top-[100vh] left-0 bg-gray-100 border-y-2 w-full rotate-[-0.5deg] -mt-32 xl:-mt-8">
+      <div className="absolute top-[100vh] left-0 bg-gray-100 border-y-2 w-full rotate-[-0.5deg] -mt-32 xl:-mt-20">
         <VelocityScroll
           numRows={1}
           className="select-none"
@@ -181,7 +181,7 @@ export default function Home() {
   return (
     <>
       <main style={jost.style}>
-        <div className="max-w-5xl mx-auto w-full">
+        <div className="max-w-5xl px-5 xl:px-0 mx-auto w-full">
           <Hero />
           <Nutshell />
           <FamiliarUI />

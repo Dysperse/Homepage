@@ -25,7 +25,7 @@ function Views() {
       <h2 className="text-3xl font-black" style={jost.style}>
         Explore by perspective
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-8 gap-2 mt-2">
+      <div className="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-8 gap-2 mt-2">
         {Object.keys(collectionViews).map((view) => (
           <Link
             key={view}
@@ -52,7 +52,7 @@ function Categories() {
       <h2 className="text-3xl font-black" style={jost.style}>
         Popular categories
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-3 gap-2 mt-2">
         {collectionCategories.map((category) => (
           <Link
             key={category.text}
@@ -109,7 +109,7 @@ export default async function Page({ searchParams }: any) {
   const templates = await getTemplates(searchParams);
 
   return (
-    <main className="mx-auto max-w-5xl w-full">
+    <main className="mx-auto max-w-5xl px-5 xl:px-0 w-full">
       {hasFilters && (
         <Button
           variant="outline"
