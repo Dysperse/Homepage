@@ -82,7 +82,7 @@ export default async function Page({ params: { id } }: any) {
     );
 
   return (
-    <section className="pt-20 max-w-5xl mx-auto">
+    <main className="pt-20 max-w-5xl mx-auto w-full">
       <Back />
       <div>
         {template.category && (
@@ -148,7 +148,7 @@ export default async function Page({ params: { id } }: any) {
           />
         </div>
       </div>
-    </section>
+    </main>
   );
 }
 
