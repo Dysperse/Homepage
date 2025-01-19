@@ -68,7 +68,7 @@ export default function Navbar() {
         </Link>
         <Link
           href="/templates"
-          className={` navbar-link ${hasScrolled ? "" : "-mr-12"} ${
+          className={` navbar-link ${hasScrolled ? "" : "-mr-14"} ${
             pathname === "/templates" ? "!bg-gray-200" : ""
           }`}
           style={{ transition: "all 0.2s, margin-right 0.4s" }}
