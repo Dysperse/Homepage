@@ -72,7 +72,7 @@ export default function Poll() {
           >
             {data && (
               <div
-                className="absolute top-0 left-0 h-full bg-gray-200"
+                className="absolute top-0 left-0 h-full bg-gray-400 -z-10"
                 style={{
                   width: `${
                     (data[key] /
@@ -87,9 +87,9 @@ export default function Poll() {
             <img
               src={`https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/${icon?.toLowerCase()}.png`}
               alt={icon}
-              className="w-6 h-6 mr-2"
+              className="w-6 h-6 mr-2 z-10"
             />
-            {text}
+            <span className="z-10">{text}</span>
             {loading === key && !data && (
               <span className="ml-auto">
                 <svg
@@ -132,7 +132,7 @@ export default function Poll() {
               </span>
             )}
             {data && (
-              <div className="ml-auto opacity-50 relative w-full h-full">
+              <div className="ml-auto opacity-50 w-full h-full z-10">
                 <span>
                   {data[key]} {data[key] === 1 ? "vote" : "votes"}
                 </span>
