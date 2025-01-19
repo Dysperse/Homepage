@@ -118,9 +118,27 @@ export default function Poll() {
               </span>
             )}
             {data && (
-              <span className="ml-auto opacity-50">
-                {data[key]} {data[key] === 1 ? "vote" : "votes"}
-              </span>
+              <div className="ml-auto opacity-50 relative w-full h-full">
+                <span>
+                  {data[key]} {data[key] === 1 ? "vote" : "votes"}
+                </span>
+                <div
+                  className="absolute top-0 left-0 h-full"
+                  style={{
+                    width: `${
+                      (data[key] /
+                        (Object as any)
+                          .values(data)
+                          .reduce(
+                            (acc: number, curr: number) => acc + curr,
+                            0
+                          )) *
+                      100
+                    }%`,
+                    backgroundColor: "#00bfa5",
+                  }}
+                />
+              </div>
             )}
           </Button>
         ))}
