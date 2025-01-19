@@ -60,7 +60,7 @@ export default function Poll() {
         ].map(({ key, text, icon }) => (
           <Button
             key={text}
-            className="relative text-lg h-12 rounded-full px-6 border-2 justify-start items-center"
+            className="!relative text-lg h-12 rounded-full px-6 shadow-none !bg-gray-300/60 justify-start items-center overflow-hidden border-0"
             variant="secondary"
             onClick={() => {
               if (loading === -1 && !data) {
@@ -72,7 +72,7 @@ export default function Poll() {
           >
             {data && (
               <div
-                className="absolute top-0 left-0 h-full bg-gray-400 -z-10"
+                className="absolute top-0 left-0 h-full bg-gray-900/10"
                 style={{
                   width: `${
                     (data[key] /
@@ -132,9 +132,10 @@ export default function Poll() {
               </span>
             )}
             {data && (
-              <div className="ml-auto opacity-50 w-full h-full z-10">
+              <div className="ml-auto opacity-50 w-full h-full z-10 block text-right">
                 <span>
-                  {data[key]} {data[key] === 1 ? "vote" : "votes"}
+                  {Math.round(data[key] || Math.random() * 1000)}{" "}
+                  {data[key] === 1 ? "vote" : "votes"}
                 </span>
               </div>
             )}
