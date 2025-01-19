@@ -336,7 +336,12 @@ export const Nutshell = () => {
                       {_.description}
                     </p>
                     <div className="flex mt-auto flex-col pr-12">
-                      <Button className="h-12 rounded-3xl text-lg">
+                      <Button
+                        className="h-12 rounded-3xl text-lg"
+                        slot="a"
+                        // @ts-ignore
+                        href={`/templates?defaultView=${_.title.toLowerCase()}`}
+                      >
                         Find {_.title.toLowerCase()} templates
                       </Button>
                     </div>

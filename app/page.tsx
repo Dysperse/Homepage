@@ -4,6 +4,7 @@ import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import { Bricolage_Grotesque, Jost } from "next/font/google";
 import Image from "next/image";
 import Nutshell from "./Nutshell";
+import Poll from "./Poll";
 
 const bricolage = Bricolage_Grotesque({
   weight: ["200", "500", "700"],
@@ -93,6 +94,7 @@ function Hero() {
             "Focus widgets",
             "32+ themes",
             "Ad free",
+            "Templates for anything",
             "Cross platform",
             "Emojis for everything",
             "",
@@ -113,7 +115,7 @@ function Number({ children }: { children: React.ReactNode }) {
 
 function AiFeatures() {
   return (
-    <section className="p-10 border-2 rounded-3xl mt-5">
+    <section className="p-10 text-white rounded-3xl mt-5 bg-gradient-to-br from-pink-500 to-orange-700">
       <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
         Arriving 2025
       </h6>
@@ -170,42 +172,6 @@ function FamiliarUI() {
             <span className="material-symbols-rounded">north_east</span>
           </Button>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function Poll() {
-  return (
-    <section className="p-10 border-2 rounded-3xl mt-5 bg-gradient-to-b from-gray-50 to-gray-200">
-      <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
-        Stay on top w/ dysperse
-      </h6>
-      <h2 className="text-3xl leading-tight tracking-tight font-extrabold">
-        If you had an extra hour in a day, how would you spend it?
-      </h2>
-      <div className="grid grid-cols-2 gap-2 mt-5">
-        {[
-          { emoji: "1F4D6", name: "Reading" },
-          { emoji: "1F3CB", name: "Exercising" },
-          { emoji: "1F4DA", name: "Learning" },
-          { emoji: "1F634", name: "Sleeping" },
-          { emoji: "1F4BC", name: "Working" },
-          { emoji: "1F91D", name: "Socializing" },
-        ].map(({ emoji, name }) => (
-          <Button
-            key={name}
-            className="text-lg h-12 rounded-full px-6 border-2 justify-start items-center"
-            variant="secondary"
-          >
-            <img
-              src={`https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/${emoji?.toLowerCase()}.png`}
-              alt={emoji}
-              className="w-6 h-6 mr-2"
-            />
-            {name}
-          </Button>
-        ))}
       </div>
     </section>
   );
