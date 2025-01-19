@@ -36,32 +36,41 @@ export default function Page() {
                 icon: "android",
                 href: "https://click.dysperse.com/android",
                 label: "Android",
+                comingSoon: true,
               },
               {
                 icon: "ios",
                 href: "https://click.dysperse.com/ios",
                 label: "iPhone & iPad",
+                comingSoon: true,
               },
             ].map((link) => (
               <Button
                 key={link.label}
                 slot="a"
                 // @ts-ignore
-                href={link.href}
-                target="_blank"
-                className="download-card"
+                href={link.comingSoon ? undefined : link.href}
+                target={link.comingSoon ? undefined : "_blank"}
+                className={
+                  "download-card" +
+                  (link.comingSoon ? " opacity-50 pointer-events-none" : "")
+                }
+                disabled={link.comingSoon}
               >
                 <span
                   className="material-symbols-rounded"
                   style={{
                     fontSize: 30,
                     fontVariationSettings:
-                      link.icon === "mac" ? undefined : "'FILL' 1",
+                      link.icon === "desktop_mac" ? undefined : "'FILL' 1",
                   }}
                 >
                   {link.icon}
                 </span>
                 {link.label}
+                {link.comingSoon && (
+                  <span className="text-sm text-red-500 mt-1">Coming soon</span>
+                )}
               </Button>
             ))}
           </div>
