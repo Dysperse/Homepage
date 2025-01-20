@@ -52,7 +52,7 @@ function Categories() {
       <h2 className="text-3xl font-black" style={jost.style}>
         Popular categories
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-2 mt-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mt-2">
         {collectionCategories.map((category) => (
           <Link
             key={category.text}
@@ -143,12 +143,23 @@ export default async function Page({ searchParams }: any) {
           ? `Showing ${templates.length} results`
           : "Discover templates crafted by the community to help you get started on your next big idea"}
       </h2>
-      <form className="mt-5" action="/templates" method="get">
+      <form
+        className="mt-5 flex items-center gap-2"
+        action="/templates"
+        method="get"
+      >
         <Input
           name="search"
           placeholder="Find a template..."
           className="w-full !text-xl rounded-full h-auto py-3 px-5"
         />
+        <Button
+          type="submit"
+          size="icon"
+          className="w-12 h-12 ml-2 rounded-full aspect-square shrink-0"
+        >
+          <span className="material-symbols-rounded">east</span>
+        </Button>
       </form>
 
       {!hasFilters && <Categories />}
