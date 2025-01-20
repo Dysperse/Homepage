@@ -126,6 +126,39 @@ img {
       font-size: 30px !important;
     }
   }
+
+  .ai-summary {
+    @apply bg-transparent inline-flex cursor-pointer items-center gap-2 font-black text-2xl rounded-2xl p-4 py-2 select-none hover:bg-gray-50 active:bg-gray-100 active:scale-95 transition duration-150 ease-in-out focus-visible:bg-gray-50 overflow-hidden;
+  }
+
+  .ai-collapsible[open] {
+    @apply bg-gray-100;
+
+    & .ai-summary {
+      @apply !bg-transparent !scale-100 !duration-0;
+    }
+  }
+
+  .ai-details {
+    @apply bg-white rounded-2xl p-4 py-2 pt-0;
+  }
+}
+
+.progress-bar {
+  animation: progress 5s cubic-bezier(0.61, 1, 0.88, 1) infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 h1:hover,

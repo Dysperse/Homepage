@@ -32,8 +32,8 @@ export default function Navbar() {
     <>
       <nav
         className={
-          "h-20 px-4 flex items-center w-full max-w-6xl mx-auto mt-7 mb-7 fixed top-0 left-[50%] backdrop-blur-lg z-50 rounded-full border-2 border-transparent " +
-          (hasScrolled && " shadow-lg max-w-xl")
+          "h-20 px-4 flex items-center w-full max-w-6xl 2xl:max-w-8xl mx-auto mt-7 mb-7 fixed top-0 left-[50%] backdrop-blur-lg z-50 rounded-full border-2 border-transparent " +
+          (hasScrolled && " shadow-lg !max-w-xl")
         }
         style={{
           transform: "translateX(-50%)",

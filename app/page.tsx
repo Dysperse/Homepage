@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import { Bricolage_Grotesque, Jost } from "next/font/google";
 import Image from "next/image";
+import AiFeatures from "./AiFeatures";
 import Nutshell from "./Nutshell";
 import Poll from "./Poll";
 
@@ -18,17 +19,16 @@ const jost = Jost({
 
 function Hero() {
   return (
-    <section className="h-[calc(100vh-100px)] xl:h-screen">
-      <div className="items-center flex h-full -mt-5 select-none">
+    <section className="h-[calc(100vh-100px)] xl:h-screen0">
+      <div className="items-center flex h-full -mt-5 xl:-mt-0 2xl:mt-12 select-none">
         <div className="-mt-36">
           <h1
             style={{
               ...bricolage.style,
-              fontSize: 100,
               fontWeight: 500,
               lineHeight: 1,
             }}
-            className="cursor-default"
+            className="cursor-default text-8xl 2xl:text-9xl leading-none"
           >
             <AuroraText>Master</AuroraText> your <br />
             momentum
@@ -62,9 +62,8 @@ function Hero() {
           </Button>
         </div>
         <div
-          className="flex-1 overflow-hidden relative"
+          className="flex-1 overflow-hidden relative -mr-[390px] xl:-mr-[400px] 2xl:-mr-[500px] 2xl:ml-10"
           style={{
-            marginRight: -390,
             position: "relative",
             width: "auto",
             aspectRatio: "2234 / 1981",
@@ -85,7 +84,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="absolute top-[100vh] left-0 bg-gray-100 border-y-2 w-full rotate-[-0.5deg] -mt-32 xl:-mt-20">
+      <div className="absolute top-[100vh] left-0 bg-gray-100 border-y-2 w-full rotate-[-0.5deg] -mt-32 md:-mt-20 xl:-mt-12">
         <VelocityScroll
           numRows={1}
           className="select-none"
@@ -110,39 +109,6 @@ function Number({ children }: { children: React.ReactNode }) {
     <span className="w-14 h-14 border-2 border-black rounded-full flex items-center justify-center font-bold text-lg">
       {children}
     </span>
-  );
-}
-
-function AiFeatures() {
-  return (
-    <section className="p-10 text-white rounded-3xl mt-5 bg-gradient-to-br from-pink-500 to-orange-700">
-      <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
-        Arriving 2025
-      </h6>
-      <h2 className="text-4xl leading-snug tracking-tight font-extrabold">
-        Let Sidekick take the heavy lifting out of your day.
-      </h2>
-      <h3 className="text-lg font-thin opacity-50">
-        Connect your preferred AI assistant to Dysperse for no extra cost.
-      </h3>
-      {/* <div>
-        <details>
-          <summary className="trigger inline-flex items-center px-3 py-1 mt-2 gap-2 hover:bg-gray-100 active:bg-gray-200 rounded-xl -ml-2 opacity-50 cursor-pointer select-none">
-            Taskify emails
-          </summary>
-        </details>
-        <details>
-          <summary className="trigger inline-flex items-center px-3 py-1 mt-2 gap-2 hover:bg-gray-100 active:bg-gray-200 rounded-xl -ml-2 opacity-50 cursor-pointer select-none">
-            Create collection templates
-          </summary>
-        </details>
-        <details>
-          <summary className="trigger inline-flex items-center px-3 py-1 mt-2 gap-2 hover:bg-gray-100 active:bg-gray-200 rounded-xl -ml-2 opacity-50 cursor-pointer select-none">
-            Organize tasks
-          </summary>
-        </details>
-      </div> */}
-    </section>
   );
 }
 
@@ -181,7 +147,7 @@ export default function Home() {
   return (
     <>
       <main style={jost.style}>
-        <div className="max-w-5xl px-5 xl:px-0 mx-auto w-full">
+        <div className="max-w-5xl 2xl:max-w-7xl px-5 xl:px-0 mx-auto w-full">
           <Hero />
           <Nutshell />
           <FamiliarUI />
