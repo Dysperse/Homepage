@@ -6,6 +6,7 @@ import Image from "next/image";
 import AiFeatures from "./AiFeatures";
 import Nutshell from "./Nutshell";
 import Poll from "./Poll";
+import DemoButton from "./DemoButton";
 
 const bricolage = Bricolage_Grotesque({
   weight: ["200", "500", "700"],
@@ -46,21 +47,11 @@ function Hero() {
               className="text-xl lg:text-2xl p-1 h-12 lg:h-16 rounded-full px-8 lg:px-12 border-2 border-black"
             >
               I'm intrigued
-              <div className="ml-3 w-8 h-8 lg:w-12 lg:h-12 text-black flex items-center justify-center bg-white rounded-full -mr-5 lg:-mr-10">
+              <div className="ml-5 w-8 h-8 lg:w-12 lg:h-12 text-black flex items-center justify-center bg-white rounded-full -mr-6 lg:-mr-10">
                 <span className="material-symbols-rounded">north_east</span>
               </div>
             </Button>
-            <Button
-              slot="a"
-              // @ts-ignore
-              href="https://app.dysperse.com/auth/sign-up"
-              target="_blank"
-              className="text-xl lg:text-2xl h-12 lg:h-16 rounded-full px-8 lg:px-12 border-black border-2"
-              variant="outline"
-            >
-              Play the demo
-              <span className="material-symbols-rounded">joystick</span>
-            </Button>
+            <DemoButton />
           </div>
         </div>
         <div
@@ -120,22 +111,22 @@ function Hero() {
 
 function FamiliarUI() {
   return (
-    <section className="p-10 border-2 rounded-3xl mt-5 overflow-hidden">
-      <div className="flex flex-col-reverse sm:flex-row">
-        <div className="flex-[3] -mb-10 mr-0 sm:ml-10 -ml-32">
+    <section className="p-10 sm:pl-0 border-2 rounded-3xl mt-5 overflow-hidden">
+      <div className="flex flex-col-reverse sm:flex-row h-full w-full">
+        <div className="flex-[3] -mb-10 mr-0 sm:mr-5 -ml-10 flex items-end">
           <Image
             src="/tabs.png"
             alt="Person holding Dysperse on an iPad"
             width={3375 / 5}
             height={2256 / 5}
-            className="mt-10 sm:mt-auto"
+            className="mt-10 sm:!mt-auto"
           />
         </div>
         <div className="flex-[2] flex justify-center flex-col">
           <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
             Intuitive by design
           </h6>
-          <h2 className="text-4xl sm:text-5xl leading-tight tracking-tight font-extrabold">
+          <h2 className="text-4xl sm:text-2xl md:text-4xl lg:text-5xl leading-tight tracking-tight font-extrabold">
             Navigate with our browser-inspired design that feels like second
             nature
           </h2>

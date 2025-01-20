@@ -131,7 +131,7 @@ img {
   }
 
   .ai-summary {
-    @apply bg-transparent inline-flex cursor-pointer items-center gap-2 font-black text-xl sm:text-2xl rounded-2xl p-4 py-2 select-none hover:bg-gray-50 active:bg-gray-100 active:scale-95 transition duration-150 ease-in-out focus-visible:bg-gray-50 overflow-hidden;
+    @apply bg-transparent inline-flex cursor-pointer items-center gap-2 font-black text-xl lg:text-2xl rounded-2xl p-4 py-2 select-none hover:bg-gray-50 active:bg-gray-100 active:scale-95 transition duration-150 ease-in-out focus-visible:bg-gray-50 overflow-hidden;
   }
 
   .ai-collapsible[open] {

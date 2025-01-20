@@ -48,12 +48,12 @@ export default function AiFeatures() {
 
   return (
     <div className="p-[2px] rounded-3xl mt-5 bg-gradient-to-br from-orange-400 to-pink-700">
-      <section className="p-10 sm:p-16 rounded-[22.5px] bg-white flex flex-col sm:flex-row">
+      <section className="p-10 sm:p-16 sm:gap-10 rounded-[22.5px] bg-white flex flex-col sm:flex-row">
         <div className="flex-[5]">
           <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
             Arriving 2025
           </h6>
-          <h2 className="text-3xl sm:text-5xl leading-tight tracking-tight font-extrabold">
+          <h2 className="text-3xl lg:text-5xl leading-tight tracking-tight font-extrabold">
             Let{" "}
             <span className="inline-flex -mt-3 text-nowrap whitespace-nowrap gap-2 bg-gradient-to-br text-white from-orange-400 to-pink-600 px-3 py-0.5 -mb-0.5 select-none cursor-default rounded-xl items-center align-middle">
               <span
@@ -65,16 +65,16 @@ export default function AiFeatures() {
               Sidekick
             </span>{" "}
             take{" "}
-            <span className="hidden sm:inline">
+            <span className="hidden lg:inline">
               <br />
             </span>
             the heavy lifting out of{" "}
-            <span className="hidden sm:inline">
+            <span className="hidden lg:inline">
               <br />
             </span>
             your day.
           </h2>
-          <h3 className="text-2xl mt-4 mb-4 font-thin opacity-50">
+          <h3 className="lg:text-2xl mt-4 mb-4 font-thin opacity-50">
             Connect your preferred AI assistant <br />
             for no extra cost.
           </h3>
@@ -98,7 +98,7 @@ export default function AiFeatures() {
                 <h4 className="z-10">{feature.title}</h4>
               </summary>
               <div className="ai-details max-w-md z-10 relative bg-transparent">
-                <p className="z-10 text-lg text-gray-700">
+                <p className="z-10 lg:text-lg text-gray-700">
                   {feature.description}
                 </p>
               </div>
