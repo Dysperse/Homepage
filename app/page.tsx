@@ -49,7 +49,7 @@ function Hero() {
                   className="h-12 lg:h-16 p-1 px-4 lg:px-12 text-lg sm:text-xl lg:text-2xl rounded-full border-2 border-black"
                 >
                   I'm intrigued
-                  <div className="ml-2 w-9 h-9 lg:w-12 lg:h-12 text-black flex items-center justify-center bg-white rounded-full -mr-3 lg:-mr-10">
+                  <div className="ml-2 lg:ml-4 w-9 h-9 lg:w-12 lg:h-12 text-black flex items-center justify-center bg-white rounded-full -mr-3 lg:-mr-10">
                     <span className="material-symbols-rounded">north_east</span>
                   </div>
                 </Button>
