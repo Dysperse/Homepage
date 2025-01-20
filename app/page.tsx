@@ -121,21 +121,21 @@ function Hero() {
 function FamiliarUI() {
   return (
     <section className="p-10 border-2 rounded-3xl mt-5 overflow-hidden">
-      <div className="flex">
-        <div className="flex-[3] -mb-10 mr-10 -ml-32">
+      <div className="flex flex-col-reverse sm:flex-row">
+        <div className="flex-[3] -mb-10 mr-0 sm:ml-10 -ml-32">
           <Image
             src="/tabs.png"
             alt="Person holding Dysperse on an iPad"
             width={3375 / 5}
             height={2256 / 5}
-            className="mt-auto"
+            className="mt-10 sm:mt-auto"
           />
         </div>
         <div className="flex-[2] flex justify-center flex-col">
           <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
             Intuitive by design
           </h6>
-          <h2 className="text-5xl leading-tight tracking-tight font-extrabold">
+          <h2 className="text-4xl sm:text-5xl leading-tight tracking-tight font-extrabold">
             Navigate with our browser-inspired design that feels like second
             nature
           </h2>

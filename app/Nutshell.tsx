@@ -157,11 +157,11 @@ export const Nutshell = () => {
   return (
     <section className="w-full p-4 -mt-12 sm:-mt-10 md:mt-0 ">
       <h5
-        className="mb-8 text-3xl flex items-center gap-3 text-neutral-700 dark:text-neutral-50"
+        className="mb-8 text-2xl sm:text-3xl items-center gap-3 text-neutral-700 dark:text-neutral-50"
         style={bricolage.style}
       >
         <Button
-          className="rounded-full shadow-none border-2 text-3xl h-12 font-medium"
+          className="rounded-lg px-2 pr-1 gap-1 inline-flex shadow-none border-2 text-2xl sm:text-3xl h-12 font-medium"
           variant="outline"
           onClick={() => new Audio("/pronunciation.mp3").play()}
         >
@@ -170,8 +170,7 @@ export const Nutshell = () => {
             volume_up
           </span>
         </Button>
-        <span className="sr-only">Dysperse</span>
-        <span className="font-medium">in a nutshell</span>
+        <span className="font-medium ml-3">in a nutshell</span>
       </h5>
       <StaticStep
         step={1}
@@ -179,9 +178,9 @@ export const Nutshell = () => {
         subtitle="Whatever's on your mind—big or small—Dysperse helps you turn it into an
         organized task."
       >
-        <div className="grid grid-cols-3 gap-3">
+        <div className="sm:grid grid-cols-3 gap-3">
           <TaskPreview />
-          <div className="flex-1 flex flex-col gap-3">
+          <div className="mt-3 h-60 sm:h-[unset] sm:mt-0 flex-1 flex flex-col gap-3">
             <SpeechPreview />
             <MailPreview />
           </div>

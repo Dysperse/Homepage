@@ -49,7 +49,7 @@ export default function Poll() {
           </span>
         </div>
       )}
-      <div className="grid grid-cols-2 gap-2 mt-5">
+      <div className="grid sm:grid-cols-2 gap-2 mt-5">
         {[
           { key: 0, text: "Spend time with my family", icon: "1F60C" },
           { key: 1, text: "Have some me-time", icon: "1F60C" },
@@ -60,7 +60,7 @@ export default function Poll() {
         ].map(({ key, text, icon }) => (
           <Button
             key={text}
-            className="!relative text-lg h-12 rounded-full px-6 shadow-none !bg-gray-300/60 justify-start items-center overflow-hidden border-0"
+            className="!relative text-lg h-16 sm:h-12 rounded-full px-6 shadow-none !bg-gray-300/60 justify-start items-center overflow-hidden border-0"
             variant="secondary"
             onClick={() => {
               if (loading === -1 && !data) {
@@ -89,7 +89,17 @@ export default function Poll() {
               alt={icon}
               className="w-6 h-6 mr-2 z-10"
             />
-            <span className="z-10">{text}</span>
+            <span className="flex flex-col sm:flex-row">
+              <span className="z-10">{text}</span>
+              {data && (
+                <div className="sm:ml-auto opacity-50 w-full h-full z-10 block sm:text-right">
+                  <span>
+                    {Math.round(data[key] || Math.random() * 1000)}{" "}
+                    {data[key] === 1 ? "vote" : "votes"}
+                  </span>
+                </div>
+              )}
+            </span>
             {loading === key && !data && (
               <span className="ml-auto">
                 <svg
@@ -130,14 +140,6 @@ export default function Poll() {
                   </g>
                 </svg>
               </span>
-            )}
-            {data && (
-              <div className="ml-auto opacity-50 w-full h-full z-10 block text-right">
-                <span>
-                  {Math.round(data[key] || Math.random() * 1000)}{" "}
-                  {data[key] === 1 ? "vote" : "votes"}
-                </span>
-              </div>
             )}
           </Button>
         ))}

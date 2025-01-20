@@ -12,14 +12,14 @@ export default function Page() {
     <main className="min-h-[calc(100vh-300px)] p-10 relative">
       <div className="max-w-5xl px-5 xl:px-0 mx-auto">
         <div className="max-w-xl">
-          <h1 className="text-5xl font-black" style={bricolage.style}>
+          <h1 className="text-5xl mt-10 font-black" style={bricolage.style}>
             Download the apps
           </h1>
           <h2 className="text-xl mt-3">
             Download Dysperse on all of your devices
           </h2>
 
-          <div className="grid grid-cols-3 gap-2 mt-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-5">
             {[
               { icon: "globe", href: "https://app.dysperse.com", label: "Web" },
               {
@@ -117,7 +117,7 @@ export default function Page() {
 
         <div
           style={{ aspectRatio: "1661/1843" }}
-          className="absolute bottom-0 right-0 hidden lg:flex h-full -mb-10"
+          className="absolute bottom-0 right-0 hidden lg:flex xl:h-full -mb-10 max-w-md md:max-w-lg xl:w-[unset] xl:max-w-[unset] w-full"
         >
           <Image alt="Download" src="/download.png" fill />
         </div>

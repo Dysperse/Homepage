@@ -19,7 +19,7 @@ export default function Footer() {
           >
             <TextHoverEffect text="#dysperse" />
           </h3>
-          <div className="flex gap-5 justify-center mb-3">
+          <div className="grid grid-cols-3 sm:flex gap-5 justify-center mb-3">
             <Link
               href="https://instagram.com/dysperse"
               target="_blank"

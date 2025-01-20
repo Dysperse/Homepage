@@ -48,12 +48,12 @@ export default function AiFeatures() {
 
   return (
     <div className="p-[2px] rounded-3xl mt-5 bg-gradient-to-br from-orange-400 to-pink-700">
-      <section className="p-16 rounded-[22.5px] bg-white flex">
+      <section className="p-10 sm:p-16 rounded-[22.5px] bg-white flex flex-col sm:flex-row">
         <div className="flex-[5]">
           <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
             Arriving 2025
           </h6>
-          <h2 className="text-5xl leading-tight tracking-tight font-extrabold">
+          <h2 className="text-3xl sm:text-5xl leading-tight tracking-tight font-extrabold">
             Let{" "}
             <span className="inline-flex -mt-3 text-nowrap whitespace-nowrap gap-2 bg-gradient-to-br text-white from-orange-400 to-pink-600 px-3 py-0.5 -mb-0.5 select-none cursor-default rounded-xl items-center align-middle">
               <span
@@ -64,8 +64,14 @@ export default function AiFeatures() {
               </span>
               Sidekick
             </span>{" "}
-            take <br />
-            the heavy lifting out of <br />
+            take{" "}
+            <span className="hidden sm:inline">
+              <br />
+            </span>
+            the heavy lifting out of{" "}
+            <span className="hidden sm:inline">
+              <br />
+            </span>
             your day.
           </h2>
           <h3 className="text-2xl mt-4 mb-4 font-thin opacity-50">

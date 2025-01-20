@@ -52,7 +52,7 @@ function Categories() {
       <h2 className="text-3xl font-black" style={jost.style}>
         Popular categories
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-3 gap-2 mt-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-2 mt-2">
         {collectionCategories.map((category) => (
           <Link
             key={category.text}
@@ -123,7 +123,9 @@ export default async function Page({ searchParams }: any) {
         </Button>
       )}
       <h1
-        className={`text-5xl ${hasFilters ? "mt-6" : "mt-10"} font-black`}
+        className={`text-5xl mt-10 xl:mt-20 ${
+          hasFilters ? "mt-6" : "mt-10"
+        } font-black`}
         style={bricolage.style}
       >
         {hasFilters
@@ -157,7 +159,7 @@ export default async function Page({ searchParams }: any) {
           Latest
         </h3>
       )}
-      <section className="grid grid-cols-3 gap-5 mt-5">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-5">
         {templates.map((template: any) => (
           <Link href={`/templates/${template.id}`} key={template.id}>
             <article className="bg-white rounded-3xl overflow-hidden border-2 active:scale-95 transition-transform">
