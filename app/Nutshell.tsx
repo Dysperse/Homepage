@@ -155,7 +155,7 @@ export const Nutshell = () => {
   }, []);
 
   return (
-    <section className="w-full p-4 mt-8">
+    <section className="w-full p-4 mt-8 2xl:mt-16">
       <h5
         className="mb-8 text-2xl sm:text-3xl items-center gap-3 text-neutral-700 dark:text-neutral-50"
         style={bricolage.style}

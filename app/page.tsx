@@ -78,7 +78,7 @@ function Hero() {
           </div>
         </div>
       </section>
-      <div className="mt-8 md:-mt-16 py-2 md:py-0 left-0 bg-gray-100 border-y-2 w-full rotate-[-2deg] sm:rotate-[-0.5deg]">
+      <div className="mt-8 md:-mt-16 2xl:-mt-24 py-2 md:py-0 left-0 bg-gray-100 border-y-2 w-full rotate-[-2deg] sm:rotate-[-0.5deg]">
         <VelocityScroll
           numRows={1}
           className="select-none"
