@@ -23,7 +23,7 @@ function Hero() {
     <>
       <section className="h-auto sm:h-[calc(100vh-100px)] xl:h-[calc(100vh-150px)] px-5 sm:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-5 h-full items-center">
-          <div className="order-1 sm:order-[unset] flex flex-col sm:col-span-3 justify-center">
+          <div className="-top-4 sm:top-0 relative order-1 sm:order-[unset] flex flex-col sm:col-span-3 justify-center">
             <div className="max-w-4xl mx-auto">
               <h1
                 style={{

@@ -217,13 +217,17 @@ export const Nutshell = () => {
         title="Visualize it"
         subtitle={
           <>
-            We've created <b>nine</b> beautiful ways to view collections
+            We've created <b>nine</b> beautiful ways to
+            <span className="sm:hidden">
+              <br />
+            </span>{" "}
+            view collections
           </>
         }
       >
         <div className="flex">
           <div className="shrink-0 w-10 bg-gradient-to-r h-60 from-white to-transparent z-10 -ml-10 px-5 py-5 -mr-10"></div>
-          <div className="snap-mandatory flex gap-2 overflow-x-auto px-10 pb-4 -mb-4 snap-x">
+          <div className="snap-mandatory flex gap-2 overflow-x-auto px-10 pr-20 sm:pr-10 pb-4 -mb-4 snap-x">
             {[
               {
                 title: "List",
