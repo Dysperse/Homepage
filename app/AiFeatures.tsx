@@ -105,7 +105,7 @@ export default function AiFeatures() {
             </details>
           ))}
         </div>
-        <div className="flex-[2.7]">
+        <div className="flex-[2.3]">
           <div className="relative aspect-[965/1920] mt-10">
             {features.map((_, index) => (
               <Image
