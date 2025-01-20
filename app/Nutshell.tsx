@@ -24,7 +24,7 @@ const bricolage = Bricolage_Grotesque({
 
 function TaskPreview() {
   return (
-    <div className="w-full h-60 bg-gray-100 px-5 py-5 rounded-3xl flex flex-col gap-3 col-span-2">
+    <div className="w-full h-full min-h-60 bg-gray-100 px-5 py-5 rounded-3xl flex flex-col gap-3 col-span-2">
       <div className="flex">
         <div className="cursor-pointer border -ml-1 inline-flex items-center gap-2 py-2 px-4 rounded-full">
           <span
@@ -91,10 +91,10 @@ function MailPreview() {
       <Tooltip>
         <TooltipTrigger className="flex-1 bg-gray-100 px-5 rounded-3xl h-1/2 flex flex-col cursor-pointer select-none">
           <div className="flex w-full items-center gap-3 mt-3">
-            <span className="text-sm font-bold">
+            <span className="text-sm font-bold text-left truncate">
               Fwd: Your appointment is confirmed
             </span>
-            <div className="ml-auto w-5 h-5 bg-black text-white rounded-full flex items-center justify-center">
+            <div className="ml-auto w-5 h-5 bg-black shrink-0 text-white rounded-full flex items-center justify-center">
               <span
                 className="material-symbols-rounded"
                 style={{ fontSize: 14 }}
@@ -108,7 +108,7 @@ function MailPreview() {
             <span className="opacity-50">To:</span>
             <span className="">tasks@dysperse.com</span>
           </div>
-          <div className="flex border-b w-full border-gray-300 text-xs gap-2 py-0.5">
+          <div className="flex border-b w-full border-gray-300 text-xs text-left truncate gap-2 py-0.5">
             <span className="opacity-50">
               Cc/Bcc, From: Tim Cook &lt;timcook@apple.com&gt;
             </span>
@@ -155,7 +155,7 @@ export const Nutshell = () => {
   }, []);
 
   return (
-    <section className="w-full p-4 -mt-10 md:mt-0 2xl:mt-20">
+    <section className="w-full p-4 -mt-12 sm:-mt-10 md:mt-0 ">
       <h5
         className="mb-8 text-3xl flex items-center gap-3 text-neutral-700 dark:text-neutral-50"
         style={bricolage.style}
@@ -224,7 +224,7 @@ export const Nutshell = () => {
       >
         <div className="flex">
           <div className="shrink-0 w-10 bg-gradient-to-r h-60 from-white to-transparent z-10 -ml-10 px-5 py-5 -mr-10"></div>
-          <div className="flex gap-2 overflow-x-auto px-10 pb-4 -mb-4">
+          <div className="snap-mandatory flex gap-2 overflow-x-auto px-10 pb-4 -mb-4 snap-x">
             {[
               {
                 title: "List",
@@ -292,7 +292,7 @@ export const Nutshell = () => {
                     );
                 }}
               >
-                <DialogTrigger>
+                <DialogTrigger className="snap-center">
                   <div className="cursor-pointer active:scale-95 duration-[400] transition-transform shrink-0 w-40 h-60 px-5 py-5 rounded-3xl relative bg-gray-100 overflow-hidden">
                     <Image
                       className="rounded-3xl overflow-hidden"

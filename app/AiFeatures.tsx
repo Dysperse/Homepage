@@ -100,8 +100,16 @@ export default function AiFeatures() {
           ))}
         </div>
         <div className="flex-[2.7]">
-          <div className="relative aspect-[965/1920]">
-            <Image src={`/ai/${openFeature + 1}.png`} fill alt="" />
+          <div className="relative aspect-[965/1920] mt-10">
+            {features.map((_, index) => (
+              <Image
+                key={index}
+                src={`/ai/${index + 1}.png`}
+                fill
+                alt=""
+                style={{ display: index === openFeature ? "block" : "none" }}
+              />
+            ))}
           </div>
         </div>
       </section>

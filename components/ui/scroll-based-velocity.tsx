@@ -13,16 +13,17 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 interface VelocityScrollProps extends React.HTMLAttributes<HTMLDivElement> {
   defaultVelocity?: number;
   className?: string;
-  text: string[];
+  text: { text: string; link: any }[];
   numRows?: number;
 }
 
 interface ParallaxProps extends React.HTMLAttributes<HTMLDivElement> {
-  text: string[];
+  text: { text: string; link: any }[];
   baseVelocity: number;
 }
 
@@ -91,17 +92,16 @@ function ParallaxText({ text, baseVelocity = 100, ...props }: ParallaxProps) {
         {Array.from({ length: repetitions }).map((_, i) => (
           <span key={i} ref={i === 0 ? textRef : null}>
             {text.map((t, index) => (
-              <span key={t}>
-                <span
+              <span key={t.text}>
+                <Link
+                  href={t.link}
                   className="opacity-20 hover:opacity-100 cursor-pointer hover:scale-105 inline-block"
-                  style={{
-                    transition: "opacity 0.1s, transform 0.2s",
-                  }}
+                  style={{ transition: "opacity 0.1s, transform 0.2s" }}
                 >
-                  {t}
-                </span>
+                  {t.text}
+                </Link>
                 {index < text.length - 1 && (
-                  <span className="opacity-20 pointer-events-none align-middle -mt-2 px-4 inline-block shrink-0">
+                  <span className="opacity-20 pointer-events-none align-middle sm:-mt-2 px-4 inline-block shrink-0">
                     <Image alt="Logo" src="/logo.svg" width={30} height={30} />
                   </span>
                 )}
@@ -124,7 +124,7 @@ export function VelocityScroll({
   return (
     <div
       className={cn(
-        "relative w-full text-md font-bold tracking-[-0.02em] md:text-xl md:leading-[3rem]",
+        "relative w-full text-lg font-bold tracking-[-0.02em] md:text-xl md:leading-[3rem]",
         className
       )}
       {...props}
