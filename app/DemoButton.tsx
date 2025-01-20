@@ -16,7 +16,7 @@ export default function DemoButton() {
           slot="a"
           // @ts-ignore
           target="_blank"
-          className="text-xl lg:text-2xl h-12 lg:h-16 rounded-full px-8 lg:px-12 border-black border-2"
+          className="text-lg sm:text-xl lg:text-2xl h-12 lg:h-16 rounded-full px-4 lg:px-12 border-black border-2"
           variant="outline"
         >
           Play the demo
