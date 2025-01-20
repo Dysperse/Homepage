@@ -11,7 +11,7 @@ const bricolage = Bricolage_Grotesque({
 export default function Footer() {
   return (
     <footer className="bg-black mt-10 text-white px-5 ">
-      <div className=" max-w-xl mx-auto sm:px-16 py-10 sm:py-12">
+      <div className="max-w-xl mx-auto sm:px-16 py-10 sm:py-12">
         <div>
           <h3
             className="text-5xl font-black cursor-default -my-5 -mb-2"
@@ -99,3 +99,4 @@ export default function Footer() {
     </footer>
   );
 }
+
