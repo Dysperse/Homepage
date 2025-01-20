@@ -88,6 +88,10 @@ function Hero() {
               link: "https://app.dysperse.com/auth/sign-up",
             },
             {
+              text: "Open source",
+              link: "https://github.com/Dysperse",
+            },
+            {
               text: "Focus widgets",
               link: "https://app.dysperse.com/auth/sign-up",
             },
