@@ -21,8 +21,8 @@ const jost = Jost({
 function Hero() {
   return (
     <section className="h-screen sm:h-[calc(100vh-100px)] xl:h-screen">
-      <div className="items-center flex flex-col-reverse sm:flex-row h-full sm:-mt-5 xl:mt-1 select-none">
-        <div className="mb-48 sm:mb-0 -mt-20 sm:-mt-36">
+      <div className="items-center flex flex-col-reverse sm:flex-row h-full -mt-5 sm:mt-10 xl:mt-1 select-none">
+        <div className="mb-32 sm:mb-0 -mt-28 sm:-mt-36">
           <h1
             style={{
               ...bricolage.style,
@@ -55,7 +55,7 @@ function Hero() {
           </div>
         </div>
         <div
-          className="h-auto sm:max-w-[unset] flex-1 overflow-hidden relative -mr-[320px] sm:-mr-[300px] md:-mr-[500px] lg:-mr-[430px] xl:-mr-[390px] 2xl:-mr-[390px] lg:ml-20"
+          className="h-auto sm:max-w-[unset] flex-1 overflow-hidden relative -mr-[450px] sm:-mr-[300px] md:-mr-[900px] lg:-mr-[430px] xl:-mr-[320px] 2xl:-mr-[390px] -ml-24 lg:ml-20"
           style={{
             position: "relative",
             aspectRatio: "2234 / 1981",
@@ -74,7 +74,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="absolute top-[100vh] py-2 md:py-0 left-0 bg-gray-100 border-y-2 w-full rotate-[-2deg] sm:rotate-[-0.5deg] -mt-7 sm:-mt-32 md:-mt-26 lg:-mt-28 xl:-mt-16">
+      <div className="absolute top-[100vh] py-2 md:py-0 left-0 bg-gray-100 border-y-2 w-full rotate-[-2deg] sm:rotate-[-0.5deg] mt-5 sm:-mt-32 md:-mt-26 lg:-mt-28 xl:-mt-16">
         <VelocityScroll
           numRows={1}
           className="select-none"

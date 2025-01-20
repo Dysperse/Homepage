@@ -38,14 +38,14 @@ function TaskPreview() {
       </div>
       <textarea
         placeholder="What's on your mind?"
-        className="resize-none text-3xl font-thin bg-transparent w-full h-full outline-none"
+        className="resize-none text-2xl sm:text-3xl font-thin bg-transparent w-full h-full outline-none"
         style={bricolage.style}
       />
-      <div className="flex gap-1">
+      <div className="flex gap-1 mt-auto">
         <Button
           size="icon"
           variant="secondary"
-          className="w-12 h-12 rounded-full bg-gray-200 ml-auto shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
+          className="h-10 w-10 sm:w-12 sm:h-12 rounded-full bg-gray-200 ml-auto shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
           style={{ transition: "background-color 0.2s, transform 0.3s" }}
         >
           <span className="material-symbols-rounded">mic</span>
@@ -53,7 +53,7 @@ function TaskPreview() {
         <Button
           size="icon"
           variant="secondary"
-          className="w-12 h-12 rounded-full bg-gray-200 shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
+          className="h-10 w-10 sm:w-12 sm:h-12 rounded-full bg-gray-200 shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
           style={{ transition: "background-color 0.2s, transform 0.3s" }}
         >
           <span className="material-symbols-rounded">new_label</span>
@@ -61,7 +61,7 @@ function TaskPreview() {
         <Button
           size="icon"
           variant="secondary"
-          className="w-12 h-12 rounded-full bg-gray-200 shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
+          className="h-10 w-10 sm:w-12 sm:h-12 rounded-full bg-gray-200 shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
           style={{ transition: "background-color 0.2s, transform 0.3s" }}
         >
           <span className="material-symbols-rounded">calendar_today</span>
@@ -69,14 +69,14 @@ function TaskPreview() {
         <Button
           size="icon"
           variant="secondary"
-          className="w-12 h-12 rounded-full bg-gray-200 shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
+          className="h-10 w-10 sm:w-12 sm:h-12 rounded-full bg-gray-200 shadow-none active:bg-gray-300 focus:bg-gray-300 hover:bg-gray-300"
           style={{ transition: "background-color 0.2s, transform 0.3s" }}
         >
           <span className="material-symbols-rounded">push_pin</span>
         </Button>
         <Button
           size="icon"
-          className="w-12 h-12 rounded-full shadow-none active:bg-gray-950 focus:bg-gray-950 hover:bg-gray-950"
+          className="h-10 w-10 sm:w-12 sm:h-12 rounded-full shadow-none active:bg-gray-950 focus:bg-gray-950 hover:bg-gray-950"
         >
           <span className="material-symbols-rounded">north</span>
         </Button>
@@ -91,8 +91,8 @@ function MailPreview() {
       <Tooltip>
         <TooltipTrigger className="flex-1 bg-gray-100 px-5 rounded-3xl h-1/2 flex flex-col cursor-pointer select-none">
           <div className="flex w-full items-center gap-3 mt-3">
-            <span className="text-sm font-bold text-left truncate">
-              Fwd: Your appointment is confirmed
+            <span className="text-sm font-bold text-left truncate ">
+              Fwd: Your appointment is con...
             </span>
             <div className="ml-auto w-5 h-5 bg-black shrink-0 text-white rounded-full flex items-center justify-center">
               <span
@@ -113,7 +113,7 @@ function MailPreview() {
               Cc/Bcc, From: Tim Cook &lt;timcook@apple.com&gt;
             </span>
           </div>
-          <div className="flex border-b w-full border-gray-300 text-xs gap-2 py-0.5">
+          <div className="flex border-b w-full text-left truncate border-gray-300 text-xs gap-2 py-0.5">
             <span className="opacity-50">Subject: </span>
             <span>Fwd: Your appointment is confirmed</span>
           </div>
@@ -155,7 +155,7 @@ export const Nutshell = () => {
   }, []);
 
   return (
-    <section className="w-full p-4 -mt-12 sm:-mt-10 md:mt-0 ">
+    <section className="w-full p-4 -mt-2 sm:-mt-10 md:mt-0 ">
       <h5
         className="mb-8 text-2xl sm:text-3xl items-center gap-3 text-neutral-700 dark:text-neutral-50"
         style={bricolage.style}
@@ -382,7 +382,7 @@ const StaticStep = ({
             {subtitle}
           </h3>
         )}
-        <div className="pl-1">{children}</div>
+        <div className="sm:pl-1">{children}</div>
       </div>
     </div>
   );
