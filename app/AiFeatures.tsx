@@ -53,7 +53,7 @@ export default function AiFeatures() {
           <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
             Arriving 2025
           </h6>
-          <h2 className="text-3xl lg:text-5xl leading-tight tracking-tight font-extrabold">
+          <h2 className="text-3xl lg:text-5xl tracking-tight font-extrabold">
             Let{" "}
             <span className="inline-flex -mt-3 text-nowrap whitespace-nowrap gap-2 bg-gradient-to-br text-white from-orange-400 to-pink-600 px-3 py-0.5 -mb-0.5 select-none cursor-default rounded-xl items-center align-middle">
               <span
