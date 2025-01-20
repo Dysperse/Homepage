@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ProfilePicture } from "./ProfilePicture";
 import { collectionCategories, collectionViews } from "./categories";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export const revalidate = 60;
 
@@ -165,11 +166,50 @@ export default async function Page({ searchParams }: any) {
       {!hasFilters && <Categories />}
       {!hasFilters && <Views />}
 
+      <section className="grid pb-0 items-center grid-cols-1 sm:grid-cols-3 rounded-3xl p-5 mt-5 bg-gradient-to-br from-pink-500 text-white to-orange-500">
+        <div className="col-span-2 sm:p-12">
+          <h2
+            className="text-2xl sm:text-5xl font-black"
+            style={bricolage.style}
+          >
+            Can't find what
+            <span className="hidden sm:inline">
+              <br />
+            </span>
+            you're looking for?
+          </h2>
+          <p className="sm:text-xl mt-2 sm:mt-6 max-w-lg">
+            Sidekick AI can help you organize anything, from your assignments to
+            your next vacation to Japan.
+          </p>
+          <Button
+            className="!bg-white !text-black rounded-full h-auto px-8 py-4 mt-3 text-lg mb-3 sm:mb-0 w-full sm:w-auto"
+            // @ts-ignore
+            href="https://app.dysperse.com"
+            target="_blank"
+          >
+            Open app
+            <span className="material-symbols-rounded">north_east</span>
+          </Button>
+        </div>
+
+        <div className="max-w-full w-full sm:max-w-[unset] max-h-[450px] overflow-hidden ml-1.5">
+          <Image
+            src="/ai/4.png"
+            width={1200}
+            height={630}
+            alt="AI Features image"
+            className="w-full"
+          />
+        </div>
+      </section>
+
       {!hasFilters && (
         <h3 className="mt-10 text-3xl font-black" style={jost.style}>
           Latest
         </h3>
       )}
+
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-5">
         {templates.map((template: any) => (
           <Link href={`/templates/${template.id}`} key={template.id}>
