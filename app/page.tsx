@@ -127,11 +127,11 @@ function FamiliarUI() {
           />
         </div>
         <div className="flex-[2] flex justify-center flex-col">
-          <h6 className="text-sm uppercase mb-1 font-bold opacity-60">
+          <h6 className="text-sm uppercase mb-2 ml-0.5 font-bold opacity-60">
             Intuitive by design
           </h6>
           <h2 className="text-4xl sm:text-2xl md:text-4xl lg:text-5xl leading-tight tracking-tight font-extrabold">
-            Feels like your everyday web browser, but for productivity.
+            Feels like your everyday web browser, but for productivity
           </h2>
           <Button
             className="text-lg mr-auto h-12 rounded-full px-6 pr-5 border-black border-2 mt-5"
