@@ -72,7 +72,7 @@ export default function AiFeatures() {
             <span className="hidden lg:inline">
               <br />
             </span>
-            your day.
+            your day
           </h2>
           <h3 className="lg:text-2xl mt-4 mb-4 font-thin opacity-50">
             Connect your preferred AI assistant <br />
