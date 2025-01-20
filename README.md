@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✌️ Dysperse
 
-## Getting Started
+## Master your momentum
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<!-- # **Quick links**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Home page](https://dysperse.com)
+- [Launch app](https://app.dysperse.com)
+- [Status](https://status.dysperse.com)
+- [Blog](https://blog.dysperse.com)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# **Get the apps**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<a href="https://apps.microsoft.com/detail/9nsp138m4cx6?mode=direct">
+	<img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+</a>
 
-## Learn More
+<br /> -->
 
-To learn more about Next.js, take a look at the following resources:
+Your flexible, customizable productivity companion that adapts to your workflow.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What is Dysperse? ✨
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Dysperse is a next-generation productivity app that breaks free from rigid structures. Whether you're a student juggling assignments, a professional managing projects, or someone planning their next adventure, Dysperse molds itself to your unique way of working.
 
-## Deploy on Vercel
+## Key Features 🌟
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Task Management Made Simple
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Create tasks naturally through voice or text input
+- Smart labeling system with AI-powered categorization (via Sidekick)
+- Rich task content: add notes, headings, images, code blocks, and more
+- Natural language processing understands inputs like "tmw at 5"
+
+### Collections That Work Your Way 🎯
+
+Transform how you view and organize your tasks with nine unique views:
+
+**Category-focused Views:**
+
+- _List View_: The good old trusty to-do list
+- _Kanban View_: Organize tasks by category
+- _Grid View_: Organize tasks in a grid by category
+
+**Time-oriented Views:**
+
+- _Planner View_: View tasks day by day
+- _Skyline View_: Vision tasks in flexible time frames
+- _Calendar View_: The good old traditional calendar view
+- _Stream View_: See missed, upcoming, & completed tasks
+
+**Priority-based Views:**
+
+- _Matrix View_: Prioritize tasks by urgency and importance
+- _Workload View_: Sort tasks by an estimated difficulty
+
+Use labels across multiple collections - create one collection for all your AP courses (Calculus, English, Physics, APUSH) and another for just history classes (APUSH, World History). Share your collections as templates in the Dysverse, or add pin codes to keep them private.
+
+### Smart features 💡
+
+- **Clean Home Interface**: Focus on what matters with goals, daily planning, insights, and friend connections
+- **Chrome Extension**: Seamlessly save web pages as tasks
+- **Email Integration**: Forward emails to your todo list with AI-generated actionable summaries
+- **Focus Panel**: Boost productivity with widgets like weather, Spotify, pomodoro timer, and more
+- **Browser-like Navigation**: Switch between collections using familiar tab mechanics
+
+### Powerful Customization 🎨
+
+- 32 stunning themes to match your style
+- Keyboard shortcuts for power users
+- Flexible collection sharing and collaboration
+- Multiple view options for every type of organization
+
+### Security First 🔒
+
+- Passkey support
+- Google authentication
+- Two-factor authentication
+- QR code login for desktop
+- Remote device logout
+
+### Integrations 🔄
+
+- Canvas
+- Spotify
+- Apple Calendar
+- Google Calendar
+- Outlook Calendar
+
+## Getting Started 🏁
+
+1. Install Dysperse from the Chrome Web Store
+2. Choose your preferred login method
+3. Create your first task (just hit the space bar!)
+4. Organize tasks into collections
+5. Customize your view and workflow
+
+## Perfect For... 📋
+
+- Students organizing coursework
+- Professionals managing projects
+- Teams collaborating on tasks
+- Event planners coordinating details
+- Anyone who wants a flexible todo system
+
+## Ready to Transform Your Productivity?
+
+Start organizing your life with Dysperse today - where productivity meets flexibility!
+
+---
+
+_Dysperse: Your tasks, your way._ ✨
+
+# Sponsors
+
+Dysperse wouldn't have been able to run without our amazing sponsors! <3
+
+| [Cloudflare](https://cloudflare.com/?utm_source=dysperse)                                            | [Neon](https://neon.tech?utm_source=dysperse)                                             |
+| ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [![image](https://dysperse.com/sponsors/cloudflare.png)](https://cloudflare.com?utm_source=dysperse) | [![image](https://dysperse.com/sponsors/neon.png)](https://neon.tech?utm_source=dysperse) |
+
