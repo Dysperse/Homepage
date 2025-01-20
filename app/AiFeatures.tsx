@@ -76,7 +76,7 @@ export default function AiFeatures() {
           </h2>
           <h3 className="lg:text-2xl mt-4 mb-4 font-thin opacity-50">
             Connect your preferred AI assistant <br />
-            for no extra cost.
+            for no extra subscription fees.
           </h3>
 
           {features.map((feature, index) => (
