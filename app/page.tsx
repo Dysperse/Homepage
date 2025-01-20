@@ -129,10 +129,15 @@ function FamiliarUI() {
           <h2 className="text-4xl sm:text-2xl md:text-4xl lg:text-5xl leading-tight tracking-tight font-extrabold">
             Feels like your everyday web browser, but for productivity.
           </h2>
-          <h3 className="text-xl mt-4 mb-4 font-thin opacity-50">
-            We've taken the best parts of your favorite web browser and
-            integrated them into a productivity app feels like home.
-          </h3>
+          <Button
+            className="text-lg mr-auto h-12 rounded-full px-6 pr-5 border-black border-2 mt-5"
+            // @ts-ignore
+            href="https://blog.dysperse.com/like-your-everyday-browser-but-for-productivity"
+            target="_blank"
+          >
+            Learn more
+            <span className="material-symbols-rounded">north_east</span>
+          </Button>
         </div>
       </div>
     </section>
