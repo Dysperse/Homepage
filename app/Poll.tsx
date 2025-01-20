@@ -89,7 +89,7 @@ export default function Poll() {
               alt={icon}
               className="w-6 h-6 mr-2 z-10"
             />
-            <span className="flex flex-col sm:flex-row">
+            <span className="flex flex-col w-full sm:flex-row">
               <span className="z-10">{text}</span>
               {data && (
                 <div className="sm:ml-auto opacity-50 w-full h-full z-10 block sm:text-right">

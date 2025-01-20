@@ -1,6 +1,18 @@
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Get the apps • Dysperse",
+  description: "Download #dysperse on all your devices.",
+  keywords: ["Dysperse", "Download", "Apps"],
+  openGraph: {
+    images: ["/meta/download.png"],
+    title: "Get the apps • Dysperse",
+    description: "Download #dysperse on all your devices.",
+  },
+};
 
 const bricolage = Bricolage_Grotesque({
   weight: ["400", "500", "700"],
