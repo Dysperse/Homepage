@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="logosandtypes_com" data-name="logosandtypes com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 150 150">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #b9ffb3;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="108.81" y1="59.08" x2="-4.02" y2="107.5" gradientTransform="translate(0 149.49) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#415c49"/>
+      <stop offset=".03" stop-color="#47705a"/>
+      <stop offset=".1" stop-color="#539c7e"/>
+      <stop offset=".17" stop-color="#5dbf9c"/>
+      <stop offset=".24" stop-color="#65dbb3"/>
+      <stop offset=".32" stop-color="#6befc3"/>
+      <stop offset=".39" stop-color="#6efbcd"/>
+      <stop offset=".46" stop-color="#70ffd1"/>
+      <stop offset=".62" stop-color="#4affdf"/>
+      <stop offset=".77" stop-color="#2fffea"/>
+      <stop offset=".9" stop-color="#1efff1"/>
+      <stop offset="1" stop-color="#19fff4"/>
+    </linearGradient>
+  </defs>
+  <path id="Layer_3" data-name="Layer 3" class="cls-3" d="M0,0H150V150H0V0Z"/>
+  <path class="cls-1" d="M117.43,12.79H34.63c-12.03,0-21.78,9.7-21.78,21.64V116.83c0,11.99,9.74,21.69,21.78,21.69h37.72c10.82,0,2.16-33.59,2.16-33.59v14.05c0,1.21-.31,2.16-1.53,2.16H34.63c-2.38,0-4.36-1.93-4.36-4.31V34.43c0-2.38,1.98-4.31,4.36-4.31H119.58c2.42,0,2.2,1.93,2.2,4.31v7.27s7.68-28.92-4.36-28.92Z"/>
+  <path class="cls-2" d="M117.42,12.77c12.03,0,21.78,9.7,21.78,21.68V104.51c0,12.38-15.75,17.76-23.39,7.98l-23.88-30.57v37.07c0,10.78-8.77,19.51-19.6,19.51,1.2,0,2.18-.97,2.18-2.17h0V69.28c0-12.38,15.75-17.76,23.39-7.98l23.88,30.57V17.11c-.01-2.4-1.96-4.33-4.36-4.33h0Z"/>
+</svg>

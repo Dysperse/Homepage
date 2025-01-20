@@ -11,7 +11,7 @@ export function Emoji({
   style?: any;
 }) {
   return (
-    <Image
+    <img
       style={{
         width: size,
         height: size,

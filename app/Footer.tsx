@@ -1,97 +1,101 @@
-"use client";
-import { Box, Typography, Link } from "@mui/material";
-import { mintDark } from "./themes";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
+import { Bricolage_Grotesque } from "next/font/google";
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
 
-export function Footer() {
-  const [time, setTime] = useState<any>(new Date().getFullYear());
+const bricolage = Bricolage_Grotesque({
+  weight: ["200", "500", "700"],
+  subsets: ["latin"],
+});
 
+export default function Footer() {
   return (
-    <Box
-      sx={{
-        mt: 5,
-        py: 10,
-        color: mintDark.mint11,
-        borderTop: `2px solid ${mintDark.mint5}`,
-        backdropFilter: "blur(2px)",
-        p: 5,
-        textAlign: "center",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: 2,
-          mb: 4,
-          "& *": {
-            fontWeight: 300,
-            color: `${mintDark.mint8}!important`,
-            textDecorationColor: `${mintDark.mint7}!important`,
-          },
-          "& .mrauto": {
-            mr: { xs: "0", sm: "auto" },
-          },
-        }}
-      >
-        <Link href="//github.com/dysperse" target="_blank">
-          Open source
-        </Link>
-        <Link
-          href="//instagram.com/dysperse"
-          target="_blank"
-          className="mrauto"
-        >
-          Instagram
-        </Link>
-        <Link href="https://status.dysperse.com/" target="_blank">
-          Status
-        </Link>
-        <Link href="https://blog.dysperse.com/terms-of-service" target="_blank">
-          Terms
-        </Link>
-        <Link href="https://blog.dysperse.com/privacy-policy" target="_blank">
-          Privacy
-        </Link>
-      </Box>
-      <Typography
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          gap: 2,
-          opacity: 0.5,
-          justifyContent: "center",
-        }}
-        fontWeight={700}
-      >
-        <Image src="/usa.png" alt="USA flag" width={24} height={24} />
-        Proudly made in the US &bull; Copyright {time}
-      </Typography>
-      <Box
-        sx={{
-          display: "flex",
-          gap: 2,
-          justifyContent: "center",
-          mt: 2,
-          flexDirection: { xs: "column", sm: "row" },
-        }}
-      >
-        {[
-          { text: "cloudflare", href: "https://www.cloudflare.com" },
-          { text: "neon", href: "https://neon.tech" },
-        ].map((sponsor) => (
-          <Link target="_blank" key={sponsor.text} href={sponsor.href}>
-            <Image
-              src={`/sponsors/${sponsor.text}.png`}
-              alt="Dysperse"
-              width={374 / 2}
-              height={75 / 2}
-            />
-          </Link>
-        ))}
-      </Box>
-    </Box>
+    <footer className="bg-black mt-10 text-white px-5 ">
+      <div className=" max-w-xl mx-auto sm:px-16 py-10 sm:py-12">
+        <div>
+          <h3
+            className="text-5xl font-black cursor-default -my-5 -mb-2"
+            style={bricolage.style}
+          >
+            <TextHoverEffect text="#dysperse" />
+          </h3>
+          <div className="grid grid-cols-3 sm:flex gap-5 justify-center mb-3">
+            <Link
+              href="https://instagram.com/dysperse"
+              target="_blank"
+              className="text-xl font-medium text-center opacity-50"
+            >
+              instagram
+            </Link>
+            <Link
+              href="https://github.com/dysperse"
+              target="_blank"
+              className="text-xl font-medium text-center opacity-50"
+            >
+              open source
+            </Link>
+            <Link
+              href="https://status.dysperse.com"
+              target="_blank"
+              className="text-xl font-medium text-center opacity-50"
+            >
+              status
+            </Link>
+            <Link
+              href="https://blog.dysperse.com/privacy-policy"
+              target="_blank"
+              className="text-xl font-medium text-center opacity-50"
+            >
+              privacy
+            </Link>
+            <Link
+              href="https://blog.dysperse.com/terms-of-service"
+              target="_blank"
+              className="text-xl font-medium text-center opacity-50"
+            >
+              terms
+            </Link>
+          </div>
+          <p className="mt-5 opacity-50 text-center">
+            © {new Date().getFullYear()}{" "}
+            <span className="ml-2">Proudly made in the USA</span> by{" "}
+            <Link
+              className="text-blue-500 font-bold"
+              href="https://bymanu.me?utm_source=dysperse.com"
+            >
+              Manu
+            </Link>
+          </p>
+
+          <div className="flex justify-center gap-5 mt-5">
+            <p className="opacity-50">Sponsored by</p>
+            <Link
+              href="https://neon.tech?utm_source=dysperse.com"
+              target="_blank"
+            >
+              <Image
+                src="/sponsors/neon.svg"
+                alt="neon.tech logo"
+                width={30}
+                height={30}
+                className="hover:grayscale-0 grayscale"
+              />
+            </Link>
+            <Link
+              href="https://cloudflare.com?utm_source=dysperse.com"
+              target="_blank"
+            >
+              <Image
+                src="/sponsors/cloudflare.svg"
+                alt="neon.tech logo"
+                width={100}
+                height={40}
+                className="hover:grayscale-0 grayscale"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }

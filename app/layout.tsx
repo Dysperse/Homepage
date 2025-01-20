@@ -1,12 +1,14 @@
-import { ClientLayout } from "./client-layout";
+import type { Metadata } from "next";
 import "./globals.css";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import { Navbar } from "./navbar";
-import { mintDark } from "./themes";
-import { Box, CssBaseline } from "@mui/material";
-import { Metadata } from "next";
+import { Jost } from "next/font/google";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import Script from "next/script";
-import { Footer } from "./Footer";
+
+const jost = Jost({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   description: "Productivity is personal. Let #dysperse be the catalyst.",
@@ -19,14 +21,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout(props: any) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
+    <html lang="en" className="relative overflow-x-hidden">
       <head>
+        <meta name="theme-color" content="#ffffff" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
+        <link rel="favicon" href="/favicon.ico" />
         <Script
           id="a"
           async
@@ -190,27 +198,15 @@ export default function RootLayout(props: any) {
             }),
           }}
         />
-        <link rel="icon" href="/favicon.ico" />
       </head>
-      <body>
-        <AppRouterCacheProvider>
-          <ClientLayout>
-            <Box
-              sx={{
-                color: mintDark.mint12,
-                width: "100vw",
-                overflow: "hidden",
-              }}
-            >
-              <CssBaseline />
-
-              <Navbar />
-              {props.children}
-              <Footer />
-            </Box>
-          </ClientLayout>
-        </AppRouterCacheProvider>
+      <body
+        className={`${jost.className} antialiased overflow-x-hidden flex flex-col`}
+      >
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
 }
+

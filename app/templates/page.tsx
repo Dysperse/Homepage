@@ -1,30 +1,93 @@
-import { Masonry } from "@mui/lab";
-import { Box, Button, Card, Container, Typography } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
+import { Input } from "@/components/ui/input";
 import { Metadata } from "next";
-import Image from "next/image";
+import { Bricolage_Grotesque, Jost } from "next/font/google";
+import { Filter } from "bad-words";
 import Link from "next/link";
-import { Emoji } from "../Emoji";
-import { mintDark } from "../themes";
-import { Background } from "./Background";
-import { collectionCategories, collectionViews } from "./categories";
 import { ProfilePicture } from "./ProfilePicture";
-import { SearchField } from "./SearchField";
+import { collectionCategories, collectionViews } from "./categories";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
-const Filter = require("bad-words");
-export const revalidate = 60; // 1 hour
+export const revalidate = 60;
+
+const bricolage = Bricolage_Grotesque({
+  weight: ["700"],
+  subsets: ["latin"],
+});
+
+const jost = Jost({
+  weight: ["500"],
+  subsets: ["latin"],
+});
+
+function Views() {
+  return (
+    <section className="mt-8">
+      <h2 className="text-3xl font-black" style={jost.style}>
+        Explore by perspective
+      </h2>
+      <div className="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-8 gap-2 mt-2">
+        {Object.keys(collectionViews).map((view) => (
+          <Link
+            key={view}
+            href={`/templates?defaultView=${view}`}
+            passHref
+            className="flex flex-1"
+          >
+            <div className="template-filter-card">
+              <span className="material-symbols-rounded text-2xl">
+                {collectionViews[view]}
+              </span>
+              <h1 className="capitalize pointer-events-none">{view}</h1>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Categories() {
+  return (
+    <section className="mt-8">
+      <h2 className="text-3xl font-black" style={jost.style}>
+        Popular categories
+      </h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mt-2">
+        {collectionCategories.map((category) => (
+          <Link
+            key={category.text}
+            href={`/templates?category=${category.text}`}
+            passHref
+            className="flex flex-1"
+          >
+            <div className="template-filter-card">
+              <span className="material-symbols-rounded text-2xl">
+                {category.icon}
+              </span>
+              <h1 className="capitalize pointer-events-none">
+                {category.text}
+              </h1>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 export async function generateMetadata({
   searchParams,
 }: any): Promise<Metadata> {
-  const defaultView = searchParams.defaultView;
-  const category = searchParams.category;
+  const hasFilters = Object.keys(searchParams).length > 0;
+  const title = hasFilters
+    ? capitalizeFirstLetter(
+        `${searchParams.category || searchParams.defaultView || ""} templates ${
+          searchParams.search ? `for "${searchParams.search}"` : ""
+        }`.trim()
+      )
+    : "Templates • Dysperse";
 
-  const title = defaultView
-    ? `Explore ${defaultView} templates • Dysperse`
-    : category
-    ? `Browse ${category} templates • Dysperse`
-    : "Explore the #dysverse • Dysperse";
   return {
     title,
     description:
@@ -39,318 +102,163 @@ export async function generateMetadata({
   };
 }
 
+const capitalizeFirstLetter = (string: string) =>
+  string.charAt(0).toUpperCase() + string.slice(1);
+
 export default async function Page({ searchParams }: any) {
   const hasFilters = Object.keys(searchParams).length > 0;
-  return (
-    <Box
-      sx={{
-        "& .MuiCard-root": {
-          bgcolor: "hsl(0, 0%, 13%)",
-          "&:hover": {
-            filter: "brightness(1.1)",
-          },
-          "&:active": {
-            filter: "brightness(0.8)",
-          },
-        },
-      }}
-    >
-      <Box
-        sx={{
-          position: "relative",
-          justifyContent: "center",
-          height: hasFilters ? "50vh" : "100vh",
-          minHeight: 400,
-          borderBottom: `2px solid hsl(0, 0%, 20%)`,
-          pt: 10,
-          pb: 5,
-          ...(searchParams.category ||
-            (searchParams.defaultView && {
-              height: "auto",
-            })),
-        }}
-      >
-        <Background />
-        <Container
-          style={{
-            height: "100%",
-            zIndex: 99,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: hasFilters ? undefined : "center",
-          }}
-        >
-          {hasFilters ? (
-            <>
-              <Link href="/templates" passHref>
-                <Button sx={{ color: mintDark.mint11, ml: -1 }}>
-                  <span className="material-symbols-rounded">west</span> Clear
-                  filters
-                </Button>
-              </Link>
-              <Typography
-                fontWeight={900}
-                variant="h4"
-                sx={{ mt: 0.5, mb: 2, fontFamily: "Agrandir", zIndex: 99 }}
-              >
-                Search results{" "}
-                {searchParams.search && `for "${searchParams.search}"`}
-              </Typography>
-            </>
-          ) : (
-            <>
-              <Typography
-                fontWeight={900}
-                variant="h2"
-                sx={{ mt: 1, fontFamily: "Agrandir", zIndex: 1 }}
-              >
-                {(searchParams.category &&
-                  `Browse ${searchParams.category} templates`) ||
-                  (searchParams.defaultView &&
-                    `Explore ${searchParams.defaultView} templates`) ||
-                  "the #dysverse"}
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  mt: 1,
-                  fontSize: 20,
-                  opacity: 0.7,
-                  fontWeight: 700,
-                  mb: 2,
-                }}
-              >
-                Browse templates curated by the community to inspire your next
-                big idea.
-              </Typography>
-            </>
-          )}
-          <SearchField searchParams={searchParams} hasFilters={hasFilters} />
-        </Container>
-      </Box>
-
-      {!hasFilters && <Categories />}
-      {!hasFilters && <Views />}
-      <Recent hasFilters={hasFilters} searchParams={searchParams} />
-
-      {!hasFilters && (
-        <Container>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              mt: 8,
-              mb: 8,
-              fontWeight: 700,
-              opacity: 0.7,
-            }}
-          >
-            Can&apos;t find what you&apos;re looking for? Join #dysperse to
-            build what you need.
-          </Box>
-        </Container>
-      )}
-    </Box>
-  );
-}
-
-async function Recent({ searchParams, hasFilters }: any) {
   const templates = await getTemplates(searchParams);
 
   return (
-    <Container sx={{ mt: hasFilters ? -8 : 8 }}>
-      {!hasFilters && (
-        <Typography variant="h4" sx={{ fontWeight: 900 }}>
-          Recently added
-        </Typography>
-      )}
-      {templates.length === 0 && (
-        <Typography
-          fontWeight={900}
-          sx={{
-            mt: 2,
-            mb: 10,
-            fontSize: 20,
-            opacity: 0.7,
-            textAlign: "center",
-          }}
+    <main className="mx-auto max-w-5xl px-5 xl:px-0 w-full">
+      {hasFilters && (
+        <Button
+          variant="outline"
+          slot="a"
+          // @ts-ignore
+          href="/templates"
+          className="mt-10"
         >
-          No templates found. Try clearing filters or searching for something
-          else.
-        </Typography>
+          <span className="material-symbols-rounded">west</span>
+          Clear filters
+        </Button>
       )}
-      <Masonry
-        sx={{ mt: hasFilters ? 20 : 2 }}
-        spacing={2}
-        columns={{ xs: 1, sm: 3 }}
+      <h1
+        className={`text-5xl mt-10 xl:mt-20 ${
+          hasFilters ? "mt-6" : "mt-10"
+        } font-black`}
+        style={bricolage.style}
       >
+        {hasFilters
+          ? capitalizeFirstLetter(
+              `${
+                searchParams.category || searchParams.defaultView || ""
+              } templates ${
+                searchParams.search ? `for "${searchParams.search}"` : ""
+              }`.trim()
+            )
+          : "Organize anything"}
+      </h1>
+      <h2 className="mt-2 text-2xl font-thin">
+        {hasFilters
+          ? `Showing ${templates.length} results`
+          : "Discover templates crafted by the community to help you get started on your next big idea"}
+      </h2>
+      <form
+        className="mt-5 flex items-center gap-2"
+        action="/templates"
+        method="get"
+      >
+        <Input
+          name="search"
+          placeholder="Find a template..."
+          className="w-full !text-xl rounded-full h-auto py-3 px-5"
+        />
+        <Button
+          type="submit"
+          size="icon"
+          className="w-12 h-12 ml-2 rounded-full aspect-square shrink-0"
+        >
+          <span className="material-symbols-rounded">east</span>
+        </Button>
+      </form>
+
+      {!hasFilters && <Categories />}
+      {!hasFilters && <Views />}
+
+      <section className="grid pb-0 items-center grid-cols-1 sm:grid-cols-3 rounded-3xl p-5 mt-5 bg-gradient-to-br from-pink-500 text-white to-orange-500">
+        <div className="col-span-2 sm:p-12">
+          <h2
+            className="text-2xl sm:text-5xl font-black"
+            style={bricolage.style}
+          >
+            Can't find what
+            <span className="hidden sm:inline">
+              <br />
+            </span>
+            you're looking for?
+          </h2>
+          <p className="sm:text-xl mt-2 sm:mt-6 max-w-lg">
+            Sidekick AI can help you organize anything, from your assignments to
+            your next vacation to Japan.
+          </p>
+          <Button
+            className="!bg-white !text-black rounded-full h-auto px-8 py-4 mt-3 text-lg mb-3 sm:mb-0 w-full sm:w-auto"
+            // @ts-ignore
+            href="https://app.dysperse.com"
+            target="_blank"
+          >
+            Open app
+            <span className="material-symbols-rounded">north_east</span>
+          </Button>
+        </div>
+
+        <div className="max-w-full w-full sm:max-w-[unset] max-h-[450px] overflow-hidden ml-1.5">
+          <Image
+            src="/ai/4.png"
+            width={1200}
+            height={630}
+            alt="AI Features image"
+            className="w-full"
+          />
+        </div>
+      </section>
+
+      {!hasFilters && (
+        <h3 className="mt-10 text-3xl font-black" style={jost.style}>
+          Latest
+        </h3>
+      )}
+
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-5">
         {templates.map((template: any) => (
-          <Link key={template.id} href={`/templates/${template.id}`} passHref>
-            <Card
-              key={template.id}
-              variant="outlined"
-              sx={{
-                borderRadius: 5,
-                cursor: "pointer",
-                p: 3,
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: 1.5,
-                  mb: 1.5,
-                  py: 1,
-                }}
-              >
-                <Emoji emoji={template.emoji} size={24} />
-                <Box sx={{ mt: -1 }}>
-                  <Typography sx={{ fontSize: 24 }} fontWeight={900}>
-                    {template.name}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontWeight: 800,
-                      textTransform: "uppercase",
-                      opacity: 0.7,
-                      mt: 0.3,
-                      ml: 0.2,
-                      fontSize: 12,
-                    }}
-                  >
-                    {template.defaultView}
-                  </Typography>
-                </Box>
-              </Box>
-              <Image
+          <Link href={`/templates/${template.id}`} key={template.id}>
+            <article className="bg-white rounded-3xl overflow-hidden border-2 active:scale-95 transition-transform">
+              <img
                 alt={`Preview of ${template.name}`}
-                src={`https://og.dysperse.com/${template.id}?hideHeader=true`}
+                src={`https://og.dysperse.com/${
+                  template.id
+                }?${new URLSearchParams({
+                  isLight: "true",
+                  hideLogo: "true",
+                  hideHeader: "true",
+                  baseColor: "81,  80.0%",
+                })}`}
                 width={1200}
                 height={630}
                 style={{
                   width: "100%",
                   height: "auto",
                   aspectRatio: "1200/630",
-                  borderRadius: 20,
                 }}
+                className="rounded-t-lg rounded-b-none"
               />
-              <ProfilePicture template={template} />
-            </Card>
+              <div className="p-5">
+                <h3 className="text-2xl font-black truncate">
+                  {template.name}
+                </h3>
+                <h4 className="text-lg truncate">
+                  <span className="capitalize">{template.defaultView}</span>
+                  {template.category && <> &bull; {template.category}</>}
+                </h4>
+                <ProfilePicture template={template} />
+              </div>
+            </article>
           </Link>
         ))}
-      </Masonry>
-    </Container>
-  );
-}
-
-function Views() {
-  return (
-    <Container sx={{ mt: 8 }}>
-      <Typography variant="h4" sx={{ fontWeight: 900 }}>
-        Explore by perspective
-      </Typography>
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: {
-            xs: "repeat(2, 1fr)",
-            sm: "repeat(8, 1fr)",
-          },
-          gap: 2,
-          mt: 2,
-        }}
-      >
-        {Object.keys(collectionViews).map((view) => (
-          <Link
-            key={view}
-            href={`/templates?defaultView=${view}`}
-            passHref
-            style={{ flex: 1, display: "flex" }}
-          >
-            <Card
-              key={view}
-              variant="outlined"
-              sx={{
-                cursor: "pointer",
-                bgcolor: "transparent",
-                flex: 1,
-                borderRadius: 5,
-                p: 3,
-              }}
-            >
-              <span
-                style={{ fontSize: 30 }}
-                className="material-symbols-rounded"
-              >
-                {collectionViews[view]}
-              </span>
-              <Typography
-                sx={{ textTransform: "capitalize", pointerEvents: "none" }}
-              >
-                {view}
-              </Typography>
-            </Card>
-          </Link>
-        ))}
-      </Box>
-    </Container>
-  );
-}
-
-function Categories() {
-  return (
-    <Container sx={{ mt: 5 }}>
-      <Typography variant="h4" sx={{ fontWeight: 900 }}>
-        Popular categories
-      </Typography>
-      <Grid container sx={{ mt: 2 }} spacing={2}>
-        {collectionCategories.map((category) => (
-          <Grid xs={6} sm={12 / 5} key={category.text}>
-            <Link
-              key={category.text}
-              href={`/templates?category=${category.text}`}
-              passHref
-            >
-              <Card
-                variant="outlined"
-                sx={{
-                  cursor: "pointer",
-                  bgcolor: "transparent",
-                  borderRadius: 5,
-                  p: 3,
-                }}
-              >
-                <span
-                  style={{ fontSize: 30 }}
-                  className="material-symbols-rounded"
-                >
-                  {category.icon}
-                </span>
-                <Typography style={{ pointerEvents: "none" }}>
-                  {category.text}
-                </Typography>
-              </Card>
-            </Link>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+      </section>
+    </main>
   );
 }
 
 const getTemplates = async (searchParams: any) => {
   const filter = new Filter();
-  filter.addWords("drugs", "cocaine", "meth", "weed", "heroin", "crack", "lsd");
-
   const data = await fetch(
-    "https://api.dysperse.com/dysverse?" + new URLSearchParams(searchParams),
+    `https://api.dysperse.com/dysverse?${new URLSearchParams(
+      JSON.parse(JSON.stringify(searchParams))
+    )}`,
     { cache: "no-cache" }
   ).then((res) => res.json());
-  return data.filter((template: any) => {
-    if (JSON.stringify(template) !== filter.clean(JSON.stringify(template))) {
-      return false;
-    }
-    return true;
-  });
+
+  return data.filter((template: any) => !filter.isProfane(template.title));
 };
