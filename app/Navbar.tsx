@@ -182,7 +182,7 @@ export default function Navbar() {
           </Drawer>
         </nav>
       </div>
-      <div className="h-32 xl:h-20" />
+      <div className="h-32 xl:h-26" />
     </>
   );
 }
