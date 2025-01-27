@@ -1,12 +1,12 @@
 import { Input } from "@/components/ui/input";
 import { Metadata } from "next";
 import { Bricolage_Grotesque, Jost } from "next/font/google";
-import { Filter } from "bad-words";
 import Link from "next/link";
 import { ProfilePicture } from "./ProfilePicture";
 import { collectionCategories, collectionViews } from "./categories";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { getTemplates } from "./getTemplates";
 
 export const revalidate = 60;
 
@@ -251,14 +251,3 @@ export default async function Page({ searchParams }: any) {
   );
 }
 
-const getTemplates = async (searchParams: any) => {
-  const filter = new Filter();
-  const data = await fetch(
-    `https://api.dysperse.com/dysverse?${new URLSearchParams(
-      JSON.parse(JSON.stringify(searchParams))
-    )}`,
-    { cache: "no-cache" }
-  ).then((res) => res.json());
-
-  return data.filter((template: any) => !filter.isProfane(template.title));
-};
