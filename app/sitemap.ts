@@ -1,6 +1,12 @@
 import { MetadataRoute } from "next";
 import { getTemplates } from "./templates/getTemplates";
 
+const subtractDays = (date: Date, num: number) => {
+  const newDate = new Date(date);
+  newDate.setDate(newDate.getDate() - num);
+  return newDate;
+};
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const templates = await getTemplates({ all: "true" });
 
@@ -8,20 +14,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: "https://dysperse.com",
       lastModified: new Date(),
-      changeFrequency: "daily",
+      changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: "https://dysperse.com/download",
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1,
+      lastModified: subtractDays(new Date(), 1),
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: "https://dysperse.com/templates",
       lastModified: new Date(),
       changeFrequency: "daily",
-      priority: 1,
+      priority: 0.8,
     },
     ...templates.map((template: any) => {
       return {
@@ -29,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         images: [`https://og.dysperse.com/${template.id}`],
         changeFrequency: "weekly",
         lastModified: new Date(template.createdBy.profile.lastActive),
-        priority: 1,
+        priority: 0.5,
       } as MetadataRoute.Sitemap[0];
     }),
   ];
