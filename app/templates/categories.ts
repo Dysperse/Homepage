@@ -20,4 +20,5 @@ export const collectionViews: any = {
   list: "view_agenda",
   matrix: "target",
   calendar: "calendar_today",
+  map: "near_me",
 };
