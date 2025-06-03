@@ -185,7 +185,7 @@ export default async function Page({ searchParams }: any) {
           <Button
             className="!bg-white !text-black rounded-full h-auto px-8 py-4 mt-3 text-lg mb-3 sm:mb-0 w-full sm:w-auto"
             // @ts-ignore
-            href="https://app.dysperse.com"
+            href="https://go.dysperse.com"
             target="_blank"
           >
             Open app

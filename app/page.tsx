@@ -44,7 +44,7 @@ function Hero() {
                 <Button
                   slot="a"
                   // @ts-ignore
-                  href="https://app.dysperse.com/auth/sign-up"
+                  href="https://go.dysperse.com/auth/sign-up"
                   target="_blank"
                   className="h-12 lg:h-16 p-1 px-4 lg:px-12 text-lg sm:text-xl lg:text-2xl rounded-full border-2 border-black"
                 >
@@ -85,7 +85,7 @@ function Hero() {
           text={[
             {
               text: "100% free",
-              link: "https://app.dysperse.com/auth/sign-up",
+              link: "https://go.dysperse.com/auth/sign-up",
             },
             {
               text: "Open source",
@@ -93,21 +93,21 @@ function Hero() {
             },
             {
               text: "Focus widgets",
-              link: "https://app.dysperse.com/auth/sign-up",
+              link: "https://go.dysperse.com/auth/sign-up",
             },
             {
               text: "32+ themes",
-              link: "https://app.dysperse.com/settings/appearance",
+              link: "https://go.dysperse.com/settings/appearance",
             },
             {
               text: "Ad free",
-              link: "https://app.dysperse.com/auth/sign-up",
+              link: "https://go.dysperse.com/auth/sign-up",
             },
             { text: "Templates for anything", link: "/templates" },
             { text: "Cross platform", link: "/download" },
             {
               text: "Emojis for everything",
-              link: "https://app.dysperse.com/settings/appearance",
+              link: "https://go.dysperse.com/settings/appearance",
             },
             { text: "", link: "" },
           ]}
@@ -167,3 +167,4 @@ export default function Home() {
     </>
   );
 }
+

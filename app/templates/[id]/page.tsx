@@ -102,7 +102,7 @@ export default async function Page({ params: { id } }: any) {
             asChild
             className="h-auto uppercase rounded-full py-3 px-7 font-black ml-auto mt-5"
           >
-            <a href={`https://app.dysperse.com/template/${id}`}>
+            <a href={`https://go.dysperse.com/template/${id}`}>
               Get&nbsp;template
             </a>
           </Button>

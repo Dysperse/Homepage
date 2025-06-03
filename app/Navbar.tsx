@@ -92,7 +92,7 @@ export default function Navbar() {
             slot="a"
             // @ts-ignore
             target="_blank"
-            href="https://app.dysperse.com"
+            href="https://go.dysperse.com"
             variant="outline"
             className={
               "hidden sm:inline-flex ml-auto text-lg h-12 rounded-full px-6 pr-5 border-black border-2" +
@@ -166,7 +166,7 @@ export default function Navbar() {
                       slot="a"
                       // @ts-ignore
                       target="_blank"
-                      href="https://app.dysperse.com"
+                      href="https://go.dysperse.com"
                       variant="outline"
                       className="text-lg mx-3 mt-3 h-12 rounded-full px-6 pr-5 border-black border-2"
                     >
@@ -186,3 +186,4 @@ export default function Navbar() {
     </>
   );
 }
+

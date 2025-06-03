@@ -33,7 +33,7 @@ export default function Page() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-5">
             {[
-              { icon: "globe", href: "https://app.dysperse.com", label: "Web" },
+              { icon: "globe", href: "https://go.dysperse.com", label: "Web" },
               {
                 icon: "grid_view",
                 href: "https://click.dysperse.com/ms",
@@ -137,3 +137,4 @@ export default function Page() {
     </main>
   );
 }
+
