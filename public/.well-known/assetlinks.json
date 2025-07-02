@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dysperse.go",
+      "sha256_cert_fingerprints": [
+        "AB:13:97:14:46:4D:31:A2:FB:BD:89:6B:16:A6:43:C8:E2:57:C6:ED:F7:D9:B9:52:2B:8F:83:20:12:7C:92:A5"
+      ]
+    }
+  }
+]
