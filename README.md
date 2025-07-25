@@ -119,3 +119,9 @@ Dysperse wouldn't have been able to run without our amazing sponsors! <3
 | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | [![image](https://dysperse.com/sponsors/cloudflare.png)](https://cloudflare.com?utm_source=dysperse) | [![image](https://dysperse.com/sponsors/neon.png)](https://neon.tech?utm_source=dysperse) |
 
+
+<br />
+<br />
+<a href="https://vercel.com/oss">
+  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
+</a>
