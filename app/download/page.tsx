@@ -48,13 +48,11 @@ export default function Page() {
                 icon: "android",
                 href: "https://click.dysperse.com/android",
                 label: "Android",
-                comingSoon: true,
               },
               {
                 icon: "ios",
                 href: "https://click.dysperse.com/ios",
                 label: "iPhone & iPad",
-                comingSoon: true,
               },
             ].map((link) => (
               <Button

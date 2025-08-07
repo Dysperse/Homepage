@@ -65,6 +65,10 @@ export default function RootLayout({
                 "https://dysperse.com",
                 "https://twitter.com/getdysperse",
               ],
+              downloadUrl: [
+                "https://apps.apple.com/us/app/dysperse/id6746772502",
+                "https://play.google.com/store/apps/details?id=com.dysperse.go",
+              ],
               mainEntity: [
                 {
                   "@type": "Question",
