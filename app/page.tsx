@@ -44,7 +44,7 @@ function Hero() {
                 <Button
                   slot="a"
                   // @ts-ignore
-                  href="https://go.dysperse.com/auth/sign-up"
+                  href="https://go.dysperse.com"
                   target="_blank"
                   className="h-12 lg:h-16 p-1 px-4 lg:px-12 text-lg sm:text-xl lg:text-2xl rounded-full border-2 border-black"
                 >
