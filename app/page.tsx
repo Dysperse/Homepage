@@ -22,6 +22,35 @@ function Hero() {
   return (
     <>
       <section className="h-auto sm:min-h-[750px] sm:h-[calc(100vh-100px)] xl:h-[calc(100vh-100px)] px-5 sm:px-0">
+        <div className="bg-gray-100 rounded-2xl max-w-5xl mx-auto p-3 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-10">
+          <div>
+            <h3 className="font-bold text-xl">Meet our new mobile app!</h3>
+            <p>
+              Productivity in your pocket. The Dysperse app is now available on
+              iOS and Android.
+            </p>
+          </div>
+          <div className="flex gap-1">
+            <Button
+              slot="a"
+              // @ts-ignore
+              href="https://click.dysperse.com/ios"
+              target="_blank"
+              className="h-10 p-1 px-4 text-lg sm:text-xl rounded-full"
+            >
+              iOS
+            </Button>
+            <Button
+              slot="a"
+              // @ts-ignore
+              href="https://click.dysperse.com/android"
+              target="_blank"
+              className="h-10 p-1 px-4 text-lg sm:text-xl rounded-full"
+            >
+              Android
+            </Button>
+          </div>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-5 h-full items-center">
           <div className="-top-4 sm:top-0 relative order-1 sm:order-[unset] flex flex-col sm:col-span-3 justify-center">
             <div className="max-w-4xl mx-auto">
