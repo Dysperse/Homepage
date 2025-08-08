@@ -54,7 +54,7 @@ export default function Page() {
                 href: "https://click.dysperse.com/ios",
                 label: "iPhone & iPad",
               },
-            ].map((link) => (
+            ].map((link: any) => (
               <Button
                 key={link.label}
                 slot="a"
