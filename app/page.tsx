@@ -22,7 +22,7 @@ function Hero() {
   return (
     <>
       <section className="h-auto sm:min-h-[750px] sm:h-[calc(100vh-100px)] xl:h-[calc(100vh-100px)] px-5 sm:px-0">
-        <div className="bg-gray-100 rounded-2xl max-w-5xl mx-auto p-3 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-10">
+        <div className="bg-gray-100 rounded-2xl max-w-5xl mx-auto p-3 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-10 mb-5 sm:mb-0">
           <div>
             <h3 className="font-bold text-xl">Meet our new mobile app!</h3>
             <p>
