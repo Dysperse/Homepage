@@ -12,6 +12,11 @@ module.exports = {
         permanent: false,
       },
       {
+        source: '/windows',
+        destination: 'https://click.dysperse.com/ms',
+        permanent: false,
+      },
+      {
         source: '/download/ios',
         destination: 'https://click.dysperse.com/ios',
         permanent: false,
@@ -19,6 +24,11 @@ module.exports = {
       {
         source: '/download/android',
         destination: 'https://click.dysperse.com/android',
+        permanent: false,
+      },
+      {
+        source: '/download/windows',
+        destination: 'https://click.dysperse.com/ms',
         permanent: false,
       },
     ]
