@@ -17,6 +17,11 @@ module.exports = {
         permanent: false,
       },
       {
+        source: '/chrome-extension',
+        destination: 'https://click.dysperse.com/chrome-extension',
+        permanent: false,
+      },
+      {
         source: '/download/ios',
         destination: 'https://click.dysperse.com/ios',
         permanent: false,
@@ -29,6 +34,11 @@ module.exports = {
       {
         source: '/download/windows',
         destination: 'https://click.dysperse.com/ms',
+        permanent: false,
+      },
+      {
+        source: '/download/chrome-extension',
+        destination: 'https://click.dysperse.com/chrome-extension',
         permanent: false,
       },
     ]
