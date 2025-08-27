@@ -4,6 +4,7 @@ import { Jost } from "next/font/google";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const jost = Jost({
   weight: ["400", "500", "600"],
@@ -206,6 +207,7 @@ export default function RootLayout({
       <body
         className={`${jost.className} antialiased overflow-x-hidden flex flex-col`}
       >
+        <SpeedInsights />
         <Navbar />
         {children}
         <Footer />
